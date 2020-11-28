@@ -23,7 +23,8 @@ let scriptsPath = ['source/js/main.js'];
 
 gulp.task('server', function() {
 	browserSync.init({
-		server: './build'
+    server: './build',
+    index: 'index.html'
 	});
 
 	 gulp.watch('source/scss/**/*.scss', gulp.series('sass'));

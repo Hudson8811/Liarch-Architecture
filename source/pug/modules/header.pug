@@ -1,2 +1,23 @@
-header.header 
-	.container Хедер
+header.header
+  .header__inner.container
+    a.header__logo.logo(href="#")
+      span.logo__image
+        img(src="img/logo.png", width="58", height="58", alt="logo")
+      span.logo__text Liarch architecture studio
+
+    nav.header__nav.navigation
+      ul.navigation__list
+        each item in MAIN_MENU
+          if item.currentIndex === currentIndex
+            li.navigation__item.navigation__item--current
+              a.navigation__link= item.text
+          else
+            li.navigation__item
+              a.navigation__link(href= item.url)= item.text
+    a.header__chat.lets-chat(href="#")
+      span.lets-chat__text Let’s chat!
+      span.lets-chat__icon Q
+    button.header__search-toggle.search-toggle search
+      span.visually-hidden Show search field
+    button.header__menu-toggle.menu-toggle
+      span.visually-hidden Menu

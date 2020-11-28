@@ -5,8 +5,15 @@
 @import "common/fonts";
 @import "common/utils";
 @import "common/global";
+@import "vendor/bootstrap-grid";
 
 @import "blocks/heading";
+@import "blocks/menu-toggle";
+@import "blocks/search-toggle";
+@import "blocks/lets-chat";
+@import "blocks/navigation";
+@import "blocks/logo";
+
 @import "blocks/header";
 @import "blocks/footer";
 @import "blocks/webpage";

@@ -1,0 +1,27 @@
+.navigation {
+  $self: &;
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    &::after {
+      content: "";
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+    &--current {
+      #{$self}__link {
+      }
+    }
+  }
+
+  &__link {
+  }
+}
