@@ -51,15 +51,15 @@ gulp.task('sass', function() {
       })
     }))
 		.pipe(sass())
-		.pipe(postcss([
-			autoprefixer({
-				grid: true
-			})
-		]))
+		//.pipe(postcss([
+		//	autoprefixer({
+		//		grid: true
+		//	})
+		//]))
 		.pipe(gulp.dest('build/css'))
-		.pipe(csso())
-		.pipe(rename('main.min.css'))
-		.pipe(gulp.dest('build/css'))
+		//.pipe(csso())
+		//.pipe(rename('main.min.css'))
+		//.pipe(gulp.dest('build/css'))
 		.pipe(browserSync.stream());
 });
 
