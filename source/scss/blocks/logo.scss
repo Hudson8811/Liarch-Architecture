@@ -7,7 +7,7 @@
     margin-right: 8px;
     align-self: center;
 
-    @include media(sm) {
+    @include media(md) {
       width: 52px;
       margin-right: 14px;
     }
@@ -29,7 +29,7 @@
     font-weight: 600;
     letter-spacing: 0.22px;
 
-    @include media(sm) {
+    @include media(md) {
       font-size: 14px;
     }
   }

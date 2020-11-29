@@ -22,7 +22,7 @@
     min-height: 100%;
     padding: 20px 30px;
 
-    @include media(sm) {
+    @include media(md) {
       padding: 44px 60px;
     }
   }
@@ -50,6 +50,18 @@
   &__link {
     @include text(30px, 1, $color-grey);
     font-weight: 600;
+
+    @include transition(color);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $color-default-black;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
   }
 
   &__close {
@@ -64,10 +76,26 @@
     border: none;
     background-color: transparent;
     appearance: none;
+    cursor: pointer;
 
     svg {
       fill: $color-default-black;
       align-self: center;
+
+      @include transition(fill);
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      svg {
+        fill: $color-orange;
+      }
+    }
+
+    &:active {
+      opacity: 0.7;
     }
   }
 

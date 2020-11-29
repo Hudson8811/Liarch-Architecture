@@ -1,5 +1,6 @@
 'use strict';
 var body = $('body');
+var DURATION = 300;
 /* Menu */
 
 (function () {
@@ -18,16 +19,21 @@ var body = $('body');
 
   menuOpenBtn.on('click', function() {
     menuCloseBtn.on('click', closeMenu);
-    //body.on('click', closeMenu);
-    menu.addClass(ModifierClass.MENU);
+
     menuOpenBtn.addClass(ModifierClass.TOGGLE);
+
+    setTimeout(function() {
+      menu.addClass(ModifierClass.MENU);
+    }, DURATION + 50);
   });
 
   function closeMenu() {
     menuCloseBtn.off('click', closeMenu);
-    //body.off('click', closeMenu);
     menu.removeClass(ModifierClass.MENU);
-    menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+
+    setTimeout(function() {
+      menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+    }, DURATION + 50);
   }
 
 })();

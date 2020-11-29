@@ -2,14 +2,18 @@
   padding: 15px 0;
   border-top: solid 5px $color-orange--dark;
 
-  @include media(sm) {
+  @include media(md) {
+    padding: 32px 0;
+    border-top-width: 7px;
+  }
+
+  @include media(lg) {
     padding: 44px 0;
     border-top-width: 10px;
   }
 
   &__inner {
     display: flex;
-    justify-content: space-between;
     width: 100%;
     max-width: $width--full;
     margin: 0 auto;
@@ -21,15 +25,47 @@
   }
 
   &__logo {
-    margin-right: 12px;
+    margin-right: 20px;
+
+    @include media(md) {
+      margin-right: 0;
+    }
+
+    @include media(lg) {
+      margin-right: 8.69vw;
+    }
   }
   &__nav {
+    @include media(md) {
+      margin: 0 auto;
+    }
+    @include media(lg) {
+      margin: 0;
+    }
   }
   &__chat {
-    margin-right: 12px;
+    margin-right: 20px;
+    margin-left: auto;
+
+    @include media(md) {
+      margin-right: 2.41vw;
+    }
+
+    @include media(lg) {
+      margin-right: 5.2vw;
+    }
   }
+
   &__search-toggle {
-    margin-right: 12px;
+    margin-right: 20px;
+
+    @include media(md) {
+      margin-right: 2.41vw;
+    }
+
+    @include media(lg) {
+      margin-right: 1.66vw;
+    }
   }
   &__menu-toggle {
   }

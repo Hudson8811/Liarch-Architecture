@@ -19,10 +19,15 @@
     border: solid 1px $color-grey3;
     border-radius: 50%;
 
+    transition: border-color $default-transition-settings,
+      background-color $default-transition-settings;
+
     svg {
       display: block;
       fill: $color-grey2;
       align-self: center;
+
+      @include transition(fill);
     }
 
     &:hover,

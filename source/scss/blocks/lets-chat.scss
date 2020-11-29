@@ -1,4 +1,5 @@
 .lets-chat {
+  $self: &;
   @include media(sm) {
     position: relative;
     display: flex;
@@ -6,10 +7,29 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -8px;
       left: 0;
       width: 100%;
       border-bottom: solid 1px $color-default-black;
+
+      @include transition(border-color);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    #{$self}__text {
+      color: $color-orange;
+    }
+
+    &::before {
+      border-color: $color-orange;
+    }
+
+    svg {
+      fill: $color-orange;
     }
   }
 
@@ -20,9 +40,26 @@
       display: block;
       margin-right: 16px;
       align-self: center;
+
+      @include text(14px, 1.285, $color-default-black);
+      font-weight: 600;
+      text-transform: uppercase;
+
+      @include transition(color);
     }
   }
 
   &__icon {
+    align-self: center;
+
+    svg {
+      @include transition(fill);
+
+      @include media(sm) {
+        display: block;
+        width: auto;
+        height: 14px;
+      }
+    }
   }
 }
