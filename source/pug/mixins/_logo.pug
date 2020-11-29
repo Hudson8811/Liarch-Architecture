@@ -1,12 +1,14 @@
 mixin logo(isHome, cl)
   if (isHome)
     a(class= cl + " logo")
-      picture
-        source(type="image/webp" srcset="../images/logo.webp")
-        img(src="../images/logo.png", alt="Логотип")
+      span.logo__image
+        +icon('logo')(width="52", height="52", aria-label="logo")
+      span.logo__text Liarch architecture studio
   else
-    a(class= cl + " logo", href="index.html")
-      picture
-        source(type="image/webp" srcset="../images/logo.webp")
-        img(src="../images/logo.png", alt="Логотип")
+    a(class= cl + " logo", href="homepage.html")
+      span.logo__image
+        +icon('logo')(width="52", height="52", aria-label="logo")
+      span.logo__text Liarch architecture studio
+
+
 

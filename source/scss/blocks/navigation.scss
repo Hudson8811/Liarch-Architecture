@@ -1,5 +1,10 @@
 .navigation {
   $self: &;
+  display: none;
+
+  @include media(sm) {
+    display: block;
+  }
 
   &__list {
     @include list-reset;

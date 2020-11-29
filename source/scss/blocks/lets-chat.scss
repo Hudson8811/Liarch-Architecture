@@ -1,6 +1,28 @@
 .lets-chat {
-  &__text {
+  @include media(sm) {
+    position: relative;
+    display: flex;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: solid 1px $color-default-black;
+    }
   }
+
+  &__text {
+    display: none;
+
+    @include media(sm) {
+      display: block;
+      margin-right: 16px;
+      align-self: center;
+    }
+  }
+
   &__icon {
   }
 }

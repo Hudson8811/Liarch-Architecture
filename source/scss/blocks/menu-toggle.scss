@@ -1,2 +1,28 @@
 .menu-toggle {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-top: solid 3px $color-default-black;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
 }

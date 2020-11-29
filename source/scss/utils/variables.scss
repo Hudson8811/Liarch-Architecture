@@ -1,14 +1,17 @@
+$width--full: 1550px;
 // Colors
 //---------------------------------
 $color-default-white: #ffffff;
 $color-default-black: #000000;
 
-$color-main: #616161;
-$color-dark: #141419;
-$color-smoky: #f8f8f8;
-$color-grey: #e1e1e1;
-$color-orange: #fb973b;
-$color-orange-hover: lighten(#fb973b, 8%);
+//$color-main: #616161;
+//$color-dark: #141419;
+//$color-smoky: #f8f8f8;
+
+$color-grey: #999999;
+$color-orange--dark: #f5480c;
+$color-orange: #ff4800;
+$color-orange-hover: lighten(#ff4800, 5%);
 
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal

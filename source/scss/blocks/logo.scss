@@ -1,6 +1,36 @@
 .logo {
+  display: flex;
+
   &__image {
+    display: block;
+    width: 42px;
+    margin-right: 8px;
+    align-self: center;
+
+    @include media(sm) {
+      width: 52px;
+      margin-right: 14px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
+
   &__text {
+    display: block;
+    max-width: 110px;
+    align-self: center;
+
+    @include text(12px, 1.285, $color-default-black);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.22px;
+
+    @include media(sm) {
+      font-size: 14px;
+    }
   }
 }

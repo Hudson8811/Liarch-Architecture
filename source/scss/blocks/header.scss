@@ -1,13 +1,35 @@
 .header {
-  &__inner {
+  padding: 15px 0;
+  border-top: solid 5px $color-orange--dark;
+
+  @include media(sm) {
+    padding: 44px 0;
+    border-top-width: 10px;
   }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $width--full;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    > * {
+      align-self: center;
+    }
+  }
+
   &__logo {
+    margin-right: 12px;
   }
   &__nav {
   }
   &__chat {
+    margin-right: 12px;
   }
   &__search-toggle {
+    margin-right: 12px;
   }
   &__menu-toggle {
   }
