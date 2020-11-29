@@ -1,2 +1,36 @@
-footer.footer 
-	.container Футер
+footer.footer
+  .container
+    .footer__top
+      a.footer__email(href="mailto:hello@liarch-studio.co") hello@liarch-studio.co
+      p Let tell us know your dream and we will help you make it become reality
+
+    .row
+      .footer__column.col-12
+        .footer__column-title Office
+        address.footer__address 166 Main Street, Beverly HillsCA, 90210
+        a.footer__phone(href="tel:+00853462188") +0085 346 2188
+      .footer__column.col-12
+        .footer__column-title Help
+
+        ul.footer__column-menu
+          each item in FOOTER_MENU_HELP
+            if item.currentIndex === currentIndex
+              li.footer__column-item.footer__column-item--current
+                a.footer__column-link= item.text
+            else
+              li.footer__column-item
+                a.footer__column-link(href= item.url)= item.text
+
+      .footer__column.col-12
+        .footer__column-title Quick Links
+
+        ul.footer__column-menu
+          each item in FOOTER_MENU_LINKS
+            if item.currentIndex === currentIndex
+              li.footer__column-item.footer__column-item--current
+                a.footer__column-link= item.text
+            else
+              li.footer__column-item
+                a.footer__column-link(href= item.url)= item.text
+      .footer__column.col-12
+        +social('footer__social')
