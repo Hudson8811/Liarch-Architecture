@@ -15,9 +15,9 @@ header.header
     a.header__chat.lets-chat(href="#")
       span.lets-chat__text Let’s chat!
       span.lets-chat__icon
-        img(src="img/chat.png", width="18", height="15" alt="")
-    button.header__search-toggle.search-toggle
-      +icon('loupe')(width="22", height="22")
+        +icon('comment-reply')(width="18", height="18")
+    button.header__search-toggle.search-toggle(type="button")
+      +icon('search')(width="22", height="22")
       span.visually-hidden Show search field
-    button.header__menu-toggle.menu-toggle
+    button.header__menu-toggle.menu-toggle(type="button")
       span.visually-hidden Menu

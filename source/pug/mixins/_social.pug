@@ -1,0 +1,15 @@
+mixin social(cl)
+  - let addClass = cl ? cl + ' social' : 'social';
+  ul(class= addClass)
+    li.social__item
+      a.social__link(href="#", target="_blank")
+        +icon('twitter')(width="18", height="18", aria-label="twitter icon")
+        span.visually-hidden Twitter
+    li.social__item
+      a.social__link(href="#", target="_blank")
+        +icon('facebook')(width="18", height="18", aria-label="facebook icon")
+        span.visually-hidden Facebook
+    li.social__item
+      a.social__link(href="#", target="_blank")
+        +icon('instagram')(width="18", height="18", aria-label="instagram icon")
+        span.visually-hidden Instagram

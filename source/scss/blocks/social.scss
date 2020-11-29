@@ -1,0 +1,43 @@
+.social {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item + &__item {
+    margin-left: 16px;
+
+    @include media(sm) {
+      margin-left: 24px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    border: solid 1px $color-grey3;
+    border-radius: 50%;
+
+    svg {
+      display: block;
+      fill: $color-grey2;
+      align-self: center;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: $color-orange;
+      border-color: $color-orange;
+
+      svg {
+        fill: $color-default-white;
+      }
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

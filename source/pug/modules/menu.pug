@@ -1,3 +1,16 @@
 section.menu
   .menu__inner
-    | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique pariatur inventore hic maiores omnis corrupti aliquam sint, ex aperiam non vero nesciunt ipsam repellat at placeat. Asperiores reiciendis odit laboriosam.
+    button.menu__close(type="button")
+      +icon('close')(width="24", height="24")
+      span.visually-hidden Close menu
+    ul.menu__list
+      each item in MAIN_MENU
+        if item.currentIndex === currentIndex
+          li.menu__item.menu__item--current
+            a.menu__link= item.text
+        else
+          li.menu__item
+            a.menu__link(href= item.url)= item.text
+    +social('menu__social')
+    .menu__bottom
+      .menu__copy © 2019 ARQUITO. All Rights Reserved.
