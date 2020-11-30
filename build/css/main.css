@@ -3903,6 +3903,70 @@ html {
     margin-top: auto;
     margin-bottom: 40px; }
 
+.review {
+  overflow: hidden; }
+  .review__content::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 38px;
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100% auto;
+    background-image: url("../img/quotation.png"); }
+    @media (min-width: 992px) {
+      .review__content::before {
+        width: 64px;
+        height: 48px;
+        margin-bottom: 24px; } }
+    @media (min-width: 1200px) {
+      .review__content::before {
+        width: 78px;
+        height: 58px;
+        margin-bottom: 54px; } }
+  .review__image img {
+    max-width: 100%;
+    height: auto; }
+    @media (min-width: 1200px) {
+      .review__image img {
+        max-width: none; } }
+  .review__text {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.53;
+    color: #000000; }
+    @media (min-width: 992px) {
+      .review__text {
+        margin-bottom: 36px;
+        font-size: 24px; } }
+    @media (min-width: 1200px) {
+      .review__text {
+        margin-bottom: 68px;
+        font-size: 30px; } }
+  .review__author-name {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1;
+    color: #000000; }
+    @media (min-width: 992px) {
+      .review__author-name {
+        margin-bottom: 12px;
+        font-size: 18px; } }
+    @media (min-width: 1200px) {
+      .review__author-name {
+        margin-bottom: 16px;
+        font-size: 22px; } }
+  .review__author-detail {
+    font-size: 12px;
+    line-height: 1;
+    color: #999999; }
+    @media (min-width: 992px) {
+      .review__author-detail {
+        font-size: 14px; } }
+    .review__author-detail span {
+      color: #000000; }
+
 .partners__inner {
   border-bottom: solid 1px #dddddd; }
 

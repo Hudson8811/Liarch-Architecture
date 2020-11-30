@@ -1,0 +1,91 @@
+.review {
+  overflow: hidden;
+
+  &__inner {
+  }
+
+  &__content {
+    &::before {
+      content: "";
+      display: block;
+      width: 50px; //78px;
+      height: 38px;
+      margin-bottom: 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      background-size: 100% auto;
+      background-image: url("../img/quotation.png");
+
+      @include media(lg) {
+        width: 64px;
+        height: 48px; //58px;
+        margin-bottom: 24px;
+      }
+
+      @include media(xl) {
+        width: 78px;
+        height: 58px;
+        margin-bottom: 54px;
+      }
+    }
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+      height: auto;
+
+      @include media(xl) {
+        max-width: none;
+      }
+    }
+
+    @include media(md) {
+    }
+  }
+
+  &__text {
+    margin-bottom: 24px;
+
+    @include text(16px, 1.53);
+
+    @include media(lg) {
+      margin-bottom: 36px;
+      font-size: 24px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 68px;
+      font-size: 30px;
+    }
+  }
+
+  &__author {
+    &-name {
+      margin-bottom: 8px;
+
+      @include text(14px, 1);
+
+      @include media(lg) {
+        margin-bottom: 12px;
+        font-size: 18px;
+      }
+      @include media(xl) {
+        margin-bottom: 16px;
+        font-size: 22px;
+      }
+    }
+
+    &-detail {
+      @include text(12px, 1, $color-grey);
+
+      @include media(lg) {
+        font-size: 14px;
+      }
+
+      span {
+        color: $color-default-black;
+      }
+    }
+  }
+}
