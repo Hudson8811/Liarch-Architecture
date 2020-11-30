@@ -102,6 +102,12 @@
     }
   }
 
+  &__social {
+    @include media(lg) {
+      justify-content: flex-end;
+    }
+  }
+
   &__copyright {
     margin-bottom: 12px;
 
