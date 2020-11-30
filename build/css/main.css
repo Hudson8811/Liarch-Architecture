@@ -3985,20 +3985,34 @@ html {
   margin-bottom: 16px; }
   @media (min-width: 576px) {
     .article-list__header {
-      margin-bottom: 20px; } }
+      margin-bottom: 24px; } }
+  @media (min-width: 768px) {
+    .article-list__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      text-align: left; } }
+  @media (min-width: 992px) {
+    .article-list__header {
+      margin-bottom: 80px; } }
   @media (min-width: 1200px) {
     .article-list__header {
-      margin-bottom: 24px; } }
+      margin-bottom: 100px; } }
 
 .article-list__heading {
   margin-bottom: 16px;
   text-align: center; }
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     .article-list__heading {
-      margin-bottom: 0px; } }
+      margin-bottom: 0;
+      align-self: baseline; } }
   @media (min-width: 1200px) {
     .article-list__heading {
       margin-bottom: 0px; } }
+
+@media (min-width: 768px) {
+  .article-list__more {
+    align-self: baseline; } }
 
 .article-list__list {
   list-style: none;
