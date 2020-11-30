@@ -1,0 +1,47 @@
+.article-list {
+  &__header {
+    text-align: center;
+    margin-bottom: 16px;
+
+    @include media(sm) {
+      margin-bottom: 20px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include media(sm) {
+      margin-bottom: 0px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__more {
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    @include media(md) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

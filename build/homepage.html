@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel="preload" href="fonts/Jost-Light.woff2" as="font" />
+  <link rel="preload" href="fonts/Jost-Regular.woff2" as="font" />
+  <link rel="preload" href="fonts/Jost-SemiBold.woff2" as="font" />
+  <link rel="preload" href="fonts/Jost-Italic.woff2" as="font" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Liarch - Architecture &amp; Interior HTML Template</title>
+</head>
+
+<body class="webpage">
+  <div style="display: none">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="close" viewBox="0 0 64 64">
+        <path d="M35.4 32l19.9-19.9c1-1 1-2.4 0-3.4s-2.4-1-3.4 0L32 28.6 12 8.8c-.9-1-2.4-1-3.3 0s-1 2.4 0 3.4L28.6 32 8.7 51.9c-1 1-1 2.4 0 3.4.5.4 1 .7 1.7.7s1.2-.2 1.7-.7l20-19.9 20 19.8c.5.4 1.2.7 1.7.7s1.2-.2 1.7-.7c1-1 1-2.4 0-3.4L35.4 32z" />
+      </symbol>
+      <symbol id="facebook" viewBox="0 0 64 64">
+        <path d="M47.9 25.6H40V15h6.5c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2h-7.6C30.7 0 25 5.9 25 14.4v11.2h-9c-1.5 0-2.7 1.2-2.7 2.8v7.4c0 1.5 1.2 2.7 2.7 2.7h9v22.9c0 1.5 1.2 2.7 2.7 2.7h9.8c.6 0 1.2-.3 1.6-.7.5-.5.7-1.2.7-1.8V38.4h6.8c1.3 0 2.4-.9 2.6-2.1v-.2l1.4-7.1c.2-.8 0-1.6-.6-2.4-.4-.5-1.2-.9-2.1-1z" />
+      </symbol>
+      <symbol id="comments-reply" viewBox="0 0 64 64">
+        <path d="M64 45.3V8c0-1.6-1.1-2.7-2.7-2.7H2.7C1.1 5.3 0 6.4 0 8v48c0 1.1.5 1.9 1.3 2.4.5.3.8.3 1.3.3s.8 0 1.3-.3L22.1 48h7.2l12.3 9.9c.8.5 1.6.8 2.7.8.5 0 1.1 0 1.9-.5 1.3-.8 2.4-2.1 2.4-3.7v-1.6c3.5.8 6.7 2.7 9.1 4 1.3.8 2.9.8 4.3 0 1.3-.8 2.1-2.1 2.1-3.7 0-.8 0-1.6-.3-2.4-.3-1.1-.5-2.1-1.1-3.2.5-.1 1.3-1.2 1.3-2.3zm-42.7-2.6c-.5 0-.8 0-1.3.3L5.3 51.5V10.7h53.3v32c-2.9-2.7-6.4-4.5-10.7-5.3v-2.9c0-1.6-.8-2.9-2.4-3.7-1.3-.8-3.2-.5-4.3.5l-12.7 10c-.5.3-.8.8-1.1 1.3h-6.1zm35 5.3c.8 1.1 1.1 1.9 1.6 3.2-3.5-1.9-8-3.7-12.3-4l-2.9-.3V52l-9.3-7.5 9.3-7.5v5.1l2.4.3c4 .5 7.5 2.1 10.1 4.8l.8.8h.3z" />
+        <circle cx="16" cy="24" r="5.3" />
+        <circle cx="32" cy="24" r="5.3" />
+        <circle cx="48" cy="24" r="5.3" />
+      </symbol>
+      <symbol id="instagram" viewBox="0 0 64 64">
+        <path d="M32 16.9c-8.3 0-15 6.8-15 15.1s6.7 15.1 15 15.1S47 40.3 47 32s-6.7-15.1-15-15.1zm0 25.2c-5.5 0-10-4.5-10-10.1s4.5-10.1 10-10.1S42 26.4 42 32s-4.5 10.1-10 10.1zM47 10c-2.8 0-5 2.3-5 5s2.2 5 5 5 5-2.3 5-5-2.2-5-5-5z" />
+        <path d="M48 0H16C7.2 0 0 7.2 0 16v31.7C0 56.7 7.3 64 16.3 64h31.5C56.7 64 64 56.7 64 47.7V16c0-8.8-7.2-16-16-16zm11 47.7C59 53.9 54 59 47.8 59H16.3C10.1 59 5 54 5 47.8V16C5 9.9 9.9 5 16 5h32c6.1 0 11 4.9 11 11v31.7z" />
+      </symbol>
+      <symbol id="logo" viewBox="0 0 600 600">
+        <path d="M0 259h39.9v301h5.4c53.7 0 107.3-.1 161 .1 4.2 0 5.6-1.3 6.7-5.2 28.3-96.6 56.7-193.1 85.1-289.7.4-1.4.9-2.7 1.9-5.6 1 3.1 1.5 4.9 2.1 6.7 28.3 96.2 56.6 192.5 84.9 288.7.9 3 1.6 5 5.8 5 54.5-.2 109-.1 163.5-.1h3.3V40.2H40.1v158.7H0V0h600v600H359c-4.3-14.6-8.5-29.3-12.8-43.9-12.2-41.6-24.4-83.2-36.7-124.8-3-10.1-6-20.2-9.4-31.7-1 2.8-1.6 4.1-2 5.4-3.1 10.5-6.1 21-9.2 31.6-16 54.5-32 109-48 163.4H-.1C0 486.3 0 372.7 0 259z" />
+      </symbol>
+      <symbol id="menu" viewBox="0 -53 384 384">
+        <path d="M368 154.668H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zM368 32H16C7.168 32 0 24.832 0 16S7.168 0 16 0h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 245.332H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0" />
+      </symbol>
+      <symbol id="search" viewBox="0 0 64 64">
+        <path d="M62.9 56.5l-17-13.8c7.2-9.9 6.1-23.7-2.7-32.5C38.4 5.3 32 2.7 25.3 2.7s-13 2.6-17.8 7.4S0 21.3 0 28s2.7 13.1 7.5 17.9c5.1 5.1 11.5 7.5 17.9 7.5 6.1 0 12.3-2.1 17.1-6.7l17.3 14.1c.5.5 1.1.5 1.6.5.8 0 1.6-.3 2.1-1.1.8-1 .8-2.6-.6-3.7zM25.3 48c-5.3 0-10.4-2.1-14.1-5.9-3.7-3.7-5.9-8.8-5.9-14.1s2.1-10.4 5.9-14.1S20 8 25.3 8s10.4 2.1 14.1 5.9 5.9 8.8 5.9 14.1-2.1 10.4-5.9 14.1c-3.7 3.8-8.7 5.9-14.1 5.9z" />
+      </symbol>
+      <symbol id="twitter" viewBox="0 0 64 64">
+        <path d="M20.1 58.1c24.2 0 37.4-20 37.4-37.4 0-.5 0-1.1-.1-1.7 2.6-1.9 4.8-4.2 6.5-6.8-2.4 1.1-4.9 1.8-7.6 2.1 2.7-1.6 4.8-4.2 5.8-7.3-2.6 1.5-5.3 2.6-8.4 3.2C51.3 7.6 47.9 6 44.1 6c-7.3 0-13.2 5.9-13.2 13.2 0 1 .1 2 .3 3-10.6-.6-20.3-5.8-26.8-13.8-1.1 2-1.8 4.2-1.8 6.6 0 4.6 2.3 8.6 5.9 10.9-2.2-.1-4.2-.7-5.9-1.6v.1c0 6.3 4.5 11.7 10.5 12.9-1.1.3-2.3.5-3.4.5-.9 0-1.7-.1-2.5-.3 1.7 5.2 6.5 9 12.3 9.1-4.5 3.5-10.2 5.6-16.3 5.6-1.2.1-2.2 0-3.2-.1 5.7 3.8 12.7 6 20.1 6" />
+      </symbol>
+    </svg>
+  </div>
+  <header class="header">
+    <div class="header__inner">
+      <a class="header__logo logo">
+        <span class="logo__image">
+          <svg width="52" height="52" aria-label="logo">
+            <use xlink:href="#logo"></use>
+          </svg>
+        </span>
+        <span class="logo__text">Liarch architecture studio</span>
+      </a>
+      <nav class="header__nav navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item navigation__item--current">
+            <a class="navigation__link">What we do</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Works</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">About</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">News</a>
+          </li>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <a class="header__chat lets-chat" href="#">
+        <span class="lets-chat__text">Let’s chat!</span>
+        <span class="lets-chat__icon">
+          <svg width="18" height="18">
+            <use xlink:href="#comments-reply"></use>
+          </svg>
+        </span>
+      </a>
+      <button class="header__search-toggle search-toggle" type="button">
+        <svg width="22" height="22">
+          <use xlink:href="#search"></use>
+        </svg>
+        <span class="visually-hidden">Show search field</span>
+      </button>
+      <button class="header__menu-toggle menu-toggle" type="button">
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+  <section class="menu">
+    <div class="menu__inner">
+      <button class="menu__close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="#close"></use>
+        </svg>
+        <span class="visually-hidden">Close menu</span>
+      </button>
+      <ul class="menu__list">
+        <li class="menu__item menu__item--current">
+          <a class="menu__link">What we do</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Works</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">About</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">News</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="menu__social social">
+        <li class="social__item">
+          <a class="social__link" href="#" target="_blank">
+            <svg width="18" height="18" aria-label="twitter icon">
+              <use xlink:href="#twitter"></use>
+            </svg>
+            <span class="visually-hidden">Twitter</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" target="_blank">
+            <svg width="18" height="18" aria-label="facebook icon">
+              <use xlink:href="#facebook"></use>
+            </svg>
+            <span class="visually-hidden">Facebook</span>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="#" target="_blank">
+            <svg width="18" height="18" aria-label="instagram icon">
+              <use xlink:href="#instagram"></use>
+            </svg>
+            <span class="visually-hidden">Instagram</span>
+          </a>
+        </li>
+      </ul>
+      <div class="menu__bottom">
+        <div class="menu__copy">© 2019 ARQUITO. All Rights Reserved.</div>
+      </div>
+    </div>
+  </section>
+  <main>
+    <section class="partners">
+      <div class="partners__inner container">
+        <h2 class="partners__heading heading">Our trusted partners</h2>
+        <div class="partners__text">Your succesful, our reputation! We are proud to accompany more than 30 major brands</div>
+        <ul class="partners__list">
+          <li class="partners__item">
+            <img src="img/partners/1.png" width="132" height="54" alt="badische landes-bibliothek">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/2.png" width="116" height="57" alt="christopher willis">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/3.png" width="104" height="64" alt="serenity hotel">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/4.png" width="125" height="32" alt="artchive crafts gallery">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/5.png" width="150" height="45" alt="creative space">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/6.png" width="141" height="27" alt="alpatech">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/7.png" width="104" height="38" alt="neuton interactive">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/8.png" width="124" height="47" alt="papilon">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/9.png" width="140" height="19" alt="good habits">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/10.png" width="134" height="29" alt="francois redblade">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/11.png" width="108" height="37" alt="oak">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/12.png" width="136" height="43" alt="magnet studio">
+          </li>
+          <li class="partners__item">
+            <img src="img/partners/13.png" width="111" height="39" alt="r.m rick meyers">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="article-list">
+      <div class="container">
+        <header class="article-list__header">
+          <h2 class="article-list__heading heading">Inspirations & xperiences</h2>
+          <a class="article-list__more more" href="#">more articles</a>
+        </header>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="">
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-2.jpg" width="356" height="356" alt="">
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-08">December 8, 2020</time>
+                <h3 class="article-preview__heading">Discover top 15 buildings modern in Italia</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-3.jpg" width="356" height="356" alt="">
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-06">December 6, 2020</time>
+                <h3 class="article-preview__heading">The dome in architectural, the attractive from the art</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a class="footer__email" href="mailto:hello@liarch-studio.co">hello@liarch-studio.co</a>
+        <p>Let tell us know your dream and we will help you make it become reality</p>
+      </div>
+      <div class="footer__middle row">
+        <div class="footer__column col-12 col-md">
+          <div class="footer__column-title">Office</div>
+          <address class="footer__address">166 Main Street, Beverly Hills CA, 90210</address>
+          <a class="footer__phone" href="tel:+00853462188">+0085 346 2188</a>
+        </div>
+        <div class="footer__column col-12 col-sm">
+          <div class="footer__column-title">Help</div>
+          <ul class="footer__column-menu">
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">FAQs</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Terms &amp; Conditions</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Privacy Policy</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Help</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Services</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column col-12 col-sm">
+          <div class="footer__column-title">Quick Links</div>
+          <ul class="footer__column-menu">
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">About</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Contact</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">Career</a>
+            </li>
+            <li class="footer__column-item">
+              <a class="footer__column-link" href="#">News</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column footer__column col-12 col-lg">
+          <ul class="footer__social social">
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="18" height="18" aria-label="twitter icon">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+                <span class="visually-hidden">Twitter</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="18" height="18" aria-label="facebook icon">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+                <span class="visually-hidden">Facebook</span>
+              </a>
+            </li>
+            <li class="social__item">
+              <a class="social__link" href="#" target="_blank">
+                <svg width="18" height="18" aria-label="instagram icon">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer__copyright col-12 col-sm-6">© 2020 <span>LIARCH STUDIO.</span> All Rights Reserved</div>
+        <div class="footer__design col-12 col-sm-6">Design by <span>LoganCee</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
