@@ -1,7 +1,14 @@
 .heading {
-  @include text(24px, 1.25);
+  margin: 0;
+
+  @include text(32px, 1.18);
+  font-weight: 300;
 
   @include media(sm) {
-    font-size: 36px;
+    font-size: 42px;
+  }
+
+  @include media(xl) {
+    font-size: 54px;
   }
 }

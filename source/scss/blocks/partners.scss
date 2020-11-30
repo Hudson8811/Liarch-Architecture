@@ -1,0 +1,95 @@
+.partners {
+  &__inner {
+    border-bottom: solid 1px $color-grey4;
+  }
+  &__heading {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include media(sm) {
+      margin-bottom: 20px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 60px;
+
+    @include text(14px, 1.66, $color-grey2);
+    text-align: center;
+
+    @include media(sm) {
+      margin-bottom: 80px;
+      font-size: 16px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 160px;
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: -24px;
+    margin-bottom: 60px;
+
+    @include media(sm) {
+      margin-top: -32px;
+      margin-bottom: 80px;
+    }
+
+    @include media(lg) {
+      margin-top: -48px;
+      margin-bottom: 120px;
+    }
+
+    @include media(xl) {
+      margin-top: -100px;
+      margin-bottom: 180px;
+    }
+  }
+
+  &__item {
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    margin-top: 24px;
+    filter: grayscale(1);
+
+    @include transition(filter);
+
+    @include media(sm) {
+      width: 33.33%;
+      margin-top: 32px;
+    }
+
+    @include media(lg) {
+      width: 25%;
+      margin-top: 48px;
+    }
+
+    @include media(xl) {
+      width: 20%;
+      margin-top: 100px;
+    }
+
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 90%;
+      height: auto;
+    }
+  }
+}
