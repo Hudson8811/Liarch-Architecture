@@ -15,7 +15,7 @@ $color-grey4: #dddddd;
 $color-grey5: #d6d6d6;
 $color-orange--dark: #f5480c;
 $color-orange: #ff4800;
-$color-orange-hover: lighten(#ff4800, 5%);
+$color-orange-hover: lighten(#ff4800, 10%);
 
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal
@@ -44,7 +44,7 @@ $breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px,
+  xxl: 1560px,
   xxx: 1900px,
 ) !default;
 
