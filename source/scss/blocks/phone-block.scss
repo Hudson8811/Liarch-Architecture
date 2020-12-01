@@ -1,0 +1,51 @@
+.phone-block {
+  display: flex;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background-color: $color-pale-pink;
+    flex-shrink: 0;
+    align-self: center;
+
+    svg {
+      fill: $color-orange;
+      align-self: center;
+    }
+  }
+  &__content {
+    align-self: center;
+  }
+
+  &__hint {
+    margin-bottom: 10px;
+
+    @include text(12px, 1, $color-grey2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__number {
+    display: inline-block;
+    vertical-align: top;
+
+    @include text(20px, 1);
+    letter-spacing: 0.025em;
+
+    @include transition(color);
+
+    @include media(md) {
+      font-size: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $color-orange;
+    }
+  }
+}
