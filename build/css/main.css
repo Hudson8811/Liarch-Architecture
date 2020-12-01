@@ -4339,3 +4339,105 @@ html {
     @media (min-width: 1560px) {
       .our-story__statistics {
         margin-top: 147px; } }
+
+.type-service__heading {
+  margin-bottom: 20px;
+  line-height: 1.08; }
+  @media (min-width: 1200px) {
+    .type-service__heading {
+      margin-bottom: 42px; } }
+
+.type-service__text {
+  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #666666; }
+  @media (min-width: 1200px) {
+    .type-service__text {
+      margin-bottom: 100px;
+      font-size: 18px; } }
+
+.type-service__list {
+  list-style: none;
+  padding: 0; }
+
+.type-service__item {
+  text-align: center; }
+  @media (min-width: 768px) {
+    .type-service__item {
+      text-align: left; } }
+  .type-service__item + .type-service__item {
+    margin-top: 32px; }
+    @media (min-width: 768px) {
+      .type-service__item + .type-service__item {
+        margin-top: 0; } }
+  .type-service__item-icon {
+    display: flex;
+    justify-content: center;
+    height: 116px;
+    margin: 0 auto 24px;
+    background-size: 100% auto; }
+    @media (min-width: 768px) {
+      .type-service__item-icon {
+        margin-left: 0; } }
+    @media (min-width: 1200px) {
+      .type-service__item-icon {
+        margin-bottom: 57px; } }
+    .type-service__item-icon--interior {
+      width: 120px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%23FAECE7' d='M87.606 9.356s25.108 9.985 31.488 33.144c6.38 23.16-22.618 64.286-47.401 69.451-24.784 5.166-68.704-8.565-71.402-46.028C-2.408 28.46 15.143 9.288 41.163 2.105c26.953-7.441 46.443 7.251 46.443 7.251z'/%3e%3c/svg%3e"); }
+    .type-service__item-icon--design {
+      width: 115px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%23FAECE7' d='M58.534 113.411s-26.325 6.09-44.758-9.313c-18.433-15.404-18.017-65.724-.587-84.083 17.431-18.36 61.353-32.084 84.905-2.826 23.552 29.258 20.043 55.012 2.746 75.734-17.918 21.466-42.306 20.488-42.306 20.488z'/%3e%3c/svg%3e"); }
+    .type-service__item-icon--furniture {
+      width: 120px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%23FAECE7' d='M12.544 83.901s-16.991-21.01-11.2-44.324C7.134 16.263 52.568-5.371 76.702 2.275c24.134 7.645 55.686 41.141 39.675 75.118-16.01 33.976-40.705 42.085-66.906 35.592-27.14-6.725-36.927-29.084-36.927-29.084z'/%3e%3c/svg%3e"); }
+    .type-service__item-icon svg {
+      align-self: center;
+      fill: #ff4800; }
+  .type-service__item-heading {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 1.11;
+    color: #000000;
+    font-weight: 300; }
+    @media (min-width: 768px) {
+      .type-service__item-heading {
+        max-width: 210px; } }
+    @media (min-width: 1200px) {
+      .type-service__item-heading {
+        max-width: 270px;
+        margin-bottom: 30px;
+        font-size: 36px; } }
+    .type-service__item-heading a {
+      color: #000000; }
+      .type-service__item-heading a:hover, .type-service__item-heading a:focus {
+        outline: none;
+        text-decoration: underline; }
+      .type-service__item-heading a:active {
+        opacity: 0.7; }
+  .type-service__item-text {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.66;
+    color: #666666; }
+    @media (min-width: 768px) {
+      .type-service__item-text {
+        max-width: 275px; } }
+    @media (min-width: 1200px) {
+      .type-service__item-text {
+        max-width: 320px;
+        margin-bottom: 64px;
+        font-size: 18px; } }
+  .type-service__item-link {
+    font-size: 14px;
+    line-height: 1;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease; }
+    .type-service__item-link:hover, .type-service__item-link:focus {
+      outline: none;
+      color: #ff4800; }
+    .type-service__item-link:active {
+      opacity: 0.7; }
