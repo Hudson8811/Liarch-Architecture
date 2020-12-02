@@ -52,7 +52,7 @@
       border-top: solid 1px $color-grey5;
     }
 
-    @include media(md) {
+    @include media(xl) {
       padding: 44px;
     }
   }

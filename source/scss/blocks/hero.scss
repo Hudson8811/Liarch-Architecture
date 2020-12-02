@@ -1,5 +1,6 @@
 .hero {
   overflow: hidden;
+  padding-top: 40px;
 
   @include media(xl) {
     padding-top: 83px;
@@ -25,6 +26,10 @@
   }
 
   &__content {
+    @include media(md) {
+      padding-right: 0;
+    }
+
     @include media(xxl) {
       padding-top: 26px;
       align-self: flex-start;
@@ -32,8 +37,11 @@
   }
 
   &__heading {
-    max-width: 300px;
     margin-bottom: 20px;
+
+    @include media(lg) {
+      max-width: 340px;
+    }
 
     @include media(xl) {
       max-width: none;

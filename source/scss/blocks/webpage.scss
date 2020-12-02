@@ -1,40 +1,83 @@
 .webpage {
   &__hero {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 165px;
     }
   }
+
   &__our-story {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 165px;
     }
   }
 
   &__type-service {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 172px;
     }
   }
 
   &__latest-projects {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 160px;
     }
   }
 
   &__review {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 185px;
     }
   }
 
   &__partners {
+    margin-bottom: 60px;
+
+    @include media(md) {
+      margin-bottom: 100px;
+    }
+
     @include media(xl) {
       margin-bottom: 143px;
     }
   }
 
   &__article-list {
+    margin-bottom: 100px;
+
+    @include media(md) {
+      margin-bottom: 150px;
+    }
+
     @include media(xl) {
       margin-bottom: 212px;
     }

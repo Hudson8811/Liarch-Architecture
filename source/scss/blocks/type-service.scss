@@ -12,6 +12,10 @@
 
     @include text(14px, 1.2, $color-grey2);
 
+    @include media(md) {
+      margin-bottom: 60px;
+    }
+
     @include media(xl) {
       margin-bottom: 112px;
       font-size: 18px;

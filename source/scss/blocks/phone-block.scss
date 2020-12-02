@@ -33,12 +33,12 @@
     display: inline-block;
     vertical-align: top;
 
-    @include text(20px, 1);
+    @include text(18px, 1);
     letter-spacing: 0.025em;
 
     @include transition(color);
 
-    @include media(md) {
+    @include media(lg) {
       font-size: 24px;
     }
 

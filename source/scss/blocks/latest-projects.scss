@@ -80,9 +80,13 @@
       }
 
       li {
-        margin: 0 11px;
+        margin: 0 4px;
         width: auto;
         height: auto;
+
+        @include media(sm) {
+          margin: 0 11px;
+        }
 
         button {
           width: 8px;
