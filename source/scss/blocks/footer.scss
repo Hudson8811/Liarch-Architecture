@@ -176,6 +176,7 @@
     }
     &-link {
       @include text(14px, 1.44, $color-grey2);
+      @include transition(color);
 
       @include media(xl) {
         font-size: 18px;

@@ -1,0 +1,224 @@
+.latest-projects {
+  padding-bottom: 24px;
+
+  @include media(sm) {
+    padding-bottom: 48px;
+  }
+
+  @include media(xl) {
+    padding-bottom: 96px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 16px;
+
+    @include media(sm) {
+      margin-bottom: 24px;
+    }
+
+    @include media(md) {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      text-align: left;
+    }
+
+    @include media(lg) {
+      margin-bottom: 80px;
+    }
+
+    @include media(xl) {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @include media(sm) {
+      //margin-bottom: 0px;
+    }
+
+    @include media(md) {
+      margin-bottom: 0;
+      align-self: baseline;
+    }
+
+    @include media(xl) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__more {
+    @include media(md) {
+      align-self: baseline;
+    }
+  }
+
+  &__inner {
+    @include media(xxl) {
+      max-width: $width--full;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 0 !important;
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      bottom: -24px;
+
+      @include media(sm) {
+        bottom: -48px;
+      }
+
+      @include media(xl) {
+        bottom: -96px;
+      }
+
+      li {
+        margin: 0 11px;
+        width: auto;
+        height: auto;
+
+        button {
+          width: 8px;
+          height: 8px;
+          margin: 0;
+          padding: 0;
+          appearance: none;
+          border-radius: 4px;
+          background-color: $color-grey3;
+
+          transition: width $default-transition-settings,
+            background-color $default-transition-settings;
+        }
+
+        &.slick-active {
+          button {
+            width: 36px;
+            background-color: $color-orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    $item: &;
+    position: relative;
+
+    @include media(md) {
+      width: calc(690px - 155px) !important;
+      margin-right: 155px;
+
+      &.slick-current + & {
+        transform: translateX(calc(-155px + 10px));
+
+        #{$item}-content {
+          opacity: 0;
+        }
+      }
+    }
+
+    @include media(lg) {
+      width: calc(930px - 200px) !important;
+      margin-right: 200px;
+
+      &.slick-current + & {
+        transform: translateX(calc(-200px + 10px));
+      }
+    }
+
+    @include media(xl) {
+      width: calc(1110px - 235px) !important;
+      margin-right: 235px;
+
+      &.slick-current + & {
+        transform: translateX(calc(-235px + 10px));
+      }
+    }
+
+    @include media(xxl) {
+      width: 1145px !important; //calc(1110px - 375px) !important;
+      margin-right: 375px;
+
+      &.slick-current + & {
+        transform: translateX(calc(-375px + 10px));
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &-content {
+      padding: 10px 0;
+      background-color: $color-default-white;
+      //opacity:1;
+
+      @include transition(opacity);
+
+      @include media(sm) {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        padding: 20px;
+      }
+
+      @include media(lg) {
+        padding: 32px;
+      }
+
+      @include media(xl) {
+        min-width: 475px;
+        padding: 48px;
+      }
+
+      @include media(xxl) {
+        padding: 64px 60px 50px;
+      }
+    }
+    &-detail {
+      margin-bottom: 6px;
+
+      @include text(12px, 1, $color-grey2);
+      letter-spacing: 0.025em;
+
+      @include media(lg) {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      @include media(xl) {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      @include media(xxl) {
+        margin-bottom: 24px;
+      }
+    }
+
+    &-heading {
+      @include text(20px, 1);
+
+      @include media(lg) {
+        font-size: 30px;
+      }
+
+      @include media(xl) {
+        font-size: 36px;
+      }
+
+      @include media(xxl) {
+        font-size: 40px;
+      }
+    }
+  }
+}

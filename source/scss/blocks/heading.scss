@@ -5,11 +5,23 @@
   font-weight: 300;
   letter-spacing: -0.025em;
 
+  &--h1 {
+    font-size: 36px;
+  }
+
   @include media(sm) {
     font-size: 42px;
+
+    &--h1 {
+      font-size: 48px;
+    }
   }
 
   @include media(xl) {
     font-size: 54px;
+
+    &--h1 {
+      font-size: 64px;
+    }
   }
 }

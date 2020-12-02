@@ -3,7 +3,7 @@ var body = $('body');
 var DURATION = 300;
 /* Menu */
 
-(function () {
+(function() {
   var menuOpenBtn = $('.menu-toggle');
   var menuCloseBtn = $('.menu__close');
   var menu = $('.menu');
@@ -36,4 +36,16 @@ var DURATION = 300;
     }, DURATION + 50);
   }
 
+})();
+
+/* Слайдер проектов на главной */
+(function(){
+  var slider = $('.__js_latest-projects--single');
+
+  slider.slick({
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 300
+  });
 })();
