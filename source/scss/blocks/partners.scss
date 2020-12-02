@@ -11,7 +11,7 @@
     }
 
     @include media(xl) {
-      margin-bottom: 24px;
+      margin-bottom: 19px;
     }
   }
 
@@ -27,7 +27,7 @@
     }
 
     @include media(xl) {
-      margin-bottom: 160px;
+      margin-bottom: 118px;
       font-size: 18px;
     }
   }
@@ -52,8 +52,8 @@
     }
 
     @include media(xl) {
-      margin-top: -100px;
-      margin-bottom: 180px;
+      margin-top: -98px;
+      margin-bottom: 173px;
     }
   }
 
@@ -78,7 +78,7 @@
 
     @include media(xl) {
       width: 20%;
-      margin-top: 100px;
+      margin-top: 98px;
     }
 
     &:hover {

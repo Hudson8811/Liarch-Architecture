@@ -1,6 +1,10 @@
 .hero {
   overflow: hidden;
 
+  @include media(xl) {
+    padding-top: 83px;
+  }
+
   &__intro {
     margin-bottom: 20px;
 
@@ -21,6 +25,10 @@
   }
 
   &__content {
+    @include media(xxl) {
+      padding-top: 26px;
+      align-self: flex-start;
+    }
   }
 
   &__heading {
@@ -28,7 +36,11 @@
     margin-bottom: 20px;
 
     @include media(xl) {
-      max-width: 390px;
+      max-width: none;
+    }
+
+    @include media(xxl) {
+      margin-bottom: 22px;
     }
   }
 
@@ -41,10 +53,18 @@
     @include media(xl) {
       font-size: 18px;
     }
+
+    @include media(xxl) {
+      margin-bottom: 54px;
+    }
   }
 
   &__buttons {
     margin-bottom: 40px;
+
+    @include media(xxl) {
+      margin-bottom: 84px;
+    }
   }
 
   &__notice {
@@ -58,6 +78,10 @@
 
     @include media(xl) {
       font-size: 16px;
+    }
+    @include media(xxl) {
+      margin-bottom: 46px;
+      padding-top: 43px;
     }
   }
 

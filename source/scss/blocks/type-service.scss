@@ -13,13 +13,15 @@
     @include text(14px, 1.2, $color-grey2);
 
     @include media(xl) {
-      margin-bottom: 100px;
+      margin-bottom: 112px;
       font-size: 18px;
     }
   }
 
   &__list {
     list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
   }
 
@@ -50,7 +52,7 @@
       }
 
       @include media(xl) {
-        margin-bottom: 57px;
+        margin-bottom: 50px;
       }
 
       &--interior {
@@ -86,7 +88,7 @@
 
       @include media(xl) {
         max-width: 270px;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
         font-size: 36px;
       }
 
@@ -116,7 +118,7 @@
 
       @include media(xl) {
         max-width: 320px;
-        margin-bottom: 64px;
+        margin-bottom: 51px;
         font-size: 18px;
       }
     }

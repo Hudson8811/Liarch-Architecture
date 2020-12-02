@@ -5,6 +5,10 @@
   }
 
   &__content {
+    @include media(xl) {
+      margin-bottom: 60px;
+    }
+
     &::before {
       content: "";
       display: block;
@@ -25,7 +29,7 @@
       @include media(xl) {
         width: 78px;
         height: 58px;
-        margin-bottom: 54px;
+        margin-bottom: 46px;
       }
     }
   }
@@ -48,6 +52,7 @@
     margin-bottom: 24px;
 
     @include text(16px, 1.53);
+    font-weight: 300;
 
     @include media(lg) {
       margin-bottom: 36px;
@@ -55,7 +60,8 @@
     }
 
     @include media(xl) {
-      margin-bottom: 68px;
+      margin-bottom: 60px;
+      padding-right: 10px;
       font-size: 30px;
     }
   }

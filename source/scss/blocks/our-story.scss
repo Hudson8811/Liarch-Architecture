@@ -7,7 +7,7 @@
 
     @include media(xl) {
       //max-width: $width--full;
-      padding-bottom: 112px;
+      padding-bottom: 104px;
     }
   }
 
@@ -30,7 +30,7 @@
 
       @include media(lg) {
         left: 14.1%;
-        bottom: 17.35%;
+        bottom: 16.9%;
         transform: translateX(0);
       }
     }
@@ -57,7 +57,7 @@
 
     @include media(xxl) {
       width: 850px;
-      margin-left: -315px;
+      margin-left: -240px;
     }
 
     img {
@@ -74,7 +74,7 @@
     font-weight: 600;
 
     @include media(xxl) {
-      margin-bottom: 32px;
+      margin-bottom: 25px;
     }
 
     &-value {
@@ -114,14 +114,22 @@
   }
 
   &__content {
+    @include media(xxl) {
+      //padding-top: 60px;
+      //align-self: flex-start;
+      transform: translateX(75px);
+    }
   }
 
   &__heading {
     margin-bottom: 20px;
-    line-height: 1.08;
 
     @include media(xl) {
       margin-bottom: 30px;
+    }
+
+    @include media(xxl) {
+      margin-bottom: 37px;
     }
   }
 
@@ -136,6 +144,11 @@
       font-size: 18px;
     }
 
+    @include media(xxl) {
+      margin-bottom: 42px;
+      line-height: 1.65;
+    }
+
     &--style-bolditalic {
       font-size: 16px;
       color: $color-default-black;
@@ -144,6 +157,10 @@
       @include media(xl) {
         font-size: 22px;
       }
+
+      @include media(xxl) {
+        line-height: 1.45;
+      }
     }
   }
 
@@ -151,6 +168,11 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+
+    @include media(xxl) {
+      margin-top: 60px;
+      transform: translateY(10px);
+    }
   }
 
   &__btn {
@@ -194,7 +216,7 @@
     }
 
     @include media(xxl) {
-      margin-top: 147px;
+      margin-top: 130px;
     }
   }
 }

@@ -1,3 +1,42 @@
 .webpage {
+  &__hero {
+    @include media(xl) {
+      margin-bottom: 165px;
+    }
+  }
+  &__our-story {
+    @include media(xl) {
+      margin-bottom: 165px;
+    }
+  }
 
+  &__type-service {
+    @include media(xl) {
+      margin-bottom: 172px;
+    }
+  }
+
+  &__latest-projects {
+    @include media(xl) {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__review {
+    @include media(xl) {
+      margin-bottom: 185px;
+    }
+  }
+
+  &__partners {
+    @include media(xl) {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__article-list {
+    @include media(xl) {
+      margin-bottom: 212px;
+    }
+  }
 }

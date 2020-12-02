@@ -6,7 +6,7 @@
   }
 
   @include media(xl) {
-    padding-bottom: 96px;
+    padding-bottom: 104px;
   }
 
   &__header {
@@ -29,7 +29,7 @@
     }
 
     @include media(xl) {
-      margin-bottom: 100px;
+      margin-bottom: 105px;
     }
   }
 
@@ -76,7 +76,7 @@
       }
 
       @include media(xl) {
-        bottom: -96px;
+        bottom: -104px;
       }
 
       li {
@@ -181,7 +181,7 @@
       }
 
       @include media(xxl) {
-        padding: 64px 60px 50px;
+        padding: 67px 63px 43px;
       }
     }
     &-detail {
