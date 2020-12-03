@@ -49,3 +49,31 @@ var DURATION = 300;
     speed: 300
   });
 })();
+
+/* Анимация чисел */
+
+(function() {
+  var statistics = $('.statistics');
+  var numbers = $('.__js_number');
+  var animationIsDone = false;
+  var offset = statistics.offset().top;
+
+  $(window).on('scroll', function() {
+    var scroll = $(window).scrollTop() + $(window).height();
+
+    if (!animationIsDone && scroll >= offset) {
+      numbers.each(function() {
+        var endValue = parseInt($(this).attr('data-end-value'), 10);
+
+        $(this).easy_number_animate({
+          start_value: 0,
+          end_value: endValue,
+          duration: 2500
+        });
+
+      });
+
+      animationIsDone = true;
+    }
+  });
+})();
