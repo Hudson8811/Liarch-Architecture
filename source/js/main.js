@@ -92,7 +92,6 @@ var DURATION = 300;
     },
     scrollContainer: null,    // optional scroll container selector, otherwise use window,
     resetAnimation: true,     // reset animation on end (default is true)
-  }
-);
-wow.init();
+  });
+  wow.init();
 })();
