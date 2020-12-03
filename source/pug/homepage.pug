@@ -2,10 +2,10 @@ extends templates/main.pug
 block variables
 	- let pageTitle = 'Liarch - Architecture & Interior HTML Template';
 	- let isHome = true; //- Если true то логотип не будет ссылкой
-	- let currentIndex = 1; // номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentIndex = 1; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 
 block content
-	include modules/hero
+	include modules/an-awards
 	include modules/our-story
 	include modules/type-service
 	include modules/latest-projects

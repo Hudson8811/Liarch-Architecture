@@ -184,30 +184,6 @@
     }
   }
 
-  &__video-btn {
-    display: flex;
-    align-self: flex-start;
-
-    @include text(14px, 1.375);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-
-    @include media(xl) {
-      font-size: 16px;
-    }
-
-    span {
-      max-width: 72px;
-      margin-left: 10px;
-      align-self: center;
-
-      @include media(xl) {
-        max-width: 100px;
-        margin-left: 13px;
-      }
-    }
-  }
-
   &__statistics {
     margin-top: 40px;
 
