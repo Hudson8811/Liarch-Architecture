@@ -1,8 +1,22 @@
 'use strict';
 var body = $('body');
 var DURATION = 300;
-/* Menu */
+var preloader = $('.preloader');
+var header = $('.header');
+var anAwards = $('.an-awards');
 
+/* Preloader */
+(function(){
+ $(window).on('load', function () {
+    preloader.delay(350).fadeOut('slow');
+
+    AOS.init({
+      duration: 1000
+    });
+  });
+})();
+
+/* Menu */
 (function() {
   var menuOpenBtn = $('.menu-toggle');
   var menuCloseBtn = $('.menu__close');
