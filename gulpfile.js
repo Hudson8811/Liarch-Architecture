@@ -18,6 +18,7 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const csso = require("gulp-csso");
 const del = require("del");
+const { parallel } = require('gulp');
 
 let scriptsPath = ['source/js/main.js'];
 
@@ -27,7 +28,10 @@ gulp.task('server', function() {
     index: 'index.html'
 	});
 
-	 gulp.watch('source/scss/**/*.scss', gulp.series('sass'));
+   gulp.watch('source/scss/**/*.scss', gulp.series('sass'));
+
+	 gulp.watch('source/themes/dark/**/*.scss', gulp.series('sassDark'));
+	 gulp.watch('source/themes/green/**/*.scss', gulp.series('sassGreen'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
 	 gulp.watch('source/js/*.js', gulp.series('scripts'));
@@ -60,6 +64,38 @@ gulp.task('sass', function() {
 		//.pipe(csso())
 		//.pipe(rename('main.min.css'))
 		//.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.stream());
+});
+
+gulp.task('sassDark', function() {
+	return gulp.src('source/themes/dark/theme-dark.scss')
+		.pipe(plumber({
+      errorHandler: notify.onError(function(err) {
+        return {
+          title: 'SASS-DARK',
+          sound: false,
+          message: err.message
+        }
+      })
+    }))
+		.pipe(sass())
+		.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.stream());
+});
+
+gulp.task('sassGreen', function() {
+	return gulp.src('source/themes/green/theme-green.scss')
+		.pipe(plumber({
+      errorHandler: notify.onError(function(err) {
+        return {
+          title: 'SASS-GREEN',
+          sound: false,
+          message: err.message
+        }
+      })
+    }))
+		.pipe(sass())
+		.pipe(gulp.dest('build/css'))
 		.pipe(browserSync.stream());
 });
 
@@ -134,7 +170,8 @@ gulp.task('clean', function() {
 gulp.task('copy', function() {
   return gulp.src([
     'source/fonts/**/*.{woff,woff2}',
-    'source/js/**'
+    'source/js/**',
+    'source/video/**'
     ],{
       base: 'source'
     })
@@ -150,4 +187,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', 'sass', 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassGreen'), 'pug', 'server'));
