@@ -5289,38 +5289,33 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -24px;
+  margin-top: -98px;
   margin-bottom: 60px; }
   @media (min-width: 576px) {
     .partners__list {
-      margin-top: -32px;
       margin-bottom: 80px; } }
   @media (min-width: 992px) {
     .partners__list {
-      margin-top: -48px;
       margin-bottom: 120px; } }
   @media (min-width: 1200px) {
     .partners__list {
-      margin-top: -98px;
       margin-bottom: 173px; } }
 
 .partners__item {
   width: 50%;
   text-align: center;
   align-self: center;
-  margin-top: 24px; }
+  margin-top: 98px; }
   @media (min-width: 576px) {
     .partners__item {
       width: 33.33%;
       margin-top: 32px; } }
   @media (min-width: 992px) {
     .partners__item {
-      width: 25%;
-      margin-top: 48px; } }
+      width: 25%; } }
   @media (min-width: 1200px) {
     .partners__item {
-      width: 20%;
-      margin-top: 98px; } }
+      width: 20%; } }
   .partners__item img {
     display: inline-block;
     vertical-align: top;
