@@ -5209,12 +5209,50 @@ html {
         width: 78px;
         height: 58px;
         margin-bottom: 46px; } }
-  .review__image img {
-    max-width: 100%;
-    height: auto; }
-    @media (min-width: 1200px) {
-      .review__image img {
-        max-width: none; } }
+  .review__image {
+    position: relative; }
+    .review__image-author {
+      position: absolute;
+      border-radius: 50%;
+      overflow: hidden; }
+      .review__image-author img {
+        display: block;
+        width: 100%;
+        height: auto; }
+      .review__image-author--one {
+        top: 0.2%;
+        left: 58.2%;
+        width: 28.94%; }
+      .review__image-author--two {
+        top: 45.5%;
+        left: 67%;
+        width: 17.89%; }
+      .review__image-author--three {
+        top: 45.5%;
+        left: 30.4%;
+        width: 21.93%; }
+      .review__image-author--four {
+        top: 30%;
+        left: 5%;
+        width: 14.73%; }
+      .review__image-author--five {
+        top: 72.4%;
+        left: 17%;
+        width: 13.15%; }
+      .review__image-author--six {
+        top: 78.5%;
+        right: 33%;
+        width: 10.52%; }
+        @media (min-width: 1200px) {
+          .review__image-author--six {
+            top: 69.5%;
+            right: 0; } }
+    .review__image img {
+      max-width: 100%;
+      height: auto; }
+      @media (min-width: 1200px) {
+        .review__image img {
+          max-width: none; } }
   .review__text {
     margin-bottom: 24px;
     font-size: 16px;
@@ -5307,8 +5345,7 @@ html {
   margin-top: 98px; }
   @media (min-width: 576px) {
     .partners__item {
-      width: 33.33%;
-      margin-top: 32px; } }
+      width: 33.33%; } }
   @media (min-width: 992px) {
     .partners__item {
       width: 25%; } }

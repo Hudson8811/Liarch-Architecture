@@ -35,6 +35,63 @@
   }
 
   &__image {
+    position: relative;
+
+    &-author {
+      position: absolute;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &--one {
+        top: 0.2%;
+        left: 58.2%;
+
+        width: 28.94%;
+      }
+      &--two {
+        top: 45.5%;
+        left: 67%;
+
+        width: 17.89%;
+      }
+      &--three {
+        top: 45.5%;
+        left: 30.4%;
+
+        width: 21.93%;
+      }
+      &--four {
+        top: 30%;
+        left: 5%;
+
+        width: 14.73%;
+      }
+      &--five {
+        top: 72.4%;
+        left: 17%;
+
+        width: 13.15%;
+      }
+      &--six {
+        top: 78.5%;
+        right: 33%;
+
+        @include media(xl) {
+          top: 69.5%;
+          right: 0;
+        }
+
+        width: 10.52%;
+      }
+    }
+
     img {
       max-width: 100%;
       height: auto;
