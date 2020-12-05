@@ -4676,8 +4676,7 @@ html {
   @media (min-width: 576px) {
     .statistics__item {
       display: flex;
-      text-align: left;
-      justify-content: center; }
+      text-align: left; }
       .statistics__item + .statistics__item {
         margin-top: 0; }
       .statistics__item:last-child {

@@ -9,7 +9,7 @@
     @include media(sm) {
       display: flex;
       text-align: left;
-      justify-content: center;
+      //justify-content: center;
 
       & + & {
         margin-top: 0;
