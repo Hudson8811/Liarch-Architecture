@@ -114,6 +114,7 @@
   }
 
   &__content {
+    padding-bottom: 5px;
     @include media(xxl) {
       //padding-top: 60px;
       //align-self: flex-start;

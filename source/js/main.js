@@ -79,7 +79,7 @@ var DURATION = 300;
 })();
 
 /* Анимация блоков */
-(function() {
+/*(function() {
   var wow = new WOW({
     boxClass:     'wow',      // animated element css class (default is wow)
     animateClass: 'animated', // animation css class (default is animated)
@@ -94,4 +94,10 @@ var DURATION = 300;
     resetAnimation: true,     // reset animation on end (default is true)
   });
   wow.init();
+})();*/
+(function(){
+  AOS.init({
+    duration: 1000
+  });
+
 })();

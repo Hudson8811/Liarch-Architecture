@@ -1,7 +1,7 @@
 section.webpage__our-story.our-story
   .our-story__inner.container
     .row.align-items-center
-      .our-story__intro.col-12.col-md.col-lg-7.wow.fadeInLeft
+      .our-story__intro.col-12.col-md.col-lg-7(data-aos="fade-right")
         .our-story__image
           img(src="img/our-story-image.jpg", width="851", height="777" alt="")
           .our-story__intro-wrapper
@@ -9,7 +9,7 @@ section.webpage__our-story.our-story
               span.our-story__exp-value 25
               span.our-story__exp-text years <br>of experience
             .our-story__intro-text The Leading In Architectural & Interior
-      .our-story__content.col-12.col-md.col-lg-5.wow.fadeInRight
+      .our-story__content.col-12.col-md.col-lg-5(data-aos="fade-left")
         h2.our-story__heading.heading We can create more than you expect
         .our-story__text.our-story__text--style-bolditalic
           | Over 25 years Liarch helping investors building their dream & business goals go to the perfection
@@ -22,7 +22,7 @@ section.webpage__our-story.our-story
               span.visually-hidden Play
               +icon('play')(width="20", height="20")
             span.video-btn__text view our story
-    .our-story__statistics.statistics.row
+    .our-story__statistics.statistics.row(data-aos="fade")
       .statistics__item.col-12.col-sm
         .statistics__item-value <span class="__js_number" data-end-value="100">0</span>%
         .statistics__item-text satisfitation <br>clients

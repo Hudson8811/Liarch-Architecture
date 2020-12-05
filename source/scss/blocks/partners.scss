@@ -62,9 +62,6 @@
     text-align: center;
     align-self: center;
     margin-top: 24px;
-    filter: grayscale(1);
-
-    @include transition(filter);
 
     @include media(sm) {
       width: 33.33%;
@@ -81,15 +78,18 @@
       margin-top: 98px;
     }
 
-    &:hover {
-      filter: grayscale(0);
-    }
-
     img {
       display: inline-block;
       vertical-align: top;
       max-width: 90%;
       height: auto;
+      filter: grayscale(1);
+
+      @include transition(filter);
+
+      &:hover {
+        filter: grayscale(0);
+      }
     }
   }
 }
