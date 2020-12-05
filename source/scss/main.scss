@@ -27,7 +27,6 @@
 
 @import "blocks/header";
 @import "blocks/footer";
-@import "blocks/preloader";
 
 @import "blocks/menu";
 @import "blocks/latest-projects";
@@ -37,4 +36,8 @@
 @import "blocks/our-story";
 @import "blocks/type-service";
 @import "blocks/an-awards";
+
+@import "blocks/overlay";
+@import "blocks/modal";
+@import "blocks/preloader";
 @import "blocks/webpage";

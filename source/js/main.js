@@ -93,25 +93,76 @@ var anAwards = $('.an-awards');
 })();
 
 /* Анимация блоков */
-/*(function() {
-  var wow = new WOW({
-    boxClass:     'wow',      // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       200,          // distance to the element when triggering the animation (default is 0)
-    mobile:       false,       // trigger animations on mobile devices (default is true)
-    live:         true,       // act on asynchronously loaded content (default is true)
-    callback:     function(box) {
-      // the callback is fired every time an animation is started
-      // the argument that is passed in is the DOM node being animated
-    },
-    scrollContainer: null,    // optional scroll container selector, otherwise use window,
-    resetAnimation: true,     // reset animation on end (default is true)
-  });
-  wow.init();
-})();*/
+
 (function(){
   AOS.init({
     duration: 1000
   });
+})();
 
+(function(){
+  var openModalBtns = $('.__js_open-modal');
+  var modal;
+  var modalCloseBtn;
+
+  openModalBtns.each(function() {
+
+    $(this).on('click', function(evt) {
+      evt.preventDefault();
+      var target = $(this).attr('href');
+      modal = $(target);
+
+      var overlay = setOverlay();
+      body.append(overlay);
+      overlay.fadeIn(DURATION);
+
+      modalCloseBtn = modal.find('.modal__close');
+      modalCloseBtn.on('click', closeModal);
+
+      modal.delay(DURATION).fadeIn(DURATION);
+    });
+
+  });
+/*
+  openModalBtns.forEach(btn => {
+    btn.onclick = evt => {
+      evt.preventDefault();
+
+      modal.style.display = 'block';
+      setTimeout(() => {
+        modal.style.opacity = 1;
+      }, 50);
+      document.body.appendChild(setOverlay());
+      closeBtn.onclick = closeModal;
+    };
+  });*/
+
+/*
+		function closeModal() {
+			let overlay = document.querySelector('.' + overlayClass);
+			modal.style.opacity = 0;
+
+			setTimeout(() => {
+				modal.style.cssText = 'display: none;';
+				document.body.removeChild(overlay);
+			}, 450);
+    }*/
+
+    function closeModal() {
+      var overlay = $('.overlay');
+      modalCloseBtn.off('click', closeModal);
+      modal.fadeOut(DURATION);
+      overlay.delay(DURATION).fadeOut(DURATION);
+
+      setTimeout(function() {
+        overlay.remove()
+      }, DURATION * 2 + 50);
+
+    }
+
+    function setOverlay() {
+      var overlay = $('<div class="overlay"></div>');
+      overlay.on('click', closeModal);
+      return overlay;
+    }
 })();

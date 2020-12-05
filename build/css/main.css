@@ -4958,43 +4958,6 @@ html {
       .footer__column-link:active {
         opacity: 0.7; }
 
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff; }
-  .preloader__text {
-    align-self: center;
-    font-size: 48px; }
-  .preloader__spinner {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    align-self: center; }
-  .preloader__double-bounce {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: bounce 2s infinite ease-in-out;
-    opacity: 0.6;
-    border-radius: 50%;
-    background-color: #ff4800; }
-    .preloader__double-bounce--delay {
-      animation-delay: -1s; }
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0); }
-  50% {
-    transform: scale(1); } }
-
 .menu {
   position: fixed;
   top: 0;
@@ -5735,6 +5698,106 @@ html {
       .an-awards__notice {
         margin-bottom: 46px;
         padding-top: 43px; } }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%) translateY(-50%);
+  width: 640px;
+  padding: 40px;
+  background-color: #ffffff;
+  display: none; }
+  .modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer; }
+    .modal__close svg {
+      fill: #000000;
+      align-self: center;
+      transition: fill 0.3s ease; }
+    .modal__close:hover, .modal__close:focus {
+      outline: none; }
+      .modal__close:hover svg, .modal__close:focus svg {
+        fill: #ff4800; }
+    .modal__close:active {
+      opacity: 0.7; }
+  .modal--video {
+    width: 90vw;
+    padding: 0; }
+    @media (min-width: 768px) {
+      .modal--video {
+        width: 70vw; } }
+    .modal--video video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      border: none; }
+    .modal--video .modal__close {
+      transform: translateY(-100%); }
+      .modal--video .modal__close svg {
+        fill: #ffffff; }
+      .modal--video .modal__close:hover svg, .modal--video .modal__close:focus svg {
+        fill: #ff4800; }
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; }
+  .preloader__text {
+    align-self: center;
+    font-size: 48px; }
+  .preloader__spinner {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    align-self: center; }
+  .preloader__double-bounce {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: bounce 2s infinite ease-in-out;
+    opacity: 0.6;
+    border-radius: 50%;
+    background-color: #ff4800; }
+    .preloader__double-bounce--delay {
+      animation-delay: -1s; }
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1); } }
 
 .webpage__an-awards {
   margin-bottom: 60px; }

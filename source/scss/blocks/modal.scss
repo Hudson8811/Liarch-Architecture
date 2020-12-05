@@ -1,0 +1,88 @@
+.modal {
+  $self: &;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%) translateY(-50%);
+  width: 640px;
+  padding: 40px;
+  background-color: $color-default-white;
+
+  display: none;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer;
+
+    svg {
+      fill: $color-default-black;
+      align-self: center;
+
+      @include transition(fill);
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      svg {
+        fill: $color-orange;
+      }
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &--video {
+    width: 90vw;
+    padding: 0;
+
+    @include media(xs) {
+      width: 80vw;
+    }
+
+    @include media(md) {
+      width: 70vw;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      border: none;
+    }
+
+    #{$self}__close {
+      transform: translateY(-100%);
+
+      @include media(xs) {
+        transform: translateX(100%) translateY(0);
+      }
+
+      svg {
+        fill: $color-default-white;
+      }
+
+      &:hover,
+      &:focus {
+        svg {
+          fill: $color-orange;
+        }
+      }
+    }
+  }
+}

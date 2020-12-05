@@ -219,7 +219,7 @@
             <div class="our-story__buttons">
               <a class="our-story__btn btn btn--outline" href="#">Learn More</a>
               <div class="our-story__video-btn video-btn">
-                <a class="video-btn__btn" href="#">
+                <a class="video-btn__btn __js_open-modal" href="#ourStory">
                   <span class="visually-hidden">Play</span>
                   <svg width="20" height="20">
                     <use xlink:href="#play"></use>
@@ -541,6 +541,19 @@
       </div>
     </div>
   </footer>
+  <section class="modal modal--video" id="ourStory">
+    <div class="modal__inner">
+      <button class="modal__close" type="button">
+        <svg width="24" height="24">
+          <use xlink:href="#close"></use>
+        </svg>
+        <span class="visually-hidden">Close modal</span>
+      </button>
+      <video controls preload="none">
+        <source src="video/video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
   <div class="preloader">
     <div class="preloader__spinner">
       <span class="preloader__double-bounce"></span>
