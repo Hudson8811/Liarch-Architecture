@@ -23,7 +23,10 @@ body {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   flex-grow: 1;
+  background-color: $color-default-white;
 }
 
 a {

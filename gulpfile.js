@@ -32,6 +32,7 @@ gulp.task('server', function() {
 
 	 gulp.watch('source/themes/dark/**/*.scss', gulp.series('sassDark'));
 	 gulp.watch('source/themes/green/**/*.scss', gulp.series('sassGreen'));
+	 gulp.watch(['source/fonts.scss', 'source/scss/utils/variables.scss'], gulp.series('sassFonts'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
 	 gulp.watch('source/js/*.js', gulp.series('scripts'));
@@ -89,6 +90,22 @@ gulp.task('sassGreen', function() {
       errorHandler: notify.onError(function(err) {
         return {
           title: 'SASS-GREEN',
+          sound: false,
+          message: err.message
+        }
+      })
+    }))
+		.pipe(sass())
+		.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.stream());
+});
+
+gulp.task('sassFonts', function() {
+	return gulp.src('source/fonts.scss')
+		.pipe(plumber({
+      errorHandler: notify.onError(function(err) {
+        return {
+          title: 'SASS-FONTS',
           sound: false,
           message: err.message
         }
@@ -187,4 +204,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassGreen'), 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassGreen', 'sassFonts'), 'pug', 'server'));

@@ -94,11 +94,11 @@ var anAwards = $('.an-awards');
 
 /* Анимация блоков */
 
-(function(){
+/*(function(){
   AOS.init({
     duration: 1000
   });
-})();
+})();*/
 
 (function(){
   var openModalBtns = $('.__js_open-modal');
@@ -123,46 +123,53 @@ var anAwards = $('.an-awards');
     });
 
   });
-/*
-  openModalBtns.forEach(btn => {
-    btn.onclick = evt => {
-      evt.preventDefault();
 
-      modal.style.display = 'block';
-      setTimeout(() => {
-        modal.style.opacity = 1;
-      }, 50);
-      document.body.appendChild(setOverlay());
-      closeBtn.onclick = closeModal;
-    };
-  });*/
+  function closeModal() {
+    var overlay = $('.overlay');
+    modalCloseBtn.off('click', closeModal);
+    modal.fadeOut(DURATION);
+    overlay.delay(DURATION).fadeOut(DURATION);
 
-/*
-		function closeModal() {
-			let overlay = document.querySelector('.' + overlayClass);
-			modal.style.opacity = 0;
+    setTimeout(function() {
+      overlay.remove()
+    }, DURATION * 2 + 50);
 
-			setTimeout(() => {
-				modal.style.cssText = 'display: none;';
-				document.body.removeChild(overlay);
-			}, 450);
-    }*/
+  }
 
-    function closeModal() {
-      var overlay = $('.overlay');
-      modalCloseBtn.off('click', closeModal);
-      modal.fadeOut(DURATION);
-      overlay.delay(DURATION).fadeOut(DURATION);
-
-      setTimeout(function() {
-        overlay.remove()
-      }, DURATION * 2 + 50);
-
-    }
-
-    function setOverlay() {
-      var overlay = $('<div class="overlay"></div>');
-      overlay.on('click', closeModal);
-      return overlay;
-    }
+  function setOverlay() {
+    var overlay = $('<div class="overlay"></div>');
+    overlay.on('click', closeModal);
+    return overlay;
+  }
 })();
+
+/* Анимация подвала */
+/*(function() {
+
+  $(window).on('load', function() {
+    var footer = $('.footer');
+    var footerHeight = footer.innerHeight();
+    var footerOffset = footer.offset().top;
+
+    footer.css('transform', 'translateY(-' + footerHeight +'px)');
+
+    $(window).on('scroll', function() {
+      var scroll = $(window).scrollTop() + $(window).height();
+      var difference = scroll - footerOffset;
+
+      //console.log(scroll);
+      if(scroll > footerOffset) {
+
+        var shift = difference - footerHeight;
+        console.log(shift);
+        footer.css('transform', 'translateY(' + shift +'px)');
+      }
+    });
+
+    $(window).on('resize', function() {
+      footerHeight = footer.innerHeight();
+      footer.css('transform', 'translateY(-' + footerHeight +'px)');
+    });
+  });
+
+})();*/
