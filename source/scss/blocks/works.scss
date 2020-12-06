@@ -1,0 +1,31 @@
+.works {
+	&__filter {
+		margin-bottom: 20px;
+
+		@include media(lg) {
+			margin-bottom: 50px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 62px;
+		}
+	}
+	&__list {
+		list-style: none;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	&__item {
+		margin-bottom: 40px;
+
+		@include media(xl) {
+			margin-bottom: 75px;
+		}
+	}
+
+	&__more {
+		margin: 40px auto 0;
+	}
+}

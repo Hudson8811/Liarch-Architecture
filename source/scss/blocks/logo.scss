@@ -16,6 +16,8 @@
       display: block;
       width: 100%;
       height: auto;
+
+      @include transition(fill);
     }
   }
 
@@ -29,8 +31,23 @@
     font-weight: 600;
     letter-spacing: 0.22px;
 
+    @include transition(color);
+
     @include media(md) {
       font-size: 14px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    svg {
+      fill: $color-orange;
+    }
+
+    &__text {
+      color: $color-orange;
     }
   }
 }

@@ -25,7 +25,8 @@ $color-orange-hover: lighten(#ff4800, 10%);
 
 //
 $fonts: "Jost" "Jost-Light" 300 normal, "Jost" "Jost-Regular" 400 normal,
-  "Jost" "Jost-Italic" 400 italic, "Jost" "Jost-SemiBold" 600 normal;
+	"Jost" "Jost-Italic" 400 italic, "Jost" "Jost-SemiBold" 600 normal,
+	"Jost" "Jost-Bold" 700 normal;
 
 $font-family--main: "Jost", "Arial", sans-serif;
 //$font-family--secondary: "Montserrat", "Arial", sans-serif;
@@ -42,23 +43,23 @@ $default-transition-settings: 0.3s ease;
 //---------------------------------
 
 $breakpoints: (
-  default: "default",
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1560px,
-  xxx: 1900px,
+	default: "default",
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1560px,
+	xxx: 1900px,
 ) !default;
 
 // container max width
 $containerMaxWidths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1340px,
-  xxx: 1840px,
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1340px,
+	xxx: 1840px,
 ) !default;
 
 // Retina
