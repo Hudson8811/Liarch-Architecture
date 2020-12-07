@@ -1,4 +1,98 @@
 .work-card {
+	$self: &;
+
+	&--compact {
+		position: relative;
+		margin: 0 !important;
+		padding: 0;
+
+		#{$self}__content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			padding: 36px 36px 30px;
+			pointer-events: none;
+
+			@include media(md) {
+				padding: 48px 48px 42px;
+			}
+
+			@include media(xl) {
+				padding: 64px 64px 60px;
+			}
+		}
+
+		#{$self}__image {
+			position: relative;
+			margin: 0;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: $color-orange;
+				transform: scale(0);
+
+				transition: transform $default-transition-settings,
+					border-radius $default-transition-settings;
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+				opacity: 1;
+
+				&::before {
+					content: "";
+					border-radius: 0;
+					//background-color: $color-orange;
+					transform: scale(1);
+				}
+
+				img {
+					transform: scale(1);
+				}
+			}
+		}
+
+		#{$self}__year {
+			margin-bottom: 20px;
+
+			@include text(18px, 1, $color-default-white);
+		}
+
+		#{$self}__tags {
+			margin-top: auto;
+
+			font-size: 18px;
+			color: $color-default-white;
+		}
+
+		#{$self}__heading {
+			max-width: 380px;
+			margin: 0;
+			font-weight: 700;
+
+			@include media(xl) {
+				font-size: 36px !important;
+			}
+
+			a {
+				color: $color-default-white;
+			}
+		}
+	}
+
 	&__image {
 		display: block;
 		margin-bottom: 24px;

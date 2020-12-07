@@ -151,7 +151,17 @@ var anAwards = $('.an-awards');
 /* mixitup filter */
 (function() {
 	var containerEl = document.querySelector('.__js_mixitup-container');
-  var mixer = mixitup(containerEl);
+	var select = document.querySelector('.__js_mixitup-select');
+	var mixer = mixitup(containerEl);
+
+	select.onchange = function () {
+		var value = select.value;
+		console.log(value);
+
+		if (value !== 'all') {
+			mixer.filter('.__js_' + value);
+		}
+	};
 })();
 
 /* Анимация подвала */

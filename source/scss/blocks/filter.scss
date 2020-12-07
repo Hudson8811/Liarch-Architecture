@@ -3,7 +3,7 @@
 		margin-right: 20px;
 		padding: 0;
 
-		@include text(16px, 1);
+		@include text(14px, 1);
 		font-weight: 600;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
@@ -13,6 +13,11 @@
 		cursor: pointer;
 
 		@include transition(color);
+
+		@include media(xl) {
+			margin-right: 32px;
+			font-size: 16px;
+		}
 
 		&:last-child {
 			margin-right: 0;
