@@ -47,8 +47,8 @@
 
 	&__item {
 		@include media(md) {
-			width: calc(690px - 155px) !important;
-			margin-right: 155px;
+			width: calc(690px - 155px) !important; //
+			margin-right: 155px; //22.46%; //155px;
 
 			&.slick-current + & {
 				transform: translateX(calc(-155px + 10px));
@@ -60,8 +60,8 @@
 		}
 
 		@include media(lg) {
-			width: calc(930px - 200px) !important;
-			margin-right: 200px;
+			width: calc(930px - 200px) !important; //
+			margin-right: 200px; //21.5%; //200px;
 
 			&.slick-current + & {
 				transform: translateX(calc(-200px + 10px));
@@ -70,7 +70,7 @@
 
 		@include media(xl) {
 			width: calc(1110px - 235px) !important;
-			margin-right: 235px;
+			margin-right: 235px; //21.17%; //235px;
 
 			&.slick-current + & {
 				transform: translateX(calc(-235px + 10px));
@@ -79,7 +79,7 @@
 
 		@include media(xxl) {
 			width: 1145px !important; //calc(1110px - 375px) !important;
-			margin-right: 375px;
+			margin-right: 375px; //24.67%; //375px;
 
 			&.slick-current + & {
 				transform: translateX(calc(-375px + 10px));
