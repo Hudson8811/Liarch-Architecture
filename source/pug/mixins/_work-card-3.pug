@@ -1,0 +1,9 @@
+mixin work-card-3(image, h, year, tags, heading)
+	li.works__item.work-card.work-card--compact&attributes(attributes)
+		a.work-card__image(href="#")
+			img(src="img/works-3/" + image, width="428", height= h, alt="")
+		.work-card__content
+			.work-card__year= year
+			.work-card__tags= tags
+			h2.work-card__heading
+				a= heading

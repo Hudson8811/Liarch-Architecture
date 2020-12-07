@@ -54,7 +54,7 @@ var anAwards = $('.an-awards');
 
 /* Слайдер проектов на главной */
 (function(){
-  var slider = $('.__js_latest-projects--single');
+  var slider = $('.__js_slider-single');
 
   slider.slick({
     dots: true,
