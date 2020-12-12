@@ -6,7 +6,7 @@
 	}
 
 	&__inner {
-		@include media(xl) {
+		@include media(xxl) {
 			max-width: $width--full;
 		}
 	}

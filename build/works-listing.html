@@ -177,8 +177,8 @@
         <div class="container">
           <section class="works">
             <header class="works__header">
-              <div class="works__filter filter controls">
-                <button class="filter__item" type="button" data-filter="all">all</button>
+              <div class="works__filter filter">
+                <button class="filter__item filter__item--active" type="button" data-filter="*">all</button>
                 <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
                 <button class="filter__item" type="button" data-filter=".__js_interior">interior</button>
                 <button class="filter__item" type="button" data-filter=".__js_cgi">cgi</button>
@@ -186,37 +186,37 @@
               </div>
               <div class="works__sort sort">
                 <label class="sort__hint" for="sortSelect">filter by years:</label>
-                <select class="sort__select __js_mixitup-select" id="sortSelect" name="sort">
-                  <option value="all">all</option>
+                <select class="sort__select __js_filter-select" id="sortSelect" name="sort">
+                  <option value="*">all</option>
                   <option value="2020">2020</option>
                   <option value="2019">2019</option>
                   <option value="2018">2018</option>
                 </select>
               </div>
             </header>
-            <ul class="works__list __js_mixitup-container">
-              <li class="works__item slide mix __js_architecture __js_2020">
+            <ul class="works__list __js_works-filter">
+              <li class="works__item slide __js_architecture __js_2020">
                 <img src="img/slider/slide-1.jpg" width="1145" height="650" alt="">
                 <div class="slide__content">
                   <div class="slide__content-detail">2020 - Kiev, Ukraine</div>
                   <div class="slide__content-heading">Cubic Blockes Hotel</div>
                 </div>
               </li>
-              <li class="works__item slide mix __js_architecture __js_interior __js_2020">
+              <li class="works__item slide __js_architecture __js_interior __js_2020">
                 <img src="img/slider/slide-2.jpg" width="1145" height="650" alt="">
                 <div class="slide__content">
                   <div class="slide__content-detail">2020 - Belgium</div>
                   <div class="slide__content-heading">Dogel Nord Station</div>
                 </div>
               </li>
-              <li class="works__item slide mix __js_interior __js_2019">
+              <li class="works__item slide __js_interior __js_2019">
                 <img src="img/slider/slide-3.jpg" width="1145" height="650" alt="">
                 <div class="slide__content">
                   <div class="slide__content-detail">2019 - Vancouver, Canada</div>
                   <div class="slide__content-heading">Cabin Wood In Forest</div>
                 </div>
               </li>
-              <li class="works__item slide mix __js_architecture __js_2018">
+              <li class="works__item slide __js_architecture __js_2018">
                 <img src="img/slider/slide-4.jpg" width="1145" height="650" alt="">
                 <div class="slide__content">
                   <div class="slide__content-detail">2019 - Iasi, Romania</div>
@@ -339,8 +339,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/mixitup.min.js"></script>
   <script src="js/jquery.easy_number_animate.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/packery-mode.pkgd.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
 

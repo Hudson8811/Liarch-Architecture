@@ -177,16 +177,16 @@
         <div class="works-page__inner container">
           <section class="works">
             <header class="works__header">
-              <div class="works__filter filter controls">
-                <button class="filter__item" type="button" data-filter="all">all</button>
+              <div class="works__filter filter">
+                <button class="filter__item filter__item--active" type="button" data-filter="*">all</button>
                 <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
                 <button class="filter__item" type="button" data-filter=".__js_interior">interior</button>
                 <button class="filter__item" type="button" data-filter=".__js_cgi">cgi</button>
                 <button class="filter__item" type="button" data-filter=".__js_products">products</button>
               </div>
             </header>
-            <ul class="works__list row __js_mixitup-container">
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture __js_interior" data-order="1">
+            <ul class="works__list row __js_works-filter">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture __js_interior">
                 <a class="work-card__image" href="#">
                   <img src="img/works/cube-villa-poland.jpg" width="460" height="310" alt="" />
                 </a>
@@ -198,7 +198,7 @@
                   <div class="work-card__text">Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity.</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture __js_cgi" data-order="2">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture __js_cgi">
                 <a class="work-card__image" href="#">
                   <img src="img/works/stone-house.jpg" width="460" height="310" alt="" />
                 </a>
@@ -210,7 +210,7 @@
                   <div class="work-card__text">Stone House is a digital platform that provides university students with personalized learning pathways</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_cgi __js_interior" data-order="3">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_cgi __js_interior">
                 <a class="work-card__image" href="#">
                   <img src="img/works/single-house.jpg" width="460" height="310" alt="" />
                 </a>
@@ -222,7 +222,7 @@
                   <div class="work-card__text">Discover how we helped them scale up from local to global.</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture" data-order="4">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture">
                 <a class="work-card__image" href="#">
                   <img src="img/works/daniel-villa-romania.jpg" width="460" height="310" alt="" />
                 </a>
@@ -234,7 +234,7 @@
                   <div class="work-card__text">Had hath and bearing had night, had own, second you'll said deep very said firmament made living appear</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_cgi __js_product" data-order="5">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_cgi __js_product">
                 <a class="work-card__image" href="#">
                   <img src="img/works/cabin-wood-in-forest.jpg" width="460" height="310" alt="" />
                 </a>
@@ -246,7 +246,7 @@
                   <div class="work-card__text">Fill lesser dominion moveth is appear had, lesser.</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_interior" data-order="6">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_interior">
                 <a class="work-card__image" href="#">
                   <img src="img/works/b65-apartment-italy.jpg" width="460" height="310" alt="" />
                 </a>
@@ -258,7 +258,7 @@
                   <div class="work-card__text">So creepeth image greater signs great us together.</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture __js_cgi __js_products" data-order="7">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture __js_cgi __js_products">
                 <a class="work-card__image" href="#">
                   <img src="img/works/ODE-kid-garden-salburg.jpg" width="460" height="310" alt="" />
                 </a>
@@ -270,7 +270,7 @@
                   <div class="work-card__text">Deep dry let man without first air made divide divide without</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture __js_interior" data-order="8">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture __js_interior">
                 <a class="work-card__image" href="#">
                   <img src="img/works/grido-museum-denmark.jpg" width="460" height="310" alt="" />
                 </a>
@@ -282,7 +282,7 @@
                   <div class="work-card__text">Sea seasons. Had hath and bearing had night, had own, second you'll said deep very said firmament made living appear</div>
                 </div>
               </li>
-              <li class="works__item work-card col-12 col-md-6 col-lg-4 mix __js_architecture __js_interior" data-order="9">
+              <li class="works__item work-card col-12 col-md-6 col-lg-4 __js_architecture __js_interior">
                 <a class="work-card__image" href="#">
                   <img src="img/works/dogel-nord-station.jpg" width="460" height="310" alt="" />
                 </a>
@@ -410,8 +410,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/mixitup.min.js"></script>
   <script src="js/jquery.easy_number_animate.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/packery-mode.pkgd.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
 

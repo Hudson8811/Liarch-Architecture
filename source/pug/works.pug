@@ -14,31 +14,30 @@ block content
 			.works-page__inner.container
 				section.works
 					header.works__header
-						.works__filter.filter.controls
-							button.filter__item(type="button", data-filter="all") all
-							button.filter__item(type="button", data-filter=".__js_architecture") architecture
-							button.filter__item(type="button", data-filter=".__js_interior") interior
-							button.filter__item(type="button", data-filter=".__js_cgi") cgi
-							button.filter__item(type="button", data-filter=".__js_products") products
+						.works__filter.filter
+							each item in ['all', 'architecture', 'interior', 'cgi', 'products']
+								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+								- let activeClass = item === 'all' ? ' filter__item--active' : '';
+								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
 
-					ul.works__list.row.__js_mixitup-container
-						+work-card('cube-villa-poland.jpg', 'Architecture, Interior', 'Cube villa, Poland', 'Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity.')(class="mix __js_architecture __js_interior", data-order="1")
+					ul.works__list.row.__js_works-filter
+						+work-card('cube-villa-poland.jpg', 'Architecture, Interior', 'Cube villa, Poland', 'Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity.')(class="__js_architecture __js_interior")
 
-						+work-card('stone-house.jpg', 'Architecture, CGI', 'Stone house', 'Stone House is a digital platform that provides university students with personalized learning pathways')(class="mix __js_architecture __js_cgi", data-order="2")
+						+work-card('stone-house.jpg', 'Architecture, CGI', 'Stone house', 'Stone House is a digital platform that provides university students with personalized learning pathways')(class="__js_architecture __js_cgi")
 
-						+work-card('single-house.jpg', 'CGI, Interior', 'Single house', 'Discover how we helped them scale up from local to global.')(class="mix __js_cgi __js_interior", data-order="3")
+						+work-card('single-house.jpg', 'CGI, Interior', 'Single house', 'Discover how we helped them scale up from local to global.')(class="__js_cgi __js_interior")
 
-						+work-card('daniel-villa-romania.jpg', 'Architecture', 'Daniel villa, Romania', 'Had hath and bearing had night, had own, second you\'ll said deep very said firmament made living appear')(class="mix __js_architecture", data-order="4")
+						+work-card('daniel-villa-romania.jpg', 'Architecture', 'Daniel villa, Romania', 'Had hath and bearing had night, had own, second you\'ll said deep very said firmament made living appear')(class="__js_architecture")
 
-						+work-card('cabin-wood-in-forest.jpg', 'CGI, Product', 'Cabin wood in forest', 'Fill lesser dominion moveth is appear had, lesser.')(class="mix __js_cgi __js_product", data-order="5")
+						+work-card('cabin-wood-in-forest.jpg', 'CGI, Product', 'Cabin wood in forest', 'Fill lesser dominion moveth is appear had, lesser.')(class="__js_cgi __js_product")
 
-						+work-card('b65-apartment-italy.jpg', 'Interior', 'B65 apartment, Italy', 'So creepeth image greater signs great us together.')(class="mix __js_interior", data-order="6")
+						+work-card('b65-apartment-italy.jpg', 'Interior', 'B65 apartment, Italy', 'So creepeth image greater signs great us together.')(class="__js_interior")
 
-						+work-card('ODE-kid-garden-salburg.jpg', 'Architecture, CGI, Products', 'ODE kid garden, salburg', 'Deep dry let man without first air made divide divide without')(class="mix __js_architecture __js_cgi __js_products", data-order="7")
+						+work-card('ODE-kid-garden-salburg.jpg', 'Architecture, CGI, Products', 'ODE kid garden, salburg', 'Deep dry let man without first air made divide divide without')(class="__js_architecture __js_cgi __js_products")
 
-						+work-card('grido-museum-denmark.jpg', 'Architecture, Interior', 'Grido museum, Denmark', 'Sea seasons. Had hath and bearing had night, had own, second you\'ll said deep very said firmament made living appear')(class="mix __js_architecture __js_interior", data-order="8")
+						+work-card('grido-museum-denmark.jpg', 'Architecture, Interior', 'Grido museum, Denmark', 'Sea seasons. Had hath and bearing had night, had own, second you\'ll said deep very said firmament made living appear')(class="__js_architecture __js_interior")
 
-						+work-card('dogel-nord-station.jpg', 'Architecture, Interior', 'Dogel nord station', 'Own appear fifth, very god made darkness without which whose meat fill, over sixth of which Good in third gathering')(class="mix __js_architecture __js_interior", data-order="9")
+						+work-card('dogel-nord-station.jpg', 'Architecture, Interior', 'Dogel nord station', 'Own appear fifth, very god made darkness without which whose meat fill, over sixth of which Good in third gathering')(class="__js_architecture __js_interior")
 
 					a.works__more.more-btn(href="#")
 						span.more-btn__text more

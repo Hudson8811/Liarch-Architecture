@@ -174,11 +174,11 @@
         </div>
       </header>
       <div class="works-page__content">
-        <div class="container-fluid">
-          <section class="works">
+        <section class="works">
+          <div class="works__inner container">
             <header class="works__header">
-              <div class="works__filter filter controls">
-                <button class="filter__item" type="button" data-filter="all">all</button>
+              <div class="works__filter filter">
+                <button class="filter__item filter__item--active" type="button" data-filter="*">all</button>
                 <button class="filter__item" type="button" data-filter=".__js_residential">residential</button>
                 <button class="filter__item" type="button" data-filter=".__js_commercial">commercial</button>
                 <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
@@ -186,16 +186,18 @@
               </div>
               <div class="works__sort sort">
                 <label class="sort__hint" for="sortSelect">filter by years:</label>
-                <select class="sort__select __js_mixitup-select" id="sortSelect" name="sort">
-                  <option value="all">all</option>
+                <select class="sort__select __js_filter-select" id="sortSelect" name="sort">
+                  <option value="*">all</option>
                   <option value="2020">2020</option>
                   <option value="2019">2019</option>
                   <option value="2018">2018</option>
                 </select>
               </div>
             </header>
-            <ul class="works__list works__list--grid __js_mixitup-container">
-              <li class="works__item work-card work-card--compact mix __js_residential __js_2020" data-order="1">
+          </div>
+          <div class="works__inner works__inner--width-large container-fluid">
+            <ul class="works__list works__list--masonry __js_works-filter">
+              <li class="works__item work-card work-card--masonry __js_residential __js_2020">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/01.jpg" width="428" height="428" alt="" />
                 </a>
@@ -207,7 +209,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact mix __js_residential __js_2019 works__item--long" data-order="3">
+              <li class="works__item work-card work-card--masonry __js_residential __js_2019 works__item--long">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/02.jpg" width="428" height="732" alt="" />
                 </a>
@@ -219,7 +221,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact mix __js_residential __js_2020" data-order="2">
+              <li class="works__item work-card work-card--masonry __js_residential __js_2020">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/03.jpg" width="428" height="428" alt="" />
                 </a>
@@ -231,7 +233,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact mix __js_residential __js_interior __js_2019" data-order="2">
+              <li class="works__item work-card work-card--masonry __js_residential __js_interior __js_2019">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/04.jpg" width="428" height="428" alt="" />
                 </a>
@@ -243,7 +245,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact __js_architecture __js_2018 works__item--long" data-order="9">
+              <li class="works__item work-card work-card--masonry __js_architecture __js_2018 works__item--long">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/05.jpg" width="428" height="732" alt="" />
                 </a>
@@ -255,19 +257,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact mix __js_architecture __js_2019" data-order="5">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-3/06.jpg" width="428" height="428" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Dogel nord station</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact __js_architecture __js_2019 works__item--short" data-order="7">
+              <li class="works__item work-card work-card--masonry __js_architecture __js_2019 works__item--short">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/08.jpg" width="428" height="272" alt="" />
                 </a>
@@ -279,19 +269,7 @@
                   </h2>
                 </div>
               </li>
-              <li class="works__item work-card work-card--compact __js_architecture __js_2019" data-order="7">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-3/07.jpg" width="428" height="428" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Stone house</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact __js_architecture __js_2018 works__item--long" data-order="8">
+              <li class="works__item work-card work-card--masonry __js_architecture __js_2018 works__item--long">
                 <a class="work-card__image" href="#">
                   <img src="img/works-3/09.jpg" width="428" height="732" alt="" />
                 </a>
@@ -303,12 +281,36 @@
                   </h2>
                 </div>
               </li>
+              <li class="works__item work-card work-card--masonry __js_architecture __js_2019">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/06.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2018</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Dogel nord station</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--masonry __js_architecture __js_2019">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/07.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2019</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Stone house</a>
+                  </h2>
+                </div>
+              </li>
             </ul>
             <a class="works__more more-btn" href="#">
               <span class="more-btn__text">more</span>
             </a>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </article>
   </main>
@@ -419,8 +421,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/slick.min.js"></script>
   <script src="js/aos.js"></script>
-  <script src="js/mixitup.min.js"></script>
   <script src="js/jquery.easy_number_animate.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/packery-mode.pkgd.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
 
