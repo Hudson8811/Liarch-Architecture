@@ -168,21 +168,21 @@
   <main>
     <article class="works-page">
       <header class="works-page__header">
-        <div class="container">
+        <div class="works-page__inner container">
           <h1 class="works-page__heading heading">Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves</h1>
           <div class="works-page__text">Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.</div>
         </div>
       </header>
       <div class="works-page__content">
-        <div class="container">
+        <div class="container-fluid">
           <section class="works">
             <header class="works__header">
               <div class="works__filter filter controls">
                 <button class="filter__item" type="button" data-filter="all">all</button>
+                <button class="filter__item" type="button" data-filter=".__js_residential">residential</button>
+                <button class="filter__item" type="button" data-filter=".__js_commercial">commercial</button>
                 <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
                 <button class="filter__item" type="button" data-filter=".__js_interior">interior</button>
-                <button class="filter__item" type="button" data-filter=".__js_cgi">cgi</button>
-                <button class="filter__item" type="button" data-filter=".__js_products">products</button>
               </div>
               <div class="works__sort sort">
                 <label class="sort__hint" for="sortSelect">filter by years:</label>
@@ -194,33 +194,113 @@
                 </select>
               </div>
             </header>
-            <ul class="works__list __js_mixitup-container">
-              <li class="works__item slide mix __js_architecture __js_2020">
-                <img src="img/slider/slide-1.jpg" width="1145" height="650" alt="">
-                <div class="slide__content">
-                  <div class="slide__content-detail">2020 - Kiev, Ukraine</div>
-                  <div class="slide__content-heading">Cubic Blockes Hotel</div>
+            <ul class="works__list works__list--grid __js_mixitup-container">
+              <li class="works__item work-card work-card--compact mix __js_residential __js_2020" data-order="1">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/01.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2020</div>
+                  <div class="work-card__tags">Residential</div>
+                  <h2 class="work-card__heading">
+                    <a>Daniel villa, Romania</a>
+                  </h2>
                 </div>
               </li>
-              <li class="works__item slide mix __js_architecture __js_interior __js_2020">
-                <img src="img/slider/slide-2.jpg" width="1145" height="650" alt="">
-                <div class="slide__content">
-                  <div class="slide__content-detail">2020 - Belgium</div>
-                  <div class="slide__content-heading">Dogel Nord Station</div>
+              <li class="works__item work-card work-card--compact mix __js_residential __js_2019 works__item--long" data-order="3">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/02.jpg" width="428" height="732" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2019</div>
+                  <div class="work-card__tags">Residential</div>
+                  <h2 class="work-card__heading">
+                    <a>Cube villa, Poland</a>
+                  </h2>
                 </div>
               </li>
-              <li class="works__item slide mix __js_interior __js_2019">
-                <img src="img/slider/slide-3.jpg" width="1145" height="650" alt="">
-                <div class="slide__content">
-                  <div class="slide__content-detail">2019 - Vancouver, Canada</div>
-                  <div class="slide__content-heading">Cabin Wood In Forest</div>
+              <li class="works__item work-card work-card--compact mix __js_residential __js_2020" data-order="2">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/03.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2020</div>
+                  <div class="work-card__tags">Residential</div>
+                  <h2 class="work-card__heading">
+                    <a>Daniel villa, Romania</a>
+                  </h2>
                 </div>
               </li>
-              <li class="works__item slide mix __js_architecture __js_2018">
-                <img src="img/slider/slide-4.jpg" width="1145" height="650" alt="">
-                <div class="slide__content">
-                  <div class="slide__content-detail">2019 - Iasi, Romania</div>
-                  <div class="slide__content-heading">Daniel Villa, Romania</div>
+              <li class="works__item work-card work-card--compact mix __js_residential __js_interior __js_2019" data-order="2">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/04.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2019</div>
+                  <div class="work-card__tags">Residential, Interior</div>
+                  <h2 class="work-card__heading">
+                    <a>Grido museum, Denmark</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--compact __js_architecture __js_2018 works__item--long" data-order="9">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/05.jpg" width="428" height="732" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2018</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Belgium center point plaza</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--compact mix __js_architecture __js_2019" data-order="5">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/06.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2018</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Dogel nord station</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--compact __js_architecture __js_2019 works__item--short" data-order="7">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/08.jpg" width="428" height="272" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2019</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Single house</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--compact __js_architecture __js_2019" data-order="7">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/07.jpg" width="428" height="428" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2019</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Stone house</a>
+                  </h2>
+                </div>
+              </li>
+              <li class="works__item work-card work-card--compact __js_architecture __js_2018 works__item--long" data-order="8">
+                <a class="work-card__image" href="#">
+                  <img src="img/works-3/09.jpg" width="428" height="732" alt="" />
+                </a>
+                <div class="work-card__content">
+                  <div class="work-card__year">2018</div>
+                  <div class="work-card__tags">Architecture</div>
+                  <h2 class="work-card__heading">
+                    <a>Miter wooden library</a>
+                  </h2>
                 </div>
               </li>
             </ul>

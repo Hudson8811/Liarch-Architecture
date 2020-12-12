@@ -54,7 +54,7 @@ var anAwards = $('.an-awards');
 
 /* Слайдер проектов на главной */
 (function(){
-  var slider = $('.__js_latest-projects--single');
+  var slider = $('.__js_slider-single');
 
   slider.slick({
     dots: true,
@@ -70,26 +70,31 @@ var anAwards = $('.an-awards');
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
   var animationIsDone = false;
-  var offset = statistics.offset().top;
 
-  $(window).on('scroll', function() {
-    var scroll = $(window).scrollTop() + $(window).height();
+	if ($('*').is('.statistics')) {
+			var offset = statistics.offset().top;
 
-    if (!animationIsDone && scroll >= offset) {
-      numbers.each(function() {
-        var endValue = parseInt($(this).attr('data-end-value'), 10);
+		  $(window).on('scroll', function() {
+			var scroll = $(window).scrollTop() + $(window).height();
 
-        $(this).easy_number_animate({
-          start_value: 0,
-          end_value: endValue,
-          duration: 2500
-        });
+			if (!animationIsDone && scroll >= offset) {
+				numbers.each(function() {
+					var endValue = parseInt($(this).attr('data-end-value'), 10);
 
-      });
+					$(this).easy_number_animate({
+						start_value: 0,
+						end_value: endValue,
+						duration: 2500
+					});
 
-      animationIsDone = true;
-    }
-  });
+				});
+
+				animationIsDone = true;
+			}
+		});
+	}
+
+
 })();
 
 /* Анимация блоков */
@@ -141,6 +146,22 @@ var anAwards = $('.an-awards');
     overlay.on('click', closeModal);
     return overlay;
   }
+})();
+
+/* mixitup filter */
+(function() {
+	var containerEl = document.querySelector('.__js_mixitup-container');
+	var select = document.querySelector('.__js_mixitup-select');
+	var mixer = mixitup(containerEl);
+
+	select.onchange = function () {
+		var value = select.value;
+		console.log(value);
+
+		if (value !== 'all') {
+			mixer.filter('.__js_' + value);
+		}
+	};
 })();
 
 /* Анимация подвала */
