@@ -6548,11 +6548,24 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
         font-size: 60px; } }
   .single-project__social {
     margin-bottom: 40px; }
-  .single-project__paralax-image {
+  .single-project__bg-parallax {
+    position: relative;
+    overflow: hidden;
+    height: 46.875vw;
     margin-bottom: 60px; }
     @media (min-width: 1200px) {
-      .single-project__paralax-image {
+      .single-project__bg-parallax {
         margin-bottom: 130px; } }
+    .single-project__bg-parallax-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%); }
+      .single-project__bg-parallax-image img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto; }
   .single-project__intro {
     margin-bottom: 60px; }
     @media (min-width: 1200px) {

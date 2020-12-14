@@ -31,14 +31,28 @@
 		margin-bottom: 40px;
 	}
 
-	&__paralax-image {
+	&__bg-parallax {
+		position: relative;
+		overflow: hidden;
+		height: 46.875vw;
 		margin-bottom: 60px;
 
 		@include media(xl) {
 			margin-bottom: 130px;
 		}
 
-		img {
+		&-image {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100%;
+			transform: translateX(-50%);
+
+			img {
+				display: block;
+				max-width: 100%;
+				margin: 0 auto;
+			}
 		}
 	}
 
