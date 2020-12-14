@@ -32,3 +32,12 @@ main {
 a {
   text-decoration: none;
 }
+
+input,
+select,
+textarea {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+}

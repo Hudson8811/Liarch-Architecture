@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/Cinzel-Regular.woff2" as="font" />
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Liarch - Architecture &amp; Interior HTML Template - Works</title>
+  <title>Liarch - Architecture &amp; Interior HTML Template - News</title>
 </head>
 
 <body class="webpage">
@@ -77,14 +77,14 @@
           <li class="navigation__item">
             <a class="navigation__link" href="homepage.html">What we do</a>
           </li>
-          <li class="navigation__item navigation__item--current">
-            <a class="navigation__link">Works</a>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Works</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">About</a>
           </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">News</a>
+          <li class="navigation__item navigation__item--current">
+            <a class="navigation__link">News</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">Contact</a>
@@ -122,14 +122,14 @@
         <li class="menu__item">
           <a class="menu__link" href="homepage.html">What we do</a>
         </li>
-        <li class="menu__item menu__item--current">
-          <a class="menu__link">Works</a>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Works</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">About</a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">News</a>
+        <li class="menu__item menu__item--current">
+          <a class="menu__link">News</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">Contact</a>
@@ -167,149 +167,191 @@
     </div>
   </section>
   <main>
-    <article class="works-page">
-      <header class="works-page__header">
-        <div class="works-page__inner container">
-          <h1 class="works-page__heading heading">Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves</h1>
-          <div class="works-page__text">Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.</div>
+    <article class="news-list">
+      <div class="container news-list__container">
+        <header class="news-list__header">
+          <h2 class="news-list__heading heading">Inspirations & Experiences</h2>
+        </header>
+        <div class="news-list__filter-with-search">
+          <div class="filter controls news-list__filter">
+            <button class="filter__item" type="button" data-filter="all">all</button>
+            <button class="filter__item" type="button" data-filter=".__js_inspirations">inspirations</button>
+            <button class="filter__item" type="button" data-filter=".__js_experiences">experiences</button>
+            <button class="filter__item" type="button" data-filter=".__js_reviews">reviews</button>
+            <button class="filter__item" type="button" data-filter=".__js_tips">tips & tricks</button>
+            <button class="filter__item" type="button" data-filter=".__js_others">others</button>
+          </div>
+          <input type="search" name="search" placeholder="Search in blog" />
         </div>
-      </header>
-      <div class="works-page__content">
-        <div class="container-fluid">
-          <section class="works">
-            <header class="works__header">
-              <div class="works__filter filter controls">
-                <button class="filter__item" type="button" data-filter="all">all</button>
-                <button class="filter__item" type="button" data-filter=".__js_residential">residential</button>
-                <button class="filter__item" type="button" data-filter=".__js_commercial">commercial</button>
-                <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
-                <button class="filter__item" type="button" data-filter=".__js_interior">interior</button>
+        <div class="news-slider slider __js_slider-news">
+          <div class="news-slider__item">
+            <img src="img/slider/slide-1.jpg" alt="">
+            <div class="news-slider__content">
+              <div class="news-slider__date">
+                <span>review</span> / December 20, 2020
               </div>
-              <div class="works__sort sort">
-                <label class="sort__hint" for="sortSelect">filter by years:</label>
-                <select class="sort__select __js_mixitup-select" id="sortSelect" name="sort">
-                  <option value="all">all</option>
-                  <option value="2020">2020</option>
-                  <option value="2019">2019</option>
-                  <option value="2018">2018</option>
-                </select>
+              <div class="news-slider__title">How to use solid color combine with simple furnitures</div>
+              <div class="news-slider__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <img src="img/slider/slide-2.jpg" alt="">
+            <div class="news-slider__content">
+              <div class="news-slider__date">
+                <span>review</span> / December 20, 2020
               </div>
-            </header>
-            <ul class="works__list row __js_mixitup-container">
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2020" data-order="1">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/daniel-villa-romania.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2020</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Daniel villa, Romania</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2019" data-order="2">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/cabin-wood-in-forest.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Cabin wood in forest</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2019" data-order="3">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/cube-villa-poland.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Cube villa, Poland</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_architecture __js_2019" data-order="4">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/grido-museum-denmark.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Grido museum, Denmark</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_architecture __js_2019" data-order="5">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/dogel-nord-station.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Dogel nord station</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_interior __js_2018" data-order="6">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/b65-apartment-in-sepro-building.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Residential, Interior</div>
-                  <h2 class="work-card__heading">
-                    <a>B65 apartment in sepro building</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2019" data-order="7">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/single-house.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Single house</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2018" data-order="8">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/miter-wooden-library.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Miter wooden library</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2018" data-order="9">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/belgium-center-point-plaza.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Belgium center point plaza</a>
-                  </h2>
-                </div>
-              </li>
-            </ul>
-            <a class="works__more more-btn" href="#">
-              <span class="more-btn__text">more</span>
-            </a>
-          </section>
+              <div class="news-slider__title">How to use solid color combine with simple furnitures</div>
+              <div class="news-slider__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <img src="img/slider/slide-1.jpg" alt="">
+            <div class="news-slider__content">
+              <div class="news-slider__date">
+                <span>review</span> / December 20, 2020
+              </div>
+              <div class="news-slider__title">How to use solid color combine with simple furnitures</div>
+              <div class="news-slider__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</div>
+            </div>
+          </div>
+          <div class="news-slider__item">
+            <img src="img/slider/slide-2.jpg" alt="">
+            <div class="news-slider__content">
+              <div class="news-slider__date">
+                <span>review</span> / December 20, 2020
+              </div>
+              <div class="news-slider__title">How to use solid color combine with simple furnitures</div>
+              <div class="news-slider__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</div>
+            </div>
+          </div>
         </div>
+        <div class="news-join">
+          <div class="news-join__col">
+            <div class="news-join__title">Join Our List</div>
+            <div class="news-join__subtitle">Signup to be the first to hear about exclusive deals, special offers and upcoming collections</div>
+          </div>
+          <div class="news-join__col">
+            <form class="label-subs" action="" method="POST">
+              <label>
+                <input type="email" name="email" placeholder="Enter your emaill address" />
+              </label>
+              <input type="submit" value="Subscribe" />
+            </form>
+          </div>
+        </div>
+        <ul class="news-list__news">
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">25</p>
+                <p class="month">december</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">Discover top 15 buildings modern in Italia</a>
+                <p class="author">inspiration<span class="delimiter">/</span>
+                  <span>By Admin</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">20</p>
+                <p class="month">december</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">The dome in architectural, the attractive from the art</a>
+                <p class="author">review<span class="delimiter">/</span>
+                  <span>By Logan Cee</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">16</p>
+                <p class="month">november</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">Discover top 25 the best of architecture building in 2020</a>
+                <p class="author">inspiration<span class="delimiter">/</span>
+                  <span>By Admin</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">8</p>
+                <p class="month">november</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">How to use solid color combine with simple furnitures</a>
+                <p class="author">tips &amp; tricks<span class="delimiter">/</span>
+                  <span>By Admin</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">12</p>
+                <p class="month">october</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">Double rectangle houses from old containers</a>
+                <p class="author">review<span class="delimiter">/</span>
+                  <span>By Admin</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="news-card col-12 col-md-6">
+            <div class="news-card__pic">
+              <img src="img/news/item-1.jpg" alt="" />
+            </div>
+            <div class="news-card__content">
+              <div class="news-card__date">
+                <p class="num">5</p>
+                <p class="month">october</p>
+                <p class="year">2020</p>
+              </div>
+              <div class="news-card__title">
+                <a href="#">The solutions for house in Texas’s Moutain</a>
+                <p class="author">review<span class="delimiter">/</span>
+                  <span>By Logan Cee</span>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a class="more-btn news-list__more-2" href="#">
+          <span class="more-btn__text">more</span>
+        </a>
       </div>
     </article>
   </main>
@@ -357,8 +399,8 @@
             <li class="footer__column-item">
               <a class="footer__column-link" href="#">Career</a>
             </li>
-            <li class="footer__column-item">
-              <a class="footer__column-link" href="#">News</a>
+            <li class="footer__column-item footer__column-item--current">
+              <a class="footer__column-link">News</a>
             </li>
           </ul>
         </div>

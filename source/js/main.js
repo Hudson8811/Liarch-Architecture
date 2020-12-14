@@ -64,6 +64,18 @@ var anAwards = $('.an-awards');
   });
 })();
 
+/* Слайдер новостей */
+(function(){
+	var sliderNews = $('.__js_slider-news');
+
+	sliderNews.slick({
+		dots: true,
+		arrows: false,
+		infinite: true,
+		speed: 300
+	});
+})();
+
 /* Анимация чисел */
 
 (function() {
@@ -148,7 +160,7 @@ var anAwards = $('.an-awards');
   }
 })();
 
-/* mixitup filter */
+/*/!* mixitup filter *!/
 (function() {
 	var containerEl = document.querySelector('.__js_mixitup-container');
 	var select = document.querySelector('.__js_mixitup-select');
@@ -162,7 +174,7 @@ var anAwards = $('.an-awards');
 			mixer.filter('.__js_' + value);
 		}
 	};
-})();
+})();*/
 
 /* Анимация подвала */
 /*(function() {
@@ -194,3 +206,34 @@ var anAwards = $('.an-awards');
   });
 
 })();*/
+
+// Одинаковая высота у блоков в сетке
+(function(){
+	$(window).on('load', function () {
+		setEqualHeight($('.article-list__list'));
+
+		$(window).resize(function () {
+			setEqualHeight($('.article-list__list'));
+		});
+	});
+
+	function setEqualHeight(row) {
+		if (window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
+			row.each(function() {
+				var tallestcolumn = 0;
+
+				$(this).find('li').each(function () {
+					var currentHeight = $(this).find('.article-preview__content').height();
+
+					if (currentHeight > tallestcolumn) {
+						tallestcolumn = currentHeight;
+					}
+				});
+
+				$(this).find('.article-preview__content').height(tallestcolumn);
+			});
+		} else {
+			$('.article-preview__content').removeAttr('style');
+		}
+	}
+})();

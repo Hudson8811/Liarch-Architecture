@@ -5,6 +5,7 @@
 //@import "common/fonts";
 @import "common/utils";
 @import "common/global";
+@import "common/components";
 @import "vendor/bootstrap-grid";
 @import "vendor/slick";
 @import "vendor/slick-theme";
@@ -44,6 +45,9 @@
 @import "blocks/an-awards";
 @import "blocks/works";
 @import "blocks/works-page";
+@import "blocks/news-list";
+@import "blocks/news-slider";
+@import "blocks/news-card";
 
 @import "blocks/overlay";
 @import "blocks/modal";

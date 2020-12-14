@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/Cinzel-Regular.woff2" as="font" />
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Liarch - Architecture &amp; Interior HTML Template - Works</title>
+  <title>Liarch - Architecture &amp; Interior HTML Template - News</title>
 </head>
 
 <body class="webpage">
@@ -77,14 +77,14 @@
           <li class="navigation__item">
             <a class="navigation__link" href="homepage.html">What we do</a>
           </li>
-          <li class="navigation__item navigation__item--current">
-            <a class="navigation__link">Works</a>
+          <li class="navigation__item">
+            <a class="navigation__link" href="#">Works</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">About</a>
           </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">News</a>
+          <li class="navigation__item navigation__item--current">
+            <a class="navigation__link">News</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">Contact</a>
@@ -122,14 +122,14 @@
         <li class="menu__item">
           <a class="menu__link" href="homepage.html">What we do</a>
         </li>
-        <li class="menu__item menu__item--current">
-          <a class="menu__link">Works</a>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Works</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">About</a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">News</a>
+        <li class="menu__item menu__item--current">
+          <a class="menu__link">News</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">Contact</a>
@@ -167,149 +167,175 @@
     </div>
   </section>
   <main>
-    <article class="works-page">
-      <header class="works-page__header">
-        <div class="works-page__inner container">
-          <h1 class="works-page__heading heading">Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves</h1>
-          <div class="works-page__text">Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.</div>
+    <article class="news-list">
+      <div class="container news-list__container">
+        <header class="news-list__header">
+          <h2 class="news-list__heading heading">Inspirations & Experiences</h2>
+        </header>
+        <div class="filter controls news-list__filter">
+          <button class="filter__item" type="button" data-filter="all">all</button>
+          <button class="filter__item" type="button" data-filter=".__js_inspirations">inspirations</button>
+          <button class="filter__item" type="button" data-filter=".__js_experiences">experiences</button>
+          <button class="filter__item" type="button" data-filter=".__js_reviews">reviews</button>
+          <button class="filter__item" type="button" data-filter=".__js_tips">tips & tricks</button>
+          <button class="filter__item" type="button" data-filter=".__js_others">others</button>
         </div>
-      </header>
-      <div class="works-page__content">
-        <div class="container-fluid">
-          <section class="works">
-            <header class="works__header">
-              <div class="works__filter filter controls">
-                <button class="filter__item" type="button" data-filter="all">all</button>
-                <button class="filter__item" type="button" data-filter=".__js_residential">residential</button>
-                <button class="filter__item" type="button" data-filter=".__js_commercial">commercial</button>
-                <button class="filter__item" type="button" data-filter=".__js_architecture">architecture</button>
-                <button class="filter__item" type="button" data-filter=".__js_interior">interior</button>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="0">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="" />
               </div>
-              <div class="works__sort sort">
-                <label class="sort__hint" for="sortSelect">filter by years:</label>
-                <select class="sort__select __js_mixitup-select" id="sortSelect" name="sort">
-                  <option value="all">all</option>
-                  <option value="2020">2020</option>
-                  <option value="2019">2019</option>
-                  <option value="2018">2018</option>
-                </select>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
               </div>
-            </header>
-            <ul class="works__list row __js_mixitup-container">
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2020" data-order="1">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/daniel-villa-romania.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2020</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Daniel villa, Romania</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2019" data-order="2">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/cabin-wood-in-forest.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Cabin wood in forest</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_2019" data-order="3">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/cube-villa-poland.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Residential</div>
-                  <h2 class="work-card__heading">
-                    <a>Cube villa, Poland</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_architecture __js_2019" data-order="4">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/grido-museum-denmark.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Grido museum, Denmark</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_architecture __js_2019" data-order="5">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/dogel-nord-station.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Dogel nord station</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 mix __js_residential __js_interior __js_2018" data-order="6">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/b65-apartment-in-sepro-building.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Residential, Interior</div>
-                  <h2 class="work-card__heading">
-                    <a>B65 apartment in sepro building</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2019" data-order="7">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/single-house.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2019</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Single house</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2018" data-order="8">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/miter-wooden-library.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Miter wooden library</a>
-                  </h2>
-                </div>
-              </li>
-              <li class="works__item work-card work-card--compact col-12 col-md-6 col-lg-4 __js_architecture __js_2018" data-order="9">
-                <a class="work-card__image" href="#">
-                  <img src="img/works-2/belgium-center-point-plaza.jpg" width="640" height="582" alt="" />
-                </a>
-                <div class="work-card__content">
-                  <div class="work-card__year">2018</div>
-                  <div class="work-card__tags">Architecture</div>
-                  <h2 class="work-card__heading">
-                    <a>Belgium center point plaza</a>
-                  </h2>
-                </div>
-              </li>
-            </ul>
-            <a class="works__more more-btn" href="#">
-              <span class="more-btn__text">more</span>
-            </a>
-          </section>
-        </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="300">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-2.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="600">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-3.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md-8" data-aos="fade" data-aos-delay="0">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="300">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-2.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="0">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-8" data-aos="fade" data-aos-delay="300">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-2.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md-12" data-aos="fade" data-aos-delay="0">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="article-list__list row">
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="0">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-1.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="300">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-2.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="600">
+            <div class="article-preview" tebindex="0">
+              <div class="article-preview__image">
+                <img src="img/article-preview-3.jpg" width="356" height="356" alt="" />
+              </div>
+              <div class="article-preview__content">
+                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
+                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
+                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
+                <a class="article-preview__btn" href="#">continue</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a class="more-btn news-list__more" href="#">
+          <span class="more-btn__text">more</span>
+        </a>
       </div>
     </article>
   </main>
@@ -357,8 +383,8 @@
             <li class="footer__column-item">
               <a class="footer__column-link" href="#">Career</a>
             </li>
-            <li class="footer__column-item">
-              <a class="footer__column-link" href="#">News</a>
+            <li class="footer__column-item footer__column-item--current">
+              <a class="footer__column-link">News</a>
             </li>
           </ul>
         </div>
