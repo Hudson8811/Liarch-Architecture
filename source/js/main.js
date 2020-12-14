@@ -232,6 +232,15 @@ var anAwards = $('.an-awards');
 	var halfWindowHeight = $(window).height() / 2;
 	var ratio = hideBgInnerHeight / halfWindowHeight;
 
+	$(window).on('resize', function() {
+		bgHeight = bg.innerHeight();
+		bgInnerHeight = bgInner.innerHeight();
+		bgOffset = bg.offset().top;
+		hideBgInnerHeight = bgInnerHeight - bgHeight;
+		halfWindowHeight = $(window).height() / 2;
+		ratio = hideBgInnerHeight / halfWindowHeight;
+	});
+
 
 	$(window).on('scroll', function() {
 		var scroll = $(window).scrollTop();
