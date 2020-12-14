@@ -1,0 +1,144 @@
+.twitter-block {
+	&__wrapper {
+		padding: 20px;
+		border: solid 1px $color-grey5;
+
+		@include media(sm) {
+			padding: 40px;
+		}
+
+		@include media(md) {
+			padding: 60px;
+		}
+		@include media(lg) {
+			padding: 80px;
+		}
+		@include media(xl) {
+			padding: 93px 170px 105px;
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+
+		@include media(sm) {
+			margin-bottom: 40px;
+		}
+
+		@include media(lg) {
+			margin-bottom: 53px;
+		}
+	}
+
+	&__author {
+		display: flex;
+
+		&-image {
+			width: 40px;
+			height: 40px;
+			margin-right: 12px;
+			align-self: center;
+			border-radius: 50%;
+			overflow: hidden;
+
+			@include media(sm) {
+				width: 60px;
+				height: 60px;
+				margin-right: 20px;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		&-meta {
+			@include text(14px, 1);
+			align-self: center;
+		}
+
+		&-name {
+			margin-bottom: 6px;
+
+			@include media(sm) {
+				font-size: 20px;
+			}
+		}
+
+		&-info {
+			font-size: 12px;
+			color: $color-grey;
+			letter-spacing: 0.015em;
+
+			@include media(sm) {
+				font-size: 16px;
+			}
+
+			a {
+				color: $color-grey;
+
+				@include transition(color);
+
+				&:hover,
+				&:focus {
+					outline: none;
+					color: $color-turquoise;
+				}
+
+				&:active {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	&__social {
+		align-self: center;
+
+		svg {
+			display: block;
+			width: 24px;
+			height: auto;
+			fill: $color-turquoise;
+
+			@include transition(fill);
+
+			@include media(sm) {
+				width: 34px;
+			}
+		}
+	}
+
+	&__text {
+		@include text(14px, 1.64);
+		font-style: italic;
+
+		@include media(sm) {
+			font-size: 20px;
+		}
+
+		@include media(lg) {
+			font-size: 28px;
+		}
+
+		a {
+			color: $color-turquoise;
+
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: lighten($color-turquoise, 10%);
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+}

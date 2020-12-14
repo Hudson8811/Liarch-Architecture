@@ -1,0 +1,104 @@
+extends templates/main.pug
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - Single project';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 2; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.single-project
+		header.single-project__header.container
+			.single-project__inner.row
+				.col-12.col-md-4
+					h1.single-project__heading.heading Dogel Nord Station
+					+social('single-project__social')
+				.col-12.col-md-6.offset-md-2
+					ul.project-meta
+						li.project-meta__item
+							.project-meta__item-title client
+							.project-meta__item-text Dogel Nord Station, <br>Denmark
+						li.project-meta__item
+							.project-meta__item-title team
+							.project-meta__item-text LoganCee - Architect <br>Pavel Suslov - Supervisor
+						li.project-meta__item
+							.project-meta__item-title services
+							.project-meta__item-text Architecture, Interior, CGI, Products
+						li.project-meta__item
+							.project-meta__item-title date
+							.project-meta__item-text Feburary 25th, 2022
+
+
+		.single-project__paralax-image
+			img(src="img/single-project/image-parallax.jpg", alt="")
+
+		.single-project__intro
+			.container
+				.single-project__intro-text Dogel Nord Station is a startup that aims to supply energy (starting with gas) to&nbsp;domestic&nbsp;household acrossthe UK. Create a very simple yet stunning logotype and promo&nbsp;site that sets the brand of Entice Energy apart from the competitors like a fresh take&nbsp;on&nbsp;an already saturated area.
+
+		section.single-project__section
+			.container
+				h2.single-project__section-heading Challenge
+				.single-project__section-text Create an unconventional yet user-friendly website – innovative, with a clean and simple design that communicates brand values and showcases multi-media content. Site that spreads the message: "Islamic stories your child will love"
+
+				ul
+					li Develop easy-to-find and easy-to-navigate mobile friendly website
+					li Showcase each type of content: interactive books, animated stories and picture books, audio stories. Create an experience people  want to share with others
+					li Persuade to download app and subscribe
+
+		section.single-project__review.twitter-block
+			.container
+				.twitter-block__wrapper
+					header.twitter-block__header
+						.twitter-block__author
+							.twitter-block__author-image
+								img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+							.twitter-block__author-meta
+								.twitter-block__author-name Thiago Alcantara
+								.twitter-block__author-info <a href="#">@thiago.lfc</a>  - <time datetime="2020-12-15">15 Dec, 2020</time>
+						a.twitter-block__social(href="#")
+							+icon('twitter')(width="34", height="34")
+					.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio
+
+		section.single-project__section
+			.container
+				h2.single-project__section-heading Solution
+				.single-project__section-text Our approach was to present the site as a visual editorial platform with quarterly features based on events and occasions the brand was focused on. Each quarterly focus would be marked by the hero and custom tags that filter content.
+
+		.single-project__gallery
+			.single-project__gallery-inner.container
+				.row
+					.single-project__gallery-image.col-12.col-md-6
+						img(src="img/single-project/01.jpg", alt="")
+					.single-project__gallery-image.col-12.col-md-6
+						img(src="img/single-project/02.jpg", alt="")
+					.single-project__gallery-image.col-12
+						img(src="img/single-project/03.jpg", alt="")
+
+		.single-project__liked.liked
+			a.liked__btn(href="#")
+				+icon('heart-filled')(width="34", height="34")
+			.liked__text 268 Liked
+
+		footer.single-project__footer
+			.paginate
+				.container
+					.row.no-gutters
+						.paginate__item.paginate__item--prev.col-6
+							a(href="#")
+								.paginate__image
+									img(src="img/single-project/next.jpg", alt="")
+								.paginate__text
+									span.hint Prev
+									span Grido Museum, <br>Denmark
+						.paginate__item.paginate__item--next.col-6
+							a(href="#")
+								.paginate__image
+									img(src="img/single-project/next.jpg", alt="")
+								.paginate__text
+									span.hint Next
+									span Daniel Villa, <br>Romaina
+
+
+
+
+block footer
+	include modules/footer

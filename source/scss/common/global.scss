@@ -1,34 +1,40 @@
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-family: $font-family--main;
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: $font-family--main;
 
-  @include text();
-  font-weight: 400;
+	@include text();
+	font-weight: 400;
 }
 
 main {
-  position: relative;
-  z-index: 1;
-  flex-grow: 1;
-  background-color: $color-default-white;
+	position: relative;
+	z-index: 1;
+	flex-grow: 1;
+	background-color: $color-default-white;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+}
+
+@include media(xl) {
+	.container {
+		max-width: 1200px !important;
+	}
 }

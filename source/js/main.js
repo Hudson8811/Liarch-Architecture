@@ -52,13 +52,28 @@ var anAwards = $('.an-awards');
 
 })();
 
-/* Слайдер проектов на главной */
+/* Слайдер проектов */
 (function(){
   var slider = $('.__js_slider-single');
 
   slider.slick({
     dots: true,
     arrows: false,
+    infinite: true,
+    speed: 300
+  });
+})();
+
+/* Карусель проектов */
+(function(){
+  var carousel = $('.__js_slider-carousel');
+
+  carousel.slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		margin: 30,
+    dots: true,
+    arrows: true,
     infinite: true,
     speed: 300
   });

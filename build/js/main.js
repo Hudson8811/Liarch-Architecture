@@ -150,7 +150,7 @@ var anAwards = $('.an-awards');
 
 /* mixitup filter */
 (function() {
-	var containerEl = document.querySelector('.__js_mixitup-container');
+	/*var containerEl = document.querySelector('.__js_mixitup-container');
 	var select = document.querySelector('.__js_mixitup-select');
 	var mixer = mixitup(containerEl);
 
@@ -161,7 +161,48 @@ var anAwards = $('.an-awards');
 		if (value !== 'all') {
 			mixer.filter('.__js_' + value);
 		}
-	};
+	};*/
+})();
+
+/* packery init */
+(function() {
+	var select = $('.__js_filter-select');
+	var filterItem = $('.filter__item');
+	var filterItemAll = $('.filter__item[data-filter="*"]');
+	var filterActiveClass = 'filter__item--active';
+
+
+	var grid = $('.__js_works-filter').isotope({
+		itemSelector: '.works__item',
+		layoutMode: 'packery',
+		packery: {
+			gutter: 0
+		},
+	});
+
+	select.on('change', function () {
+		var value = select.val();
+		var filterValue = value !== '*' ? '.__js_' + value : value;
+
+		if (value !== '*') {
+			var filterValue = '.__js_' + value;
+			filterItem.removeClass(filterActiveClass);
+		} else {
+			filterItemAll.addClass(filterActiveClass);
+			var filterValue = value;
+		}
+
+		grid.isotope({ filter: filterValue });
+	});
+
+	filterItem.on('click', function() {
+		var filterValue = $(this).attr('data-filter');
+		$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+		grid.isotope({ filter: filterValue });
+	});
+
+
+
 })();
 
 /* Анимация подвала */

@@ -1,0 +1,47 @@
+.project-meta {
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
+
+	@include media(xl) {
+		padding-top: 10px;
+	}
+
+	&__item {
+		width: 50%;
+		padding-right: 10px;
+
+		@include media(xl) {
+			padding: 0 22px;
+		}
+
+		&:nth-child(n + 3) {
+			margin-top: 30px;
+
+			@include media(xl) {
+				margin-top: 52px;
+			}
+		}
+
+		&-title {
+			margin-bottom: 12px;
+
+			@include text(12px, 1, $color-grey);
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+
+			@include media(xl) {
+				margin-bottom: 24px;
+				font-size: 14px;
+			}
+		}
+
+		&-text {
+			@include text(14px, 1.66);
+
+			@include media(xl) {
+				font-size: 18px;
+			}
+		}
+	}
+}
