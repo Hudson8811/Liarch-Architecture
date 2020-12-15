@@ -52,13 +52,28 @@ var anAwards = $('.an-awards');
 
 })();
 
-/* Слайдер проектов на главной */
+/* Слайдер проектов */
 (function(){
   var slider = $('.__js_slider-single');
 
   slider.slick({
     dots: true,
     arrows: false,
+    infinite: true,
+    speed: 300
+  });
+})();
+
+/* Карусель проектов */
+(function(){
+  var carousel = $('.__js_slider-carousel');
+
+  carousel.slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		margin: 30,
+    dots: true,
+    arrows: true,
     infinite: true,
     speed: 300
   });
@@ -203,6 +218,40 @@ var anAwards = $('.an-awards');
 
 
 
+})();
+
+/* Паралакс фона при скролле */
+(function() {
+	var bg = $('.__js_bg-parallax-container');
+	var bgInner = bg.find('.__js_bg-parallax-inner');
+
+	var bgHeight = bg.innerHeight();
+	var bgInnerHeight = bgInner.innerHeight();
+	var bgOffset = bg.offset().top;
+	var hideBgInnerHeight = bgInnerHeight - bgHeight;
+	var halfWindowHeight = $(window).height() / 2;
+	var ratio = hideBgInnerHeight / halfWindowHeight;
+
+	$(window).on('resize', function() {
+		bgHeight = bg.innerHeight();
+		bgInnerHeight = bgInner.innerHeight();
+		bgOffset = bg.offset().top;
+		hideBgInnerHeight = bgInnerHeight - bgHeight;
+		halfWindowHeight = $(window).height() / 2;
+		ratio = hideBgInnerHeight / halfWindowHeight;
+	});
+
+
+	$(window).on('scroll', function() {
+		var scroll = $(window).scrollTop();
+		var scrollPlusHalfWindowHeight = scroll + halfWindowHeight;
+
+		if (scrollPlusHalfWindowHeight >= bgOffset && scroll <= bgOffset) {
+			var difference = bgOffset - scrollPlusHalfWindowHeight;
+			var shift = difference * ratio;
+			bgInner.css('top', shift + 'px');
+		}
+	});
 })();
 
 /* Анимация подвала */
