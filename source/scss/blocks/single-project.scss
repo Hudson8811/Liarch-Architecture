@@ -1,8 +1,99 @@
 .single-project {
+	$self: &;
 	padding-top: 40px;
+
+	&--minimalist {
+		#{$self}__header {
+			padding-bottom: 60px;
+			border-bottom: solid 1px $color-grey6;
+
+			@include media(xl) {
+				margin-bottom: 106px;
+				padding-bottom: 80px;
+			}
+		}
+
+		#{$self}__intro {
+			&-text {
+				padding-bottom: 0;
+				border: none;
+				text-align: center;
+			}
+		}
+
+		#{$self}__heading {
+			margin-bottom: 60px;
+			text-align: center;
+
+			@include media(xl) {
+				margin-bottom: 100px;
+			}
+		}
+
+		#{$self}__social {
+			margin: 80px auto;
+			justify-content: center;
+
+			@include media(xl) {
+				margin: 0 auto 114px;
+			}
+		}
+
+		#{$self}__photo {
+			max-width: 100%;
+			margin-bottom: 60px;
+			text-align: center;
+
+			@include media(xl) {
+				margin-bottom: 230px;
+			}
+
+			img {
+				display: inline-block;
+				vertical-align: top;
+				max-width: 100%;
+			}
+
+			&--panorama {
+				margin: 100px 0;
+
+				@include media(xl) {
+					margin-bottom: 280px;
+				}
+			}
+
+			&--stuck {
+				@include media(md) {
+					max-width: none;
+
+					img {
+						width: calc(50vw - 15px);
+						max-width: none;
+					}
+				}
+			}
+
+			&--width-inherit {
+				img {
+					width: auto;
+					max-width: none;
+				}
+			}
+		}
+
+		#{$self}__liked {
+			margin-bottom: 156px;
+		}
+	}
 
 	@include media(xl) {
 		padding-top: 130px;
+	}
+
+	&__inner {
+		&--width-full {
+			max-width: $width--full !important;
+		}
 	}
 
 	img {

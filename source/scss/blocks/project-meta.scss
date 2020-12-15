@@ -1,7 +1,21 @@
 .project-meta {
+	$self: &;
+
 	@include list-reset;
 	display: flex;
 	flex-wrap: wrap;
+
+	&--line {
+		#{$self}__item {
+			padding: 0 10px;
+			text-align: center;
+
+			@include media(md) {
+				width: 25%;
+				margin: 0 !important;
+			}
+		}
+	}
 
 	@include media(xl) {
 		padding-top: 10px;
