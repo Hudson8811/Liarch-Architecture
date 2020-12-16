@@ -100,24 +100,41 @@
 
 		#{$self}__heading {
 			margin-bottom: 20px;
+			letter-spacing: -0.025em;
 
 			@include media(sm) {
 				font-size: 36px;
+			}
+
+			@include media(xl) {
+				margin-bottom: 34px;
 			}
 		}
 
 		#{$self}__meta {
 			margin-bottom: 40px;
+
+			@include media(xl) {
+				margin-bottom: 250px;
+			}
 		}
 
 		#{$self}__paginate {
 			margin-bottom: 40px;
+
+			@include media(xl) {
+				margin-bottom: 60px;
+			}
 		}
 
 		#{$self}__short {
 			margin-bottom: 40px;
 
 			@include text(16px, 1.625, $color-grey2);
+
+			@include media(xl) {
+				margin-bottom: 37px;
+			}
 		}
 
 		#{$self}__aside {
