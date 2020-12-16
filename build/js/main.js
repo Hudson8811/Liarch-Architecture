@@ -225,33 +225,38 @@ var anAwards = $('.an-awards');
 	var bg = $('.__js_bg-parallax-container');
 	var bgInner = bg.find('.__js_bg-parallax-inner');
 
-	var bgHeight = bg.innerHeight();
-	var bgInnerHeight = bgInner.innerHeight();
-	var bgOffset = bg.offset().top;
-	var hideBgInnerHeight = bgInnerHeight - bgHeight;
-	var halfWindowHeight = $(window).height() / 2;
-	var ratio = hideBgInnerHeight / halfWindowHeight;
-
-	$(window).on('resize', function() {
-		bgHeight = bg.innerHeight();
-		bgInnerHeight = bgInner.innerHeight();
-		bgOffset = bg.offset().top;
-		hideBgInnerHeight = bgInnerHeight - bgHeight;
-		halfWindowHeight = $(window).height() / 2;
-		ratio = hideBgInnerHeight / halfWindowHeight;
-	});
+	if (bg.length) {
 
 
-	$(window).on('scroll', function() {
-		var scroll = $(window).scrollTop();
-		var scrollPlusHalfWindowHeight = scroll + halfWindowHeight;
+		var bgHeight = bg.innerHeight();
+		var bgInnerHeight = bgInner.innerHeight();
+		var bgOffset = bg.offset().top;
+		var hideBgInnerHeight = bgInnerHeight - bgHeight;
+		var halfWindowHeight = $(window).height() / 2;
+		var ratio = hideBgInnerHeight / halfWindowHeight;
 
-		if (scrollPlusHalfWindowHeight >= bgOffset && scroll <= bgOffset) {
-			var difference = bgOffset - scrollPlusHalfWindowHeight;
-			var shift = difference * ratio;
-			bgInner.css('top', shift + 'px');
-		}
-	});
+		$(window).on('resize', function() {
+			bgHeight = bg.innerHeight();
+			bgInnerHeight = bgInner.innerHeight();
+			bgOffset = bg.offset().top;
+			hideBgInnerHeight = bgInnerHeight - bgHeight;
+			halfWindowHeight = $(window).height() / 2;
+			ratio = hideBgInnerHeight / halfWindowHeight;
+		});
+
+
+		$(window).on('scroll', function() {
+			var scroll = $(window).scrollTop();
+			var scrollPlusHalfWindowHeight = scroll + halfWindowHeight;
+
+			if (scrollPlusHalfWindowHeight >= bgOffset && scroll <= bgOffset) {
+				var difference = bgOffset - scrollPlusHalfWindowHeight;
+				var shift = difference * ratio;
+				bgInner.css('top', shift + 'px');
+			}
+		});
+	}
+
 })();
 
 /* Анимация подвала */

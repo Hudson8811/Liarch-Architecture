@@ -2,6 +2,10 @@
 	$self: &;
 	padding-top: 40px;
 
+	@include media(xl) {
+		padding-top: 130px;
+	}
+
 	&--minimalist {
 		#{$self}__header {
 			padding-bottom: 60px;
@@ -86,8 +90,53 @@
 		}
 	}
 
-	@include media(xl) {
-		padding-top: 130px;
+	&--with-sidebar {
+		padding-top: 0;
+		border-top: solid 1px $color-grey5;
+
+		@include media(xl) {
+			padding-top: 0;
+		}
+
+		#{$self}__heading {
+			margin-bottom: 20px;
+
+			@include media(sm) {
+				font-size: 36px;
+			}
+		}
+
+		#{$self}__meta {
+			margin-bottom: 40px;
+		}
+
+		#{$self}__paginate {
+			margin-bottom: 40px;
+		}
+
+		#{$self}__short {
+			margin-bottom: 40px;
+
+			@include text(16px, 1.625, $color-grey2);
+		}
+
+		#{$self}__aside {
+			&-content {
+				padding: 0 15px;
+
+				@include media(md) {
+					padding: 0 24px;
+				}
+
+				@include media(xl) {
+					padding: 0 32px;
+				}
+
+				@include media(xxl) {
+					padding: 0 70px;
+				}
+			}
+		}
 	}
 
 	&__inner {
@@ -97,6 +146,8 @@
 	}
 
 	img {
+		display: inline-block;
+		vertical-align: top;
 		max-width: 100%;
 	}
 

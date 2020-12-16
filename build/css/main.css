@@ -5328,6 +5328,29 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
       .project-meta--line .project-meta__item {
         width: 25%;
         margin: 0 !important; } }
+  .project-meta--table {
+    display: block; }
+    .project-meta--table .project-meta__item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 !important;
+      padding: 10px 0;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.1); }
+      .project-meta--table .project-meta__item:last-child {
+        border-bottom: none; }
+      .project-meta--table .project-meta__item-title {
+        margin: 0;
+        align-self: center; }
+        @media (min-width: 576px) {
+          .project-meta--table .project-meta__item-title {
+            font-size: 14px; } }
+      .project-meta--table .project-meta__item-text {
+        text-align: right;
+        align-self: center; }
+        @media (min-width: 576px) {
+          .project-meta--table .project-meta__item-text {
+            font-size: 16px; } }
   @media (min-width: 1200px) {
     .project-meta {
       padding-top: 10px; } }
@@ -5513,6 +5536,32 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
           outline: none;
           color: #ff4800; }
         .paginate--simple .paginate__item a:active {
+          opacity: 0.7; }
+  .paginate--arrows {
+    display: flex;
+    justify-content: center;
+    height: 82px;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1); }
+    .paginate--arrows .paginate__item {
+      height: auto;
+      padding: 0 15px;
+      align-self: center; }
+      .paginate--arrows .paginate__item--all {
+        width: calc(100% - 44px);
+        text-align: center; }
+      .paginate--arrows .paginate__item a {
+        display: inline-block;
+        vertical-align: top; }
+        .paginate--arrows .paginate__item a.disabled svg {
+          fill: #999999; }
+        .paginate--arrows .paginate__item a svg {
+          display: block;
+          transition: fill 0.3s ease; }
+        .paginate--arrows .paginate__item a:not(.disabled):hover, .paginate--arrows .paginate__item a:not(.disabled):focus {
+          outline: none; }
+          .paginate--arrows .paginate__item a:not(.disabled):hover svg, .paginate--arrows .paginate__item a:not(.disabled):focus svg {
+            fill: #ff4800; }
+        .paginate--arrows .paginate__item a:active {
           opacity: 0.7; }
   .paginate__item {
     position: relative;
@@ -6560,6 +6609,9 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 
 .single-project {
   padding-top: 40px; }
+  @media (min-width: 1200px) {
+    .single-project {
+      padding-top: 130px; } }
   .single-project--minimalist .single-project__header {
     padding-bottom: 60px;
     border-bottom: solid 1px #eaeaea; }
@@ -6610,12 +6662,42 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
       max-width: none; }
   .single-project--minimalist .single-project__liked {
     margin-bottom: 156px; }
-  @media (min-width: 1200px) {
-    .single-project {
-      padding-top: 130px; } }
+  .single-project--with-sidebar {
+    padding-top: 0;
+    border-top: solid 1px #d6d6d6; }
+    @media (min-width: 1200px) {
+      .single-project--with-sidebar {
+        padding-top: 0; } }
+    .single-project--with-sidebar .single-project__heading {
+      margin-bottom: 20px; }
+      @media (min-width: 576px) {
+        .single-project--with-sidebar .single-project__heading {
+          font-size: 36px; } }
+    .single-project--with-sidebar .single-project__meta {
+      margin-bottom: 40px; }
+    .single-project--with-sidebar .single-project__paginate {
+      margin-bottom: 40px; }
+    .single-project--with-sidebar .single-project__short {
+      margin-bottom: 40px;
+      font-size: 16px;
+      line-height: 1.625;
+      color: #666666; }
+    .single-project--with-sidebar .single-project__aside-content {
+      padding: 0 15px; }
+      @media (min-width: 768px) {
+        .single-project--with-sidebar .single-project__aside-content {
+          padding: 0 24px; } }
+      @media (min-width: 1200px) {
+        .single-project--with-sidebar .single-project__aside-content {
+          padding: 0 32px; } }
+      @media (min-width: 1560px) {
+        .single-project--with-sidebar .single-project__aside-content {
+          padding: 0 70px; } }
   .single-project__inner--width-full {
     max-width: 1550px !important; }
   .single-project img {
+    display: inline-block;
+    vertical-align: top;
     max-width: 100%; }
   .single-project__header {
     margin-bottom: 60px; }
