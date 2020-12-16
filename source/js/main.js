@@ -54,21 +54,42 @@ var anAwards = $('.an-awards');
 
 /* Слайдер проектов */
 (function(){
-  var slider = $('.__js_slider-single');
+  //var slider = $('.__js_slider-single');
 
   slider.slick({
     dots: true,
     arrows: false,
     infinite: true,
     speed: 300
-  });
+	});
+
+
+	var mySwiper = new Swiper('.__js_slider-single', {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		// And if we need scrollbar
+		/*scrollbar: {
+			el: '.swiper-scrollbar',
+		},*/
+	});
 })();
 
 /* Карусель проектов */
 (function(){
-  var carousel = $('.__js_slider-carousel');
+  //var carousel = $('.__js_slider-carousel');
 
-  carousel.slick({
+  /*carousel.slick({
 		slidesToShow: 2,
 		slidesToScroll: 1,
 		margin: 30,
@@ -76,7 +97,29 @@ var anAwards = $('.an-awards');
     arrows: true,
     infinite: true,
     speed: 300
-  });
+	}); */
+
+	var mySwiper = new Swiper('.__js_slider-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		loop: true,
+
+		// If we need pagination
+		/*pagination: {
+			el: '.swiper-pagination',
+		},*/
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		// And if we need scrollbar
+		/*scrollbar: {
+			el: '.swiper-scrollbar',
+		},*/
+	});
 })();
 
 /* Анимация чисел */
@@ -226,8 +269,6 @@ var anAwards = $('.an-awards');
 	var bgInner = bg.find('.__js_bg-parallax-inner');
 
 	if (bg.length) {
-
-
 		var bgHeight = bg.innerHeight();
 		var bgInnerHeight = bgInner.innerHeight();
 		var bgOffset = bg.offset().top;
