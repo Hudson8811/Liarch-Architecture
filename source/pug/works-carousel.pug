@@ -27,30 +27,32 @@ block content
 									- let val = year === 'all' ? '*' : year;
 									option(value= val)= year
 
-					.works__slider.slider.__js_works-filter.__js_slider-single
-						.slider__item.slide.__js_architecture.__js_2020
-							img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
-							.slide__content
-								.slide__content-detail 2020  -  Kiev, Ukraine
-								.slide__content-heading Cubic Blockes Hotel
+					.works__slider.slider.slider--single.swiper-container.__js_slider-single(data-aos="fade")
+						.swiper-wrapper
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
+								.slide__content
+									.slide__content-detail 2020  -  Kiev, Ukraine
+									.slide__content-heading Cubic Blockes Hotel
 
-						.slider__item.slide.__js_architecture.__js_interior.__js_2020
-							img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
-							.slide__content
-								.slide__content-detail 2020  -  Belgium
-								.slide__content-heading Dogel Nord Station
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
+								.slide__content
+									.slide__content-detail 2020  -  Belgium
+									.slide__content-heading Dogel Nord Station
 
-						.slider__item.slide.__js_interior.__js_2019
-							img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
-							.slide__content
-								.slide__content-detail 2019  -  Vancouver, Canada
-								.slide__content-heading Cabin Wood In Forest
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
+								.slide__content
+									.slide__content-detail 2019  -  Vancouver, Canada
+									.slide__content-heading Cabin Wood In Forest
 
-						.slider__item.slide.__js_architecture.__js_2018
-							img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
-							.slide__content
-								.slide__content-detail 2019  -  Iasi, Romania
-								.slide__content-heading Daniel Villa, Romania
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
+								.slide__content
+									.slide__content-detail 2019  -  Iasi, Romania
+									.slide__content-heading Daniel Villa, Romania
+						.swiper-pagination
 
 block footer
 	include modules/footer

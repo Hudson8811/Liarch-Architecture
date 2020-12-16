@@ -8,6 +8,7 @@
 	}
 
 	&__content {
+		box-sizing: border-box;
 		padding: 10px 0;
 		background-color: $color-default-white;
 

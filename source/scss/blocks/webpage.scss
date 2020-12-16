@@ -1,85 +1,85 @@
 .webpage {
-  &__an-awards {
-    margin-bottom: 60px;
+	&__an-awards {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 165px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 165px;
+		}
+	}
 
-  &__our-story {
-    margin-bottom: 60px;
+	&__our-story {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 165px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 165px;
+		}
+	}
 
-  &__type-service {
-    margin-bottom: 60px;
+	&__type-service {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 172px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 172px;
+		}
+	}
 
-  &__latest-projects {
-    margin-bottom: 60px;
+	&__latest-projects {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 160px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 67px;
+		}
+	}
 
-  &__review {
-    margin-bottom: 60px;
+	&__review {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 185px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 185px;
+		}
+	}
 
-  &__partners {
-    margin-bottom: 60px;
+	&__partners {
+		margin-bottom: 60px;
 
-    @include media(md) {
-      margin-bottom: 100px;
-    }
+		@include media(md) {
+			margin-bottom: 100px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 143px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 143px;
+		}
+	}
 
-  &__article-list {
-    margin-bottom: 100px;
+	&__article-list {
+		margin-bottom: 100px;
 
-    @include media(md) {
-      margin-bottom: 150px;
-    }
+		@include media(md) {
+			margin-bottom: 150px;
+		}
 
-    @include media(xl) {
-      margin-bottom: 212px;
-    }
-  }
+		@include media(xl) {
+			margin-bottom: 212px;
+		}
+	}
 }

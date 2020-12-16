@@ -56,17 +56,17 @@ var anAwards = $('.an-awards');
 (function(){
   //var slider = $('.__js_slider-single');
 
-  slider.slick({
+ /* slider.slick({
     dots: true,
     arrows: false,
     infinite: true,
     speed: 300
-	});
+	});*/
 
 
 	var mySwiper = new Swiper('.__js_slider-single', {
 		slidesPerView: 'auto',
-		spaceBetween: 30,
+		spaceBetween: 10,
 		loop: true,
 		pagination: {
 			el: '.swiper-pagination',
@@ -102,7 +102,7 @@ var anAwards = $('.an-awards');
 	var mySwiper = new Swiper('.__js_slider-carousel', {
 		slidesPerView: 'auto',
 		spaceBetween: 30,
-		loop: true,
+		loop: false,
 
 		// If we need pagination
 		/*pagination: {
@@ -115,10 +115,9 @@ var anAwards = $('.an-awards');
 			prevEl: '.swiper-button-prev',
 		},*/
 
-		// And if we need scrollbar
-		/*scrollbar: {
+		scrollbar: {
 			el: '.swiper-scrollbar',
-		},*/
+		},
 	});
 })();
 
