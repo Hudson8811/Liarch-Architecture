@@ -1,0 +1,99 @@
+.project-meta {
+	$self: &;
+
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
+
+	&--line {
+		#{$self}__item {
+			padding: 0 10px;
+			text-align: center;
+
+			@include media(md) {
+				width: 25%;
+				margin: 0 !important;
+			}
+		}
+	}
+
+	&--table {
+		display: block;
+
+		#{$self}__item {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			margin: 0 !important;
+			padding: 10px 0;
+			border-bottom: solid 1px rgba($color-default-black, 0.1);
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			@include media(md) {
+			}
+
+			&-title {
+				margin: 0;
+				align-self: center;
+
+				@include media(sm) {
+					font-size: 14px;
+				}
+			}
+
+			&-text {
+				text-align: right;
+				align-self: center;
+
+				@include media(sm) {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	@include media(xl) {
+		padding-top: 10px;
+	}
+
+	&__item {
+		width: 50%;
+		padding-right: 10px;
+
+		@include media(xl) {
+			padding: 0 22px;
+		}
+
+		&:nth-child(n + 3) {
+			margin-top: 30px;
+
+			@include media(xl) {
+				margin-top: 52px;
+			}
+		}
+
+		&-title {
+			margin-bottom: 12px;
+
+			@include text(12px, 1, $color-grey);
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+
+			@include media(xl) {
+				margin-bottom: 24px;
+				font-size: 14px;
+			}
+		}
+
+		&-text {
+			@include text(14px, 1.66);
+
+			@include media(xl) {
+				font-size: 18px;
+			}
+		}
+	}
+}
