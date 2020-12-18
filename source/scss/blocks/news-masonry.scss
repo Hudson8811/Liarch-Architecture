@@ -1,0 +1,18 @@
+.news-masonry {
+	&__container {
+		max-width: 1830px;
+		padding-bottom: 60px;
+
+		@include media(md) {
+			padding-bottom: 130px;
+		}
+	}
+
+	&__more {
+		margin: 40px auto;
+
+		@include media(md) {
+			margin: 121px auto 60px;
+		}
+	}
+}

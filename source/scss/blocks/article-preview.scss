@@ -61,6 +61,7 @@
       padding: 32px;
       transform: translateY(100%);
       border-top: solid 1px $color-grey5;
+			z-index: 1;
     }
 
     @include media(xl) {
@@ -118,4 +119,42 @@
       opacity: none;
     }
   }
+
+	&__outer-content {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 12px;
+		z-index: 1;
+		max-width: 83%;
+
+		@include media(lg) {
+			display: block;
+			padding: 15px 40px 33px;
+		}
+	}
+
+	&__tag {
+		display: inline-block;
+		font-size: 12px;
+		line-height: 12px;
+		text-transform: uppercase;
+		color: $color-default-white;
+		padding: 3.5px 5px;
+		margin-bottom: 6px;
+		background-color: $color-orange--dark;
+	}
+
+	&__title {
+		font-size: 30px;
+		line-height: 36px;
+		color: $color-default-white;
+		margin-bottom: 21px;
+	}
+
+	&__publish-date {
+		font-size: 14px;
+		color: $color-default-white;
+	}
 }

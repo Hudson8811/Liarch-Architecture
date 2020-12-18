@@ -1,0 +1,17 @@
+extends templates/main.pug
+include modules/article-list-row
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 4; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.news-masonry
+		.container.news-masonry__container
+			include modules/masonry.pug
+			a.more-btn.news-masonry__more(href="#")
+				span.more-btn__text more
+
+block footer
+	include modules/footer

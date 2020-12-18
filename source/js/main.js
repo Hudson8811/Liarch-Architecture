@@ -237,3 +237,13 @@ var anAwards = $('.an-awards');
 		}
 	}
 })();
+
+(function(){
+	$(window).on('load', function () {
+		$('.masonry').masonry({
+			itemSelector: '.masonry-item',
+			columnWidth: '.masonry-item',
+			percentPosition: true,
+		});
+	});
+})();
