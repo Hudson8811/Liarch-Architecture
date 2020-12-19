@@ -1,0 +1,50 @@
+.about {
+	padding: 40px 0;
+
+	&__header {
+		margin-bottom: 60px;
+	}
+
+	&__heading {
+		max-width: 205px;
+		margin: 0 0 20px;
+
+		@include text(16px, 1.5);
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	&__subheading {
+		font-weight: 400;
+	}
+
+	&__statistics {
+		margin-bottom: 60px;
+	}
+
+	&__panorama {
+		margin-bottom: 60px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__simplicity {
+		margin-bottom: 60px;
+	}
+	&__partners {
+		margin-bottom: 60px;
+
+		.partners__inner {
+			border-bottom: none;
+		}
+	}
+	&__approach {
+		margin-bottom: 60px;
+	}
+	&__testimonials {
+	}
+}

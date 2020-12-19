@@ -1,70 +1,88 @@
 .statistics {
-  &__item {
-    text-align: center;
+	$self: &;
 
-    & + & {
-      margin-top: 24px;
-    }
+	&--column {
+	}
 
-    @include media(sm) {
-      display: flex;
-      text-align: left;
-      //justify-content: center;
+	&--color-invert {
+		#{$self}__item {
+			&-value {
+				font-weight: 400;
+				color: $color-grey;
+			}
+			&-text {
+				color: $color-default-black;
+			}
+		}
+	}
 
-      & + & {
-        margin-top: 0;
-      }
+	&__item {
+		text-align: center;
 
-      &:last-child {
-        margin-top: 24px;
-      }
-    }
+		& + & {
+			margin-top: 24px;
+		}
 
-    @include media(lg) {
-      justify-content: flex-start;
+		@include media(sm) {
+			display: flex;
+			text-align: left;
+			//justify-content: center;
 
-      &:last-child {
-        margin-top: 0;
-      }
-    }
+			& + & {
+				margin-top: 0;
+			}
 
-    &-value {
-      margin-bottom: 6px;
+			&:last-child {
+				margin-top: 24px;
+			}
+		}
 
-      @include text(36px, 1);
-      font-weight: 300;
+		@include media(lg) {
+			justify-content: flex-start;
 
-      @include media(sm) {
-        margin-bottom: 0;
-        margin-right: 24px;
-        font-size: 48px;
-        align-self: center;
-      }
+			&:last-child {
+				margin-top: 0;
+			}
+		}
 
-      @include media(xl) {
-        font-size: 60px;
-      }
-    }
+		&-value {
+			//min-width: 119px;
+			margin-bottom: 6px;
 
-    &-text {
-      @include text(14px, 1.625, $color-grey);
-      text-transform: uppercase;
-      letter-spacing: 0.025em;
+			@include text(36px, 1);
+			font-weight: 300;
 
-      br {
-        display: none;
-      }
+			@include media(sm) {
+				margin-bottom: 0;
+				margin-right: 24px;
+				font-size: 48px;
+				align-self: center;
+			}
 
-      @include media(sm) {
-        align-self: center;
-        br {
-          display: block;
-        }
-      }
+			@include media(xl) {
+				font-size: 60px;
+			}
+		}
 
-      @include media(xl) {
-        font-size: 16px;
-      }
-    }
-  }
+		&-text {
+			@include text(14px, 1.625, $color-grey);
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+
+			br {
+				display: none;
+			}
+
+			@include media(sm) {
+				align-self: center;
+				br {
+					display: block;
+				}
+			}
+
+			@include media(xl) {
+				font-size: 16px;
+			}
+		}
+	}
 }

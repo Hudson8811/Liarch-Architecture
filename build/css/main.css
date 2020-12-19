@@ -5385,6 +5385,13 @@ button.swiper-pagination-bullet {
   .article-preview__btn:active {
     opacity: none; }
 
+.statistics--color-invert .statistics__item-value {
+  font-weight: 400;
+  color: #999999; }
+
+.statistics--color-invert .statistics__item-text {
+  color: #000000; }
+
 .statistics__item {
   text-align: center; }
   .statistics__item + .statistics__item {
@@ -5876,6 +5883,33 @@ button.swiper-pagination-bullet {
         .project-meta__item-text {
           font-size: 18px; } }
 
+@media (min-width: 768px) {
+  .twitter-block--small .twitter-block__wrapper {
+    padding: 40px; } }
+
+@media (min-width: 992px) {
+  .twitter-block--small .twitter-block__wrapper {
+    padding: 40px; } }
+
+@media (min-width: 1200px) {
+  .twitter-block--small .twitter-block__wrapper {
+    padding: 50px 46px; } }
+
+.twitter-block--small .twitter-block__text {
+  font-size: 14px;
+  line-height: 1.33;
+  color: #000000;
+  font-style: italic; }
+  @media (min-width: 576px) {
+    .twitter-block--small .twitter-block__text {
+      font-size: 20px; } }
+  @media (min-width: 992px) {
+    .twitter-block--small .twitter-block__text {
+      font-size: 20px; } }
+  @media (min-width: 1200px) {
+    .twitter-block--small .twitter-block__text {
+      font-size: 30px; } }
+
 .twitter-block__wrapper {
   padding: 20px;
   border: solid 1px #d6d6d6; }
@@ -6131,6 +6165,126 @@ button.swiper-pagination-bullet {
       position: relative;
       top: 0;
       transition: all 400ms 300ms ease-in-out; }
+
+.testimonials__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px; }
+  @media (min-width: 1200px) {
+    .testimonials__header {
+      margin-bottom: 90px; } }
+
+.testimonials__heading {
+  font-weight: 400; }
+
+.testimonials__nav {
+  display: flex;
+  margin-left: 20px; }
+  .testimonials__nav-btn {
+    width: 18px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background-color: transparent;
+    appearance: none;
+    cursor: pointer; }
+    @media (min-width: 1200px) {
+      .testimonials__nav-btn {
+        width: 20px;
+        height: 36px; } }
+    .testimonials__nav-btn + .testimonials__nav-btn {
+      margin-left: 12px; }
+    .testimonials__nav-btn svg {
+      position: relative;
+      left: 50%;
+      display: block;
+      width: auto;
+      height: 100%;
+      transform: translateX(-50%);
+      transition: fill 0.3s ease; }
+    .testimonials__nav-btn:hover, .testimonials__nav-btn:focus {
+      outline: none; }
+      .testimonials__nav-btn:hover svg, .testimonials__nav-btn:focus svg {
+        fill: #ff4800; }
+
+.testimonials__carousel .swiper-wrapper {
+  padding: 1px 0; }
+
+.testimonials__item {
+  width: calc(100% - 2px);
+  box-sizing: border-box; }
+  @media (min-width: 992px) {
+    .testimonials__item {
+      width: calc(50% - 31px); } }
+
+.simplicity__line {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  padding-bottom: 60px;
+  border-bottom: solid 1px #d6d6d6; }
+
+.simplicity__heading {
+  margin: 0 0 20px; }
+
+.simplicity__subheading {
+  margin-bottom: 20px;
+  font-size: 20px;
+  letter-spacing: -0.015em; }
+
+.simplicity__text {
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.77;
+  color: #666666; }
+
+.simplicity__notice {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000; }
+
+.simplicity__phone {
+  margin-bottom: 60px; }
+
+.approach {
+  padding: 60px 0;
+  background-color: #f8f5f4;
+  counter-reset: approach; }
+  .approach__heading {
+    margin-bottom: 30px;
+    font-weight: 400; }
+  .approach__card {
+    position: relative;
+    padding: 30px;
+    background-color: #ffffff;
+    counter-increment: approach; }
+    .approach__card::before {
+      content: "0" counter(approach);
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      font-size: 16px;
+      line-height: 1;
+      color: #999999;
+      letter-spacing: 0.8px; }
+    .approach__card-icon {
+      margin-bottom: 60px; }
+      .approach__card-icon svg {
+        fill: #ff4800; }
+    .approach__card-heading {
+      max-width: 210px;
+      margin: 0 0 20px;
+      font-size: 36px;
+      line-height: 1.11;
+      color: #000000;
+      font-weight: 300; }
+    .approach__card-text {
+      font-size: 18px;
+      line-height: 1.67;
+      color: #999999; }
 
 .header {
   padding: 15px 0;
@@ -6559,6 +6713,14 @@ button.swiper-pagination-bullet {
 .partners__heading {
   margin-bottom: 16px;
   text-align: center; }
+  .partners__heading--small {
+    margin: 0 0 40px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000000;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
   @media (min-width: 576px) {
     .partners__heading {
       margin-bottom: 20px; } }
@@ -6815,6 +6977,22 @@ button.swiper-pagination-bullet {
     @media (min-width: 1560px) {
       .our-story__statistics {
         margin-top: 130px; } }
+
+.type-service--lite .type-service__item {
+  padding: 32px 72px 32px 32px;
+  text-align: left;
+  border: solid 1px #d6d6d6; }
+  .type-service--lite .type-service__item-icon {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 32px;
+    height: auto;
+    background-image: none; }
+  .type-service--lite .type-service__item-heading {
+    font-weight: 400; }
+  .type-service--lite .type-service__item-link {
+    font-size: 12px; }
 
 .type-service__heading {
   margin-bottom: 20px;
@@ -7331,6 +7509,38 @@ button.swiper-pagination-bullet {
         display: block; }
   .single-project__liked {
     margin: 0 auto 80px; }
+
+.about {
+  padding: 40px 0; }
+  .about__header {
+    margin-bottom: 60px; }
+  .about__heading {
+    max-width: 205px;
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000000;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; }
+  .about__subheading {
+    font-weight: 400; }
+  .about__statistics {
+    margin-bottom: 60px; }
+  .about__panorama {
+    margin-bottom: 60px; }
+    .about__panorama img {
+      display: block;
+      width: 100%;
+      height: auto; }
+  .about__simplicity {
+    margin-bottom: 60px; }
+  .about__partners {
+    margin-bottom: 60px; }
+    .about__partners .partners__inner {
+      border-bottom: none; }
+  .about__approach {
+    margin-bottom: 60px; }
 
 .overlay {
   position: fixed;

@@ -1,0 +1,30 @@
+.simplicity {
+	&__line {
+		width: calc(100% - 30px);
+		margin: 0 auto;
+		padding-bottom: 60px;
+		border-bottom: solid 1px $color-grey5;
+	}
+	&__heading {
+		margin: 0 0 20px;
+	}
+
+	&__subheading {
+		margin-bottom: 20px;
+		font-size: 20px;
+		letter-spacing: -0.015em;
+	}
+	&__text {
+		margin-bottom: 40px;
+
+		@include text(16px, 1.77, $color-grey2);
+	}
+	&__notice {
+		margin-bottom: 20px;
+
+		@include text(14px);
+	}
+	&__phone {
+		margin-bottom: 60px;
+	}
+}
