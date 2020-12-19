@@ -76,6 +76,64 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+(function(){
+	var sliderNews2 = $('.__js_slider-news-2');
+
+	sliderNews2.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		infinite: true,
+		speed: 600,
+		arrows: true,
+		prevArrow: '<button class="news-sb-slider__arrow news-sb-slider__arrow--prev" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
+		nextArrow: '<button class="news-sb-slider__arrow news-sb-slider__arrow--next" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
+		autoplay: true,
+		autoplaySpeed: 5000,
+		responsive: [
+			{
+				breakpoint: 1560,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+})();
+
+(function(){
+	var sliderNews3 = $('.__js_slider-news-3');
+
+	sliderNews3.slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		speed: 300,
+		arrows: true,
+		infinite: false,
+		prevArrow: '<button class="news-sb-page__related-arrow news-sb-page__related-arrow--prev" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
+		nextArrow: '<button class="news-sb-page__related-arrow news-sb-page__related-arrow--next" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+})();
+
 /* Анимация чисел */
 
 (function() {
