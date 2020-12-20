@@ -10,9 +10,9 @@ block content
 	article.post-page
 		.container.post-page__container
 			.news-list.post-page__filter
-				header.news-list__header
+				header.news-list__header(data-aos="fade")
 					h2.news-list__heading.heading Inspirations & Experiences
-				.news-list__filter-with-search
+				.news-list__filter-with-search(data-aos="fade")
 					.filter.controls.news-list__filter
 						button.filter__item(type="button", data-filter="all") all
 						button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
@@ -22,7 +22,7 @@ block content
 						button.filter__item(type="button", data-filter=".__js_others") others
 					+input('search', 'search', 'Search in blog')
 
-			.post-page__main-pic
+			.post-page__main-pic(data-aos="fade")
 				img(src="img/slider/slide-1.jpg", alt="")
 			.post-page__wrapper
 				section.post-sb.post-sb--main
@@ -50,6 +50,20 @@ block content
 					.post-sb__text
 						p The short answer is yes. According to Kross, when you think of yourself as another person, it allows you
 							|  give yourself more objective, helpful feedback.
+
+					section.post-sb__review.twitter-block
+						.twitter-block__wrapper
+							header.twitter-block__header
+								.twitter-block__author
+									.twitter-block__author-image
+										img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+									.twitter-block__author-meta
+										.twitter-block__author-name Thiago Alcantara
+										.twitter-block__author-info <a href="#">@thiago.lfc</a>  - <time datetime="2020-12-15">15 Dec, 2020</time>
+								a.twitter-block__social(href="#")
+									+icon('twitter')(width="34", height="34")
+							.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio
+
 					.post-sb__title-inner Defaulting to Mindfulness
 					.post-sb__text
 						p Cray post-ironic plaid, Helvetica keffiyeh tousled Carles banjo before they sold out blog photo booth Marfa semiotics Truffaut.
@@ -61,7 +75,7 @@ block content
 					.post-sb__text
 						p That immediately brought to mind one of <a href="#" target="_blank">my fondest</a> memories, involving my daughter when she was just a toddler of one.
 
-					.post-sb__bottom
+					.post-sb__bottom(data-aos="fade")
 						.post-sb__tags
 							.post-sb__tag-item.active wordpress
 							.post-sb__tag-item theme
@@ -90,7 +104,7 @@ block content
 										+icon('rss')(width="14", height="14")
 										span.visually-hidden Rss
 
-					.post-author
+					section.post-author(data-aos="fade")
 						.post-author__photo
 							img(src="img/post/author.jpg", alt="")
 						.post-author__content
@@ -110,7 +124,7 @@ block content
 								li
 									a(href="#", target="_blank")
 										+icon('behance')(width="14", height="14")
-					.post-sb__related
+					section.post-sb__related(data-aos="fade")
 						.post-sb__related-title Related Posts
 						.post-sb__related-wrapper
 							.post-related.col-sm-6
@@ -123,7 +137,7 @@ block content
 									img(src="img/slider/slide-1.jpg", alt="")
 								.post-related__date December 6, 2020
 								a.post-related__title(href='#') The dome in architectural
-					.comment
+					section.comment(data-aos="fade")
 						.comment__title 02 Comments
 						.comment__wrapper
 							.comment-item
@@ -153,7 +167,7 @@ block content
 										.comment-item__sent December 25, 2020
 									.comment-item__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 									button.comment-item__reply Reply
-					form.comment-form(action='', method='POST')
+					form.comment-form(action='', method='POST', data-aos="fade")
 						.comment-form__title Leave A Commnet
 						.comment-form__inputs-group
 							+input('text', 'author', 'Name')

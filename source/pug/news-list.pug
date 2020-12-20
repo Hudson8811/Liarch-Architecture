@@ -9,9 +9,9 @@ block variables
 block content
 	article.news-list
 		.container.news-list__container
-			header.news-list__header
+			header.news-list__header(data-aos="fade")
 				h2.news-list__heading.heading Inspirations & Experiences
-			.filter.controls.news-list__filter
+			.filter.controls.news-list__filter(data-aos="fade")
 				button.filter__item(type="button", data-filter="all") all
 				button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
 				button.filter__item(type="button", data-filter=".__js_experiences") experiences
@@ -89,7 +89,7 @@ block content
 					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 				}
 			], 'small')
-			a.more-btn.news-list__more(href="#")
+			a.more-btn.news-list__more(href="#", data-aos="fade")
 				span.more-btn__text more
 
 block footer

@@ -24,15 +24,17 @@
 	}
 
 	&__related-slider {
-		margin: 30px -10px 0;
+		margin-top: 30px;
+		position: relative;
 
 		@include media(xxl) {
-			margin: 57px -25px 0;
+			margin-top: 57px;
 		}
 	}
 
 	.post-related {
 		margin-bottom: 0;
+		padding: 0;
 
 		@include media(md) {
 			margin-bottom: 30px;
@@ -52,7 +54,7 @@
 			top: -112px;
 		}
 
-		&.slick-disabled {
+		&.swiper-button-disabled {
 			svg {
 				fill: $color-grey3;
 			}
@@ -109,6 +111,8 @@
 }
 
 .news-sb-slider {
+	position: relative;
+
 	&__arrow {
 		display: flex;
 		align-items: center;
@@ -211,6 +215,7 @@
 		position: relative;
 		color: $color-default-white;
 		text-align: center;
+		box-sizing: border-box;
 
 		@include media(lg) {
 			padding: 56px 60px;

@@ -9,9 +9,9 @@ block variables
 block content
 	article.news-list
 		.container.news-list__container
-			header.news-list__header
+			header.news-list__header(data-aos="fade")
 				h2.news-list__heading.heading Inspirations & Experiences
-			.news-list__filter-with-search
+			.news-list__filter-with-search(data-aos="fade")
 				.filter.controls.news-list__filter
 					button.filter__item(type="button", data-filter="all") all
 					button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
@@ -21,46 +21,48 @@ block content
 					button.filter__item(type="button", data-filter=".__js_others") others
 				+input('search', 'search', 'Search in blog')
 
-			.news-slider.slider.__js_slider-news
-				.news-slider__item
-					img(src="img/slider/slide-1.jpg", alt="")
-					.news-slider__content
-						.news-slider__date <span>review</span>   /   December 20, 2020
-						.news-slider__title How to use solid color combine with simple furnitures
-						.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-				.news-slider__item
-					img(src="img/slider/slide-2.jpg", alt="")
-					.news-slider__content
-						.news-slider__date <span>review</span>   /   December 20, 2020
-						.news-slider__title How to use solid color combine with simple furnitures
-						.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-				.news-slider__item
-					img(src="img/slider/slide-1.jpg", alt="")
-					.news-slider__content
-						.news-slider__date <span>review</span>   /   December 20, 2020
-						.news-slider__title How to use solid color combine with simple furnitures
-						.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-				.news-slider__item
-					img(src="img/slider/slide-2.jpg", alt="")
-					.news-slider__content
-						.news-slider__date <span>review</span>   /   December 20, 2020
-						.news-slider__title How to use solid color combine with simple furnitures
-						.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+			section.news-slider.slider.swiper-container.__js_slider-news(data-aos="fade")
+				.swiper-wrapper
+					.news-slider__item.swiper-slide
+						img(src="img/slider/slide-1.jpg", alt="")
+						.news-slider__content
+							.news-slider__date <span>review</span>   /   December 20, 2020
+							.news-slider__title How to use solid color combine with simple furnitures
+							.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+					.news-slider__item.swiper-slide
+						img(src="img/slider/slide-2.jpg", alt="")
+						.news-slider__content
+							.news-slider__date <span>review</span>   /   December 20, 2020
+							.news-slider__title How to use solid color combine with simple furnitures
+							.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+					.news-slider__item.swiper-slide
+						img(src="img/slider/slide-1.jpg", alt="")
+						.news-slider__content
+							.news-slider__date <span>review</span>   /   December 20, 2020
+							.news-slider__title How to use solid color combine with simple furnitures
+							.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+					.news-slider__item.swiper-slide
+						img(src="img/slider/slide-2.jpg", alt="")
+						.news-slider__content
+							.news-slider__date <span>review</span>   /   December 20, 2020
+							.news-slider__title How to use solid color combine with simple furnitures
+							.news-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
 
-			.news-join
+				.swiper-pagination
+			section.news-join(data-aos="fade")
 				.news-join__col
 					.news-join__title Join Our List
 					.news-join__subtitle Signup to be the first to hear about exclusive deals, special offers and upcoming collections
 				.news-join__col
 					+input('subs', 'email', 'Enter your emaill address')
-			ul.news-list__news
+			ul.news-list__news(data-aos="fade")
 				+news-card('item-1.jpg', '25', 'december', '2020', 'Discover top 15 buildings modern in Italia', 'inspiration', 'By Admin')
 				+news-card('item-1.jpg', '20', 'december', '2020', 'The dome in architectural, the attractive from the art', 'review', 'By Logan Cee')
 				+news-card('item-1.jpg', '16', 'november', '2020', 'Discover top 25 the best of architecture building in 2020', 'inspiration', 'By Admin')
 				+news-card('item-1.jpg', '8', 'november', '2020', 'How to use solid color combine with simple furnitures', 'tips & tricks', 'By Admin')
 				+news-card('item-1.jpg', '12', 'october', '2020', 'Double rectangle houses from old containers', 'review', 'By Admin')
 				+news-card('item-1.jpg', '5', 'october', '2020', 'The solutions for house in Texas’s Moutain', 'review', 'By Logan Cee')
-			a.more-btn.news-list__more-2(href="#")
+			a.more-btn.news-list__more-2(href="#", data-aos="fade")
 				span.more-btn__text more
 
 block footer

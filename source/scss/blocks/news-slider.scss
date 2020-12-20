@@ -1,14 +1,14 @@
 .news-slider {
+	position: relative;
 	margin: 0;
 
 	@include media(xxl) {
 		margin: 0 -175px;
 	}
 
-	.slick-dots {
-		@include media(xl) {
-			bottom: -50px;
-		}
+	.swiper-pagination {
+		position: absolute;
+		bottom: 20px;
 
 		@include media(xxl) {
 			justify-content: flex-end;

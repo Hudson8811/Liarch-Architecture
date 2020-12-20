@@ -171,6 +171,24 @@
 		}
 	}
 
+	&__review {
+		margin: 40px 0;
+
+		@include media(lg) {
+			margin: 84px 0 92px;
+		}
+
+		.twitter-block {
+			&__wrapper {
+				padding: 30px;
+
+				@include media(sm) {
+					padding: 66px 71px 55px;
+				}
+			}
+		}
+	}
+
 	&__content-pic {
 		margin: 35px 0 28px;
 
