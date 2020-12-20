@@ -7,7 +7,7 @@
 		margin-bottom: 40px;
 
 		@include media(xl) {
-			margin-bottom: 90px;
+			margin-bottom: 78px;
 		}
 	}
 
@@ -37,6 +37,10 @@
 
 			& + & {
 				margin-left: 12px;
+
+				@include media(xl) {
+					margin-left: 50px;
+				}
 			}
 
 			svg {

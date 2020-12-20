@@ -1,6 +1,6 @@
 'use strict';
 
-var { default: Swiper } = require("swiper");
+//var { default: Swiper } = require("swiper");
 
 var body = $('body');
 var DURATION = 300;
@@ -56,16 +56,6 @@ var anAwards = $('.an-awards');
 
 /* Слайдер проектов */
 (function(){
-  //var slider = $('.__js_slider-single');
-
- /* slider.slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300
-	});*/
-
-
 	var mySwiper = new Swiper('.__js_slider-single', {
 		slidesPerView: 'auto',
 		spaceBetween: 10,
@@ -90,14 +80,14 @@ var anAwards = $('.an-awards');
 /* слайдер отзывов */
 
 (function() {
-	var mySwiper1 = new Swiper('.__js_testimonials-carousel', {
+	var mySwiper = new Swiper('.__js_testimonials-carousel', {
 		slidesPerView: 'auto',
-		spaceBetween: 10,
+		spaceBetween: 60,
 		loop: true,
-		/*navigation: {
+		navigation: {
 			nextEl: '.testimonials__nav-btn--next',
 			prevEl: '.testimonials__nav-btn--prev',
-		},*/
+		},
 	});
 })();
 

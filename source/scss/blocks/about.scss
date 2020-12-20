@@ -1,18 +1,30 @@
 .about {
 	padding: 40px 0;
 
+	@include media(xl) {
+		padding: 104px 0 201px;
+	}
+
 	&__header {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 143px;
+		}
 	}
 
 	&__heading {
 		max-width: 205px;
 		margin: 0 0 20px;
 
-		@include text(16px, 1.5);
+		@include text(16px, 1.7);
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
+
+		@include media(xl) {
+			margin-bottom: 36px;
+		}
 	}
 
 	&__subheading {
@@ -21,10 +33,18 @@
 
 	&__statistics {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 143px;
+		}
 	}
 
 	&__panorama {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 150px;
+		}
 
 		img {
 			display: block;
@@ -32,18 +52,39 @@
 			height: auto;
 		}
 	}
+
 	&__simplicity {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 121px;
+		}
 	}
+
 	&__partners {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 148px;
+		}
 
 		.partners__inner {
 			border-bottom: none;
 		}
+
+		.partners__list {
+			@include media(xl) {
+				margin-bottom: 0;
+			}
+		}
 	}
+
 	&__approach {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 127px;
+		}
 	}
 	&__testimonials {
 	}

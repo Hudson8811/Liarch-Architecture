@@ -7,22 +7,30 @@
 		margin-bottom: 16px;
 		text-align: center;
 
-		&--small {
-			margin: 0 0 40px;
-
-			@include text(16px, 1.5);
-			//text-align: left;
-			font-weight: 400;
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-		}
-
 		@include media(sm) {
 			margin-bottom: 20px;
 		}
 
 		@include media(xl) {
 			margin-bottom: 19px;
+		}
+
+		&--small {
+			margin: 0 0 40px;
+
+			@include text(16px, 1.5);
+			text-align: left;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+
+			@include media(sm) {
+				margin-bottom: 60px;
+			}
+
+			@include media(xl) {
+				margin-bottom: 87px;
+			}
 		}
 	}
 

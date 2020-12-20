@@ -2,6 +2,34 @@
 	$self: &;
 
 	&--column {
+		@include media(lg) {
+			.row {
+				height: 100%;
+			}
+		}
+		#{$self}__item {
+			@include media(lg) {
+				flex: none;
+			}
+
+			&-value {
+				@include media(lg) {
+					min-width: 119px;
+					font-size: 48px;
+				}
+			}
+			&-text {
+				@include media(lg) {
+					font-size: 14px;
+				}
+			}
+		}
+
+		#{$self}__item + #{$self}__item {
+			@include media(lg) {
+				margin-top: 16px;
+			}
+		}
 	}
 
 	&--color-invert {
@@ -46,7 +74,6 @@
 		}
 
 		&-value {
-			//min-width: 119px;
 			margin-bottom: 6px;
 
 			@include text(36px, 1);
