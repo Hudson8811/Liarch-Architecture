@@ -14,38 +14,39 @@ block content
 			.container
 				section.works
 					header.works__header
-						.works__filter.filter.controls
-							button.filter__item(type="button", data-filter="all") all
-							button.filter__item(type="button", data-filter=".__js_architecture") architecture
-							button.filter__item(type="button", data-filter=".__js_interior") interior
-							button.filter__item(type="button", data-filter=".__js_cgi") cgi
-							button.filter__item(type="button", data-filter=".__js_products") products
+						.works__filter.filter
+							each item in ['all', 'architecture', 'interior', 'cgi', 'products']
+								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+								- let activeClass = item === 'all' ? ' filter__item--active' : '';
+								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
+
 						.works__sort.sort
 							label.sort__hint(for="sortSelect") filter by years:
-							select.sort__select.__js_mixitup-select#sortSelect(name="sort")
+							select.sort__select.__js_filter-select#sortSelect(name="sort")
 								each year in ['all', '2020', '2019', '2018']
-									option(value= year)= year
+									- let val = year === 'all' ? '*' : year;
+									option(value= val)= year
 
-					ul.works__list.__js_mixitup-container
-						li.works__item.slide.mix.__js_architecture.__js_2020
+					ul.works__list.__js_works-filter
+						li.works__item.slide.__js_architecture.__js_2020
 							img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
 							.slide__content
 								.slide__content-detail 2020  -  Kiev, Ukraine
 								.slide__content-heading Cubic Blockes Hotel
 
-						li.works__item.slide.mix.__js_architecture.__js_interior.__js_2020
+						li.works__item.slide.__js_architecture.__js_interior.__js_2020
 							img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
 							.slide__content
 								.slide__content-detail 2020  -  Belgium
 								.slide__content-heading Dogel Nord Station
 
-						li.works__item.slide.mix.__js_interior.__js_2019
+						li.works__item.slide.__js_interior.__js_2019
 							img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
 							.slide__content
 								.slide__content-detail 2019  -  Vancouver, Canada
 								.slide__content-heading Cabin Wood In Forest
 
-						li.works__item.slide.mix.__js_architecture.__js_2018
+						li.works__item.slide.__js_architecture.__js_2018
 							img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
 							.slide__content
 								.slide__content-detail 2019  -  Iasi, Romania

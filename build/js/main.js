@@ -52,85 +52,125 @@ var anAwards = $('.an-awards');
 
 })();
 
-/* Слайдер проектов на главной */
+/* Слайдер проектов */
 (function(){
-  var slider = $('.__js_slider-single');
+  //var slider = $('.__js_slider-single');
 
-  slider.slick({
+ /* slider.slick({
     dots: true,
     arrows: false,
     infinite: true,
     speed: 300
-  });
+	});*/
+
+
+	var mySwiper = new Swiper('.__js_slider-single', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		// And if we need scrollbar
+		/*scrollbar: {
+			el: '.swiper-scrollbar',
+		},*/
+	});
+})();
+
+/* Карусель проектов */
+(function(){
+  //var carousel = $('.__js_slider-carousel');
+
+  /*carousel.slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		margin: 30,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 300
+	}); */
+
+	var mySwiper = new Swiper('.__js_slider-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		loop: false,
+
+		// If we need pagination
+		/*pagination: {
+			el: '.swiper-pagination',
+		},*/
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+	});
 })();
 
 /* Слайдер новостей */
 (function(){
-	var sliderNews = $('.__js_slider-news');
-
-	sliderNews.slick({
-		dots: true,
-		arrows: false,
-		infinite: true,
+	var sliderNews = new Swiper('.__js_slider-news', {
+		pagination: {
+			el: '.swiper-pagination',
+		},
+		loop: true,
 		speed: 300
 	});
 })();
 
 (function(){
-	var sliderNews2 = $('.__js_slider-news-2');
-
-	sliderNews2.slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		infinite: true,
+	var sliderNews2 = new Swiper('.__js_slider-news-2', {
+		slidesPerView: 1,
+		loop: true,
 		speed: 600,
-		arrows: true,
-		prevArrow: '<button class="news-sb-slider__arrow news-sb-slider__arrow--prev" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
-		nextArrow: '<button class="news-sb-slider__arrow news-sb-slider__arrow--next" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
-		autoplay: true,
-		autoplaySpeed: 5000,
-		responsive: [
-			{
-				breakpoint: 1560,
-				settings: {
-					slidesToShow: 2
-				}
+		navigation: {
+			prevEl: '.news-sb-slider__arrow--prev',
+			nextEl: '.news-sb-slider__arrow--next'
+		},
+		breakpoints: {
+			1560: {
+				slidesPerView: 3
 			},
-			{
-				breakpoint: 1200,
-				settings: {
-					slidesToShow: 1
-				}
+			1200: {
+				slidesPerView: 2
 			}
-		]
+		}
 	});
 })();
 
 (function(){
-	var sliderNews3 = $('.__js_slider-news-3');
-
-	sliderNews3.slick({
-		slidesToShow: 3,
-		slidesToScroll: 1,
+	var sliderNews3 = new Swiper('.__js_slider-news-3', {
+		slidesPerView: 1,
+		spaceBetween: 20,
 		speed: 300,
-		arrows: true,
-		infinite: false,
-		prevArrow: '<button class="news-sb-page__related-arrow news-sb-page__related-arrow--prev" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
-		nextArrow: '<button class="news-sb-page__related-arrow news-sb-page__related-arrow--next" aria-hidden="true"><svg><use xlink:href="#arrow-angle"></use></svg></button>',
-		responsive: [
-			{
-				breakpoint: 992,
-				settings: {
-					slidesToShow: 2
-				}
+		loop: false,
+		navigation: {
+			prevEl: '.news-sb-page__related-arrow--prev',
+			nextEl: '.news-sb-page__related-arrow--next'
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 50
 			},
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1
-				}
+			768: {
+				slidesPerView: 2
 			}
-		]
+		}
 	});
 })();
 
@@ -218,9 +258,9 @@ var anAwards = $('.an-awards');
   }
 })();
 
-/*/!* mixitup filter *!/
+/* mixitup filter */
 (function() {
-	var containerEl = document.querySelector('.__js_mixitup-container');
+	/*var containerEl = document.querySelector('.__js_mixitup-container');
 	var select = document.querySelector('.__js_mixitup-select');
 	var mixer = mixitup(containerEl);
 
@@ -232,7 +272,92 @@ var anAwards = $('.an-awards');
 			mixer.filter('.__js_' + value);
 		}
 	};
-})();*/
+})();
+	};*/
+})();
+
+/* packery init */
+(function() {
+	var select = $('.__js_filter-select');
+	var filterItem = $('.filter__item');
+	var filterItemAll = $('.filter__item[data-filter="*"]');
+	var filterActiveClass = 'filter__item--active';
+
+
+	var grid = $('.__js_works-filter').isotope({
+		itemSelector: '.works__item',
+		layoutMode: 'packery',
+		packery: {
+			gutter: 0
+		},
+	});
+
+	$('.masonry').isotope({
+		itemSelector: '.masonry-item',
+		layoutMode: 'packery'
+	});
+
+	select.on('change', function () {
+		var value = select.val();
+		var filterValue = value !== '*' ? '.__js_' + value : value;
+
+		if (value !== '*') {
+			var filterValue = '.__js_' + value;
+			filterItem.removeClass(filterActiveClass);
+		} else {
+			filterItemAll.addClass(filterActiveClass);
+			var filterValue = value;
+		}
+
+		grid.isotope({ filter: filterValue });
+	});
+
+	filterItem.on('click', function() {
+		var filterValue = $(this).attr('data-filter');
+		$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+		grid.isotope({ filter: filterValue });
+	});
+
+
+
+})();
+
+/* Паралакс фона при скролле */
+(function() {
+	var bg = $('.__js_bg-parallax-container');
+	var bgInner = bg.find('.__js_bg-parallax-inner');
+
+	if (bg.length) {
+		var bgHeight = bg.innerHeight();
+		var bgInnerHeight = bgInner.innerHeight();
+		var bgOffset = bg.offset().top;
+		var hideBgInnerHeight = bgInnerHeight - bgHeight;
+		var halfWindowHeight = $(window).height() / 2;
+		var ratio = hideBgInnerHeight / halfWindowHeight;
+
+		$(window).on('resize', function() {
+			bgHeight = bg.innerHeight();
+			bgInnerHeight = bgInner.innerHeight();
+			bgOffset = bg.offset().top;
+			hideBgInnerHeight = bgInnerHeight - bgHeight;
+			halfWindowHeight = $(window).height() / 2;
+			ratio = hideBgInnerHeight / halfWindowHeight;
+		});
+
+
+		$(window).on('scroll', function() {
+			var scroll = $(window).scrollTop();
+			var scrollPlusHalfWindowHeight = scroll + halfWindowHeight;
+
+			if (scrollPlusHalfWindowHeight >= bgOffset && scroll <= bgOffset) {
+				var difference = bgOffset - scrollPlusHalfWindowHeight;
+				var shift = difference * ratio;
+				bgInner.css('top', shift + 'px');
+			}
+		});
+	}
+
+})();
 
 /* Анимация подвала */
 /*(function() {
@@ -294,14 +419,4 @@ var anAwards = $('.an-awards');
 			$('.article-preview__content').removeAttr('style');
 		}
 	}
-})();
-
-(function(){
-	$(window).on('load', function () {
-		$('.masonry').masonry({
-			itemSelector: '.masonry-item',
-			columnWidth: '.masonry-item',
-			percentPosition: true,
-		});
-	});
 })();

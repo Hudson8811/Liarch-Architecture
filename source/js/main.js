@@ -52,16 +52,73 @@ var anAwards = $('.an-awards');
 
 })();
 
-/* Слайдер проектов на главной */
+/* Слайдер проектов */
 (function(){
-  var slider = $('.__js_slider-single');
+  //var slider = $('.__js_slider-single');
 
-  slider.slick({
+ /* slider.slick({
     dots: true,
     arrows: false,
     infinite: true,
     speed: 300
-  });
+	});*/
+
+
+	var mySwiper = new Swiper('.__js_slider-single', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		// And if we need scrollbar
+		/*scrollbar: {
+			el: '.swiper-scrollbar',
+		},*/
+	});
+})();
+
+/* Карусель проектов */
+(function(){
+  //var carousel = $('.__js_slider-carousel');
+
+  /*carousel.slick({
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		margin: 30,
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 300
+	}); */
+
+	var mySwiper = new Swiper('.__js_slider-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		loop: false,
+
+		// If we need pagination
+		/*pagination: {
+			el: '.swiper-pagination',
+		},*/
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+	});
 })();
 
 /* Слайдер новостей */
@@ -218,9 +275,9 @@ var anAwards = $('.an-awards');
   }
 })();
 
-/*/!* mixitup filter *!/
+/* mixitup filter */
 (function() {
-	var containerEl = document.querySelector('.__js_mixitup-container');
+	/*var containerEl = document.querySelector('.__js_mixitup-container');
 	var select = document.querySelector('.__js_mixitup-select');
 	var mixer = mixitup(containerEl);
 
@@ -232,7 +289,87 @@ var anAwards = $('.an-awards');
 			mixer.filter('.__js_' + value);
 		}
 	};
-})();*/
+})();
+	};*/
+})();
+
+/* packery init */
+(function() {
+	var select = $('.__js_filter-select');
+	var filterItem = $('.filter__item');
+	var filterItemAll = $('.filter__item[data-filter="*"]');
+	var filterActiveClass = 'filter__item--active';
+
+
+	var grid = $('.__js_works-filter').isotope({
+		itemSelector: '.works__item',
+		layoutMode: 'packery',
+		packery: {
+			gutter: 0
+		},
+	});
+
+	select.on('change', function () {
+		var value = select.val();
+		var filterValue = value !== '*' ? '.__js_' + value : value;
+
+		if (value !== '*') {
+			var filterValue = '.__js_' + value;
+			filterItem.removeClass(filterActiveClass);
+		} else {
+			filterItemAll.addClass(filterActiveClass);
+			var filterValue = value;
+		}
+
+		grid.isotope({ filter: filterValue });
+	});
+
+	filterItem.on('click', function() {
+		var filterValue = $(this).attr('data-filter');
+		$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
+		grid.isotope({ filter: filterValue });
+	});
+
+
+
+})();
+
+/* Паралакс фона при скролле */
+(function() {
+	var bg = $('.__js_bg-parallax-container');
+	var bgInner = bg.find('.__js_bg-parallax-inner');
+
+	if (bg.length) {
+		var bgHeight = bg.innerHeight();
+		var bgInnerHeight = bgInner.innerHeight();
+		var bgOffset = bg.offset().top;
+		var hideBgInnerHeight = bgInnerHeight - bgHeight;
+		var halfWindowHeight = $(window).height() / 2;
+		var ratio = hideBgInnerHeight / halfWindowHeight;
+
+		$(window).on('resize', function() {
+			bgHeight = bg.innerHeight();
+			bgInnerHeight = bgInner.innerHeight();
+			bgOffset = bg.offset().top;
+			hideBgInnerHeight = bgInnerHeight - bgHeight;
+			halfWindowHeight = $(window).height() / 2;
+			ratio = hideBgInnerHeight / halfWindowHeight;
+		});
+
+
+		$(window).on('scroll', function() {
+			var scroll = $(window).scrollTop();
+			var scrollPlusHalfWindowHeight = scroll + halfWindowHeight;
+
+			if (scrollPlusHalfWindowHeight >= bgOffset && scroll <= bgOffset) {
+				var difference = bgOffset - scrollPlusHalfWindowHeight;
+				var shift = difference * ratio;
+				bgInner.css('top', shift + 'px');
+			}
+		});
+	}
+
+})();
 
 /* Анимация подвала */
 /*(function() {

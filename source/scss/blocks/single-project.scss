@@ -1,0 +1,339 @@
+.single-project {
+	$self: &;
+	padding-top: 40px;
+
+	@include media(xl) {
+		padding-top: 130px;
+	}
+
+	&--minimalist {
+		#{$self}__header {
+			padding-bottom: 60px;
+			border-bottom: solid 1px $color-grey6;
+
+			@include media(xl) {
+				margin-bottom: 106px;
+				padding-bottom: 80px;
+			}
+		}
+
+		#{$self}__intro {
+			&-text {
+				padding-bottom: 0;
+				border: none;
+				text-align: center;
+			}
+		}
+
+		#{$self}__heading {
+			margin-bottom: 60px;
+			text-align: center;
+
+			@include media(xl) {
+				margin-bottom: 100px;
+			}
+		}
+
+		#{$self}__social {
+			margin: 80px auto;
+			justify-content: center;
+
+			@include media(xl) {
+				margin: 0 auto 114px;
+			}
+		}
+
+		#{$self}__photo {
+			max-width: 100%;
+			margin-bottom: 60px;
+			text-align: center;
+
+			@include media(xl) {
+				margin-bottom: 230px;
+			}
+
+			img {
+				display: inline-block;
+				vertical-align: top;
+				max-width: 100%;
+			}
+
+			&--panorama {
+				margin: 100px 0;
+
+				@include media(xl) {
+					margin-bottom: 280px;
+				}
+			}
+
+			&--stuck {
+				@include media(md) {
+					max-width: none;
+
+					img {
+						width: calc(50vw - 15px);
+						max-width: none;
+					}
+				}
+			}
+
+			&--width-inherit {
+				img {
+					width: auto;
+					max-width: none;
+				}
+			}
+		}
+
+		#{$self}__liked {
+			margin-bottom: 156px;
+		}
+	}
+
+	&--with-sidebar {
+		padding-top: 0;
+		border-top: solid 1px $color-grey5;
+
+		@include media(xl) {
+			padding-top: 0;
+		}
+
+		#{$self}__heading {
+			margin-bottom: 20px;
+			letter-spacing: -0.025em;
+
+			@include media(sm) {
+				font-size: 36px;
+			}
+
+			@include media(xl) {
+				margin-bottom: 34px;
+			}
+		}
+
+		#{$self}__meta {
+			margin-bottom: 40px;
+
+			@include media(xl) {
+				margin-bottom: 250px;
+			}
+		}
+
+		#{$self}__paginate {
+			margin-bottom: 40px;
+
+			@include media(xl) {
+				margin-bottom: 60px;
+			}
+		}
+
+		#{$self}__short {
+			margin-bottom: 40px;
+
+			@include text(16px, 1.625, $color-grey2);
+
+			@include media(xl) {
+				margin-bottom: 37px;
+			}
+		}
+
+		#{$self}__aside {
+			&-content {
+				padding: 0 15px;
+
+				@include media(md) {
+					padding: 0 24px;
+				}
+
+				@include media(xl) {
+					padding: 0 32px;
+				}
+
+				@include media(xxl) {
+					padding: 0 70px;
+				}
+			}
+		}
+	}
+
+	&__inner {
+		&--width-full {
+			max-width: $width--full !important;
+		}
+	}
+
+	img {
+		display: inline-block;
+		vertical-align: top;
+		max-width: 100%;
+	}
+
+	&__header {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 127px;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 40px;
+		font-weight: 400;
+
+		@include media(xl) {
+			margin-bottom: 65px;
+			font-size: 60px;
+		}
+	}
+
+	&__social {
+		margin-bottom: 40px;
+	}
+
+	&__bg-parallax {
+		position: relative;
+		overflow: hidden;
+		height: 46.875vw;
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 130px;
+		}
+
+		&-image {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 100%;
+			transform: translateX(-50%);
+
+			img {
+				display: block;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&__intro {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 108px;
+		}
+
+		&-text {
+			padding-bottom: 60px;
+
+			@include text(20px, 1.6);
+			letter-spacing: -0.015em;
+			border-bottom: solid 1px $color-grey6;
+
+			@include media(xl) {
+				padding-bottom: 100px;
+				font-size: 30px;
+			}
+		}
+	}
+
+	&__section {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 97px;
+		}
+
+		&-heading {
+			margin: 0 0 20px;
+
+			@include text(30px, 1);
+			font-weight: 400;
+			letter-spacing: -0.025em;
+
+			@include media(md) {
+				margin-bottom: 36px;
+				font-size: 40px;
+			}
+
+			@include media(xl) {
+				margin-bottom: 39px;
+				font-size: 48px;
+			}
+		}
+
+		&-text {
+			margin-bottom: 20px;
+
+			@include text(14px, 1.6, $color-grey2);
+
+			@include media(md) {
+				margin-bottom: 30px;
+				font-size: 18px;
+			}
+		}
+
+		ul {
+			padding: 0 0 0 20px;
+
+			li {
+				margin-bottom: 16px;
+				@include text(14px, 1.6);
+
+				@include media(md) {
+					font-size: 18px;
+				}
+
+				@include media(xl) {
+					margin-bottom: 20px;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&__review {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 110px;
+		}
+	}
+
+	&__gallery {
+		margin-bottom: 60px;
+
+		@include media(md) {
+			margin-bottom: 100px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 156px;
+		}
+
+		&-inner {
+			margin-top: -30px;
+
+			@include media(xl) {
+				max-width: $width--full !important;
+				margin-top: -40px;
+			}
+		}
+
+		&-image {
+			margin-top: 30px;
+			img {
+				display: block;
+			}
+		}
+	}
+
+	&__liked {
+		margin: 0 auto 80px;
+	}
+
+	&__footer {
+	}
+}
