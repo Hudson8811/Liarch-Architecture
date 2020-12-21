@@ -1,0 +1,14 @@
+mixin input(type, inputName, placeholder, value)
+	if type === 'text' || type === 'email' || type === 'password'
+		input(type=type, name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'textarea'
+		textarea(name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'search'
+		input(type='search', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'subs'
+		form.label-subs(action='', method='POST')
+			label
+				input(type='email', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+			input(type='submit', value='Subscribe')
+
+

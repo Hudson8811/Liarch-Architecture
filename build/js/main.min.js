@@ -127,6 +127,59 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+/* Слайдер новостей */
+(function(){
+	var sliderNews = new Swiper('.__js_slider-news', {
+		pagination: {
+			el: '.swiper-pagination',
+		},
+		loop: true,
+		speed: 300
+	});
+})();
+
+(function(){
+	var sliderNews2 = new Swiper('.__js_slider-news-2', {
+		slidesPerView: 1,
+		loop: true,
+		speed: 600,
+		navigation: {
+			prevEl: '.news-sb-slider__arrow--prev',
+			nextEl: '.news-sb-slider__arrow--next'
+		},
+		breakpoints: {
+			1560: {
+				slidesPerView: 3
+			},
+			1200: {
+				slidesPerView: 2
+			}
+		}
+	});
+})();
+
+(function(){
+	var sliderNews3 = new Swiper('.__js_slider-news-3', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		speed: 300,
+		loop: false,
+		navigation: {
+			prevEl: '.news-sb-page__related-arrow--prev',
+			nextEl: '.news-sb-page__related-arrow--next'
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 50
+			},
+			768: {
+				slidesPerView: 2
+			}
+		}
+	});
+})();
+
 /* Анимация чисел */
 
 (function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
@@ -224,6 +277,8 @@ var anAwards = $('.an-awards');
 		if (value !== 'all') {
 			mixer.filter('.__js_' + value);
 		}
+	};
+})();
 	};*/
 })();
 
@@ -241,6 +296,11 @@ var anAwards = $('.an-awards');
 		packery: {
 			gutter: 0
 		},
+	});
+
+	$('.masonry').isotope({
+		itemSelector: '.masonry-item',
+		layoutMode: 'packery'
 	});
 
 	select.on('change', function () {
@@ -335,3 +395,34 @@ var anAwards = $('.an-awards');
   });
 
 })();*/
+
+// Одинаковая высота у блоков в сетке
+(function(){
+	$(window).on('load', function () {
+		setEqualHeight($('.article-list__list'));
+
+		$(window).resize(function () {
+			setEqualHeight($('.article-list__list'));
+		});
+	});
+
+	function setEqualHeight(row) {
+		if (window.matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
+			row.each(function() {
+				var tallestcolumn = 0;
+
+				$(this).find('li').each(function () {
+					var currentHeight = $(this).find('.article-preview__content').height();
+
+					if (currentHeight > tallestcolumn) {
+						tallestcolumn = currentHeight;
+					}
+				});
+
+				$(this).find('.article-preview__content').height(tallestcolumn);
+			});
+		} else {
+			$('.article-preview__content').removeAttr('style');
+		}
+	}
+})();

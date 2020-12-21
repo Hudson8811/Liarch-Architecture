@@ -1,0 +1,96 @@
+extends templates/main.pug
+include modules/article-list-row
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 4; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.news-list
+		.container.news-list__container
+			header.news-list__header(data-aos="fade")
+				h2.news-list__heading.heading Inspirations & Experiences
+			.filter.controls.news-list__filter(data-aos="fade")
+				button.filter__item(type="button", data-filter="all") all
+				button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
+				button.filter__item(type="button", data-filter=".__js_experiences") experiences
+				button.filter__item(type="button", data-filter=".__js_reviews") reviews
+				button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
+				button.filter__item(type="button", data-filter=".__js_others") others
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+				{
+					img: "img/article-preview-3.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'small')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'bigStart')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'bigEnd')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			}
+			], 'big')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+				{
+					img: "img/article-preview-3.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'small')
+			a.more-btn.news-list__more(href="#", data-aos="fade")
+				span.more-btn__text more
+
+block footer
+	include modules/footer

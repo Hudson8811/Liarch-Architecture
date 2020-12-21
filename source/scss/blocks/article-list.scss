@@ -49,18 +49,47 @@
 
   &__list {
     list-style: none;
-    margin-bottom: 0;
     padding: 0;
+		margin: 0;
+
+		@include media(md) {
+			margin: 0 -10px;
+		}
+
+		@include media(xl) {
+			margin: 0 -25px;
+		}
+
+		+ .article-list__list {
+			margin-top: 24px;
+
+			@include media(md) {
+				margin-top: 50px;
+			}
+		}
   }
 
   &__item {
     margin-bottom: 24px;
+		padding: 0;
 
     @include media(md) {
       margin-bottom: 0;
+			padding: 0 10px;
     }
+
+		@include media(xl) {
+			padding: 0 25px;
+		}
+
     &:last-child {
       margin-bottom: 0;
     }
+
+		&.col-md-12 .article-preview__image {
+			@include media(md) {
+				height: 545px;
+			}
+		}
   }
 }

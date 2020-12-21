@@ -1,0 +1,78 @@
+section.sidebar(data-aos="fade")
+	.sidebar__block
+		p search
+		+input('search', 'search', 'Search in blog')
+	.sidebar__block
+		p follow us
+		ul.social.sidebar__social
+			li.social__item
+				a.social__link(href="#", target="_blank")
+					+icon('twitter')(width="18", height="18", aria-label="twitter icon")
+					span.visually-hidden Twitter
+			li.social__item
+				a.social__link(href="#", target="_blank")
+					+icon('facebook')(width="18", height="18", aria-label="facebook icon")
+					span.visually-hidden Facebook
+			li.social__item
+				a.social__link(href="#", target="_blank")
+					+icon('instagram')(width="18", height="18", aria-label="instagram icon")
+					span.visually-hidden Instagram
+			li.social__item
+				a.social__link(href="#", target="_blank")
+					+icon('pinterest')(width="18", height="18", aria-label="pinterest icon")
+					span.visually-hidden Pinterest
+	.sidebar__block
+		p popular posts
+		.sidebar__popular-posts-wrapper
+			a.popular-post(href='#', target='_blank')
+				figure
+					.popular-post__num 1
+					.popular-post__content
+						p.tag inspiration
+						p.title Double rectangle houses from...
+			a.popular-post.active(href='#', target='_blank')
+				figure
+					.popular-post__num 2
+					.popular-post__content
+						p.tag news
+						p.title Scadinavian interior
+			a.popular-post(href='#', target='_blank')
+				figure
+					.popular-post__num 3
+					.popular-post__content
+						p.tag product
+						p.title Perfect solutions for street’s h...
+			a.popular-post(href='#', target='_blank')
+				figure
+					.popular-post__num 4
+					.popular-post__content
+						p.tag others
+						p.title Top 10 Minimalist architecture...
+	form.newsletter(action='', method='POST')
+		.newsletter__title Newsletter
+		.newsletter__text Signup to be the first to hear about exclusive deals
+		input(type='email', name='email', placeholder='Email Address')
+		input(type='submit', value='Subscribe')
+	.sidebar__block
+		p Categories
+		.sidebar__categories
+			.sidebar__categories-item.active
+				.sidebar__categories-name all
+				.sidebar__categories-num 18
+			.sidebar__categories-item
+				.sidebar__categories-name inspirations
+				.sidebar__categories-num 4
+			.sidebar__categories-item
+				.sidebar__categories-name experiences
+				.sidebar__categories-num 3
+			.sidebar__categories-item
+				.sidebar__categories-name reviews
+				.sidebar__categories-num 5
+			.sidebar__categories-item
+				.sidebar__categories-name tips & tricks
+				.sidebar__categories-num 1
+			.sidebar__categories-item
+				.sidebar__categories-name others
+				.sidebar__categories-num 5
+	a.sidebar__ads(href='#', target='_blank')
+		img(src="img/post/sidebar-ads.jpg", alt="")
