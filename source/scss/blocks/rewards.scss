@@ -1,0 +1,30 @@
+.rewards {
+	padding: 60px 0;
+	background-color: $color-white-lilac;
+
+	@include media(xl) {
+		padding: 156px 0 118px;
+	}
+
+	&__inner {
+	}
+
+	&__heading {
+		margin-bottom: 12px;
+		font-weight: 400;
+
+		@include media(xl) {
+			margin-bottom: 45px;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+	}
+
+	&__item {
+		& + & {
+			border-top: solid 1px $color-grey7;
+		}
+	}
+}

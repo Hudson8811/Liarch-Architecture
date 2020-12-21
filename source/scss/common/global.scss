@@ -36,7 +36,7 @@ a {
 // временно для ПП
 @include media(xl) {
 	.container {
-		//max-width: 1200px !important;
+		max-width: 1200px !important;
 	}
 }
 

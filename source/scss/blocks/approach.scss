@@ -1,0 +1,83 @@
+.approach {
+	padding: 60px 0;
+	background-color: $color-beige;
+	counter-reset: approach;
+
+	@include media(xl) {
+		padding: 141px 0 185px;
+	}
+
+	&__inner {
+	}
+
+	.col-12 {
+		margin-bottom: 32px;
+
+		@include media(lg) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 30px;
+		font-weight: 400;
+
+		@include media(xl) {
+			margin-bottom: 71px;
+		}
+	}
+
+	&__card {
+		position: relative;
+		padding: 30px;
+		background-color: $color-default-white;
+		counter-increment: approach;
+
+		@include media(sm) {
+			padding: 40px;
+		}
+
+		@include media(xl) {
+			padding: 55px 50px 50px 55px;
+		}
+
+		&::before {
+			content: "0" counter(approach);
+			position: absolute;
+			right: 30px;
+			top: 30px;
+
+			@include text(16px, 1, $color-grey);
+			letter-spacing: 0.8px;
+
+			@include media(sm) {
+				right: 55px;
+				top: 55px;
+			}
+		}
+
+		&-icon {
+			margin-bottom: 60px;
+
+			@include media(xl) {
+				margin-bottom: 102px;
+			}
+
+			svg {
+				fill: $color-orange;
+			}
+		}
+
+		&-heading {
+			max-width: 210px;
+			margin: 0 0 25px;
+
+			@include text(36px, 1.11);
+			font-weight: 300;
+		}
+
+		&-text {
+			@include text(18px, 1.67, $color-grey);
+		}
+	}
+}

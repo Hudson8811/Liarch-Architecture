@@ -1,0 +1,85 @@
+.simplicity {
+	&__line {
+		width: calc(100% - 30px);
+		margin: 0 auto;
+		padding-bottom: 60px;
+		border-bottom: solid 1px $color-grey5;
+
+		@include media(xl) {
+			padding-bottom: 134px;
+		}
+	}
+
+	&__content {
+		@include media(md) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 20px;
+		font-weight: 400;
+
+		@include media(md) {
+			margin-bottom: 40px;
+		}
+
+		@include media(xl) {
+			max-width: 500px;
+			margin-bottom: 56px;
+		}
+	}
+
+	&__subheading {
+		margin-bottom: 20px;
+		font-size: 20px;
+		letter-spacing: -0.015em;
+
+		@include media(md) {
+			max-width: 320px;
+			margin-bottom: 40px;
+		}
+
+		@include media(xl) {
+			min-width: 370px;
+			margin-bottom: 47px;
+			font-size: 24px;
+		}
+	}
+
+	&__text {
+		max-width: 390px;
+		margin-bottom: 40px;
+
+		@include text(16px, 1.77, $color-grey2);
+
+		@include media(xl) {
+			max-width: 435px;
+			font-size: 18px;
+		}
+	}
+
+	&__notice {
+		margin-bottom: 20px;
+
+		@include text(14px);
+
+		@include media(md) {
+			margin-top: auto;
+		}
+
+		@include media(xl) {
+			margin-bottom: 45px;
+			font-size: 16px;
+		}
+	}
+
+	&__phone {
+		margin-bottom: 60px;
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+	}
+}

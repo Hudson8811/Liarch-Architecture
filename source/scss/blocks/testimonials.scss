@@ -1,0 +1,87 @@
+.testimonials {
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 40px;
+
+		@include media(xl) {
+			margin-bottom: 78px;
+		}
+	}
+
+	&__heading {
+		font-weight: 400;
+	}
+
+	&__nav {
+		display: flex;
+		margin-left: 20px;
+
+		&-btn {
+			width: 18px;
+			height: 32px;
+			padding: 0;
+			border: none;
+			overflow: hidden;
+			background-color: transparent;
+
+			appearance: none;
+			cursor: pointer;
+
+			@include media(xl) {
+				width: 20px;
+				height: 36px;
+			}
+
+			& + & {
+				margin-left: 12px;
+
+				@include media(xl) {
+					margin-left: 50px;
+				}
+			}
+
+			svg {
+				position: relative;
+				left: 50%;
+				display: block;
+				width: auto;
+				height: 100%;
+				transform: translateX(-50%);
+
+				@include transition(fill);
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-orange;
+				}
+			}
+
+			&--prev {
+			}
+			&--next {
+			}
+		}
+	}
+
+	&__carousel {
+		.swiper-wrapper {
+			padding: 1px 0;
+		}
+	}
+
+	&__item {
+		width: calc(100% - 2px);
+		box-sizing: border-box;
+
+		@include media(lg) {
+			width: calc(50% - 31px);
+		}
+	}
+}
