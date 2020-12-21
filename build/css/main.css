@@ -6603,6 +6603,118 @@ button.swiper-pagination-bullet {
       line-height: 1.67;
       color: #999999; }
 
+.reward {
+  padding: 32px 0; }
+  @media (min-width: 768px) {
+    .reward {
+      display: flex; } }
+  @media (min-width: 1200px) {
+    .reward {
+      padding: 54px 0; } }
+  .reward__date {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1;
+    color: #999999; }
+    @media (min-width: 768px) {
+      .reward__date {
+        width: 36px;
+        margin: 18px 40px 0 0; } }
+    @media (min-width: 1200px) {
+      .reward__date {
+        margin: 12px 58px 0 0; } }
+  .reward__logo {
+    margin-bottom: 20px; }
+    @media (min-width: 768px) {
+      .reward__logo {
+        width: 150px;
+        margin: 10px 50px 0 0;
+        flex-shrink: 0;
+        text-align: center; } }
+    @media (min-width: 1200px) {
+      .reward__logo {
+        margin: 5px 126px 0 0; } }
+    .reward__logo img {
+      max-width: 100%; }
+  .reward__content {
+    width: 100%; }
+    @media (min-width: 768px) {
+      .reward__content {
+        width: auto;
+        flex-grow: 1; } }
+  @media (min-width: 992px) {
+    .reward__project {
+      display: flex; } }
+  .reward__project + .reward__project {
+    margin-top: 20px; }
+    @media (min-width: 1200px) {
+      .reward__project + .reward__project {
+        margin-top: 32px; } }
+  .reward__project-wrap {
+    margin-bottom: 20px; }
+    @media (min-width: 992px) {
+      .reward__project-wrap {
+        margin-bottom: 0;
+        margin-right: auto; } }
+  .reward__project-name {
+    font-size: 24px;
+    line-height: 1.33;
+    color: #000000;
+    letter-spacing: -0.025em; }
+    @media (min-width: 1200px) {
+      .reward__project-name {
+        margin-bottom: 8px; } }
+    .reward__project-name a {
+      color: #000000; }
+      .reward__project-name a:hover, .reward__project-name a:focus {
+        outline: none;
+        text-decoration: underline; }
+      .reward__project-name a:active {
+        opacity: 0.7; }
+  .reward__project-text {
+    font-size: 16px;
+    line-height: 1.33;
+    color: #999999; }
+  .reward__project-link {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1;
+    color: #666666;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    transition: color 0.3s ease; }
+    @media (min-width: 992px) {
+      .reward__project-link {
+        margin-top: 8px;
+        margin-left: 20px;
+        flex-shrink: 0; } }
+    .reward__project-link:hover, .reward__project-link:focus {
+      outline: none; }
+    .reward__project-link:active {
+      opacity: 0.7; }
+
+.rewards {
+  padding: 60px 0;
+  background-color: #f2f5fa; }
+  @media (min-width: 1200px) {
+    .rewards {
+      padding: 156px 0 118px; } }
+  .rewards__heading {
+    margin-bottom: 12px;
+    font-weight: 400; }
+    @media (min-width: 1200px) {
+      .rewards__heading {
+        margin-bottom: 45px; } }
+  .rewards__list {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .rewards__item + .rewards__item {
+    border-top: solid 1px #dfdfdf; }
+
 .header {
   padding: 15px 0;
   border-top: solid 5px #f5480c; }
@@ -7182,8 +7294,18 @@ button.swiper-pagination-bullet {
     .review__author-detail span {
       color: #000000; }
 
-.partners__inner {
+.partners__line {
+  padding-bottom: 60px;
   border-bottom: solid 1px #dddddd; }
+  @media (min-width: 576px) {
+    .partners__line {
+      padding-bottom: 80px; } }
+  @media (min-width: 992px) {
+    .partners__line {
+      padding-bottom: 120px; } }
+  @media (min-width: 1200px) {
+    .partners__line {
+      padding-bottom: 173px; } }
 
 .partners__heading {
   margin-bottom: 16px;
@@ -7232,17 +7354,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -98px;
-  margin-bottom: 60px; }
-  @media (min-width: 576px) {
-    .partners__list {
-      margin-bottom: 80px; } }
-  @media (min-width: 992px) {
-    .partners__list {
-      margin-bottom: 120px; } }
-  @media (min-width: 1200px) {
-    .partners__list {
-      margin-bottom: 173px; } }
+  margin-top: -98px; }
 
 .partners__item {
   width: 50%;
@@ -7631,6 +7743,13 @@ button.swiper-pagination-bullet {
 .an-awards {
   overflow: hidden;
   padding-top: 40px; }
+  @media (min-width: 1200px) {
+    .an-awards--about .an-awards__notice {
+      padding-top: 71px; } }
+  @media (min-width: 1200px) {
+    .an-awards--about .an-awards__image {
+      margin-top: -20px;
+      padding-left: 120px; } }
   @media (min-width: 1200px) {
     .an-awards {
       padding-top: 83px; } }
@@ -9356,6 +9475,15 @@ button.swiper-pagination-bullet {
   @media (min-width: 1200px) {
     .webpage__review {
       margin-bottom: 185px; } }
+
+.webpage__rewards {
+  margin-bottom: 60px; }
+  @media (min-width: 768px) {
+    .webpage__rewards {
+      margin-bottom: 100px; } }
+  @media (min-width: 1200px) {
+    .webpage__rewards {
+      margin-bottom: 128px; } }
 
 .webpage__partners {
   margin-bottom: 60px; }

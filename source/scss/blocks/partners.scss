@@ -1,6 +1,22 @@
 .partners {
 	&__inner {
+	}
+
+	&__line {
+		padding-bottom: 60px;
 		border-bottom: solid 1px $color-grey4;
+
+		@include media(sm) {
+			padding-bottom: 80px;
+		}
+
+		@include media(lg) {
+			padding-bottom: 120px;
+		}
+
+		@include media(xl) {
+			padding-bottom: 173px;
+		}
 	}
 
 	&__heading {
@@ -58,19 +74,6 @@
 		justify-content: center;
 
 		margin-top: -98px;
-		margin-bottom: 60px;
-
-		@include media(sm) {
-			margin-bottom: 80px;
-		}
-
-		@include media(lg) {
-			margin-bottom: 120px;
-		}
-
-		@include media(xl) {
-			margin-bottom: 173px;
-		}
 	}
 
 	&__item {

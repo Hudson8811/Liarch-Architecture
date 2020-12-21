@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/Cinzel-Regular.woff2" as="font" />
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/main.css">
-  <title>Liarch - Architecture &amp; Interior HTML Template</title>
+  <title>Liarch - Architecture &amp; Interior HTML Template - about 2</title>
 </head>
 
 <body class="webpage">
@@ -106,7 +106,7 @@
   </div>
   <header class="header" data-aos="fade" data-aos-delay="350">
     <div class="header__inner">
-      <a class="header__logo logo">
+      <a class="header__logo logo" href="homepage.html">
         <span class="logo__image">
           <svg width="52" height="52" aria-label="logo">
             <use xlink:href="#logo"></use>
@@ -116,14 +116,14 @@
       </a>
       <nav class="header__nav navigation">
         <ul class="navigation__list">
-          <li class="navigation__item navigation__item--current">
-            <a class="navigation__link">What we do</a>
+          <li class="navigation__item">
+            <a class="navigation__link" href="homepage.html">What we do</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">Works</a>
           </li>
-          <li class="navigation__item">
-            <a class="navigation__link" href="#">About</a>
+          <li class="navigation__item navigation__item--current">
+            <a class="navigation__link">About</a>
           </li>
           <li class="navigation__item">
             <a class="navigation__link" href="#">News</a>
@@ -161,14 +161,14 @@
         <span class="visually-hidden">Close menu</span>
       </button>
       <ul class="menu__list">
-        <li class="menu__item menu__item--current">
-          <a class="menu__link">What we do</a>
+        <li class="menu__item">
+          <a class="menu__link" href="homepage.html">What we do</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">Works</a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">About</a>
+        <li class="menu__item menu__item--current">
+          <a class="menu__link">About</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#">News</a>
@@ -209,19 +209,29 @@
     </div>
   </section>
   <main>
-    <section class="webpage__an-awards an-awards" data-aos="fade" data-aos-delay="350">
+    <section class="webpage__an-awards an-awards an-awards--about" data-aos="fade" data-aos-delay="350">
       <div class="container">
         <div class="row align-items-center">
           <div class="an-awards__intro col-12 col-md col-lg-7 order-md-1">
             <div class="an-awards__image">
-              <img src="img/an-awards-image.jpg" width="899" height="776" alt="">
+              <img src="img/an-awards-image-2.png" width="549" height="833" alt="">
             </div>
           </div>
           <div class="an-awards__content col-12 col-md col-lg-5">
-            <h1 class="an-awards__heading heading heading--h1">An-awards winning architects company</h1>
+            <h1 class="an-awards__heading heading heading--h1">An-awards
+              <br>winning architects company
+            </h1>
             <div class="an-awards__text">Like any great agency, we are only as good as the result we deliver of our recent work</div>
             <div class="an-awards__buttons">
-              <a class="btn" href="#">Get Started</a>
+              <div class="video-btn">
+                <a class="video-btn__btn __js_open-modal" href="#ourStory">
+                  <span class="visually-hidden">Play</span>
+                  <svg width="20" height="20">
+                    <use xlink:href="#play"></use>
+                  </svg>
+                </a>
+                <span class="video-btn__text">view our story</span>
+              </div>
             </div>
             <div class="an-awards__notice">If you're hurry, quick call for us. Our supporters alway 24/7 and will help you asap</div>
             <div class="an-awards__phone phone-block">
@@ -261,16 +271,7 @@
             <div class="our-story__text our-story__text--style-bolditalic">Over 25 years Liarch helping investors building their dream & business goals go to the perfection</div>
             <div class="our-story__text">Over the years, we have worked with Fortune 500s and brand-new startups.. We help ambitious businesses like yours generate more profits by building awareness, driving web traffic, connecting with customers, and growing overall sales. Give us a call.</div>
             <div class="our-story__buttons">
-              <a class="our-story__btn btn btn--outline" href="#">Learn More</a>
-              <div class="our-story__video-btn video-btn">
-                <a class="video-btn__btn __js_open-modal" href="#ourStory">
-                  <span class="visually-hidden">Play</span>
-                  <svg width="20" height="20">
-                    <use xlink:href="#play"></use>
-                  </svg>
-                </a>
-                <span class="video-btn__text">view our story</span>
-              </div>
+              <a class="our-story__btn btn btn--outline" href="#">See Projects</a>
             </div>
           </div>
         </div>
@@ -346,47 +347,89 @@
         </ul>
       </div>
     </section>
-    <section class="webpage__latest-projects latest-projects">
-      <div class="container">
-        <header class="latest-projects__header" data-aos="fade">
-          <h2 class="latest-projects__heading heading">Our latest projects</h2>
-          <a class="latest-projects__more more" href="#">see all projects</a>
-        </header>
-      </div>
-      <div class="latest-projects__inner container">
-        <div class="latest-projects__slider slider slider--single swiper-container __js_slider-single" data-aos="fade">
-          <div class="swiper-wrapper">
-            <div class="slider__item slide swiper-slide">
-              <img src="img/slider/slide-1.jpg" width="1145" height="650" alt="">
-              <div class="slide__content">
-                <div class="slide__content-detail">2020 - Kiev, Ukraine</div>
-                <div class="slide__content-heading">Cubic Blockes Hotel</div>
+    <section class="webpage__rewards rewards" data-aos="fade">
+      <div class="rewards__inner container">
+        <h2 class="rewards__heading heading" data-aos="fade">Rewards for our efforts</h2>
+        <ul class="rewards__list">
+          <li class="rewards__item reward" data-aos="fade">
+            <time class="reward__date" datetime="2020">2020</time>
+            <div class="reward__logo">
+              <img src="img/rewards-logo/01.png" alt="">
+            </div>
+            <div class="reward__content">
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">AAG Winner 2020</a>
+                  </div>
+                  <div class="reward__project-text">Canbin Wood In Forest</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
+              </div>
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">Top 25 Best Architectural In Poland</a>
+                  </div>
+                  <div class="reward__project-text">Daniel Villa, Romania</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
               </div>
             </div>
-            <div class="slider__item slide swiper-slide">
-              <img src="img/slider/slide-2.jpg" width="1145" height="650" alt="">
-              <div class="slide__content">
-                <div class="slide__content-detail">2020 - Belgium</div>
-                <div class="slide__content-heading">Dogel Nord Station</div>
+          </li>
+          <li class="rewards__item reward" data-aos="fade">
+            <time class="reward__date" datetime="2019">2019</time>
+            <div class="reward__logo">
+              <img src="img/rewards-logo/02.png" alt="">
+            </div>
+            <div class="reward__content">
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">The Architect of Season Winner</a>
+                  </div>
+                  <div class="reward__project-text">Architect Thiago Alcantara</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
+              </div>
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">The Green of Arch by AAL US 2019, Slovakia</a>
+                  </div>
+                  <div class="reward__project-text">Endora Commercial Center, Germany</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
+              </div>
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">Art of The Year 2019</a>
+                  </div>
+                  <div class="reward__project-text">Reuse Cabins</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
               </div>
             </div>
-            <div class="slider__item slide swiper-slide">
-              <img src="img/slider/slide-3.jpg" width="1145" height="650" alt="">
-              <div class="slide__content">
-                <div class="slide__content-detail">2019 - Vancouver, Canada</div>
-                <div class="slide__content-heading">Cabin Wood In Forest</div>
+          </li>
+          <li class="rewards__item reward" data-aos="fade">
+            <time class="reward__date" datetime="2018">2018</time>
+            <div class="reward__logo">
+              <img src="img/rewards-logo/03.png" alt="">
+            </div>
+            <div class="reward__content">
+              <div class="reward__project">
+                <div class="reward__project-wrap">
+                  <div class="reward__project-name">
+                    <a href="">The Trending of Interior 2018 by OKA</a>
+                  </div>
+                  <div class="reward__project-text">B65 Apartment, Sepro Building, Italy</div>
+                </div>
+                <a class="reward__project-link" href="#">see project</a>
               </div>
             </div>
-            <div class="slider__item slide swiper-slide">
-              <img src="img/slider/slide-4.jpg" width="1145" height="650" alt="">
-              <div class="slide__content">
-                <div class="slide__content-detail">2019 - Iasi, Romania</div>
-                <div class="slide__content-heading">Daniel Villa, Romania</div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="webpage__review review">
@@ -469,87 +512,6 @@
             <img src="img/partners/13.png" width="111" height="39" alt="r.m rick meyers">
           </li>
         </ul>
-        <div class="partners__line"></div>
-      </div>
-    </section>
-    <section class="webpage__article-list article-list" data-aos="fade">
-      <div class="container">
-        <header class="article-list__header">
-          <h2 class="article-list__heading heading">Inspirations & xperiences</h2>
-          <a class="article-list__more more" href="#">more articles</a>
-        </header>
-        <ul class="article-list__list row">
-          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="0">
-            <div class="article-preview" tebindex="0">
-              <div class="article-preview__image">
-                <img src="img/article-preview-1.jpg" width="356" height="356" alt="">
-              </div>
-              <div class="article-preview__content">
-                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
-                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
-                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
-                <a class="article-preview__btn" href="#">continue</a>
-              </div>
-            </div>
-          </li>
-          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="300">
-            <div class="article-preview" tebindex="0">
-              <div class="article-preview__image">
-                <img src="img/article-preview-2.jpg" width="356" height="356" alt="">
-              </div>
-              <div class="article-preview__content">
-                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
-                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
-                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
-                <a class="article-preview__btn" href="#">continue</a>
-              </div>
-            </div>
-          </li>
-          <li class="article-list__item col-12 col-md-4" data-aos="fade" data-aos-delay="600">
-            <div class="article-preview" tebindex="0">
-              <div class="article-preview__image">
-                <img src="img/article-preview-3.jpg" width="356" height="356" alt="">
-              </div>
-              <div class="article-preview__content">
-                <time class="article-preview__date" datetime="2020-12-15">December 15, 2020</time>
-                <h3 class="article-preview__heading">Nordic style, interior style for simple life</h3>
-                <div class="article-preview__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...</div>
-                <a class="article-preview__btn" href="#">continue</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <!--ul.article-list__list.row
-          li.article-list__item.col-12.col-md(data-aos="fade")
-          	.article-preview(tebindex="0")
-          		.article-preview__image
-          			img(src="img/article-preview-1.jpg", width="356", height="356", alt="")
-          		.article-preview__content
-          			time.article-preview__date(datetime="2020-12-15") December 15, 2020
-          			h3.article-preview__heading Nordic style, interior style for simple life
-          			.article-preview__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...
-          			a.article-preview__btn(href="#") continue
-          
-          li.article-list__item.col-12.col-md(data-aos="fade", data-aos-delay="300")
-          	.article-preview(tebindex="0")
-          		.article-preview__image
-          			img(src="img/article-preview-2.jpg", width="356", height="356", alt="")
-          		.article-preview__content
-          			time.article-preview__date(datetime="2020-12-08") December 8, 2020
-          			h3.article-preview__heading Discover top 15 buildings modern in Italia
-          			.article-preview__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...
-          			a.article-preview__btn(href="#") continue
-          
-          li.article-list__item.col-12.col-md(data-aos="fade", data-aos-delay="600")
-          	.article-preview(tebindex="0")
-          		.article-preview__image
-          			img(src="img/article-preview-3.jpg", width="356", height="356", alt="")
-          		.article-preview__content
-          			time.article-preview__date(datetime="2020-12-06") December 6, 2020
-          			h3.article-preview__heading The dome in architectural, the attractive from the art
-          			.article-preview__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor...
-          			a.article-preview__btn(href="#") continue
-          -->
       </div>
     </section>
   </main>
@@ -588,8 +550,8 @@
         <div class="footer__column col-12 col-sm">
           <div class="footer__column-title">Quick Links</div>
           <ul class="footer__column-menu">
-            <li class="footer__column-item">
-              <a class="footer__column-link" href="#">About</a>
+            <li class="footer__column-item footer__column-item--current">
+              <a class="footer__column-link">About</a>
             </li>
             <li class="footer__column-item">
               <a class="footer__column-link" href="#">Contact</a>

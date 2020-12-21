@@ -1,98 +1,115 @@
 .an-awards {
-  overflow: hidden;
-  padding-top: 40px;
+	$self: &;
 
-  @include media(xl) {
-    padding-top: 83px;
-  }
+	overflow: hidden;
+	padding-top: 40px;
 
-  &__intro {
-    margin-bottom: 20px;
+	&--about {
+		#{$self}__notice {
+			@include media(xl) {
+				padding-top: 71px;
+			}
+		}
 
-    @include media(md) {
-      margin-bottom: 0;
-    }
-  }
+		#{$self}__image {
+			@include media(xl) {
+				margin-top: -20px;
+				padding-left: 120px;
+			}
+		}
+	}
 
-  &__image {
-    @include media(xxl) {
-      width: 900px;
-    }
+	@include media(xl) {
+		padding-top: 83px;
+	}
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
+	&__intro {
+		margin-bottom: 20px;
 
-  &__content {
-    @include media(md) {
-      padding-right: 0;
-    }
+		@include media(md) {
+			margin-bottom: 0;
+		}
+	}
 
-    @include media(xxl) {
-      padding-top: 26px;
-      align-self: flex-start;
-    }
-  }
+	&__image {
+		@include media(xxl) {
+			width: 900px;
+		}
 
-  &__heading {
-    margin-bottom: 20px;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 
-    @include media(lg) {
-      max-width: 340px;
-    }
+	&__content {
+		@include media(md) {
+			padding-right: 0;
+		}
 
-    @include media(xl) {
-      max-width: none;
-    }
+		@include media(xxl) {
+			padding-top: 26px;
+			align-self: flex-start;
+		}
+	}
 
-    @include media(xxl) {
-      margin-bottom: 22px;
-    }
-  }
+	&__heading {
+		margin-bottom: 20px;
 
-  &__text {
-    max-width: 340px;
-    margin-bottom: 32px;
+		@include media(lg) {
+			max-width: 340px;
+		}
 
-    @include text(16px, 1.88, $color-grey);
+		@include media(xl) {
+			max-width: none;
+		}
 
-    @include media(xl) {
-      font-size: 18px;
-    }
+		@include media(xxl) {
+			margin-bottom: 22px;
+		}
+	}
 
-    @include media(xxl) {
-      margin-bottom: 54px;
-    }
-  }
+	&__text {
+		max-width: 340px;
+		margin-bottom: 32px;
 
-  &__buttons {
-    margin-bottom: 40px;
+		@include text(16px, 1.88, $color-grey);
 
-    @include media(xxl) {
-      margin-bottom: 84px;
-    }
-  }
+		@include media(xl) {
+			font-size: 18px;
+		}
 
-  &__notice {
-    max-width: 400px;
-    margin-bottom: 24px;
-    padding-right: 30px;
-    padding-top: 24px;
+		@include media(xxl) {
+			margin-bottom: 54px;
+		}
+	}
 
-    @include text(14px, 1.625);
-    border-top: solid 1px $color-grey5;
+	&__buttons {
+		margin-bottom: 40px;
 
-    @include media(xl) {
-      font-size: 16px;
-    }
-    @include media(xxl) {
-      margin-bottom: 46px;
-      padding-top: 43px;
-    }
-  }
+		@include media(xxl) {
+			margin-bottom: 84px;
+		}
+	}
 
-  &__phone {
-  }
+	&__notice {
+		max-width: 400px;
+		margin-bottom: 24px;
+		padding-right: 30px;
+		padding-top: 24px;
+
+		@include text(14px, 1.625);
+		border-top: solid 1px $color-grey5;
+
+		@include media(xl) {
+			font-size: 16px;
+		}
+		@include media(xxl) {
+			margin-bottom: 46px;
+			padding-top: 43px;
+		}
+	}
+
+	&__phone {
+	}
 }
