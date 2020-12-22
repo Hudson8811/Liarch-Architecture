@@ -38,7 +38,7 @@
 		&:placeholder-shown ~ #{$self}__hint {
 			font-size: 20px;
 			text-transform: none;
-			top: 5px;
+			top: -5px;
 		}
 
 		&:focus {
