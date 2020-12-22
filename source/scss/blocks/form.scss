@@ -1,0 +1,121 @@
+.form {
+	overflow: hidden;
+
+	&__title {
+		font-size: 48px;
+		margin-bottom: 22px;
+		letter-spacing: -1.2px;
+	}
+
+	&__subtitle {
+		font-size: 18px;
+		color: $color-grey2;
+		margin-bottom: 100px;
+	}
+
+	&__group {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+
+		@include media(md) {
+			margin: 0 -30px 11px;
+		}
+
+		label {
+			width: 100%;
+			margin-bottom: 40px;
+
+			@include media(md) {
+				width: calc(33.3333% - 60px);
+				margin: 0 30px 50px;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		position: relative;
+		cursor: text;
+
+		input,
+		textarea {
+			width: 100%;
+			padding-bottom: 10px;
+			border-bottom: 1px solid $color-grey3;
+			font-size: 20px;
+
+			&::placeholder {
+				color: transparent;
+			}
+
+			&:placeholder-shown ~ span {
+				font-size: 20px;
+				text-transform: none;
+				top: 5px;
+			}
+
+			&:focus {
+				border-bottom-color: $color-default-black;
+
+				~ span {
+					position: absolute;
+					top: -1.7em;
+					display: block;
+					font-size: 12px;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		textarea {
+			resize: none;
+			height: 209px;
+		}
+
+		span {
+			position: absolute;
+			top: -1.7em;
+			display: block;
+			transition: 0.3s;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: $color-grey;
+
+			&.red {
+				display: inline;
+				position: relative;
+				top: -7px;
+				color: #ff0000;
+			}
+		}
+	}
+
+	input[type="submit"] {
+		width: 210px;
+		padding: 20px;
+		background-color: $color-orange--dark;
+		border: 1px solid $color-orange--dark;
+		font-size: 18px;
+		color: $color-default-white;
+		text-transform: uppercase;
+		margin-top: 40px;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		@include transition(all);
+
+		@include media(md) {
+			left: 0;
+			transform: none;
+			margin-top: 95px;
+		}
+
+		@include media(lg) {
+			&:hover {
+				background-color: $color-default-white;
+				color: $color-orange--dark;
+			}
+		}
+	}
+}

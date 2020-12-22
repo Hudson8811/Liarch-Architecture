@@ -1,0 +1,72 @@
+extends templates/main.pug
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+
+block content
+	article.services
+		.container.services__container
+			section.webpage__type-service.type-service
+				h2.type-service__heading.heading(data-aos="fade") Let us help building <br> your dream
+				.type-service__text(data-aos="fade") We help our client suceed by creating identities, digital experiences, and printmaterials <br>
+																						|  that communicate clearly, achieve marketing goals & look fantastic Lorem uispum dolor sit amert <br>
+																						|  tunoer poea opefse ceefo goipully.
+
+				ul.type-service__list.row
+					li.type-service__item.col-12.col-md(data-aos="fade")
+						.type-service__item-icon.type-service__item-icon--interior
+							+icon('ruler-pencil')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Architecture & Interior
+						.type-service__item-text Architecture Design, Interior Design, Landscape Design, Commercial, Residential, 3D Visualization
+						a.type-service__item-link(href="#") 256 projects
+
+					li.type-service__item.col-12.col-md(data-aos="fade", data-aos-delay="300")
+						.type-service__item-icon.type-service__item-icon--design
+							+icon('vector')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Design & Photography
+						.type-service__item-text Web Design, Mobile App Design, 3D Design, CGI, Character, Motion, Photography
+						a.type-service__item-link(href="#") 64 projects
+
+					li.type-service__item.col-12.col-md(data-aos="fade", data-aos-delay="600")
+						.type-service__item-icon.type-service__item-icon--furniture
+							+icon('package')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Furniture Products Production
+						.type-service__item-text Sofa, Chair, Wood Furnitures, Shelf, Bed, Decoration, Structure, Celling, Flooring, Walls
+						a.type-service__item-link(href="#") 8,256 items
+
+
+			.our-story__statistics.statistics.row(data-aos="fade")
+				.statistics__item.col-12.col-sm
+					.statistics__item-value <span class="__js_number" data-end-value="100">0</span>%
+					.statistics__item-text satisfitation <br>clients
+				.statistics__item.col-12.col-sm
+					.statistics__item-value
+						span.__js_number(data-end-value="250") 0
+					.statistics__item-text employees on <br>worldwide
+				.statistics__item.col-12.col-lg
+					.statistics__item-value
+						span.__js_number(data-end-value="3875") 0
+					.statistics__item-text projects completed <br>on 60 countries
+
+
+			section.twitter-block(data-aos="fade")
+				.twitter-block__wrapper
+					header.twitter-block__header
+						.twitter-block__author
+							.twitter-block__author-image
+								img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+							.twitter-block__author-meta
+								.twitter-block__author-name Thiago Alcantara
+								.twitter-block__author-info <a href="#">@thiago.lfc</a>  - <time datetime="2020-12-15">15 Dec, 2020</time>
+						a.twitter-block__social(href="#")
+							+icon('twitter')(width="34", height="34")
+					.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio
+			include modules/form
+
+
+block footer
+	include modules/footer
