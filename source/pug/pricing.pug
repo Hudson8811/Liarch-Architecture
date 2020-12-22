@@ -1,0 +1,66 @@
+extends templates/main.pug
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+
+block content
+	article.pricing
+		.container.pricing__container
+			.pricing__title Pricing & Plan
+			.pricing__subtitle At Liarch studio, we’re a group with top architects from building, interior, design, photography, etc.
+												|  to help consult & build your dream become perfect
+			.pricing__slider-container
+				.pricing__slider.swiper-container.__js_slider-price
+					.pricing__wrapper.swiper-wrapper
+						.pricing-item.swiper-slide
+							.pricing-item__wrapper
+								.pricing-item__top
+									.pricing-item__plan basic plan
+									.pricing-item__caption
+								.pricing-item__price
+									sup.currency $
+									span.digit 49
+									span.square / m2
+								.pricing-item__tax 10% taxed will include after make price
+								ul.pricing-item__included
+									li survey & preliminary sketches
+									li 3d sketches
+								a.pricing-item__btn(href='#') start my project
+						.pricing-item.swiper-slide
+							.pricing-item__wrapper
+								.pricing-item__top
+									.pricing-item__plan premium plan
+									.pricing-item__caption
+										span Popular
+								.pricing-item__price
+									sup.currency $
+									span.digit 69
+									span.square / m2
+								.pricing-item__tax 10% taxed will include after make price
+								ul.pricing-item__included
+									li survey & preliminary sketches
+									li 3d sketches
+									li materials & building
+								a.pricing-item__btn(href='#') start my project
+						.pricing-item.swiper-slide
+							.pricing-item__wrapper
+								.pricing-item__top
+									.pricing-item__plan ultimate plan
+									.pricing-item__caption
+								.pricing-item__price
+									sup.currency $
+									span.digit 99
+									span.square / m2
+								.pricing-item__tax 10% taxed will include after make price
+								ul.pricing-item__included
+									li survey & preliminary sketches
+									li 3d sketches
+									li materials & building
+									li free support & repair 2 years
+								a.pricing-item__btn(href='#') start my project
+
+			.pricing__contact-us You have alarge team? <br> <a href="#" target="_blank">Contac us</a> for information about more enterprise options
+
+block footer
+	include modules/footer

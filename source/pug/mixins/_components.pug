@@ -1,8 +1,8 @@
 mixin input(type, inputName, placeholder, value)
 	if type === 'text' || type === 'email' || type === 'password'
-		input(type=type, name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+		input.custom-input(type=type, name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
 	if type === 'textarea'
-		textarea(name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+		textarea.custom-input(name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
 	if type === 'search'
 		input(type='search', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
 	if type === 'subs'
