@@ -180,6 +180,47 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+// Слайдер тарифов
+(function(){
+	var optionsTariff = {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		initialSlide: 1,
+		speed: 300,
+		loop: false,
+		centeredSlides: true,
+		centeredSlidesBounds: true,
+	};
+
+	var priceList = undefined;
+
+	/*if (window.matchMedia('(max-width: 1199px)').matches) {
+		var priceList = new Swiper('.__js_slider-price', optionsTariff);
+	}*/
+
+	$(window).resize(function () {
+		initPriceSlider();
+	});
+
+	initPriceSlider();
+
+	function initPriceSlider() {
+		if (window.matchMedia('(max-width: 1199px)').matches && priceList == undefined) {
+			var slider = $('.pricing__slider-container');
+
+			priceList = new Swiper('.__js_slider-price', optionsTariff);
+
+			priceList.on('slideChange', function () {
+				priceList.activeIndex === 0 ? slider.addClass('hide-left') : slider.removeClass('hide-left');
+				priceList.activeIndex === priceList.slides.length - 1 ? slider.addClass('hide-right') : slider.removeClass('hide-right');
+			});
+		} else if (window.matchMedia('(min-width: 1200px)').matches && priceList != undefined) {
+			priceList.destroy();
+			priceList = undefined;
+		}
+	}
+})();
+
 /* Анимация чисел */
 
 (function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране

@@ -1,5 +1,4 @@
 extends templates/main.pug
-include modules/article-list-row
 
 block variables
 	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
@@ -11,4 +10,7 @@ block content
 			img(src="img/404.jpg", alt="")
 			.page-404__title Ohh! Page not found
 			.page-404__subtitle You seem can’t to find the page you’re looking for
-			a.btn back to homepage
+			a.btn.page-404__btn(href='/') back to homepage
+
+block footer
+	include modules/footer
