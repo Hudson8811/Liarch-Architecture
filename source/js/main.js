@@ -93,18 +93,6 @@ var anAwards = $('.an-awards');
 
 /* Карусель проектов */
 (function(){
-  //var carousel = $('.__js_slider-carousel');
-
-  /*carousel.slick({
-		slidesToShow: 2,
-		slidesToScroll: 1,
-		margin: 30,
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 300
-	}); */
-
 	var mySwiper = new Swiper('.__js_slider-carousel', {
 		slidesPerView: 'auto',
 		spaceBetween: 30,
@@ -178,6 +166,25 @@ var anAwards = $('.an-awards');
 			}
 		}
 	});
+})();
+
+/* Модальное окно с формой на странице контактов */
+(function() {
+	var openContactsModalBtn = $('.__js_open-contacts-modal');
+	var contactsModal = $('.contacts__modal');
+	var closeContactsModalBtn = contactsModal.find('.contacts__modal-close');
+
+	openContactsModalBtn.on('click', function(evt) {
+		evt.preventDefault();
+
+		contactsModal.fadeIn(DURATION);
+		closeContactsModalBtn.on('click', closeModal);
+	});
+
+	function closeModal() {
+		contactsModal.fadeOut(DURATION);
+		//closeContactsModalBtn.oFF('click', closeModal);
+	}
 })();
 
 /* Анимация чисел */

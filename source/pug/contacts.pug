@@ -1,0 +1,55 @@
+extends templates/main.pug
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - contacts';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 5; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	section.contacts
+		.contacts__map.contacts__map--absolute
+		.contacts__inner.container
+			.contacts__contact.ml-md-auto
+				.contacts__contact-title Beverly Hill, <span>California</span>
+				address.contacts__contact-address 5nd Trump Tower, 166 Main Street, Beverly Hill Ave, CA, 90210, United States
+				.contacts__contact-email
+					span.contacts__contact-hint Email:
+					a(href="mailto:infor@liarchstudio.co") infor@liarchstudio.co
+				.contacts__contact-phone
+					span.contacts__contact-hint Call directly:
+					a(href="tel:+86631250859") +8(663)125-08-59
+				.contacts__contact-offices
+					span.contacts__contact-hint Brand Offices:
+					.contacts__contact-offices-list
+						a.contacts__contact-offices-item.__js_office-link(href="#") Allentown PA
+						a.contacts__contact-offices-item.__js_office-link(href="#") Allanta, GA
+						a.contacts__contact-offices-item.__js_office-link(href="#") Chicago, IL
+						a.contacts__contact-offices-item.__js_office-link(href="#") Dallas, TX,
+						a.contacts__contact-offices-item.__js_office-link(href="#") Edison, NJ
+						a.contacts__contact-offices-item.__js_office-link(href="#") Houston, TX
+
+				button.contacts__contact-btn.btn.__js_open-contacts-modal(type="button") get in touch
+
+
+				.contacts__modal
+					button.contacts__modal-close(type="button")
+						+icon('close')(width="40", height="40")
+					form(action="#", method="post")
+						label.field
+							span.field__hint Name
+							input.field__input(type="text", name="name")
+						label.field
+							span.field__hint Email Address
+							input.field__input(type="email", name="email")
+						label.field
+							.field__hint subject (optional)
+							input.field__input(type="text", name="subject")
+						label.field.field--textarea
+							.field__hint Message
+							textarea.field__input(name="message")
+
+						button.contacts__modal-btn.btn(type="submit") Send message
+
+
+
+block footer
+	include modules/footer
