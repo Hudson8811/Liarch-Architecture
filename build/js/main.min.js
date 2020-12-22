@@ -185,7 +185,7 @@ var anAwards = $('.an-awards');
 		contactsModal.fadeOut(DURATION);
 		//closeContactsModalBtn.oFF('click', closeModal);
 	}
-});
+})();
 
 // Слайдер тарифов
 (function(){

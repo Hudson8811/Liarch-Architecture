@@ -210,7 +210,9 @@
   </section>
   <main>
     <section class="contacts">
-      <div class="contacts__map contacts__map--absolute"></div>
+      <div class="contacts__map contacts__map--absolute">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.7573199609947!2d-118.33043968482798!3d34.07573478059951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8c199b270b7%3A0xae653e28fc364c28!2zQmV2ZXJseSBCbHZkLCBDYWxpZm9ybmlhLCDQodCo0JA!5e0!3m2!1sru!2sru!4v1608631800377!5m2!1sru!2sru" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
       <div class="contacts__inner container">
         <div class="contacts__contact ml-md-auto">
           <div class="contacts__contact-title">Beverly Hill, <span>California</span>
@@ -242,22 +244,22 @@
                 <use xlink:href="#close"></use>
               </svg>
             </button>
-            <form action="#" method="post">
-              <label class="field">
+            <form class="contacts__modal-form" action="#" method="post">
+              <label class="contacts__modal-field field field--md-small">
+                <input type="text" name="name" placeholder="Name">
                 <span class="field__hint">Name</span>
-                <input class="field__input" type="text" name="name">
               </label>
-              <label class="field">
+              <label class="contacts__modal-field field field--md-small">
+                <input type="email" name="email" placeholder="Email Address">
                 <span class="field__hint">Email Address</span>
-                <input class="field__input" type="email" name="email">
               </label>
-              <label class="field">
-                <div class="field__hint">subject (optional)</div>
-                <input class="field__input" type="text" name="subject">
+              <label class="contacts__modal-field field field--md-small">
+                <input type="text" name="subject" placeholder="Subject (optional)">
+                <div class="field__hint">Subject (optional)</div>
               </label>
-              <label class="field field--textarea">
+              <label class="contacts__modal-field field field--md-small">
+                <textarea name="message" placeholder="Message"></textarea>
                 <div class="field__hint">Message</div>
-                <textarea class="field__input" name="message"></textarea>
               </label>
               <button class="contacts__modal-btn btn" type="submit">Send message</button>
             </form>

@@ -1,4 +1,6 @@
 .field {
+	$self: &;
+
 	position: relative;
 	display: block;
 	width: 100%;
@@ -33,7 +35,7 @@
 			color: transparent;
 		}
 
-		&:placeholder-shown ~ span {
+		&:placeholder-shown ~ #{$self}__hint {
 			font-size: 20px;
 			text-transform: none;
 			top: 5px;
@@ -42,7 +44,7 @@
 		&:focus {
 			border-bottom-color: $color-default-black;
 
-			~ span {
+			~ #{$self}__hint {
 				position: absolute;
 				top: -1.7em;
 				display: block;
@@ -54,6 +56,38 @@
 
 	textarea {
 		resize: none;
-		height: 209px;
+		height: 150px;
+
+		@include media(xl) {
+			height: 209px;
+		}
+	}
+
+	&--md-small {
+		@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+			#{$self}__hint {
+				top: -1.2em;
+				font-size: 10px;
+			}
+			input,
+			textarea {
+				padding-bottom: 6px;
+				font-size: 14px;
+				//background-color: pink;
+
+				&:placeholder-shown ~ #{$self}__hint {
+					font-size: 14px;
+				}
+
+				&:focus {
+					border-bottom-color: $color-default-black;
+
+					~ #{$self}__hint {
+						top: -1.2em;
+						font-size: 10px;
+					}
+				}
+			}
+		}
 	}
 }
