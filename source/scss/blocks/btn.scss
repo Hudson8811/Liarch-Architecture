@@ -1,49 +1,51 @@
 .btn {
-  display: inline-block;
-  vertical-align: top;
-  padding: 16px 20px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 16px 20px;
 
-  @include text(16px, 1, $color-default-white);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-align: center;
+	@include text(16px, 1, $color-default-white);
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	text-align: center;
 
-  border-radius: 5px;
-  border: solid 1px $color-orange;
-  background-color: $color-orange;
+	border-radius: 5px;
+	border: solid 1px $color-orange;
+	background-color: $color-orange;
 
-  @include transition(background-color);
+	cursor: pointer;
 
-  @include media(xl) {
-    padding: 20px 32px;
-  }
+	@include transition(background-color);
 
-  &:hover,
-  &:focus {
-    outline: none;
-    background-color: $color-orange-hover;
-  }
+	@include media(xl) {
+		padding: 20px 32px;
+	}
 
-  &:active {
-    opacity: 0.7;
-  }
+	&:hover,
+	&:focus {
+		outline: none;
+		background-color: $color-orange-hover;
+	}
 
-  &--outline {
-    background-color: transparent;
-    color: $color-orange;
-    border-color: $color-orange;
-    transition: background-color $default-transition-settings,
-      color $default-transition-settings;
+	&:active {
+		opacity: 0.7;
+	}
 
-    &:hover,
-    &:focus {
-      outline: none;
-      background-color: $color-orange;
-      color: $color-default-white;
-    }
-  }
+	&--outline {
+		background-color: transparent;
+		color: $color-orange;
+		border-color: $color-orange;
+		transition: background-color $default-transition-settings,
+			color $default-transition-settings;
 
-  /*&--play {
+		&:hover,
+		&:focus {
+			outline: none;
+			background-color: $color-orange;
+			color: $color-default-white;
+		}
+	}
+
+	/*&--play {
     display: flex;
     width: 50px;
     height: 50px;

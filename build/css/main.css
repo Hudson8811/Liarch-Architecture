@@ -350,10 +350,6 @@ main {
 a {
   text-decoration: none; }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px !important; } }
-
 input,
 select,
 textarea {
@@ -5027,6 +5023,7 @@ button.swiper-pagination-bullet {
   border-radius: 5px;
   border: solid 1px #ff4800;
   background-color: #ff4800;
+  cursor: pointer;
   transition: background-color 0.3s ease;
   /*&--play {
     display: flex;
@@ -5070,6 +5067,52 @@ button.swiper-pagination-bullet {
       outline: none;
       background-color: #ff4800;
       color: #ffffff; }
+
+.field {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: text; }
+  .field__hint {
+    position: absolute;
+    top: -1.7em;
+    display: block;
+    transition: 0.3s;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999999; }
+    .field__hint .red {
+      display: inline;
+      position: relative;
+      top: -7px;
+      color: #ff0000; }
+  .field input,
+  .field textarea {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 20px; }
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: transparent; }
+    .field input:placeholder-shown ~ span,
+    .field textarea:placeholder-shown ~ span {
+      font-size: 20px;
+      text-transform: none;
+      top: 5px; }
+    .field input:focus,
+    .field textarea:focus {
+      border-bottom-color: #000000; }
+      .field input:focus ~ span,
+      .field textarea:focus ~ span {
+        position: absolute;
+        top: -1.7em;
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase; }
+  .field textarea {
+    resize: none;
+    height: 209px; }
 
 .video-btn {
   display: flex;
@@ -6706,6 +6749,187 @@ button.swiper-pagination-bullet {
   .rewards__item + .rewards__item {
     border-top: solid 1px #dfdfdf; }
 
+.contacts {
+  padding: 40px 0; }
+  @media (min-width: 768px) {
+    .contacts {
+      position: relative; } }
+  @media (min-width: 992px) {
+    .contacts {
+      padding: 60px 0; } }
+  @media (min-width: 1200px) {
+    .contacts {
+      padding: 90px 0; } }
+  @media (min-width: 1560px) {
+    .contacts__inner {
+      max-width: 1550px; } }
+  .contacts__contact {
+    max-width: 400px;
+    background-color: #ffffff; }
+    @media (min-width: 768px) {
+      .contacts__contact {
+        position: relative;
+        padding: 40px; } }
+    @media (min-width: 992px) {
+      .contacts__contact {
+        padding: 60px; } }
+    @media (min-width: 1200px) {
+      .contacts__contact {
+        max-width: 595px;
+        padding: 78px 83px 90px 100px; } }
+    .contacts__contact-hint {
+      font-size: 14px;
+      line-height: 1;
+      color: #999999;
+      text-transform: uppercase; }
+    .contacts__contact-title {
+      margin-bottom: 12px;
+      font-size: 30px;
+      line-height: 1.6;
+      color: #000000;
+      letter-spacing: -0.025em; }
+      .contacts__contact-title span {
+        font-weight: 300;
+        color: #999999; }
+    .contacts__contact-address {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.625;
+      color: #666666;
+      font-style: normal; }
+      @media (min-width: 1200px) {
+        .contacts__contact-address {
+          margin-bottom: 32px; } }
+    .contacts__contact-email {
+      margin-bottom: 24px; }
+      @media (min-width: 1200px) {
+        .contacts__contact-email {
+          margin-bottom: 68px; } }
+      .contacts__contact-email a {
+        font-size: 16px;
+        line-height: 1;
+        color: #000000;
+        transition: color 0.3s ease; }
+        .contacts__contact-email a:hover, .contacts__contact-email a:focus {
+          outline: none;
+          color: #ff4800; }
+        .contacts__contact-email a:active {
+          opacity: 0.7; }
+    .contacts__contact-phone {
+      margin-bottom: 24px; }
+      .contacts__contact-phone span {
+        display: block;
+        margin-bottom: 12px; }
+      @media (min-width: 1200px) {
+        .contacts__contact-phone {
+          margin-bottom: 56px; }
+          .contacts__contact-phone span {
+            margin-bottom: 22px; } }
+      .contacts__contact-phone a {
+        font-size: 30px;
+        line-height: 1;
+        color: #000000;
+        letter-spacing: -0.025em;
+        transition: color 0.3s ease; }
+        @media (min-width: 1200px) {
+          .contacts__contact-phone a {
+            font-size: 36px; } }
+        .contacts__contact-phone a:hover, .contacts__contact-phone a:focus {
+          outline: none;
+          color: #ff4800; }
+        .contacts__contact-phone a:active {
+          opacity: 0.7; }
+    .contacts__contact-offices {
+      margin-bottom: 36px; }
+      .contacts__contact-offices span {
+        display: block;
+        margin-bottom: 12px; }
+      @media (min-width: 1200px) {
+        .contacts__contact-offices {
+          margin-bottom: 64px; }
+          .contacts__contact-offices span {
+            margin-bottom: 26px; } }
+      .contacts__contact-offices-list {
+        display: flex;
+        flex-wrap: wrap; }
+      .contacts__contact-offices-item {
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 1;
+        color: #000000; }
+        @media (min-width: 1200px) {
+          .contacts__contact-offices-item {
+            margin-right: 24px;
+            margin-bottom: 12px; } }
+        .contacts__contact-offices-item::after {
+          content: "|";
+          position: absolute;
+          right: -12px;
+          color: #999999; }
+        .contacts__contact-offices-item:last-child {
+          margin-right: 0; }
+          .contacts__contact-offices-item:last-child::after {
+            display: none; }
+        .contacts__contact-offices-item:hover, .contacts__contact-offices-item:focus {
+          outline: none;
+          text-decoration: underline; }
+        .contacts__contact-offices-item:active {
+          opacity: 0.7; }
+        .contacts__contact-offices-item--active {
+          cursor: default;
+          pointer-events: none;
+          color: #ff4800; }
+  .contacts__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 72px 40px;
+    background-color: #ffffff;
+    display: none; }
+    @media (min-width: 768px) {
+      .contacts__modal {
+        position: absolute; } }
+    .contacts__modal-close {
+      position: absolute;
+      top: 30px;
+      right: 24px;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer; }
+      .contacts__modal-close svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: fill 0.3s ease; }
+      .contacts__modal-close:hover, .contacts__modal-close:focus {
+        outline: none; }
+        .contacts__modal-close:hover svg, .contacts__modal-close:focus svg {
+          fill: #ff4800; }
+      .contacts__modal-close:active {
+        opacity: 0.7; }
+  .contacts__map {
+    height: 300px;
+    margin-bottom: 40px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-color: #999999;
+    background-image: url("../img/map.jpg"); }
+    @media (min-width: 768px) {
+      .contacts__map--absolute {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; } }
+
 .form {
   overflow: hidden; }
   .form__title {
@@ -6723,58 +6947,17 @@ button.swiper-pagination-bullet {
     @media (min-width: 768px) {
       .form__group {
         margin: 0 -30px 11px; } }
-    .form__group label {
-      width: 100%;
-      margin-bottom: 40px; }
-      @media (min-width: 768px) {
-        .form__group label {
-          width: calc(33.3333% - 60px);
-          margin: 0 30px 50px; } }
-  .form label {
-    display: block;
-    position: relative;
-    cursor: text; }
-    .form label input,
-    .form label textarea {
-      width: 100%;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #cccccc;
-      font-size: 20px; }
-      .form label input::placeholder,
-      .form label textarea::placeholder {
-        color: transparent; }
-      .form label input:placeholder-shown ~ span,
-      .form label textarea:placeholder-shown ~ span {
-        font-size: 20px;
-        text-transform: none;
-        top: 5px; }
-      .form label input:focus,
-      .form label textarea:focus {
-        border-bottom-color: #000000; }
-        .form label input:focus ~ span,
-        .form label textarea:focus ~ span {
-          position: absolute;
-          top: -1.7em;
-          display: block;
-          font-size: 12px;
-          text-transform: uppercase; }
-    .form label textarea {
-      resize: none;
-      height: 209px; }
-    .form label span {
-      position: absolute;
-      top: -1.7em;
-      display: block;
-      transition: 0.3s;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #999999; }
-      .form label span.red {
-        display: inline;
-        position: relative;
-        top: -7px;
-        color: #ff0000; }
-  .form input[type="submit"] {
+  .form__field {
+    width: 100%;
+    margin-bottom: 40px; }
+    @media (min-width: 768px) {
+      .form__field {
+        width: calc(33.3333% - 60px);
+        margin: 0 30px 50px; }
+        .form__field--width-full {
+          width: 100%;
+          margin: 0; } }
+  .form__submit {
     width: 210px;
     padding: 20px;
     background-color: #f5480c;
@@ -6786,14 +6969,15 @@ button.swiper-pagination-bullet {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
     transition: all 0.3s ease; }
     @media (min-width: 768px) {
-      .form input[type="submit"] {
+      .form__submit {
         left: 0;
         transform: none;
         margin-top: 95px; } }
     @media (min-width: 992px) {
-      .form input[type="submit"]:hover {
+      .form__submit:hover, .form__submit:focus {
         background-color: #ffffff;
         color: #f5480c; } }
 
