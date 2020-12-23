@@ -1,4 +1,7 @@
 'use strict';
+
+//var { default: Swiper } = require("swiper");
+
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
@@ -49,21 +52,10 @@ var anAwards = $('.an-awards');
       menuOpenBtn.removeClass(ModifierClass.TOGGLE);
     }, DURATION + 50);
   }
-
 })();
 
 /* Слайдер проектов */
 (function(){
-  //var slider = $('.__js_slider-single');
-
- /* slider.slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 300
-	});*/
-
-
 	var mySwiper = new Swiper('.__js_slider-single', {
 		slidesPerView: 'auto',
 		spaceBetween: 10,
@@ -85,20 +77,22 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+/* слайдер отзывов */
+
+(function() {
+	var mySwiper = new Swiper('.__js_testimonials-carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 60,
+		loop: true,
+		navigation: {
+			nextEl: '.testimonials__nav-btn--next',
+			prevEl: '.testimonials__nav-btn--prev',
+		},
+	});
+})();
+
 /* Карусель проектов */
 (function(){
-  //var carousel = $('.__js_slider-carousel');
-
-  /*carousel.slick({
-		slidesToShow: 2,
-		slidesToScroll: 1,
-		margin: 30,
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 300
-	}); */
-
 	var mySwiper = new Swiper('.__js_slider-carousel', {
 		slidesPerView: 'auto',
 		spaceBetween: 30,
@@ -174,6 +168,25 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+/* Модальное окно с формой на странице контактов */
+(function() {
+	var openContactsModalBtn = $('.__js_open-contacts-modal');
+	var contactsModal = $('.contacts__modal');
+	var closeContactsModalBtn = contactsModal.find('.contacts__modal-close');
+
+	openContactsModalBtn.on('click', function(evt) {
+		evt.preventDefault();
+
+		contactsModal.fadeIn(DURATION);
+		closeContactsModalBtn.on('click', closeModal);
+	});
+
+	function closeModal() {
+		contactsModal.fadeOut(DURATION);
+		//closeContactsModalBtn.oFF('click', closeModal);
+	}
+})();
+
 // Слайдер тарифов
 (function(){
 	var optionsTariff = {
@@ -217,7 +230,7 @@ var anAwards = $('.an-awards');
 
 /* Анимация чисел */
 
-(function() {
+(function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
   var animationIsDone = false;

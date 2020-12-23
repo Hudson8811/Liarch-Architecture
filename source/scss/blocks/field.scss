@@ -1,0 +1,93 @@
+.field {
+	$self: &;
+
+	position: relative;
+	display: block;
+	width: 100%;
+
+	cursor: text;
+
+	&__hint {
+		position: absolute;
+		top: -1.7em;
+		display: block;
+		transition: 0.3s;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $color-grey;
+
+		.red {
+			display: inline;
+			position: relative;
+			top: -7px;
+			color: #ff0000;
+		}
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $color-grey3;
+		font-size: 20px;
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:placeholder-shown ~ #{$self}__hint {
+			font-size: 20px;
+			text-transform: none;
+			top: -5px;
+		}
+
+		&:focus {
+			border-bottom-color: $color-default-black;
+
+			~ #{$self}__hint {
+				position: absolute;
+				top: -1.7em;
+				display: block;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: 150px;
+
+		@include media(xl) {
+			height: 209px;
+		}
+	}
+
+	&--md-small {
+		@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+			#{$self}__hint {
+				top: -1.2em;
+				font-size: 10px;
+			}
+			input,
+			textarea {
+				padding-bottom: 6px;
+				font-size: 14px;
+				//background-color: pink;
+
+				&:placeholder-shown ~ #{$self}__hint {
+					font-size: 14px;
+				}
+
+				&:focus {
+					border-bottom-color: $color-default-black;
+
+					~ #{$self}__hint {
+						top: -1.2em;
+						font-size: 10px;
+					}
+				}
+			}
+		}
+	}
+}

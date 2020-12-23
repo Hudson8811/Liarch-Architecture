@@ -20,6 +20,8 @@ body {
 
 	@include text();
 	font-weight: 400;
+	-webkit-locale: auto;
+	white-space: normal;
 }
 
 main {
