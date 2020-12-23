@@ -5093,6 +5093,24 @@ button.swiper-pagination-bullet {
   display: block;
   width: 100%;
   cursor: text; }
+  .field .underline {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    .field .underline::before, .field .underline::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background-color: #000000;
+      transition: width 0.3s ease; }
+    .field .underline::before {
+      left: 50%; }
+    .field .underline::after {
+      right: 50%; }
   .field__hint {
     position: absolute;
     top: -1.7em;
@@ -5120,16 +5138,19 @@ button.swiper-pagination-bullet {
       font-size: 20px;
       text-transform: none;
       top: -5px; }
-    .field input:focus,
-    .field textarea:focus {
-      border-bottom-color: #000000; }
-      .field input:focus ~ .field__hint,
-      .field textarea:focus ~ .field__hint {
-        position: absolute;
-        top: -1.7em;
-        display: block;
-        font-size: 12px;
-        text-transform: uppercase; }
+    .field input:focus ~ .field__hint,
+    .field textarea:focus ~ .field__hint {
+      position: absolute;
+      top: -1.7em;
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase; }
+    .field input:focus ~ .underline::before,
+    .field textarea:focus ~ .underline::before {
+      width: 50%; }
+    .field input:focus ~ .underline::after,
+    .field textarea:focus ~ .underline::after {
+      width: 50%; }
   .field textarea {
     resize: none;
     height: 150px; }
@@ -6817,6 +6838,11 @@ button.swiper-pagination-bullet {
         .form__field--width-full {
           width: 100%;
           margin: 0; } }
+    .form__field--textarea {
+      height: 150px; }
+      @media (min-width: 1200px) {
+        .form__field--textarea {
+          height: 209px; } }
   .form__submit {
     width: 210px;
     padding: 20px;

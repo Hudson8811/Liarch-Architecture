@@ -36,6 +36,14 @@
 				margin: 0;
 			}
 		}
+
+		&--textarea {
+			height: 150px;
+
+			@include media(xl) {
+				height: 209px;
+			}
+		}
 	}
 
 	&__submit {
