@@ -1,6 +1,6 @@
 .news-sb-page {
 	&__container {
-		max-width: 1170px;
+		max-width: 1170px !important;
 		padding: 80px 10px 60px;
 
 		@include media(md) {
@@ -48,6 +48,7 @@
 		background-color: $color-default-white;
 		position: absolute;
 		bottom: -40px;
+		outline: none;
 
 		@include media(md) {
 			bottom: unset;
@@ -124,6 +125,7 @@
 		position: absolute;
 		bottom: -65px;
 		z-index: 1;
+		outline: none;
 		@include transition(background-color);
 
 		@include media(md) {

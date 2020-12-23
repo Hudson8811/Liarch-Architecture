@@ -1,6 +1,6 @@
 .news-masonry {
 	&__container {
-		max-width: 1830px;
+		max-width: 1830px !important;
 		padding-bottom: 60px;
 
 		@include media(md) {

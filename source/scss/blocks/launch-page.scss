@@ -1,0 +1,100 @@
+.launch-page {
+	width: 100%;
+	min-height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+
+	&__container {
+		max-width: 750px;
+		padding: 60px 10px;
+		position: relative;
+
+		@include media(lg) {
+			padding: 103px 0 167px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: $color-default-white;
+		text-align: center;
+	}
+
+	&__logo .logo {
+		&__image svg {
+			fill: $color-default-white;
+		}
+
+		&__text {
+			text-align: left;
+			color: $color-default-white;
+		}
+	}
+
+	&__title {
+		font-size: 42px;
+		margin-top: 56px;
+		margin-bottom: 19px;
+
+		@include media(lg) {
+			font-size: 80px;
+			margin-top: 118px;
+			letter-spacing: -2px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 45px;
+
+		@include media(lg) {
+			font-size: 18px;
+			line-height: 30px;
+			letter-spacing: -0.27px;
+			margin-bottom: 87px;
+		}
+	}
+
+	&__timer-title {
+		font-size: 22px;
+		line-height: 22px;
+		text-transform: uppercase;
+		margin-bottom: 45px;
+
+		@include media(lg) {
+			font-size: 24px;
+			line-height: 24px;
+			margin-bottom: 72px;
+		}
+	}
+
+	&__social {
+		margin-top: 68px;
+
+		@include media(lg) {
+			margin-top: 119px;
+		}
+
+		.social {
+			&__link {
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+	}
+}

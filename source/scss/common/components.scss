@@ -12,6 +12,7 @@
 		font-weight: 600;
 		letter-spacing: 1.2px;
 		text-transform: uppercase;
+		cursor: pointer;
 		@include transition(color);
 
 		@include media(sm) {
@@ -33,9 +34,13 @@
 		width: 100%;
 		display: block;
 		position: relative;
-		padding: 15px 10px 15px 45px;
+		padding: 15px 25px 15px 45px;
 		border-bottom: 1px solid $color-default-black;
 		box-sizing: border-box;
+
+		@include media(sm) {
+			padding: 15px 100px 15px 45px;
+		}
 
 		&::before {
 			content: '';
@@ -47,6 +52,18 @@
 			transform: translateY(-50%);
 			background: url("../img/mail.png") no-repeat center left;
 		}
+
+		input {
+			width: 100%;
+
+			&::placeholder {
+				opacity: 0.5;
+			}
+
+			&:focus::placeholder {
+				opacity: 0;
+			}
+		}
 	}
 }
 
@@ -55,15 +72,21 @@
 	height: 46px;
 	padding: 16px 20px;
 	border: 1px solid #d4d4d4;
+	background-color: $color-default-white;
 	box-sizing: border-box;
+	@include transition(border-color);
 
 	&::placeholder {
 		font-size: 16px;
 		opacity: 0.5;
 	}
 
-	&:focus::placeholder {
-		opacity: 0;
+	&:focus {
+		border-color: $color-default-black;
+
+		&::placeholder {
+			opacity: 0;
+		}
 	}
 }
 
@@ -83,7 +106,7 @@ input[type="search"] {
 	}
 }
 
-textarea {
+textarea.custom-input {
 	height: 150px;
 	resize: none;
 }

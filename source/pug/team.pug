@@ -1,0 +1,71 @@
+extends templates/main.pug
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+
+block content
+	article.team
+		.container.team__container
+			.team__title Join into +2K talent members of Liarch
+			.team__wrapper
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-1.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') Stephan Bowie
+					.team-item__position CEO Founder
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-2.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') robert downey jr
+					.team-item__position CO Founder
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-3.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') laura lorence
+					.team-item__position Project Management
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-4.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') david de berg
+					.team-item__position Lead of Technical
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-5.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') elena stephan
+					.team-item__position Architect
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-6.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') andy robertson
+					.team-item__position Architect
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-1.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') Bob Kerry
+					.team-item__position Architect
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-2.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') Richarson Huston
+					.team-item__position Engineer
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-3.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') linda Jelly
+					.team-item__position Marketing
+				.team-item
+					.team-item__photo
+						img(src="img/team/item-4.jpg", alt="")
+					a.team-item__name(href='#', target='_blank') Henry Eden
+					.team-item__position 3D Visuallization
+				a.team-item.team-item--join(href='#', target='_blank')
+					.team-item__photo
+						+icon('users')(width="67", height="45")
+						p become <br> our member
+
+
+
+
+block footer
+	include modules/footer

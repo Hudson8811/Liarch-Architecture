@@ -77,7 +77,7 @@ block content
 
 					.post-sb__bottom(data-aos="fade")
 						.post-sb__tags
-							.post-sb__tag-item.active wordpress
+							.post-sb__tag-item wordpress
 							.post-sb__tag-item theme
 							.post-sb__tag-item architecture
 						.post-sb__socials
@@ -174,7 +174,7 @@ block content
 							+input('email', 'email', 'Email Address')
 							+input('text', 'subject', 'Subject (optional)')
 						+input('textarea', 'message', 'Message')
-						input.btn(type='submit', value='send message')
+						button.btn.comment-form__btn(type='submit') send message
 
 block footer
 	include modules/footer
