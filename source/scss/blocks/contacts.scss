@@ -23,7 +23,7 @@
 		margin-bottom: 60px;
 
 		@include media(xl) {
-			margin-bottom: 150px;
+			margin-bottom: 138px;
 			padding-top: 17px;
 		}
 	}
@@ -33,6 +33,10 @@
 
 		@include media(lg) {
 			margin-top: 0;
+		}
+
+		@include media(xl) {
+			margin-left: 30px;
 		}
 	}
 
@@ -313,6 +317,10 @@
 		background-repeat: no-repeat;
 		background-position: 50% 0;
 		background-color: $color-grey;
+
+		@include media(xl) {
+			margin-bottom: 137px;
+		}
 
 		//background-image: url("../img/map.jpg");
 		iframe {
