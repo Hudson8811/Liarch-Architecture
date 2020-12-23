@@ -1,0 +1,18 @@
+.specialization {
+	&__item {
+		&-diagram {
+			width: 160px;
+			height: 160px;
+
+			svg {
+				display: block;
+				width: 100%;
+				height: auto;
+				box-sizing: border-box;
+			}
+		}
+
+		&-text {
+		}
+	}
+}

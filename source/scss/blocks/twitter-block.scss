@@ -34,6 +34,47 @@
 		}
 	}
 
+	&--sidebar {
+		max-width: 300px;
+
+		#{$self}__wrapper {
+			padding: 30px !important;
+		}
+
+		#{$self}__header {
+			margin-bottom: 32px !important;
+		}
+
+		#{$self}__author {
+			&-image {
+				width: 45px !important;
+				height: 45px !important;
+			}
+			&-meta,
+			&-name {
+				font-size: 16px !important;
+			}
+			&-info {
+				font-size: 12px !important;
+			}
+		}
+
+		#{$self}__text {
+			margin-bottom: 30px;
+			font-size: 18px !important;
+		}
+
+		#{$self}__social {
+			svg {
+				width: 24px !important;
+			}
+		}
+
+		time {
+			font-size: 12px !important;
+		}
+	}
+
 	&__wrapper {
 		padding: 20px;
 		border: solid 1px $color-grey5;
@@ -176,6 +217,15 @@
 			&:active {
 				opacity: 0.7;
 			}
+		}
+	}
+
+	time {
+		@include text(14px, 1, $color-grey);
+		letter-spacing: 0.015em;
+
+		@include media(sm) {
+			font-size: 16px;
 		}
 	}
 }

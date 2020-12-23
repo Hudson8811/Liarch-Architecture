@@ -1,0 +1,58 @@
+.service-page {
+	padding: 40px 0;
+
+	@include media(xl) {
+		padding: 104px 0 201px;
+	}
+
+	&__header {
+		margin-bottom: 60px;
+	}
+
+	&__heading {
+		margin-bottom: 20px;
+		font-weight: 400;
+	}
+
+	&__image {
+		margin-bottom: 60px;
+		padding: 0 15px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__content {
+	}
+
+	&__sidebar {
+		margin-top: 60px;
+
+		@include media(lg) {
+			margin-top: 0;
+		}
+	}
+
+	&__specialization {
+		margin: 60px 0;
+	}
+
+	&__process {
+		margin: 60px 0;
+	}
+
+	h2 {
+		@include text(30px, 1.18);
+		font-weight: 400;
+		letter-spacing: -0.015em;
+	}
+
+	p {
+		margin-top: 0;
+
+		@include text(16px, 1.77, $color-grey2);
+	}
+}
