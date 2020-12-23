@@ -5,13 +5,17 @@ form.form(action='', method='POST', data-aos="fade")
 		label
 			input(type='text', name='full-name', placeholder='Full Name')
 			span Full Name
+			.underline
 		label
 			input(type='email', name='email', placeholder='Email Address *', required)
 			span Email Address <span class="red">*</span>
+			.underline
 		label
 			input(type='text', name='subject', placeholder='Subject')
 			span Subject
-	label
+			.underline
+	label.label-textarea
 		textarea(name='message', placeholder='Your message here')
 		span Your message here
-	input(type='submit', value='Send Message')
+		.underline
+	button.btn.form__btn Send Message

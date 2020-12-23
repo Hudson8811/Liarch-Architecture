@@ -38,6 +38,33 @@
 		position: relative;
 		cursor: text;
 
+		.underline {
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			&::before,
+			&::after {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				bottom: 0;
+				width: 0;
+				height: 2px;
+				background-color: $color-default-black;
+				transition: width 0.3s ease;
+			}
+
+			&::before {
+				left: 50%;
+			}
+
+			&::after {
+				right: 50%;
+			}
+		}
+
 		input,
 		textarea {
 			width: 100%;
@@ -56,8 +83,6 @@
 			}
 
 			&:focus {
-				border-bottom-color: $color-default-black;
-
 				~ span {
 					position: absolute;
 					top: -1.7em;
@@ -65,12 +90,26 @@
 					font-size: 12px;
 					text-transform: uppercase;
 				}
+
+				~ .underline {
+					&::before {
+						width: 50%;
+					}
+
+					&::after {
+						width: 50%;
+					}
+				}
 			}
+		}
+
+		&.label-textarea {
+			height: 209px;
 		}
 
 		textarea {
 			resize: none;
-			height: 209px;
+			height: 100%;
 		}
 
 		span {
@@ -91,9 +130,10 @@
 		}
 	}
 
-	input[type="submit"] {
+	&__btn {
 		width: 210px;
-		padding: 20px;
+		padding: 16px;
+		border-radius: 0;
 		background-color: $color-orange--dark;
 		border: 1px solid $color-orange--dark;
 		font-size: 18px;
@@ -103,6 +143,7 @@
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
+		cursor: pointer;
 		@include transition(all);
 
 		@include media(md) {

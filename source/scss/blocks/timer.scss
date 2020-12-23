@@ -1,0 +1,33 @@
+.timer {
+	display: flex;
+
+	&__digit {
+		&:not(:last-child) {
+			margin-right: 35px;
+
+			@include media(lg) {
+				margin-right: 54px;
+			}
+		}
+
+		p {
+			width: 30px;
+			font-size: 30px;
+			line-height: 30px;
+			text-transform: uppercase;
+			margin: 0 auto;
+
+			@include media(lg) {
+				width: 85px;
+				font-size: 72px;
+				line-height: 72px;
+			}
+		}
+
+		span {
+			font-size: 14px;
+			line-height: 24px;
+			letter-spacing: 0.35px;
+		}
+	}
+}
