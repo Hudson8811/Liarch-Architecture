@@ -51,8 +51,8 @@ section.sidebar(data-aos="fade")
 	form.newsletter(action='', method='POST')
 		.newsletter__title Newsletter
 		.newsletter__text Signup to be the first to hear about exclusive deals
-		input(type='email', name='email', placeholder='Email Address')
-		input(type='submit', value='Subscribe')
+		+input('email', 'email', 'Email Address')
+		button.newsletter__btn Subscribe
 	.sidebar__block
 		p Categories
 		.sidebar__categories

@@ -1,6 +1,6 @@
 .post-page {
 	&__container {
-		max-width: 770px;
+		max-width: 770px !important;
 		padding: 60px 10px;
 
 		@include media(md) {

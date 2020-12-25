@@ -1,6 +1,6 @@
 .post-sb-page {
 	&__container {
-		max-width: 1170px;
+		max-width: 1170px !important;
 		padding: 60px 10px;
 
 		@include media(md) {
@@ -295,7 +295,7 @@
 		font-size: 14px;
 		@include transition(all);
 
-		&.active {
+		&:hover {
 			background-color: $color-orange--dark;
 			border: 1px solid $color-orange--dark;
 			color: $color-default-white;
@@ -604,6 +604,7 @@
 			text-align: center;
 			text-transform: uppercase;
 			box-sizing: border-box;
+			cursor: pointer;
 			@include transition(all);
 
 			@include media(md) {
@@ -674,7 +675,7 @@
 		}
 	}
 
-	input[type="submit"] {
+	&__btn {
 		width: 190px;
 		height: 52px;
 		padding: 10px;
@@ -683,6 +684,7 @@
 		position: relative;
 		left: 50%;
 		transform: translateX(-50%);
+		cursor: pointer;
 
 		@include media(lg) {
 			left: 0;

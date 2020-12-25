@@ -276,33 +276,25 @@
 	input {
 		width: 100%;
 		height: 50px;
+	}
 
-		&[type="email"] {
-			font-size: 14px;
-			padding: 20px;
-			border: 1px solid $color-grey3;
-			background-color: $color-default-white;
-			margin-bottom: 14px;
+	&__btn {
+		width: 100%;
+		height: 50px;
+		border: none;
+		margin-top: 14px;
+		font-size: 16px;
+		line-height: 26px;
+		color: $color-default-white;
+		text-transform: uppercase;
+		letter-spacing: 0.8px;
+		background-color: $color-orange--dark;
+		cursor: pointer;
+		@include transition(opacity);
 
-			&::placeholder {
-				font-size: 14px;
-				color: $color-grey;
-			}
-		}
-
-		&[type="submit"] {
-			font-size: 16px;
-			line-height: 26px;
-			color: $color-default-white;
-			text-transform: uppercase;
-			letter-spacing: 0.8px;
-			background-color: $color-orange--dark;
-			@include transition(opacity);
-
-			@include media(lg) {
-				&:hover {
-					opacity: 0.8;
-				}
+		@include media(lg) {
+			&:hover {
+				opacity: 0.8;
 			}
 		}
 	}
