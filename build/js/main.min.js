@@ -228,6 +228,62 @@ var anAwards = $('.an-awards');
 	}
 })();
 
+/* круговая диаграмма */
+(function(){
+	/*var numb = document.querySelector(".__js_diagram-numb");
+    let counter = 0;
+		setInterval(()=>{
+			if(counter == 100){
+				clearInterval();
+			}else{
+				counter += 1;
+				numb.textContent = counter + "%";
+			}
+		}, 80);*/
+		//var circle = document.querySelector('.circle.js');
+		//var span = circle.querySelector('span');
+		//var progress = circle.querySelector('.progress');
+		//var circleVal = parseFloat(span.innerHTML);
+		//var valEl = circleVal * 408 / 100;
+		//progress.style.strokeDasharray = valEl + ' 408';
+
+		var diagrams = document.querySelectorAll('.__js_diagram');
+
+			/*diagrams.forEach(function(item) {
+				var progress = item.querySelector('.diagram__circle--progress');
+				var progresslength = Math.round(progress.getTotalLength());
+				progress.style.strokeDasharray = '0 ' + progresslength;
+			});*/
+
+			diagrams.forEach(function(item) {
+						var progress = item.querySelector('.diagram__circle--progress');
+						var progresslength = Math.round(progress.getTotalLength());
+						var percent = item.querySelector('.diagram__percent').textContent;
+						var percentValue = parseFloat(percent, 10);
+						var progressFill = percentValue * progresslength / 100;
+						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+					});
+
+			window.onscroll = function () {
+				var scroll = window.pageYOffset;
+			}
+			/*$(window).on('scroll', function () {
+
+					diagrams.forEach(function(item) {
+						var progress = item.querySelector('.diagram__circle--progress');
+						var progresslength = Math.round(progress.getTotalLength());
+						var percent = item.querySelector('.diagram__percent').textContent;
+						var percentValue = parseFloat(percent, 10);
+						var progressFill = percentValue * progresslength / 100;
+						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+					});
+
+			});*/
+
+
+
+})();
+
 /* Анимация чисел */
 
 (function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране

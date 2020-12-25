@@ -10,6 +10,12 @@
 		padding-bottom: 32px;
 		border-bottom: solid 1px $color-grey9;
 
+		@include media(xl) {
+			margin-bottom: 63px;
+			padding-left: 100px;
+			padding-bottom: 51px;
+		}
+
 		&:last-child {
 			margin-bottom: 0;
 			padding-bottom: 0;
@@ -23,7 +29,12 @@
 			left: 0;
 
 			@include text(48px, 1, $color-grey3);
+			font-family: $font-family--secondary;
 			letter-spacing: -0.025em;
+
+			@include media(xl) {
+				font-size: 80px;
+			}
 		}
 
 		&-title {
@@ -32,10 +43,19 @@
 			@include text(20px, 1);
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
+
+			@include media(xl) {
+				font-size: 24px;
+			}
 		}
 
 		&-text {
 			@include text(16px, 1.66, $color-grey2);
+			letter-spacing: -0.015em;
+
+			@include media(xl) {
+				font-size: 18px;
+			}
 		}
 	}
 }

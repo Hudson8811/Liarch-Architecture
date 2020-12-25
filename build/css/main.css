@@ -6933,14 +6933,55 @@ button.swiper-pagination-bullet {
     .contact-info__text address {
       font-style: normal; }
 
-.specialization__item-diagram {
-  width: 160px;
-  height: 160px; }
-  .specialization__item-diagram svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box; }
+@media (min-width: 576px) {
+  .specialization {
+    display: flex; } }
+
+.specialization__item {
+  margin-bottom: 32px;
+  padding: 0 10px;
+  flex-grow: 1;
+  /*	&-percent {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}*/ }
+  .specialization__item:last-child {
+    margin-bottom: 0; }
+  @media (min-width: 576px) {
+    .specialization__item {
+      margin-bottom: 0; } }
+  .specialization__item-diagram {
+    margin: 0 auto 24px;
+    /*&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: solid 1px $color-grey4;
+			}
+
+			svg {
+				display: block;
+				width: 100%;
+				height: auto;
+				box-sizing: border-box;
+				stroke: $color-orange;
+				stroke-width: 1px;
+				fill: none;
+				//stroke-dasharray: 100%;
+			}*/ }
+  .specialization__item-text {
+    max-width: 140px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #000000;
+    text-align: center; }
 
 .process-step {
   list-style: none;
@@ -6954,6 +6995,11 @@ button.swiper-pagination-bullet {
     padding-left: 50px;
     padding-bottom: 32px;
     border-bottom: solid 1px #e2e2e2; }
+    @media (min-width: 1200px) {
+      .process-step__item {
+        margin-bottom: 63px;
+        padding-left: 100px;
+        padding-bottom: 51px; } }
     .process-step__item:last-child {
       margin-bottom: 0;
       padding-bottom: 0;
@@ -6966,7 +7012,11 @@ button.swiper-pagination-bullet {
       font-size: 48px;
       line-height: 1;
       color: #cccccc;
+      font-family: "Cinzel", "Georgia", serif;
       letter-spacing: -0.025em; }
+      @media (min-width: 1200px) {
+        .process-step__item::before {
+          font-size: 80px; } }
     .process-step__item-title {
       margin-bottom: 20px;
       font-size: 20px;
@@ -6974,10 +7024,44 @@ button.swiper-pagination-bullet {
       color: #000000;
       letter-spacing: 0.05em;
       text-transform: uppercase; }
+      @media (min-width: 1200px) {
+        .process-step__item-title {
+          font-size: 24px; } }
     .process-step__item-text {
       font-size: 16px;
       line-height: 1.66;
-      color: #666666; }
+      color: #666666;
+      letter-spacing: -0.015em; }
+      @media (min-width: 1200px) {
+        .process-step__item-text {
+          font-size: 18px; } }
+
+.preloader {
+  display: none !important; }
+
+.diagram {
+  position: relative;
+  width: 160px;
+  height: 160px; }
+  .diagram__circle {
+    display: block;
+    fill: none;
+    stroke: #dcdcdc;
+    stroke-width: 1px; }
+    .diagram__circle--progress {
+      fill: none;
+      stroke: #ff4800;
+      stroke-width: 1px;
+      stroke-dasharray: 0 496;
+      transition: all 2s linear; }
+  .diagram__percent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 36px;
+    line-height: 1;
+    color: #ff4800; }
 
 .header {
   padding: 15px 0;
@@ -7273,8 +7357,8 @@ button.swiper-pagination-bullet {
     counter-reset: services; }
     .sidebar__services-item {
       counter-increment: services;
-      margin-bottom: 2px;
-      padding: 18px 20px 18px 0;
+      margin-bottom: -1px;
+      padding: 18px 20px 14px 0;
       border-bottom: solid 1px #dadada;
       font-size: 18px;
       line-height: 1.33;
@@ -10212,39 +10296,81 @@ button.swiper-pagination-bullet {
   padding: 40px 0; }
   @media (min-width: 1200px) {
     .service-page {
-      padding: 104px 0 201px; } }
+      padding: 120px 0 201px; } }
   .service-page__header {
     margin-bottom: 60px; }
+    @media (min-width: 1200px) {
+      .service-page__header {
+        margin-bottom: 120px; } }
   .service-page__heading {
     margin-bottom: 20px;
     font-weight: 400; }
+    @media (min-width: 1200px) {
+      .service-page__heading {
+        margin-bottom: 55px; } }
   .service-page__image {
-    margin-bottom: 60px;
+    max-width: 1550px;
+    margin: 0 auto 60px;
     padding: 0 15px; }
+    @media (min-width: 1200px) {
+      .service-page__image {
+        margin-bottom: 110px; } }
     .service-page__image img {
       display: block;
       width: 100%;
       height: auto; }
   .service-page__sidebar {
-    margin-top: 60px; }
+    margin-top: 60px;
+    transform: translateX(-30px); }
     @media (min-width: 992px) {
       .service-page__sidebar {
         margin-top: 0; } }
   .service-page__specialization {
     margin: 60px 0; }
+    @media (min-width: 1200px) {
+      .service-page__specialization {
+        margin: 78px 0; } }
   .service-page__process {
     margin: 60px 0; }
+    @media (min-width: 1200px) {
+      .service-page__process {
+        margin: 88px 0; } }
+  @media (min-width: 1200px) {
+    .service-page__text {
+      max-width: 800px; } }
+  .service-page__form-wrap {
+    margin-top: 24px;
+    padding-top: 80px;
+    border-top: solid 1px #dfdfdf; }
+    @media (min-width: 1200px) {
+      .service-page__form-wrap {
+        padding-top: 120px; } }
   .service-page h2 {
     font-size: 30px;
     line-height: 1.18;
     color: #000000;
     font-weight: 400;
     letter-spacing: -0.015em; }
+    @media (min-width: 1200px) {
+      .service-page h2 {
+        margin-bottom: 34px;
+        font-size: 36px; } }
+  .service-page * + h2 {
+    margin-top: 40px; }
+    @media (min-width: 1200px) {
+      .service-page * + h2 {
+        margin-top: 78px; } }
   .service-page p {
     margin-top: 0;
     font-size: 16px;
     line-height: 1.77;
     color: #666666; }
+    @media (min-width: 1200px) {
+      .service-page p {
+        font-size: 18px; } }
+  .service-page .form__title {
+    font-size: 36px;
+    letter-spacing: -0.025em; }
 
 .overlay {
   position: fixed;
