@@ -7036,9 +7036,9 @@ button.swiper-pagination-bullet {
         .process-step__item-text {
           font-size: 18px; } }
 
-.preloader {
-  display: none !important; }
-
+/*.preloader {
+	display: none !important;
+}*/
 .diagram {
   position: relative;
   width: 160px;
@@ -10320,8 +10320,7 @@ button.swiper-pagination-bullet {
       width: 100%;
       height: auto; }
   .service-page__sidebar {
-    margin-top: 60px;
-    transform: translateX(-30px); }
+    margin-top: 60px; }
     @media (min-width: 992px) {
       .service-page__sidebar {
         margin-top: 0; } }
