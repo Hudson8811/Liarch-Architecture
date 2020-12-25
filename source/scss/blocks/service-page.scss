@@ -43,7 +43,6 @@
 
 	&__sidebar {
 		margin-top: 60px;
-		transform: translateX(-30px);
 
 		@include media(lg) {
 			margin-top: 0;
