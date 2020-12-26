@@ -14,14 +14,14 @@
 
 		&::before,
 		&::after {
-			content: '';
+			content: "";
 			display: inline-block;
 			position: absolute;
 			bottom: 0;
 			width: 0;
 			height: 1px;
 			background-color: $color-default-black;
-			@include transition(width)
+			@include transition(width);
 		}
 
 		&::before {
@@ -121,6 +121,28 @@
 						font-size: 10px;
 					}
 				}
+			}
+		}
+	}
+
+	&--bordered {
+		input,
+		textarea {
+			padding: 16px 20px;
+
+			@include text(16px, 1);
+			border: solid 1px $color-grey8;
+
+			@include transition(border-color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				border-color: $color-default-black;
+			}
+
+			&::placeholder {
+				color: $color-grey;
 			}
 		}
 	}

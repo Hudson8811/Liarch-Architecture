@@ -86,6 +86,7 @@
 			margin-bottom: 127px;
 		}
 	}
-	&__testimonials {
+	&__testimonials + &__approach {
+		margin-top: 60px;
 	}
 }

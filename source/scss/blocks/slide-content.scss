@@ -1,0 +1,110 @@
+.slide-content {
+	$self: &;
+
+	box-sizing: border-box;
+	padding: 10px 0;
+	background-color: $color-default-white;
+
+	@include transition(opacity);
+
+	@include media(sm) {
+		padding: 20px;
+	}
+
+	@include media(lg) {
+		padding: 32px;
+	}
+
+	@include media(xl) {
+		padding: 48px;
+	}
+
+	@include media(xxl) {
+		padding: 67px 63px 43px;
+	}
+
+	&--thumb {
+		@include media(md) {
+			background-color: transparent;
+			background-image: linear-gradient(
+				to top,
+				rgba($color-default-black, 0.6),
+				transparent
+			);
+		}
+
+		@include media(xl) {
+			padding: 28px;
+		}
+
+		cursor: pointer;
+
+		#{$self}__detail {
+			@include media(md) {
+				color: $color-default-white;
+			}
+		}
+
+		#{$self}__heading {
+			@include media(md) {
+				color: $color-default-white;
+				font-weight: 300;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $color-default-white;
+			background-image: none;
+
+			@include transition(background-color);
+
+			#{$self}__detail {
+				color: $color-grey2;
+			}
+
+			#{$self}__heading {
+				color: $color-default-black;
+			}
+		}
+	}
+
+	&__detail {
+		margin-bottom: 6px;
+		@include transition(color);
+
+		@include text(12px, 1, $color-grey2);
+		letter-spacing: 0.025em;
+
+		@include media(lg) {
+			margin-bottom: 8px;
+			font-size: 14px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 20px;
+			font-size: 16px;
+		}
+
+		@include media(xxl) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__heading {
+		@include text(20px, 1);
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 30px;
+		}
+
+		@include media(xl) {
+			font-size: 36px;
+		}
+
+		@include media(xxl) {
+			font-size: 40px;
+		}
+	}
+}

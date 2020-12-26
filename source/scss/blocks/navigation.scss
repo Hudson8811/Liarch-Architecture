@@ -1,85 +1,97 @@
 .navigation {
-  $self: &;
-  display: none;
+	$self: &;
+	display: none;
 
-  @include media(md) {
-    display: block;
-  }
+	@include media(md) {
+		display: block;
+	}
 
-  &__list {
-    @include list-reset;
-    display: flex;
-    flex-wrap: wrap;
-  }
+	&--column {
+		#{$self}__list {
+			display: block;
+		}
+		#{$self}__item {
+			margin-right: 0 !important;
+			&::after {
+				display: none;
+			}
+		}
+	}
 
-  &__item {
-    position: relative;
-    margin-right: 20px;
+	&__list {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    @include media(lg) {
-      margin-right: 40px;
-    }
+	&__item {
+		position: relative;
+		margin-right: 20px;
 
-    @include media(xl) {
-      margin-right: 3.28vw;
-    }
+		@include media(lg) {
+			margin-right: 40px;
+		}
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 55%;
-      right: -8px;
-      transform: translateY(-50%) translateX(100%);
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: $color-grey3;
+		@include media(xl) {
+			margin-right: 3.28vw;
+		}
 
-      @include media(lg) {
-        right: -17px;
-        width: 6px;
-        height: 6px;
-      }
+		&::after {
+			content: "";
+			position: absolute;
+			top: 55%;
+			right: -8px;
+			transform: translateY(-50%) translateX(100%);
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: $color-grey3;
 
-      @include media(xl) {
-        right: calc(-1.64vw + 3px);
-      }
-    }
+			@include media(lg) {
+				right: -17px;
+				width: 6px;
+				height: 6px;
+			}
 
-    &:last-child {
-      margin-right: 0;
+			@include media(xl) {
+				right: calc(-1.64vw + 3px);
+			}
+		}
 
-      &::after {
-        display: none;
-      }
-    }
+		&:last-child {
+			margin-right: 0;
 
-    &--current {
-      #{$self}__link {
-        color: $color-orange;
-        font-weight: 600;
-      }
-    }
-  }
+			&::after {
+				display: none;
+			}
+		}
 
-  &__link {
-    @include text(12px, 1, $color-default-black);
-    text-transform: uppercase;
+		&--current {
+			#{$self}__link {
+				color: $color-orange;
+				font-weight: 600;
+			}
+		}
+	}
 
-    @include transition(color);
+	&__link {
+		@include text(12px, 1, $color-default-black);
+		text-transform: uppercase;
 
-    @include media(lg) {
-      font-size: 14px;
-    }
+		@include transition(color);
 
-    &:hover,
-    &:focus {
-      outline: none;
-      color: $color-orange;
-    }
+		@include media(lg) {
+			font-size: 14px;
+		}
 
-    &:active {
-      opacity: 0.7;
-    }
-  }
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-orange;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
 }

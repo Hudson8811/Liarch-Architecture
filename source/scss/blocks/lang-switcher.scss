@@ -1,0 +1,46 @@
+.lang-switcher {
+	$self: &;
+
+	@include list-reset;
+
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 70px;
+
+	&__item {
+		margin-right: 12px;
+
+		@include media(xl) {
+			margin-right: 28px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		@include text(12px, 1, $color-grey);
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		@include media(xl) {
+			font-size: 14px;
+		}
+
+		&--current {
+			color: $color-default-black;
+		}
+
+		&:not(&--current):hover,
+		&:not(&--current):focus {
+			outline: none;
+			color: $color-orange;
+		}
+
+		&:not(&--current):active {
+			opacity: 0.7;
+		}
+	}
+}
