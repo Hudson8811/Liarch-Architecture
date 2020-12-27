@@ -381,29 +381,38 @@ function setOverlay(cb) {
 (function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
-  var animationIsDone = false;
+	var animationIsDone = false;
+	var scroll = $(window).scrollTop() + $(window).height();
 
 	if ($('*').is('.statistics')) {
-			var offset = statistics.offset().top;
+		var offset = statistics.offset().top;
 
-		  $(window).on('scroll', function() {
-			var scroll = $(window).scrollTop() + $(window).height();
+		if (!animationIsDone && scroll >= offset) {
+			animateNumbers();
+		}
+
+		$(window).on('scroll', function() {
+			scroll = $(window).scrollTop() + $(window).height();
 
 			if (!animationIsDone && scroll >= offset) {
-				numbers.each(function() {
-					var endValue = parseInt($(this).attr('data-end-value'), 10);
-
-					$(this).easy_number_animate({
-						start_value: 0,
-						end_value: endValue,
-						duration: 2500
-					});
-
-				});
-
-				animationIsDone = true;
+				animateNumbers();
 			}
 		});
+
+		function animateNumbers() {
+			numbers.each(function() {
+				var endValue = parseInt($(this).attr('data-end-value'), 10);
+
+				$(this).easy_number_animate({
+					start_value: 0,
+					end_value: endValue,
+					duration: 2500
+				});
+
+			});
+
+			animationIsDone = true;
+		}
 	}
 
 
