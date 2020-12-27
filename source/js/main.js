@@ -1,14 +1,17 @@
 'use strict';
 
-//const { default: Swiper } = require("swiper");
-
-//var { default: Swiper } = require("swiper");
-
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
 var header = $('.header');
 var anAwards = $('.an-awards');
+
+
+function setOverlay(cb) {
+	var overlay = $('<div class="overlay"></div>');
+	overlay.on('click', cb);
+	return overlay;
+}
 
 /* Preloader */
 (function(){
@@ -34,26 +37,72 @@ var anAwards = $('.an-awards');
 
   menu.on('click', function(evt) {
     evt.stopPropagation();
-  })
+  });
 
   menuOpenBtn.on('click', function() {
-    menuCloseBtn.on('click', closeMenu);
+		var overlay = setOverlay(closeMenu);//
+		body.append(overlay);
 
+    menuCloseBtn.on('click', closeMenu);
     menuOpenBtn.addClass(ModifierClass.TOGGLE);
 
     setTimeout(function() {
+			overlay.fadeIn(DURATION);
+
       menu.addClass(ModifierClass.MENU);
     }, DURATION + 50);
   });
 
   function closeMenu() {
     menuCloseBtn.off('click', closeMenu);
-    menu.removeClass(ModifierClass.MENU);
+		menu.removeClass(ModifierClass.MENU);
+		var overlay = $('.overlay').fadeOut(DURATION);
 
     setTimeout(function() {
-      menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+			menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+			overlay.remove();
     }, DURATION + 50);
   }
+})();
+
+/* Меню 2 */
+(function() {
+	var toggleBtn = $('.header-toggle');
+	var header = $('.header--aside');
+
+	toggleBtn.on('click', function() {
+
+		if($(this).hasClass('on')) {
+			close();
+		} else {
+			var overlay = setOverlay(close);
+			body.append(overlay);
+
+			$(this).removeClass('off').addClass('on');
+
+			setTimeout(function() {
+				overlay.fadeIn(DURATION);
+				header.addClass('header--opened');
+			}, 500);
+		}
+	});
+
+	function close() {
+		var overlay = $('.overlay');
+
+		toggleBtn.addClass('off').removeClass('on');
+
+		setTimeout(function() {
+			overlay.fadeOut(DURATION);
+			header.removeClass('header--opened');
+
+			setTimeout(function() {
+				overlay.remove();
+			}, DURATION)
+
+
+		}, 500);
+	}
 })();
 
 /* Слайдер проектов */
@@ -374,7 +423,7 @@ var anAwards = $('.an-awards');
       var target = $(this).attr('href');
       modal = $(target);
 
-      var overlay = setOverlay();
+      var overlay = setOverlay(closeModal);
       body.append(overlay);
       overlay.fadeIn(DURATION);
 
@@ -396,12 +445,6 @@ var anAwards = $('.an-awards');
       overlay.remove()
     }, DURATION * 2 + 50);
 
-  }
-
-  function setOverlay() {
-    var overlay = $('<div class="overlay"></div>');
-    overlay.on('click', closeModal);
-    return overlay;
   }
 })();
 

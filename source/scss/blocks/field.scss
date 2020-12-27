@@ -135,6 +135,10 @@
 
 			@include transition(border-color);
 
+			@include media(xl) {
+				padding: 18px 30px;
+			}
+
 			&:hover,
 			&:focus {
 				outline: none;
@@ -143,6 +147,12 @@
 
 			&::placeholder {
 				color: $color-grey;
+			}
+		}
+
+		textarea {
+			@include media(xl) {
+				height: 180px;
 			}
 		}
 	}

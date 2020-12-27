@@ -22,11 +22,11 @@ html.no-js(lang="ru")
   body.webpage
     div(style="display: none")
       include ../../../build/img/sprite.svg
-    include ../modules/header-2
-    include ../modules/menu
-    main
-      block content
-    block footer
+    .layout.layout--left-aside
+      include ../modules/header-2
+      main
+       block content
+      block footer
     include ../modules/modal
     include ../modules/preloader
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")

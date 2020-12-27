@@ -1,5 +1,6 @@
 .contact-block {
 	$self: &;
+	max-width: 360px;
 
 	&--thumb {
 		background-image: linear-gradient(

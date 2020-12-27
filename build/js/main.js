@@ -1,5 +1,7 @@
 'use strict';
 
+//const { default: Swiper } = require("swiper");
+
 //var { default: Swiper } = require("swiper");
 
 var body = $('body');
@@ -74,6 +76,41 @@ var anAwards = $('.an-awards');
 		/*scrollbar: {
 			el: '.swiper-scrollbar',
 		},*/
+	});
+
+	var thumbsForLatestProjects = new Swiper('.__js_slider-thumbs', {
+		slidesPerView: 3,
+		loop: false,
+		freeMode: true,
+		loopedSlides: 3, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    576: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 3,
+    }
+  }
+	});
+
+	var latestProjectsSlider = new Swiper('.__js_slider-simple', {
+		slidesPerView: 1,
+		loop: false,
+		thumbs: {
+      swiper: thumbsForLatestProjects,
+		},
+		navigation: {
+			nextEl: '.slider__nav-btn--next',
+			prevEl: '.slider__nav-btn--prev',
+		}
 	});
 })();
 
@@ -256,13 +293,13 @@ var anAwards = $('.an-awards');
 			});*/
 
 			diagrams.forEach(function(item) {
-						var progress = item.querySelector('.diagram__circle--progress');
-						var progresslength = Math.round(progress.getTotalLength());
-						var percent = item.querySelector('.diagram__percent').textContent;
-						var percentValue = parseFloat(percent, 10);
-						var progressFill = percentValue * progresslength / 100;
-						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-					});
+				var progress = item.querySelector('.diagram__circle--progress');
+				var progresslength = Math.round(progress.getTotalLength());
+				var percent = item.querySelector('.diagram__percent').textContent;
+				var percentValue = parseFloat(percent, 10);
+				var progressFill = percentValue * progresslength / 100;
+				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+			});
 
 			window.onscroll = function () {
 				var scroll = window.pageYOffset;

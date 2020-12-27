@@ -5,6 +5,12 @@
 		padding: 104px 0 201px;
 	}
 
+	&--pb {
+		@include media(xl) {
+			padding: 104px 0 25px;
+		}
+	}
+
 	&__header {
 		margin-bottom: 60px;
 
@@ -86,7 +92,31 @@
 			margin-bottom: 127px;
 		}
 	}
+
+	&__journal {
+		margin-bottom: 30px;
+	}
+
+	&__contacts {
+		padding-top: 60px;
+		border-top: solid 1px $color-grey9;
+
+		@include media(xl) {
+			padding-top: 137px;
+		}
+	}
+
 	&__testimonials + &__approach {
 		margin-top: 60px;
+
+		@include media(xl) {
+			margin-top: 186px;
+		}
+	}
+
+	&__feedback {
+		@include media(xl) {
+			padding-top: 24px;
+		}
 	}
 }

@@ -5,9 +5,10 @@
 	&__btn {
 		margin-top: 40px;
 		border-radius: 0;
+		text-transform: capitalize;
 
 		@include media(xl) {
-			margin-top: 64px;
+			//margin-top: 64px;
 		}
 	}
 }

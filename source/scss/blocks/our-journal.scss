@@ -1,10 +1,64 @@
 .our-journal {
 	&__header {
+		text-align: center;
+		margin-bottom: 16px;
+
+		@include media(sm) {
+			margin-bottom: 24px;
+		}
+
+		@include media(md) {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 56px;
+			text-align: left;
+		}
+
+		@include media(lg) {
+			margin-bottom: 70px;
+		}
+
+		@include media(xl) {
+			//margin-bottom: 105px;
+		}
 	}
+
 	&__heading {
+		margin-bottom: 16px;
+		text-align: center;
+
+		@include media(sm) {
+			//margin-bottom: 0px;
+		}
+
+		@include media(md) {
+			margin-bottom: 0;
+			align-self: baseline;
+		}
+
+		@include media(xl) {
+			margin-bottom: 0px;
+		}
 	}
+
+	&__more {
+		@include media(md) {
+			align-self: baseline;
+		}
+	}
+
 	&__list {
 		list-style: none;
 		padding: 0;
+
+		.news-card {
+			padding-left: 0;
+			padding-right: 0;
+
+			@include media(md) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
 	}
 }
