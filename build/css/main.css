@@ -351,10 +351,6 @@ main {
 a {
   text-decoration: none; }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px !important; } }
-
 input,
 select,
 textarea {

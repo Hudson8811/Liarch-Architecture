@@ -103,6 +103,12 @@ function setOverlay(cb) {
 
 		}, 500);
 	}
+
+	$(window).on('resize', function() {
+		if ($(window).width() >= 1200) {
+			close();
+		}
+	});
 })();
 
 /* Слайдер проектов */
