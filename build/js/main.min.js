@@ -324,7 +324,6 @@ function setOverlay(cb) {
 (function(){
 	var diagrams = document.querySelectorAll('.__js_diagram');
 	var specialization = document.querySelector('.specialization');
-	//var specializationOffset = specialization.getBoundingClientRect();
 	var windowHeight = window.innerHeight;
 	var animationDone = false;
 
@@ -351,31 +350,6 @@ function setOverlay(cb) {
 			animationDone = true;
 		}
 	}
-
-
-	/*diagrams.forEach(function(item) {
-		var progress = item.querySelector('.diagram__circle--progress');
-		var progresslength = Math.round(progress.getTotalLength());
-		var percent = item.querySelector('.diagram__percent').textContent;
-		var percentValue = parseFloat(percent, 10);
-		var progressFill = percentValue * progresslength / 100;
-		progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-	});*/
-
-	/*$(window).on('scroll', function () {
-
-			diagrams.forEach(function(item) {
-				var progress = item.querySelector('.diagram__circle--progress');
-				var progresslength = Math.round(progress.getTotalLength());
-				var percent = item.querySelector('.diagram__percent').textContent;
-				var percentValue = parseFloat(percent, 10);
-				var progressFill = percentValue * progresslength / 100;
-				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-			});
-
-	});*/
-
-
 
 })();
 
