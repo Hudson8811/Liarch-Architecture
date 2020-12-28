@@ -322,30 +322,47 @@ function setOverlay(cb) {
 
 /* круговая диаграмма */
 (function(){
-	/*var numb = document.querySelector(".__js_diagram-numb");
-    let counter = 0;
-		setInterval(()=>{
-			if(counter == 100){
-				clearInterval();
-			}else{
-				counter += 1;
-				numb.textContent = counter + "%";
-			}
-		}, 80);*/
-		//var circle = document.querySelector('.circle.js');
-		//var span = circle.querySelector('span');
-		//var progress = circle.querySelector('.progress');
-		//var circleVal = parseFloat(span.innerHTML);
-		//var valEl = circleVal * 408 / 100;
-		//progress.style.strokeDasharray = valEl + ' 408';
+	var diagrams = document.querySelectorAll('.__js_diagram');
+	var specialization = document.querySelector('.specialization');
+	//var specializationOffset = specialization.getBoundingClientRect();
+	var windowHeight = window.innerHeight;
+	var animationDone = false;
 
-		var diagrams = document.querySelectorAll('.__js_diagram');
 
-			/*diagrams.forEach(function(item) {
+	diagrams.forEach(function(item) {
+		var progress = item.querySelector('.diagram__circle--progress');
+		var progresslength = Math.round(progress.getTotalLength());
+		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
+	});
+
+	window.onscroll = function () {
+		var offset = specialization.getBoundingClientRect().top;
+
+		if (offset <= windowHeight && !animationDone) {
+			diagrams.forEach(function(item) {
 				var progress = item.querySelector('.diagram__circle--progress');
 				var progresslength = Math.round(progress.getTotalLength());
-				progress.style.strokeDasharray = '0 ' + progresslength;
-			});*/
+				var percent = item.querySelector('.diagram__percent').textContent;
+				var percentValue = parseFloat(percent, 10);
+				var progressFill = percentValue * progresslength / 100;
+				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+			});
+
+			animationDone = true;
+		}
+	}
+
+
+	/*diagrams.forEach(function(item) {
+		var progress = item.querySelector('.diagram__circle--progress');
+		var progresslength = Math.round(progress.getTotalLength());
+		var percent = item.querySelector('.diagram__percent').textContent;
+		var percentValue = parseFloat(percent, 10);
+		var progressFill = percentValue * progresslength / 100;
+		progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+	});*/
+
+	/*$(window).on('scroll', function () {
 
 			diagrams.forEach(function(item) {
 				var progress = item.querySelector('.diagram__circle--progress');
@@ -356,21 +373,7 @@ function setOverlay(cb) {
 				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
 			});
 
-			window.onscroll = function () {
-				var scroll = window.pageYOffset;
-			}
-			/*$(window).on('scroll', function () {
-
-					diagrams.forEach(function(item) {
-						var progress = item.querySelector('.diagram__circle--progress');
-						var progresslength = Math.round(progress.getTotalLength());
-						var percent = item.querySelector('.diagram__percent').textContent;
-						var percentValue = parseFloat(percent, 10);
-						var progressFill = percentValue * progresslength / 100;
-						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-					});
-
-			});*/
+	});*/
 
 
 
