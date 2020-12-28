@@ -1,0 +1,14 @@
+.feedback-form {
+	&__field {
+		margin-bottom: 15px;
+	}
+	&__btn {
+		margin-top: 40px;
+		border-radius: 0;
+		text-transform: capitalize;
+
+		@include media(xl) {
+			//margin-top: 64px;
+		}
+	}
+}

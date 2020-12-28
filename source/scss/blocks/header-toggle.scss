@@ -1,0 +1,116 @@
+.header-toggle {
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: solid 1px $color-grey9;
+	border-left: none;
+	background-color: $color-default-white;
+	cursor: pointer;
+
+	position: relative;
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 8px;
+		right: 8px;
+		top: 50%;
+		//margin-top: -7px;
+
+		height: 4px;
+		background-color: $color-default-black;
+		//backface-visibility: hidden;
+		border-radius: 2px;
+
+		@include transition(transform);
+	}
+
+	&::before {
+		transform: translateY(-175%);
+	}
+
+	&::after {
+		transform: translateY(75%);
+	}
+
+	&.on {
+		&::before {
+			animation-name: before;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+
+		&::after {
+			animation-name: after;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&.off {
+		&::before {
+			animation-name: before-back;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+		&::after {
+			animation-name: after-back;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+	}
+}
+
+@keyframes before {
+	0% {
+		transform: translateY(-175%);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(-50%) rotate(45deg);
+	}
+}
+
+@keyframes after {
+	0% {
+		transform: translateY(75%);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(-50%) rotate(-45deg);
+	}
+}
+
+@keyframes before-back {
+	0% {
+		transform: translateY(-50%) rotate(45deg);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(-175%);
+	}
+}
+
+@keyframes after-back {
+	0% {
+		transform: translateY(-50%) rotate(-45deg);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(75%);
+	}
+}

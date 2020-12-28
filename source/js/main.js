@@ -1,12 +1,17 @@
 'use strict';
 
-//var { default: Swiper } = require("swiper");
-
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
 var header = $('.header');
 var anAwards = $('.an-awards');
+
+
+function setOverlay(cb) {
+	var overlay = $('<div class="overlay"></div>');
+	overlay.on('click', cb);
+	return overlay;
+}
 
 /* Preloader */
 (function(){
@@ -32,26 +37,78 @@ var anAwards = $('.an-awards');
 
   menu.on('click', function(evt) {
     evt.stopPropagation();
-  })
+  });
 
   menuOpenBtn.on('click', function() {
-    menuCloseBtn.on('click', closeMenu);
+		var overlay = setOverlay(closeMenu);//
+		body.append(overlay);
 
+    menuCloseBtn.on('click', closeMenu);
     menuOpenBtn.addClass(ModifierClass.TOGGLE);
 
     setTimeout(function() {
+			overlay.fadeIn(DURATION);
+
       menu.addClass(ModifierClass.MENU);
     }, DURATION + 50);
   });
 
   function closeMenu() {
     menuCloseBtn.off('click', closeMenu);
-    menu.removeClass(ModifierClass.MENU);
+		menu.removeClass(ModifierClass.MENU);
+		var overlay = $('.overlay').fadeOut(DURATION);
 
     setTimeout(function() {
-      menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+			menuOpenBtn.removeClass(ModifierClass.TOGGLE);
+			overlay.remove();
     }, DURATION + 50);
   }
+})();
+
+/* Меню 2 */
+(function() {
+	var toggleBtn = $('.header-toggle');
+	var header = $('.header--aside');
+
+	toggleBtn.on('click', function() {
+
+		if($(this).hasClass('on')) {
+			close();
+		} else {
+			var overlay = setOverlay(close);
+			body.append(overlay);
+
+			$(this).removeClass('off').addClass('on');
+
+			setTimeout(function() {
+				overlay.fadeIn(DURATION);
+				header.addClass('header--opened');
+			}, 500);
+		}
+	});
+
+	function close() {
+		var overlay = $('.overlay');
+
+		toggleBtn.addClass('off').removeClass('on');
+
+		setTimeout(function() {
+			overlay.fadeOut(DURATION);
+			header.removeClass('header--opened');
+
+			setTimeout(function() {
+				overlay.remove();
+			}, DURATION)
+
+
+		}, 500);
+	}
+
+	$(window).on('resize', function() {
+		if ($(window).width() >= 1200) {
+			close();
+		}
+	});
 })();
 
 /* Слайдер проектов */
@@ -74,6 +131,41 @@ var anAwards = $('.an-awards');
 		/*scrollbar: {
 			el: '.swiper-scrollbar',
 		},*/
+	});
+
+	var thumbsForLatestProjects = new Swiper('.__js_slider-thumbs', {
+		slidesPerView: 3,
+		loop: false,
+		freeMode: true,
+		loopedSlides: 3, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    576: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 640px
+    768: {
+      slidesPerView: 3,
+    }
+  }
+	});
+
+	var latestProjectsSlider = new Swiper('.__js_slider-simple', {
+		slidesPerView: 1,
+		loop: false,
+		thumbs: {
+      swiper: thumbsForLatestProjects,
+		},
+		navigation: {
+			nextEl: '.slider__nav-btn--next',
+			prevEl: '.slider__nav-btn--prev',
+		}
 	});
 })();
 
@@ -230,57 +322,34 @@ var anAwards = $('.an-awards');
 
 /* круговая диаграмма */
 (function(){
-	/*var numb = document.querySelector(".__js_diagram-numb");
-    let counter = 0;
-		setInterval(()=>{
-			if(counter == 100){
-				clearInterval();
-			}else{
-				counter += 1;
-				numb.textContent = counter + "%";
-			}
-		}, 80);*/
-		//var circle = document.querySelector('.circle.js');
-		//var span = circle.querySelector('span');
-		//var progress = circle.querySelector('.progress');
-		//var circleVal = parseFloat(span.innerHTML);
-		//var valEl = circleVal * 408 / 100;
-		//progress.style.strokeDasharray = valEl + ' 408';
+	var diagrams = document.querySelectorAll('.__js_diagram');
+	var specialization = document.querySelector('.specialization');
+	var windowHeight = window.innerHeight;
+	var animationDone = false;
 
-		var diagrams = document.querySelectorAll('.__js_diagram');
 
-			/*diagrams.forEach(function(item) {
+	diagrams.forEach(function(item) {
+		var progress = item.querySelector('.diagram__circle--progress');
+		var progresslength = Math.round(progress.getTotalLength());
+		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
+	});
+
+	window.onscroll = function () {
+		var offset = specialization.getBoundingClientRect().top;
+
+		if (offset <= windowHeight && !animationDone) {
+			diagrams.forEach(function(item) {
 				var progress = item.querySelector('.diagram__circle--progress');
 				var progresslength = Math.round(progress.getTotalLength());
-				progress.style.strokeDasharray = '0 ' + progresslength;
-			});*/
+				var percent = item.querySelector('.diagram__percent').textContent;
+				var percentValue = parseFloat(percent, 10);
+				var progressFill = percentValue * progresslength / 100;
+				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+			});
 
-			diagrams.forEach(function(item) {
-						var progress = item.querySelector('.diagram__circle--progress');
-						var progresslength = Math.round(progress.getTotalLength());
-						var percent = item.querySelector('.diagram__percent').textContent;
-						var percentValue = parseFloat(percent, 10);
-						var progressFill = percentValue * progresslength / 100;
-						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-					});
-
-			window.onscroll = function () {
-				var scroll = window.pageYOffset;
-			}
-			/*$(window).on('scroll', function () {
-
-					diagrams.forEach(function(item) {
-						var progress = item.querySelector('.diagram__circle--progress');
-						var progresslength = Math.round(progress.getTotalLength());
-						var percent = item.querySelector('.diagram__percent').textContent;
-						var percentValue = parseFloat(percent, 10);
-						var progressFill = percentValue * progresslength / 100;
-						progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-					});
-
-			});*/
-
-
+			animationDone = true;
+		}
+	}
 
 })();
 
@@ -289,29 +358,38 @@ var anAwards = $('.an-awards');
 (function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
-  var animationIsDone = false;
+	var animationIsDone = false;
+	var scroll = $(window).scrollTop() + $(window).height();
 
 	if ($('*').is('.statistics')) {
-			var offset = statistics.offset().top;
+		var offset = statistics.offset().top;
 
-		  $(window).on('scroll', function() {
-			var scroll = $(window).scrollTop() + $(window).height();
+		if (!animationIsDone && scroll >= offset) {
+			animateNumbers();
+		}
+
+		$(window).on('scroll', function() {
+			scroll = $(window).scrollTop() + $(window).height();
 
 			if (!animationIsDone && scroll >= offset) {
-				numbers.each(function() {
-					var endValue = parseInt($(this).attr('data-end-value'), 10);
-
-					$(this).easy_number_animate({
-						start_value: 0,
-						end_value: endValue,
-						duration: 2500
-					});
-
-				});
-
-				animationIsDone = true;
+				animateNumbers();
 			}
 		});
+
+		function animateNumbers() {
+			numbers.each(function() {
+				var endValue = parseInt($(this).attr('data-end-value'), 10);
+
+				$(this).easy_number_animate({
+					start_value: 0,
+					end_value: endValue,
+					duration: 2500
+				});
+
+			});
+
+			animationIsDone = true;
+		}
 	}
 
 
@@ -337,7 +415,7 @@ var anAwards = $('.an-awards');
       var target = $(this).attr('href');
       modal = $(target);
 
-      var overlay = setOverlay();
+      var overlay = setOverlay(closeModal);
       body.append(overlay);
       overlay.fadeIn(DURATION);
 
@@ -359,12 +437,6 @@ var anAwards = $('.an-awards');
       overlay.remove()
     }, DURATION * 2 + 50);
 
-  }
-
-  function setOverlay() {
-    var overlay = $('<div class="overlay"></div>');
-    overlay.on('click', closeModal);
-    return overlay;
   }
 })();
 

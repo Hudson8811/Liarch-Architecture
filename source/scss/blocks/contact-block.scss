@@ -1,0 +1,171 @@
+.contact-block {
+	$self: &;
+	max-width: 360px;
+
+	&--thumb {
+		background-image: linear-gradient(
+			to top,
+			rgba($color-default-black, 0.6),
+			transparent
+		);
+	}
+
+	&__hint {
+		@include text(14px, 1, $color-grey);
+		text-transform: uppercase;
+	}
+
+	&__title {
+		margin-bottom: 12px;
+
+		@include text(30px, 1.6);
+		letter-spacing: -0.025em;
+		font-weight: 600;
+
+		span {
+			font-weight: 300;
+			color: $color-grey;
+		}
+	}
+
+	&__address {
+		margin-bottom: 12px;
+
+		@include text(16px, 1.625, $color-grey2);
+		font-style: normal;
+
+		@include media(xl) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&__email {
+		margin-bottom: 24px;
+
+		@include media(xl) {
+			margin-bottom: 68px;
+		}
+
+		a {
+			@include text(16px, 1);
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-orange;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__phone {
+		margin-bottom: 24px;
+
+		span {
+			display: block;
+			margin-bottom: 12px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 56px;
+
+			span {
+				margin-bottom: 22px;
+			}
+		}
+
+		a {
+			@include text(30px, 1);
+			letter-spacing: -0.025em;
+
+			@include transition(color);
+
+			@include media(xl) {
+				font-size: 36px;
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-orange;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__offices {
+		margin-bottom: 36px;
+
+		span {
+			display: block;
+			margin-bottom: 12px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 64px;
+
+			span {
+				margin-bottom: 26px;
+			}
+		}
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&-item {
+			position: relative;
+			margin-right: 20px;
+			margin-bottom: 8px;
+
+			@include text(16px, 1);
+
+			@include media(xl) {
+				margin-right: 24px;
+				margin-bottom: 12px;
+			}
+
+			&::after {
+				content: "|";
+				position: absolute;
+				right: -12px;
+				color: $color-grey;
+			}
+
+			&:last-child {
+				margin-right: 0;
+
+				&::after {
+					display: none;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+				text-decoration: underline;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+
+			&--active {
+				cursor: default;
+				pointer-events: none;
+				color: $color-orange;
+			}
+		}
+	}
+
+	&__btn {
+	}
+}

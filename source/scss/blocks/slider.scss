@@ -103,6 +103,149 @@
 			}
 		}
 	}
+
+	&--with-thumbs {
+		padding-top: 60px;
+
+		@include media(md) {
+			padding-top: 0;
+		}
+
+		#{$self}__nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+
+			@include media(md) {
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+				background-color: red;
+				z-index: 1;
+			}
+
+			&-btn {
+				width: 18px;
+				height: 32px;
+				padding: 0;
+				border: none;
+				overflow: hidden;
+				background-color: transparent;
+
+				appearance: none;
+				cursor: pointer;
+
+				&:hover,
+				&:focus {
+					outline: none;
+
+					svg {
+						fill: $color-orange;
+					}
+				}
+
+				&--next {
+					margin-left: 12px;
+
+					@include media(md) {
+						right: 3.125vw;
+						margin: 0;
+					}
+				}
+
+				&--prev {
+					@include media(md) {
+						left: 3.125vw;
+					}
+				}
+
+				&.swiper-button-disabled {
+					pointer-events: none;
+					opacity: 0.5;
+
+					@include media(md) {
+						border: solid 1px $color-default-white;
+						background-color: transparent !important;
+
+						svg {
+							fill: $color-default-white !important;
+						}
+					}
+				}
+
+				svg {
+					position: relative;
+					left: 50%;
+					display: block;
+					width: auto;
+					height: 100%;
+					transform: translateX(-50%);
+
+					@include transition(fill);
+
+					@include media(md) {
+						position: static;
+						width: 34px;
+						height: auto;
+						transform: translateX(0);
+						fill: $color-default-white;
+					}
+				}
+
+				@include media(md) {
+					position: absolute;
+					top: 0;
+					transform: translateY(-50%);
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 60px;
+					height: 60px;
+					border: solid 1px $color-default-white;
+
+					@include transition(background-color);
+
+					&:hover,
+					&:focus {
+						background-color: $color-default-white;
+
+						svg {
+							fill: $color-default-black;
+						}
+					}
+				}
+			}
+		}
+		/*{
+			top: 0;
+			margin-top: 0;
+			right: 0;
+			background-color: red;
+			width: 18px;
+			height: 34px;
+
+			svg	{
+
+			}
+
+			&::after {
+				display: none;
+			}
+
+			@include media(xl) {
+				width: 60px;
+				height: 60px;
+				border: solid 1px $color-default-white;
+
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}*/
+	}
 }
 //1110
 //-60
