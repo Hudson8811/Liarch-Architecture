@@ -183,6 +183,18 @@ textarea.custom-input {
 		width: 80px;
 		margin: 0;
 
+		&:hover a {
+			&.active span {
+				height: 1px !important;
+				border-radius: 0 !important;
+			}
+
+			span {
+				margin: -2px 0 0 -2px;
+				background-color: $color-orange;
+			}
+		}
+
 		+ li {
 			margin-top: 27px;
 		}

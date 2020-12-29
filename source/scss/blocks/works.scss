@@ -282,6 +282,8 @@
 				max-width: 50%;
 				min-height: 60px;
 				padding: 10px;
+				background-color: $color-default-white;
+				box-sizing: border-box;
 
 				@include media(sm) {
 					top: unset;
@@ -299,6 +301,21 @@
 
 			&__content-heading {
 				font-weight: 600;
+				font-size: 20px;
+
+				@include media(md) {
+					font-size: 30px;
+				}
+
+				@include media(xxl) {
+					font-size: 40px;
+				}
+			}
+
+			&__content-detail {
+				font-size: 16px;
+				color: $color-grey2;
+				letter-spacing: 0.4px;
 			}
 		}
 
@@ -331,7 +348,7 @@
 				height: 46vh;
 
 				@include media(md) {
-					height: 68.4375vh;
+					height: 65.4375vh;
 				}
 			}
 

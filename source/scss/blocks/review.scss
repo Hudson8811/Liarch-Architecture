@@ -163,6 +163,12 @@
 				background-image: url("../img/review-shapes-2.png");
 				background-repeat: no-repeat;
 				background-size: contain;
+				background-position: center;
+				height: 85vw;
+
+				@include media(md) {
+					height: 50vw;
+				}
 
 				@include media(xxl) {
 					transform: translateX(-90px);
@@ -179,7 +185,7 @@
 
 			&__image-author {
 				&--one {
-					top: 2.2%;
+					top: 13.2%;
 					left: 47.2%;
 					width: 24%;
 				}
