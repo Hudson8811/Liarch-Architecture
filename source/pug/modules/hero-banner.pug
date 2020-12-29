@@ -1,0 +1,22 @@
+.webpage__hero-banner.hero-banner
+	.hero-banner__inner.container.swiper-container
+		.swiper-wrapper
+			.hero-banner__item.swiper-slide
+				.hero-banner__item-left
+					.hero-banner__item-title 3d CGI Architectural & interior
+					.hero-banner__item-text We’re from Poland, we passioned with the space & create the values vsustainable over time
+					.hero-banner__video-btn.video-btn.video-btn--outline
+						a.video-btn__btn.__js_open-modal(href="#ourStory")
+							span.visually-hidden Play
+							+icon('play')(width="20", height="20")
+						span.video-btn__text view our story
+				.hero-banner__item-right
+					.hero-banner__item-fact.fact.fact--white
+						.fact__title years of experience
+						.fact__value 20
+					.hero-banner__item-fact.fact.fact--white
+						.fact__title awards achievement
+						.fact__value 135
+	button.hero-banner__down.__js_to-next-section(type="button")
+		span.visually-hidden
+		+icon('chevron-down')(width="26", height="26")

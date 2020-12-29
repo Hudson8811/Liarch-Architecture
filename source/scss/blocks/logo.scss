@@ -1,53 +1,55 @@
 .logo {
-  display: flex;
+	$self: &;
 
-  &__image {
-    display: block;
-    width: 42px;
-    margin-right: 8px;
-    align-self: center;
+	display: flex;
 
-    @include media(md) {
-      width: 52px;
-      margin-right: 14px;
-    }
+	&__image {
+		display: block;
+		width: 42px;
+		margin-right: 8px;
+		align-self: center;
 
-    svg {
-      display: block;
-      width: 100%;
-      height: auto;
+		@include media(md) {
+			width: 52px;
+			margin-right: 14px;
+		}
 
-      @include transition(fill);
-    }
-  }
+		svg {
+			display: block;
+			width: 100%;
+			height: auto;
 
-  &__text {
-    display: block;
-    max-width: 110px;
-    align-self: center;
+			@include transition(fill);
+		}
+	}
 
-    @include text(12px, 1.285, $color-default-black);
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.22px;
+	&__text {
+		display: block;
+		max-width: 110px;
+		align-self: center;
 
-    @include transition(color);
+		@include text(12px, 1.285, $color-default-black);
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.22px;
 
-    @include media(md) {
-      font-size: 14px;
-    }
-  }
+		@include transition(color);
 
-  &:hover,
-  &:focus {
-    outline: none;
+		@include media(md) {
+			font-size: 14px;
+		}
+	}
 
-    svg {
-      fill: $color-orange;
-    }
+	&[href]:hover,
+	&[href]:focus {
+		outline: none;
 
-    &__text {
-      color: $color-orange;
-    }
-  }
+		svg {
+			fill: $color-orange;
+		}
+
+		#{$self}__text {
+			color: $color-orange;
+		}
+	}
 }

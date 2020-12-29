@@ -94,4 +94,20 @@
 			margin-bottom: 212px;
 		}
 	}
+
+	&__hero-banner {
+		margin-bottom: 60px;
+	}
+
+	&__latest-articles {
+		margin-bottom: 60px;
+	}
+
+	&__instagram-block {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 196px;
+		}
+	}
 }

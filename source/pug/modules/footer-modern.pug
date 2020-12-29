@@ -1,0 +1,39 @@
+footer.footer.footer--modern
+	.footer__inner.container
+		.row
+			.col-12
+				.footer__appeal Kick-start your dream with Liarch Studio
+				.footer__appeal Start by <a href="#">saying hi</a>
+			.col-12
+				.footer__column
+					.footer__column-title Services
+					ul.footer__column-menu
+						each item in FOOTER_MENU_LINKS
+							if item.currentIndex === currentIndex
+								li.footer__column-item.footer__column-item--current
+									a.footer__column-link= item.text
+							else
+								li.footer__column-item
+									a.footer__column-link(href= item.url)= item.text
+			.col-12
+				.footer__column
+					.footer__column-title Infor
+					.footer__column-info
+						address.footer__column-address 90 Fairground Rd, FL 3290, United States
+						a.footer__column-email(href="mailto:hello@liarch.co") hello@liarch.co
+					ul.footer__column-menu
+						each item in FOOTER_MENU_LINKS
+							if item.currentIndex === currentIndex
+								li.footer__column-item.footer__column-item--current
+									a.footer__column-link= item.text
+							else
+								li.footer__column-item
+									a.footer__column-link(href= item.url)= item.text
+		.row
+			.col-12
+				+logo(isHome, 'footer__logo')
+			.col-12
+				.footer__copyright © 2020 Liarch by LoganCee. All Rights Reserved
+			.col-12
+				.footer__hint Our Social
+				+social-2('social--black footer__social', ['twitter', 'github-original', 'facebook', 'dribbble', 'instagram'])

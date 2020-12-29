@@ -205,6 +205,33 @@ function setOverlay(cb) {
 			el: '.swiper-scrollbar',
 		},
 	});
+
+
+	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
+		slidesPerView: 1,
+		loop: false,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 2,
+				spaceBetween: 70,
+			},
+		},
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+	});
 })();
 
 /* Слайдер новостей */
@@ -327,35 +354,34 @@ function setOverlay(cb) {
 	var windowHeight = window.innerHeight;
 	var animationDone = false;
 
+	if (diagrams && specialization) {
+		diagrams.forEach(function(item) {
+			var progress = item.querySelector('.diagram__circle--progress');
+			var progresslength = Math.round(progress.getTotalLength());
+			progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
+		});
 
-	diagrams.forEach(function(item) {
-		var progress = item.querySelector('.diagram__circle--progress');
-		var progresslength = Math.round(progress.getTotalLength());
-		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
-	});
+		window.onscroll = function () {
+			var offset = specialization.getBoundingClientRect().top;
 
-	window.onscroll = function () {
-		var offset = specialization.getBoundingClientRect().top;
+			if (offset <= windowHeight && !animationDone) {
+				diagrams.forEach(function(item) {
+					var progress = item.querySelector('.diagram__circle--progress');
+					var progresslength = Math.round(progress.getTotalLength());
+					var percent = item.querySelector('.diagram__percent').textContent;
+					var percentValue = parseFloat(percent, 10);
+					var progressFill = percentValue * progresslength / 100;
+					progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+				});
 
-		if (offset <= windowHeight && !animationDone) {
-			diagrams.forEach(function(item) {
-				var progress = item.querySelector('.diagram__circle--progress');
-				var progresslength = Math.round(progress.getTotalLength());
-				var percent = item.querySelector('.diagram__percent').textContent;
-				var percentValue = parseFloat(percent, 10);
-				var progressFill = percentValue * progresslength / 100;
-				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-			});
-
-			animationDone = true;
+				animationDone = true;
+			}
 		}
 	}
-
 })();
 
 /* Анимация чисел */
-
-(function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
+(function() {
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
 	var animationIsDone = false;

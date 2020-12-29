@@ -31,7 +31,7 @@ gulp.task('server', function() {
    gulp.watch('source/scss/**/*.scss', gulp.series('sass'));
 
 	 gulp.watch('source/themes/dark/**/*.scss', gulp.series('sassDark'));
-	 gulp.watch('source/themes/green/**/*.scss', gulp.series('sassGreen'));
+	 gulp.watch('source/themes/modern/**/*.scss', gulp.series('sassModern'));
 	 gulp.watch(['source/fonts.scss', 'source/scss/utils/variables.scss'], gulp.series('sassFonts'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
