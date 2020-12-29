@@ -1,0 +1,37 @@
+.lang-switcher {
+	$self: &;
+
+	@include list-reset;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		margin-right: 28px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		@include text(14px, 1, $color-grey);
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		&--current {
+			color: $color-default-black;
+		}
+
+		&:not(&--current):hover,
+		&:not(&--current):focus {
+			outline: none;
+			color: $color-orange;
+		}
+
+		&:not(&--current):active {
+			opacity: 0.7;
+		}
+	}
+}

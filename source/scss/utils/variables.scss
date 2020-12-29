@@ -15,6 +15,10 @@ $color-grey3: #cccccc;
 $color-grey4: #dddddd;
 $color-grey5: #d6d6d6;
 $color-grey6: #eaeaea;
+$color-grey7: #dfdfdf;
+$color-grey8: #dadada;
+$color-grey9: #e2e2e2;
+$color-grey10: #dcdcdc;
 
 $color-pale-pink: #faece7;
 
@@ -22,8 +26,11 @@ $color-orange--dark: #f5480c;
 $color-orange: #ff4800;
 $color-orange-hover: lighten(#ff4800, 10%);
 $color-light-blue: #00ccff;
+$color-white-lilac: #f2f5fa;
 
 $color-turquoise: #00ccff;
+
+$color-beige: #f8f5f4;
 
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal
@@ -31,11 +38,10 @@ $color-turquoise: #00ccff;
 //
 $fonts: "Jost" "Jost-Light" 300 normal, "Jost" "Jost-Regular" 400 normal,
 	"Jost" "Jost-Italic" 400 italic, "Jost" "Jost-SemiBold" 600 normal,
-	"Jost" "Jost-Bold" 700 normal,
-	"Cinzel" "Cinzel-Regular" 400 normal;
+	"Jost" "Jost-Bold" 700 normal, "Cinzel" "Cinzel-Regular" 400 normal;
 
 $font-family--main: "Jost", "Arial", sans-serif;
-//$font-family--secondary: "Montserrat", "Arial", sans-serif;
+$font-family--secondary: "Cinzel", "Georgia", serif;
 
 $font-size-base: 18px;
 $line-height-base: 1.5; //24px

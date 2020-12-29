@@ -8,67 +8,14 @@
 	}
 
 	&__content {
-		box-sizing: border-box;
-		padding: 10px 0;
-		background-color: $color-default-white;
-
-		@include transition(opacity);
-
 		@include media(sm) {
 			position: absolute;
 			left: -1px;
 			bottom: -1px;
-			padding: 20px;
-		}
-
-		@include media(lg) {
-			padding: 32px;
 		}
 
 		@include media(xl) {
 			min-width: 475px;
-			padding: 48px;
-		}
-
-		@include media(xxl) {
-			padding: 67px 63px 43px;
-		}
-
-		&-detail {
-			margin-bottom: 6px;
-
-			@include text(12px, 1, $color-grey2);
-			letter-spacing: 0.025em;
-
-			@include media(lg) {
-				margin-bottom: 8px;
-				font-size: 14px;
-			}
-
-			@include media(xl) {
-				margin-bottom: 20px;
-				font-size: 16px;
-			}
-
-			@include media(xxl) {
-				margin-bottom: 24px;
-			}
-		}
-
-		&-heading {
-			@include text(20px, 1);
-
-			@include media(lg) {
-				font-size: 30px;
-			}
-
-			@include media(xl) {
-				font-size: 36px;
-			}
-
-			@include media(xxl) {
-				font-size: 40px;
-			}
 		}
 	}
 }

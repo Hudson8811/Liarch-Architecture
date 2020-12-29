@@ -1,0 +1,59 @@
+extends templates/main.pug
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - contacts';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 5; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.contacts
+		.contacts__map.contacts__map--absolute
+			iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.7573199609947!2d-118.33043968482798!3d34.07573478059951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8c199b270b7%3A0xae653e28fc364c28!2zQmV2ZXJseSBCbHZkLCBDYWxpZm9ybmlhLCDQodCo0JA!5e0!3m2!1sru!2sru!4v1608631800377!5m2!1sru!2sru", allowfullscreen="", aria-hidden="false", tabindex="0")
+		.contacts__inner.container
+			.contacts__contact.contact-block.ml-md-auto
+				h1.contact-block__title Beverly Hill, <span>California</span>
+				address.contact-block__address 5nd Trump Tower, 166 Main Street, Beverly Hill Ave, CA, 90210, United States
+				.contact-block__email
+					span.contact-block__hint Email:
+					a(href="mailto:infor@liarchstudio.co") infor@liarchstudio.co
+				.contact-block__phone
+					span.contact-block__hint Call directly:
+					a(href="tel:+86631250859") +8(663)125-08-59
+				.contact-block__offices
+					span.contact-block__hint Brand Offices:
+					.contact-block__offices-list
+						a.contact-block__offices-item(href="#") Allentown PA
+						a.contact-block__offices-item(href="#") Allanta, GA
+						a.contact-block__offices-item(href="#") Chicago, IL
+						a.contact-block__offices-item(href="#") Dallas, TX,
+						a.contact-block__offices-item(href="#") Edison, NJ
+						a.contact-block__offices-item(href="#") Houston, TX
+
+				button.contact-block__btn.btn.__js_open-contacts-modal(type="button") get in touch
+
+
+				.contacts__modal
+					button.contacts__modal-close(type="button")
+						+icon('close')(width="40", height="40")
+					form.contacts__modal-form(action="#", method="post")
+						label.contacts__modal-field.field.field--md-small
+							input(type="text", name="name", placeholder="Name")
+							span.field__hint Name
+
+						label.contacts__modal-field.field.field--md-small
+							input(type="email", name="email", placeholder="Email Address")
+							span.field__hint Email Address
+
+						label.contacts__modal-field.field.field--md-small
+							input(type="text", name="subject", placeholder="Subject (optional)")
+							.field__hint Subject (optional)
+
+						label.contacts__modal-field.field.field--md-small
+							textarea(name="message", placeholder="Message")
+							.field__hint Message
+
+						button.contacts__modal-btn.btn(type="submit") Send message
+
+
+
+block footer
+	include modules/footer

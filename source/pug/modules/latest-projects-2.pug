@@ -1,0 +1,38 @@
+section.webpage__latest-projects.latest-projects
+	.container
+		header.latest-projects__header(data-aos="fade")
+			h2.latest-projects__heading.heading Our latest projects
+			a.latest-projects__more.more(href="#") see all projects
+	.latest-projects__inner.container
+		.latest-projects__slider.slider.slider--with-thumbs.swiper-container.__js_slider-simple(data-aos="fade")
+			.swiper-wrapper
+				.slider__item.slide.swiper-slide
+					img(src="img/latest-projects-slides/1.jpg", width="1545", height="700", alt="")
+
+				.slider__item.slide.swiper-slide
+					img(src="img/latest-projects-slides/2.jpg", width="1545", height="700", alt="")
+
+				.slider__item.slide.swiper-slide
+					img(src="img/latest-projects-slides/3.jpg", width="1545", height="700", alt="")
+
+			.slider__nav
+				button.slider__nav-btn.slider__nav-btn--prev(type="button")
+					+icon('chevron-left')(width="36", height="36")
+				button.slider__nav-btn.slider__nav-btn--next(type="button")
+					+icon('chevron-right')(width="36", height="36")
+
+
+		.swiper-container.latest-projects__slider-thumbs.__js_slider-thumbs
+			.swiper-wrapper
+				.swiper-slide
+					.slide-content.slide-content--thumb
+						.slide-content__detail 2020  -  Belgium
+						.slide-content__heading Dogel Nord Station
+				.swiper-slide
+					.slide-content.slide-content--thumb
+						.slide-content__detail 2020  -  Kiev, Ukraine
+						.slide-content__heading Cubic Blockes Hotel
+				.swiper-slide
+					.slide-content.slide-content--thumb
+						.slide-content__detail 2019  -  Iasi, Romania
+						.slide-content__heading Daniel Villa, Romania

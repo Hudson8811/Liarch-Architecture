@@ -59,6 +59,18 @@
 		}
 	}
 
+	&__rewards {
+		margin-bottom: 60px;
+
+		@include media(md) {
+			margin-bottom: 100px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 128px;
+		}
+	}
+
 	&__partners {
 		margin-bottom: 60px;
 

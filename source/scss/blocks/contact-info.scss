@@ -1,0 +1,115 @@
+.contact-info {
+	$self: &;
+
+	@include list-reset;
+
+	@include media(sm) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		display: flex;
+		padding-top: 30px;
+		margin-bottom: 12px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:hover {
+			#{$self}__icon {
+				border-color: $color-orange;
+
+				svg {
+					fill: $color-orange;
+				}
+			}
+		}
+
+		@include media(sm) {
+			width: calc(50% - 8px);
+			margin-bottom: 0;
+
+			&:nth-child(n + 3) {
+				margin-top: 24px;
+			}
+		}
+
+		@include media(xl) {
+			width: calc(50% - 20px);
+		}
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 60px;
+		height: 60px;
+		margin-right: 24px;
+		margin-top: -24px;
+		border: solid 1px $color-grey;
+		border-radius: 50%;
+
+		@include transition(border-color);
+
+		@include media(xl) {
+			width: 70px;
+			height: 70px;
+			margin-right: 38px;
+			margin-top: -30px;
+		}
+
+		svg {
+			align-self: center;
+			fill: $color-grey;
+
+			@include transition(fill);
+		}
+	}
+
+	&__content {
+		//margin-top: -4px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+
+		@include text(14px, 1, $color-grey);
+		text-transform: uppercase;
+
+		@include media(xl) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&__text {
+		@include text(16px, 1.66);
+
+		@include media(xl) {
+			font-size: 18px;
+		}
+
+		a {
+			color: $color-default-black;
+
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-orange;
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+
+		address {
+			font-style: normal;
+		}
+	}
+}

@@ -2,14 +2,16 @@
 	overflow: hidden;
 
 	&__container {
-		padding: 60px 10px;
+		padding-top: 60px;
+		padding-bottom: 60px;
 
 		@include media(md) {
-			padding: 90px 10px;
+			padding-top: 90px;
+			padding-bottom: 90px;
 		}
 
 		@include media(xxl) {
-			padding: 90px 0 187px;
+			padding-bottom: 187px;
 		}
 	}
 
@@ -153,7 +155,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0;
-		margin: 0 -31px;
+		margin: 0 -30px;
 	}
 
 	&__more-2 {

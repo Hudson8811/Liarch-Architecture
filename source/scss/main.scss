@@ -6,8 +6,8 @@
 @import "common/utils";
 @import "common/global";
 @import "vendor/bootstrap-grid";
-@import "vendor/slick";
-@import "vendor/slick-theme";
+//@import "vendor/slick";
+//@import "vendor/slick-theme";
 //@import "vendor/animate-v3.7.2";
 @import "vendor/aos";
 @import "vendor/swiper-bundle";
@@ -15,6 +15,7 @@
 @import "common/components";
 
 @import "blocks/btn";
+@import "blocks/field";
 @import "blocks/video-btn";
 @import "blocks/heading";
 @import "blocks/menu-toggle";
@@ -31,6 +32,7 @@
 @import "blocks/filter";
 @import "blocks/sort";
 @import "blocks/more-btn";
+@import "blocks/slide-content";
 @import "blocks/slide";
 @import "blocks/slider";
 @import "blocks/pagination";
@@ -38,8 +40,23 @@
 @import "blocks/twitter-block";
 @import "blocks/liked";
 @import "blocks/paginate";
+@import "blocks/testimonials";
+@import "blocks/simplicity";
+@import "blocks/approach";
+@import "blocks/reward";
+@import "blocks/rewards";
 @import "blocks/form";
 @import "blocks/timer";
+@import "blocks/contact-info";
+@import "blocks/specialization";
+@import "blocks/process-step";
+@import "blocks/diagram";
+@import "blocks/lang-switcher";
+@import "blocks/our-journal";
+@import "blocks/contact-block";
+@import "blocks/feedback-form";
+@import "blocks/header-toggle";
+@import "blocks/layout";
 
 @import "blocks/header";
 @import "blocks/header-3";
@@ -58,6 +75,7 @@
 @import "blocks/works";
 @import "blocks/works-page";
 @import "blocks/single-project";
+@import "blocks/about";
 @import "blocks/news-list";
 @import "blocks/news-slider";
 @import "blocks/news-card";
@@ -69,6 +87,8 @@
 @import "blocks/page-404";
 @import "blocks/pricing";
 @import "blocks/services";
+@import "blocks/contacts";
+@import "blocks/service-page";
 @import "blocks/team";
 @import "blocks/launch-page";
 @import "blocks/homepage-parallax";

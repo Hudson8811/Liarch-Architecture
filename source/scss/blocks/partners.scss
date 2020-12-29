@@ -1,89 +1,111 @@
 .partners {
-  &__inner {
-    border-bottom: solid 1px $color-grey4;
-  }
-  &__heading {
-    margin-bottom: 16px;
-    text-align: center;
+	&__inner {
+	}
 
-    @include media(sm) {
-      margin-bottom: 20px;
-    }
+	&__line {
+		padding-bottom: 60px;
+		border-bottom: solid 1px $color-grey4;
 
-    @include media(xl) {
-      margin-bottom: 19px;
-    }
-  }
+		@include media(sm) {
+			padding-bottom: 80px;
+		}
 
-  &__text {
-    margin-bottom: 60px;
+		@include media(lg) {
+			padding-bottom: 120px;
+		}
 
-    @include text(14px, 1.66, $color-grey2);
-    text-align: center;
+		@include media(xl) {
+			padding-bottom: 173px;
+		}
+	}
 
-    @include media(sm) {
-      margin-bottom: 80px;
-      font-size: 16px;
-    }
+	&__heading {
+		margin-bottom: 16px;
+		text-align: center;
 
-    @include media(xl) {
-      margin-bottom: 118px;
-      font-size: 18px;
-    }
-  }
+		@include media(sm) {
+			margin-bottom: 20px;
+		}
 
-  &__list {
-    @include list-reset;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+		@include media(xl) {
+			margin-bottom: 19px;
+		}
 
-    margin-top: -98px;
-    margin-bottom: 60px;
+		&--small {
+			margin: 0 0 40px;
 
-    @include media(sm) {
-      margin-bottom: 80px;
-    }
+			@include text(16px, 1.5);
+			text-align: left;
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
 
-    @include media(lg) {
-      margin-bottom: 120px;
-    }
+			@include media(sm) {
+				margin-bottom: 60px;
+			}
 
-    @include media(xl) {
-      margin-bottom: 173px;
-    }
-  }
+			@include media(xl) {
+				margin-bottom: 87px;
+			}
+		}
+	}
 
-  &__item {
-    width: 50%;
-    text-align: center;
-    align-self: center;
-    margin-top: 98px;
+	&__text {
+		margin-bottom: 60px;
 
-    @include media(sm) {
-      width: 33.33%;
-    }
+		@include text(14px, 1.66, $color-grey2);
+		text-align: center;
 
-    @include media(lg) {
-      width: 25%;
-    }
+		@include media(sm) {
+			margin-bottom: 80px;
+			font-size: 16px;
+		}
 
-    @include media(xl) {
-      width: 20%;
-    }
+		@include media(xl) {
+			margin-bottom: 118px;
+			font-size: 18px;
+		}
+	}
 
-    img {
-      display: inline-block;
-      vertical-align: top;
-      max-width: 90%;
-      height: auto;
-      filter: grayscale(1);
+	&__list {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 
-      @include transition(filter);
+		margin-top: -98px;
+	}
 
-      &:hover {
-        filter: grayscale(0);
-      }
-    }
-  }
+	&__item {
+		width: 50%;
+		text-align: center;
+		align-self: center;
+		margin-top: 98px;
+
+		@include media(sm) {
+			width: 33.33%;
+		}
+
+		@include media(lg) {
+			width: 25%;
+		}
+
+		@include media(xl) {
+			width: 20%;
+		}
+
+		img {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 90%;
+			height: auto;
+			filter: grayscale(1);
+
+			@include transition(filter);
+
+			&:hover {
+				filter: grayscale(0);
+			}
+		}
+	}
 }

@@ -1,51 +1,62 @@
 .phone-block {
-  display: flex;
+	$self: &;
+	display: flex;
 
-  &__icon {
-    display: flex;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    border-radius: 50%;
-    background-color: $color-pale-pink;
-    flex-shrink: 0;
-    align-self: center;
+	&--theme-orange {
+		#{$self}__icon {
+			background-color: $color-orange;
 
-    svg {
-      fill: $color-orange;
-      align-self: center;
-    }
-  }
-  &__content {
-    align-self: center;
-  }
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
 
-  &__hint {
-    margin-bottom: 10px;
+	&__icon {
+		display: flex;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		margin-right: 20px;
+		border-radius: 50%;
+		background-color: $color-pale-pink;
+		flex-shrink: 0;
+		align-self: center;
 
-    @include text(12px, 1, $color-grey2);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+		svg {
+			fill: $color-orange;
+			align-self: center;
+		}
+	}
+	&__content {
+		align-self: center;
+	}
 
-  &__number {
-    display: inline-block;
-    vertical-align: top;
+	&__hint {
+		margin-bottom: 10px;
 
-    @include text(18px, 1);
-    letter-spacing: 0.025em;
+		@include text(12px, 1, $color-grey2);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
 
-    @include transition(color);
+	&__number {
+		display: inline-block;
+		vertical-align: top;
 
-    @include media(lg) {
-      font-size: 24px;
-    }
+		@include text(18px, 1);
+		letter-spacing: 0.025em;
 
-    &:hover,
-    &:focus {
-      outline: none;
-      color: $color-orange;
-    }
-  }
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 24px;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-orange;
+		}
+	}
 }

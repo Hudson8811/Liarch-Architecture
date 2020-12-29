@@ -1,0 +1,122 @@
+.about {
+	padding: 40px 0;
+
+	@include media(xl) {
+		padding: 104px 0 201px;
+	}
+
+	&--pb {
+		@include media(xl) {
+			padding: 104px 0 25px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 143px;
+		}
+	}
+
+	&__heading {
+		max-width: 205px;
+		margin: 0 0 20px;
+
+		@include text(16px, 1.7);
+		font-weight: 400;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+
+		@include media(xl) {
+			margin-bottom: 36px;
+		}
+	}
+
+	&__subheading {
+		font-weight: 400;
+	}
+
+	&__statistics {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 143px;
+		}
+	}
+
+	&__panorama {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 150px;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__simplicity {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 121px;
+		}
+	}
+
+	&__partners {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 148px;
+		}
+
+		.partners__inner {
+			border-bottom: none;
+		}
+
+		.partners__list {
+			@include media(xl) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__approach {
+		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 127px;
+		}
+	}
+
+	&__journal {
+		margin-bottom: 30px;
+	}
+
+	&__contacts {
+		padding-top: 60px;
+		border-top: solid 1px $color-grey9;
+
+		@include media(xl) {
+			padding-top: 137px;
+		}
+	}
+
+	&__testimonials + &__approach {
+		margin-top: 60px;
+
+		@include media(xl) {
+			margin-top: 186px;
+		}
+	}
+
+	&__feedback {
+		@include media(xl) {
+			padding-top: 24px;
+		}
+	}
+}

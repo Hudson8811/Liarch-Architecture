@@ -1,6 +1,6 @@
 .news-card {
 	margin-bottom: 45px;
-	padding: 0 31px;
+	//padding: 0 31px;
 
 	@include media(md) {
 		margin-bottom: 91px;
@@ -20,9 +20,13 @@
 		display: flex;
 		flex-direction: column;
 		padding-top: 29px;
+		padding-left: 15px;
+		padding-right: 15px;
 		text-align: center;
 
 		@include media(md) {
+			padding-left: 0;
+			padding-right: 0;
 			flex-direction: row;
 			text-align: left;
 		}
@@ -39,7 +43,7 @@
 		}
 
 		.num {
-			font-family: 'Cinzel', sans-serif;
+			font-family: "Cinzel", sans-serif;
 			font-size: 60px;
 			line-height: 85px;
 		}

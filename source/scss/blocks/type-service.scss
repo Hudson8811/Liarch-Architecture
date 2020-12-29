@@ -1,9 +1,73 @@
 .type-service {
 	$self: &;
 
-  &__heading {
-    margin-bottom: 20px;
-    line-height: 1.08;
+	&--lite {
+		padding-top: 5px;
+
+		#{$self}__item {
+			padding: 32px 72px 32px 32px;
+			text-align: left;
+			border: solid 1px $color-grey5;
+
+			@include transition(border-color);
+
+			&:hover {
+				border-color: $color-orange;
+			}
+
+			@include media(md) {
+				margin-top: 10px !important;
+
+				&:first-child {
+					margin-top: 0 !important;
+				}
+			}
+
+			@include media(xl) {
+				padding: 47px 120px 43px 60px;
+			}
+
+			&-icon {
+				position: absolute;
+				top: 32px;
+				right: 32px;
+				width: 32px;
+				height: auto;
+				background-image: none;
+
+				@include media(xl) {
+					top: 46px;
+					right: 51px;
+					width: 40px;
+				}
+			}
+
+			&-heading {
+				font-weight: 400;
+				letter-spacing: -0.025em;
+
+				@include media(xl) {
+					margin-bottom: 5px;
+					//padding: 50px 120px 50px 60px;
+				}
+			}
+
+			&-text {
+				@include media(xl) {
+					margin-bottom: 20px;
+					font-size: 16px;
+				}
+			}
+
+			&-link {
+				font-size: 12px;
+			}
+		}
+	}
+
+	&__heading {
+		margin-bottom: 20px;
+		line-height: 1.08;
 
     @include media(xl) {
       margin-bottom: 42px;

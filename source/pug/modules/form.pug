@@ -2,20 +2,20 @@ form.form(action='', method='POST', data-aos="fade")
 	.form__title Ready to get started
 	.form__subtitle Ask away! Our supporters will response within 24 hours
 	.form__group
-		label
+		label.form__field.field
 			input(type='text', name='full-name', placeholder='Full Name')
-			span Full Name
+			span.field__hint Full Name
 			.underline
-		label
+		label.form__field.field
 			input(type='email', name='email', placeholder='Email Address *', required)
-			span Email Address <span class="red">*</span>
+			span.field__hint Email Address <span class="red">*</span>
 			.underline
-		label
+		label.form__field.field
 			input(type='text', name='subject', placeholder='Subject')
-			span Subject
+			span.field__hint Subject
 			.underline
-	label.label-textarea
+	label.form__field.form__field--width-full.form__field--textarea.field
 		textarea(name='message', placeholder='Your message here')
-		span Your message here
+		span.field__hint Your message here
 		.underline
-	button.btn.form__btn Send Message
+	button.form__submit(type='submit') Send Message

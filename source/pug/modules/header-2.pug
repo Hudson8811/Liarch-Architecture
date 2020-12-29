@@ -1,0 +1,32 @@
+header.header.header--aside
+	.header__inner
+		//- Логотип
+		+logo(isHome, 'header__logo')
+
+		ul.header__lang-switcher.lang-switcher
+			li.lang-switcher__item
+				a.lang-switcher__link.lang-switcher__link--current en
+			li.lang-switcher__item
+				a.lang-switcher__link(href="#") fr
+			li.lang-switcher__item
+				a.lang-switcher__link(href="#") de
+
+		nav.header__nav.navigation.navigation--column
+			ul.navigation__list
+				each item in ASIDE_MAIN_MENU
+					if item.currentIndex === currentIndex
+						li.navigation__item.navigation__item--current
+							a.navigation__link= item.text
+					else
+						li.navigation__item
+							a.navigation__link(href= item.url)= item.text
+
+
+		+social-2('header__social', ['twitter', 'facebook', 'instagram'])
+
+		.header__contacts
+			address.header__address 166 Main Street, Beverly Hills CA, 90210
+			a.header__phone(href="tel:+00853462188") +0085 346 2188
+		button.header__toggle.header-toggle(type="button")
+			span.line
+			span.visually-hidden Menu

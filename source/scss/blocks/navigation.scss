@@ -1,85 +1,111 @@
 .navigation {
-  $self: &;
-  display: none;
+	$self: &;
+	display: none;
 
-  @include media(md) {
-    display: block;
-  }
+	@include media(md) {
+		display: block;
+	}
 
-  &__list {
-    @include list-reset;
-    display: flex;
-    flex-wrap: wrap;
-  }
+	&--column {
+		display: block;
 
-  &__item {
-    position: relative;
-    margin-right: 20px;
+		#{$self}__list {
+			display: block;
+		}
 
-    @include media(lg) {
-      margin-right: 40px;
-    }
+		#{$self}__item {
+			margin-right: 0 !important;
+			margin-bottom: 12px;
 
-    @include media(xl) {
-      margin-right: 3.28vw;
-    }
+			@include media-custom-height(900px) {
+				margin-bottom: 22px;
+			}
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 55%;
-      right: -8px;
-      transform: translateY(-50%) translateX(100%);
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: $color-grey3;
+			&::after {
+				display: none;
+			}
+		}
 
-      @include media(lg) {
-        right: -17px;
-        width: 6px;
-        height: 6px;
-      }
+		#{$self}__link {
+			@include text(18px, 1.2, $color-default-black);
+			text-transform: none;
+		}
+	}
 
-      @include media(xl) {
-        right: calc(-1.64vw + 3px);
-      }
-    }
+	&__list {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-    &:last-child {
-      margin-right: 0;
+	&__item {
+		position: relative;
+		margin-right: 20px;
 
-      &::after {
-        display: none;
-      }
-    }
+		@include media(lg) {
+			margin-right: 40px;
+		}
 
-    &--current {
-      #{$self}__link {
-        color: $color-orange;
-        font-weight: 600;
-      }
-    }
-  }
+		@include media(xl) {
+			margin-right: 3.28vw;
+		}
 
-  &__link {
-    @include text(12px, 1, $color-default-black);
-    text-transform: uppercase;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 55%;
+			right: -8px;
+			transform: translateY(-50%) translateX(100%);
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: $color-grey3;
 
-    @include transition(color);
+			@include media(lg) {
+				right: -17px;
+				width: 6px;
+				height: 6px;
+			}
 
-    @include media(lg) {
-      font-size: 14px;
-    }
+			@include media(xl) {
+				right: calc(-1.64vw + 3px);
+			}
+		}
 
-    &:hover,
-    &:focus {
-      outline: none;
-      color: $color-orange;
-    }
+		&:last-child {
+			margin-right: 0;
 
-    &:active {
-      opacity: 0.7;
-    }
-  }
+			&::after {
+				display: none;
+			}
+		}
+
+		&--current {
+			#{$self}__link {
+				color: $color-orange;
+				font-weight: 600;
+			}
+		}
+	}
+
+	&__link {
+		@include text(12px, 1);
+		text-transform: uppercase;
+
+		@include transition(color);
+
+		@include media(lg) {
+			font-size: 14px;
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			color: $color-orange;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
 }

@@ -58,11 +58,28 @@
 	}
 
 	&__inner {
+		position: relative;
+
 		@include media(xxl) {
 			max-width: $width--full;
 		}
 	}
 
 	&__slider {
+		&-thumbs {
+			@include media(md) {
+				position: absolute;
+				left: 15px;
+				right: 15px;
+				bottom: 0;
+			}
+		}
 	}
+
+	/*.swiper-slide-thumb-active {
+		.slide-content {
+			background-image: none;
+			background-color: $color-default-white;
+		}
+	}*/
 }

@@ -1,4 +1,80 @@
 .twitter-block {
+	$self: &;
+
+	&--small {
+		#{$self}__wrapper {
+			@include media(md) {
+				padding: 40px;
+			}
+
+			@include media(lg) {
+				padding: 40px;
+			}
+
+			@include media(xl) {
+				padding: 65px 57px 65px 70px; //50px 46px;
+			}
+		}
+
+		#{$self}__text {
+			@include text(14px, 1.33);
+			font-style: italic;
+
+			@include media(sm) {
+				font-size: 20px;
+			}
+
+			@include media(lg) {
+				font-size: 20px;
+			}
+
+			@include media(xl) {
+				font-size: 30px;
+			}
+		}
+	}
+
+	&--sidebar {
+		max-width: 300px;
+
+		#{$self}__wrapper {
+			padding: 30px !important;
+		}
+
+		#{$self}__header {
+			margin-bottom: 32px !important;
+		}
+
+		#{$self}__author {
+			&-image {
+				width: 45px !important;
+				height: 45px !important;
+			}
+			&-meta,
+			&-name {
+				font-size: 16px !important;
+			}
+			&-info {
+				font-size: 12px !important;
+			}
+		}
+
+		#{$self}__text {
+			margin-bottom: 30px;
+			font-size: 18px !important;
+		}
+
+		#{$self}__social {
+			svg {
+				width: 24px !important;
+			}
+		}
+
+		time {
+			font-size: 12px !important;
+		}
+	}
+
 	&__wrapper {
 		padding: 20px;
 		border: solid 1px $color-grey5;
@@ -10,9 +86,11 @@
 		@include media(md) {
 			padding: 60px;
 		}
+
 		@include media(lg) {
 			padding: 80px;
 		}
+
 		@include media(xl) {
 			padding: 93px 170px 105px;
 		}
@@ -139,6 +217,15 @@
 			&:active {
 				opacity: 0.7;
 			}
+		}
+	}
+
+	time {
+		@include text(14px, 1, $color-grey);
+		letter-spacing: 0.015em;
+
+		@include media(sm) {
+			font-size: 16px;
 		}
 	}
 }

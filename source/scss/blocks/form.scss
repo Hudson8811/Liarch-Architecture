@@ -21,119 +21,34 @@
 		@include media(md) {
 			margin: 0 -30px 11px;
 		}
+	}
 
-		label {
-			width: 100%;
-			margin-bottom: 40px;
+	&__field {
+		width: 100%;
+		margin-bottom: 40px;
 
-			@include media(md) {
-				width: calc(33.3333% - 60px);
-				margin: 0 30px 50px;
+		@include media(md) {
+			width: calc(33.3333% - 60px);
+			margin: 0 30px 50px;
+
+			&--width-full {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		&--textarea {
+			height: 150px;
+
+			@include media(xl) {
+				height: 209px;
 			}
 		}
 	}
 
-	label {
-		display: block;
-		position: relative;
-		cursor: text;
-
-		.underline {
-			width: 100%;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-
-			&::before,
-			&::after {
-				content: '';
-				display: inline-block;
-				position: absolute;
-				bottom: 0;
-				width: 0;
-				height: 2px;
-				background-color: $color-default-black;
-				transition: width 0.3s ease;
-			}
-
-			&::before {
-				left: 50%;
-			}
-
-			&::after {
-				right: 50%;
-			}
-		}
-
-		input,
-		textarea {
-			width: 100%;
-			padding-bottom: 10px;
-			border-bottom: 1px solid $color-grey3;
-			font-size: 20px;
-
-			&::placeholder {
-				color: transparent;
-			}
-
-			&:placeholder-shown ~ span {
-				font-size: 20px;
-				text-transform: none;
-				top: 5px;
-			}
-
-			&:focus {
-				~ span {
-					position: absolute;
-					top: -1.7em;
-					display: block;
-					font-size: 12px;
-					text-transform: uppercase;
-				}
-
-				~ .underline {
-					&::before {
-						width: 50%;
-					}
-
-					&::after {
-						width: 50%;
-					}
-				}
-			}
-		}
-
-		&.label-textarea {
-			height: 209px;
-		}
-
-		textarea {
-			resize: none;
-			height: 100%;
-		}
-
-		span {
-			position: absolute;
-			top: -1.7em;
-			display: block;
-			transition: 0.3s;
-			font-size: 12px;
-			text-transform: uppercase;
-			color: $color-grey;
-
-			&.red {
-				display: inline;
-				position: relative;
-				top: -7px;
-				color: #ff0000;
-			}
-		}
-	}
-
-	&__btn {
+	&__submit {
 		width: 210px;
-		padding: 16px;
-		border-radius: 0;
+		padding: 20px;
 		background-color: $color-orange--dark;
 		border: 1px solid $color-orange--dark;
 		font-size: 18px;
@@ -144,6 +59,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		cursor: pointer;
+
 		@include transition(all);
 
 		@include media(md) {
@@ -153,7 +69,8 @@
 		}
 
 		@include media(lg) {
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: $color-default-white;
 				color: $color-orange--dark;
 			}

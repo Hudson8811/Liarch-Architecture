@@ -1,12 +1,27 @@
 .an-awards {
-	$self: &;
+  $self: &;
 
-  overflow: hidden;
+	overflow: hidden;
   padding-top: 40px;
 
-  @include media(xl) {
-    padding-top: 83px;
-  }
+	&--about {
+		#{$self}__notice {
+			@include media(xl) {
+				padding-top: 71px;
+			}
+		}
+
+		#{$self}__image {
+			@include media(xl) {
+				margin-top: -20px;
+				padding-left: 120px;
+			}
+		}
+	}
+
+	@include media(xl) {
+		padding-top: 83px;
+	}
 
   &__intro {
     margin-bottom: 20px;

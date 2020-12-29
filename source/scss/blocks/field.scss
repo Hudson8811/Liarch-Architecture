@@ -1,0 +1,159 @@
+.field {
+	$self: &;
+
+	position: relative;
+	display: block;
+	width: 100%;
+	cursor: text;
+
+	.underline {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		&::before,
+		&::after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			bottom: 0;
+			width: 0;
+			height: 1px;
+			background-color: $color-default-black;
+			@include transition(width);
+		}
+
+		&::before {
+			left: 50%;
+		}
+
+		&::after {
+			right: 50%;
+		}
+	}
+
+	&__hint {
+		position: absolute;
+		top: -1.7em;
+		display: block;
+		transition: 0.3s;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $color-grey;
+
+		.red {
+			display: inline;
+			position: relative;
+			top: -7px;
+			color: #ff0000;
+		}
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $color-grey3;
+		font-size: 20px;
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:placeholder-shown ~ #{$self}__hint {
+			font-size: 20px;
+			text-transform: none;
+			top: -5px;
+		}
+
+		&:focus {
+			~ #{$self}__hint {
+				position: absolute;
+				top: -1.7em;
+				display: block;
+				font-size: 12px;
+				text-transform: uppercase;
+			}
+
+			~ .underline {
+				&::before {
+					width: 50%;
+				}
+
+				&::after {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: 150px;
+
+		@include media(xl) {
+			height: 209px;
+		}
+	}
+
+	&--md-small {
+		@media screen and (min-width: 768px) and (max-width: 1199.98px) {
+			#{$self}__hint {
+				top: -1.2em;
+				font-size: 10px;
+			}
+			input,
+			textarea {
+				padding-bottom: 6px;
+				font-size: 14px;
+				//background-color: pink;
+
+				&:placeholder-shown ~ #{$self}__hint {
+					font-size: 14px;
+				}
+
+				&:focus {
+					border-bottom-color: $color-default-black;
+
+					~ #{$self}__hint {
+						top: -1.2em;
+						font-size: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	&--bordered {
+		input,
+		textarea {
+			padding: 16px 20px;
+
+			@include text(16px, 1);
+			border: solid 1px $color-grey8;
+
+			@include transition(border-color);
+
+			@include media(xl) {
+				padding: 18px 30px;
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+				border-color: $color-default-black;
+			}
+
+			&::placeholder {
+				color: $color-grey;
+			}
+		}
+
+		textarea {
+			@include media(xl) {
+				height: 180px;
+			}
+		}
+	}
+}
