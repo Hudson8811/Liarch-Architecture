@@ -114,40 +114,12 @@
 .news-sb-slider {
 	position: relative;
 
-	&__arrow {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 60px;
-		height: 60px;
-		background-color: $color-default-white;
-		border: 1px solid $color-default-white;
-		position: absolute;
+	.arrow-square {
 		bottom: -65px;
-		z-index: 1;
-		outline: none;
-		@include transition(background-color);
 
 		@include media(md) {
 			bottom: unset;
 			top: 39%;
-		}
-
-		@include media(lg) {
-			&:hover {
-				background-color: transparent;
-
-				svg {
-					fill: $color-default-white;
-				}
-			}
-		}
-
-		svg {
-			width: 50%;
-			height: 50%;
-			fill: $color-default-black;
-			@include transition(fill);
 		}
 
 		&--prev {
@@ -155,10 +127,6 @@
 
 			@include media(md) {
 				left: 60px;
-			}
-
-			svg {
-				transform: rotate(180deg);
 			}
 		}
 

@@ -85,6 +85,26 @@ var anAwards = $('.an-awards');
 	});
 })();
 
+(function(){
+	var sliderSingle2 = new Swiper('.__js_slider-single-2', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: false,
+		navigation: {
+			prevEl: '.works-arrow--prev',
+			nextEl: '.works-arrow--next'
+		},
+		pagination: {
+			el: '.slide-counter-2',
+			type: 'fraction',
+			renderFraction: function (currentClass, totalClass) {
+				return '<span class="' + currentClass + '"></span>' +
+					'<span class="' + totalClass + '"></span>';
+			}
+		}
+	});
+})();
+
 /* Карусель проектов */
 (function(){
   //var carousel = $('.__js_slider-carousel');
@@ -138,8 +158,8 @@ var anAwards = $('.an-awards');
 		loop: true,
 		speed: 600,
 		navigation: {
-			prevEl: '.news-sb-slider__arrow--prev',
-			nextEl: '.news-sb-slider__arrow--next'
+			prevEl: '.arrow-square--prev',
+			nextEl: '.arrow-square--next'
 		},
 		breakpoints: {
 			1560: {
@@ -188,13 +208,11 @@ var anAwards = $('.an-awards');
 
 	var priceList = undefined;
 
-	/*if (window.matchMedia('(max-width: 1199px)').matches) {
-		var priceList = new Swiper('.__js_slider-price', optionsTariff);
-	}*/
-
-	$(window).resize(function () {
-		initPriceSlider();
-	});
+	if ($('.__js_slider-price').length > 0) {
+		$(window).resize(function () {
+			initPriceSlider();
+		});
+	}
 
 	initPriceSlider();
 
@@ -213,6 +231,23 @@ var anAwards = $('.an-awards');
 			priceList = undefined;
 		}
 	}
+})();
+
+// Слайдер an-awards
+(function(){
+	var sliderNews4 = new Swiper('.__js_slider-awards', {
+		slidesPerView: 1,
+		speed: 300,
+		loop: true,
+		navigation: {
+			prevEl: '.arrow-square--prev',
+			nextEl: '.arrow-square--next'
+		},
+		pagination: {
+			el: '.slide-counter',
+			type: 'fraction',
+		},
+	});
 })();
 
 /* Анимация чисел */
@@ -459,5 +494,44 @@ var anAwards = $('.an-awards');
 		} else {
 			$('.article-preview__content').removeAttr('style');
 		}
+	}
+})();
+
+// homepage fullpages
+(function(){
+	if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
+		initFullPage();
+	}
+
+	$(window).resize(function () {
+		if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
+			if ((!$('#fullpage').hasClass('fullpage-wrapper')) || $('#fullpage').hasClass('fp-destroyed')) {
+				initFullPage();
+			}
+		} else {
+			if ($('#fullpage').hasClass('fullpage-wrapper')) {
+				$.fn.fullpage.destroy('all');
+			}
+		}
+	});
+
+	function initFullPage() {
+		$('#fullpage').fullpage({
+			licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
+			navigation: true,
+			navigationTooltips: false,
+			afterLoad: function (origin, destination, direction) {
+				var current = $(destination["item"]);
+				if (current.hasClass('dark')) {
+					$('.header-3').addClass('header-3--dark');
+					$('.footer-3').addClass('footer-3--dark');
+					$('#fp-nav').addClass('dark');
+				} else {
+					$('.header-3').removeClass('header-3--dark');
+					$('.footer-3').removeClass('footer-3--dark');
+					$('#fp-nav').removeClass('dark');
+				}
+			}
+		});
 	}
 })();

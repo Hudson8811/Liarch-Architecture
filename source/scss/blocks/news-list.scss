@@ -2,7 +2,6 @@
 	overflow: hidden;
 
 	&__container {
-		max-width: 1170px !important;
 		padding: 60px 10px;
 
 		@include media(md) {

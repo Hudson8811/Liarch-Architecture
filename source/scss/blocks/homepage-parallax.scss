@@ -1,0 +1,12 @@
+.homepage-parallax {
+	.container {
+		//max-width: 1200px;
+	}
+
+	section {
+		@media (max-width: 991px) {
+			min-height: 100vh;
+		}
+		//min-height: 100vh;
+	}
+}

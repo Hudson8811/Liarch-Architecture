@@ -1,4 +1,6 @@
 .our-story {
+	$self: &;
+
   overflow: hidden;
 
   &__inner {
@@ -196,4 +198,187 @@
       margin-top: 130px;
     }
   }
+
+	&--parallax {
+		display: flex;
+		align-items: center;
+		background-image: url("../img/bg-our-story.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		@include media(sm) {
+			align-items: flex-end;
+		}
+
+		.row {
+			height: 100%;
+			align-items: center;
+			justify-content: flex-start;
+			flex-direction: column;
+			margin-left: auto;
+			margin-right: auto;
+
+			@include media(md) {
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+
+			@include media(xl) {
+				flex-direction: row;
+			}
+		}
+
+		.video-btn__btn {
+			@media (max-height: 550px) {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		#{$self} {
+			&__inner {
+				padding: 80px 0;
+				border-bottom: none;
+
+				@include media(xl) {
+					height: 100%;
+					padding: 0;
+				}
+			}
+
+			&__intro {
+				display: none;
+				height: 100%;
+
+				@include media(sm) {
+					display: block;
+				}
+
+				@include media(xl) {
+					padding-right: 50px;
+				}
+
+				@include media(xxl) {
+					padding-right: 100px;
+				}
+
+				@media (max-height: 550px) {
+					display: none;
+				}
+			}
+
+			&__image {
+				margin-bottom: -7px;
+				height: 100%;
+				text-align: center;
+
+				@include media(xl) {
+					text-align: left;
+				}
+
+				@include media(xxl) {
+					margin-left: -89px;
+					width: 706px;
+				}
+
+				@media (max-height: 850px) {
+					width: auto;
+				}
+
+				img {
+					max-width: 50%;
+
+					@include media(sm) {
+						max-width: 30%;
+					}
+
+					@include media(xl) {
+						max-width: 78%;
+						position: absolute;
+						bottom: 0;
+						right: 0;
+					}
+
+
+					@include media(xxl) {
+						max-width: 100%;
+						right: -40px;
+					}
+
+					@media (min-width: 1650px) {
+						right: 32px;
+					}
+
+					@media (min-height: 851px) {
+						max-width: 78%;
+					}
+				}
+			}
+
+			&__content {
+				@include media(xxl) {
+					transform: translateX(100px);
+					padding-top: 24px;
+				}
+			}
+
+			&__heading {
+				font-weight: 600;
+
+				@media (max-height: 550px) {
+					font-size: 26px;
+				}
+
+				@media (max-height: 550px) {
+					font-size: 22px;
+					margin-bottom: 10px;
+				}
+			}
+
+			&__text {
+				span {
+					font-size: 14px;
+					font-weight: 600;
+					color: #010101;
+					font-style: normal;
+				}
+
+				@media (max-height: 550px) {
+					font-size: 14px;
+					margin-bottom: 5px;
+				}
+			}
+
+			&__buttons {
+				margin-top: 35px;
+
+				@include media(xl) {
+					margin-top: 84px;
+				}
+
+				@media (max-height: 550px) {
+					margin-top: 15px;
+				}
+			}
+
+			&__btn {
+				background-color: $color-default-white;
+				border-color: $color-default-white;
+				border-radius: 0;
+				@include transition(all);
+
+				@include media(lg) {
+					&:hover {
+						background-color: $color-orange;
+						border-color: $color-orange;
+					}
+				}
+
+				@media (max-height: 550px) {
+					font-size: 14px;
+					padding: 14px 18px;
+				}
+			}
+		}
+	}
 }

@@ -1,2 +1,95 @@
 body {
   background-color: #f00; }
+
+.our-story--parallax {
+  background-image: url("../img/bg-our-story-dark.jpg"); }
+  .our-story--parallax .video-btn__text {
+    color: #ffffff; }
+  .our-story--parallax .our-story__heading {
+    color: #ffffff; }
+  .our-story--parallax .our-story__text {
+    color: #999999; }
+    .our-story--parallax .our-story__text--style-bolditalic {
+      color: #ffffff; }
+    .our-story--parallax .our-story__text span {
+      color: #ffffff; }
+  .our-story--parallax .our-story__btn {
+    background-color: #252b30;
+    border-color: #252b30;
+    color: #ff4800; }
+    @media (min-width: 992px) {
+      .our-story--parallax .our-story__btn:hover {
+        color: #ffffff; } }
+
+.type-service--parallax {
+  background-color: #252b30; }
+  .type-service--parallax .type-service__heading {
+    color: #ffffff; }
+  .type-service--parallax .type-service__item-icon--interior {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%234b5055' d='M87.606 9.356s25.108 9.985 31.488 33.144c6.38 23.16-22.618 64.286-47.401 69.451-24.784 5.166-68.704-8.565-71.402-46.028C-2.408 28.46 15.143 9.288 41.163 2.105c26.953-7.441 46.443 7.251 46.443 7.251z'/%3e%3c/svg%3e"); }
+    @media (max-width: 1199px) {
+      .type-service--parallax .type-service__item-icon--interior {
+        background-image: none; } }
+  .type-service--parallax .type-service__item-icon--design {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%234b5055' d='M58.534 113.411s-26.325 6.09-44.758-9.313c-18.433-15.404-18.017-65.724-.587-84.083 17.431-18.36 61.353-32.084 84.905-2.826 23.552 29.258 20.043 55.012 2.746 75.734-17.918 21.466-42.306 20.488-42.306 20.488z'/%3e%3c/svg%3e"); }
+    @media (max-width: 1199px) {
+      .type-service--parallax .type-service__item-icon--design {
+        background-image: none; } }
+  .type-service--parallax .type-service__item-icon--furniture {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' fill='%234b5055' d='M12.544 83.901s-16.991-21.01-11.2-44.324C7.134 16.263 52.568-5.371 76.702 2.275c24.134 7.645 55.686 41.141 39.675 75.118-16.01 33.976-40.705 42.085-66.906 35.592-27.14-6.725-36.927-29.084-36.927-29.084z'/%3e%3c/svg%3e"); }
+    @media (max-width: 1199px) {
+      .type-service--parallax .type-service__item-icon--furniture {
+        background-image: none; } }
+  .type-service--parallax .type-service__item-heading a {
+    color: #ffffff; }
+  .type-service--parallax .type-service__item-text {
+    color: #666666; }
+  .type-service--parallax .type-service__item-link {
+    color: #ffffff; }
+    @media (min-width: 992px) {
+      .type-service--parallax .type-service__item-link:hover, .type-service--parallax .type-service__item-link:focus {
+        outline: none;
+        color: #ff4800; } }
+
+.works--parallax {
+  background-color: #252b30; }
+  @media (min-width: 1700px) {
+    .works--parallax .slide-counter-2 {
+      color: #666666; } }
+  .works--parallax .slide-counter-2 .swiper-pagination-current {
+    border-color: #666666; }
+
+@media (min-width: 992px) and (min-width: 1700px) {
+  .works--parallax .works-arrow:hover:not(.swiper-button-disabled) {
+    border-color: #252b30; } }
+  @media (min-width: 1700px) {
+    .works--parallax .works-arrow {
+      background-color: #252b30;
+      border-color: #252b30; } }
+  @media (min-width: 1700px) {
+    .works--parallax .works-arrow.swiper-button-disabled svg {
+      fill: #666666; } }
+  @media (min-width: 1700px) {
+    .works--parallax .works-arrow svg {
+      fill: #ffffff; } }
+  .works--parallax .works-arrow--next::before {
+    background-color: #666666; }
+  .works--parallax .slide__content {
+    background-color: #252b30; }
+  .works--parallax .slide__content-detail {
+    color: #999999; }
+  .works--parallax .slide__content-heading {
+    color: #ffffff; }
+  .works--parallax .works__all {
+    color: #ffffff; }
+
+.review--parallax {
+  background-color: #252b30; }
+  .review--parallax .review__text {
+    color: #ffffff; }
+  .review--parallax .review__author-name {
+    color: #ffffff; }
+  .review--parallax .review__author-detail span {
+    color: #ffffff; }
+  .review--parallax .review__image {
+    background-image: url("../img/review-shapes-dark.png"); }

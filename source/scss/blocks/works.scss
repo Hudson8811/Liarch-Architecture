@@ -129,4 +129,237 @@
 	&__more {
 		margin: 120px auto 0;
 	}
+
+	&--parallax {
+		display: flex;
+		align-items: center;
+
+		.slide-counter-2 {
+			min-width: 24px;
+			height: 58px;
+			display: inline-flex;
+			width: auto;
+			font-size: 18px;
+			color: $color-default-white;
+			padding: 15px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			text-align: center;
+			background-color: rgba(0, 0, 0, 0.15);
+			border-bottom-right-radius: 5px;
+
+			@media (min-width: 1700px) {
+				flex-direction: column;
+				height: auto;
+				top: -7px;
+				left: -8px;
+				background-color: transparent;
+				color: $color-grey;
+				padding: 0;
+			}
+
+			.swiper-pagination-current {
+				color: $color-default-white;
+				position: relative;
+				border-right: 1px solid $color-grey;
+				padding-right: 10px;
+				margin-right: 10px;
+
+				@media (min-width: 1700px) {
+					border-right: none;
+					border-bottom: 1px solid $color-grey;
+					padding-right: 0;
+					margin-right: 0;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+					color: $color-orange;
+				}
+			}
+		}
+
+		.works-arrow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 34px;
+			height: 34px;
+			padding: 0;
+			border: 1px solid $color-default-white;
+			background-color: rgba(0, 0, 0, 0.25);
+			position: absolute;
+			bottom: 7px;
+			z-index: 3;
+			@include transition(border-color);
+
+			@include media(lg) {
+				&:hover:not(.swiper-button-disabled) {
+					border-color: $color-orange;
+
+					svg {
+						fill: $color-orange;
+					}
+
+					@media (min-width: 1700px) {
+						border-color: $color-default-white;
+					}
+				}
+			}
+
+			@media (min-width: 1700px) {
+				width: 24px;
+				height: 24px;
+				left: -7px;
+				background-color: $color-default-white;
+			}
+
+			&.swiper-button-disabled {
+				svg {
+					fill: $color-grey3;
+
+					@media (min-width: 1700px) {
+						fill: $color-grey;
+					}
+				}
+			}
+
+			svg {
+				width: 60%;
+				height: 60%;
+				fill: $color-default-white;
+				@include transition(fill);
+
+				@media (min-width: 1700px) {
+					width: 100%;
+					height: 100%;
+					fill: $color-default-black;
+				}
+			}
+
+			&--prev {
+				left: calc(50% - 44px);
+
+				@media (min-width: 1700px) {
+					left: -7px;
+					bottom: 80px;
+				}
+
+				svg {
+					transform: rotate(180deg);
+				}
+			}
+
+			&--next {
+				right: calc(50% - 44px);
+
+				@media (min-width: 1700px) {
+					bottom: 0;
+				}
+
+				&::before {
+					content: '';
+					display: none;
+					width: 100%;
+					height: 1px;
+					background-color: $color-grey;
+					position: absolute;
+					top: -30px;
+					left: 0;
+
+					@media (min-width: 1700px) {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.slide {
+			&__content {
+				position: absolute;
+				top: 0;
+				right: 0;
+				max-width: 50%;
+				min-height: 60px;
+				padding: 10px;
+
+				@include media(sm) {
+					top: unset;
+					right: unset;
+					left: -1px;
+					bottom: -1px;
+					max-width: 100%;
+					height: auto;
+				}
+
+				@include media(xxl) {
+					padding: 67px 63px 43px;
+				}
+			}
+
+			&__content-heading {
+				font-weight: 600;
+			}
+		}
+
+		.slider__item {
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		#{$self} {
+			&__slider-wrapper {
+				position: relative;
+				max-width: 1434px;
+				margin: 0 auto;
+
+				@include media(xxl) {
+					max-width: 1257px;
+				}
+
+				@media (min-width: 1700px) {
+					max-width: 100%;
+					margin: 0 58px;
+				}
+			}
+
+			&__slider {
+				max-width: 1434px;
+				height: 46vh;
+
+				@include media(md) {
+					height: 68.4375vh;
+				}
+			}
+
+			&__all {
+				font-size: 18px;
+				color: $color-default-black;
+				letter-spacing: 1.08px;
+				text-transform: uppercase;
+				text-decoration: underline;
+				position: absolute;
+				bottom: -30px;
+				left: 50%;
+				transform: translateX(-50%);
+
+				@include media(lg) {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				@media (min-width: 1200px) and (min-height: 500px) {
+					bottom: -40px;
+				}
+
+				@media (min-width: 1200px) and (min-height: 960px) {
+					bottom: -76px;
+				}
+			}
+		}
+	}
 }
