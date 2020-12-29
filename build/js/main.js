@@ -517,21 +517,29 @@ var anAwards = $('.an-awards');
 
 	function initFullPage() {
 		$('#fullpage').fullpage({
-			licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
+			licenseKey: 'KEY',
 			navigation: true,
 			navigationTooltips: false,
 			afterLoad: function (origin, destination, direction) {
 				var current = $(destination["item"]);
 				if (current.hasClass('dark')) {
-					$('.header-3').addClass('header-3--dark');
-					$('.footer-3').addClass('footer-3--dark');
-					$('#fp-nav').addClass('dark');
+					setDark();
 				} else {
-					$('.header-3').removeClass('header-3--dark');
-					$('.footer-3').removeClass('footer-3--dark');
-					$('#fp-nav').removeClass('dark');
+					removeDark();
 				}
 			}
 		});
+	}
+
+	function setDark() {
+		$('.header-3').addClass('header-3--dark');
+		$('.footer-3').addClass('footer-3--dark');
+		$('#fp-nav').addClass('dark');
+	}
+
+	function removeDark() {
+		$('.header-3').removeClass('header-3--dark');
+		$('.footer-3').removeClass('footer-3--dark');
+		$('#fp-nav').removeClass('dark');
 	}
 })();
