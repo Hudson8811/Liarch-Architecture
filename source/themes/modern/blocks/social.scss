@@ -1,0 +1,14 @@
+.social {
+	$self: &;
+
+	&--black {
+		#{$self}__link {
+			&:hover,
+			&:focus {
+				svg {
+					fill: $color-lemon;
+				}
+			}
+		}
+	}
+}

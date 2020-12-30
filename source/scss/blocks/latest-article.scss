@@ -103,6 +103,8 @@
 		a {
 			color: $color-default-black;
 
+			@include transition(color);
+
 			&:hover,
 			&:focus {
 				outline: none;

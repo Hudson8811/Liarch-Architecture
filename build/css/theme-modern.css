@@ -2943,8 +2943,11 @@ html {
     .btn--outline:hover, .btn--outline:focus {
       background-color: #cee100; }
 
+.social--black .social__link:hover svg, .social--black .social__link:focus svg {
+  fill: #cee100; }
+
 .navigation__link:hover, .navigation__link:focus {
-  color: #cee100; }
+  color: #cee100 !important; }
 
 .navigation__item::after {
   display: none; }
@@ -2967,10 +2970,12 @@ html {
   color: #cee100; }
   .video-btn--outline .video-btn__btn {
     border: solid 1px #cee100; }
-    .video-btn--outline .video-btn__btn:hover, .video-btn--outline .video-btn__btn:focus {
-      background-color: #cee100; }
     .video-btn--outline .video-btn__btn svg {
       fill: #cee100; }
+    .video-btn--outline .video-btn__btn:hover, .video-btn--outline .video-btn__btn:focus {
+      background-color: #cee100; }
+      .video-btn--outline .video-btn__btn:hover svg, .video-btn--outline .video-btn__btn:focus svg {
+        fill: #ffffff; }
   .video-btn__btn {
     background-color: #cee100; }
     .video-btn__btn:hover, .video-btn__btn:focus {
@@ -3047,6 +3052,9 @@ html {
 .lang-switcher__link:hover, .lang-switcher__link:focus {
   color: #cee100 !important; }
 
+.work-card--compact .work-card__image::before {
+  background-color: #cee100; }
+
 .latest-articles__preheading {
   text-align: center;
   color: #cee100; }
@@ -3063,3 +3071,14 @@ html {
 
 .footer__appeal a {
   color: #cee100; }
+
+.footer__column-email:hover, .footer__column-email:focus {
+  outline: none;
+  color: #cee100; }
+
+.footer__column-link:hover, .footer__column-link:focus {
+  outline: none;
+  color: #cee100; }
+
+.preloader__double-bounce {
+  background-color: #cee100; }

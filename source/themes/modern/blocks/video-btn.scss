@@ -7,13 +7,17 @@
 		#{$self}__btn {
 			border: solid 1px $color-lemon;
 
+			svg {
+				fill: $color-lemon;
+			}
+
 			&:hover,
 			&:focus {
 				background-color: $color-lemon;
-			}
 
-			svg {
-				fill: $color-lemon;
+				svg {
+					fill: $color-default-white;
+				}
 			}
 		}
 	}
