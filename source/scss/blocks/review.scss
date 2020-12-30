@@ -1,4 +1,6 @@
 .review {
+	$self: &;
+
   overflow: hidden;
 
   &__inner {
@@ -36,6 +38,9 @@
 
   &__image {
     position: relative;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url("../img/review-shapes.png");
 
     &-author {
       position: absolute;
@@ -151,4 +156,70 @@
       }
     }
   }
+
+	&--parallax {
+		#{$self} {
+			&__image {
+				background-image: url("../img/review-shapes-2.png");
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				height: 85vw;
+
+				@include media(md) {
+					height: 50vw;
+				}
+
+				@include media(xxl) {
+					transform: translateX(-90px);
+				}
+			}
+
+			&__content {
+				padding-top: 41px;
+			}
+
+			&__text {
+				font-weight: 400;
+			}
+
+			&__image-author {
+				&--one {
+					top: 13.2%;
+					left: 47.2%;
+					width: 24%;
+				}
+
+				&--two {
+					top: 47.5%;
+					left: 54.4%;
+					width: 14.6%;
+				}
+
+				&--three {
+					top: 47.5%;
+					left: 24.8%;
+					width: 17.93%;
+				}
+
+				&--four {
+					top: 32%;
+					left: 4%;
+					width: 12%;
+				}
+
+				&--five {
+					top: 74.4%;
+					left: 13.6%;
+					width: 11.1%;
+				}
+
+				&--six {
+					width: 8.52%;
+					top: 71.5%;
+					right: 16%;
+				}
+			}
+		}
+	}
 }

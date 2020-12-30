@@ -110,3 +110,113 @@ textarea.custom-input {
 	height: 150px;
 	resize: none;
 }
+
+.slide-counter {
+	font-size: 24px;
+	line-height: 24px;
+	color: $color-grey3;
+
+	@include media(lg) {
+		font-size: 30px;
+		line-height: 30px;
+	}
+}
+
+.arrow-square {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background-color: $color-default-white;
+	border: 1px solid $color-default-white;
+	position: absolute;
+	z-index: 1;
+	outline: none;
+	padding: 0;
+	@include transition(all);
+
+	@include media(xl) {
+		width: 60px;
+		height: 60px;
+	}
+
+	@include media(lg) {
+		&:hover {
+			background-color: transparent;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+
+	svg {
+		width: 50%;
+		height: 50%;
+		fill: $color-default-black;
+		@include transition(fill);
+	}
+
+	&--prev {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+#fp-nav.fp-right {
+	display: none;
+	right: 50px;
+
+	@include media(xxl) {
+		display: block;
+	}
+
+	&.dark {
+		ul li a span {
+			background-color: $color-default-black;
+		}
+	}
+
+	ul li {
+		width: 80px;
+		margin: 0;
+
+		&:hover a {
+			&.active span {
+				height: 1px !important;
+				border-radius: 0 !important;
+			}
+
+			span {
+				margin: -2px 0 0 -2px;
+				background-color: $color-orange;
+			}
+		}
+
+		+ li {
+			margin-top: 27px;
+		}
+
+		a {
+			span {
+				width: 30px;
+				height: 1px;
+				border-radius: 0;
+				clip: unset;
+				background-color: $color-default-white;
+				left: unset;
+				right: 0;
+				@include transition(background-color);
+			}
+
+			&.active span {
+				margin: 0;
+				width: 80px;
+				background-color: $color-orange--dark;
+				@include transition(width);
+			}
+		}
+	}
+}

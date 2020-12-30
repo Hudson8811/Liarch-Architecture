@@ -1,4 +1,17 @@
 .feedback-form {
+	&__title {
+		font-size: 54px;
+		font-weight: bold;
+		letter-spacing: -1.35px;
+		text-transform: capitalize;
+		margin-bottom: 27px;
+
+		@media (max-height: 800px) {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+	}
+
 	&__field {
 		margin-bottom: 15px;
 	}

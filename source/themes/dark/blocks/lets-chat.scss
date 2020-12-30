@@ -1,0 +1,13 @@
+.lets-chat {
+	&::before {
+		border-color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-default-white;
+	}
+
+	&__icon {
+		fill: $color-default-white;
+	}
+}

@@ -1,0 +1,44 @@
+.contact-block {
+	&__title {
+		color: $color-default-white;
+
+		span {
+			color: $color-grey2;
+			font-weight: 400;
+		}
+	}
+
+	&__address {
+		color: $color-grey;
+	}
+
+	&__email a {
+		color: $color-grey;
+	}
+
+	&__hint {
+		color: $color-default-white;
+	}
+
+	&__phone {
+		.contact-block__hint {
+			color: $color-grey;
+		}
+
+		a {
+			color: $color-default-white;
+
+			&:hover {
+				color: $color-orange;
+			}
+		}
+	}
+
+	&__offices-item {
+		color: $color-grey;
+
+		&:hover {
+			color: $color-default-white;
+		}
+	}
+}

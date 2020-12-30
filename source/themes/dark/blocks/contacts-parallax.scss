@@ -1,0 +1,73 @@
+.homepage-parallax {
+	.contacts-parallax {
+		background-image: url("../img/bg-our-story-2-dark.jpg");
+
+		&__field {
+			background-color: #252b30;
+
+			input,
+			textarea {
+				background-color: #252b30;
+				border-color: #252b30;
+				color: $color-default-white;
+
+				&::placeholder {
+					color: $color-grey3;
+				}
+
+				&:hover,
+				&:focus {
+					border-color: $color-grey3;
+				}
+			}
+		}
+	}
+
+	.feedback-form__title {
+		color: $color-default-white;
+	}
+
+	.contact-block {
+		&__title {
+			color: $color-default-white;
+
+			span {
+				color: $color-default-white;
+			}
+		}
+
+		&__address {
+			color: $color-grey3;
+		}
+
+		&__email a {
+			color: $color-grey3;
+		}
+
+		&__hint {
+			color: $color-default-white;
+		}
+
+		&__phone {
+			.contact-block__hint {
+				color: $color-default-white;
+			}
+
+			a {
+				color: $color-default-white;
+
+				&:hover {
+					color: $color-orange;
+				}
+			}
+		}
+
+		&__offices-item {
+			color: $color-grey3;
+
+			&:hover {
+				color: $color-default-white;
+			}
+		}
+	}
+}

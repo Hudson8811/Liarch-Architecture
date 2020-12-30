@@ -17,11 +17,15 @@
 
 	&__container {
 		max-width: 750px;
-		padding: 60px 10px;
+		padding: 30px 10px;
 		position: relative;
 
+		@include media(md) {
+			padding: 60px 10px;
+		}
+
 		@include media(lg) {
-			padding: 103px 0 167px;
+			padding: 60px 0;
 		}
 	}
 
@@ -46,13 +50,20 @@
 
 	&__title {
 		font-size: 42px;
-		margin-top: 56px;
+		margin-top: 30px;
 		margin-bottom: 19px;
+
+		@include media(md) {
+			margin-top: 56px;
+		}
 
 		@include media(lg) {
 			font-size: 80px;
-			margin-top: 118px;
 			letter-spacing: -2px;
+		}
+
+		@media (min-height: 930px) {
+			margin-top: 118px;
 		}
 	}
 
@@ -65,6 +76,9 @@
 			font-size: 18px;
 			line-height: 30px;
 			letter-spacing: -0.27px;
+		}
+
+		@media (min-height: 930px) {
 			margin-bottom: 87px;
 		}
 	}
@@ -73,19 +87,30 @@
 		font-size: 22px;
 		line-height: 22px;
 		text-transform: uppercase;
-		margin-bottom: 45px;
+		margin-bottom: 30px;
+
+		@include media(md) {
+			margin-bottom: 45px;
+		}
 
 		@include media(lg) {
 			font-size: 24px;
 			line-height: 24px;
+		}
+
+		@media (min-height: 930px) {
 			margin-bottom: 72px;
 		}
 	}
 
 	&__social {
-		margin-top: 68px;
+		margin-top: 30px;
 
-		@include media(lg) {
+		@include media(md) {
+			margin-top: 68px;
+		}
+
+		@media (min-height: 930px) {
 			margin-top: 119px;
 		}
 

@@ -1,0 +1,9 @@
+.social {
+	&__link {
+		border-color: $color-grey2;
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}

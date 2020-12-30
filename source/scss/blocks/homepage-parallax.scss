@@ -1,0 +1,71 @@
+.homepage-parallax {
+	section {
+		@media (max-width: 991px) {
+			padding: 80px 0 60px;
+		}
+	}
+
+	.container {
+		max-width: 1200px;
+	}
+
+	.contacts-parallax {
+		background-image: url("../img/bg-our-story-2.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&__field {
+			margin-bottom: 15px;
+			background-color: $color-default-white;
+			border: none;
+
+			input,
+			textarea {
+				@media (max-height: 800px) {
+					padding: 10px 18px;
+				}
+			}
+		}
+
+		&__btn {
+			font-size: 16px;
+			border-radius: 0;
+			text-transform: uppercase;
+			margin-top: 48px;
+
+			@media (max-height: 800px) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.contact-block {
+		&__email a {
+			font-size: 14px;
+			color: $color-grey2;
+		}
+
+		&__hint {
+			font-size: 16px;
+			font-weight: 600;
+			color: $color-default-black;
+		}
+
+		&__phone {
+			.contact-block__hint {
+				font-size: 12px;
+				color: $color-grey;
+			}
+		}
+
+		&__offices {
+			@media (max-height: 800px) {
+				margin-bottom: 0;
+			}
+
+			.contact-block__hint {
+				font-size: 14px;
+			}
+		}
+	}
+}

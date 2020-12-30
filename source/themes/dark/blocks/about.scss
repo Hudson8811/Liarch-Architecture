@@ -1,0 +1,15 @@
+.about {
+	background-color: #181818;
+
+	&__contacts {
+		border-color: #383838;
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__subheading {
+		color: $color-default-white;
+	}
+}

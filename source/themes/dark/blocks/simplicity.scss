@@ -1,0 +1,22 @@
+.simplicity {
+	&__heading {
+		font-weight: 300;
+		color: $color-default-white;
+	}
+
+	&__subheading {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey;
+	}
+
+	&__notice {
+		color: $color-default-white;
+	}
+
+	&__line {
+		border-color: #383838;
+	}
+}

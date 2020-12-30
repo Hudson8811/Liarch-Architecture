@@ -183,6 +183,26 @@ function setOverlay(cb) {
 	});
 })();
 
+(function(){
+	var sliderSingle2 = new Swiper('.__js_slider-single-2', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		loop: false,
+		navigation: {
+			prevEl: '.works-arrow--prev',
+			nextEl: '.works-arrow--next'
+		},
+		pagination: {
+			el: '.slide-counter-2',
+			type: 'fraction',
+			renderFraction: function (currentClass, totalClass) {
+				return '<span class="' + currentClass + '"></span>' +
+					'<span class="' + totalClass + '"></span>';
+			}
+		}
+	});
+})();
+
 /* Карусель проектов */
 (function(){
 	var mySwiper = new Swiper('.__js_slider-carousel', {
@@ -205,47 +225,6 @@ function setOverlay(cb) {
 			el: '.swiper-scrollbar',
 		},
 	});
-
-
-	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
-		slidesPerView: 1,
-		loop: false,
-		breakpoints: {
-			768: {
-				slidesPerView: 2,
-				spaceBetween: 30,
-			},
-			992: {
-				slidesPerView: 2,
-				spaceBetween: 70,
-			},
-		},
-
-		pagination: {
-			el: '.swiper-pagination',
-		},
-
-		// Navigation arrows
-		/*navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},*/
-
-	});
-})();
-
-/* слайдер первого экрана */
-(function() {
-	var mySwiper = new Swiper('.__js_hero-banner', {
-		slidesPerView: 1,
-		loop: false,
-
-		pagination: {
-			el: '.swiper-pagination',
-		},
-
-
-	});
 })();
 
 /* Слайдер новостей */
@@ -265,8 +244,8 @@ function setOverlay(cb) {
 		loop: true,
 		speed: 600,
 		navigation: {
-			prevEl: '.news-sb-slider__arrow--prev',
-			nextEl: '.news-sb-slider__arrow--next'
+			prevEl: '.arrow-square--prev',
+			nextEl: '.arrow-square--next'
 		},
 		breakpoints: {
 			1560: {
@@ -299,21 +278,6 @@ function setOverlay(cb) {
 			}
 		}
 	});
-})();
-
-/* Прокрутка к следующей секции */
-(function() {
-	var scrollToBtn = $('.__js_to-next-section');
-
-	if(scrollToBtn.length) {
-		scrollToBtn.on('click', function(evt) {
-			evt.preventDefault();
-			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top;
-
-			$('html').animate({ scrollTop: destination }, 1100); //1100 - скорость
-		});
-	}
 })();
 
 /* Модальное окно с формой на странице контактов */
@@ -349,13 +313,11 @@ function setOverlay(cb) {
 
 	var priceList = undefined;
 
-	/*if (window.matchMedia('(max-width: 1199px)').matches) {
-		var priceList = new Swiper('.__js_slider-price', optionsTariff);
-	}*/
-
-	$(window).resize(function () {
-		initPriceSlider();
-	});
+	if ($('.__js_slider-price').length > 0) {
+		$(window).resize(function () {
+			initPriceSlider();
+		});
+	}
 
 	initPriceSlider();
 
@@ -376,6 +338,23 @@ function setOverlay(cb) {
 	}
 })();
 
+// Слайдер an-awards
+(function(){
+	var sliderNews4 = new Swiper('.__js_slider-awards', {
+		slidesPerView: 1,
+		speed: 300,
+		loop: true,
+		navigation: {
+			prevEl: '.arrow-square--prev',
+			nextEl: '.arrow-square--next'
+		},
+		pagination: {
+			el: '.slide-counter',
+			type: 'fraction',
+		},
+	});
+})();
+
 /* круговая диаграмма */
 (function(){
 	var diagrams = document.querySelectorAll('.__js_diagram');
@@ -383,13 +362,14 @@ function setOverlay(cb) {
 	var windowHeight = window.innerHeight;
 	var animationDone = false;
 
-	if (diagrams && specialization) {
-		diagrams.forEach(function(item) {
-			var progress = item.querySelector('.diagram__circle--progress');
-			var progresslength = Math.round(progress.getTotalLength());
-			progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
-		});
 
+	diagrams.forEach(function(item) {
+		var progress = item.querySelector('.diagram__circle--progress');
+		var progresslength = Math.round(progress.getTotalLength());
+		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
+	});
+
+	if (specialization) {
 		window.onscroll = function () {
 			var offset = specialization.getBoundingClientRect().top;
 
@@ -407,10 +387,12 @@ function setOverlay(cb) {
 			}
 		}
 	}
+
 })();
 
 /* Анимация чисел */
-(function() {
+
+(function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
 	var animationIsDone = false;
@@ -430,21 +412,21 @@ function setOverlay(cb) {
 				animateNumbers();
 			}
 		});
+	}
 
-		function animateNumbers() {
-			numbers.each(function() {
-				var endValue = parseInt($(this).attr('data-end-value'), 10);
+	function animateNumbers() {
+		numbers.each(function() {
+			var endValue = parseInt($(this).attr('data-end-value'), 10);
 
-				$(this).easy_number_animate({
-					start_value: 0,
-					end_value: endValue,
-					duration: 2500
-				});
-
+			$(this).easy_number_animate({
+				start_value: 0,
+				end_value: endValue,
+				duration: 2500
 			});
 
-			animationIsDone = true;
-		}
+		});
+
+		animationIsDone = true;
 	}
 
 
@@ -655,5 +637,95 @@ function setOverlay(cb) {
 		} else {
 			$('.article-preview__content').removeAttr('style');
 		}
+	}
+})();
+
+// homepage fullpages
+(function(){
+	if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
+		initFullPage();
+	}
+
+	// Рассчитываем высоту блоков
+	var block = $('.dark'),
+			top = [],
+			bottom = [];
+
+	block.each(function () {
+		top.push($(this).offset().top);
+		bottom.push($(this).offset().top + $(this).outerHeight());
+	});
+
+	// Меняем цвет хэдера и футера при скролле на малых разрешениях
+	$(window).scroll(function () {
+		if (window.matchMedia("(max-width: 991px)").matches) {
+			var scroll = $(this).scrollTop(),
+					isDark = false;
+
+			$.each(top, function (i, val) {
+				if (scroll >= val && scroll <= bottom[i]) {
+					isDark = true;
+				}
+			});
+
+			if (isDark) {
+				setDark();
+			} else {
+				removeDark();
+			}
+
+			if (scroll > 0 && isDark) {
+				$('.header-3').removeClass('bg-dark').addClass('bg-light');
+				$('.footer-3').removeClass('bg-dark').addClass('bg-light');
+			} else if (scroll > 0 && !isDark) {
+				$('.header-3').removeClass('bg-light').addClass('bg-dark');
+				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
+			} else if (scroll == 0) {
+				$('.header-3').removeClass('bg-light bg-dark');
+				$('.footer-3').removeClass('bg-light bg-dark');
+			}
+		}
+	});
+
+	$(window).resize(function () {
+		if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
+			if ((!$('#fullpage').hasClass('fullpage-wrapper')) || $('#fullpage').hasClass('fp-destroyed')) {
+				initFullPage();
+			}
+		} else {
+			if ($('#fullpage').hasClass('fullpage-wrapper')) {
+				$.fn.fullpage.destroy('all');
+			}
+		}
+	});
+
+	function initFullPage() {
+		if ($('#fullpage') && $('#fullpage').length > 0) {
+			$('#fullpage').fullpage({
+				licenseKey: 'KEY',
+				navigation: true,
+				navigationTooltips: false,
+				afterLoad: function (origin, destination, direction) {
+					var current = $(destination["item"]);
+					if (current.hasClass('dark')) {
+						setDark();
+					} else {
+						removeDark();
+					}
+				}
+			});
+		}
+	}
+
+	function setDark() {
+		$('.header-3').addClass('header-3--dark');
+		$('.footer-3').addClass('footer-3--dark');
+		$('#fp-nav').addClass('dark');
+	}
+
+	function removeDark() {
+		$('.header-3').removeClass('header-3--dark');
+		$('.footer-3').removeClass('footer-3--dark');
+		$('#fp-nav').removeClass('dark');
 	}
 })();

@@ -1,0 +1,51 @@
+.our-story {
+	$self: &;
+
+	&__inner {
+		border-color: #383838;
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey;
+
+		&--style-bolditalic {
+			color: $color-default-white;
+		}
+	}
+
+	.video-btn__text {
+		color: $color-default-white;
+	}
+
+	&--parallax {
+		background-image: url("../img/bg-our-story-dark.jpg");
+
+		#{$self} {
+			&__heading {
+				color: $color-default-white;
+			}
+
+			&__text {
+				span {
+					color: $color-default-white;
+				}
+			}
+
+			&__btn {
+				background-color: #252b30;
+				border-color: #252b30;
+				color: $color-orange;
+
+				@include media(lg) {
+					&:hover {
+						color: $color-default-white;
+					}
+				}
+			}
+		}
+	}
+}

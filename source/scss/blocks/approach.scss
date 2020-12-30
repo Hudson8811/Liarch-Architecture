@@ -1,4 +1,6 @@
 .approach {
+	$self: &;
+
 	padding: 60px 0;
 	background-color: $color-beige;
 	counter-reset: approach;
@@ -30,6 +32,7 @@
 	&__card {
 		position: relative;
 		padding: 30px;
+		height: 100%;
 		background-color: $color-default-white;
 		counter-increment: approach;
 
@@ -78,6 +81,52 @@
 
 		&-text {
 			@include text(18px, 1.67, $color-grey);
+		}
+	}
+
+	&--parallax {
+		background-image: url("../img/bg-our-story-2.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: 0;
+
+		#{$self} {
+			&__heading {
+				font-weight: 600;
+
+				@media (max-height: 750px) {
+					font-size: 32px;
+					margin-bottom: 20px;
+				}
+			}
+
+			&__card {
+				@media (max-height: 750px) {
+					padding: 30px;
+				}
+			}
+
+			&__card-icon {
+				@media (max-height: 750px) {
+					margin-bottom: 25px;
+				}
+			}
+
+			&__card-heading {
+				font-weight: 600;
+
+				@media (max-height: 750px) {
+					font-size: 26px;
+					margin: 0 0 18px;
+				}
+			}
+
+			&__card-text {
+				@media (max-height: 750px) {
+					font-size: 16px;
+					line-height: 1.40;
+				}
+			}
 		}
 	}
 }

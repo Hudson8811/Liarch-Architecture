@@ -1,0 +1,70 @@
+.works {
+	$self: &;
+
+	&--parallax {
+		background-color: #252b30;
+
+		.slide-counter-2 {
+			@media (min-width: 1700px) {
+				color: $color-grey2;
+			}
+
+			.swiper-pagination-current {
+				border-color: $color-grey2;
+			}
+		}
+
+		.works-arrow {
+			@include media(lg) {
+				&:hover:not(.swiper-button-disabled) {
+					@media (min-width: 1700px) {
+						border-color: #252b30;
+					}
+				}
+			}
+
+			@media (min-width: 1700px) {
+				background-color: #252b30;
+				border-color: #252b30;
+			}
+
+			&.swiper-button-disabled {
+				svg {
+					@media (min-width: 1700px) {
+						fill: $color-grey2;
+					}
+				}
+			}
+
+			svg {
+				@media (min-width: 1700px) {
+					fill: $color-default-white;
+				}
+			}
+
+			&--next::before {
+				background-color: $color-grey2;
+			}
+		}
+
+		.slide {
+			&__content {
+				background-color: #252b30;
+			}
+
+			&__content-detail {
+				color: $color-grey;
+			}
+
+			&__content-heading {
+				color: $color-default-white;
+			}
+		}
+
+		#{$self} {
+			&__all {
+				color: $color-default-white;
+			}
+		}
+	}
+}

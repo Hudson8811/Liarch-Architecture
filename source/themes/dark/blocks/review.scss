@@ -1,0 +1,29 @@
+.review {
+	$self: &;
+
+	&__text {
+		color: $color-default-white;
+	}
+
+	&__author-name {
+		color: $color-default-white;
+	}
+
+	&__author-detail span {
+		color: $color-default-white;
+	}
+
+	&__image {
+		background-image: url("../img/review-shapes-dark.png");
+	}
+
+	&--parallax {
+		background-color: #252b30;
+
+		#{$self} {
+			&__image {
+				background-image: url("../img/review-shapes-dark.png");
+			}
+		}
+	}
+}

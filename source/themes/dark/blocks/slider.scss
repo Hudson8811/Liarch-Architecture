@@ -1,0 +1,29 @@
+.slider {
+	$self: &;
+
+	&--with-thumbs {
+		#{$self} {
+			&__nav-btn {
+				background-color: #181818;
+				border-color: #181818;
+
+				&.swiper-button-disabled {
+					border-color: rgba(#181818, 0.6);
+
+					svg {
+						fill: rgba(#181818, 0.6) !important;
+					}
+				}
+
+				&:hover,
+				&:focus {
+					background-color: transparent;
+
+					svg {
+						fill: #181818;
+					}
+				}
+			}
+		}
+	}
+}

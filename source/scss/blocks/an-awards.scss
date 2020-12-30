@@ -1,8 +1,8 @@
 .an-awards {
-	$self: &;
+  $self: &;
 
 	overflow: hidden;
-	padding-top: 40px;
+  padding-top: 40px;
 
 	&--about {
 		#{$self}__notice {
@@ -23,93 +23,310 @@
 		padding-top: 83px;
 	}
 
-	&__intro {
-		margin-bottom: 20px;
+  &__intro {
+    margin-bottom: 20px;
 
-		@include media(md) {
-			margin-bottom: 0;
+    @include media(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    @include media(xxl) {
+      width: 900px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    @include media(md) {
+      padding-right: 0;
+    }
+
+    @include media(xxl) {
+      padding-top: 26px;
+      align-self: flex-start;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+
+    @include media(lg) {
+      max-width: 340px;
+    }
+
+    @include media(xl) {
+      max-width: none;
+    }
+
+    @include media(xxl) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__text {
+    max-width: 340px;
+    margin-bottom: 32px;
+
+    @include text(16px, 1.88, $color-grey);
+
+    @include media(xl) {
+      font-size: 18px;
+    }
+
+    @include media(xxl) {
+      margin-bottom: 54px;
+    }
+  }
+
+  &__buttons {
+    margin-bottom: 40px;
+
+    @include media(xxl) {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__notice {
+    max-width: 400px;
+    margin-bottom: 24px;
+    padding-right: 30px;
+    padding-top: 24px;
+
+    @include text(14px, 1.625);
+    border-top: solid 1px $color-grey5;
+
+    @include media(xl) {
+      font-size: 16px;
+    }
+    @include media(xxl) {
+      margin-bottom: 46px;
+      padding-top: 43px;
+    }
+  }
+
+  &__phone {
+  }
+
+	&--parallax {
+		display: flex;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+		padding-top: 0;
+
+		@media (max-width: 991px) {
+			padding-top: 120px !important;
 		}
-	}
 
-	&__image {
-		@include media(xxl) {
-			width: 900px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.25);
 		}
 
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-	}
-
-	&__content {
-		@include media(md) {
-			padding-right: 0;
+		.row {
+			margin: 0;
 		}
 
-		@include media(xxl) {
-			padding-top: 26px;
-			align-self: flex-start;
-		}
-	}
+		.swiper-container {
+			@media (min-width: 320px) and (min-height: 550px) {
+				padding-bottom: 50px;
+			}
 
-	&__heading {
-		margin-bottom: 20px;
-
-		@include media(lg) {
-			max-width: 340px;
+			@include media(md) {
+				padding-bottom: 0;
+			}
 		}
 
-		@include media(xl) {
-			max-width: none;
+		.slide-counter {
+			width: auto;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: unset;
+			bottom: unset;
+
+			.swiper-pagination-current {
+				padding-right: 10px;
+			}
+
+			.swiper-pagination-total {
+				padding-left: 10px;
+			}
 		}
 
-		@include media(xxl) {
-			margin-bottom: 22px;
+		.arrow-square {
+			bottom: 0;
+			background-color: transparent;
+
+			@include media(lg) {
+				&:hover {
+					border-color: $color-orange--dark;
+
+					svg {
+						fill: $color-orange--dark;
+					}
+				}
+			}
+
+			svg {
+				fill: $color-default-white;
+			}
+
+			&--prev {
+				left: calc(50% - 50px);
+
+				@include media(md) {
+					left: unset;
+					right: 72px;
+				}
+			}
+
+			&--next {
+				right: calc(50% - 50px);
+
+				@include media(md) {
+					right: 0;
+				}
+			}
 		}
-	}
 
-	&__text {
-		max-width: 340px;
-		margin-bottom: 32px;
+		#{$self} {
+			&__welcome {
+				font-size: 18px;
+				line-height: 30px;
+				color: $color-default-white;
+				margin-bottom: 20px;
+				max-width: 170px;
 
-		@include text(16px, 1.88, $color-grey);
+				br {
+					display: none;
+				}
 
-		@include media(xl) {
-			font-size: 18px;
+				@include media(sm) {
+					max-width: 85%;
+				}
+
+				@include media(md) {
+					margin-bottom: 32px;
+				}
+
+				@include media(lg) {
+					br {
+						display: none;
+					}
+				}
+
+				@include media(xxl) {
+					margin-bottom: 45px;
+				}
+
+				@media (min-width: 1560px) and (min-height: 900px) {
+					margin-bottom: 72px;
+				}
+
+				@media (max-height: 550px) {
+					font-size: 20px;
+				}
+			}
+
+			&__heading {
+				font-size: 36px;
+				font-weight: 600;
+				color: $color-default-white;
+				text-transform: capitalize;
+				margin-bottom: 20px;
+
+				br {
+					display: none;
+				}
+
+				@include media(lg) {
+					font-size: 48px;
+					max-width: 100%;
+
+					br {
+						display: block;
+					}
+				}
+
+				@include media(xxl) {
+					margin-bottom: 32px;
+				}
+
+				@media (min-width: 1560px) and (min-height: 900px) {
+					font-size: 64px;
+					line-height: 72px;
+				}
+
+				@media (max-height: 550px) {
+					font-size: 24px;
+				}
+			}
+
+			&__content {
+				padding: 0;
+			}
+
+			&__text {
+				max-width: 430px;
+				color: $color-default-white;
+				margin-bottom: 25px;
+
+				br {
+					display: none;
+				}
+
+				@include media(lg) {
+					br {
+						display: none;
+					}
+				}
+
+				@include media(xl) {
+					margin-bottom: 65px;
+				}
+
+				@media (min-width: 1560px) and (min-height: 500px) {
+					margin-bottom: 80px;
+				}
+
+				@media (min-width: 1560px) and (min-height: 950px) {
+					margin-bottom: 112px;
+				}
+
+				@media (max-height: 550px) {
+					font-size: 16px;
+					max-width: 100%;
+				}
+			}
+
+			&__buttons {
+				margin-bottom: 0;
+
+				a {
+					font-size: 14px;
+					padding: 10px;
+					border-radius: 0;
+					font-weight: 600;
+
+					@include media(xl) {
+						font-size: 16px;
+						padding: 20px 22px;
+					}
+				}
+			}
 		}
-
-		@include media(xxl) {
-			margin-bottom: 54px;
-		}
-	}
-
-	&__buttons {
-		margin-bottom: 40px;
-
-		@include media(xxl) {
-			margin-bottom: 84px;
-		}
-	}
-
-	&__notice {
-		max-width: 400px;
-		margin-bottom: 24px;
-		padding-right: 30px;
-		padding-top: 24px;
-
-		@include text(14px, 1.625);
-		border-top: solid 1px $color-grey5;
-
-		@include media(xl) {
-			font-size: 16px;
-		}
-		@include media(xxl) {
-			margin-bottom: 46px;
-			padding-top: 43px;
-		}
-	}
-
-	&__phone {
 	}
 }
