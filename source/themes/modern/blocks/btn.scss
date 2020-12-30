@@ -1,0 +1,20 @@
+.btn {
+	border: solid 1px $color-lemon;
+	background-color: $color-lemon;
+
+	&:hover,
+	&:focus {
+		background-color: $color-lemon-hover;
+	}
+
+	&--outline {
+		background-color: transparent;
+		color: $color-lemon;
+		border-color: $color-lemon;
+
+		&:hover,
+		&:focus {
+			background-color: $color-lemon;
+		}
+	}
+}

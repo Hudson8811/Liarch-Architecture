@@ -1,63 +1,106 @@
 .video-btn {
-  display: flex;
-  align-self: flex-start;
+	$self: &;
 
-  @include text(14px, 1.375);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+	display: flex;
+	align-self: flex-start;
 
-  @include media(xl) {
-    font-size: 16px;
-  }
+	@include text(14px, 1.375);
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 
-  &__btn {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    border-radius: 50%;
-    justify-content: center;
-    background-color: $color-orange;
-    cursor: pointer;
+	@include media(xl) {
+		font-size: 16px;
+	}
 
-    @include transition(background-color);
+	&--size-large {
+		#{$self}__btn {
+			@include media(xl) {
+				width: 90px;
+				height: 90px;
 
-    &:hover,
-    &:focus {
-      outline: none;
-      background-color: $color-orange-hover;
-    }
+				svg {
+					@include media(xl) {
+						width: 30px;
+						height: 30px;
+					}
+				}
+			}
+		}
 
-    &:active {
-      opacity: 0.7;
-    }
+		#{$self}__text {
+			@include media(xl) {
+				max-width: 100px;
+				margin-left: 24px;
+				font-size: 18px;
+			}
+		}
+	}
 
-    @include media(xl) {
-      width: 58px;
-      height: 58px;
-    }
+	&--outline {
+		#{$self}__btn {
+			background-color: transparent;
+			border: solid 1px $color-orange;
 
-    svg {
-      width: 16px;
-      height: 16px;
-      align-self: center;
-      fill: $color-default-white;
+			&:hover,
+			&:focus {
+				outline: none;
+				background-color: $color-orange;
+			}
 
-      @include media(xl) {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
+			svg {
+				fill: $color-orange;
+			}
+		}
+	}
 
-  &__text {
-    max-width: 72px;
-    margin-left: 10px;
-    align-self: center;
+	&__btn {
+		display: flex;
+		width: 50px;
+		height: 50px;
+		padding: 0;
+		border-radius: 50%;
+		justify-content: center;
+		background-color: $color-orange;
+		cursor: pointer;
 
-    @include media(xl) {
-      max-width: 100px;
-      margin-left: 13px;
-    }
-  }
+		@include transition(background-color);
+
+		&:hover,
+		&:focus {
+			outline: none;
+			background-color: $color-orange-hover;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+
+		@include media(xl) {
+			width: 58px;
+			height: 58px;
+		}
+
+		svg {
+			width: 16px;
+			height: 16px;
+			align-self: center;
+			fill: $color-default-white;
+
+			@include media(xl) {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	&__text {
+		max-width: 72px;
+		margin-left: 10px;
+		align-self: center;
+
+		@include media(xl) {
+			max-width: 100px;
+			margin-left: 13px;
+		}
+	}
 }

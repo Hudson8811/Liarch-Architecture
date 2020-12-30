@@ -33,6 +33,13 @@
 		}
 	}
 
+	&__preheading {
+		margin-bottom: 12px;
+
+		@include text(16px, 1, $color-orange);
+		text-transform: uppercase;
+	}
+
 	&__heading {
 		margin-bottom: 16px;
 		text-align: center;

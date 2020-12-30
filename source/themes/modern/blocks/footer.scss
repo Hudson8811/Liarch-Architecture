@@ -1,0 +1,25 @@
+.footer {
+	&__appeal {
+		a {
+			color: $color-lemon;
+		}
+	}
+
+	&__column {
+		&-email {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-lemon;
+			}
+		}
+
+		&-link {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-lemon;
+			}
+		}
+	}
+}

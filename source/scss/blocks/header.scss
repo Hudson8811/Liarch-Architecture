@@ -65,6 +65,8 @@
 
 		#{$self}__lang-switcher {
 			margin-bottom: 4vh;
+			margin-left: 0;
+			margin-right: 0;
 
 			@include media-custom-height(900px) {
 				margin-bottom: 5.5vh;
@@ -115,6 +117,86 @@
 		}
 	}
 
+	&--white {
+		.logo {
+			&__text {
+				color: $color-default-white;
+			}
+
+			&[href]:hover,
+			&[href]:focus {
+				color: $color-orange;
+			}
+		}
+
+		.lang-switcher {
+			&__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-orange;
+				}
+			}
+		}
+
+		.search-toggle {
+			svg {
+				fill: $color-default-white;
+			}
+			&:hover,
+			&:focus {
+				svg {
+					fill: $color-orange;
+				}
+			}
+		}
+
+		.menu-toggle {
+			&::before,
+			&::after {
+				border-top: solid 3px $color-default-white;
+			}
+
+			&:hover,
+			&:focus {
+				&::before,
+				&::after {
+					border-top-color: $color-orange;
+				}
+			}
+		}
+
+		.navigation {
+			$navigation: &;
+
+			&__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-orange;
+				}
+			}
+
+			&__item {
+				&--current {
+					#{$navigation}__link {
+						color: $color-orange !important;
+					}
+				}
+			}
+		}
+	}
+
+	&--absolute {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
+
 	@include media(md) {
 		padding: 32px 0;
 		border-top-width: 7px;
@@ -135,6 +217,11 @@
 		> * {
 			align-self: center;
 		}
+	}
+
+	&__lang-switcher {
+		margin-right: 20px;
+		margin-left: auto;
 	}
 
 	&__logo {

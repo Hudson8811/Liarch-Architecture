@@ -1,0 +1,11 @@
+.work-card {
+	$self: &;
+
+	&--compact {
+		#{$self}__image {
+			&::before {
+				background-color: $color-lemon;
+			}
+		}
+	}
+}

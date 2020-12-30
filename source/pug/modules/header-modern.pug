@@ -1,0 +1,24 @@
+header.header.header--absolute.header--white(data-aos="fade", data-aos-delay="350")
+  .header__inner
+    //- Логотип
+    +logo(isHome, 'header__logo')
+
+    nav.header__nav.navigation
+      ul.navigation__list
+        each item in MAIN_MENU
+          if item.currentIndex === currentIndex
+            li.navigation__item.navigation__item--current
+              a.navigation__link= item.text
+          else
+            li.navigation__item
+              a.navigation__link(href= item.url)= item.text
+    ul.header__lang-switcher.lang-switcher.lang-switcher--white
+      li.lang-switcher__item
+        a.lang-switcher__link.lang-switcher__link--current en
+      li.lang-switcher__item
+        a.lang-switcher__link(href="#") fr
+    button.header__search-toggle.search-toggle(type="button")
+      +icon('search')(width="22", height="22")
+      span.visually-hidden Show search field
+    button.header__menu-toggle.menu-toggle(type="button")
+      span.visually-hidden Menu

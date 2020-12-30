@@ -1,0 +1,9 @@
+.slider {
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			&-active {
+				background-color: $color-lemon;
+			}
+		}
+	}
+}

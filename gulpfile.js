@@ -31,7 +31,7 @@ gulp.task('server', function() {
    gulp.watch('source/scss/**/*.scss', gulp.series('sass'));
 
 	 gulp.watch('source/themes/dark/**/*.scss', gulp.series('sassDark'));
-	 gulp.watch('source/themes/green/**/*.scss', gulp.series('sassGreen'));
+	 gulp.watch('source/themes/modern/**/*.scss', gulp.series('sassModern'));
 	 gulp.watch(['source/fonts.scss', 'source/scss/utils/variables.scss'], gulp.series('sassFonts'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
@@ -84,12 +84,12 @@ gulp.task('sassDark', function() {
 		.pipe(browserSync.stream());
 });
 
-gulp.task('sassGreen', function() {
-	return gulp.src('source/themes/green/theme-green.scss')
+gulp.task('sassModern', function() {
+	return gulp.src('source/themes/modern/theme-modern.scss')
 		.pipe(plumber({
       errorHandler: notify.onError(function(err) {
         return {
-          title: 'SASS-GREEN',
+          title: 'SASS-MODERN',
           sound: false,
           message: err.message
         }
@@ -204,4 +204,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassGreen', 'sassFonts'), 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));

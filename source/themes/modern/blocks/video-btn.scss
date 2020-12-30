@@ -1,0 +1,33 @@
+.video-btn {
+	$self: &;
+
+	@include text(14px, 1.375, $color-lemon);
+
+	&--outline {
+		#{$self}__btn {
+			border: solid 1px $color-lemon;
+
+			svg {
+				fill: $color-lemon;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $color-lemon;
+
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		background-color: $color-lemon;
+
+		&:hover,
+		&:focus {
+			background-color: $color-lemon-hover;
+		}
+	}
+}

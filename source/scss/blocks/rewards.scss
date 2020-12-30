@@ -9,9 +9,20 @@
 	&__inner {
 	}
 
+	&__preheading {
+		margin-bottom: 12px;
+
+		@include text(16px, 1, $color-orange);
+		text-transform: uppercase;
+	}
+
 	&__heading {
 		margin-bottom: 12px;
 		font-weight: 400;
+
+		@include media(md) {
+			margin-bottom: 30px;
+		}
 
 		@include media(xl) {
 			margin-bottom: 45px;
