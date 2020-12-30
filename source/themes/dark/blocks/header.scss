@@ -1,0 +1,29 @@
+.header {
+	$self: &;
+
+	background-color: #232323;
+
+	&--aside {
+		background-color: #181818;
+
+		#{$self} {
+			&__inner {
+				&::before {
+					border-color: #383838;
+				}
+			}
+
+			&__address {
+				color: $color-default-white;
+			}
+
+			&__phone {
+				color: $color-default-white;
+
+				&:hover {
+					color: $color-orange;
+				}
+			}
+		}
+	}
+}

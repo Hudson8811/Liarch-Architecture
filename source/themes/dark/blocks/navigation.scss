@@ -1,0 +1,37 @@
+.navigation {
+	$self: &;
+
+	&__link {
+		color: $color-default-white;
+	}
+
+	&__item::after {
+		background-color: $color-grey2;
+	}
+
+	&--column {
+		#{$self} {
+
+			&__item {
+				&--current {
+					#{$self}__link {
+						color: $color-orange;
+						font-weight: 600;
+					}
+				}
+
+				&:hover a {
+					color: $color-orange;
+				}
+
+				&::after {
+					background-color: $color-grey2;
+				}
+			}
+
+			&__link {
+				color: $color-default-white;
+			}
+		}
+	}
+}

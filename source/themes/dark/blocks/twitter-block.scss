@@ -1,0 +1,36 @@
+.twitter-block {
+	$self: &;
+
+	&__wrapper {
+		border-color: #3d3d3d;
+	}
+
+	&__author-name {
+		color: $color-default-white;
+	}
+
+	&__author-info {
+		a,
+		time {
+			color: $color-grey2;
+		}
+	}
+
+	&__social svg {
+		fill: $color-grey2;
+
+		&:hover {
+			fill: #00ccff;
+		}
+	}
+
+	&--small {
+		#{$self} {
+			&__text {
+				font-weight: 300;
+				color: $color-default-white;
+				font-style: normal;
+			}
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.statistics {
+	$self: &;
+
+	&__item-value {
+		color: $color-default-white;
+	}
+
+	&__item-text {
+		color: $color-grey2;
+	}
+
+	&--color-invert {
+		#{$self} {
+			&__item-value {
+				color: $color-grey2;
+			}
+
+			&__item-text {
+				color: $color-default-white;
+			}
+		}
+	}
+}

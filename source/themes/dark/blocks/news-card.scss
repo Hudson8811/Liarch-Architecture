@@ -1,0 +1,14 @@
+.news-card {
+	.num {
+		color: $color-default-white;
+	}
+
+	.month,
+	.year {
+		color: $color-grey;
+	}
+
+	&__title a {
+		color: $color-default-white;
+	}
+}

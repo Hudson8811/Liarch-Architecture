@@ -1,0 +1,32 @@
+.slide-content {
+	$self: &;
+
+	background-color: #232323;
+
+	&__detail {
+		color: $color-grey;
+	}
+
+	&__heading {
+		font-weight: 300;
+		color: $color-default-white;
+	}
+
+	&--thumb {
+		background-color: transparent;
+
+		&:hover {
+			background-color: #181818;
+
+			#{$self} {
+				&__detail {
+					color: $color-grey;
+				}
+
+				&__heading {
+					color: $color-default-white;
+				}
+			}
+		}
+	}
+}

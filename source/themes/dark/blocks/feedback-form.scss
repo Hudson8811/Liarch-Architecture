@@ -1,0 +1,18 @@
+.feedback-form {
+	&__field {
+		input,
+		textarea {
+			border-color: #3d3d3d;
+			color: $color-default-white;
+
+			&::placeholder {
+				color: $color-grey2;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-default-white;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.menu {
+	$self: &;
+
+	background-color: #232323;
+
+	&__link {
+		color: $color-default-white;
+
+		&:hover,
+		&:focus {
+			color: $color-orange;
+		}
+	}
+
+	&__item {
+		&--current {
+			#{$self}__link {
+				color: $color-orange;
+			}
+		}
+	}
+
+	&__copy {
+		color: $color-default-white;
+	}
+
+	&__close svg {
+		fill: $color-default-white;
+	}
+}

@@ -1,0 +1,9 @@
+.logo {
+	&__image svg {
+		fill: $color-default-white;
+	}
+
+	&__text {
+		color: $color-default-white;
+	}
+}

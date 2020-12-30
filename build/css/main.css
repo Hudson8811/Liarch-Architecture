@@ -319,11 +319,13 @@ template {
 .overflow-hidden {
   overflow: hidden; }
 
-.bg-dark {
-  background-color: rgba(0, 0, 0, 0.8) !important; }
+@media (max-width: 991px) {
+  .bg-dark {
+    background-color: rgba(0, 0, 0, 0.6) !important; } }
 
-.bg-light {
-  background-color: rgba(255, 255, 255, 0.8) !important; }
+@media (max-width: 991px) {
+  .bg-light {
+    background-color: rgba(255, 255, 255, 0.6) !important; } }
 
 html {
   box-sizing: border-box; }
@@ -6976,6 +6978,7 @@ textarea.custom-input {
   .approach__card {
     position: relative;
     padding: 30px;
+    height: 100%;
     background-color: #ffffff;
     counter-increment: approach; }
     @media (min-width: 576px) {
@@ -7921,7 +7924,8 @@ textarea.custom-input {
   background-color: #f9fbfd;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-image: url("../img/footer-bg.jpg"); }
+  background-image: url("../img/footer-bg.jpg");
+  background-size: cover; }
   @media (min-width: 768px) {
     .footer {
       padding: 60px 0 40px; } }
@@ -8116,7 +8120,8 @@ textarea.custom-input {
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 2; }
+  z-index: 2;
+  transition: background-color 0.3s ease; }
   @media (min-width: 992px) {
     .footer-3 {
       padding: 0 50px 33px; } }
@@ -8516,7 +8521,10 @@ textarea.custom-input {
         height: 58px;
         margin-bottom: 46px; } }
   .review__image {
-    position: relative; }
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/review-shapes.png"); }
     .review__image-author {
       position: absolute;
       border-radius: 50%;
@@ -9385,6 +9393,9 @@ textarea.custom-input {
     background-size: cover;
     position: relative;
     padding-top: 0; }
+    @media (max-width: 991px) {
+      .an-awards--parallax {
+        padding-top: 120px !important; } }
     .an-awards--parallax::before {
       content: '';
       position: absolute;

@@ -369,20 +369,22 @@ function setOverlay(cb) {
 		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
 	});
 
-	window.onscroll = function () {
-		var offset = specialization.getBoundingClientRect().top;
+	if (specialization) {
+		window.onscroll = function () {
+			var offset = specialization.getBoundingClientRect().top;
 
-		if (offset <= windowHeight && !animationDone) {
-			diagrams.forEach(function(item) {
-				var progress = item.querySelector('.diagram__circle--progress');
-				var progresslength = Math.round(progress.getTotalLength());
-				var percent = item.querySelector('.diagram__percent').textContent;
-				var percentValue = parseFloat(percent, 10);
-				var progressFill = percentValue * progresslength / 100;
-				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-			});
+			if (offset <= windowHeight && !animationDone) {
+				diagrams.forEach(function(item) {
+					var progress = item.querySelector('.diagram__circle--progress');
+					var progresslength = Math.round(progress.getTotalLength());
+					var percent = item.querySelector('.diagram__percent').textContent;
+					var percentValue = parseFloat(percent, 10);
+					var progressFill = percentValue * progresslength / 100;
+					progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+				});
 
-			animationDone = true;
+				animationDone = true;
+			}
 		}
 	}
 
@@ -644,6 +646,47 @@ function setOverlay(cb) {
 		initFullPage();
 	}
 
+	// Рассчитываем высоту блоков
+	var block = $('.dark'),
+			top = [],
+			bottom = [];
+
+	block.each(function () {
+		top.push($(this).offset().top);
+		bottom.push($(this).offset().top + $(this).outerHeight());
+	});
+
+	// Меняем цвет хэдера и футера при скролле на малых разрешениях
+	$(window).scroll(function () {
+		if (window.matchMedia("(max-width: 991px)").matches) {
+			var scroll = $(this).scrollTop(),
+					isDark = false;
+
+			$.each(top, function (i, val) {
+				if (scroll >= val && scroll <= bottom[i]) {
+					isDark = true;
+				}
+			});
+
+			if (isDark) {
+				setDark();
+			} else {
+				removeDark();
+			}
+
+			if (scroll > 0 && isDark) {
+				$('.header-3').removeClass('bg-dark').addClass('bg-light');
+				$('.footer-3').removeClass('bg-dark').addClass('bg-light');
+			} else if (scroll > 0 && !isDark) {
+				$('.header-3').removeClass('bg-light').addClass('bg-dark');
+				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
+			} else if (scroll == 0) {
+				$('.header-3').removeClass('bg-light bg-dark');
+				$('.footer-3').removeClass('bg-light bg-dark');
+			}
+		}
+	});
+
 	$(window).resize(function () {
 		if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
 			if ((!$('#fullpage').hasClass('fullpage-wrapper')) || $('#fullpage').hasClass('fp-destroyed')) {
@@ -657,19 +700,21 @@ function setOverlay(cb) {
 	});
 
 	function initFullPage() {
-		$('#fullpage').fullpage({
-			licenseKey: 'KEY',
-			navigation: true,
-			navigationTooltips: false,
-			afterLoad: function (origin, destination, direction) {
-				var current = $(destination["item"]);
-				if (current.hasClass('dark')) {
-					setDark();
-				} else {
-					removeDark();
+		if ($('#fullpage') && $('#fullpage').length > 0) {
+			$('#fullpage').fullpage({
+				licenseKey: 'KEY',
+				navigation: true,
+				navigationTooltips: false,
+				afterLoad: function (origin, destination, direction) {
+					var current = $(destination["item"]);
+					if (current.hasClass('dark')) {
+						setDark();
+					} else {
+						removeDark();
+					}
 				}
-			}
-		});
+			});
+		}
 	}
 
 	function setDark() {

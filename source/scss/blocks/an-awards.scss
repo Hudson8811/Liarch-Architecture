@@ -121,6 +121,10 @@
 		position: relative;
 		padding-top: 0;
 
+		@media (max-width: 991px) {
+			padding-top: 120px !important;
+		}
+
 		&::before {
 			content: '';
 			position: absolute;

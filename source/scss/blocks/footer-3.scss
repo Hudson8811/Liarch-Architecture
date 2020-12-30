@@ -9,6 +9,7 @@
 	left: 0;
 	bottom: 0;
 	z-index: 2;
+	@include transition(background-color);
 
 	@include media(lg) {
 		padding: 0 50px 33px;

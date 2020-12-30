@@ -1,0 +1,18 @@
+.article-preview {
+	&__content {
+		background-color: #232323;
+		border-color: #5a5a5a;
+	}
+
+	&__date {
+		color: $color-grey;
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey3;
+	}
+}

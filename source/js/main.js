@@ -356,7 +356,7 @@ function setOverlay(cb) {
 })();
 
 /* круговая диаграмма */
-/*(function(){
+(function(){
 	var diagrams = document.querySelectorAll('.__js_diagram');
 	var specialization = document.querySelector('.specialization');
 	var windowHeight = window.innerHeight;
@@ -369,24 +369,26 @@ function setOverlay(cb) {
 		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
 	});
 
-	window.onscroll = function () {
-		var offset = specialization.getBoundingClientRect().top;
+	if (specialization) {
+		window.onscroll = function () {
+			var offset = specialization.getBoundingClientRect().top;
 
-		if (offset <= windowHeight && !animationDone) {
-			diagrams.forEach(function(item) {
-				var progress = item.querySelector('.diagram__circle--progress');
-				var progresslength = Math.round(progress.getTotalLength());
-				var percent = item.querySelector('.diagram__percent').textContent;
-				var percentValue = parseFloat(percent, 10);
-				var progressFill = percentValue * progresslength / 100;
-				progress.style.strokeDasharray = progressFill + ' ' + progresslength;
-			});
+			if (offset <= windowHeight && !animationDone) {
+				diagrams.forEach(function(item) {
+					var progress = item.querySelector('.diagram__circle--progress');
+					var progresslength = Math.round(progress.getTotalLength());
+					var percent = item.querySelector('.diagram__percent').textContent;
+					var percentValue = parseFloat(percent, 10);
+					var progressFill = percentValue * progresslength / 100;
+					progress.style.strokeDasharray = progressFill + ' ' + progresslength;
+				});
 
-			animationDone = true;
+				animationDone = true;
+			}
 		}
 	}
 
-})();*/
+})();
 
 /* Анимация чисел */
 
@@ -678,6 +680,9 @@ function setOverlay(cb) {
 			} else if (scroll > 0 && !isDark) {
 				$('.header-3').removeClass('bg-light').addClass('bg-dark');
 				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
+			} else if (scroll == 0) {
+				$('.header-3').removeClass('bg-light bg-dark');
+				$('.footer-3').removeClass('bg-light bg-dark');
 			}
 		}
 	});
@@ -695,19 +700,21 @@ function setOverlay(cb) {
 	});
 
 	function initFullPage() {
-		$('#fullpage').fullpage({
-			licenseKey: 'KEY',
-			navigation: true,
-			navigationTooltips: false,
-			afterLoad: function (origin, destination, direction) {
-				var current = $(destination["item"]);
-				if (current.hasClass('dark')) {
-					setDark();
-				} else {
-					removeDark();
+		if ($('#fullpage') && $('#fullpage').length > 0) {
+			$('#fullpage').fullpage({
+				licenseKey: 'KEY',
+				navigation: true,
+				navigationTooltips: false,
+				afterLoad: function (origin, destination, direction) {
+					var current = $(destination["item"]);
+					if (current.hasClass('dark')) {
+						setDark();
+					} else {
+						removeDark();
+					}
 				}
-			}
-		});
+			});
+		}
 	}
 
 	function setDark() {

@@ -1,0 +1,13 @@
+.phone-block {
+	&__hint {
+		color: $color-grey;
+	}
+
+	&__number {
+		color: $color-default-white;
+	}
+
+	&__icon {
+		background-color: #463e3e;
+	}
+}

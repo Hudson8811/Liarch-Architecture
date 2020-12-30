@@ -1,0 +1,7 @@
+.lang-switcher {
+	&__link {
+		&--current {
+			color: $color-default-white;
+		}
+	}
+}

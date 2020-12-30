@@ -1,0 +1,61 @@
+.footer {
+	$self: &;
+
+	background-image: url("../img/footer-bg-dark.jpg");
+
+	&__top {
+		border-color: #383838;
+
+		p {
+			color: $color-grey;
+		}
+	}
+
+	&__column-title {
+		color: $color-default-white;
+	}
+
+	&__address,
+	&__phone {
+		color: $color-grey;
+	}
+
+	&__column-link {
+		color: $color-grey;
+	}
+
+	&__copyright {
+		color: $color-grey;
+
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	&__design {
+		color: $color-grey;
+
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	&--lite {
+		background-color: #181818;
+
+		#{$self} {
+			&__copyright {
+				color: $color-default-white;
+			}
+
+			&__menu-link {
+				color: $color-grey;
+
+				&:hover,
+				&:focus {
+					color: $color-default-white;
+				}
+			}
+		}
+	}
+}
