@@ -234,6 +234,20 @@ function setOverlay(cb) {
 	});
 })();
 
+/* слайдер первого экрана */
+(function() {
+	var mySwiper = new Swiper('.__js_hero-banner', {
+		slidesPerView: 1,
+		loop: false,
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+
+	});
+})();
+
 /* Слайдер новостей */
 (function(){
 	var sliderNews = new Swiper('.__js_slider-news', {
@@ -285,6 +299,21 @@ function setOverlay(cb) {
 			}
 		}
 	});
+})();
+
+/* Прокрутка к следующей секции */
+(function() {
+	var scrollToBtn = $('.__js_to-next-section');
+
+	if(scrollToBtn.length) {
+		scrollToBtn.on('click', function(evt) {
+			evt.preventDefault();
+			var elementClick = $(this).attr("href");
+			var destination = $(elementClick).offset().top;
+
+			$('html').animate({ scrollTop: destination }, 1100); //1100 - скорость
+		});
+	}
 })();
 
 /* Модальное окно с формой на странице контактов */

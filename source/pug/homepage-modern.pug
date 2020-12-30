@@ -9,7 +9,7 @@ block header
 	include modules/menu
 block content
 	include modules/hero-banner
-	section.simplicity
+	section.simplicity#simplicity(data-aos="fade")
 		.container
 			.row
 				.col-12.col-md-6
@@ -144,7 +144,7 @@ block content
 							a.reward__project-link(href="#") see project
 	section.webpage__latest-articles.latest-articles
 		.container
-			header.latest-articles__header
+			header.latest-articles__header(data-aos="fade")
 				.latest-articles__preheading our journal
 				h2.latest-articles__heading.heading Latest Articles
 			.latest-articles__content.row
@@ -193,13 +193,13 @@ block content
 			.latest-articles__line
 	.webpage__instagram-block.instagram-block
 		.container
-			.instagram-block__title
+			.instagram-block__title(data-aos="fade")
 				+icon('instagram')(class="instagram-block__icon", width="21", height="21")
 				| Instagram
 			.instagram-block__list
 				- let i = 1;
 				while i <= 5
-					a(href="#")
+					a(href="#", data-aos="fade")
 						img(src="img/instagram/0" + i + ".jpg", width="234", height="234", alt="")
 						- i++;
 block footer

@@ -1,73 +1,18 @@
 .hero-banner {
-	position: relative;
-	padding-top: 140px;
-	padding-bottom: 50px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-image: url("../img/hero.jpg");
-
-	&__inner {
-	}
-
-	&__item {
-		&-left {
-		}
-
-		&-right {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			padding-top: 40px;
-		}
-
-		&-fact {
-			width: calc(50% - 20px);
-		}
-
-		&-title {
-			margin-bottom: 20px;
-
-			@include text(30px, 1.1, $color-default-white);
-			font-weight: 700;
-		}
-
-		&-text {
-			margin-bottom: 20px;
-
-			@include text(14px, 1.5, $color-default-white);
-		}
-
-		&-fact {
+	.swiper-container {
+		.swiper-pagination {
+			.swiper-pagination-bullet {
+				&-active {
+					background-color: $color-lemon;
+				}
+			}
 		}
 	}
 
-	&__video-btn {
-	}
 	&__down {
-		position: absolute;
-		left: 50%;
-		bottom: -13px;
-		transform: translateX(-50%);
-		width: 120px;
-		height: 40px; //45px;;
-		border: none;
-		background-color: transparent;
-		background-size: 100% auto;
-		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 275 103'%3e%3cpath fill-rule='evenodd' fill='%23FFF' d='M.427 71.361s-8.822-8.972 51.994-8.972C93.315 62.389 83.361-.745 140.05 1c37.827 1.165 48.543 61.389 82.956 61.389 34.414 0 51.994 3.778 51.994 3.778V103H.427V71.361z'/%3e%3c/svg%3e");
-
-		cursor: pointer;
-
-		svg {
-			width: 20px;
-			height: auto;
-
-			@include transition(fill);
-		}
-
 		&:hover,
 		&:focus {
-			outline: none;
-			fill: $color-orange;
+			fill: $color-lemon;
 		}
 	}
 }

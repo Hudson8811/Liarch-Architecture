@@ -1,0 +1,22 @@
+.navigation {
+	$self: &;
+
+	&__link {
+		&:hover,
+		&:focus {
+			color: $color-lemon;
+		}
+	}
+
+	&__item {
+		&::after {
+			display: none;
+		}
+
+		&--current {
+			#{$self}__link {
+				color: $color-lemon !important;
+			}
+		}
+	}
+}

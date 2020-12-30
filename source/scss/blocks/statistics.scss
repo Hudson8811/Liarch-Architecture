@@ -46,6 +46,10 @@
 
 	&--m {
 		margin: 60px 0;
+
+		@include media(xl) {
+			margin: 70px 0 150px;
+		}
 	}
 
 	&__item {

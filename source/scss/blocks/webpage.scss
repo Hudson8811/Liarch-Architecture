@@ -97,6 +97,10 @@
 
 	&__hero-banner {
 		margin-bottom: 60px;
+
+		@include media(xl) {
+			margin-bottom: 150px;
+		}
 	}
 
 	&__latest-articles {

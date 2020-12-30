@@ -205,6 +205,33 @@ function setOverlay(cb) {
 			el: '.swiper-scrollbar',
 		},
 	});
+
+
+	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
+		slidesPerView: 1,
+		loop: false,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 2,
+				spaceBetween: 70,
+			},
+		},
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+	});
 })();
 
 /* Слайдер новостей */

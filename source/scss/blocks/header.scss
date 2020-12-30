@@ -170,20 +170,20 @@
 		.navigation {
 			$navigation: &;
 
-			&__item {
-				&--current {
-					#{$navigation}__link {
-						color: $color-orange;
-					}
-				}
-			}
-
 			&__link {
 				color: $color-default-white;
 
 				&:hover,
 				&:focus {
 					color: $color-orange;
+				}
+			}
+
+			&__item {
+				&--current {
+					#{$navigation}__link {
+						color: $color-orange !important;
+					}
 				}
 			}
 		}
