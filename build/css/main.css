@@ -6660,6 +6660,11 @@ button.swiper-pagination-bullet {
   width: 180px;
   height: 180px;
   animation: text-rotate 9s linear infinite; }
+  @media (min-width: 1200px) {
+    .simplicity__circle-text {
+      width: 226px;
+      height: 226px;
+      margin-left: -50px; } }
   .simplicity__circle-text img {
     display: block;
     width: 100%;
