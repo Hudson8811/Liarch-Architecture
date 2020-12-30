@@ -75,6 +75,51 @@
 		}
 	}
 
+	&--modern {
+		background-image: none;
+		background-color: $color-white-lilac;
+
+		#{$self}__column {
+			&-title {
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+		}
+
+		#{$self}__inner {
+			@include media(xl) {
+				max-width: $width--full;
+			}
+		}
+	}
+
+	&__appeal {
+		margin-bottom: 40px;
+
+		@include text(30px);
+		letter-spacing: -0.025em;
+		font-weight: 700;
+
+		@include media(xl) {
+			max-width: 500px;
+			margin-top: -16px;
+			font-size: 42px;
+		}
+
+		a {
+			color: $color-orange;
+
+			&:hover,
+			&:focus {
+				outline: none;
+				text-decoration: underline;
+			}
+		}
+	}
+	&__appeal + &__appeal {
+		//margin-top: 40px;
+	}
+
 	&__top {
 		margin-bottom: 32px;
 		padding-bottom: 32px;
@@ -223,6 +268,21 @@
 			}
 		}
 
+		&-address {
+			margin-bottom: 12px;
+
+			@include text(16px, 1.3, $color-grey2);
+			font-style: normal;
+		}
+
+		&-email {
+			@include text(24px, 1.3);
+		}
+
+		&-info {
+			margin-bottom: 32px;
+		}
+
 		&-menu {
 			@include list-reset;
 		}
@@ -232,6 +292,7 @@
 				margin-bottom: 9px;
 			}
 		}
+
 		&-link {
 			@include text(14px, 1.44, $color-grey2);
 			@include transition(color);
@@ -250,5 +311,33 @@
 				opacity: 0.7;
 			}
 		}
+	}
+
+	&__logo {
+		margin-bottom: 20px;
+
+		@include media(md) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__hint {
+		margin: 12px 0;
+
+		@include text(16px, 1, $color-grey);
+
+		@include media(md) {
+			margin-top: 24px;
+		}
+
+		@include media(lg) {
+			margin: 0 20px 0 0;
+		}
+	}
+
+	&__bottom {
+		margin-top: 40px;
+		padding-top: 40px;
+		border-top: solid 1px $color-grey11;
 	}
 }

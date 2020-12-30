@@ -1,4 +1,8 @@
 .latest-projects {
+	&__inner {
+		max-width: $width--full;
+	}
+
 	&__preheading {
 		color: $color-lemon;
 		text-align: center;
@@ -10,5 +14,15 @@
 
 	&__heading {
 		font-weight: 700;
+	}
+
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			opacity: 1;
+		}
+
+		@include media(xl) {
+			margin-top: 90px !important;
+		}
 	}
 }

@@ -1,50 +1,64 @@
 .social {
-  @include list-reset;
-  display: flex;
-  flex-wrap: wrap;
+	$self: &;
 
-  &__item + &__item {
-    margin-left: 16px;
+	@include list-reset;
+	display: flex;
+	flex-wrap: wrap;
 
-    @include media(sm) {
-      margin-left: 24px;
-    }
-  }
+	&--black {
+		#{$self}__link {
+			width: 20px;
+			height: 20px;
+			border: none;
 
-  &__link {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    border: solid 1px $color-grey3;
-    border-radius: 50%;
+			svg {
+				fill: $color-default-black;
+			}
+		}
+	}
 
-    transition: border-color $default-transition-settings,
-      background-color $default-transition-settings;
+	&__item + &__item {
+		margin-left: 16px;
 
-    svg {
-      display: block;
-      fill: $color-grey2;
-      align-self: center;
+		@include media(sm) {
+			margin-left: 24px;
+		}
+	}
 
-      @include transition(fill);
-    }
+	&__link {
+		display: flex;
+		width: 40px;
+		height: 40px;
+		justify-content: center;
+		border: solid 1px $color-grey3;
+		border-radius: 50%;
 
-    &:hover,
-    &:focus {
-      outline: none;
-      background-color: $color-orange;
-      border-color: $color-orange;
+		transition: border-color $default-transition-settings,
+			background-color $default-transition-settings;
 
-      svg {
-        fill: $color-default-white;
-      }
-    }
+		svg {
+			display: block;
+			fill: $color-grey2;
+			align-self: center;
 
-    &:active {
-      opacity: 0.7;
-    }
-  }
+			@include transition(fill);
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+			background-color: $color-orange;
+			border-color: $color-orange;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+	}
 
 	.fb {
 		background-color: #3b5999;

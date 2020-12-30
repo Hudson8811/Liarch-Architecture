@@ -3010,6 +3010,9 @@ html {
   .logo[href]:hover__text, .logo[href]:focus__text {
     color: #cee100 !important; }
 
+.latest-projects__inner {
+  max-width: 1550px; }
+
 .latest-projects__preheading {
   color: #cee100;
   text-align: center; }
@@ -3019,6 +3022,13 @@ html {
 
 .latest-projects__heading {
   font-weight: 700; }
+
+.latest-projects .swiper-pagination .swiper-pagination-bullet {
+  opacity: 1; }
+
+@media (min-width: 1200px) {
+  .latest-projects .swiper-pagination {
+    margin-top: 90px !important; } }
 
 .rewards__preheading {
   color: #cee100;
@@ -3050,3 +3060,6 @@ html {
   /*&__inner {
 		border-bottom: solid 1px rgba($color-default-white, 0.2);
 	}*/ }
+
+.footer__appeal a {
+  color: #cee100; }
