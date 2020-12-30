@@ -6,6 +6,11 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
+	@include transition(background-color);
+
+	@include media(lg) {
+		padding: 48px 0 15px;
+	}
 
 	.logo {
 		&__image svg {

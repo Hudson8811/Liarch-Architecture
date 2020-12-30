@@ -131,9 +131,6 @@
 	}
 
 	&--parallax {
-		display: flex;
-		align-items: center;
-
 		.slide-counter-2 {
 			min-width: 24px;
 			height: 58px;
@@ -359,11 +356,13 @@
 				text-transform: uppercase;
 				text-decoration: underline;
 				position: absolute;
-				bottom: -30px;
+				bottom: -40px;
 				left: 50%;
 				transform: translateX(-50%);
 
 				@include media(lg) {
+					bottom: -30px;
+
 					&:hover {
 						text-decoration: none;
 					}

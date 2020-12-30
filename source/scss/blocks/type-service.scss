@@ -213,9 +213,6 @@
   }
 
 	&--parallax {
-		display: flex;
-		align-items: center;
-
 		#{$self} {
 			&__heading {
 				font-size: 26px;

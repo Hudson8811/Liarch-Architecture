@@ -356,7 +356,7 @@ function setOverlay(cb) {
 })();
 
 /* круговая диаграмма */
-(function(){
+/*(function(){
 	var diagrams = document.querySelectorAll('.__js_diagram');
 	var specialization = document.querySelector('.specialization');
 	var windowHeight = window.innerHeight;
@@ -386,7 +386,7 @@ function setOverlay(cb) {
 		}
 	}
 
-})();
+})();*/
 
 /* Анимация чисел */
 
@@ -643,6 +643,44 @@ function setOverlay(cb) {
 	if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
 		initFullPage();
 	}
+
+	// Рассчитываем высоту блоков
+	var block = $('.dark'),
+			top = [],
+			bottom = [];
+
+	block.each(function () {
+		top.push($(this).offset().top);
+		bottom.push($(this).offset().top + $(this).outerHeight());
+	});
+
+	// Меняем цвет хэдера и футера при скролле на малых разрешениях
+	$(window).scroll(function () {
+		if (window.matchMedia("(max-width: 991px)").matches) {
+			var scroll = $(this).scrollTop(),
+					isDark = false;
+
+			$.each(top, function (i, val) {
+				if (scroll >= val && scroll <= bottom[i]) {
+					isDark = true;
+				}
+			});
+
+			if (isDark) {
+				setDark();
+			} else {
+				removeDark();
+			}
+
+			if (scroll > 0 && isDark) {
+				$('.header-3').removeClass('bg-dark').addClass('bg-light');
+				$('.footer-3').removeClass('bg-dark').addClass('bg-light');
+			} else if (scroll > 0 && !isDark) {
+				$('.header-3').removeClass('bg-light').addClass('bg-dark');
+				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
+			}
+		}
+	});
 
 	$(window).resize(function () {
 		if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {

@@ -93,3 +93,59 @@ body {
     color: #ffffff; }
   .review--parallax .review__image {
     background-image: url("../img/review-shapes-dark.png"); }
+
+.approach--parallax {
+  background-image: url("../img/bg-our-story-2-dark.jpg"); }
+  .approach--parallax .approach__heading {
+    color: #ffffff; }
+  .approach--parallax .approach__card {
+    background-color: #252b30; }
+    .approach--parallax .approach__card::before {
+      color: #ffffff; }
+  .approach--parallax .approach__card-heading {
+    color: #ffffff; }
+
+.homepage-parallax .contacts-parallax {
+  background-image: url("../img/bg-our-story-2-dark.jpg"); }
+  .homepage-parallax .contacts-parallax__field input,
+  .homepage-parallax .contacts-parallax__field textarea {
+    background-color: #252b30;
+    border-color: #252b30;
+    color: #ffffff; }
+    .homepage-parallax .contacts-parallax__field input::placeholder,
+    .homepage-parallax .contacts-parallax__field textarea::placeholder {
+      color: #cccccc; }
+    .homepage-parallax .contacts-parallax__field input:hover, .homepage-parallax .contacts-parallax__field input:focus,
+    .homepage-parallax .contacts-parallax__field textarea:hover,
+    .homepage-parallax .contacts-parallax__field textarea:focus {
+      border-color: #cccccc; }
+
+.homepage-parallax .feedback-form__title {
+  color: #ffffff; }
+
+.homepage-parallax .contact-block__title {
+  color: #ffffff; }
+  .homepage-parallax .contact-block__title span {
+    color: #ffffff; }
+
+.homepage-parallax .contact-block__address {
+  color: #cccccc; }
+
+.homepage-parallax .contact-block__email a {
+  color: #cccccc; }
+
+.homepage-parallax .contact-block__hint {
+  color: #ffffff; }
+
+.homepage-parallax .contact-block__phone .contact-block__hint {
+  color: #ffffff; }
+
+.homepage-parallax .contact-block__phone a {
+  color: #ffffff; }
+  .homepage-parallax .contact-block__phone a:hover {
+    color: #ff4800; }
+
+.homepage-parallax .contact-block__offices-item {
+  color: #cccccc; }
+  .homepage-parallax .contact-block__offices-item:hover {
+    color: #ffffff; }

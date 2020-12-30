@@ -1,0 +1,25 @@
+.approach {
+	$self: &;
+
+	&--parallax {
+		background-image: url("../img/bg-our-story-2-dark.jpg");
+
+		#{$self} {
+			&__heading {
+				color: $color-default-white;
+			}
+
+			&__card {
+				background-color: #252b30;
+
+				&::before {
+					color: $color-default-white;
+				}
+			}
+
+			&__card-heading {
+				color: $color-default-white;
+			}
+		}
+	}
+}

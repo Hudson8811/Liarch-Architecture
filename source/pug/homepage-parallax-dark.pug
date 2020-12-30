@@ -124,6 +124,28 @@ block content
 								.slide__content-detail 2019  -  Iasi, Romania
 								.slide__content-heading Daniel Villa, Romania
 				a.works__all(href='#') all projects
+		section.approach.approach--parallax.fp-section
+			.approach__inner.container
+				h2.approach__heading.heading Our Approach
+				.row
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('ticket-alt')(width="48", height="48")
+							h3.approach__card-heading Surveys and Quotes
+							.approach__card-text Our team will survey your project, collect infor & build quotes
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('bricks')(width="48", height="48")
+							h3.approach__card-heading Design and Performance
+							.approach__card-text We design best solutions and then performance it based on design
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('customer')(width="48", height="48")
+							h3.approach__card-heading Handover and Support
+							.approach__card-text After complete project, we will handover full & support 2 years
 		section.review.review--parallax.fp-section
 			.review__inner.container
 				.row
@@ -138,6 +160,40 @@ block content
 						.review__author
 							.review__author-name Laura Lorewnce
 							.review__author-detail Director at <span>Cubic Hotel, Ukranie</span>
+		section.contacts-parallax.fp-section
+			.container
+				.row
+					.col-12.col-lg-6
+						.contact-block
+							h1.contact-block__title Brooklyn, <span>New York</span>
+							address.contact-block__address 962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.
+							.contact-block__email
+								span.contact-block__hint Email:
+								a(href="mailto:infor@liarchstudio.co") infor@liarchstudio.co
+							.contact-block__phone
+								span.contact-block__hint Call directly:
+								a(href="tel:+86631250859") +8(663)125-08-59
+							.contact-block__offices
+								span.contact-block__hint Brand Offices:
+								.contact-block__offices-list
+									a.contact-block__offices-item(href="#") Allentown PA
+									a.contact-block__offices-item(href="#") Allanta, GA
+									a.contact-block__offices-item(href="#") Chicago, IL
+									a.contact-block__offices-item(href="#") Dallas, TX,
+									a.contact-block__offices-item(href="#") Edison, NJ
+									a.contact-block__offices-item(href="#") Houston, TX
+					.col-12.col-lg-6
+						.feedback-form__title Contact us
+						form.contacts-parallax__feedback.feedback-form(action="#", method="post")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Your name")
+								input(type="text", name="name", placeholder="Your name")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Email Address")
+								input(type="email", name="email", placeholder="Email Address")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Subject")
+								input(type="text", name="subject", placeholder="Subject (optional)")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Your Message")
+								textarea(name="message", placeholder="Your Message")
+							button.contacts-parallax__btn.btn(type="sybmit") Send Message
 
 
 

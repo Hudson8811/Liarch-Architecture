@@ -155,9 +155,6 @@
   }
 
 	&--parallax {
-		display: flex;
-		align-items: center;
-
 		#{$self} {
 			&__image {
 				background-image: url("../img/review-shapes-2.png");
