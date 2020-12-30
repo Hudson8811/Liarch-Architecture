@@ -5015,6 +5015,19 @@ button.swiper-pagination-bullet {
   @media (min-width: 1200px) {
     .video-btn {
       font-size: 16px; } }
+  @media (min-width: 1200px) {
+    .video-btn--size-large .video-btn__btn {
+      width: 90px;
+      height: 90px; } }
+  @media (min-width: 1200px) and (min-width: 1200px) {
+    .video-btn--size-large .video-btn__btn svg {
+      width: 30px;
+      height: 30px; } }
+  @media (min-width: 1200px) {
+    .video-btn--size-large .video-btn__text {
+      max-width: 100px;
+      margin-left: 24px;
+      font-size: 18px; } }
   .video-btn--outline .video-btn__btn {
     background-color: transparent;
     border: solid 1px #ff4800; }
