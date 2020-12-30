@@ -225,6 +225,47 @@ function setOverlay(cb) {
 			el: '.swiper-scrollbar',
 		},
 	});
+
+
+	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
+		slidesPerView: 1,
+		loop: false,
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 2,
+				spaceBetween: 70,
+			},
+		},
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+		// Navigation arrows
+		/*navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},*/
+
+	});
+})();
+
+/* слайдер первого экрана */
+(function() {
+	var mySwiper = new Swiper('.__js_hero-banner', {
+		slidesPerView: 1,
+		loop: false,
+
+		pagination: {
+			el: '.swiper-pagination',
+		},
+
+
+	});
 })();
 
 /* Слайдер новостей */
@@ -278,6 +319,21 @@ function setOverlay(cb) {
 			}
 		}
 	});
+})();
+
+/* Прокрутка к следующей секции */
+(function() {
+	var scrollToBtn = $('.__js_to-next-section');
+
+	if(scrollToBtn.length) {
+		scrollToBtn.on('click', function(evt) {
+			evt.preventDefault();
+			var elementClick = $(this).attr("href");
+			var destination = $(elementClick).offset().top;
+
+			$('html').animate({ scrollTop: destination }, 1100); //1100 - скорость
+		});
+	}
 })();
 
 /* Модальное окно с формой на странице контактов */
@@ -362,14 +418,13 @@ function setOverlay(cb) {
 	var windowHeight = window.innerHeight;
 	var animationDone = false;
 
+	if (diagrams && specialization) {
+		diagrams.forEach(function(item) {
+			var progress = item.querySelector('.diagram__circle--progress');
+			var progresslength = Math.round(progress.getTotalLength());
+			progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
+		});
 
-	diagrams.forEach(function(item) {
-		var progress = item.querySelector('.diagram__circle--progress');
-		var progresslength = Math.round(progress.getTotalLength());
-		progress.setAttribute('stroke-dasharray', '0 ' + progresslength);
-	});
-
-	if (specialization) {
 		window.onscroll = function () {
 			var offset = specialization.getBoundingClientRect().top;
 
@@ -387,12 +442,10 @@ function setOverlay(cb) {
 			}
 		}
 	}
-
 })();
 
 /* Анимация чисел */
-
-(function() {// ToDo: сделать запуск анимации сразу после загрузки страницы если блок находитсяя на первом экране
+(function() {
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
 	var animationIsDone = false;
