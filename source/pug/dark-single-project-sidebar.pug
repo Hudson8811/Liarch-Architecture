@@ -1,0 +1,53 @@
+extends templates/main-dark
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - Single project with sidebar';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 2; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.single-project.single-project--with-sidebar
+		.container-fluid.p-0
+			.row.flex-md-row-reverse.no-gutters
+				aside.single-project__aside.col-12.col-md-5.col-lg-4.col-xl-3
+					.single-project__paginate.paginate.paginate--arrows
+						.paginate__item.paginate__item--prev
+							a(href="#")
+								+icon('chevron-left')(width="22", height="22")
+						.paginate__item.paginate__item--all
+							a(href="#")
+								+icon('grid')(width="22", height="22")
+						.paginate__item.paginate__item--next
+							a.disabled
+								+icon('chevron-right')(width="22", height="22")
+					.single-project__aside-content
+						h1.single-project__heading.heading(data-aos="fade-up") Cubic Blockes Hotel
+						.single-project__short The solutions used give the apartment a pinch of magic and mystery. This is undoubtedly the interior of strong contrasts
+
+						ul.single-project__meta.project-meta.project-meta--table
+							li.project-meta__item(data-aos="fade-up")
+								.project-meta__item-title client
+								.project-meta__item-text SaHa Hotel, Sahara
+							li.project-meta__item(data-aos="fade-up")
+								.project-meta__item-title category
+								.project-meta__item-text Architecture, CGI
+							li.project-meta__item(data-aos="fade-up")
+								.project-meta__item-title location
+								.project-meta__item-text Sahara, Africa
+							li.project-meta__item(data-aos="fade-up")
+								.project-meta__item-title date
+								.project-meta__item-text June, 2018
+
+						+social-2('single-project__social', ['twitter', 'facebook', 'instagram', 'pinterest'])
+
+				.single-project__content.col-12.col-md-7.col-lg-8.col-xl-9
+					img(src="img/single-project-sidebar/01.jpg", alt="", data-aos="fade")
+					img(src="img/single-project-sidebar/02.jpg", alt="", data-aos="fade")
+					img(src="img/single-project-sidebar/03.jpg", alt="", data-aos="fade")
+					img(src="img/single-project-sidebar/04.jpg", alt="", data-aos="fade")
+					img(src="img/single-project-sidebar/05.jpg", alt="", data-aos="fade")
+
+
+
+
+block footer
+	include modules/footer

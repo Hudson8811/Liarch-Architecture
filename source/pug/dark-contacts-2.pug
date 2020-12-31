@@ -1,0 +1,55 @@
+extends templates/main-dark
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - contacts';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 5; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.contacts
+		header.contacts__header.container
+			.row
+				.col-12.col-lg-5
+					h1.contacts__heading.heading Contact Liarch&nbsp;Studio
+					+social-2('contacts__social', ['twitter', 'facebook', 'instagram', 'pinterest'])
+				.col-12.col-lg-7
+					ul.contacts__info.contact-info
+						li.contact-info__item
+							.contact-info__icon
+								+icon('envelope-alt')(width="20", height="20")
+							.contact-info__content
+								.contact-info__title Email
+								.contact-info__text
+									a(href="mailto:hello@liarch-studio.co") hello@liarch-studio.co
+									br
+									a(href="mailto:hr@liarch-studio.co") hr@liarch-studio.co
+						li.contact-info__item
+							.contact-info__icon
+								+icon('map-marker')(width="20", height="20")
+							.contact-info__content
+								.contact-info__title Address
+								.contact-info__text
+									address 66 Main Str, Beverly Hill, CA, 90210
+						li.contact-info__item
+							.contact-info__icon
+								+icon('phone')(width="20", height="20")
+							.contact-info__content
+								.contact-info__title phone
+								.contact-info__text
+									a(href="tel:+80031250859") (+8003)125 08 59
+									br
+									a(href="tel:+9506893647") (+95) 0689 36 47
+						li.contact-info__item
+							.contact-info__icon
+								+icon('timer')(width="20", height="20")
+							.contact-info__content
+								.contact-info__title Work hours
+								.contact-info__text
+									| Mon - Fri: 9.00am - 5.30pm
+
+		.contacts__map
+			iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.7573199609947!2d-118.33043968482798!3d34.07573478059951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8c199b270b7%3A0xae653e28fc364c28!2zQmV2ZXJseSBCbHZkLCBDYWxpZm9ybmlhLCDQodCo0JA!5e0!3m2!1sru!2sru!4v1608631800377!5m2!1sru!2sru", allowfullscreen="", aria-hidden="false", tabindex="0")
+		.container
+			include modules/form--contacts
+
+block footer
+	include modules/footer
