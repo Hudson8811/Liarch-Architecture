@@ -1,0 +1,55 @@
+extends templates/main-dark
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - Works';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 2; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	article.works-page
+		header.works-page__header
+			.works-page__inner.container
+				h1.works-page__heading.heading Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves
+				.works-page__text Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
+		.works-page__content
+			section.works
+				.works__inner.container
+					header.works__header
+						.works__filter.filter
+							each item in ['all', 'residential', 'commercial', 'architecture', 'interior']
+								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+								- let activeClass = item === 'all' ? ' filter__item--active' : '';
+								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
+
+						.works__sort.sort
+							label.sort__hint(for="sortSelect") filter by years:
+							select.sort__select.__js_filter-select#sortSelect(name="sort")
+								each year in ['all', '2020', '2019', '2018']
+									- let val = year === 'all' ? '*' : year;
+									option(value= val)= year
+				.container-fluid
+					ul.works__list.row.__js_works-filter
+						+work-card-2('daniel-villa-romania.jpg', '2020', 'Residential', 'Daniel villa, Romania')(class="__js_residential __js_2020")
+
+						+work-card-2('cabin-wood-in-forest.jpg', '2019', 'Residential', 'Cabin wood in forest')(class="__js_residential __js_2019")
+
+						+work-card-2('cube-villa-poland.jpg', '2019', 'Residential', 'Cube villa, Poland')(class="__js_residential __js_2019")
+
+						+work-card-2('grido-museum-denmark.jpg', '2019', 'Architecture', 'Grido museum, Denmark')(class="__js_architecture __js_2019")
+
+						+work-card-2('dogel-nord-station.jpg', '2018', 'Architecture', 'Dogel nord station')(class="__js_architecture __js_2019")
+
+						+work-card-2('b65-apartment-in-sepro-building.jpg', '2018', 'Residential, Interior', 'B65 apartment in sepro building')(class="__js_residential __js_interior __js_2018")
+
+						+work-card-2('single-house.jpg', '2019', 'Architecture', 'Single house')(class="__js_architecture __js_2019")
+
+						+work-card-2('miter-wooden-library.jpg', '2018', 'Architecture', 'Miter wooden library')(class="__js_architecture __js_2018")
+
+						+work-card-2('belgium-center-point-plaza.jpg', '2018', 'Architecture', 'Belgium center point plaza')(class="__js_architecture __js_2018")
+
+
+					a.works__more.more-btn(href="#")
+						span.more-btn__text more
+
+
+block footer
+	include modules/footer
