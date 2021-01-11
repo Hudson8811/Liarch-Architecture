@@ -8430,6 +8430,27 @@ textarea.custom-input {
     .bg-wrapper--reverse {
       background-image: linear-gradient(to left, transparent 9.375vw, #d8d5bf 9.375vw); } }
 
+.works-section {
+  padding: 60px 0; }
+  @media (min-width: 768px) {
+    .works-section {
+      padding: 80px 0; } }
+  @media (min-width: 992px) {
+    .works-section {
+      padding: 120px 0; } }
+  @media (min-width: 1200px) {
+    .works-section {
+      padding: 180px 0; } }
+
+.webpage--beige .works-section__card-tags {
+  color: #e6da89; }
+
+.webpage--beige .works-section__card-heading a {
+  color: #ffffff; }
+
+.studio-section__play-video {
+  cursor: pointer; }
+
 .header {
   border-top: solid 5px #f5480c; }
   .header--aside {
@@ -12236,6 +12257,18 @@ textarea.custom-input {
     .page-404__btn {
       margin-top: 54px; } }
 
+.pricing--section .pricing__container {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.pricing--section .pricing__title,
+.pricing--section .pricing__subtitle {
+  margin-left: 0;
+  text-align: left; }
+
+.pricing--section .pricing__title {
+  font-weight: 400; }
+
 .pricing__container {
   max-width: 1170px !important;
   padding: 60px 10px; }
@@ -12297,7 +12330,7 @@ textarea.custom-input {
     .pricing__slider-container {
       margin: 0 -5px; } }
   .pricing__slider-container::before, .pricing__slider-container::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     width: 35px;
@@ -12387,7 +12420,7 @@ textarea.custom-input {
     font-size: 14px;
     color: #ffffff; }
   .pricing-item__price {
-    font-family: 'Cinzel', sans-serif;
+    font-family: "Cinzel", sans-serif;
     text-transform: uppercase;
     letter-spacing: -2px;
     margin-bottom: 7px;
@@ -12440,6 +12473,36 @@ textarea.custom-input {
     border-radius: 0;
     cursor: default;
     transition: all 0.3s ease; }
+
+.webpage--beige .pricing__title {
+  font-family: "Cinzel", "Georgia", serif;
+  text-transform: uppercase; }
+
+.webpage--beige .pricing-item:hover .pricing-item__btn, .webpage--beige .pricing-item:focus .pricing-item__btn {
+  background-color: #e6da89;
+  border-color: #e6da89; }
+
+.webpage--beige .pricing-item__wrapper {
+  background-color: transparent;
+  border-color: #aeab98; }
+
+.webpage--beige .pricing-item__plan, .webpage--beige .pricing-item__price,
+.webpage--beige .pricing-item__included li {
+  color: #4d524b; }
+
+.webpage--beige .pricing-item__included {
+  border-top-color: #aeab98; }
+
+.webpage--beige .pricing-item__included li + li {
+  border-top-color: #aeab98; }
+
+.webpage--beige .pricing-item__caption span {
+  color: #000000;
+  background-color: #e6da89; }
+
+.webpage--beige .pricing-item__btn {
+  color: #ffffff;
+  background-color: #4d524b; }
 
 .services__container {
   max-width: 1170px !important;
