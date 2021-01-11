@@ -1,0 +1,48 @@
+.bg-wrapper {
+	padding: 60px 0;
+	background-color: $color-geyser;
+
+	@include media(md) {
+		padding: 100px 0;
+	}
+
+	@include media(lg) {
+		padding: 160px 0;
+	}
+
+	@include media(xl) {
+		padding: 210px 0 200px;
+		background-color: transparent;
+		background-image: linear-gradient(
+			to right,
+			transparent 3.375vw,
+			$color-geyser 3.375vw
+		);
+	}
+
+	@include media(xxl) {
+		background-image: linear-gradient(
+			to right,
+			transparent 9.375vw,
+			$color-geyser 9.375vw
+		);
+	}
+
+	&--reverse {
+		@include media(xl) {
+			background-image: linear-gradient(
+				to left,
+				transparent 3.375vw,
+				$color-geyser 3.375vw
+			);
+		}
+
+		@include media(xxl) {
+			background-image: linear-gradient(
+				to left,
+				transparent 9.375vw,
+				$color-geyser 9.375vw
+			);
+		}
+	}
+}

@@ -136,3 +136,23 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.reward {
+		&__project {
+			&-name a {
+				font-family: $font-family--secondary;
+				color: $color-default-white;
+			}
+
+			&-link {
+				color: $color-grey;
+
+				&:hover,
+				&:focus {
+					color: $color-bird-flower;
+				}
+			}
+		}
+	}
+}

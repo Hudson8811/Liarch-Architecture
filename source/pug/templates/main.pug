@@ -18,8 +18,8 @@ html.no-js(lang="ru")
     //- Полифил для тега picture
     //-script document.createElement("picture");
     //-script(src="js/picturefill.js", async)
-
-  body.webpage
+  - let modClass = bodyModClass ? bodyModClass : '';
+  body(class="webpage" + modClass)
     div(style="display: none")
       include ../../../build/img/sprite.svg
     include ../modules/header

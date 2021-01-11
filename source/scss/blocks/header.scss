@@ -1,7 +1,7 @@
 .header {
 	$self: &;
 
-	padding: 15px 0;
+	//padding: 15px 0;
 	border-top: solid 5px $color-orange--dark;
 
 	&--aside {
@@ -118,6 +118,8 @@
 	}
 
 	&--white {
+		border: none !important;
+
 		.logo {
 			&__text {
 				color: $color-default-white;
@@ -198,12 +200,12 @@
 	}
 
 	@include media(md) {
-		padding: 32px 0;
+		//padding: 32px 0;
 		border-top-width: 7px;
 	}
 
 	@include media(lg) {
-		padding: 48px 0 44px;
+		//padding: 48px 0 44px;
 		border-top-width: 10px;
 	}
 
@@ -212,7 +214,17 @@
 		width: 100%;
 		max-width: $width--full;
 		margin: 0 auto;
-		padding: 0 15px;
+		padding: 15px;
+
+		@include media(md) {
+			padding: 32px 15px;
+			//border-top-width: 7px;
+		}
+
+		@include media(lg) {
+			padding: 48px 15px 44px;
+			//border-top-width: 10px;
+		}
 
 		> * {
 			align-self: center;
@@ -292,6 +304,85 @@
 
 		&:active {
 			opacity: 0.7;
+		}
+	}
+}
+
+.webpage--beige {
+	.header {
+		&--white {
+			.logo {
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+
+			.logo[href]:hover,
+			.logo[href]:focus {
+				svg {
+					fill: $color-bird-flower;
+				}
+
+				.logo__text {
+					color: $color-bird-flower !important;
+				}
+			}
+
+			.lang-switcher {
+				&__link {
+					color: $color-default-white;
+
+					&:hover,
+					&:focus {
+						color: $color-bird-flower;
+					}
+				}
+			}
+
+			.search-toggle {
+				svg {
+					fill: $color-default-white;
+				}
+
+				&:hover,
+				&:focus {
+					svg {
+						fill: $color-bird-flower;
+					}
+				}
+			}
+
+			.menu-toggle {
+				&::before,
+				&::after {
+					border-top: solid 3px $color-default-white;
+				}
+
+				&:hover,
+				&:focus {
+					&::before,
+					&::after {
+						border-top-color: $color-bird-flower;
+					}
+				}
+			}
+
+			.navigation {
+				&__link {
+					color: $color-default-white;
+
+					&:hover,
+					&:focus {
+						color: $color-bird-flower;
+					}
+				}
+
+				&__item--current {
+					.navigation__link {
+						color: $color-bird-flower !important;
+					}
+				}
+			}
 		}
 	}
 }

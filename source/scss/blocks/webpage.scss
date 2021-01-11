@@ -1,4 +1,14 @@
 .webpage {
+	$self: &;
+
+	&--beige {
+		background-color: $color-dark;
+
+		main {
+			background-color: $color-dark;
+		}
+	}
+
 	&__an-awards {
 		margin-bottom: 60px;
 

@@ -12,6 +12,24 @@
 		}
 	}
 
+	&--theme-beige {
+		#{$self}__icon {
+			background-color: $color-dark;
+
+			svg {
+				fill: $color-bird-flower;
+			}
+		}
+
+		#{$self}__number {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-litedark;
+			}
+		}
+	}
+
 	&__icon {
 		display: flex;
 		justify-content: center;
@@ -28,6 +46,7 @@
 			align-self: center;
 		}
 	}
+
 	&__content {
 		align-self: center;
 	}

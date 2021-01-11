@@ -1,8 +1,8 @@
 .an-awards {
-  $self: &;
+	$self: &;
 
 	overflow: hidden;
-  padding-top: 40px;
+	padding-top: 40px;
 
 	&--about {
 		#{$self}__notice {
@@ -23,95 +23,99 @@
 		padding-top: 83px;
 	}
 
-  &__intro {
-    margin-bottom: 20px;
+	&__intro {
+		margin-bottom: 20px;
 
-    @include media(md) {
-      margin-bottom: 0;
-    }
-  }
+		@include media(md) {
+			margin-bottom: 0;
+		}
+	}
 
-  &__image {
-    @include media(xxl) {
-      width: 900px;
-    }
+	&__image {
+		@include media(xxl) {
+			width: 900px;
+		}
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 
-  &__content {
-    @include media(md) {
-      padding-right: 0;
-    }
+	&__content {
+		@include media(md) {
+			padding-right: 0;
+		}
 
-    @include media(xxl) {
-      padding-top: 26px;
-      align-self: flex-start;
-    }
-  }
+		@include media(xxl) {
+			padding-top: 26px;
+			align-self: flex-start;
+		}
+	}
 
-  &__heading {
-    margin-bottom: 20px;
+	&__heading {
+		margin-bottom: 20px;
 
-    @include media(lg) {
-      max-width: 340px;
-    }
+		&--upper {
+			text-transform: uppercase;
+		}
 
-    @include media(xl) {
-      max-width: none;
-    }
+		@include media(lg) {
+			max-width: 340px;
+		}
 
-    @include media(xxl) {
-      margin-bottom: 22px;
-    }
-  }
+		@include media(xl) {
+			max-width: none;
+		}
 
-  &__text {
-    max-width: 340px;
-    margin-bottom: 32px;
+		@include media(xxl) {
+			margin-bottom: 22px;
+		}
+	}
 
-    @include text(16px, 1.88, $color-grey);
+	&__text {
+		max-width: 340px;
+		margin-bottom: 32px;
 
-    @include media(xl) {
-      font-size: 18px;
-    }
+		@include text(16px, 1.88, $color-grey);
 
-    @include media(xxl) {
-      margin-bottom: 54px;
-    }
-  }
+		@include media(xl) {
+			font-size: 18px;
+		}
 
-  &__buttons {
-    margin-bottom: 40px;
+		@include media(xxl) {
+			margin-bottom: 54px;
+		}
+	}
 
-    @include media(xxl) {
-      margin-bottom: 84px;
-    }
-  }
+	&__buttons {
+		margin-bottom: 40px;
 
-  &__notice {
-    max-width: 400px;
-    margin-bottom: 24px;
-    padding-right: 30px;
-    padding-top: 24px;
+		@include media(xxl) {
+			margin-bottom: 84px;
+		}
+	}
 
-    @include text(14px, 1.625);
-    border-top: solid 1px $color-grey5;
+	&__notice {
+		max-width: 400px;
+		margin-bottom: 24px;
+		padding-right: 30px;
+		padding-top: 24px;
 
-    @include media(xl) {
-      font-size: 16px;
-    }
-    @include media(xxl) {
-      margin-bottom: 46px;
-      padding-top: 43px;
-    }
-  }
+		@include text(14px, 1.625);
+		border-top: solid 1px $color-grey5;
 
-  &__phone {
-  }
+		@include media(xl) {
+			font-size: 16px;
+		}
+		@include media(xxl) {
+			margin-bottom: 46px;
+			padding-top: 43px;
+		}
+	}
+
+	&__phone {
+	}
 
 	&--parallax {
 		display: flex;
@@ -126,7 +130,7 @@
 		}
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -327,6 +331,25 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+.webpage--beige {
+	.an-awards {
+		&__heading {
+			font-family: $font-family--secondary;
+			color: $color-default-white;
+
+			@include media(xl) {
+				font-size: 90px;
+				line-height: 1;
+			}
+		}
+
+		&__text {
+			color: $color-grey3;
+			line-height: 1.5;
 		}
 	}
 }

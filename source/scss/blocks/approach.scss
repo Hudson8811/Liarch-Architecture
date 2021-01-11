@@ -20,12 +20,31 @@
 		}
 	}
 
-	&__heading {
+	&__header {
 		margin-bottom: 30px;
-		font-weight: 400;
 
 		@include media(xl) {
 			margin-bottom: 71px;
+		}
+	}
+
+	&__heading {
+		font-weight: 400;
+
+		& + * {
+			margin-top: 30px;
+
+			@include media(xl) {
+				margin-bottom: 63px;
+			}
+		}
+	}
+
+	&__text {
+		@include text(16px, 1.7, $color-grey);
+
+		@include media(xl) {
+			font-size: 20px;
 		}
 	}
 
@@ -124,8 +143,35 @@
 			&__card-text {
 				@media (max-height: 750px) {
 					font-size: 16px;
-					line-height: 1.40;
+					line-height: 1.4;
 				}
+			}
+		}
+	}
+}
+
+.webpage--beige {
+	.approach {
+		background-color: transparent;
+
+		&__heading {
+			font-family: $font-family--secondary;
+			color: $color-default-white;
+		}
+
+		&__card {
+			border: solid 1px $color-dark2;
+			background-color: $color-dark;
+
+			&-icon {
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+
+			&-heading {
+				font-family: $font-family--secondary;
+				color: $color-default-white;
 			}
 		}
 	}

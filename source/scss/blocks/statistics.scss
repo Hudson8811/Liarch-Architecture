@@ -121,3 +121,18 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.statistics {
+		&__item {
+			&-value {
+				font-family: $font-family--secondary;
+				color: $color-dark;
+			}
+
+			&-text {
+				color: $color-grey2;
+			}
+		}
+	}
+}
