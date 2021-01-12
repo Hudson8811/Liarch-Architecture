@@ -11,6 +11,8 @@ block content
 		.container.news-list__container
 			header.news-list__header(data-aos="fade")
 				h2.news-list__heading.heading Inspirations & Experiences
+
+			// Filter
 			.filter.controls.news-list__filter(data-aos="fade")
 				button.filter__item(type="button", data-filter="all") all
 				button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
@@ -18,6 +20,8 @@ block content
 				button.filter__item(type="button", data-filter=".__js_reviews") reviews
 				button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
 				button.filter__item(type="button", data-filter=".__js_others") others
+
+			// Articles
 			+article-list([{
 				img: "img/article-preview-1.jpg",
 				date: "December 15, 2020",
@@ -89,6 +93,8 @@ block content
 					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 				}
 			], 'small')
+
+			// Button more
 			a.more-btn.news-list__more(href="#", data-aos="fade")
 				span.more-btn__text more
 

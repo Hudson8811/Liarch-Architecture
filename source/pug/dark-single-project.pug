@@ -12,6 +12,7 @@ block content
 					h1.single-project__heading.heading Dogel Nord Station
 					+social-2('single-project__social', ['twitter', 'facebook', 'instagram', 'pinterest'])
 				.col-12.col-md-6.offset-md-2(data-aos="fade-right")
+					// Single project meta list
 					ul.single-project__meta.project-meta
 						li.project-meta__item
 							.project-meta__item-title client
@@ -27,14 +28,17 @@ block content
 							.project-meta__item-text Feburary 25th, 2022
 
 
+		// Single project background
 		.single-project__bg-parallax.__js_bg-parallax-container(data-aos="fade")
 			.single-project__bg-parallax-image.__js_bg-parallax-inner
 				img(src="img/single-project/bg-parallax.jpg", alt="")
 
+		// Single project intro
 		.single-project__intro(data-aos="fade")
 			.container
 				.single-project__intro-text Dogel Nord Station is a startup that aims to supply energy (starting with gas) to&nbsp;domestic&nbsp;household acrossthe UK. Create a very simple yet stunning logotype and promo&nbsp;site that sets the brand of Entice Energy apart from the competitors like a fresh take&nbsp;on&nbsp;an already saturated area.
 
+		// Single project section
 		section.single-project__section
 			.container
 				h2.single-project__section-heading(data-aos="fade") Challenge
@@ -45,6 +49,7 @@ block content
 					li Showcase each type of content: interactive books, animated stories and picture books, audio stories. Create an experience people  want to share with others
 					li Persuade to download app and subscribe
 
+		// Twitter block
 		section.single-project__review.twitter-block(data-aos="fade")
 			.container
 				.twitter-block__wrapper
@@ -59,11 +64,13 @@ block content
 							+icon('twitter')(width="34", height="34")
 					.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio
 
+		// Single project section
 		section.single-project__section
 			.container
 				h2.single-project__section-heading(data-aos="fade") Solution
 				.single-project__section-text Our approach was to present the site as a visual editorial platform with quarterly features based on events and occasions the brand was focused on. Each quarterly focus would be marked by the hero and custom tags that filter content.
 
+		// Single project gallery
 		.single-project__gallery
 			.single-project__gallery-inner.container
 				.row
@@ -74,11 +81,13 @@ block content
 					.single-project__gallery-image.col-12(data-aos="fade")
 						img(src="img/single-project/03.jpg", alt="")
 
+		// Likes
 		.single-project__liked.liked(data-aos="fade")
 			a.liked__btn(href="#")
 				+icon('heart-filled')(width="34", height="34")
 			.liked__text 268 Liked
 
+		// Single project footer
 		footer.single-project__footer(data-aos="fade")
 			.paginate
 				.container

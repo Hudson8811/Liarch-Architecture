@@ -9,6 +9,7 @@ block content
 		.container-fluid.p-0
 			.row.flex-md-row-reverse.no-gutters
 				aside.single-project__aside.col-12.col-md-5.col-lg-4.col-xl-3
+					// Aside pagination
 					.single-project__paginate.paginate.paginate--arrows
 						.paginate__item.paginate__item--prev
 							a(href="#")
@@ -19,10 +20,12 @@ block content
 						.paginate__item.paginate__item--next
 							a.disabled
 								+icon('chevron-right')(width="22", height="22")
+					// Aside content
 					.single-project__aside-content
 						h1.single-project__heading.heading(data-aos="fade-up") Cubic Blockes Hotel
 						.single-project__short The solutions used give the apartment a pinch of magic and mystery. This is undoubtedly the interior of strong contrasts
 
+						// Aside meta list
 						ul.single-project__meta.project-meta.project-meta--table
 							li.project-meta__item(data-aos="fade-up")
 								.project-meta__item-title client
