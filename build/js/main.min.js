@@ -565,10 +565,12 @@ function setOverlay(cb) {
 			},
 		});
 
-		$('.masonry').isotope({
-			itemSelector: '.masonry-item',
-			layoutMode: 'packery'
-		});
+		setTimeout(function () {
+			$('.masonry').isotope({
+				itemSelector: '.masonry-item',
+				layoutMode: 'packery'
+			});
+		}, 100);
 
 		select.on('change', function () {
 			var value = select.val();
