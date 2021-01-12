@@ -12,11 +12,11 @@
 	&--color-invert {
 		#{$self} {
 			&__item-value {
-				color: $color-grey2;
+				color: $color-default-white;
 			}
 
 			&__item-text {
-				color: $color-default-white;
+				color: $color-grey2;
 			}
 		}
 	}

@@ -1,0 +1,22 @@
+.single-project {
+	&--minimalist {
+		.single-project__header {
+			border-bottom-color: rgba($color-default-white, 0.2);
+		}
+	}
+
+	&__intro-text {
+		color: $color-grey;
+		border-bottom-color: rgba($color-default-white, 0.2);
+	}
+
+	&__section {
+		&-heading {
+			color: $color-default-white;
+		}
+
+		ul li {
+			color: $color-default-white;
+		}
+	}
+}

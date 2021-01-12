@@ -1,0 +1,14 @@
+.field {
+	input,
+	textarea {
+		color: $color-default-white;
+		border-bottom-color: rgba($color-default-white, 0.2);
+	}
+
+	.underline {
+		&::before,
+		&::after {
+			background-color: $color-default-white;
+		}
+	}
+}

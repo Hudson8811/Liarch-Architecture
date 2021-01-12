@@ -1,0 +1,17 @@
+.paginate {
+	&--simple {
+		.paginate__item a {
+			color: $color-default-white;
+		}
+	}
+
+	&--arrows {
+		.paginate__item a svg {
+			fill: $color-default-white;
+		}
+	}
+
+	&__text span:not(.hint) {
+		color: $color-default-white;
+	}
+}
