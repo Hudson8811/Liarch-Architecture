@@ -1,4 +1,5 @@
 .works-section {
+	$self: &;
 	padding: 60px 0;
 
 	@include media(md) {
@@ -8,32 +9,137 @@
 		padding: 120px 0;
 	}
 	@include media(xl) {
-		padding: 180px 0;
+		padding: 177px 0;
 	}
 
 	&__inner {
 	}
+
 	&__heading {
+		margin: 0 0 32px;
+		font-weight: 400;
+
+		@include media(md) {
+			margin-bottom: 48px;
+		}
+
+		@include media(xl) {
+			margin-bottom: 113px;
+		}
 	}
-	&__card {
-		&-image {
-			img {
+
+	&__column {
+		&--list {
+			@include media(md) {
+				margin-top: 32px;
+
+				#{$self}__card {
+					margin-left: auto;
+				}
 			}
 		}
+	}
+
+	&__card {
+		$card: &;
+		margin-bottom: 60px;
+
+		@include media(md) {
+			max-width: 400px;
+			margin-bottom: 0;
+
+			&--big {
+				max-width: 600px;
+			}
+
+			& + & {
+				margin-top: 56px;
+			}
+		}
+
+		@include media(xl) {
+			& + & {
+				margin-top: 96px;
+			}
+		}
+
+		&-image {
+			margin-bottom: 24px;
+
+			@include media(xl) {
+				margin-bottom: 42px;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+
 		&-tags {
+			margin-bottom: 12px;
+			@include text(16px, 1, $color-orange);
 		}
+
 		&-heading {
+			margin: 0 0 12px;
+
+			@include text(24px, 1);
+			font-weight: 400;
+			letter-spacing: 0.025em;
+			text-transform: uppercase;
+
+			@include media(md) {
+				margin-bottom: 20px;
+			}
+
+			@include media(xl) {
+				font-size: 36px;
+			}
+
+			a {
+				color: $color-default-black;
+
+				&:hover,
+				&:focus {
+					outline: none;
+					text-decoration: underline;
+				}
+			}
 		}
+
 		&-text {
+			max-width: 550px;
+
+			@include text(14px, 1.625, $color-grey);
+
+			@include media(xl) {
+				font-size: 16px;
+			}
 		}
 	}
 
 	&__btn {
+		display: none;
+
+		@include media(md) {
+			display: inline-block;
+			margin-top: 140px;
+		}
 	}
 }
 
 .webpage--beige {
 	.works-section {
+		&__heading {
+			font-family: $font-family--secondary;
+			color: $color-default-white;
+
+			text-transform: uppercase;
+			letter-spacing: normal;
+		}
+
 		&__card {
 			&-tags {
 				color: $color-bird-flower;

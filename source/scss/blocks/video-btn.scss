@@ -113,7 +113,7 @@
 
 .webpage--beige {
 	.video-btn {
-		color: $color-bird-flower;
+		color: $color-default-white; //$color-bird-flower;
 
 		&__btn {
 			background-color: $color-bird-flower;
@@ -121,7 +121,7 @@
 
 			&:hover,
 			&:focus {
-				background-color: lighten($color-bird-flower, 10%);
+				background-color: $color-bird-flower-hover;
 			}
 
 			svg {

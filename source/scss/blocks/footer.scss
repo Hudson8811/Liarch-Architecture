@@ -371,7 +371,7 @@
 		&__email {
 			font-family: $font-family--secondary;
 			color: $color-default-white;
-			text-transform: uppercase;
+			//text-transform: uppercase;
 
 			@include media(xl) {
 				font-size: 60px;

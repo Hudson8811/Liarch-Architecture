@@ -4,6 +4,10 @@
 	overflow: hidden;
 	padding-top: 40px;
 
+	@include media(xl) {
+		padding-top: 83px;
+	}
+
 	&--about {
 		#{$self}__notice {
 			@include media(xl) {
@@ -19,8 +23,40 @@
 		}
 	}
 
-	@include media(xl) {
-		padding-top: 83px;
+	&--different {
+		overflow: hidden;
+
+		@include media(xl) {
+			padding-top: 155px;
+		}
+
+		#{$self}__intro {
+			@include media(xl) {
+				padding-top: 26px;
+			}
+
+			@include media(xxl) {
+				transform: translateX(171px);
+			}
+		}
+
+		#{$self}__text {
+			max-width: none;
+
+			@include text(18px, 1.5, $color-grey);
+
+			@include media(xl) {
+				font-size: 24px;
+			}
+
+			@include media(xxl) {
+				margin-bottom: 107px;
+			}
+		}
+
+		#{$self}__heading {
+			margin-bottom: 55px;
+		}
 	}
 
 	&__intro {
@@ -32,6 +68,15 @@
 	}
 
 	&__image {
+		&--mb-negative {
+			@include media(md) {
+				margin-bottom: -63px;
+			}
+			@include media(lg) {
+				margin-bottom: -97px;
+			}
+		}
+
 		@include media(xxl) {
 			width: 900px;
 		}
@@ -89,10 +134,21 @@
 	}
 
 	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
 		margin-bottom: 40px;
 
 		@include media(xxl) {
 			margin-bottom: 84px;
+		}
+	}
+
+	&__btn {
+		margin-right: 10px;
+		align-self: flex-start;
+
+		@include media(xl) {
+			margin-right: 27px;
 		}
 	}
 
@@ -344,6 +400,7 @@
 			@include media(xl) {
 				font-size: 90px;
 				line-height: 1;
+				letter-spacing: normal;
 			}
 		}
 

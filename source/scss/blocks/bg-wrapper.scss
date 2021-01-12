@@ -28,6 +28,17 @@
 		);
 	}
 
+	&--pb-less {
+		@include media(xl) {
+			padding-bottom: 158px;
+		}
+	}
+	&--pb-less2 {
+		@include media(xl) {
+			padding-bottom: 170px;
+		}
+	}
+
 	&--reverse {
 		@include media(xl) {
 			background-image: linear-gradient(
@@ -44,5 +55,21 @@
 				$color-geyser 9.375vw
 			);
 		}
+	}
+
+	& + .our-journal {
+		margin-top: 60px;
+
+		@include media(xl) {
+			margin-top: 200px;
+		}
+	}
+
+	& + .approach {
+		margin-top: 30px;
+	}
+
+	& + .rewards {
+		margin-top: 15px;
 	}
 }

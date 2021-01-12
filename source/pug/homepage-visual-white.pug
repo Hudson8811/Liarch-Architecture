@@ -9,18 +9,18 @@ block header
 	include modules/header-4
 	include modules/menu
 block content
-	section.an-awards.an-awards--about(data-aos="fade", data-aos-delay="350")
+	section.an-awards.an-awards--different(data-aos="fade", data-aos-delay="350")
 		.container
-			.row.align-items-center
-				.an-awards__intro.col-12.col-md.col-lg-7.order-md-1
-					.an-awards__image
+			.row
+				.an-awards__intro.col-12.col-md.col-lg-6.order-md-1
+					.an-awards__image.an-awards__image--mb-negative
 						img(src="img/an-awards-image-3.png", width="549", height="832", alt="")
-				.an-awards__content.col-12.col-md.col-lg-5
+				.an-awards__content.col-12.col-md.col-lg-6
 					h1.an-awards__heading.heading.heading--h1 liarch Architects studio
 					.an-awards__text We’re from Poland, we passioned with the space & create the values vsustainable over time
 					.an-awards__buttons
-						a.btn(href="#") Learn More
-						.video-btn
+						a.an-awards__btn.btn(href="#") Learn More
+						.video-btn.video-btn--outline
 							a.video-btn__btn.__js_open-modal(href="#ourStory")
 								span.visually-hidden Play
 								+icon('play')(width="20", height="20")
@@ -57,7 +57,7 @@ block content
 								a.type-service__item-link(href="#") 350 Products
 
 					.simplicity__content.col-12.col-md-6.col-xl-5.offset-xl-1
-						h2.simplicity__heading.simplicity__heading--upper.heading let us help building your dream
+						h2.simplicity__heading.heading let us help building your dream
 						.simplicity__subheading We know that good design mean that good business.
 						.simplicity__text We help our client suceed by creating identities, digital experiences, and printmaterials that communicate clearly, achieve marketing goals & look fantastic Lorem uispum dolor sit amert tunoer poea opefse ceefo goipully.
 
@@ -84,29 +84,32 @@ block content
 	section.works-section
 		.works-section__inner.container
 			.row
-				.col-12.col-md-7
+				.works-section__column.col-12.col-md-7
 					h2.works-section__heading.heading Works
-					.works-section__card
+					.works-section__card.works-section__card--big
 						.works-section__card-image
 							img(src="img/works-section/01.jpg", width="600", height="600", alt="")
 						.works-section__card-tags Residential, Design
-						h3.works-section__card-heading Cube villa, Poland
+						h3.works-section__card-heading
+							a(href="#") Cube villa, Poland
 						.works-section__card-text Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity and building a flexible style guide for their future product elaboration.
 					a.works-section__btn.btn(href="#") more projects
 
-				.col-12.col-md-5
+				.works-section__column.works-section__column--list.col-12.col-md-5
 					.works-section__card
 						.works-section__card-image
 							img(src="img/works-section/02.jpg", width="400", height="400", alt="")
 						.works-section__card-tags Architecture, CGI
-						h3.works-section__card-heading Stone house
+						h3.works-section__card-heading
+							a(href="#") Stone house
 						.works-section__card-text Stone House is a digital platform that provides university students with personalized learning pathways
 
 					.works-section__card
 						.works-section__card-image
 							img(src="img/works-section/03.jpg", width="400", height="400", alt="")
 						.works-section__card-tags Architecture, CGI
-						h3.works-section__card-heading Single house
+						h3.works-section__card-heading
+							a(href="#") Single house
 						.works-section__card-text Discover how we helped them scale up from local to global.
 	section.studio-section
 		.studio-section__inner.container
@@ -114,9 +117,9 @@ block content
 				h2.studio-section__heading.heading Studio
 				.studio-section__text We are surrounded by amazing cultural and physical weather climates. Our HQ is located in Odesa — a beautiful seaside resort city near the Black Sea. Anton Checkhov lived in our same neighborhood, and we are just one minute away from the opera house where Tchaikovsky conducted.
 			.studio-section__wrapper
-				.studio-section__image.studio-section__image--shifted
+				.studio-section__image.studio-section__image--big
 					img(src="img/studio/01.jpg", width="1045", height="640", alt="")
-					button.studio-section__play-video(type="button") Play video
+					button.studio-section__play-video.__js_open-modal(data-href="#ourStory", type="button") Play video
 				.studio-section__image
 					img(src="img/studio/02.jpg", width="470", height="640", alt="")
 	section.rewards(data-aos="fade")
@@ -173,11 +176,11 @@ block content
 									a(href="#") The Trending of Interior 2018 by OKA
 								.reward__project-text B65 Apartment, Sepro Building, Italy
 							a.reward__project-link(href="#") see project
-	.bg-wrapper.bg-wrapper--reverse
-		section.about__our-experts.our-experts(data-aos="fade")
+	.bg-wrapper
+		section.about__our-experts.our-experts.our-experts--mt-negative(data-aos="fade")
 			.our-experts__inner.container
 				header.our-experts__header
-					h2.our-experts__heading.our-experts__heading--upper.heading Our experts
+					h2.our-experts__heading.heading our experts
 					.our-experts__text At Liarch studio, we’re a group with top architects from building, interior, design, photography, etc. to help consult & build your dream become perfect
 				ul.our-experts__list
 					.our-experts__item.team-item
@@ -217,10 +220,12 @@ block content
 				.our-experts__line
 
 		section.pricing.pricing--section
-			.container.pricing__container
+			.container
 				h2.pricing__title Pricing & Plan
 				.pricing__subtitle At Liarch studio, we’re a group with top architects from building, interior, design, photography, etc.
 													|  to help consult & build your dream become perfect
+			.container.pricing__container
+
 				.pricing__slider-container
 					.pricing__slider.swiper-container.__js_slider-price
 						.pricing__wrapper.swiper-wrapper
@@ -271,10 +276,10 @@ block content
 										li free support & repair 2 years
 									a.pricing-item__btn(href='#') start my project
 
-	section.our-journal
+	section.our-journal.our-journal--mb
 		.container
-			header.our-journal__header
-				h2.our-journal__heading.heading Our Journal
+			header.our-journal__header.our-journal__header--block
+				h2.our-journal__heading.heading.heading--upper Our Journal
 				.our-journal__text Join into our journal to discuss around art & arch, share to find more inspiration for your work
 			ul.our-journal__list.row
 				+news-card('item-1.jpg', '25', 'december', '2020', 'Discover top 15 buildings modern in Italia', 'inspiration', 'By Admin')

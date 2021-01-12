@@ -8,7 +8,21 @@ block header
 	include modules/header-4
 	include modules/menu
 block content
-	include modules/an-awards-3
+	section.studio-hero(data-aos="fade", data-aos-delay="350")
+		.container
+			.row.align-items-center
+				.studio-hero__intro.col-12.col-md.col-lg-7.order-md-1
+					.studio-hero__image
+						img(src="img/about/about-30.png", width="804", height="695", alt="")
+				.studio-hero__content.col-12.col-md.col-lg-5
+					h1.studio-hero__heading.heading bigger, bolder & better
+					.studio-hero__text We passioned with the space & create the values vsustainable over time
+					.studio-hero__buttons
+						.video-btn.video-btn--outline
+							a.video-btn__btn.__js_open-modal(href="#ourStory")
+								span.visually-hidden Play
+								+icon('play')(width="20", height="20")
+							span.video-btn__text view our story
 
 	.bg-wrapper
 		section.simplicity
@@ -88,11 +102,11 @@ block content
 							+icon('customer')(width="48", height="48")
 						h3.approach__card-heading Handover and Support
 						.approach__card-text After complete project, we will handover full & support 2 years
-	.bg-wrapper.bg-wrapper--reverse
+	.bg-wrapper.bg-wrapper--reverse.bg-wrapper--pb-less
 		section.about__our-experts.our-experts(data-aos="fade")
 			.our-experts__inner.container
 				header.our-experts__header
-					h2.our-experts__heading.our-experts__heading--upper.heading Our experts
+					h2.our-experts__heading.heading our experts
 					.our-experts__text At Liarch studio, we’re a group with top architects from building, interior, design, photography, etc. to help consult & build your dream become perfect
 				ul.our-experts__list
 					.our-experts__item.team-item
@@ -132,7 +146,7 @@ block content
 				.our-experts__line
 		.twitter-block(data-aos="fade")
 			.container
-				h2.twitter-block__heading.heading.heading--upper Testimonials
+				h2.twitter-block__heading.heading testimonials
 				.about__twitter-block.twitter-block__wrapper
 					header.twitter-block__header
 						.twitter-block__author
@@ -157,7 +171,7 @@ block content
 	section.rewards(data-aos="fade")
 		.rewards__inner.container
 			header.rewards__header
-				h2.rewards__heading.heading(data-aos="fade") Our awards
+				h2.rewards__heading.heading(data-aos="fade") our awards
 				.rewards__text This is results for our efforts in many years. Passionate, professional and alway improve better each products
 			ul.rewards__list
 				li.rewards__item.reward(data-aos="fade")

@@ -93,3 +93,21 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.team-item {
+		&:hover {
+			.team-item__photo {
+				filter: saturate(1);
+
+				svg {
+					fill: $color-grey;
+				}
+
+				p {
+					color: $color-grey;
+				}
+			}
+		}
+	}
+}

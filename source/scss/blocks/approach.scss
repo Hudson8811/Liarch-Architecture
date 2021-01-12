@@ -32,11 +32,7 @@
 		font-weight: 400;
 
 		& + * {
-			margin-top: 30px;
-
-			@include media(xl) {
-				margin-bottom: 63px;
-			}
+			margin-top: 40px;
 		}
 	}
 
@@ -45,6 +41,7 @@
 
 		@include media(xl) {
 			font-size: 20px;
+			margin-bottom: 91px;
 		}
 	}
 
@@ -154,9 +151,17 @@
 	.approach {
 		background-color: transparent;
 
+		@include media(xl) {
+			padding-bottom: 167px;
+		}
+
 		&__heading {
 			font-family: $font-family--secondary;
 			color: $color-default-white;
+
+			@include media(xl) {
+				font-size: 60px;
+			}
 		}
 
 		&__card {
@@ -170,6 +175,7 @@
 			}
 
 			&-heading {
+				max-width: none;
 				font-family: $font-family--secondary;
 				color: $color-default-white;
 			}

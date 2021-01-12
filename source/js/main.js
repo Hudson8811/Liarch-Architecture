@@ -502,7 +502,7 @@ function setOverlay(cb) {
 
     $(this).on('click', function(evt) {
       evt.preventDefault();
-      var target = $(this).attr('href');
+      var target = $(this).attr('href') ? $(this).attr('href') : $(this).attr('data-href');
       modal = $(target);
 
       var overlay = setOverlay(closeModal);

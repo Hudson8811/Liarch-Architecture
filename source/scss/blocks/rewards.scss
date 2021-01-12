@@ -32,11 +32,7 @@
 		font-weight: 400;
 
 		& + * {
-			margin-top: 30px;
-
-			@include media(xl) {
-				margin-bottom: 60px;
-			}
+			margin-top: 42px;
 		}
 	}
 
@@ -44,6 +40,7 @@
 		@include text(16px, 1.77, $color-grey);
 
 		@include media(xl) {
+			margin-bottom: 50px;
 			font-size: 18px;
 		}
 	}
@@ -57,6 +54,10 @@
 			border-top: solid 1px $color-grey7;
 		}
 	}
+
+	& + .bg-wrapper {
+		margin-top: 26px;
+	}
 }
 
 .webpage--beige {
@@ -67,6 +68,8 @@
 			font-family: $font-family--secondary;
 			color: $color-default-white;
 			text-transform: uppercase;
+			//letter-spacing: -0.025em;
+			letter-spacing: normal;
 		}
 
 		.rewards__item + .rewards__item {

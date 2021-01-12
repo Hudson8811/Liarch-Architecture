@@ -105,3 +105,54 @@
 		margin-bottom: 40px;
 	}
 }
+
+.webpage--beige {
+	.menu {
+		background-color: $color-dark;
+		&__item {
+			margin-bottom: 15px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__item--current {
+			a {
+				color: $color-bird-flower;
+			}
+		}
+
+		&__link {
+			@include text(30px, 1, $color-grey);
+			font-weight: 600;
+
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-bird-flower;
+			}
+		}
+
+		&__copy {
+			color: $color-grey;
+		}
+
+		&__close {
+			svg {
+				fill: $color-grey;
+			}
+
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+		}
+	}
+}

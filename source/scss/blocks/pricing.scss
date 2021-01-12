@@ -16,6 +16,12 @@
 		#{$self}__title {
 			font-weight: 400;
 		}
+
+		#{$self}__subtitle {
+			@include media(xl) {
+				margin-bottom: 94px;
+			}
+		}
 	}
 
 	&__container {
@@ -314,9 +320,15 @@
 
 .webpage--beige {
 	.pricing {
+		&__slider-container {
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
 		&__title {
 			font-family: $font-family--secondary;
-			text-transform: uppercase;
+			text-transform: lowercase;
 		}
 	}
 
