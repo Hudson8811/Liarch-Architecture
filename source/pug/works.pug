@@ -12,14 +12,19 @@ block content
 				.works-page__text Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
 		.works-page__content
 			.works-page__inner.container
+
+				// Works
 				section.works
 					header.works__header
+
+						// Filter
 						.works__filter.filter
 							each item in ['all', 'architecture', 'interior', 'cgi', 'products']
 								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
 								- let activeClass = item === 'all' ? ' filter__item--active' : '';
 								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
 
+					// Works list
 					ul.works__list.row.__js_works-filter
 						+work-card('cube-villa-poland.jpg', 'Architecture, Interior', 'Cube villa, Poland', 'Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity.')(class="__js_architecture __js_interior")
 
@@ -39,6 +44,7 @@ block content
 
 						+work-card('dogel-nord-station.jpg', 'Architecture, Interior', 'Dogel nord station', 'Own appear fifth, very god made darkness without which whose meat fill, over sixth of which Good in third gathering')(class="__js_architecture __js_interior")
 
+					// Button more
 					a.works__more.more-btn(href="#")
 						span.more-btn__text more
 

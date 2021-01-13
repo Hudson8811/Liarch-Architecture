@@ -7,6 +7,7 @@ footer.footer.footer--modern
 			.col-12.col-sm-4.col-md-3
 				.footer__column
 					.footer__column-title Services
+					// Footer menu
 					ul.footer__column-menu
 						each item in MODERN_FOOTER_MENU_SERVICES
 							if item.currentIndex === currentIndex
@@ -21,6 +22,7 @@ footer.footer.footer--modern
 					.footer__column-info
 						address.footer__column-address 90 Fairground Rd, FL 3290, United States
 						a.footer__column-email(href="mailto:hello@liarch.co") hello@liarch.co
+					// Footer menu
 					ul.footer__column-menu
 						each item in MODERN_FOOTER_MENU_LINKS
 							if item.currentIndex === currentIndex
@@ -31,6 +33,7 @@ footer.footer.footer--modern
 									a.footer__column-link(href= item.url)= item.text
 		.footer__bottom.row.align-items-center
 			.col-12.col-sm-4.col-lg-3
+				// Logo
 				+logo(isHome, 'footer__logo')
 			.col-12.col-sm-8.col-lg-5
 				.footer__copyright © 2020 Liarch by LoganCee. All Rights Reserved

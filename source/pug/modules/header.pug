@@ -1,8 +1,9 @@
 header.header(data-aos="fade", data-aos-delay="350")
   .header__inner
-    //- Логотип
+    // Logo
     +logo(isHome, 'header__logo')
 
+    // Header menu
     nav.header__nav.navigation
       ul.navigation__list
         each item in MAIN_MENU
@@ -12,12 +13,18 @@ header.header(data-aos="fade", data-aos-delay="350")
           else
             li.navigation__item
               a.navigation__link(href= item.url)= item.text
+
+    // Chat
     a.header__chat.lets-chat(href="#")
       span.lets-chat__text Let’s chat!
       span.lets-chat__icon
         +icon('comments-reply')(width="18", height="18")
+
+    // Search toggle
     button.header__search-toggle.search-toggle(type="button")
       +icon('search')(width="22", height="22")
       span.visually-hidden Show search field
+
+    // Burger
     button.header__menu-toggle.menu-toggle(type="button")
       span.visually-hidden Menu

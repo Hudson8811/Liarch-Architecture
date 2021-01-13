@@ -13,6 +13,8 @@ block content
 				header.news-list__header(data-aos="fade")
 					h2.news-list__heading.heading Inspirations & Experiences
 				.news-list__filter-with-search(data-aos="fade")
+
+					// Filter
 					.filter.controls.news-list__filter
 						button.filter__item(type="button", data-filter="all") all
 						button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
@@ -25,6 +27,8 @@ block content
 			.post-page__main-pic(data-aos="fade")
 				img(src="img/slider/slide-1.jpg", alt="")
 			.post-page__wrapper
+
+				// Post
 				section.post-sb.post-sb--main
 					.post-sb__date
 						a.tag(href='#') review
@@ -51,6 +55,7 @@ block content
 						p The short answer is yes. According to Kross, when you think of yourself as another person, it allows you
 							|  give yourself more objective, helpful feedback.
 
+					// Twitter block
 					section.post-sb__review.twitter-block
 						.twitter-block__wrapper
 							header.twitter-block__header
@@ -76,10 +81,14 @@ block content
 						p That immediately brought to mind one of <a href="#" target="_blank">my fondest</a> memories, involving my daughter when she was just a toddler of one.
 
 					.post-sb__bottom(data-aos="fade")
+
+						// Tags
 						.post-sb__tags
 							.post-sb__tag-item wordpress
 							.post-sb__tag-item theme
 							.post-sb__tag-item architecture
+
+						// Share
 						.post-sb__socials
 							p Share on
 							ul.social.post-sb__social
@@ -104,6 +113,7 @@ block content
 										+icon('rss')(width="14", height="14")
 										span.visually-hidden Rss
 
+					// Post author
 					section.post-author(data-aos="fade")
 						.post-author__photo
 							img(src="img/post/author.jpg", alt="")
@@ -124,6 +134,8 @@ block content
 								li
 									a(href="#", target="_blank")
 										+icon('behance')(width="14", height="14")
+
+					// Related posts
 					section.post-sb__related(data-aos="fade")
 						.post-sb__related-title Related Posts
 						.post-sb__related-wrapper
@@ -137,6 +149,8 @@ block content
 									img(src="img/slider/slide-1.jpg", alt="")
 								.post-related__date December 6, 2020
 								a.post-related__title(href='#') The dome in architectural
+
+					// Comments
 					section.comment(data-aos="fade")
 						.comment__title 02 Comments
 						.comment__wrapper
@@ -167,6 +181,8 @@ block content
 										.comment-item__sent December 25, 2020
 									.comment-item__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 									button.comment-item__reply Reply
+
+					// Send comment
 					form.comment-form(action='', method='POST', data-aos="fade")
 						.comment-form__title Leave A Commnet
 						.comment-form__inputs-group

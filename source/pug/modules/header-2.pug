@@ -1,8 +1,9 @@
 header.header.header--aside
 	.header__inner
-		//- Логотип
+		// Logo
 		+logo(isHome, 'header__logo')
 
+		// Language switcher
 		ul.header__lang-switcher.lang-switcher
 			li.lang-switcher__item
 				a.lang-switcher__link.lang-switcher__link--current en
@@ -11,6 +12,7 @@ header.header.header--aside
 			li.lang-switcher__item
 				a.lang-switcher__link(href="#") de
 
+		// Header menu
 		nav.header__nav.navigation.navigation--column
 			ul.navigation__list
 				each item in ASIDE_MAIN_MENU
@@ -24,9 +26,12 @@ header.header.header--aside
 
 		+social-2('header__social', ['twitter', 'facebook', 'instagram'])
 
+		// Contacts
 		.header__contacts
 			address.header__address 166 Main Street, Beverly Hills CA, 90210
 			a.header__phone(href="tel:+00853462188") +0085 346 2188
+
+		// Burger
 		button.header__toggle.header-toggle(type="button")
 			span.line
 			span.visually-hidden Menu

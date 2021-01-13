@@ -1,10 +1,129 @@
+/* ------------------------------------------------------------------------------
+
+  1.  Global
+
+      1.1 General
+      1.2 Utils
+      1.3 Buttons
+      1.4 Fields
+      1.5 Video button
+      1.6 Heading
+      1.7 Menu toggle button
+      1.8 Search toggle button
+      1.9 Chat button
+      1.10 Navigation
+      1.11 Logo
+      1.12 Social
+      1.13 More
+      1.14 More button
+      1.15 Pagination
+      1.16 Filter
+      1.17 Sort
+      1.18 Paginate
+      1.19 Overlay
+      1.20 Modal
+      1.21 Preloader
+      1.22 Webpage
+      1.23 Language switcher
+
+  2.  Header
+
+      2.1 Header type 1
+      2.2 Header type 2
+
+  3.  Footer
+
+      3.1 Footer type 1
+      3.2 Footer type 2
+
+  4.  Main
+
+      4.1 Article preview
+      4.2 Statistics
+      4.3 Phone block
+      4.4 Work card
+      4.5 Slide content
+      4.6 Slide
+      4.7 Slider
+      4.8 Project meta
+      4.9 Twitter block
+      4.10 Like
+      4.11 Testimonials
+      4.12 Simplicity
+      4.13 Approach
+      4.14 Reward
+      4.15 Rewards
+      4.16 Form
+      4.17 Timer
+      4.18 Contact info
+      4.19 Specialization
+      4.20 Process step
+      4.21 Diagram
+      4.22 Our journal
+      4.23 Contact block
+      4.24 Feedback form
+      4.25 Header toggle
+      4.26 Latest article
+      4.27 Latest articles
+      4.28 Fact
+      4.29 Hero banner
+      4.30 Instagram block
+      4.31 Layout
+      4.32 Sidebar
+      4.33 Menu
+      4.34 Latest projects
+      4.35 Review
+      4.36 Partners
+      4.37 Article list
+      4.38 Our story
+      4.39 Type service
+      4.40 Awards
+      4.41 Works
+      4.42 Single project
+      4.43 About
+      4.44 News list
+      4.45 News slider
+      4.46 News card
+      4.47 Post with sidebar
+      4.48 Post without sidebar
+      4.49 Masonry
+      4.50 News masonry
+      4.51 News with sidebar
+      4.52 Error 404
+      4.53 Pricing
+      4.54 Services
+      4.55 Contacts
+      4.56 Services page
+      4.57 Team
+      4.58 Launch page
+      4.59 Homepage parallax
+      4.60 Team item
+      4.61 Our experts
+      4.62 Background wrapper
+      4.63 Works section
+      4.64 Studio section
+      4.65 Studio hero
+
+-------------------------------------------------------------------------------*/
+
+
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
 @import "utils/normalize";
 //@import "common/fonts";
-@import "common/utils";
+
+
+/*-------------------------------------------------------------------------------
+  1. Global
+-------------------------------------------------------------------------------*/
+
+
+/* 1.1 General */
 @import "common/global";
+
+/* 1.2 Utils */
+@import "common/utils";
 @import "vendor/bootstrap-grid";
 //@import "vendor/slick";
 //@import "vendor/slick-theme";
@@ -14,97 +133,291 @@
 @import "vendor/fullpage";
 @import "common/components";
 
+/* 1.3 Buttons */
 @import "blocks/btn";
-@import "blocks/field";
-@import "blocks/video-btn";
-@import "blocks/heading";
-@import "blocks/menu-toggle";
-@import "blocks/search-toggle";
-@import "blocks/lets-chat";
-@import "blocks/navigation";
-@import "blocks/logo";
-@import "blocks/social";
-@import "blocks/more";
-@import "blocks/article-preview";
-@import "blocks/statistics";
-@import "blocks/phone-block";
-@import "blocks/work-card";
-@import "blocks/filter";
-@import "blocks/sort";
-@import "blocks/more-btn";
-@import "blocks/slide-content";
-@import "blocks/slide";
-@import "blocks/slider";
-@import "blocks/pagination";
-@import "blocks/project-meta";
-@import "blocks/twitter-block";
-@import "blocks/liked";
-@import "blocks/paginate";
-@import "blocks/testimonials";
-@import "blocks/simplicity";
-@import "blocks/approach";
-@import "blocks/reward";
-@import "blocks/rewards";
-@import "blocks/form";
-@import "blocks/timer";
-@import "blocks/contact-info";
-@import "blocks/specialization";
-@import "blocks/process-step";
-@import "blocks/diagram";
-@import "blocks/lang-switcher";
-@import "blocks/our-journal";
-@import "blocks/contact-block";
-@import "blocks/feedback-form";
-@import "blocks/header-toggle";
-@import "blocks/latest-article";
-@import "blocks/latest-articles";
-@import "blocks/fact";
-@import "blocks/hero-banner";
-@import "blocks/instagram-block";
-@import "blocks/layout";
-@import "blocks/bg-wrapper";
-@import "blocks/works-section";
-@import "blocks/studio-section";
-@import "blocks/studio-hero";
 
+/* 1.4 Fields */
+@import "blocks/field";
+
+/* 1.5 Video button */
+@import "blocks/video-btn";
+
+/* 1.6 Heading */
+@import "blocks/heading";
+
+/* 1.7 Menu toggle button */
+@import "blocks/menu-toggle";
+
+/* 1.8 Search toggle button */
+@import "blocks/search-toggle";
+
+/* 1.9 Chat button */
+@import "blocks/lets-chat";
+
+/* 1.10 Navigation */
+@import "blocks/navigation";
+
+/* 1.11 Logo */
+@import "blocks/logo";
+
+/* 1.12 Social */
+@import "blocks/social";
+
+/* 1.13 More */
+@import "blocks/more";
+
+/* 1.14 More button */
+@import "blocks/more-btn";
+
+/* 1.15 Pagination */
+@import "blocks/pagination";
+
+/* 1.16 Filter */
+@import "blocks/filter";
+
+/* 1.17 Sort */
+@import "blocks/sort";
+
+/* 1.18 Paginate */
+@import "blocks/paginate";
+
+/* 1.19 Overlay */
+@import "blocks/overlay";
+
+/* 1.20 Modal */
+@import "blocks/modal";
+
+/* 1.21 Preloader */
+@import "blocks/preloader";
+
+/* 1.22 Webpage */
+@import "blocks/webpage";
+
+/* 1.23 Language switcher */
+@import "blocks/lang-switcher";
+
+
+/*-------------------------------------------------------------------------------
+  2. Header
+-------------------------------------------------------------------------------*/
+
+
+/* 2.1 Header type 1 */
 @import "blocks/header";
+
+/* 2.2 Header type 2 */
 @import "blocks/header-3";
+
+
+/*-------------------------------------------------------------------------------
+  3. Footer
+-------------------------------------------------------------------------------*/
+
+
+/* 3.1 Footer type 1 */
 @import "blocks/footer";
+
+/* 3.2 Footer type 2 */
 @import "blocks/footer-3";
 
+
+/*-------------------------------------------------------------------------------
+  4. Main
+-------------------------------------------------------------------------------*/
+
+
+/* 4.1 Article preview */
+@import "blocks/article-preview";
+
+/* 4.2 Statistics */
+@import "blocks/statistics";
+
+/* 4.3 Phone block */
+@import "blocks/phone-block";
+
+/* 4.4 Work card */
+@import "blocks/work-card";
+
+/* 4.5 Slide content */
+@import "blocks/slide-content";
+
+/* 4.6 Slide */
+@import "blocks/slide";
+
+/* 4.7 Slider */
+@import "blocks/slider";
+
+/* 4.8 Project meta */
+@import "blocks/project-meta";
+
+/* 4.9 Twitter block */
+@import "blocks/twitter-block";
+
+/* 4.10 Like */
+@import "blocks/liked";
+
+/* 4.11 Testimonials */
+@import "blocks/testimonials";
+
+/* 4.12 Simplicity */
+@import "blocks/simplicity";
+
+/* 4.13 Approach */
+@import "blocks/approach";
+
+/* 4.14 Reward */
+@import "blocks/reward";
+
+/* 4.15 Rewards */
+@import "blocks/rewards";
+
+/* 4.16 Form */
+@import "blocks/form";
+
+/* 4.17 Timer */
+@import "blocks/timer";
+
+/* 4.18 Contact info */
+@import "blocks/contact-info";
+
+/* 4.19 Specialization */
+@import "blocks/specialization";
+
+/* 4.20 Process step */
+@import "blocks/process-step";
+
+/* 4.21 Diagram */
+@import "blocks/diagram";
+
+/* 4.22 Our journal */
+@import "blocks/our-journal";
+
+/* 4.23 Contact block */
+@import "blocks/contact-block";
+
+/* 4.24 Feedback form */
+@import "blocks/feedback-form";
+
+/* 4.25 Header toggle */
+@import "blocks/header-toggle";
+
+/* 4.26 Latest article */
+@import "blocks/latest-article";
+
+/* 4.27 Latest articles */
+@import "blocks/latest-articles";
+
+/* 4.28 Fact */
+@import "blocks/fact";
+
+/* 4.29 Hero banner */
+@import "blocks/hero-banner";
+
+/* 4.30 Instagram block */
+@import "blocks/instagram-block";
+
+/* 4.31 Layout */
+@import "blocks/layout";
+
+/* 4.32 Sidebar */
 @import "blocks/sidebar";
+
+/* 4.33 Menu */
 @import "blocks/menu";
+
+/* 4.34 Latest projects */
 @import "blocks/latest-projects";
+
+/* 4.35 Review */
 @import "blocks/review";
+
+/* 4.36 Partners */
 @import "blocks/partners";
+
+/* 4.37 Article list */
 @import "blocks/article-list";
+
+/* 4.38 Our story */
 @import "blocks/our-story";
+
+/* 4.39 Type service */
 @import "blocks/type-service";
+
+/* 4.40 Awards */
 @import "blocks/an-awards";
+
+/* 4.41 Works */
 @import "blocks/works";
 @import "blocks/works-page";
+
+/* 4.42 Single project */
 @import "blocks/single-project";
+
+/* 4.43 About */
 @import "blocks/about";
+
+/* 4.44 News list */
 @import "blocks/news-list";
+
+/* 4.45 News slider */
 @import "blocks/news-slider";
+
+/* 4.46 News card */
 @import "blocks/news-card";
+
+/* 4.47 Post with sidebar */
 @import "blocks/post-sb-page";
+
+/* 4.48 Post without sidebar */
 @import "blocks/post";
+
+/* 4.49 Masonry */
 @import "blocks/masonry";
+
+/* 4.50 News masonry */
 @import "blocks/news-masonry";
+
+/* 4.51 News with sidebar */
 @import "blocks/news-sb";
+
+/* 4.52 Error 404 */
 @import "blocks/page-404";
+
+/* 4.53 Pricing */
 @import "blocks/pricing";
+
+/* 4.54 Services */
 @import "blocks/services";
+
+/* 4.55 Contacts */
 @import "blocks/contacts";
+
+/* 4.56 Services page */
 @import "blocks/service-page";
-@import "blocks/team-item";
+
+/* 4.57 Team */
 @import "blocks/team";
-@import "blocks/our-experts";
+
+/* 4.58 Launch page */
 @import "blocks/launch-page";
+
+/* 4.59 Homepage parallax */
 @import "blocks/homepage-parallax";
 
-@import "blocks/overlay";
-@import "blocks/modal";
-@import "blocks/preloader";
-@import "blocks/webpage";
+/* 4.60 Team item */
+@import "blocks/team-item";
+
+/* 4.61 Our experts */
+@import "blocks/our-experts";
+
+/* 4.62 Background wrapper */
+@import "blocks/bg-wrapper";
+
+/* 4.63 Works section */
+@import "blocks/works-section";
+
+/* 4.64 Studio section */
+@import "blocks/studio-section";
+
+/* 4.65 Studio hero */
+@import "blocks/studio-hero";
