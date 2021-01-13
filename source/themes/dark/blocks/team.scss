@@ -5,12 +5,35 @@
 }
 
 .team-item {
+	$self: &;
+
+	@include media(lg) {
+		&:hover {
+			.team-item__name {
+				border-color: $color-default-white;
+			}
+		}
+	}
+
 	&__name {
 		color: $color-default-white;
-		border-color: $color-default-white;
 	}
 
 	&__position {
 		color: $color-grey;
+	}
+
+	&--join {
+		#{$self} {
+			&__photo {
+				svg {
+					fill: $color-default-white;
+				}
+
+				p {
+					color: $color-default-white;
+				}
+			}
+		}
 	}
 }

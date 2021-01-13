@@ -496,14 +496,13 @@ function setOverlay(cb) {
 		var filterItemAll = $('.filter__item[data-filter="*"]');
 		var filterActiveClass = 'filter__item--active';
 
-
-	var grid = $('.__js_works-filter').isotope({
-		itemSelector: '.works__item',
-		layoutMode: 'packery',
-		packery: {
-			gutter: 0
-		},
-	});
+		var grid = $('.__js_works-filter').isotope({
+			itemSelector: '.works__item',
+			layoutMode: 'packery',
+			packery: {
+				gutter: 0
+			},
+		});
 
 		setTimeout(function () {
 			$('.masonry').isotope({
@@ -533,6 +532,10 @@ function setOverlay(cb) {
 			grid.isotope({ filter: filterValue });
 		});
 	});
+
+
+
+
 })();
 
 /* Паралакс фона при скролле */

@@ -31,11 +31,13 @@
 			}
 		}
 
-		&:hover {
-			background-color: transparent;
+		@include media(lg) {
+			&:hover {
+				background-color: transparent;
 
-			svg {
-				fill: #181818;
+				svg {
+					fill: #181818;
+				}
 			}
 		}
 

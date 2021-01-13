@@ -656,12 +656,21 @@ input[type="search"] {
 .team__title {
   color: #ffffff; }
 
+@media (min-width: 992px) {
+  .team-item:hover .team-item__name {
+    border-color: #ffffff; } }
+
 .team-item__name {
-  color: #ffffff;
-  border-color: #ffffff; }
+  color: #ffffff; }
 
 .team-item__position {
   color: #999999; }
+
+.team-item--join .team-item__photo svg {
+  fill: #ffffff; }
+
+.team-item--join .team-item__photo p {
+  color: #ffffff; }
 
 .service-page__heading,
 .service-page h2 {
@@ -719,6 +728,10 @@ input[type="search"] {
 
 .sidebar__categories-num {
   color: #ffffff; }
+
+@media (min-width: 992px) {
+  .sidebar__services-item:hover a::before {
+    color: #ffffff; } }
 
 @media (min-width: 992px) {
   .popular-post:hover .title {
@@ -807,10 +820,11 @@ input[type="search"] {
     border-color: rgba(24, 24, 24, 0.6); }
     .news-sb-slider .arrow-square.swiper-button-disabled svg {
       fill: rgba(24, 24, 24, 0.6) !important; }
-  .news-sb-slider .arrow-square:hover {
-    background-color: transparent; }
-    .news-sb-slider .arrow-square:hover svg {
-      fill: #181818; }
+  @media (min-width: 992px) {
+    .news-sb-slider .arrow-square:hover {
+      background-color: transparent; }
+      .news-sb-slider .arrow-square:hover svg {
+        fill: #181818; } }
   .news-sb-slider .arrow-square svg {
     fill: #ffffff; }
 
