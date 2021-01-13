@@ -12129,7 +12129,7 @@ textarea.custom-input {
     padding: 15px;
     margin-top: auto;
     border-radius: 0;
-    cursor: default;
+    cursor: pointer;
     transition: all 0.3s ease; }
 
 .services__container {
@@ -12484,7 +12484,8 @@ textarea.custom-input {
     overflow: hidden;
     border: 1px solid #999999;
     margin-bottom: 22px;
-    padding-top: 20px; }
+    padding-top: 20px;
+    background-color: #ffffff; }
     @media (min-width: 992px) {
       .team-item__photo {
         filter: saturate(0);

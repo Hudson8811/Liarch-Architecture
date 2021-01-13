@@ -24,6 +24,10 @@
 		}
 	}
 
+	&__text {
+		color: $color-default-white;
+	}
+
 	&--small {
 		#{$self} {
 			&__text {

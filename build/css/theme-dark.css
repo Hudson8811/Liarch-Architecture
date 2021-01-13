@@ -320,6 +320,9 @@ main {
   .twitter-block__social svg:hover {
     fill: #00ccff; }
 
+.twitter-block__text {
+  color: #ffffff; }
+
 .twitter-block--small .twitter-block__text {
   font-weight: 300;
   color: #ffffff;
@@ -521,3 +524,100 @@ main {
 
 .article-preview__text {
   color: #cccccc; }
+
+.team__title {
+  color: #ffffff; }
+
+.team-item__name {
+  color: #ffffff;
+  border-color: #ffffff; }
+
+.team-item__position {
+  color: #999999; }
+
+.service-page__heading,
+.service-page h2 {
+  color: #ffffff; }
+
+.service-page p {
+  color: #999999; }
+
+.specialization__item-text {
+  color: #ffffff; }
+
+.process-step__item::before {
+  color: #ffffff; }
+
+.process-step__item-title {
+  color: #ffffff; }
+
+.process-step__item-text {
+  color: #999999; }
+
+.form__title {
+  color: #ffffff; }
+
+.form__subtitle {
+  color: #999999; }
+
+.form .underline::before, .form .underline::after {
+  background-color: #ffffff; }
+
+.form__field input,
+.form__field textarea {
+  color: #ffffff; }
+
+@media (min-width: 992px) {
+  .form__submit:hover, .form__submit:focus {
+    background-color: #ff6d33;
+    color: #ffffff;
+    border-color: #ff6d33; } }
+
+.sidebar__block-title {
+  color: #ffffff; }
+
+.sidebar__services-item {
+  border-color: #ffffff; }
+  .sidebar__services-item a {
+    color: #ffffff; }
+    .sidebar__services-item a::before {
+      color: #ffffff; }
+
+.pricing__title {
+  color: #ffffff; }
+
+.pricing__subtitle {
+  color: #999999; }
+
+.pricing__contact-us {
+  color: #ffffff; }
+
+@media (min-width: 992px) {
+  .pricing-item:hover .pricing-item__wrapper {
+    border-color: #ffffff; }
+  .pricing-item:hover .pricing-item__btn {
+    border-color: #ff6d33;
+    background-color: #ff6d33; } }
+
+.pricing-item__wrapper {
+  background-color: #232323; }
+
+.pricing-item__plan {
+  color: #ffffff; }
+
+.pricing-item__price {
+  color: #ffffff; }
+
+.pricing-item__included li {
+  color: #ffffff; }
+
+.pricing-item__btn {
+  background-color: #ff4800;
+  border: none;
+  color: #ffffff; }
+
+.page-404__title {
+  color: #ffffff; }
+
+.page-404__subtitle {
+  color: #999999; }

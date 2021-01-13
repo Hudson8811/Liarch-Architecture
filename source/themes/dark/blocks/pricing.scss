@@ -1,0 +1,50 @@
+.pricing {
+	&__title {
+		color: $color-default-white;
+	}
+
+	&__subtitle {
+		color: $color-grey;
+	}
+
+	&__contact-us {
+		color: $color-default-white;
+	}
+}
+
+.pricing-item {
+	@include media(lg) {
+		&:hover {
+			.pricing-item__wrapper {
+				border-color: $color-default-white;
+			}
+
+			.pricing-item__btn {
+				border-color: #ff6d33;
+				background-color: #ff6d33;
+			}
+		}
+	}
+
+	&__wrapper {
+		background-color: #232323;
+	}
+
+	&__plan {
+		color: $color-default-white;
+	}
+
+	&__price {
+		color: $color-default-white;
+	}
+
+	&__included li {
+		color: $color-default-white;
+	}
+
+	&__btn {
+		background-color: $color-orange;
+		border: none;
+		color: $color-default-white;
+	}
+}

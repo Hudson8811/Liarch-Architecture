@@ -1,0 +1,16 @@
+.team {
+	&__title {
+		color: $color-default-white;
+	}
+}
+
+.team-item {
+	&__name {
+		color: $color-default-white;
+		border-color: $color-default-white;
+	}
+
+	&__position {
+		color: $color-grey;
+	}
+}

@@ -1,0 +1,10 @@
+.service-page {
+	&__heading,
+	h2 {
+		color: $color-default-white;
+	}
+
+	p {
+		color: $color-grey;
+	}
+}

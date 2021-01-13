@@ -1,0 +1,15 @@
+.process-step {
+	&__item {
+		&::before {
+			color: $color-default-white;
+		}
+	}
+
+	&__item-title {
+		color: $color-default-white;
+	}
+
+	&__item-text {
+		color: $color-grey;
+	}
+}

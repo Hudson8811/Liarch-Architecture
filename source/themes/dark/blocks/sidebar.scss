@@ -1,0 +1,17 @@
+.sidebar {
+	&__block-title {
+		color: $color-default-white;
+	}
+
+	&__services-item {
+		border-color: $color-default-white;
+
+		a {
+			color: $color-default-white;
+
+			&::before {
+				color: $color-default-white;
+			}
+		}
+	}
+}

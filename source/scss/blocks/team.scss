@@ -94,6 +94,7 @@
 		border: 1px solid $color-grey;
 		margin-bottom: 22px;
 		padding-top: 20px;
+		background-color: $color-default-white;
 
 		@include media(lg) {
 			filter: saturate(0);
