@@ -37,6 +37,15 @@
 			}
 		}
 
+		&--width-full {
+			height: 150px;
+			margin: 0;
+
+			@include media(xl) {
+				height: 209px;
+			}
+		}
+
 		&--textarea {
 			height: 150px;
 

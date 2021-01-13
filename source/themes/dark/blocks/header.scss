@@ -25,5 +25,14 @@
 				}
 			}
 		}
+
+		.header-toggle {
+			background-color: #181818;
+
+			&::before,
+			&::after {
+				background-color: $color-default-white;
+			}
+		}
 	}
 }

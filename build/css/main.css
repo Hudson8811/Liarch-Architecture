@@ -452,7 +452,8 @@ textarea {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  outline: 0; }
+  outline: 0;
+  -webkit-appearance: none; }
 
 @keyframes text-rotate {
   0% {
@@ -8500,6 +8501,12 @@ textarea.custom-input {
         .form__field--width-full {
           width: 100%;
           margin: 0; } }
+    .form__field--width-full {
+      height: 150px;
+      margin: 0; }
+      @media (min-width: 1200px) {
+        .form__field--width-full {
+          height: 209px; } }
     .form__field--textarea {
       height: 150px; }
       @media (min-width: 1200px) {
@@ -9837,6 +9844,8 @@ textarea.custom-input {
       left: 15px;
       right: 15px;
       bottom: 0; } }
+  .latest-projects__slider-thumbs .swiper-wrapper {
+    align-items: flex-end; }
 
 /* 4.35 Review */
 .review {
@@ -9868,7 +9877,12 @@ textarea.custom-input {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("../img/review-shapes.png"); }
+    background-image: url("../img/review-shapes.png");
+    background-position: center;
+    min-height: 300px; }
+    @media (min-width: 450px) {
+      .review__image {
+        min-height: 400px; } }
     .review__image-author {
       position: absolute;
       border-radius: 50%;
@@ -10404,10 +10418,9 @@ textarea.custom-input {
       border-color: #ffffff;
       border-radius: 0;
       transition: all 0.3s ease; }
-      @media (min-width: 992px) {
-        .our-story--parallax .our-story__btn:hover {
-          background-color: #ff4800;
-          border-color: #ff4800; } }
+      .our-story--parallax .our-story__btn:hover {
+        background-color: #ff4800;
+        border-color: #ff4800; }
       @media (max-height: 550px) {
         .our-story--parallax .our-story__btn {
           font-size: 14px;
@@ -13337,13 +13350,15 @@ textarea.custom-input {
 
 .team__wrapper {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center; }
   @media (min-width: 480px) {
     .team__wrapper {
       margin: 0 -10px; } }
   @media (min-width: 992px) {
     .team__wrapper {
-      margin: 0 -15px; } }
+      margin: 0 -15px;
+      justify-content: flex-start; } }
   @media (min-width: 1200px) {
     .team__wrapper {
       margin: 0 -30px; } }

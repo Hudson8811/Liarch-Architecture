@@ -83,6 +83,12 @@
 		}
 	}
 
+	&__slider-thumbs {
+		.swiper-wrapper {
+			align-items: flex-end;
+		}
+	}
+
 	/*.swiper-slide-thumb-active {
 		.slide-content {
 			background-image: none;

@@ -361,11 +361,9 @@
 				border-radius: 0;
 				@include transition(all);
 
-				@include media(lg) {
-					&:hover {
-						background-color: $color-orange;
-						border-color: $color-orange;
-					}
+				&:hover {
+					background-color: $color-orange;
+					border-color: $color-orange;
 				}
 
 				@media (max-height: 550px) {

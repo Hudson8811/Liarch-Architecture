@@ -40,10 +40,8 @@
 				border-color: #252b30;
 				color: $color-orange;
 
-				@include media(lg) {
-					&:hover {
-						color: $color-default-white;
-					}
+				&:hover {
+					color: $color-default-white;
 				}
 			}
 		}

@@ -6,4 +6,16 @@
 	&__more {
 		color: $color-grey;
 	}
+
+	.slider--with-thumbs .slider__nav-btn {
+		&:hover {
+			svg {
+				fill: $color-orange;
+			}
+		}
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
 }
