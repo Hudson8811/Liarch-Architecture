@@ -290,7 +290,7 @@
 		letter-spacing: 0.8px;
 		background-color: $color-orange--dark;
 		cursor: pointer;
-		@include transition(opacity);
+		@include transition(all);
 
 		@include media(lg) {
 			&:hover {

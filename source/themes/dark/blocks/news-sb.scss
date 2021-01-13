@@ -1,0 +1,52 @@
+.news-sb-page {
+	&__title {
+		color: $color-default-white;
+	}
+
+	&__related-arrow {
+		background-color: transparent;
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}
+
+.news-sb {
+	&__title {
+		color: $color-default-white;
+	}
+}
+
+.news-sb-slider {
+	.arrow-square {
+		background-color: #181818;
+		border-color: #181818;
+
+		&.swiper-button-disabled {
+			border-color: rgba(#181818, 0.6);
+
+			svg {
+				fill: rgba(#181818, 0.6) !important;
+			}
+		}
+
+		&:hover {
+			background-color: transparent;
+
+			svg {
+				fill: #181818;
+			}
+		}
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}
+
+.post-related {
+	&__title {
+		color: $color-default-white;
+	}
+}

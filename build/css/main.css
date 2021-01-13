@@ -9578,7 +9578,7 @@ textarea.custom-input {
     letter-spacing: 0.8px;
     background-color: #f5480c;
     cursor: pointer;
-    transition: opacity 0.3s ease; }
+    transition: all 0.3s ease; }
     @media (min-width: 992px) {
       .newsletter__btn:hover {
         opacity: 0.8; } }
@@ -12398,7 +12398,8 @@ textarea.custom-input {
   background-color: #ffffff;
   position: absolute;
   bottom: -40px;
-  outline: none; }
+  outline: none;
+  cursor: pointer; }
   @media (min-width: 768px) {
     .news-sb-page__related-arrow {
       bottom: unset;
@@ -12444,7 +12445,8 @@ textarea.custom-input {
 .news-sb-slider {
   position: relative; }
   .news-sb-slider .arrow-square {
-    bottom: -65px; }
+    bottom: -65px;
+    cursor: pointer; }
     @media (min-width: 768px) {
       .news-sb-slider .arrow-square {
         bottom: unset;

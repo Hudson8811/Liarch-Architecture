@@ -4,7 +4,8 @@
 
 @import "blocks/components";
 
-@import "blocks/common";
+@import "common/common";
+@import "common/components";
 @import "blocks/heading";
 @import "blocks/our-story";
 @import "blocks/type-service";
@@ -66,3 +67,6 @@
 @import "blocks/sidebar";
 @import "blocks/pricing";
 @import "blocks/page-404";
+@import "blocks/news-sb";
+@import "blocks/pagination";
+@import "blocks/post-sb";

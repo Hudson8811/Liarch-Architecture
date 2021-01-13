@@ -1,0 +1,84 @@
+.post-sb {
+	&__title {
+		color: $color-default-white;
+	}
+
+	&__title-inner {
+		color: $color-default-white;
+	}
+
+	&__subtitle {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey;
+	}
+
+	&__pic-caption a {
+		color: $color-default-white;
+	}
+
+	&__list {
+		color: $color-grey;
+
+		li::before {
+			background-color: $color-grey;
+		}
+	}
+
+	&__tag-item {
+		color: $color-default-white;
+		background-color: transparent;
+	}
+
+	&__socials > p {
+		color: $color-default-white;
+	}
+
+	&__related-title {
+		color: $color-default-white;
+	}
+}
+
+.post-author {
+	&__name {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey;
+	}
+
+	&__socials li a svg {
+		fill: $color-default-white;
+	}
+}
+
+.comment {
+	&__title {
+		color: $color-default-white;
+	}
+
+	.comment-item {
+		&__name,
+		&__sent {
+			color: $color-default-white;
+		}
+
+		&__text {
+			color: $color-grey;
+		}
+
+		&__reply {
+			background-color: transparent;
+			color: $color-default-white;
+		}
+	}
+}
+
+.comment-form {
+	&__title {
+		color: $color-default-white;
+	}
+}

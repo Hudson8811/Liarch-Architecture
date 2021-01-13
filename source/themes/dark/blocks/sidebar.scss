@@ -1,4 +1,10 @@
 .sidebar {
+	&__block {
+		> p {
+			color: $color-default-white;
+		}
+	}
+
 	&__block-title {
 		color: $color-default-white;
 	}
@@ -11,6 +17,70 @@
 
 			&::before {
 				color: $color-default-white;
+			}
+		}
+	}
+
+	&__categories-name {
+		color: $color-default-white;
+	}
+
+	&__categories-num {
+		color: $color-default-white;
+	}
+}
+
+.popular-post {
+	@include media(lg) {
+		&:hover {
+			.title {
+				color: $color-orange;
+			}
+
+			.popular-post__num {
+				color: $color-default-white;
+			}
+		}
+	}
+
+	&.active {
+		.title {
+			color: $color-orange;
+		}
+
+		.popular-post__num {
+			color: $color-default-white;
+		}
+	}
+
+	&__num {
+		color: $color-default-white;
+	}
+
+	&__content {
+		.title {
+			color: $color-default-white;
+		}
+	}
+}
+
+.newsletter {
+	background-color: transparent;
+	border: 1px solid $color-default-white;
+
+	&__title {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-grey;
+	}
+
+	&__btn {
+		@include media(lg) {
+			&:hover {
+				background-color: #ff6d33;
+				opacity: 1;
 			}
 		}
 	}
