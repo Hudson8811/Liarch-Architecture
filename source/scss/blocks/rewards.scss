@@ -16,9 +16,8 @@
 		text-transform: uppercase;
 	}
 
-	&__heading {
+	&__header {
 		margin-bottom: 12px;
-		font-weight: 400;
 
 		@include media(md) {
 			margin-bottom: 30px;
@@ -29,6 +28,23 @@
 		}
 	}
 
+	&__heading {
+		font-weight: 400;
+
+		& + * {
+			margin-top: 42px;
+		}
+	}
+
+	&__text {
+		@include text(16px, 1.77, $color-grey);
+
+		@include media(xl) {
+			margin-bottom: 50px;
+			font-size: 18px;
+		}
+	}
+
 	&__list {
 		@include list-reset;
 	}
@@ -36,6 +52,28 @@
 	&__item {
 		& + & {
 			border-top: solid 1px $color-grey7;
+		}
+	}
+
+	& + .bg-wrapper {
+		margin-top: 26px;
+	}
+}
+
+.webpage--beige {
+	.rewards {
+		background-color: transparent;
+
+		&__heading {
+			font-family: $font-family--secondary;
+			color: $color-default-white;
+			text-transform: uppercase;
+			//letter-spacing: -0.025em;
+			letter-spacing: normal;
+		}
+
+		.rewards__item + .rewards__item {
+			border-top: solid 1px rgba($color-default-white, 0.2);
 		}
 	}
 }

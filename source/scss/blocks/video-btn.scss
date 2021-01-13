@@ -41,14 +41,20 @@
 			background-color: transparent;
 			border: solid 1px $color-orange;
 
+			svg {
+				fill: $color-orange;
+
+				@include transition(fill);
+			}
+
 			&:hover,
 			&:focus {
 				outline: none;
 				background-color: $color-orange;
-			}
 
-			svg {
-				fill: $color-orange;
+				svg {
+					fill: $color-default-white;
+				}
 			}
 		}
 	}
@@ -101,6 +107,46 @@
 		@include media(xl) {
 			max-width: 100px;
 			margin-left: 13px;
+		}
+	}
+}
+
+.webpage--beige {
+	.video-btn {
+		color: $color-default-white; //$color-bird-flower;
+
+		&__btn {
+			background-color: $color-bird-flower;
+			border-color: $color-bird-flower;
+
+			&:hover,
+			&:focus {
+				background-color: $color-bird-flower-hover;
+			}
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+
+	.video-btn--outline {
+		.video-btn__btn {
+			background-color: transparent;
+			border: solid 1px $color-bird-flower;
+
+			svg {
+				fill: $color-bird-flower;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $color-bird-flower;
+
+				svg {
+					fill: $color-default-white;
+				}
+			}
 		}
 	}
 }

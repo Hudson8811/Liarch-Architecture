@@ -109,3 +109,13 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.navigation {
+		&__item {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}

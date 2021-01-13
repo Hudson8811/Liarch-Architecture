@@ -74,6 +74,10 @@
 		justify-content: center;
 
 		margin-top: -98px;
+
+		&--justify-start {
+			justify-content: flex-start;
+		}
 	}
 
 	&__item {

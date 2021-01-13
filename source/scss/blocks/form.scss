@@ -71,7 +71,8 @@
 		@include media(lg) {
 			&:hover,
 			&:focus {
-				background-color: $color-default-white;
+				outline: none;
+				background-color: transparent; //$color-default-white;
 				color: $color-orange--dark;
 			}
 		}

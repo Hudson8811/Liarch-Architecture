@@ -129,3 +129,25 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.social {
+		&__link {
+			border-color: $color-dark2;
+
+			svg {
+				fill: $color-smoky2;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-bird-flower;
+				background-color: transparent;
+
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+		}
+	}
+}

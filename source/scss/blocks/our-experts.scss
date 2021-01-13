@@ -1,0 +1,117 @@
+.our-experts {
+	//padding: 60px 0;
+	//background-color: $color-geyser;
+
+	&--mt-negative {
+		margin-top: -10px;
+	}
+
+	&__header {
+		margin-bottom: 30px;
+
+		@include media(xl) {
+			margin-bottom: 71px;
+		}
+	}
+
+	&__heading {
+		font-weight: 400;
+
+		@include media(xl) {
+			font-size: 60px;
+			line-height: 1;
+		}
+
+		& + * {
+			margin-top: 42px;
+		}
+	}
+
+	&__text {
+		@include text(16px, 1.77, $color-grey2);
+		letter-spacing: -0.015em;
+
+		max-width: 730px;
+
+		@include media(xl) {
+			margin-bottom: 102px;
+			font-size: 18px;
+		}
+	}
+
+	&__list {
+		@include list-reset;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: -46px;
+
+		@media (min-width: 480px) {
+			margin-left: -20px;
+		}
+
+		@include media(lg) {
+			margin-left: -30px;
+		}
+
+		@include media(xl) {
+			margin-left: -60px;
+		}
+	}
+
+	&__item {
+		margin: 46px auto 0;
+
+		@media (min-width: 480px) {
+			width: calc(50% - 20px);
+			//margin: 0 10px 46px;
+			margin-left: 20px;
+			margin-right: 0;
+		}
+
+		@include media(md) {
+			width: calc(33.3333% - 20px);
+		}
+
+		@include media(lg) {
+			width: calc(25% - 30px);
+			//margin: 0 15px 46px;
+			margin-left: 30px;
+		}
+
+		@include media(xl) {
+			width: calc(25% - 60px);
+			//margin: 0 30px 46px;
+			margin-left: 60px;
+		}
+	}
+
+	&__line {
+		padding-top: 40px;
+		border-bottom: solid 1px $color-grey;
+
+		@include media(xl) {
+			padding-top: 100px;
+		}
+
+		@include media(xxl) {
+			padding-top: 140px;
+		}
+	}
+
+	& + .pricing {
+		margin-top: -7px;
+		margin-bottom: 48px;
+	}
+}
+
+.webpage--beige {
+	.our-experts {
+		&__heading {
+			font-family: $font-family--secondary;
+		}
+
+		&__line {
+			border-bottom-color: $color-litedark;
+		}
+	}
+}

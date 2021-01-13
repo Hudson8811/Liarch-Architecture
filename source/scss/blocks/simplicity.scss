@@ -81,6 +81,10 @@
 		margin: 0 0 20px;
 		font-weight: 400;
 
+		&--upper {
+			text-transform: uppercase;
+		}
+
 		@include media(md) {
 			margin-bottom: 40px;
 		}
@@ -145,5 +149,35 @@
 
 	&__btn {
 		align-self: flex-start;
+	}
+
+	&__statistics {
+		margin-top: 40px;
+		padding-top: 40px;
+		border-top: solid 1px $color-litedark;
+
+		@include media(xl) {
+			margin-top: 100px;
+			padding-top: 50px;
+		}
+
+		@include media(xxl) {
+			margin-top: 140px;
+			padding-top: 70px;
+		}
+	}
+}
+
+.webpage--beige {
+	.simplicity {
+		&__heading {
+			font-family: $font-family--secondary;
+
+			@include media(xl) {
+				font-size: 60px;
+				line-height: 1;
+				letter-spacing: -0.025em;
+			}
+		}
 	}
 }

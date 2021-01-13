@@ -120,17 +120,6 @@ function setOverlay(cb) {
 		pagination: {
 			el: '.swiper-pagination',
 		},
-
-		// Navigation arrows
-		/*navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},*/
-
-		// And if we need scrollbar
-		/*scrollbar: {
-			el: '.swiper-scrollbar',
-		},*/
 	});
 
 	var thumbsForLatestProjects = new Swiper('.__js_slider-thumbs', {
@@ -210,17 +199,6 @@ function setOverlay(cb) {
 		spaceBetween: 30,
 		loop: false,
 
-		// If we need pagination
-		/*pagination: {
-			el: '.swiper-pagination',
-		},*/
-
-		// Navigation arrows
-		/*navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},*/
-
 		scrollbar: {
 			el: '.swiper-scrollbar',
 		},
@@ -244,13 +222,6 @@ function setOverlay(cb) {
 		pagination: {
 			el: '.swiper-pagination',
 		},
-
-		// Navigation arrows
-		/*navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},*/
-
 	});
 })();
 
@@ -263,8 +234,6 @@ function setOverlay(cb) {
 		pagination: {
 			el: '.swiper-pagination',
 		},
-
-
 	});
 })();
 
@@ -351,7 +320,6 @@ function setOverlay(cb) {
 
 	function closeModal() {
 		contactsModal.fadeOut(DURATION);
-		//closeContactsModalBtn.oFF('click', closeModal);
 	}
 })();
 
@@ -481,17 +449,7 @@ function setOverlay(cb) {
 
 		animationIsDone = true;
 	}
-
-
 })();
-
-/* Анимация блоков */
-
-/*(function(){
-  AOS.init({
-    duration: 1000
-  });
-})();*/
 
 (function(){
   var openModalBtns = $('.__js_open-modal');
@@ -502,7 +460,7 @@ function setOverlay(cb) {
 
     $(this).on('click', function(evt) {
       evt.preventDefault();
-      var target = $(this).attr('href');
+      var target = $(this).attr('href') ? $(this).attr('href') : $(this).attr('data-href');
       modal = $(target);
 
       var overlay = setOverlay(closeModal);
@@ -530,24 +488,6 @@ function setOverlay(cb) {
   }
 })();
 
-/* mixitup filter */
-(function() {
-	/*var containerEl = document.querySelector('.__js_mixitup-container');
-	var select = document.querySelector('.__js_mixitup-select');
-	var mixer = mixitup(containerEl);
-
-	select.onchange = function () {
-		var value = select.value;
-		console.log(value);
-
-		if (value !== 'all') {
-			mixer.filter('.__js_' + value);
-		}
-	};
-})();
-	};*/
-})();
-
 /* packery init */
 (function() {
 	$(window).on('load', function(){
@@ -555,7 +495,6 @@ function setOverlay(cb) {
 		var filterItem = $('.filter__item');
 		var filterItemAll = $('.filter__item[data-filter="*"]');
 		var filterActiveClass = 'filter__item--active';
-
 
 		var grid = $('.__js_works-filter').isotope({
 			itemSelector: '.works__item',

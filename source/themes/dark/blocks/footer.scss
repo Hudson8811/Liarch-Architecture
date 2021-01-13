@@ -42,6 +42,7 @@
 
 	&--lite {
 		background-color: #181818;
+		background-image: none;
 
 		#{$self} {
 			&__copyright {

@@ -71,3 +71,17 @@
     }
   }*/
 }
+
+.webpage--beige {
+	.btn {
+		color: $color-default-black;
+		border-color: $color-bird-flower;
+		background-color: $color-bird-flower;
+
+		&:hover,
+		&:focus {
+			border-color: $color-bird-flower-hover;
+			background-color: $color-bird-flower-hover;
+		}
+	}
+}

@@ -91,3 +91,27 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.news-card {
+		&__date {
+			.num {
+				color: $color-default-white;
+			}
+
+			.year,
+			.month {
+				color: $color-grey;
+			}
+		}
+
+		&__title {
+			a {
+				color: $color-default-white;
+			}
+			.author {
+				color: $color-bird-flower;
+			}
+		}
+	}
+}
