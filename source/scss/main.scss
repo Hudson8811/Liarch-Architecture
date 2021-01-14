@@ -109,8 +109,12 @@
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
-//@import "vendor/normalize";
-//@import "common/fonts";
+@import "common/components";
+//ignorescss @import "bootstrap-grid.css";
+//ignorescss @import "aos.css";
+//ignorescss @import "swiper-bundle.css";
+//ignorescss @import "fullpage.css";
+//ignorescss @import "normalize.css";
 
 /*-------------------------------------------------------------------------------
   1. Global
@@ -121,14 +125,6 @@
 
 /* 1.2 Utils */
 @import "common/utils";
-@import "vendor/bootstrap-grid";
-//@import "vendor/slick";
-//@import "vendor/slick-theme";
-//@import "vendor/animate-v3.7.2";
-@import "vendor/aos";
-@import "vendor/swiper-bundle";
-@import "vendor/fullpage";
-@import "common/components";
 
 /* 1.3 Buttons */
 @import "blocks/btn";

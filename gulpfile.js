@@ -18,10 +18,19 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const csso = require("gulp-csso");
 const del = require("del");
-const replace = require('gulp-replace');
 const { parallel } = require('gulp');
+const replace = require('gulp-replace');
 
 let scriptsPath = ['source/js/main.js'];
+
+const sassLibs = {
+	src: ['source/scss/vendor/bootstrap-grid.css',
+		'source/scss/vendor/aos.css',
+		'source/scss/vendor/swiper-bundle.css',
+		'source/scss/vendor/fullpage.css',
+		'source/scss/utils/normalize.css'],
+	build: 'build/css/'
+};
 
 gulp.task('server', function() {
 	browserSync.init({
@@ -40,12 +49,6 @@ gulp.task('server', function() {
 	 gulp.watch('source/img/**/*.{png,jpg,svg,webp}', gulp.series('img'/*, 'webp'*/));
 });
 
-gulp.task('templates', function(){
-  gulp.src(['file.txt'])
-    .pipe(replace('bar', 'foo'))
-    .pipe(gulp.dest('build/'));
-});
-
 gulp.task('refresh', function(done) {
   browserSync.reload();
   done();
@@ -62,6 +65,7 @@ gulp.task('sass', function() {
         }
       })
     }))
+		.pipe(replace(/\/\/ignorescss/g, ''))
 		.pipe(sass({
 			outputStyle: 'expanded',
 		}))
@@ -74,6 +78,22 @@ gulp.task('sass', function() {
 		//.pipe(csso())
 		//.pipe(rename('main.min.css'))
 		//.pipe(gulp.dest('build/css'))
+		.pipe(browserSync.stream());
+});
+
+gulp.task('sassLibs', function() {
+	return gulp.src(sassLibs.src)
+		.pipe(plumber({
+			errorHandler: notify.onError(function(err) {
+				return {
+					title: 'SASS-LIBS',
+					sound: false,
+					message: err.message
+				}
+			})
+		}))
+		.pipe(sass())
+		.pipe(gulp.dest(sassLibs.build))
 		.pipe(browserSync.stream());
 });
 
@@ -217,9 +237,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('copyVendorCss', function() {
-	return gulp.src(['source/scss/vendor/*.css'])
-		.pipe(gulp.dest('build/css'));
-});
-
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassLibs', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));
