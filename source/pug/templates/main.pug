@@ -8,10 +8,10 @@ html.no-js(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
-    +fonts(FONTS)
+    //-+fonts(FONTS)
 
     // CSS
-    link(rel="stylesheet", href="css/fonts.css")
+    link(rel="stylesheet", href="css/bootstrap.min.css")
     link(rel="stylesheet", href="css/main.css")
     //-link(rel="stylesheet", href="css/theme-green.css")
     //-link(rel="stylesheet", href="css/theme-dark.css")
@@ -24,16 +24,18 @@ html.no-js(lang="ru")
   body(class="webpage" + modClass)
     div(style="display: none")
       include ../../../build/img/sprite.svg
-    include ../modules/header
-    include ../modules/menu
-    main
-      block content
-    block footer
-    include ../modules/modal
-    include ../modules/preloader
+    .animsition
+      include ../modules/header
+      include ../modules/menu
+      main
+        block content
+      block footer
+      include ../modules/modal
+      //include ../modules/preloader
 
     // Optional JavaScript
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    //script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
     //-script(src="js/slick.min.js")
     script(src="js/aos.js")
     //-script(src="js/mixitup.min.js")
@@ -41,6 +43,7 @@ html.no-js(lang="ru")
     script(src="js/isotope.pkgd.min.js")
     script(src="js/packery-mode.pkgd.min.js")
     script(src="js/swiper-bundle.min.js")
+    script(src="js/animsition.min.js")
 
     // JavaScript
     script(src="js/main.min.js")
