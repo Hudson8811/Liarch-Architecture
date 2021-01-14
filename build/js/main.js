@@ -176,7 +176,7 @@ function setOverlay(cb) {
 	var sliderSingle2 = new Swiper('.__js_slider-single-2', {
 		slidesPerView: 'auto',
 		spaceBetween: 10,
-		loop: false,
+		loop: true,
 		navigation: {
 			prevEl: '.works-arrow--prev',
 			nextEl: '.works-arrow--next'

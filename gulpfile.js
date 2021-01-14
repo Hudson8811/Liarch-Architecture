@@ -18,6 +18,7 @@ const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const csso = require("gulp-csso");
 const del = require("del");
+const replace = require('gulp-replace');
 const { parallel } = require('gulp');
 
 let scriptsPath = ['source/js/main.js'];
@@ -39,6 +40,12 @@ gulp.task('server', function() {
 	 gulp.watch('source/img/**/*.{png,jpg,svg,webp}', gulp.series('img'/*, 'webp'*/));
 });
 
+gulp.task('templates', function(){
+  gulp.src(['file.txt'])
+    .pipe(replace('bar', 'foo'))
+    .pipe(gulp.dest('build/'));
+});
+
 gulp.task('refresh', function(done) {
   browserSync.reload();
   done();
@@ -55,7 +62,9 @@ gulp.task('sass', function() {
         }
       })
     }))
-		.pipe(sass())
+		.pipe(sass({
+			outputStyle: 'expanded',
+		}))
 		//.pipe(postcss([
 		//	autoprefixer({
 		//		grid: true
@@ -79,7 +88,9 @@ gulp.task('sassDark', function() {
         }
       })
     }))
-		.pipe(sass())
+		.pipe(sass({
+      outputStyle: 'expanded',
+    }))
 		.pipe(gulp.dest('build/css'))
 		.pipe(browserSync.stream());
 });
@@ -95,7 +106,9 @@ gulp.task('sassModern', function() {
         }
       })
     }))
-		.pipe(sass())
+		.pipe(sass({
+            outputStyle: 'expanded',
+        }))
 		.pipe(gulp.dest('build/css'))
 		.pipe(browserSync.stream());
 });
@@ -202,6 +215,11 @@ gulp.task('copy:img', function() {
       base: 'source'
     })
     .pipe(gulp.dest('build'));
+});
+
+gulp.task('copyVendorCss', function() {
+	return gulp.src(['source/scss/vendor/*.css'])
+		.pipe(gulp.dest('build/css'));
 });
 
 gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));
