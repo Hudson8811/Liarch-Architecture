@@ -297,6 +297,12 @@
 		}
 
 		&-item {
+			&--current {
+				#{$self}__column-link {
+					color: $color-default-black;
+				}
+			}
+
 			@include media(xl) {
 				margin-bottom: 9px;
 			}

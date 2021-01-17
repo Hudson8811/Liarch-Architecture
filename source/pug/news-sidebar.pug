@@ -1,0 +1,192 @@
+extends templates/main
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | News Sidebar';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 4.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.news-sb-page
+		section.news-sb-slider(data-aos="fade")
+			.swiper-container.__js_slider-news-2
+				.swiper-wrapper
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-1.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag review
+								span.delimiter /
+								span December 20, 2020
+							.news-sb-slider__title How to use solid color combine with simple furnitures
+							.news-sb-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-2.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag inspiration
+								span.delimiter /
+								span December 25, 2025
+							.news-sb-slider__title Double rectangle houses from <br> old containers
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-3.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag others
+								span.delimiter /
+								span January 15, 2021
+							.news-sb-slider__title The solutions for houses below Texas’s moutain
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-1.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag review
+								span.delimiter /
+								span December 20, 2020
+							.news-sb-slider__title How to use solid color combine with simple furnitures
+							.news-sb-slider__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-2.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag inspiration
+								span.delimiter /
+								span December 25, 2025
+							.news-sb-slider__title Double rectangle houses from <br> old containers
+					.news-sb-slider__item.swiper-slide
+						.news-sb-slider__pic
+							img(src="img/news/slide-3.jpg", alt="")
+						.news-sb-slider__content
+							.news-sb-slider__date
+								span.tag others
+								span.delimiter /
+								span January 15, 2021
+							.news-sb-slider__title The solutions for houses below Texas’s moutain
+			button(class="arrow-square arrow-square--prev")
+				svg
+					use(xlink:href="#arrow-angle")
+			button(class="arrow-square arrow-square--next")
+				svg
+					use(xlink:href="#arrow-angle")
+		.container.news-sb-page__container
+
+			// Related posts
+			section.news-sb-page__related(data-aos="fade")
+				.news-sb-page__title Latest Posts
+				.news-sb-page__related-slider
+					.swiper-container.__js_slider-news-3
+						.swiper-wrapper
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-1.jpg", alt="")
+								.post-related__date December 15, 2020
+								a.post-related__title(href='#', target='_blank') Nordic style, interior style for simple life
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-2.jpg", alt="")
+								.post-related__date December 8, 2020
+								a.post-related__title(href='#', target='_blank') Discover top 15 buildings <br> modern in Italia
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-3.jpg", alt="")
+								.post-related__date December 6, 2020
+								a.post-related__title(href='#', target='_blank') The dome in architectural
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-1.jpg", alt="")
+								.post-related__date December 15, 2020
+								a.post-related__title(href='#', target='_blank') Nordic style, interior style for simple life
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-2.jpg", alt="")
+								.post-related__date December 8, 2020
+								a.post-related__title(href='#', target='_blank') Discover top 15 buildings <br> modern in Italia
+							.post-related.swiper-slide
+								.post-related__pic
+									img(src="img/article-preview-3.jpg", alt="")
+								.post-related__date December 6, 2020
+								a.post-related__title(href='#', target='_blank') The dome in architectural
+					button(class="news-sb-page__related-arrow news-sb-page__related-arrow--prev")
+						svg
+							use(xlink:href="#arrow-angle")
+					button(class="news-sb-page__related-arrow news-sb-page__related-arrow--next")
+						svg
+							use(xlink:href="#arrow-angle")
+			.news-sb-page__wrapper
+
+				// News
+				section.news-sb
+					.news-sb__item(data-aos="fade")
+						.news-sb__pic
+							img(src="img/masonry/item-3.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag inspiration
+								span.delimiter /
+								span December 15, 2020
+							a.news-sb__title(href='#', target='_blank') Discover top 25 architecture buildings in 2020
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Nullam dignissim tortor vitae..
+					.news-sb__item(data-aos="fade")
+						.news-sb__pic
+							img(src="img/masonry/item-6.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag reviews
+								span.delimiter /
+								span December 7, 2020
+							a.news-sb__title(href='#', target='_blank') Scadinavian interior
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Nullam dignissim tortor vitae..
+					.news-sb__item.news-sb__item--vertical(data-aos="fade")
+						.news-sb__pic
+							img(src="img/news/item-4.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag tips & tricks
+								span.delimiter /
+								span December 2, 2020
+							a.news-sb__title(href='#', target='_blank') How to use solid color combine with simple furnitures
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					.news-sb__item(data-aos="fade")
+						.news-sb__pic
+							img(src="img/masonry/item-5.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag experiences
+								span.delimiter /
+								span november 24, 2020
+							a.news-sb__title(href='#', target='_blank') Perfect solutions for street’s <br> house impressive more
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Nullam dignissim tortor vitae..
+					.news-sb__item(data-aos="fade")
+						.news-sb__pic
+							img(src="img/masonry/item-9.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag inspiration
+								span.delimiter /
+								span December 15, 2020
+							a.news-sb__title(href='#', target='_blank') Top 10 Minimalist architectures by Architect Mark Ruffalo
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Nullam dignissim tortor vitae..
+					.news-sb__item(data-aos="fade")
+						.news-sb__pic
+							img(src="img/masonry/item-7.jpg", alt="")
+						.news-sb__content
+							.news-sb__date
+								span.tag reviews
+								span.delimiter /
+								span December 15, 2020
+							a.news-sb__title(href='#', target='_blank') The trending of interior in <br> Winter 2020
+							.news-sb__text Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit. Nullam dignissim tortor vitae..
+				include modules/sidebar
+			include modules/pagination
+
+block footer
+	include modules/footer

@@ -1,7 +1,8 @@
 .header {
 	$self: &;
 
-	//padding: 15px 0;
+	position: relative;
+	z-index: 2;
 	border-top: solid 5px $color-orange--dark;
 
 	&--aside {
@@ -218,6 +219,45 @@
 		z-index: 2;
 	}
 
+	&--fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		background-color: $color-default-white;
+		transform: translateY(99%);
+		//border-bottom: solid 1px $color-grey4;
+		border-top: none;
+		box-shadow: 0 1px 0 0 $color-grey4;
+
+		transition: transform 0.5s ease;
+
+		#{$self}__inner {
+			@include media(md) {
+				padding-top: 24px;
+				padding-bottom: 24px;
+			}
+		}
+
+		.logo {
+			&__image {
+				width: 36px;
+				margin-right: 10px;
+			}
+
+			&__text {
+				font-size: 10px;
+			}
+		}
+
+		#{$self}__logo {
+			@include media(lg) {
+				margin-right: calc(8.69vw + 20px);
+			}
+		}
+	}
+
 	@include media(md) {
 		//padding: 32px 0;
 		border-top-width: 7px;
@@ -269,11 +309,10 @@
 	}
 
 	&__nav {
-		@include media(md) {
-			margin: 0 auto;
-		}
+		display: none;
+
 		@include media(lg) {
-			margin: 0;
+			display: block;
 		}
 	}
 
@@ -290,19 +329,23 @@
 		}
 	}
 
-	&__search-toggle {
-		margin-right: 20px;
-
-		@include media(md) {
-			margin-right: 2.41vw;
-		}
-
+	&__search {
 		@include media(lg) {
-			margin-right: 1.66vw;
+			//margin-right: 1.66vw;
 		}
 	}
 
 	&__menu-toggle {
+		margin-left: 20px;
+
+		@include media(md) {
+			margin-left: 2.41vw;
+		}
+
+		@include media(lg) {
+			display: none;
+			margin-left: 1.66vw;
+		}
 	}
 
 	&__address {

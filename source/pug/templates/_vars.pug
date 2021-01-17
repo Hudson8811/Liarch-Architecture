@@ -1,91 +1,261 @@
 -
-  //- Массив с именами файлов шрифтов, которые подключаются для предзагрузки в теге head миксином fonts
-  let FONTS = [
-    'Jost-Light',
-    'Jost-Regular',
-    'Jost-SemiBold',
-    'Jost-Italic',
-    'Cinzel-Regular'
-  ];
+	//- Массив с именами файлов шрифтов, которые подключаются для предзагрузки в теге head миксином fonts
+	let FONTS = [
+		'Jost-Light',
+		'Jost-Regular',
+		'Jost-SemiBold',
+		'Jost-Italic',
+		'Cinzel-Regular'
+	];
 
-  let ASIDE_MAIN_MENU = [
-    {text: 'Services', url: 'homepage-menu.html', currentIndex: 1},
-    {text: 'Works', url: 'works.html', currentIndex: 2},
-    {text: 'Studio', url: '#', currentIndex: 33},
-    {text: 'News', url: 'news-list.html', currentIndex: 4},
-    {text: 'Contact', url: 'contacts.html', currentIndex: 5}
-  ];
+	let URLS = {
+		home: {
+			default: 'home-default.html',
+			modern: 'home-modern.html',
+			parallax: 'home-parallax.html',
+			technicalDrawing: 'home-technical-drawing.html',
+			leftMenu: 'home-left-menu.html',
+			visual: 'home-visual.html',
+			defaultDark: 'home-default-dark.html',
+			modernDark: 'home-modern-dark.html',
+			parallaxDark: 'home-parallax-dark.html',
+			technicalDrawingDark: 'home-technical-drawing-dark.html',
+			leftMenuDark: 'home-left-menu-dark.html',
+			visualDark: 'home-visual-dark.html'
+		},
+		about: {
+			default: 'about-default.html',
+			universal: 'about-universal.html',
+			visual: 'about-visual.html',
+			defaultDark: 'about-default-dark.html',
+			universalDark: 'about-universal-dark.html',
+			visualDark: 'about-visual-dark.html'
+		},
+		works: {
+			grid: 'works-grid.html',
+			grid2: 'works-grid-2.html',
+			grid3: 'works-grid-3.html',
+			masonry: 'works-masonry.html',
+			listing: 'works-listing.html',
+			carousel1: 'works-carousel-1.html',
+			carousel3: 'works-carousel-3.html',
+			singleStandart: 'single-project-standard.html',
+			singleSidebar: 'single-project-sidebar.html',
+			singleMinimalism: 'single-project-minimalism.html',
+			gridDark: 'works-grid-dark.html',
+			grid2Dark: 'works-grid-2-dark.html',
+			grid3Dark: 'works-grid-3-dark.html',
+			masonryDark: 'works-masonry-dark.html',
+			listingDark: 'works-listing-dark.html',
+			carousel1Dark: 'works-carousel-1-dark.html',
+			carousel3Dark: 'works-carousel-3-dark.html',
+			singleStandartDark: 'single-project-standard-dark.html',
+			singleSidebarDark: 'single-project-sidebar-dark.html',
+			singleMinimalismDark: 'single-project-minimalism-dark.html'
+		},
+		news: {
+			grid: 'news-grid.html',
+			grid2: 'news-grid-2.html',
+			masonry: 'news-masonry.html',
+			sidebar: 'news-sidebar.html',
+			post: 'single-post.html',
+			postSidebar: 'single-post-sidebar.html',
+			gridDark: 'news-grid-dark.html',
+			grid2Dark: 'news-grid-2-dark.html',
+			masonryDark: 'news-masonry-dark.html',
+			sidebarDark: 'news-sidebar-dark.html',
+			postDark: 'single-post-dark.html',
+			postSidebarDark: 'single-post-sidebar-dark.html'
+		},
+		pages: {
+			services: 'services.html',
+			serviceDetail: 'service-detail.html',
+			pricing: 'pricing.html',
+			team: 'team.html',
+			contact: 'contact.html',
+			contact2: 'contact-2.html',
+			error404: '404-error.html',
+			comingSoon: 'coming-soon.html',
+			servicesDark: 'services-dark.html',
+			serviceDetailDark: 'service-detail-dark.html',
+			pricingDark: 'pricing-dark.html',
+			teamDark: 'team-dark.html',
+			contactDark: 'contact-dark.html',
+			contact2Dark: 'contact-2-dark.html',
+			error404Dark: '404-error-dark.html',
+			comingSoonDark: 'coming-soon-dark.html'
+		}
+	};
 
-  let MAIN_MENU = [
-    {text: 'What we do', url: 'homepage.html', currentIndex: 1},
-    {text: 'Works', url: 'works.html', currentIndex: 2},
-    {text: 'About', url: 'about.html', currentIndex: 3},
-    {text: 'News', url: 'news-list.html', currentIndex: 4},
-    {text: 'Contact', url: 'contacts.html', currentIndex: 5}
-  ];
+	let ASIDE_MAIN_MENU = [
+		{text: 'Services', url: 'homepage-menu.html', currentIndex: 1},
+		{text: 'Works', url: 'works.html', currentIndex: 2},
+		{text: 'Studio', url: '#', currentIndex: 33},
+		{text: 'News', url: 'news-list.html', currentIndex: 4},
+		{text: 'Contact', url: 'contacts.html', currentIndex: 5}
+	];
 
-  let MAIN_MENU_2 = [
-    {text: 'home', url: 'homepage.html', currentIndex: 1},
-    {text: 'Services', url: '#', currentIndex: 10},
-    {text: 'Works', url: 'works.html', currentIndex: 2},
-    {text: 'News', url: 'news-list.html', currentIndex: 4},
-    {text: 'Studio', url: 'about.html', currentIndex: 3},
-    {text: 'Contact', url: 'contacts.html', currentIndex: 5}
-  ];
+	let MAIN_MENU = [
+		{text: 'Home', url: URLS.home.dafault, currentSection: 1, currentPage: 1.01, submenu: {
+			white: [
+				{text: 'Home Default', url: URLS.home.default, currentPage: 1.01, currentSection: 1},
+				{text: 'Home Modern', url: URLS.home.modern, currentPage: 1.02, currentSection: 1},
+				{text: 'Home Parallax', url: URLS.home.parallax, currentPage: 1.03, currentSection: 1},
+				{text: 'Home Technical Drawing', url: URLS.home.technicalDrawing, currentPage: 1.04, currentSection: 1},
+				{text: 'Home Left Menu', url: URLS.home.leftMenu, currentPage: 1.05, currentSection: 1},
+				{text: 'Home Visual', url: URLS.home.visual, currentPage: 1.06, currentSection: 1}
+			],
+			dark: [
+				{text: 'Home Default Dark', url: URLS.home.defaultDark, currentPage: 1.07, currentSection: 1},
+				{text: 'Home Modern Dark', url: URLS.home.modernDark, currentPage: 1.08, currentSection: 1},
+				{text: 'Home Parallax Dark', url: URLS.home.parallaxDark, currentPage: 1.09, currentSection: 1},
+				{text: 'Home Technical Drawing Dark', url: URLS.home.technicalDrawingDark, currentPage: 1.1, currentSection: 1},
+				{text: 'Home Left Menu Dark', url: URLS.home.leftMenuDark, currentPage: 1.11, currentSection: 1},
+				{text: 'Home Visual Dark', url: URLS.home.visualDark, currentPage: 1.12, currentSection: 1}
+			]
+		}},
+		{text: 'About', url: URLS.about.default, currentSection: 2, currentPage: 2.01, submenu: {
+			white: [
+				{text: 'About Default', url: URLS.about.default, currentPage: 2.01, currentSection: 2},
+				{text: 'About Universal', url: URLS.about.universal, currentPage: 2.02, currentSection: 2},
+				{text: 'About Visual', url: URLS.about.visual, currentPage: 2.03, currentSection: 2}
+			],
+			dark: [
+				{text: 'About Default Dark', url: URLS.about.defaultDark, currentPage: 2.04, currentSection: 2},
+				{text: 'About Universal Dark', url: URLS.about.universalDark, currentPage: 2.05, currentSection: 2},
+				{text: 'About Visual Dark', url: URLS.about.visualDark, currentPage: 2.06, currentSection: 2}
+			]
+		}},
+		{text: 'Works', url: URLS.works.grid, currentSection: 3, currentPage: 3.01, submenu: {
+			white: [
+				{text: 'Works Grid', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},
+				{text: 'Works Grid 2', url: URLS.works.grid2, currentPage: 3.02, currentSection: 3},
+				{text: 'Works Grid 3', url: URLS.works.grid3, currentPage: 3.03, currentSection: 3},
+				{text: 'Works Masonry', url: URLS.works.masonry, currentPage: 3.04, currentSection: 3},
+				{text: 'Works Listing', url: URLS.works.listing, currentPage: 3.05, currentSection: 3},
+				{text: 'Works Carousel 1', url: URLS.works.carousel1, currentPage: 3.06, currentSection: 3},
+				{text: 'Works Carousel 3', url: URLS.works.carousel3, currentPage: 3.07, currentSection: 3},
+				{text: 'Single Project Standart', url: URLS.works.singleStandart, currentPage: 3.08, currentSection: 3},
+				{text: 'Single Project Sidebar', url: URLS.works.singleSidebar, currentPage: 3.09, currentSection: 3},
+				{text: 'Single Project Minimalism', url: URLS.works.singleMinimalism, currentPage: 3.1, currentSection: 3}
+			],
+			dark: [
+				{text: 'Works Grid Dark', url: URLS.works.gridDark, currentPage: 3.11, currentSection: 3},
+				{text: 'Works Grid 2 Dark', url: URLS.works.grid2Dark, currentPage: 3.12, currentSection: 3},
+				{text: 'Works Grid 3 Dark', url: URLS.works.grid3Dark, currentPage: 3.13, currentSection: 3},
+				{text: 'Works Masonry Dark', url: URLS.works.masonryDark, currentPage: 3.14, currentSection: 3},
+				{text: 'Works Listing Dark', url: URLS.works.listingDark, currentPage: 3.15, currentSection: 3},
+				{text: 'Works Carousel 1 Dark', url: URLS.works.carousel1Dark, currentPage: 3.16, currentSection: 3},
+				{text: 'Works Carousel 3 Dark', url: URLS.works.carousel3Dark, currentPage: 3.17, currentSection: 3},
+				{text: 'Single Project Standart Dark', url: URLS.works.singleStandartDark, currentPage: 3.18, currentSection: 3},
+				{text: 'Single Project Sidebar Dark', url: URLS.works.singleSidebarDark, currentPage: 3.19, currentSection: 3},
+				{text: 'Single Project Minimalism Dark', url: URLS.works.singleMinimalismDark, currentPage: 3.2, currentSection: 3}
+			]
+		}},
+		{text: 'News', url: URLS.news.grid, currentSection: 4, currentPage: 4.01, submenu: {
+			white: [
+				{text: 'News Grid', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+				{text: 'News Grid 2', url: URLS.news.grid2, currentPage: 4.02, currentSection: 4},
+				{text: 'News Masonry', url: URLS.news.masonry, currentPage: 4.03, currentSection: 4},
+				{text: 'News Sidebar', url: URLS.news.sidebar, currentPage: 4.04, currentSection: 4},
+				{text: 'Single Post', url: URLS.news.post, currentPage: 4.05, currentSection: 4},
+				{text: 'Single Post Sidebar', url: URLS.news.postSidebar, currentPage: 4.06, currentSection: 4}
+			],
+			dark: [
+				{text: 'News Grid Dark', url: URLS.news.gridDark, currentPage: 4.07, currentSection: 4},
+				{text: 'News Grid 2 Dark', url: URLS.news.grid2Dark, currentPage: 4.08, currentSection: 4},
+				{text: 'News Masonry Dark', url: URLS.news.masonryDark, currentPage: 4.09, currentSection: 4},
+				{text: 'News Sidebar Dark', url: URLS.news.sidebarDark, currentPage: 4.1, currentSection: 4},
+				{text: 'Single Post Dark', url: URLS.news.postDark, currentPage: 4.11, currentSection: 4},
+				{text: 'Single Post Sidebar Dark', url: URLS.news.postSidebarDark, currentPage: 4.12, currentSection: 4}
+			]
+		}},
+		{text: 'Pages', url: URLS.pages.services, currentSection: 5, currentPage: 5.01, submenu: {
+			white: [
+				{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5},
+				{text: 'Service Detail', url: URLS.pages.serviceDetail, currentPage: 5.02, currentSection: 5},
+				{text: 'Pricing', url: URLS.pages.pricing, currentPage: 5.03, currentSection: 5},
+				{text: 'Team', url: URLS.pages.team, currentPage: 5.04, currentSection: 5},
+				{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5},
+				{text: 'Contact 2', url: URLS.pages.contact2, currentPage: 5.06, currentSection: 5},
+				{text: '404 Error', url: URLS.pages.error404, currentPage: 5.07, currentSection: 5},
+				{text: 'Coming Soon', url: URLS.pages.comingSoon, currentPage: 5.08, currentSection: 5}
+			],
+			dark: [
+				{text: 'Services Dark', url: URLS.pages.servicesDark, currentPage: 5.09, currentSection: 5},
+				{text: 'Service Detail Dark', url: URLS.pages.serviceDetail, currentPage: 5.1, currentSection: 5},
+				{text: 'Pricing Dark', url: URLS.pages.pricingDark, currentPage: 5.11, currentSection: 5},
+				{text: 'Team Dark', url: URLS.pages.teamDark, currentPage: 5.12, currentSection: 5},
+				{text: 'Contact Dark', url: URLS.pages.contactDark, currentPage: 5.13, currentSection: 5},
+				{text: 'Contact 2 Dark', url: URLS.pages.contact2dark, currentPage: 5.14, currentSection: 5},
+				{text: '404 Error Dark', url: URLS.pages.error404Dark, currentPage: 5.15, currentSection: 5},
+				{text: 'Coming Soon Dark', url: URLS.pages.comingSoonDark, currentPage: 5.16, currentSection: 5}
+			]
+		}}
+	];
 
-  let FOOTER_MENU_HELP = [
-    {text: 'FAQs', url: '#', currentIndex: 6},
-    {text: 'Terms & Conditions', url: '#', currentIndex: 7},
-    {text: 'Privacy Policy', url: '#', currentIndex: 8},
-    {text: 'Help', url: '#', currentIndex: 9},
-    {text: 'Services', url: '#', currentIndex: 10}
-  ];
+	//- delete
+	let MAIN_MENU_2 = [
+		{text: 'home', url: 'homepage.html', currentIndex: 1},
+		{text: 'Services', url: '#', currentIndex: 10},
+		{text: 'Works', url: 'works.html', currentIndex: 2},
+		{text: 'News', url: 'news-list.html', currentIndex: 4},
+		{text: 'Studio', url: 'about.html', currentIndex: 3},
+		{text: 'Contact', url: 'contacts.html', currentIndex: 5}
+	];
 
-  let FOOTER_MENU_LINKS = [
-    {text: 'About', url: 'about.html', currentIndex: 3},
-    {text: 'Contact', url: 'contacts.html', currentIndex: 5},
-    {text: 'Career', url: '#', currentIndex: 11},
-    {text: 'News', url: 'news-list.html', currentIndex: 4}
-  ];
+	let FOOTER_MENU_HELP = [
+		{text: 'FAQs', url: '#', currentPage: null, currentSection: null},
+		{text: 'Terms & Conditions', url: '#', currentPage: null, currentSection: null},
+		{text: 'Privacy Policy', url: '#', currentPage: null, currentSection: null},
+		{text: 'Help', url: '#', currentPage: null, currentSection: null},
+		{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5}
+	];
 
-  let MODERN_FOOTER_MENU_LINKS = [
-    {text: 'Works', url: '#', currentIndex: 11},
-    {text: 'About', url: 'about.html', currentIndex: 3},
-    {text: 'News', url: 'news-list.html', currentIndex: 4},
-    {text: 'Contact', url: 'contacts.html', currentIndex: 5}
-  ];
+	let FOOTER_MENU_LINKS = [
+		{text: 'About', url: URLS.about.default, currentPage: 2.01, currentSection: 2},
+		{text: 'Works', url: URLS.pages.contact, currentPage: 3.01, currentSection: 3},
+		{text: 'News', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+		{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5}
+	];
 
-  let MODERN_FOOTER_MENU_SERVICES = [
-    {text: 'Residential', url: '#', currentIndex: 0},
-    {text: 'Commerical', url: '#', currentIndex: 0},
-    {text: 'Interior', url: '#', currentIndex: 0},
-    {text: 'Consulting', url: '', currentIndex: 0},
-    {text: 'Products', url: '#', currentIndex: 0},
-    {text: 'Materials', url: 'news-list.html', currentIndex: 0}
-  ];
+	let MODERN_FOOTER_MENU_LINKS = [
+		{text: 'Works', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},
+		{text: 'About', url: URLS.about.default, currentPage: 2.01, currentSection: 2},
+		{text: 'News', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+		{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5}
+	];
 
+	let MODERN_FOOTER_MENU_SERVICES = [
+		{text: 'Residential', url: '#', currentPage: null, currentSection: null},
+		{text: 'Commerical', url: '#', currentPage: null, currentSection: null},
+		{text: 'Interior', url: '#', currentPage: null, currentSection: null},
+		{text: 'Consulting', url: '', currentPage: null, currentSection: null},
+		{text: 'Products', url: '#', currentPage: null, currentSection: null},
+		{text: 'Materials', url: '#', currentPage: null, currentSection: null}
+	];
 
-  let PARTNERS_LOGO = [
-    {name: '1', w: '132', h: '54', alt: 'badische landes-bibliothek'},
-    {name: '2', w: '116', h: '57', alt: 'christopher willis'},
-    {name: '3', w: '104', h: '64', alt: 'serenity hotel'},
-    {name: '4', w: '125', h: '32', alt: 'artchive crafts gallery'},
-    {name: '5', w: '150', h: '45', alt: 'creative space'},
-    {name: '6', w: '141', h: '27', alt: 'alpatech'},
-    {name: '7', w: '104', h: '38', alt: 'neuton interactive'},
-    {name: '8', w: '124', h: '47', alt: 'papilon'},
-    {name: '9', w: '140', h: '19', alt: 'good habits'},
-    {name: '10', w: '134', h: '29', alt: 'francois redblade'},
-    {name: '11', w: '108', h: '37', alt: 'oak'},
-    {name: '12', w: '136', h: '43', alt: 'magnet studio'},
-    {name: '13', w: '111', h: '39', alt: 'r.m rick meyers'}
-  ];
+	let PARTNERS_LOGO = [
+		{name: '1', w: '132', h: '54', alt: 'badische landes-bibliothek'},
+		{name: '2', w: '116', h: '57', alt: 'christopher willis'},
+		{name: '3', w: '104', h: '64', alt: 'serenity hotel'},
+		{name: '4', w: '125', h: '32', alt: 'artchive crafts gallery'},
+		{name: '5', w: '150', h: '45', alt: 'creative space'},
+		{name: '6', w: '141', h: '27', alt: 'alpatech'},
+		{name: '7', w: '104', h: '38', alt: 'neuton interactive'},
+		{name: '8', w: '124', h: '47', alt: 'papilon'},
+		{name: '9', w: '140', h: '19', alt: 'good habits'},
+		{name: '10', w: '134', h: '29', alt: 'francois redblade'},
+		{name: '11', w: '108', h: '37', alt: 'oak'},
+		{name: '12', w: '136', h: '43', alt: 'magnet studio'},
+		{name: '13', w: '111', h: '39', alt: 'r.m rick meyers'}
+	];
 
-  let REVIEW_IMAGES = [
-    {name: '1', w: '165', h: '165', mod: 'one', aos: 'fade-up'},
-    {name: '2', w: '102', h: '102', mod: 'two', aos: 'fade-right'},
-    {name: '3', w: '125', h: '125', mod: 'three', aos: 'fade-up'},
-    {name: '4', w: '84', h: '84', mod: 'four', aos: 'fade-left'},
-    {name: '5', w: '75', h: '75', mod: 'five', aos: 'fade-left'},
-    {name: '6', w: '60', h: '60', mod: 'six', aos: 'fade-right'}
-  ];
+	let REVIEW_IMAGES = [
+		{name: '1', w: '165', h: '165', mod: 'one', aos: 'fade-up'},
+		{name: '2', w: '102', h: '102', mod: 'two', aos: 'fade-right'},
+		{name: '3', w: '125', h: '125', mod: 'three', aos: 'fade-up'},
+		{name: '4', w: '84', h: '84', mod: 'four', aos: 'fade-left'},
+		{name: '5', w: '75', h: '75', mod: 'five', aos: 'fade-left'},
+		{name: '6', w: '60', h: '60', mod: 'six', aos: 'fade-right'}
+	];

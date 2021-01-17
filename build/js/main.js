@@ -1,11 +1,36 @@
 'use strict';
 
+/*------------------------------------------------
+
+	1. Global
+	2. Animsition init
+	3. Mobile menu
+		3.1 Mobile left aside
+	4. Fixed header
+	5. Header search
+	6. Project Slider
+	7. Testimonials slider
+	8. Project carousel
+	9. Hero slider
+	10. News slider
+	11. Scroll to the next section
+	12. Modal window with a form on the contact page
+	13. Tariff slider
+	14. An awards slider
+	15. Animation circle diagram
+	16. Animation of statistics
+	17. Modal
+	18. Packery init
+	19. The same height for blocks in the grid
+
+-------------------------------------------------*/
+
 var body = $('body');
 var DURATION = 300;
 var preloader = $('.preloader');
 var header = $('.header');
 var anAwards = $('.an-awards');
-
+var mobileBreakpoint = 992;
 
 function setOverlay(cb) {
 	var overlay = $('<div class="overlay"></div>');
@@ -13,22 +38,48 @@ function setOverlay(cb) {
 	return overlay;
 }
 
-/* Preloader */
-(function(){
- $(window).on('load', function () {
-    preloader.delay(350).fadeOut('slow');
+AOS.init({
+	duration: 1000
+});
 
-    AOS.init({
-      duration: 1000
-    });
-  });
+/* 2. Animsition init */
+(function() {
+	$(document).ready(function() {
+		$(".animsition").animsition({
+			inClass: 'fade-in',
+			outClass: 'fade-out',
+			inDuration: 1500,
+			outDuration: 800,
+			linkElement: '.animsition-link',
+			// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+			loading: true,
+			loadingParentElement: 'body', //animsition wrapper element
+			loadingClass: 'preloader',//'animsition-loading',
+			loadingInner: `<div class="preloader__spinner">
+        <span class="preloader__double-bounce"></span>
+        <span class="preloader__double-bounce preloader__double-bounce--delay"></span>
+      </div>`, // e.g '<img src="loading.svg" />
+			timeout: false,
+			timeoutCountdown: 5000,
+			onLoadEvent: true,
+			browser: [ 'animation-duration', '-webkit-animation-duration'],
+			// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			overlay : false,
+			overlayClass : 'animsition-overlay-slide',
+			overlayParentElement : 'body',
+			transition: function(url){ window.location.href = url; }
+		});
+	})
 })();
 
-/* Menu */
+/* 3. Mobile menu */
 (function() {
   var menuOpenBtn = $('.menu-toggle');
   var menuCloseBtn = $('.menu__close');
-  var menu = $('.menu');
+	var menu = $('.menu');
+
+	var dropdownLinks = menu.find('.__js_menu-dropdown-link');
 
   var ModifierClass = {
     MENU: 'menu--opened',
@@ -51,7 +102,13 @@ function setOverlay(cb) {
 
       menu.addClass(ModifierClass.MENU);
     }, DURATION + 50);
-  });
+	});
+
+	dropdownLinks.on('click', function(evt) {
+		evt.preventDefault();
+
+		$(this).next().slideToggle(DURATION);
+	});
 
   function closeMenu() {
     menuCloseBtn.off('click', closeMenu);
@@ -62,10 +119,18 @@ function setOverlay(cb) {
 			menuOpenBtn.removeClass(ModifierClass.TOGGLE);
 			overlay.remove();
     }, DURATION + 50);
-  }
+	}
+
+	$(window).on('resize', function() {
+		var windowWidth = $(window).width();
+
+		if (windowWidth >= mobileBreakpoint) {
+			closeMenu();
+		}
+	});
 })();
 
-/* Меню 2 */
+/* 3.1 Mobile left aside */
 (function() {
 	var toggleBtn = $('.header-toggle');
 	var header = $('.header--aside');
@@ -111,7 +176,58 @@ function setOverlay(cb) {
 	});
 })();
 
-/* Слайдер проектов */
+/* 4. Fixed header */
+(function() {
+	var header = $('.__js_fixed-header');
+	var classes = 'header--fixed';
+	var headerHeight = header.outerHeight();
+	var scroll = $(window).scrollTop();
+	var isScroll = false;
+
+	$(window).on('scroll', function() {
+		scroll = $(window).scrollTop();
+
+		if (scroll >= headerHeight) {
+			isScroll = true;
+			header.addClass(classes);
+
+			headerHeight = isScroll ? header.outerHeight() : null;
+
+			if (!header.hasClass('is-fixed')) {
+				header.css('top', -headerHeight + 'px').addClass('is-fixed');
+				body.css('padding-top', headerHeight + 'px');
+			}
+
+		} else {
+			isScroll = false;
+			header.removeClass(classes + ' is-fixed').removeAttr('style');
+			body.css('padding-top', 0);
+		}
+	});
+
+	$(window).on('resize', function() {
+		headerHeight = header.outerHeight();
+
+		if (scroll >= headerHeight) {
+			header.css('top', -headerHeight + 'px');
+			body.css('padding-top', headerHeight + 'px');
+		}
+	});
+})();
+
+/* 5. Header search */
+(function() {
+	var search = $('.__js_header-search');
+	var toggle = search.find('.header-search__toggle');
+
+	var activeClass = 'header-search--opened';
+
+	toggle.on('click', function() {
+		search.toggleClass(activeClass);
+	});
+})();
+
+/* 6. Project slider */
 (function(){
 	var mySwiper = new Swiper('.__js_slider-single', {
 		slidesPerView: 'auto',
@@ -158,8 +274,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* слайдер отзывов */
-
+/* 7. Testimonials slider */
 (function() {
 	var mySwiper = new Swiper('.__js_testimonials-carousel', {
 		slidesPerView: 'auto',
@@ -192,7 +307,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* Карусель проектов */
+/* 8. Project carousel */
 (function(){
 	var mySwiper = new Swiper('.__js_slider-carousel', {
 		slidesPerView: 'auto',
@@ -225,7 +340,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* слайдер первого экрана */
+/* 9. Hero slider */
 (function() {
 	var mySwiper = new Swiper('.__js_hero-banner', {
 		slidesPerView: 1,
@@ -237,7 +352,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* Слайдер новостей */
+/* 10. News slider */
 (function(){
 	var sliderNews = new Swiper('.__js_slider-news', {
 		pagination: {
@@ -290,7 +405,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* Прокрутка к следующей секции */
+/* 11. Scroll to the next section */
 (function() {
 	var scrollToBtn = $('.__js_to-next-section');
 
@@ -305,7 +420,7 @@ function setOverlay(cb) {
 	}
 })();
 
-/* Модальное окно с формой на странице контактов */
+/* 12. Modal window with a form on the contact page */
 (function() {
 	var openContactsModalBtn = $('.__js_open-contacts-modal');
 	var contactsModal = $('.contacts__modal');
@@ -323,7 +438,7 @@ function setOverlay(cb) {
 	}
 })();
 
-// Слайдер тарифов
+/* 13. Tariff slider */
 (function(){
 	var optionsTariff = {
 		slidesPerView: 1,
@@ -362,7 +477,7 @@ function setOverlay(cb) {
 	}
 })();
 
-// Слайдер an-awards
+/* 14. An awards slider */
 (function(){
 	var sliderNews4 = new Swiper('.__js_slider-awards', {
 		slidesPerView: 1,
@@ -379,7 +494,7 @@ function setOverlay(cb) {
 	});
 })();
 
-/* круговая диаграмма */
+/* 15. Animation circle diagram */
 (function(){
 	var diagrams = document.querySelectorAll('.__js_diagram');
 	var specialization = document.querySelector('.specialization');
@@ -412,7 +527,7 @@ function setOverlay(cb) {
 	}
 })();
 
-/* Анимация чисел */
+/* 16. Animation of statistics */
 (function() {
   var statistics = $('.statistics');
   var numbers = $('.__js_number');
@@ -451,6 +566,7 @@ function setOverlay(cb) {
 	}
 })();
 
+/* 17. Modal */
 (function(){
   var openModalBtns = $('.__js_open-modal');
   var modal;
@@ -488,7 +604,7 @@ function setOverlay(cb) {
   }
 })();
 
-/* packery init */
+/* 18. Packery init */
 (function() {
 	$(window).on('load', function(){
 		var select = $('.__js_filter-select');
@@ -606,7 +722,7 @@ function setOverlay(cb) {
 
 })();*/
 
-// Одинаковая высота у блоков в сетке
+/* 19. The same height for blocks in the grid */
 (function(){
 	$(window).on('load', function () {
 		setEqualHeight($('.article-list__list'));

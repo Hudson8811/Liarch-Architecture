@@ -1,0 +1,107 @@
+extends templates/main
+include modules/article-list-row
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | News Grid Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 4.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.news-list
+		.container.news-list__container
+			header.news-list__header(data-aos="fade")
+				h2.news-list__heading.heading Inspirations & Experiences
+
+			// Filter
+			.filter.controls.news-list__filter(data-aos="fade")
+				button.filter__item(type="button", data-filter="all") all
+				button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
+				button.filter__item(type="button", data-filter=".__js_experiences") experiences
+				button.filter__item(type="button", data-filter=".__js_reviews") reviews
+				button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
+				button.filter__item(type="button", data-filter=".__js_others") others
+
+			// Articles
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+				{
+					img: "img/article-preview-3.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'small')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'bigStart')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'bigEnd')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			}
+			], 'big')
+			+article-list([{
+				img: "img/article-preview-1.jpg",
+				date: "December 15, 2020",
+				title: "Nordic style, interior style for simple life",
+				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+			},
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+				{
+					img: "img/article-preview-3.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'small')
+
+			// Button more
+			a.more-btn.news-list__more(href="#", data-aos="fade")
+				span.more-btn__text more
+
+block footer
+	include modules/footer

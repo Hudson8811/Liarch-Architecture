@@ -1,0 +1,155 @@
+extends templates/main
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | About Universal';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 2.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.about
+		.container
+			.row
+				header.about__header.col-12.col-lg-7.col-xl-7
+					h1.about__heading An-award winning architecture company
+					.about__subheading.heading We Help You Building The&nbsp;Dreams & Bring More Than&nbsp;You Expect
+
+				// Statistics
+				.about__statistics.statistics.statistics--column.statistics--color-invert.col-12.col-lg-5.col-xl-4.offset-xl-1(data-aos="fade")
+					.row.flex-lg-column.justify-content-lg-between
+						.statistics__item.col-12.col-sm.col-lg-12
+							.statistics__item-value <span class="__js_number" data-end-value="100">0</span>%
+							.statistics__item-text satisfitation <br>clients
+						.statistics__item.col-12.col-sm.col-lg-12
+							.statistics__item-value
+								span.__js_number(data-end-value="250") 0
+							.statistics__item-text employees on <br>worldwide
+						.statistics__item.col-12.col-lg.col-lg-12
+							.statistics__item-value
+								span.__js_number(data-end-value="3875") 0
+							.statistics__item-text projects completed <br>on 60 countries
+		.about__panorama
+			img(src="img/about/panorama.jpg", width="1920", height="780", alt="")
+
+		// Simplicity
+		section.about__simplicity.simplicity
+			.container
+				.row
+					.simplicity__content.col-12.col-md-6
+						h2.simplicity__heading.heading Simplicity Is The Ultimate Sophistictation
+						.simplicity__subheading We know that good design mean that good business.
+						.simplicity__text We help our client suceed by creating identities, digital experiences, and printmaterials that communicate clearly, achieve marketing goals & look fantastic Lorem uispum dolor sit amert tunoer poea opefse ceefo goipully.
+
+						.simplicity__notice If you're hurry, quick call for us.
+						.simplicity__phone.phone-block.phone-block--theme-orange
+							.phone-block__icon
+								+icon('phone')(width="18", height="18")
+							.phone-block__content
+								.phone-block__hint hotline 24/7
+								a.phone-block__number(href="tel:+6530025656376") +65 - 3002 56 56 376
+					.col-12.col-md-6.type-service.type-service--lite
+						ul.type-service__list
+							li.type-service__item(data-aos="fade")
+								.type-service__item-icon.type-service__item-icon--interior
+									+icon('ruler-pencil')(width="49", height="49")
+								h3.type-service__item-heading
+									a(href="#") Arch & interior
+								.type-service__item-text We bring the magic in to Building & Interior
+								a.type-service__item-link(href="#") 250 projects
+
+							li.type-service__item(data-aos="fade", data-aos-delay="300")
+								.type-service__item-icon.type-service__item-icon--design
+									+icon('vector')(width="49", height="49")
+								h3.type-service__item-heading
+									a(href="#") Design
+								.type-service__item-text Creative design with digital products
+								a.type-service__item-link(href="#") 80 projects
+
+							li.type-service__item(data-aos="fade", data-aos-delay="600")
+								.type-service__item-icon.type-service__item-icon--furniture
+									+icon('package')(width="49", height="49")
+								h3.type-service__item-heading
+									a(href="#") Products
+								.type-service__item-text We create special products and selling it
+								a.type-service__item-link(href="#") 350 Products
+					.simplicity__line
+
+		// Partners
+		section.about__partners.partners
+			.partners__inner.container
+				h2.partners__heading.partners__heading--small.heading(data-aos="fade") Our clients
+
+				ul.partners__list
+					- let delay = 0;
+					each item, index in PARTNERS_LOGO
+						- delay = index % 5 === 0 ? 0 : delay + 200;
+						if index < 10
+							li.partners__item(data-aos="fade", data-aos-delay= delay)
+								img(src="img/partners/" + item.name + ".png", width= item.w, height= item.h, alt= item.alt)
+
+		// Approach
+		section.about__approach.approach
+			.approach__inner.container
+				h2.approach__heading.heading Our Approach
+				.row
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('ticket-alt')(width="48", height="48")
+							h3.approach__card-heading Surveys and Quotes
+							.approach__card-text Our team will survey your project, collect infor & build quotes
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('bricks')(width="48", height="48")
+							h3.approach__card-heading Design and Performance
+							.approach__card-text We design best solutions and then performance it based on design
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('customer')(width="48", height="48")
+							h3.approach__card-heading Handover and Support
+							.approach__card-text After complete project, we will handover full & support 2 years
+
+		// Testimonials
+		section.about__testimonials.testimonials
+			.container
+				header.testimonials__header
+					h2.testimonials__heading.heading Testimonials
+					.testimonials__nav
+						button.testimonials__nav-btn.testimonials__nav-btn--prev(type="button")
+							+icon('chevron-left')(width="36", height="36")
+						button.testimonials__nav-btn.testimonials__nav-btn--next(type="button")
+							+icon('chevron-right')(width="36", height="36")
+				.testimonials__carousel.swiper-container.__js_testimonials-carousel
+					.swiper-wrapper
+						.testimonials__item.twitter-block.twitter-block--small.swiper-slide
+							.twitter-block__wrapper
+								.twitter-block__header
+									.twitter-block__author
+										.twitter-block__author-image
+											img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+										.twitter-block__author-meta
+											.twitter-block__author-name Thiago Alcantara
+											.twitter-block__author-info <a href="#">@thiago.lfc</a>	- <time datetime="2020-12-15">15 Dec, 2020</time>
+									a.twitter-block__social(href="#")
+										+icon('twitter')(width="34", height="34")
+								.twitter-block__text <a href="#">@liarch</a> - a studio with passionate, profressional & full creativity. Much more things that i’m expect. Really awesome & satisfied!
+
+						.testimonials__item.twitter-block.twitter-block--small.swiper-slide
+							.twitter-block__wrapper
+								.twitter-block__header
+									.twitter-block__author
+										.twitter-block__author-image
+											img(src="img/single-project/avatar-2.jpg", width="60", height="60", alt="")
+										.twitter-block__author-meta
+											.twitter-block__author-name Laura Lorewnce
+											.twitter-block__author-info <a href="#">@laura.cubichotel</a>	- <time datetime="2020-12-15">24 Dec, 2020</time>
+									a.twitter-block__social(href="#")
+										+icon('twitter')(width="34", height="34")
+								.twitter-block__text I don’t know what else to say, this is something that you haven’t seen before. Unique design,	impressive & outstanding support.
+block footer
+	include modules/footer

@@ -1,17 +1,23 @@
-extends templates/main.pug
+extends templates/main
 
 block variables
-	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Services';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 5.01; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 
+block header
+	include modules/header
+	include modules/menu
 block content
 	article.services
 		.container.services__container
 			section.webpage__type-service.type-service
 				h2.type-service__heading.heading(data-aos="fade") Let us help building <br> your dream
 				.type-service__text(data-aos="fade") We help our client suceed by creating identities, digital experiences, and printmaterials <br>
-																						|  that communicate clearly, achieve marketing goals & look fantastic Lorem uispum dolor sit amert <br>
-																						|  tunoer poea opefse ceefo goipully.
+																						|	that communicate clearly, achieve marketing goals & look fantastic Lorem uispum dolor sit amert <br>
+																						|	tunoer poea opefse ceefo goipully.
 
 				// Service list
 				ul.type-service__list.row
@@ -64,7 +70,7 @@ block content
 								img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
 							.twitter-block__author-meta
 								.twitter-block__author-name Thiago Alcantara
-								.twitter-block__author-info <a href="#">@thiago.lfc</a>  - <time datetime="2020-12-15">15 Dec, 2020</time>
+								.twitter-block__author-info <a href="#">@thiago.lfc</a>	- <time datetime="2020-12-15">15 Dec, 2020</time>
 						a.twitter-block__social(href="#")
 							+icon('twitter')(width="34", height="34")
 					.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio

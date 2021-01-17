@@ -181,7 +181,7 @@ gulp.task('scripts', function() {
     }))
     .pipe(concat("main.js"))
     //.pipe(uglify())
-    .pipe(rename({suffix: ".min"}))
+    //.pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("build/js"))
     .pipe(browserSync.stream());
 });

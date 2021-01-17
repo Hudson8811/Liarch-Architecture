@@ -1,0 +1,22 @@
+extends templates/main
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | 404 Error Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 5.15; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.page-404
+		.container.page-404__container
+			img(src="img/404.jpg", alt="")
+			.page-404__title Ohh! Page not found
+			.page-404__subtitle You seem can’t to find the page you’re looking for
+			a.btn.page-404__btn(href='/') back to homepage
+
+block footer
+	include modules/footer
