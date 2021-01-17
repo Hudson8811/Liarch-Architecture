@@ -15,7 +15,7 @@ footer.footer.footer--modern
 									a.footer__column-link= item.text
 							else
 								li.footer__column-item
-									a.footer__column-link(href= item.url)= item.text
+									a.footer__column-link.animsition-link(href= item.url)= item.text
 			.col-12.col-sm-8.col-md-3
 				.footer__column
 					.footer__column-title Infor
@@ -30,13 +30,13 @@ footer.footer.footer--modern
 									a.footer__column-link= item.text
 							else
 								li.footer__column-item
-									a.footer__column-link(href= item.url)= item.text
+									a.footer__column-link.animsition-link(href= item.url)= item.text
 		.footer__bottom.row.align-items-center
 			.col-12.col-sm-4.col-lg-3
 				// Logo
 				+logo(isHome, 'footer__logo')
 			.col-12.col-sm-8.col-lg-5
-				.footer__copyright © 2020 Liarch by LoganCee. All Rights Reserved
+				.footer__copyright © 2020 Liarch Development by Paul Studio. All Rights Reserved
 			.col-12.col-lg-4.lg-d-flex
 				.footer__hint Our Social
 				+social-2('social--black footer__social', ['twitter', 'github-original', 'facebook', 'dribbble', 'instagram'])

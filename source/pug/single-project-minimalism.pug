@@ -1,0 +1,80 @@
+extends templates/main
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Single Project Minimalism';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 3.1; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.single-project.single-project--minimalist
+		header.single-project__header.container
+			.single-project__inner
+				h1.single-project__heading.heading(data-aos="fade") ODE Kids Garden, Salzburg
+
+				// Single project meta list
+				ul.single-project__meta.project-meta.project-meta--line(data-aos="fade")
+					li.project-meta__item
+						.project-meta__item-title client
+						.project-meta__item-text ODE Corporate, <br>Germany
+					li.project-meta__item
+						.project-meta__item-title services
+						.project-meta__item-text Architecture, Interior, Products
+					li.project-meta__item
+						.project-meta__item-title date
+						.project-meta__item-text April 25th, 2025
+					li.project-meta__item
+						.project-meta__item-title team
+						.project-meta__item-text LoganCee - Architect <br>Pavel Suslov - Supervisor
+
+		// Single project intro
+		.single-project__intro(data-aos="fade")
+			.container
+				.single-project__intro-text ODe Kids Garden is a startup that aims to supply energy (starting with gas) to domestic household acrossthe UK. Create a very simple yet stunning logotype and promo site that sets the brand of Entice Energy apart from the competitors like a fresh take on an already saturated area.
+
+		.container
+			.row
+				.single-project__photo.col-12(data-aos="fade")
+					img(src="img/single-project-minimalist/01.jpg", alt="")
+				.single-project__photo.col-12.mx-auto(data-aos="fade")
+					img(src="img/single-project-minimalist/02.jpg", alt="")
+
+		// Single project panorama
+		.container-fluid.p-0
+			.single-project__photo.single-project__photo--panorama(data-aos="fade")
+				img(src="img/single-project-minimalist/03.jpg", alt="")
+
+		.overflow-hidden
+			.single-project__inner.single-project__inner--width-full.container
+				.row.align-items-center.flex-md-nowrap
+					.single-project__photo.single-project__photo--widtn-inherit.p-xl-0.col-12.col-md-6.col-xl-5(data-aos="fade")
+						img(src="img/single-project-minimalist/04.jpg", alt="")
+					.single-project__photo.single-project__photo--stuck.single-project__photo--widtn-inherit.col-12.col-md-6.col-xl-5.offset-xl-2(data-aos="fade")
+						img(src="img/single-project-minimalist/05.jpg", alt="")
+		div(data-aos="fade")
+			+social-2('single-project__social', ['twitter', 'facebook', 'instagram', 'pinterest'])
+
+		// Likes
+		.single-project__liked.liked(data-aos="fade")
+			a.liked__btn(href="#")
+				+icon('heart-filled')(width="34", height="34")
+			.liked__text 268 Liked
+
+		// Single project footer
+		footer.single-project__footer(data-aos="fade")
+			.container
+				.paginate.paginate--simple
+					// .paginate__item.paginate__item--prev
+						a(href="#") Prev
+
+					.paginate__item.paginate__item--next
+						a(href="#") Next
+
+
+
+
+block footer
+	include modules/footer

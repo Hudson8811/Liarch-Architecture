@@ -1,0 +1,219 @@
+extends templates/main-modern
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Home Modern';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 1.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header-modern
+	include modules/menu
+block content
+	include modules/hero-banner
+
+	// Simplicity
+	section.simplicity#simplicity(data-aos="fade")
+		.container
+			.row
+				.col-12.col-md-6
+					.simplicity__image
+						img(src="img/Image.jpg", width="430", height="500", alt="")
+
+						.simplicity__circle-text
+							img(src="img/circle-text.png", width="226", height="226", alt="")
+				.simplicity__content.col-12.col-md-6
+					.simplicity__preheading est. 1991
+					h2.simplicity__heading.heading Simplicity Is The Ultimate Sophistictation
+					.simplicity__subheading “Recognizing the need is the primary condition	for design” -	Charles Eames
+					.simplicity__text Founded by Jugenr Kloop in 1991, we’re an employee-owned firm pursuing a democratic design process that values everyone’s input. Today we have more than 150 people in London, Hong Kong & Sydney providing architecture, interior & urban design services from concept to completion. With a passion for quality products, Liarch’s mission is to uncover special artisans, unique materials & products.
+
+					a.simplicity__btn.btn.btn--outline(href="#") learn more
+
+
+				.simplicity__line
+
+	// Statistics
+	.statistics.statistics--m.statistics--color-invert.container
+		.row(data-aos="fade")
+			.statistics__item.col-12.col-sm
+				.statistics__item-value <span class="__js_number" data-end-value="100">0</span>%
+				.statistics__item-text satisfitation <br>clients
+			.statistics__item.col-12.col-sm
+				.statistics__item-value
+					span.__js_number(data-end-value="250") 0
+				.statistics__item-text employees on <br>worldwide
+			.statistics__item.col-12.col-lg
+				.statistics__item-value
+					span.__js_number(data-end-value="3875") 0
+				.statistics__item-text projects completed <br>on 60 countries
+
+	// Latest projects
+	section.latest-projects
+		.container
+			header.latest-projects__header(data-aos="fade")
+				.latest-projects__preheading our works
+				h2.latest-projects__heading.heading Our latest projects
+		.latest-projects__inner.container
+			.latest-projects__slider.slider.slider--carousel-double.swiper-container.__js_slider-carousel-double(data-aos="fade")
+				.swiper-wrapper
+					.slider__item.work-card.work-card--compact.swiper-slide
+						a.work-card__image(href="#")
+							img(src="img/works-carousel/01.jpg", width="685", height="685", alt="")
+						.work-card__content
+							.work-card__year 2020
+							.work-card__tags Residential
+							h2.work-card__heading
+								a Daniel villa, Romania
+
+					.slider__item.work-card.work-card--compact.swiper-slide
+						a.work-card__image(href="#")
+							img(src="img/works-carousel/02.jpg", width="685", height="685", alt="")
+						.work-card__content
+							.work-card__year 2019
+							.work-card__tags Residential
+							h2.work-card__heading
+								a Cube villa, Poland
+
+					.slider__item.work-card.work-card--compact.swiper-slide
+						a.work-card__image(href="#")
+							img(src="img/works-carousel/03.jpg", width="685", height="685", alt="")
+						.work-card__content
+							.work-card__year 2018
+							.work-card__tags Architecture
+							h2.work-card__heading
+								a Miter wooden library
+
+					.slider__item.work-card.work-card--compact.swiper-slide
+						a.work-card__image(href="#")
+							img(src="img/works-carousel/04.jpg", width="685", height="685", alt="")
+						.work-card__content
+							.work-card__year 2018
+							.work-card__tags Architecture
+							h2.work-card__heading
+								a Grido Museum, denmark
+				.swiper-pagination.mt-4
+
+	// Rewards
+	section.webpage__rewards.rewards(data-aos="fade")
+		.rewards__inner.container
+			.rewards__preheading our awards
+			h2.rewards__heading.heading(data-aos="fade") Rewards for our efforts
+			ul.rewards__list
+				li.rewards__item.reward(data-aos="fade")
+					time.reward__date(datetime="2020") 2020
+					.reward__logo
+						img(src="img/rewards-logo/01.png", alt="")
+					.reward__content
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") AAG Winner 2020
+								.reward__project-text Canbin Wood In Forest
+							a.reward__project-link(href="#") see project
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") Top 25 Best Architectural In Poland
+								.reward__project-text Daniel Villa, Romania
+							a.reward__project-link(href="#") see project
+				li.rewards__item.reward(data-aos="fade")
+					time.reward__date(datetime="2019") 2019
+					.reward__logo
+						img(src="img/rewards-logo/02.png", alt="")
+					.reward__content
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") The Architect of Season Winner
+								.reward__project-text Architect Thiago Alcantara
+							a.reward__project-link(href="#") see project
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") The Green of Arch by AAL US 2019, Slovakia
+								.reward__project-text Endora Commercial Center, Germany
+							a.reward__project-link(href="#") see project
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") Art of The Year 2019
+								.reward__project-text Reuse Cabins
+							a.reward__project-link(href="#") see project
+				li.rewards__item.reward(data-aos="fade")
+					time.reward__date(datetime="2018") 2018
+					.reward__logo
+						img(src="img/rewards-logo/03.png", alt="")
+					.reward__content
+						.reward__project
+							.reward__project-wrap
+								.reward__project-name
+									a(href="") The Trending of Interior 2018 by OKA
+								.reward__project-text B65 Apartment, Sepro Building, Italy
+							a.reward__project-link(href="#") see project
+
+	// Latest articles
+	section.webpage__latest-articles.latest-articles
+		.container
+			header.latest-articles__header(data-aos="fade")
+				.latest-articles__preheading our journal
+				h2.latest-articles__heading.heading Latest Articles
+			.latest-articles__content.row
+				.col-12.col-md-6.col-lg-7.d-flex
+					.latest-articles__featured-post.latest-article.latest-article--featured(data-aos="fade")
+						.latest-article__tag Featured Post
+						.latest-article__image
+							img(src="img/featured-post.jpg", width="670", height="488", alt="")
+						.latest-article__content
+							.latest-article__detail
+								.latest-article__category
+									a(href="#") Knowlegde
+								time.latest-article__date(datetime="2020-08-25") Aug 25, 2020
+							h3.latest-article__heading
+								a(href="#") Tip use CGI with daylight vray 2.0 on 3DsMax
+				.col-12.col-md-6.col-lg-5.col-xl-4.offset-xl-1
+					ul.latest-articles__list
+						li.latest-articles__item.last-article(data-aos="fade")
+							.latest-article__detail
+								.latest-article__category
+									a(href="#") News
+								time.latest-article__date(datetime="2020-08-25") Aug 25, 2020
+							h3.latest-article__heading
+								a(href="#") 10 things that most people don’t know about space
+						li.latest-articles__item.last-article(data-aos="fade")
+							.latest-article__detail
+								.latest-article__category
+									a(href="#") inspiration
+								time.latest-article__date(datetime="2020-07-16") July 16, 2020
+							h3.latest-article__heading
+								a(href="#") How to improve your home
+						li.latest-articles__item.last-article(data-aos="fade")
+							.latest-article__detail
+								.latest-article__category
+									a(href="#") knowlegde
+								time.latest-article__date(datetime="2020-07-08") July 8, 2020
+							h3.latest-article__heading
+								a(href="#") Enhance CGI for materials
+						li.latest-articles__item.last-article(data-aos="fade")
+							.latest-article__detail
+								.latest-article__category
+									a(href="#") others
+								time.latest-article__date(datetime="2020-07-02") July 2, 2020
+							h3.latest-article__heading
+								a(href="#") AIA Global 2020 Opening
+			.latest-articles__line
+
+	// Instagram
+	.webpage__instagram-block.instagram-block
+		.container
+			.instagram-block__title(data-aos="fade")
+				+icon('instagram')(class="instagram-block__icon", width="21", height="21")
+				| Instagram
+			.instagram-block__list
+				- let i = 1;
+				while i <= 5
+					a(href="#", data-aos="fade")
+						img(src="img/instagram/0" + i + ".jpg", width="234", height="234", alt="")
+						- i++;
+block footer
+	include modules/footer-modern

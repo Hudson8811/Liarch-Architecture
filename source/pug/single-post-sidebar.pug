@@ -1,0 +1,198 @@
+extends templates/main
+include modules/article-list-row.pug
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Single Post Sidebar';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 4.06; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.post-sb-page
+		.container.post-sb-page__container
+			.news-list
+				header.news-list__header(data-aos="fade")
+					h2.news-list__heading.heading Inspirations & Experiences
+				.news-list__filter-with-search(data-aos="fade")
+
+					// Filter
+					.filter.controls.news-list__filter
+						button.filter__item(type="button", data-filter="all") all
+						button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
+						button.filter__item(type="button", data-filter=".__js_experiences") experiences
+						button.filter__item(type="button", data-filter=".__js_reviews") reviews
+						button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
+						button.filter__item(type="button", data-filter=".__js_others") others
+					+input('search', 'search', 'Search in blog')
+
+			.post-sb-page__main-pic(data-aos="fade")
+				img(src="img/slider/slide-1.jpg", alt="")
+			.post-sb-page__wrapper
+
+				// Post
+				section.post-sb
+					.post-sb__date
+						a.tag(href='#') review
+						span.delimiter /
+						span December 20, 2020
+					.post-sb__title How to use solid color combine <br> with simple furnitures
+					.post-sb__subtitle To mark the first UK show of artist Henri Barande, <br>
+						|	graphic designer <a href="#" target="_blank">Pavel Murren</a> and German studio Schultzschultz <br>
+						|	have created The Lodge Wooden
+					.post-sb__text
+						p Today most people get on average 4 to 6 hours of exercise every day, and make sure that everything they put in their mouths
+							|	is not filled with sugars or preservatives, but they pay no attention to their mental health, no vacations, not even the occasional
+							|	long weekend. All of this for hopes of one day getting that big promotion.
+						p Coventry is a city with a thousand years of history that has plenty to offer the visiting <br>
+							|	tourist. Located in the heart of Warwickshire.
+					.post-sb__content-pic
+						img(src="img/slider/slide-1.jpg", alt="")
+						.post-sb__pic-caption Images by <a href="#" target="_blank">@tim_arterbury</a>
+					.post-sb__text
+						p The short answer is yes. According to Kross, when you think of yourself as another person, it allows you
+							|	give yourself more objective, helpful feedback.
+
+					// Twitter block
+					section.post-sb__review.twitter-block
+						.twitter-block__wrapper
+							header.twitter-block__header
+								.twitter-block__author
+									.twitter-block__author-image
+										img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+									.twitter-block__author-meta
+										.twitter-block__author-name Thiago Alcantara
+										.twitter-block__author-info <a href="#">@thiago.lfc</a>	- <time datetime="2020-12-15">15 Dec, 2020</time>
+								a.twitter-block__social(href="#")
+									+icon('twitter')(width="34", height="34")
+							.twitter-block__text The team at <a href="#">@liarch.studio</a> is incredibly dedicated, knowledgeable, and helpful. The finished product was beautiful, and worth every penny. I would absolutely recommend Liarch Studio
+
+					.post-sb__title-inner Defaulting to Mindfulness
+					.post-sb__text
+						p Cray post-ironic plaid, Helvetica keffiyeh tousled Carles banjo before they sold out blog photo booth Marfa semiotics Truffaut.
+							|	Mustache Schlitz next level blog Williamsburg, deep v typewriter tote bag Banksy +1 literally.
+					ul.post-sb__list
+						li Welsh novelist Sarah Waters sums it up eloquently
+						li In their classic book, Creativity in Business, based on a popular course they co-taught
+						li Novelist and screenwriter Steven Pressfield
+					.post-sb__text
+						p That immediately brought to mind one of <a href="#" target="_blank">my fondest</a> memories, involving my daughter when she was just a toddler of one.
+
+					.post-sb__bottom(data-aos="fade")
+
+						// Tags
+						.post-sb__tags
+							.post-sb__tag-item wordpress
+							.post-sb__tag-item theme
+							.post-sb__tag-item architecture
+
+						// Social
+						.post-sb__socials
+							p Share on
+							ul.social.post-sb__social
+								li.social__item
+									a.social__link.fb(href="#", target="_blank")
+										+icon('facebook')(width="16", height="16")
+										span.visually-hidden Facebook
+								li.social__item
+									a.social__link.tw(href="#", target="_blank")
+										+icon('twitter')(width="16", height="16")
+										span.visually-hidden Twitter
+								li.social__item
+									a.social__link.g-plus(href="#", target="_blank")
+										+icon('google-plus')(width="20", height="20")
+										span.visually-hidden Google+
+								li.social__item
+									a.social__link.tumblr(href="#", target="_blank")
+										+icon('tumblr')(width="16", height="16")
+										span.visually-hidden Tumblr
+								li.social__item
+									a.social__link.rss(href="#", target="_blank")
+										+icon('rss')(width="14", height="14")
+										span.visually-hidden Rss
+
+					// Post author
+					section.post-author(data-aos="fade")
+						.post-author__photo
+							img(src="img/post/author.jpg", alt="")
+						.post-author__content
+							.post-author__name Andy Robertson
+							.post-author__position Content Editor
+							.post-author__text Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis unde.
+							ul.post-author__socials
+								li
+									a(href="#", target="_blank")
+										+icon('twitter')(width="14", height="14")
+								li
+									a(href="#", target="_blank")
+										+icon('facebook')(width="14", height="14")
+								li
+									a(href="#", target="_blank")
+										+icon('instagram')(width="14", height="14")
+								li
+									a(href="#", target="_blank")
+										+icon('behance')(width="14", height="14")
+
+					// Related posts
+					section.post-sb__related(data-aos="fade")
+						.post-sb__related-title Related Posts
+						.post-sb__related-wrapper
+							.post-related.col-sm-6
+								.post-related__pic
+									img(src="img/slider/slide-1.jpg", alt="")
+								.post-related__date December 8, 2020
+								a.post-related__title(href='#') Discover top 15 buildings modern in Italia
+							.post-related.col-sm-6
+								.post-related__pic
+									img(src="img/slider/slide-1.jpg", alt="")
+								.post-related__date December 6, 2020
+								a.post-related__title(href='#') The dome in architectural
+
+					// Comments
+					section.comment(data-aos="fade")
+						.comment__title 02 Comments
+						.comment__wrapper
+							.comment-item
+								.comment-item__photo
+									img(src="img/post/comment-1.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Robert Stevenson
+										.comment-item__sent 3 hours ago
+									.comment-item__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									button.comment-item__reply Reply
+							.comment-item.comment-item--replyed
+								.comment-item__photo
+									img(src="img/post/comment-1.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Leona Porter
+										.comment-item__sent 16 hours ago
+									.comment-item__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+									button.comment-item__reply Reply
+							.comment-item
+								.comment-item__photo
+									img(src="img/post/comment-2.jpg", alt="")
+								.comment-item__content
+									.comment-item__top
+										.comment-item__name Janie Black
+										.comment-item__sent December 25, 2020
+									.comment-item__text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									button.comment-item__reply Reply
+
+					// Send comment
+					form.comment-form(action='', method='POST', data-aos="fade")
+						.comment-form__title Leave A Commnet
+						.comment-form__inputs-group
+							+input('text', 'author', 'Name')
+							+input('email', 'email', 'Email Address')
+							+input('text', 'subject', 'Subject (optional)')
+						+input('textarea', 'message', 'Message')
+						button.btn.comment-form__btn(type='submit') send message
+				include modules/sidebar
+
+block footer
+	include modules/footer

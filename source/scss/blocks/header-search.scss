@@ -1,0 +1,141 @@
+.header-search {
+	$self: &;
+	position: relative;
+
+	&--white {
+		#{$self}__toggle {
+			&-icon {
+				fill: $color-default-white;
+			}
+		}
+	}
+
+	&--opened {
+		#{$self}__toggle {
+			&-icon {
+				&--loupe {
+					display: none;
+				}
+
+				&--close {
+					display: block;
+				}
+			}
+		}
+
+		form {
+			//transform: translateX(0) !important;
+		}
+
+		#{$self}__wrapper {
+			display: block;
+		}
+	}
+
+	&__wrapper {
+		display: none;
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		transform: translateY(-50%);
+		background-color: $color-default-white;
+
+		padding: 10px 0;
+
+		overflow: hidden;
+		width: calc(100vw - 105px);
+
+		@include media(md) {
+			width: 50vw;
+		}
+
+		@include media(lg) {
+			width: 25vw;
+		}
+
+		@include media(xl) {
+			width: 21vw;
+			max-width: 404px;
+		}
+	}
+
+	form {
+		//transform: translateX(100%);
+		//@include transition(transform);
+
+		label {
+			display: block;
+			margin: 0;
+		}
+
+		input {
+			display: block;
+			width: 100%;
+			padding: 10px 16px;
+			border: none;
+			appearance: none;
+
+			&::-ms-clear,
+			&::-ms-reveal {
+				display: none;
+				width: 0;
+				height: 0;
+			}
+
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration {
+				display: none;
+			}
+
+			@include text(14px, 1);
+			background-image: none;
+			background-color: rgba($color-default-black, 0.01);
+
+			&:focus {
+				outline: none;
+				background-color: rgba($color-default-black, 0.02);
+			}
+
+			&::placeholder {
+				color: $color-grey;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__toggle {
+		//$toggle: &;
+		position: relative;
+		display: block;
+		width: 22px;
+		height: 22px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		appearance: none;
+		cursor: pointer;
+
+		&-icon {
+			display: block;
+			width: 100%;
+			height: auto;
+
+			@include transition(fill);
+
+			&--close {
+				display: none;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: $color-orange;
+			}
+		}
+	}
+}

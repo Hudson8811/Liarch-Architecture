@@ -1,9 +1,14 @@
-extends templates/main.pug
+extends templates/main
 block variables
-	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - Works';
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Works Listing';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
-	- let currentIndex = 2; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let isDark = false;
+	- let currentPage = 3.05; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 
+block header
+	include modules/header
+	include modules/menu
 block content
 	article.works-page
 		header.works-page__header
@@ -37,25 +42,25 @@ block content
 						li.works__item.slide.__js_architecture.__js_2020
 							img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
 							.slide__content.slide-content
-								.slide-content__detail 2020  -  Kiev, Ukraine
+								.slide-content__detail 2020	-	Kiev, Ukraine
 								.slide-content__heading Cubic Blockes Hotel
 
 						li.works__item.slide.__js_architecture.__js_interior.__js_2020
 							img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
 							.slide__content.slide-content
-								.slide-content__detail 2020  -  Belgium
+								.slide-content__detail 2020	-	Belgium
 								.slide-content__heading Dogel Nord Station
 
 						li.works__item.slide.__js_interior.__js_2019
 							img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
 							.slide__content.slide-content
-								.slide-content__detail 2019  -  Vancouver, Canada
+								.slide-content__detail 2019	-	Vancouver, Canada
 								.slide-content__heading Cabin Wood In Forest
 
 						li.works__item.slide.__js_architecture.__js_2018
 							img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
 							.slide__content.slide-content
-								.slide-content__detail 2019  -  Iasi, Romania
+								.slide-content__detail 2019	-	Iasi, Romania
 								.slide-content__heading Daniel Villa, Romania
 
 					// Button more

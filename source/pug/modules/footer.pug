@@ -16,12 +16,12 @@ footer.footer
         // Footer menu
         ul.footer__column-menu
           each item in FOOTER_MENU_HELP
-            if item.currentIndex === currentIndex
+            if item.currentPage === currentPage
               li.footer__column-item.footer__column-item--current
                 a.footer__column-link= item.text
             else
               li.footer__column-item
-                a.footer__column-link(href= item.url)= item.text
+                a.footer__column-link.animsition-link(href= item.url)= item.text
 
       .footer__column.col-12.col-sm
         .footer__column-title Quick Links
@@ -29,15 +29,15 @@ footer.footer
         // Footer menu
         ul.footer__column-menu
           each item in FOOTER_MENU_LINKS
-            if item.currentIndex === currentIndex
+            if item.currentSection === currentSection
               li.footer__column-item.footer__column-item--current
                 a.footer__column-link= item.text
             else
               li.footer__column-item
-                a.footer__column-link(href= item.url)= item.text
+                a.footer__column-link.animsition-link(href= item.url)= item.text
       .footer__column.footer__column.col-12.col-lg
         +social('footer__social')
     .row
       // Copyrights
-      .footer__copyright.col-12.col-sm-6 © 2020 <span>LIARCH STUDIO.</span> All Rights Reserved
-      .footer__design.col-12.col-sm-6 Design by <span>LoganCee</span>
+      .footer__copyright.col-12.col-sm-6 © 2020 <span>LIARCH</span> All Rights Reserved
+      .footer__design.col-12.col-sm-6 Development by <span>Paul Studio</span>

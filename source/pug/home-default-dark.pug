@@ -1,0 +1,23 @@
+extends templates/main
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Home Default Dark';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 1.07; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	include modules/an-awards
+	include modules/our-story
+	include modules/type-service
+	include modules/latest-projects
+	include modules/review
+	include modules/partners
+	include modules/article-list
+
+
+block footer
+	include modules/footer

@@ -1,0 +1,69 @@
+extends templates/main
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Works Carousel 3 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 3.17; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.works-page
+		header.works-page__header
+			.works-page__inner.container
+				h1.works-page__heading.heading Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves
+				.works-page__text Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
+		.works-page__content
+			.works-page__inner.container
+
+				// Works
+				section.works
+					header.works__header
+
+						// Filter
+						.works__filter.filter
+							each item in ['all', 'architecture', 'interior', 'cgi', 'products']
+								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+								- let activeClass = item === 'all' ? ' filter__item--active' : '';
+								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
+
+						// Sort
+						.works__sort.sort
+							label.sort__hint(for="sortSelect") filter by years:
+							select.sort__select.__js_filter-select#sortSelect(name="sort")
+								each year in ['all', '2020', '2019', '2018']
+									- let val = year === 'all' ? '*' : year;
+									option(value= val)= year
+
+					// Works slider
+					.works__slider.slider.slider--single.swiper-container.__js_slider-single(data-aos="fade")
+						.swiper-wrapper
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
+								.slide__content.slide-content
+									.slide-content__detail 2020	-	Kiev, Ukraine
+									.slide-content__heading Cubic Blockes Hotel
+
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
+								.slide__content.slide-content
+									.slide-content__detail 2020	-	Belgium
+									.slide-content__heading Dogel Nord Station
+
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
+								.slide__content.slide-content
+									.slide-content__detail 2019	-	Vancouver, Canada
+									.slide-content__heading Cabin Wood In Forest
+
+							.slider__item.slide.swiper-slide
+								img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
+								.slide__content.slide-content
+									.slide-content__detail 2019	-	Iasi, Romania
+									.slide-content__heading Daniel Villa, Romania
+						.swiper-pagination
+
+block footer
+	include modules/footer

@@ -1,16 +1,22 @@
-extends templates/main.pug
+extends templates/main
 
 block variables
-	- let pageTitle = 'Liarch - Architecture & Interior HTML Template - News';
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Pricing';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 5.03; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 5; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 
+block header
+	include modules/header
+	include modules/menu
 block content
 	// Price list
 	article.pricing
 		.container.pricing__container
 			.pricing__title Pricing & Plan
 			.pricing__subtitle At Liarch studio, we’re a group with top architects from building, interior, design, photography, etc.
-												|  to help consult & build your dream become perfect
+												|	to help consult & build your dream become perfect
 			.pricing__slider-container
 				.pricing__slider.swiper-container.__js_slider-price
 					.pricing__wrapper.swiper-wrapper

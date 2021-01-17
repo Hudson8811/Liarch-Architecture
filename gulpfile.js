@@ -24,11 +24,10 @@ const replace = require('gulp-replace');
 let scriptsPath = ['source/js/main.js'];
 
 const sassLibs = {
-	src: ['source/scss/vendor/bootstrap-grid.css',
+	src: ['source/scss/vendor/bootstrap.min.css',
 		'source/scss/vendor/aos.css',
 		'source/scss/vendor/swiper-bundle.css',
-		'source/scss/vendor/fullpage.css',
-		'source/scss/utils/normalize.css'],
+		'source/scss/vendor/fullpage.css'],
 	build: 'build/css/'
 };
 
@@ -42,7 +41,7 @@ gulp.task('server', function() {
 
 	 gulp.watch('source/themes/dark/**/*.scss', gulp.series('sassDark'));
 	 gulp.watch('source/themes/modern/**/*.scss', gulp.series('sassModern'));
-	 gulp.watch(['source/fonts.scss', 'source/scss/utils/variables.scss'], gulp.series('sassFonts'));
+	 //gulp.watch(['source/fonts.scss', 'source/scss/utils/variables.scss'], gulp.series('sassFonts'));
    gulp.watch('source/pug/**/*.pug', gulp.series('pug', 'refresh'));
 	 gulp.watch('source/icons/*.svg', gulp.series('sprite', 'pug', 'refresh'));
 	 gulp.watch('source/js/*.js', gulp.series('scripts'));
@@ -133,21 +132,23 @@ gulp.task('sassModern', function() {
 		.pipe(browserSync.stream());
 });
 
-gulp.task('sassFonts', function() {
-	return gulp.src('source/fonts.scss')
-		.pipe(plumber({
-      errorHandler: notify.onError(function(err) {
-        return {
-          title: 'SASS-FONTS',
-          sound: false,
-          message: err.message
-        }
-      })
-    }))
-		.pipe(sass())
-		.pipe(gulp.dest('build/css'))
-		.pipe(browserSync.stream());
-});
+/*
+	gulp.task('sassFonts', function() {
+		return gulp.src('source/fonts.scss')
+			.pipe(plumber({
+				errorHandler: notify.onError(function(err) {
+					return {
+						title: 'SASS-FONTS',
+						sound: false,
+						message: err.message
+					}
+				})
+			}))
+			.pipe(sass())
+			.pipe(gulp.dest('build/css'))
+			.pipe(browserSync.stream());
+	});
+*/
 
 gulp.task('pug', function() {
 	return gulp.src("source/pug/*.pug")
@@ -180,7 +181,7 @@ gulp.task('scripts', function() {
     }))
     .pipe(concat("main.js"))
     //.pipe(uglify())
-    .pipe(rename({suffix: ".min"}))
+    //.pipe(rename({suffix: ".min"}))
     .pipe(gulp.dest("build/js"))
     .pipe(browserSync.stream());
 });
@@ -201,7 +202,6 @@ gulp.task('img', function() {
   //  .pipe(webp({quality: 90}))
   //  .pipe(gulp.dest('build/img'));
 //});
-
 
 gulp.task('sprite', function() {
   return gulp.src('source/icons/*.svg')
@@ -228,6 +228,13 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('copyVendorCss', function() {
+  return gulp.src([
+    'source/scss/vendor/*.css'
+    ])
+    .pipe(gulp.dest('build/css'));
+});
+
 gulp.task('copy:img', function() {
   return gulp.src([
     'source/images/**/*.{jpg,png,svg}',
@@ -237,4 +244,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassLibs', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'copyVendorCss', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', /*'sassLibs',*/ 'sassDark', 'sassModern'), 'pug', 'server'));

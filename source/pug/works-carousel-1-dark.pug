@@ -1,0 +1,66 @@
+extends templates/main
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Works Carousel 1 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 3.16; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+
+block header
+	include modules/header
+	include modules/menu
+block content
+	article.works-page
+		//-header.works-page__header
+			.works-page__inner.container
+				h1.works-page__heading.heading Architecture is a visual art, and&nbsp;the&nbsp;building speak for themeselves
+				.works-page__text Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
+		.works-page__content
+			.works-page__inner.container
+
+				// Works
+				section.works
+					//- (style="background-color: yellow;")
+
+					// Works slider
+					.works__slider.slider.slider--carousel.swiper-container.__js_slider-carousel
+						.swiper-wrapper
+							.slider__item.work-card.work-card--compact.swiper-slide
+								a.work-card__image(href="#")
+									img(src="img/works-carousel/01.jpg", width="685", height="685", alt="")
+								.work-card__content
+									.work-card__year 2020
+									.work-card__tags Residential
+									h2.work-card__heading
+										a Daniel villa, Romania
+
+							.slider__item.work-card.work-card--compact.swiper-slide
+								a.work-card__image(href="#")
+									img(src="img/works-carousel/02.jpg", width="685", height="685", alt="")
+								.work-card__content
+									.work-card__year 2019
+									.work-card__tags Residential
+									h2.work-card__heading
+										a Cube villa, Poland
+
+							.slider__item.work-card.work-card--compact.swiper-slide
+								a.work-card__image(href="#")
+									img(src="img/works-carousel/03.jpg", width="685", height="685", alt="")
+								.work-card__content
+									.work-card__year 2018
+									.work-card__tags Architecture
+									h2.work-card__heading
+										a Miter wooden library
+
+							.slider__item.work-card.work-card--compact.swiper-slide
+								a.work-card__image(href="#")
+									img(src="img/works-carousel/04.jpg", width="685", height="685", alt="")
+								.work-card__content
+									.work-card__year 2018
+									.work-card__tags Architecture
+									h2.work-card__heading
+										a Grido Museum, denmark
+						.swiper-scrollbar
+
+block footer
+	include modules/footer

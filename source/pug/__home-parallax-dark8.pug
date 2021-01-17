@@ -1,0 +1,214 @@
+extends templates/main-3-dark
+
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let currentIndex = 1; // Для каждой страницы(раздела) уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+
+block content
+	#fullpage.homepage-parallax
+		// Awards
+		section.an-awards.an-awards--parallax.fp-section(style="background-image: url(\"img/an-awards-bg.jpg\")")
+			.container
+				.swiper-container.__js_slider-awards
+					.swiper-wrapper
+						.row.align-items-center.swiper-slide
+							.an-awards__content.col-12.col-md.col-lg-6
+								.an-awards__welcome welcome to <br> liarch architecture studio
+								h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company
+								.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
+								.an-awards__buttons
+									a.btn(href="#") our projects
+						.row.align-items-center.swiper-slide
+							.an-awards__content.col-12.col-md.col-lg-6
+								.an-awards__welcome welcome to <br> liarch architecture studio
+								h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company 2
+								.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
+								.an-awards__buttons
+									a.btn(href="#") our projects
+						.row.align-items-center.swiper-slide
+							.an-awards__content.col-12.col-md.col-lg-6
+								.an-awards__welcome welcome to <br> liarch architecture studio
+								h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company 3
+								.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
+								.an-awards__buttons
+									a.btn(href="#") our projects
+					.slide-counter
+					button(class="arrow-square arrow-square--prev")
+						svg
+							use(xlink:href="#arrow-angle")
+					button(class="arrow-square arrow-square--next")
+						svg
+							use(xlink:href="#arrow-angle")
+		// Our story
+		section.our-story.our-story--parallax.fp-section.dark
+			.our-story__inner.container
+				.row
+					.our-story__intro.col-12.col-md.col-lg-6
+						.our-story__image
+							img(src="img/man-with-apple.png", width="706", height="811" alt="")
+					.our-story__content.col-12.col-md.col-lg-6
+						h2.our-story__heading.heading Let Us Help Building Your Dream
+						.our-story__text.our-story__text--style-bolditalic
+							| “Over 25 years Liarch helping investors building their dream & business goals go to
+							| the perfection” <span>- Thiago Alcantara</span>
+						.our-story__text
+							| Over the years, we have worked with Fortune 500s and brand-new startups.. We help ambitious
+							|	businesses like yours generate more profits by
+							|	building awareness, driving web traffic, connecting with customers, and growing overall sales. <br> Give us a call.
+						.our-story__buttons
+							a.our-story__btn.btn.btn--outline(href="#") Learn More
+							.our-story__video-btn.video-btn
+								a.video-btn__btn.__js_open-modal(href="#ourStory")
+									span.visually-hidden Play
+									+icon('play')(width="20", height="20")
+								span.video-btn__text view our story
+
+		// Type service
+		section.type-service.type-service--parallax.fp-section.dark
+			.container
+				h2.type-service__heading.heading Best solutions for your dream
+
+				ul.type-service__list.row
+					li.type-service__item.col-12.col-md
+						.type-service__item-icon.type-service__item-icon--interior
+							+icon('ruler-pencil')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Architecture & Interior
+						.type-service__item-text Architecture Design, Interior Design, Landscape Design, Commercial, Residential, 3D Visualization
+						a.type-service__item-link(href="#") 256 projects
+
+					li.type-service__item.col-12.col-md
+						.type-service__item-icon.type-service__item-icon--design
+							+icon('vector')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Design & Photography
+						.type-service__item-text Web Design, Mobile App Design, 3D Design, CGI, Character, Motion, Photography
+						a.type-service__item-link(href="#") 64 projects
+
+					li.type-service__item.col-12.col-md
+						.type-service__item-icon.type-service__item-icon--furniture
+							+icon('package')(width="49", height="49")
+						h3.type-service__item-heading
+							a(href="#") Furniture Products Production
+						.type-service__item-text Sofa, Chair, Wood Furnitures, Shelf, Bed, Decoration, Structure, Celling, Flooring, Walls
+						a.type-service__item-link(href="#") 8,256 items
+
+		// Works
+		section.works.works--parallax.fp-section.dark
+			.works__slider-wrapper
+				.slide-counter-2
+				button(class="works-arrow works-arrow--prev")
+					svg
+						use(xlink:href="#arrow-angle")
+				button(class="works-arrow works-arrow--next")
+					svg
+						use(xlink:href="#arrow-angle")
+				.works__slider.slider--single.swiper-container.__js_slider-single-2
+					.swiper-wrapper
+						.slider__item.swiper-slide
+							img(src="img/slider/slide-1.jpg", alt="")
+							.slide__content
+								.slide__content-detail 2020	-	Kiev, Ukraine
+								.slide__content-heading Cubic Blockes Hotel
+
+						.slider__item.swiper-slide
+							img(src="img/slider/slide-2.jpg", alt="")
+							.slide__content
+								.slide__content-detail 2020	-	Belgium
+								.slide__content-heading Dogel Nord Station
+
+						.slider__item.swiper-slide
+							img(src="img/slider/slide-3.jpg", alt="")
+							.slide__content
+								.slide__content-detail 2019	-	Vancouver, Canada
+								.slide__content-heading Cabin Wood In Forest
+
+						.slider__item.swiper-slide
+							img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
+							.slide__content
+								.slide__content-detail 2019	-	Iasi, Romania
+								.slide__content-heading Daniel Villa, Romania
+				a.works__all(href='#') all projects
+
+		// Approach
+		section.approach.approach--parallax.fp-section.dark
+			.approach__inner.container
+				h2.approach__heading.heading Our Approach
+				.row
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('ticket-alt')(width="48", height="48")
+							h3.approach__card-heading Surveys and Quotes
+							.approach__card-text Our team will survey your project, collect infor & build quotes
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('bricks')(width="48", height="48")
+							h3.approach__card-heading Design and Performance
+							.approach__card-text We design best solutions and then performance it based on design
+					.col-12.col-lg-4
+						.approach__card
+							.approach__card-icon
+								+icon('customer')(width="48", height="48")
+							h3.approach__card-heading Handover and Support
+							.approach__card-text After complete project, we will handover full & support 2 years
+
+		// Review
+		section.review.review--parallax.fp-section.dark
+			.review__inner.container
+				.row
+					.review__image.col-12.col-md-7
+						each item in REVIEW_IMAGES
+							span(class="review__image-author review__image-author--" + item.mod)
+								img(src="img/review/" + item.name + ".jpg", width= item.w, height= item.h, alt="")
+
+					.review__content.col-12.col-md-5.align-self-center
+						.review__text I don’t know what else to say, this is something that you haven’t seen before. Unique design, impressive, and outstanding support. Liarch always a pleasure to work!
+
+						.review__author
+							.review__author-name Laura Lorewnce
+							.review__author-detail Director at <span>Cubic Hotel, Ukranie</span>
+
+		// Contacts
+		section.contacts-parallax.fp-section.dark
+			.container
+				.row
+					.col-12.col-lg-6
+						.contact-block
+							h1.contact-block__title Brooklyn, <span>New York</span>
+							address.contact-block__address 962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.
+							.contact-block__email
+								span.contact-block__hint Email:
+								a(href="mailto:infor@liarchstudio.co") infor@liarchstudio.co
+							.contact-block__phone
+								span.contact-block__hint Call directly:
+								a(href="tel:+86631250859") +8(663)125-08-59
+							.contact-block__offices
+								span.contact-block__hint Brand Offices:
+								.contact-block__offices-list
+									a.contact-block__offices-item(href="#") Allentown PA
+									a.contact-block__offices-item(href="#") Allanta, GA
+									a.contact-block__offices-item(href="#") Chicago, IL
+									a.contact-block__offices-item(href="#") Dallas, TX,
+									a.contact-block__offices-item(href="#") Edison, NJ
+									a.contact-block__offices-item(href="#") Houston, TX
+					.col-12.col-lg-6
+						// Feedback form
+						.feedback-form__title Contact us
+						form.contacts-parallax__feedback.feedback-form(action="#", method="post")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Your name")
+								input(type="text", name="name", placeholder="Your name")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Email Address")
+								input(type="email", name="email", placeholder="Email Address")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Subject")
+								input(type="text", name="subject", placeholder="Subject (optional)")
+							label.contacts-parallax__field.field.field--bordered(aria-label="Your Message")
+								textarea(name="message", placeholder="Your Message")
+							button.contacts-parallax__btn.btn(type="sybmit") Send Message
+
+
+
+block footer
+	include modules/footer-3
