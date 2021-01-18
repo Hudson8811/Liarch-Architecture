@@ -28,6 +28,7 @@ const sassLibs = {
 		'source/scss/vendor/aos.css',
 		'source/scss/vendor/swiper-bundle.css',
 		'source/scss/vendor/fullpage.css',
+		'source/scss/vendor/jquery.pagepiling.css',
 		'source/scss/utils/normalize.css'],
 	build: 'build/css/'
 };
@@ -196,6 +197,10 @@ gulp.task('img', function() {
   //  .pipe(gulp.dest('build/img'));
 //});
 
+gulp.task('favicon', function() {
+	return gulp.src('source/favicons/*.*')
+		.pipe(gulp.dest('build/favicons'));
+});
 
 gulp.task('sprite', function() {
   return gulp.src('source/icons/*.svg')
@@ -231,4 +236,4 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'sprite', parallel('sass', 'sassLibs', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', parallel('sass', 'sassLibs', 'sassDark', 'sassModern', 'sassFonts'), 'pug', 'server'));

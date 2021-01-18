@@ -174,18 +174,11 @@
 	}
 
 	&--parallax {
-		display: flex;
-		align-items: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
-		padding-top: 0;
 
-		@media (max-width: 991px) {
-			padding-top: 120px !important;
-		}
-
-		&::before {
+		.scroll-wrap::before {
 			content: "";
 			position: absolute;
 			top: 0;
@@ -200,10 +193,6 @@
 		}
 
 		.swiper-container {
-			@media (min-width: 320px) and (min-height: 550px) {
-				padding-bottom: 50px;
-			}
-
 			@include media(md) {
 				padding-bottom: 0;
 			}
@@ -227,8 +216,9 @@
 		}
 
 		.arrow-square {
-			bottom: 0;
+			bottom: -60px;
 			background-color: transparent;
+			cursor: pointer;
 
 			@include media(lg) {
 				&:hover {
@@ -240,6 +230,10 @@
 				}
 			}
 
+			@include media(xl) {
+				bottom: 0;
+			}
+
 			svg {
 				fill: $color-default-white;
 			}
@@ -247,7 +241,7 @@
 			&--prev {
 				left: calc(50% - 50px);
 
-				@include media(md) {
+				@include media(xl) {
 					left: unset;
 					right: 72px;
 				}
@@ -256,23 +250,27 @@
 			&--next {
 				right: calc(50% - 50px);
 
-				@include media(md) {
+				@include media(xl) {
 					right: 0;
 				}
 			}
 		}
 
 		#{$self} {
+			&__container {
+				position: relative;
+			}
+
+			&__outer {
+				width: 100%;
+			}
+
 			&__welcome {
 				font-size: 18px;
 				line-height: 30px;
 				color: $color-default-white;
 				margin-bottom: 20px;
-				max-width: 170px;
-
-				br {
-					display: none;
-				}
+				max-width: 200px;
 
 				@include media(sm) {
 					max-width: 85%;
@@ -282,23 +280,17 @@
 					margin-bottom: 32px;
 				}
 
-				@include media(lg) {
-					br {
-						display: none;
-					}
+				@include media(xl) {
+					margin-bottom: 72px;
 				}
 
-				@include media(xxl) {
-					margin-bottom: 45px;
-				}
-
-				@media (min-width: 1560px) and (min-height: 900px) {
+				/*@media (min-width: 1560px) and (min-height: 900px) {
 					margin-bottom: 72px;
 				}
 
 				@media (max-height: 550px) {
 					font-size: 20px;
-				}
+				}*/
 			}
 
 			&__heading {
@@ -321,18 +313,23 @@
 					}
 				}
 
+				@include media(xl) {
+					font-size: 64px;
+					line-height: 72px;
+				}
+
 				@include media(xxl) {
 					margin-bottom: 32px;
 				}
 
-				@media (min-width: 1560px) and (min-height: 900px) {
+				/*@media (min-width: 1560px) and (min-height: 900px) {
 					font-size: 64px;
 					line-height: 72px;
 				}
 
 				@media (max-height: 550px) {
 					font-size: 24px;
-				}
+				}*/
 			}
 
 			&__content {
@@ -340,7 +337,7 @@
 			}
 
 			&__text {
-				max-width: 430px;
+				max-width: 400px;
 				color: $color-default-white;
 				margin-bottom: 25px;
 
@@ -355,10 +352,10 @@
 				}
 
 				@include media(xl) {
-					margin-bottom: 65px;
+					margin-bottom: 112px;
 				}
 
-				@media (min-width: 1560px) and (min-height: 500px) {
+				/*@media (min-width: 1560px) and (min-height: 500px) {
 					margin-bottom: 80px;
 				}
 
@@ -369,22 +366,17 @@
 				@media (max-height: 550px) {
 					font-size: 16px;
 					max-width: 100%;
-				}
+				}*/
 			}
 
 			&__buttons {
 				margin-bottom: 0;
 
 				a {
-					font-size: 14px;
-					padding: 10px;
+					font-size: 16px;
+					padding: 20px 22px;
 					border-radius: 0;
 					font-weight: 600;
-
-					@include media(xl) {
-						font-size: 16px;
-						padding: 20px 22px;
-					}
 				}
 			}
 		}

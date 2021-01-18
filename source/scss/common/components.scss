@@ -170,9 +170,9 @@ textarea.custom-input {
 	}
 }
 
-#fp-nav.fp-right {
+#pp-nav {
 	display: none;
-	right: 50px;
+	right: 50px !important;
 
 	@include media(xxl) {
 		display: block;
@@ -195,7 +195,7 @@ textarea.custom-input {
 			}
 
 			span {
-				margin: -2px 0 0 -2px;
+				margin: 0;
 				background-color: $color-orange;
 			}
 		}
@@ -213,6 +213,7 @@ textarea.custom-input {
 				background-color: $color-default-white;
 				left: unset;
 				right: 0;
+				border: none;
 				@include transition(background-color);
 			}
 

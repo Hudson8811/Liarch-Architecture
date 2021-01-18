@@ -161,6 +161,8 @@
   }
 
 	&--parallax {
+		background-color: $color-default-white;
+
 		#{$self} {
 			&__image {
 				background-image: url("../img/review-shapes-2.png");
@@ -170,7 +172,7 @@
 				height: 85vw;
 
 				@include media(md) {
-					height: 50vw;
+					height: 35vw;
 				}
 
 				@include media(xxl) {
@@ -188,7 +190,7 @@
 
 			&__image-author {
 				&--one {
-					top: 13.2%;
+					top: 2.2%;
 					left: 47.2%;
 					width: 24%;
 				}
