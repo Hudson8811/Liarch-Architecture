@@ -19,6 +19,7 @@
 		max-width: 750px;
 		padding: 30px 10px;
 		position: relative;
+		margin: 0 auto;
 
 		@include media(md) {
 			padding: 60px 10px;

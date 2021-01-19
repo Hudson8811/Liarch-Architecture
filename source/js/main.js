@@ -755,47 +755,6 @@ AOS.init({
 
 // homepage fullpages
 (function(){
-	// Рассчитываем высоту блоков
-	var block = $('.dark'),
-			top = [],
-			bottom = [];
-
-	block.each(function () {
-		top.push($(this).offset().top);
-		bottom.push($(this).offset().top + $(this).outerHeight());
-	});
-
-	// Меняем цвет хэдера и футера при скролле на малых разрешениях
-	$(window).scroll(function () {
-		if (window.matchMedia("(max-width: 991px)").matches) {
-			var scroll = $(this).scrollTop(),
-					isDark = false;
-
-			$.each(top, function (i, val) {
-				if (scroll >= val && scroll <= bottom[i]) {
-					isDark = true;
-				}
-			});
-
-			if (isDark) {
-				setDark();
-			} else {
-				removeDark();
-			}
-
-			if (scroll > 0 && isDark) {
-				$('.header-3').removeClass('bg-dark').addClass('bg-light');
-				$('.footer-3').removeClass('bg-dark').addClass('bg-light');
-			} else if (scroll > 0 && !isDark) {
-				$('.header-3').removeClass('bg-light').addClass('bg-dark');
-				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
-			} else if (scroll == 0) {
-				$('.header-3').removeClass('bg-light bg-dark');
-				$('.footer-3').removeClass('bg-light bg-dark');
-			}
-		}
-	});
-
 	initFullPage();
 
 	function initFullPage() {

@@ -29,19 +29,19 @@ html.no-js(lang="ru")
 
 	body.webpage
 		div(style="display: none")
-			//- include ../../../build/img/sprite.svg
+			include ../../../build/img/sprite.svg
 		include ../modules/header-3
 		include ../modules/menu
 		main
 			block content
 		block footer
 		include ../modules/modal
-		include ../modules/preloader
+		//include ../modules/preloader
 
 		// Optional JavaScript
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-		script(src="js/scrolloverflow.min.js")
-		script(src="js/fullpage.min.js")
+		//script(src="js/scrolloverflow.min.js")
+		script(src="js/jquery.pagepiling.js")
 		//script(src="js/fullpage.extensions.min.js")
 		script(src="js/aos.js")
 		script(src="js/jquery.easy_number_animate.js")
