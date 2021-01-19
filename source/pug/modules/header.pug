@@ -1,44 +1,55 @@
 header.header.__js_fixed-header
-  .header__inner
-    // Logo
-    +logo(isHome, 'header__logo')
+	.header__inner
+		// Logo
+		+logo(isHome, 'header__logo')
 
-    // Header menu
-    nav.header__nav.navigation
-      ul.navigation__list
-        each item in MAIN_MENU
-          if item.currentSection === currentSection && item.currentPage === currentPage
-            li.navigation__item.navigation__item--current
-              a.navigation__link.__js_nav-link= item.text
-              if item.submenu
-                +navigation-dropdown(item.submenu)
-          else if item.currentSection === currentSection && item.currentPage !== currentPage
-            li.navigation__item.navigation__item--current
-              a.navigation__link.__js_nav-link(href= item.url)= item.text
-              if item.submenu
-                +navigation-dropdown(item.submenu)
-          else
-            li.navigation__item
-              a.navigation__link.animsition-link.__js_nav-link(href= item.url)= item.text
-              if item.submenu
-                +navigation-dropdown(item.submenu)
-    // Chat
-    a.header__chat.lets-chat(href="#")
-      span.lets-chat__text Let’s chat!
-      span.lets-chat__icon
-        +icon('comments-reply')(width="18", height="18")
+		// Header menu
+		nav.header__nav.navigation
+			ul.navigation__list
+				//- Для темной темы подставляем другой массив, со ссылками на темные страницы
+				- let MENU = isDark ? MAIN_MENU_DARK : MAIN_MENU;
+				each item, index in MENU
+					if item.currentSection === currentSection && item.currentPage === currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
+					else if item.currentSection === currentSection && item.currentPage !== currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link(href= item.url)= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
+					else
+						li.navigation__item
+							a.navigation__link.animsition-link(href= item.url)= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
+		// Chat
+		a.header__chat.lets-chat(href="#")
+			span.lets-chat__text Let’s chat!
+			span.lets-chat__icon
+				+icon('comments-reply')(width="18", height="18")
 
-    // Header search
-    .header__search.header-search.__js_header-search
-      .header-search__wrapper
-        form(action="#", method="post")
-          label(aria-label="Type and hit enter to search")
-            input(type="search", name="header-search", placeholder="Type and hit enter to search...")
-      button.header-search__toggle(type="button")
-        +icon('search')(class="header-search__toggle-icon header-search__toggle-icon--loupe", width="22", height="22")
-        +icon('close')(class="header-search__toggle-icon header-search__toggle-icon--close", width="22", height="22")
-        span.visually-hidden Show search field
+		// Header search
+		.header__search.header-search.__js_header-search
+			.header-search__wrapper
+				form(action="#", method="post")
+					label(aria-label="Type and hit enter to search")
+						input(type="search", name="header-search", placeholder="Type and hit enter to search...")
+			button.header-search__toggle(type="button")
+				+icon('search')(class="header-search__toggle-icon header-search__toggle-icon--loupe", width="22", height="22")
+				+icon('close')(class="header-search__toggle-icon header-search__toggle-icon--close", width="22", height="22")
+				span.visually-hidden Show search field
 
-    // Burger
-    button.header__menu-toggle.menu-toggle(type="button")
-      span.visually-hidden Menu
+		// Burger
+		button.header__menu-toggle.menu-toggle(type="button")
+			span.visually-hidden Menu

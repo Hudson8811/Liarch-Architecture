@@ -9,6 +9,11 @@ mixin news-card(image, num, month, year, title, tag, author)
 				p.year= year
 			.news-card__title
 				a(href='#')= title
-				p.author= tag
+				p.author
+					if isDark
+						a(href= URLS.news.gridDark)= tag
+					else
+						a(href= URLS.news.grid)= tag
 					span.delimiter /
-					span= author
+					span
+						a(href="#")= author

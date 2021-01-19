@@ -96,6 +96,11 @@
 
 		@include media(xl) {
 			padding-top: 0;
+
+			.container-fluid {
+				max-width: 1920px;
+				margin: 0 auto;
+			}
 		}
 
 		#{$self}__heading {
@@ -192,8 +197,8 @@
 
 	&__bg-parallax {
 		position: relative;
-		overflow: hidden;
-		height: 46.875vw;
+		//overflow: hidden;
+		//height: 46.875vw;
 		margin-bottom: 60px;
 
 		@include media(xl) {
@@ -201,16 +206,17 @@
 		}
 
 		&-image {
-			position: absolute;
+			/*position: absolute;
 			top: 0;
 			left: 50%;
 			width: 100%;
-			transform: translateX(-50%);
+			transform: translateX(-50%);*/
 
 			img {
 				display: block;
 				max-width: 100%;
-				margin: 0 auto;
+				height: auto;
+				//margin: 0 auto;
 			}
 		}
 	}

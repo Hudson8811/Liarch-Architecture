@@ -446,5 +446,21 @@
 				}
 			}
 		}
+
+		&--fixed {
+			background-color: #4d524b;
+			//box-shadow: 0 1px 0 0 $color-grey4;
+
+			.logo {
+				&__image {
+					//	width: 36px;
+					//margin-right: 10px;
+				}
+
+				&__text {
+					//font-size: 10px;
+				}
+			}
+		}
 	}
 }

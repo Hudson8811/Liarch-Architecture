@@ -3,9 +3,13 @@
 
 	&--column {
 		display: block;
+		width: 100%;
 
 		#{$self}__list {
 			display: block;
+			max-height: 220px;
+			overflow: auto;
+			padding-right: 10px;
 		}
 
 		#{$self}__item {
@@ -24,6 +28,47 @@
 		#{$self}__link {
 			@include text(18px, 1.2, $color-default-black);
 			text-transform: none;
+
+			&:hover,
+			&:focus {
+				& + #{$self}__dropdown {
+					display: none;
+				}
+			}
+		}
+
+		#{$self}__dropdown {
+			position: static;
+			transform: translateY(0);
+			width: 100%;
+			min-width: 0;
+			padding: 0 0 0 16px;
+			border: none;
+			background-color: transparent;
+
+			&-wrapper {
+				display: block;
+			}
+
+			&-column {
+				width: 100%;
+
+				&-title {
+					display: none;
+				}
+
+				& + * {
+					width: 100% !important;
+					padding-left: 0 !important;
+				}
+			}
+
+			&-item {
+				a {
+					font-size: 14px;
+					line-height: 1;
+				}
+			}
 		}
 	}
 
@@ -31,9 +76,23 @@
 		position: absolute;
 		z-index: 1;
 		display: none;
-		width: 670px;
+		//width: 670px;
+		min-width: 400px;
 		background-color: $color-default-white;
 		border: solid 1px $color-grey4;
+
+		&--columns {
+			width: 670px;
+			min-width: 0;
+
+			@include media(lg) {
+				width: 480px;
+			}
+
+			@include media(xl) {
+				width: 670px;
+			}
+		}
 
 		&:hover {
 			display: block;
@@ -43,13 +102,13 @@
 			left: -50px;
 			bottom: -55px;
 			transform: translateY(100%);
-			width: 480px;
+			//width: 480px;
 			padding: 42px 50px;
 		}
 
 		@include media(xl) {
 			left: -100px;
-			width: 670px;
+			//width: 670px;
 			padding: 76px 100px 70px;
 		}
 
@@ -61,8 +120,12 @@
 
 		&-column {
 			@include media(lg) {
-				width: 50%;
-				padding-right: 32px;
+				flex-grow: 1;
+
+				& + & {
+					width: 50%;
+					padding-left: 32px;
+				}
 			}
 
 			&-title {
@@ -79,6 +142,12 @@
 		}
 
 		&-item {
+			&--current {
+				a {
+					color: $color-orange !important;
+					font-weight: 600;
+				}
+			}
 			a {
 				@include text(16px, 1.875);
 				letter-spacing: 0.015em;
@@ -192,6 +261,18 @@
 		&__item {
 			&::after {
 				display: none;
+			}
+		}
+		&__dropdown {
+			background-color: $color-geyser;
+
+			&-item {
+				a {
+					&:hover,
+					&:focus {
+						color: $color-bird-flower;
+					}
+				}
 			}
 		}
 	}

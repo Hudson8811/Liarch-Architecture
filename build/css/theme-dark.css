@@ -481,6 +481,14 @@ input[type="search"] {
   color: #ffffff;
 }
 
+.slide-content__heading a {
+  color: #ffffff;
+}
+
+.slide-content__heading a:hover, .slide-content__heading a:focus {
+  color: #ffffff;
+}
+
 .slide-content--thumb {
   background-color: transparent;
 }
