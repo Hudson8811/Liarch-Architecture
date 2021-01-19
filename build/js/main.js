@@ -775,76 +775,23 @@ AOS.init({
 
 // homepage fullpages
 (function(){
-	if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
-		initFullPage();
-	}
-
-	// Рассчитываем высоту блоков
-	var block = $('.dark'),
-			top = [],
-			bottom = [];
-
-	block.each(function () {
-		top.push($(this).offset().top);
-		bottom.push($(this).offset().top + $(this).outerHeight());
-	});
-
-	// Меняем цвет хэдера и футера при скролле на малых разрешениях
-	$(window).scroll(function () {
-		if (window.matchMedia("(max-width: 991px)").matches) {
-			var scroll = $(this).scrollTop(),
-					isDark = false;
-
-			$.each(top, function (i, val) {
-				if (scroll >= val && scroll <= bottom[i]) {
-					isDark = true;
-				}
-			});
-
-			if (isDark) {
-				setDark();
-			} else {
-				removeDark();
-			}
-
-			if (scroll > 0 && isDark) {
-				$('.header-3').removeClass('bg-dark').addClass('bg-light');
-				$('.footer-3').removeClass('bg-dark').addClass('bg-light');
-			} else if (scroll > 0 && !isDark) {
-				$('.header-3').removeClass('bg-light').addClass('bg-dark');
-				$('.footer-3').removeClass('bg-light').addClass('bg-dark');
-			} else if (scroll == 0) {
-				$('.header-3').removeClass('bg-light bg-dark');
-				$('.footer-3').removeClass('bg-light bg-dark');
-			}
-		}
-	});
-
-	$(window).resize(function () {
-		if (window.matchMedia("(min-width: 992px) and (min-height: 550px)").matches) {
-			if ((!$('#fullpage').hasClass('fullpage-wrapper')) || $('#fullpage').hasClass('fp-destroyed')) {
-				initFullPage();
-			}
-		} else {
-			if ($('#fullpage').hasClass('fullpage-wrapper')) {
-				$.fn.fullpage.destroy('all');
-			}
-		}
-	});
+	initFullPage();
 
 	function initFullPage() {
-		if ($('#fullpage') && $('#fullpage').length > 0) {
-			$('#fullpage').fullpage({
-				licenseKey: 'KEY',
-				navigation: true,
-				navigationTooltips: false,
-				afterLoad: function (origin, destination, direction) {
-					var current = $(destination["item"]);
+		if ($('#pagepiling') && $('#pagepiling').length > 0) {
+			$('#pagepiling').pagepiling({
+				scrollingSpeed: 280,
+				loopBottom: true,
+				afterLoad: function (anchorLink, index) {
+					var current = $('#pagepiling .section.active');
+
 					if (current.hasClass('dark')) {
 						setDark();
 					} else {
 						removeDark();
 					}
+
+					$('.fp-table.active .aos-init').addClass('aos-animate');
 				}
 			});
 		}
@@ -853,12 +800,12 @@ AOS.init({
 	function setDark() {
 		$('.header-3').addClass('header-3--dark');
 		$('.footer-3').addClass('footer-3--dark');
-		$('#fp-nav').addClass('dark');
+		$('#pp-nav').addClass('dark');
 	}
 
 	function removeDark() {
 		$('.header-3').removeClass('header-3--dark');
 		$('.footer-3').removeClass('footer-3--dark');
-		$('#fp-nav').removeClass('dark');
+		$('#pp-nav').removeClass('dark');
 	}
 })();

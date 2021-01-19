@@ -131,6 +131,9 @@
 	}
 
 	&--parallax {
+		background-color: $color-default-white;
+		overflow-x: hidden;
+
 		.slide-counter-2 {
 			min-width: 24px;
 			height: 58px;
@@ -188,6 +191,7 @@
 			position: absolute;
 			bottom: 7px;
 			z-index: 3;
+			cursor: pointer;
 			@include transition(border-color);
 
 			@include media(lg) {
@@ -327,6 +331,7 @@
 		#{$self} {
 			&__slider-wrapper {
 				position: relative;
+				width: 100%;
 				max-width: 1434px;
 				margin: 0 auto;
 

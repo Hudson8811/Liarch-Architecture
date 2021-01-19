@@ -203,9 +203,16 @@
 		background-image: url("../img/bg-our-story.jpg");
 		background-repeat: no-repeat;
 		background-size: cover;
+		padding-bottom: 0 !important;
 
-		@include media(sm) {
-			align-items: flex-end;
+		@include media(xl) {
+			padding: 0 !important;
+		}
+
+		.scroll-wrap {
+			@include media(xl) {
+				padding: 0 !important;
+			}
 		}
 
 		.row {
@@ -223,24 +230,13 @@
 			}
 		}
 
-		.video-btn__btn {
-			@media (max-height: 550px) {
-				width: 40px;
-				height: 40px;
-			}
-		}
-
 		#{$self} {
 			&__inner {
 				border-bottom: none;
 				padding-bottom: 0;
 
-				@include media(lg) {
-					padding: 80px 0;
-				}
-
 				@include media(xl) {
-					height: 100%;
+					height: 100vh;
 					padding: 0;
 				}
 			}
@@ -250,66 +246,63 @@
 
 				@include media(xl) {
 					padding-right: 50px;
+					align-self: flex-end;
 				}
 
 				@include media(xxl) {
 					padding-right: 100px;
 				}
-
-				@media (max-height: 550px) {
-					display: none;
-				}
 			}
 
 			&__image {
-				margin-bottom: -7px;
 				height: 100%;
 				text-align: center;
+				overflow: hidden;
 
 				@include media(xl) {
-					text-align: left;
+					margin-left: auto;
+					width: 400px;
 				}
 
 				@include media(xxl) {
-					margin-left: -89px;
-					width: 706px;
+					margin-left: auto;
 				}
 
-				@media (max-height: 850px) {
-					width: auto;
+				@media (min-width: 1700px) {
+					margin-left: -74px;
+					width: 706px;
 				}
 
 				img {
 					max-width: 50%;
+					height: 100%;
+					object-fit: contain;
+					object-position: bottom;
 
 					@include media(sm) {
 						max-width: 30%;
 					}
 
 					@include media(xl) {
-						max-width: 78%;
-						position: absolute;
-						bottom: 0;
-						right: 0;
+						max-width: 100%;
+						position: relative;
+						bottom: -8px;
 					}
-
 
 					@include media(xxl) {
 						max-width: 100%;
-						right: -40px;
-					}
-
-					@media (min-width: 1650px) {
-						right: 32px;
-					}
-
-					@media (min-height: 851px) {
-						max-width: 78%;
 					}
 				}
 			}
 
 			&__content {
+				text-align: center;
+
+				@include media(xl) {
+					text-align: left;
+					padding-bottom: 110px;
+				}
+
 				@include media(xxl) {
 					transform: translateX(100px);
 					padding-top: 24px;
@@ -318,15 +311,6 @@
 
 			&__heading {
 				font-weight: 600;
-
-				@media (max-height: 550px) {
-					font-size: 26px;
-				}
-
-				@media (max-height: 550px) {
-					font-size: 22px;
-					margin-bottom: 10px;
-				}
 			}
 
 			&__text {
@@ -336,22 +320,31 @@
 					color: #010101;
 					font-style: normal;
 				}
-
-				@media (max-height: 550px) {
-					font-size: 14px;
-					margin-bottom: 5px;
-				}
 			}
 
 			&__buttons {
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
 				margin-top: 35px;
 
-				@include media(xl) {
-					margin-top: 84px;
+				@include media(sm) {
+					flex-direction: row;
+					align-items: flex-start;
 				}
 
-				@media (max-height: 550px) {
-					margin-top: 15px;
+				@include media(xl) {
+					justify-content: flex-start;
+					margin-top: 84px;
+				}
+			}
+
+			&__btn,
+			&__video-btn {
+				align-self: center;
+
+				@include media(sm) {
+					align-self: flex-start;
 				}
 			}
 
@@ -360,15 +353,17 @@
 				border-color: $color-default-white;
 				border-radius: 0;
 				@include transition(all);
+				margin-bottom: 15px;
+				margin-right: 0;
+
+				@include media(sm) {
+					margin-bottom: 0;
+					margin-right: 10px;
+				}
 
 				&:hover {
 					background-color: $color-orange;
 					border-color: $color-orange;
-				}
-
-				@media (max-height: 550px) {
-					font-size: 14px;
-					padding: 14px 18px;
 				}
 			}
 		}
