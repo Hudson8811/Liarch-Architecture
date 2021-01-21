@@ -1621,6 +1621,10 @@ textarea {
   color: #e6da89;
 }
 
+.webpage--beige .navigation__dropdown-item--current a {
+  color: #e6da89 !important;
+}
+
 /* 1.12 Logo */
 .logo {
   display: flex;

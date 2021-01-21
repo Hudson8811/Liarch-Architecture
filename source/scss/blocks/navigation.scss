@@ -361,6 +361,11 @@
 					}
 				}
 			}
+			&-item--current {
+				a {
+					color: $color-bird-flower !important;
+				}
+			}
 		}
 	}
 }
