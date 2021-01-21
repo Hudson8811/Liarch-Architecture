@@ -49,6 +49,14 @@
 	}
 }
 
+.webpage--modern {
+	.preloader {
+		&__double-bounce {
+			background-color: $color-lemon;
+		}
+	}
+}
+
 @keyframes bounce {
 	0%,
 	100% {

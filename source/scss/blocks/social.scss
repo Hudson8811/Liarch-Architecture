@@ -171,3 +171,18 @@
 		}
 	}
 }
+
+.webpage--modern {
+	.social {
+		&--black {
+			.social__link {
+				&:hover,
+				&:focus {
+					svg {
+						fill: $color-lemon;
+					}
+				}
+			}
+		}
+	}
+}

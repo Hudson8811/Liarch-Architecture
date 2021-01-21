@@ -369,3 +369,43 @@
 		}
 	}
 }
+
+.webpage--modern {
+	.navigation {
+		$self: &;
+
+		&__link {
+			&:hover,
+			&:focus {
+				color: $color-lemon !important;
+			}
+		}
+
+		&__item {
+			&::after {
+				display: none;
+			}
+		}
+
+		&__item--current {
+			.navigation__link {
+				color: $color-lemon !important;
+			}
+		}
+
+		&__dropdown-item {
+			a {
+				&:hover,
+				&:focus {
+					color: $color-lemon;
+				}
+			}
+		}
+
+		&__dropdown-item--current {
+			a {
+				color: $color-lemon !important;
+			}
+		}
+	}
+}

@@ -630,6 +630,26 @@ textarea {
   background-color: #ddcd5f;
 }
 
+.webpage--modern .btn {
+  border: solid 1px #cee100;
+  background-color: #cee100;
+}
+
+.webpage--modern .btn:hover, .webpage--modern .btn:focus {
+  background-color: #edff2f;
+}
+
+.webpage--modern .btn--outline {
+  background-color: transparent;
+  color: #cee100;
+  border-color: #cee100;
+}
+
+.webpage--modern .btn--outline:hover, .webpage--modern .btn--outline:focus {
+  color: #ffffff;
+  background-color: #cee100;
+}
+
 /* 1.5 Fields */
 .field {
   position: relative;
@@ -961,6 +981,37 @@ textarea {
   fill: #ffffff;
 }
 
+.webpage--modern .video-btn {
+  font-size: 14px;
+  line-height: 1.375;
+  color: #cee100;
+}
+
+.webpage--modern .video-btn__btn {
+  background-color: #cee100;
+}
+
+.webpage--modern .video-btn__btn:hover, .webpage--modern .video-btn__btn:focus {
+  background-color: #edff2f;
+}
+
+.webpage--modern .video-btn--outline .video-btn__btn {
+  background-color: transparent;
+  border: solid 1px #cee100;
+}
+
+.webpage--modern .video-btn--outline .video-btn__btn svg {
+  fill: #cee100;
+}
+
+.webpage--modern .video-btn--outline .video-btn__btn:hover, .webpage--modern .video-btn--outline .video-btn__btn:focus {
+  background-color: #cee100;
+}
+
+.webpage--modern .video-btn--outline .video-btn__btn:hover svg, .webpage--modern .video-btn--outline .video-btn__btn:focus svg {
+  fill: #ffffff;
+}
+
 /* 1.7 Heading */
 .heading {
   margin: 0;
@@ -1056,6 +1107,10 @@ textarea {
 
 .menu-toggle:hover::before, .menu-toggle:hover::after, .menu-toggle:focus::before, .menu-toggle:focus::after {
   border-top-color: #ff4800;
+}
+
+.webpage--modern .menu-toggle:hover::before, .webpage--modern .menu-toggle:hover::after, .webpage--modern .menu-toggle:focus::before, .webpage--modern .menu-toggle:focus::after {
+  border-top-color: #cee100 !important;
 }
 
 /* 1.9 Header search */
@@ -1198,6 +1253,10 @@ textarea {
 .webpage--beige .header-search form input {
   color: #ffffff;
   background-color: #5a5f57;
+}
+
+.webpage--modern .header-search__toggle:hover svg, .webpage--modern .header-search__toggle:focus svg {
+  fill: #cee100 !important;
 }
 
 /* 1.10 Chat button */
@@ -1625,6 +1684,26 @@ textarea {
   color: #e6da89 !important;
 }
 
+.webpage--modern .navigation__link:hover, .webpage--modern .navigation__link:focus {
+  color: #cee100 !important;
+}
+
+.webpage--modern .navigation__item::after {
+  display: none;
+}
+
+.webpage--modern .navigation__item--current .navigation__link {
+  color: #cee100 !important;
+}
+
+.webpage--modern .navigation__dropdown-item a:hover, .webpage--modern .navigation__dropdown-item a:focus {
+  color: #cee100;
+}
+
+.webpage--modern .navigation__dropdown-item--current a {
+  color: #cee100 !important;
+}
+
 /* 1.12 Logo */
 .logo {
   display: flex;
@@ -1712,6 +1791,41 @@ textarea {
 
 .webpage--technical-drawing .logo[href]:hover .logo__text, .webpage--technical-drawing .logo[href]:focus .logo__text {
   color: #ffdf91;
+}
+
+.webpage--modern .logo__image svg {
+  fill: #cee100;
+}
+
+.webpage--modern .logo__text {
+  display: block;
+  max-width: 110px;
+  align-self: center;
+  font-size: 12px;
+  line-height: 1.285;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.22px;
+  transition: color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .webpage--modern .logo__text {
+    font-size: 14px;
+  }
+}
+
+.webpage--modern .logo[href]:hover, .webpage--modern .logo[href]:focus {
+  outline: none;
+}
+
+.webpage--modern .logo[href]:hover svg, .webpage--modern .logo[href]:focus svg {
+  fill: #edff2f;
+}
+
+.webpage--modern .logo[href]:hover__text, .webpage--modern .logo[href]:focus__text {
+  color: #cee100 !important;
 }
 
 /* 1.13 Social */
@@ -1874,6 +1988,10 @@ textarea {
 
 .webpage--beige .social__link:hover svg, .webpage--beige .social__link:focus svg {
   fill: #e6da89;
+}
+
+.webpage--modern .social--black .social__link:hover svg, .webpage--modern .social--black .social__link:focus svg {
+  fill: #cee100;
 }
 
 /* 1.14 More */
@@ -2506,6 +2624,10 @@ textarea {
   background-color: #4d524b;
 }
 
+.webpage--modern .preloader__double-bounce {
+  background-color: #cee100;
+}
+
 @keyframes bounce {
   0%,
   100% {
@@ -2762,6 +2884,10 @@ textarea {
   opacity: 0.7;
 }
 
+.webpage--modern .lang-switcher__link:hover, .webpage--modern .lang-switcher__link:focus {
+  color: #cee100 !important;
+}
+
 /*-------------------------------------------------------------------------------
   2. Header
 -------------------------------------------------------------------------------*/
@@ -2932,11 +3058,11 @@ textarea {
   color: #ff4800;
 }
 
-.header--white .search-toggle svg {
+.header--white .header-search__toggle svg {
   fill: #ffffff;
 }
 
-.header--white .search-toggle:hover svg, .header--white .search-toggle:focus svg {
+.header--white .header-search__toggle:hover svg, .header--white .header-search__toggle:focus svg {
   fill: #ff4800;
 }
 
@@ -3247,6 +3373,54 @@ textarea {
 
 .webpage--beige .header--fixed {
   background-color: #4d524b;
+}
+
+.webpage--modern .header {
+  border-top: none;
+}
+
+.webpage--modern .header--white.header--fixed .logo__text {
+  color: #000000;
+}
+
+.webpage--modern .header--white.header--fixed .logo[href]:hover, .webpage--modern .header--white.header--fixed .logo[href]:focus {
+  color: #cee100;
+}
+
+.webpage--modern .header--white.header--fixed .lang-switcher__link {
+  color: #000000;
+}
+
+.webpage--modern .header--white.header--fixed .lang-switcher__link:hover, .webpage--modern .header--white.header--fixed .lang-switcher__link:focus {
+  color: #cee100;
+}
+
+.webpage--modern .header--white.header--fixed .header-search__toggle svg {
+  fill: #000000;
+}
+
+.webpage--modern .header--white.header--fixed .header-search__toggle:hover svg, .webpage--modern .header--white.header--fixed .header-search__toggle:focus svg {
+  fill: #cee100;
+}
+
+.webpage--modern .header--white.header--fixed .menu-toggle::before, .webpage--modern .header--white.header--fixed .menu-toggle::after {
+  border-top: solid 3px #000000;
+}
+
+.webpage--modern .header--white.header--fixed .menu-toggle:hover::before, .webpage--modern .header--white.header--fixed .menu-toggle:hover::after, .webpage--modern .header--white.header--fixed .menu-toggle:focus::before, .webpage--modern .header--white.header--fixed .menu-toggle:focus::after {
+  border-top-color: #cee100;
+}
+
+.webpage--modern .header--white.header--fixed .navigation__link {
+  color: #000000;
+}
+
+.webpage--modern .header--white.header--fixed .navigation__link:hover, .webpage--modern .header--white.header--fixed .navigation__link:focus {
+  color: #cee100;
+}
+
+.webpage--modern .header--white.header--fixed .navigation__item--current .navigation__link {
+  color: #cee100 !important;
 }
 
 /* 2.2 Header type 2 */
@@ -3936,6 +4110,20 @@ textarea {
   color: #ffffff;
 }
 
+.webpage--modern .footer__appeal a {
+  color: #cee100;
+}
+
+.webpage--modern .footer__column-email:hover, .webpage--modern .footer__column-email:focus {
+  outline: none;
+  color: #cee100;
+}
+
+.webpage--modern .footer__column-link:hover, .webpage--modern .footer__column-link:focus {
+  outline: none;
+  color: #cee100;
+}
+
 /* 3.2 Footer type 2 */
 .footer-3 {
   display: flex;
@@ -4248,12 +4436,14 @@ textarea {
 }
 
 .statistics--m {
-  margin: 60px 0;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 @media (min-width: 1200px) {
   .statistics--m {
-    margin: 70px 0 150px;
+    margin-top: 70px;
+    margin-bottom: 150px;
   }
 }
 
@@ -4695,6 +4885,10 @@ textarea {
   font-size: 16px;
   line-height: 1.625;
   color: #666666;
+}
+
+.webpage--modern .work-card--compact .work-card__image::before {
+  background-color: #cee100;
 }
 
 /* 4.5 Slide content */
@@ -5249,6 +5443,10 @@ textarea {
   .slider__nav-btn:hover svg, .slider__nav-btn:focus svg {
     fill: #000000;
   }
+}
+
+.webpage--modern .slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #cee100;
 }
 
 /* 4.8 Project meta */
@@ -6075,6 +6273,14 @@ textarea {
   }
 }
 
+.webpage--modern .simplicity__preheading {
+  color: #cee100;
+}
+
+.webpage--modern .simplicity__heading {
+  font-weight: 700;
+}
+
 /* 4.13 Approach */
 .approach {
   padding: 60px 0;
@@ -6583,6 +6789,16 @@ textarea {
 
 .webpage--beige .rewards .rewards__item + .rewards__item {
   border-top: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+.webpage--modern .rewards__preheading {
+  color: #cee100;
+  text-align: center;
+}
+
+.webpage--modern .rewards__heading {
+  text-align: center;
+  font-weight: 700;
 }
 
 /* 4.16 Form */
@@ -7683,6 +7899,16 @@ textarea {
   }
 }
 
+.webpage--modern .latest-articles__preheading {
+  text-align: center;
+  color: #cee100;
+}
+
+.webpage--modern .latest-articles__heading {
+  font-weight: 700;
+  text-align: center;
+}
+
 /* 4.28 Fact */
 .fact {
   max-width: 298px;
@@ -7745,6 +7971,10 @@ textarea {
   .fact__value {
     font-size: 72px;
   }
+}
+
+.webpage--modern .fact {
+  border-top-color: #cee100;
 }
 
 /* 4.29 Hero banner */
@@ -8005,6 +8235,14 @@ textarea {
 .hero-banner__down:hover, .hero-banner__down:focus {
   outline: none;
   fill: #ff4800;
+}
+
+.webpage--modern .hero-banner .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #cee100;
+}
+
+.webpage--modern .hero-banner__down:hover, .webpage--modern .hero-banner__down:focus {
+  fill: #cee100;
 }
 
 /* 4.30 Instagram block */
@@ -8614,12 +8852,6 @@ textarea {
 /* 4.34 Latest projects */
 .latest-projects {
   padding-bottom: 24px;
-  /*.swiper-slide-thumb-active {
-		.slide-content {
-			background-image: none;
-			background-color: $color-default-white;
-		}
-	}*/
 }
 
 @media (min-width: 576px) {
@@ -8719,6 +8951,33 @@ textarea {
 
 .latest-projects__slider-thumbs .swiper-wrapper {
   align-items: flex-end;
+}
+
+.webpage--modern .latest-projects__inner {
+  max-width: 1550px;
+}
+
+.webpage--modern .latest-projects__preheading {
+  color: #cee100;
+  text-align: center;
+}
+
+.webpage--modern .latest-projects__header {
+  display: block;
+}
+
+.webpage--modern .latest-projects__heading {
+  font-weight: 700;
+}
+
+.webpage--modern .latest-projects .swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .webpage--modern .latest-projects .swiper-pagination {
+    margin-top: 90px !important;
+  }
 }
 
 @media (min-width: 768px) {

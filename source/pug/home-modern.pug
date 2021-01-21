@@ -6,6 +6,7 @@ block variables
 	- let currentPage = 1.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 	- let bodyModClass = ' webpage--modern';
+
 block header
 	include modules/header-modern
 	include modules/menu
@@ -97,8 +98,9 @@ block content
 	// Rewards
 	section.webpage__rewards.rewards(data-aos="fade")
 		.rewards__inner.container
-			.rewards__preheading our awards
-			h2.rewards__heading.heading(data-aos="fade") Rewards for our efforts
+			header.rewards__header
+				.rewards__preheading our awards
+				h2.rewards__heading.heading(data-aos="fade") Rewards for our efforts
 			ul.rewards__list
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2020") 2020
