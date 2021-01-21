@@ -53,3 +53,38 @@
 		}
 	}
 }
+
+.webpage--technical-drawing {
+	.logo {
+		&__image {
+			display: block;
+			width: 42px;
+			margin-right: 8px;
+			align-self: center;
+
+			@include media(md) {
+				width: 45px;
+				margin-right: 11px;
+			}
+		}
+
+		&__text {
+			@include media(md) {
+				font-size: 12px;
+			}
+		}
+
+		&[href]:hover,
+		&[href]:focus {
+			outline: none;
+
+			svg {
+				fill: $color-cream-brulee;
+			}
+
+			.logo__text {
+				color: $color-cream-brulee;
+			}
+		}
+	}
+}

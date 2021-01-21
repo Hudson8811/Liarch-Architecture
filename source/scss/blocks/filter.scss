@@ -1,4 +1,46 @@
 .filter {
+	$self: &;
+
+	&--technical {
+		#{$self}__item {
+			font-weight: 400;
+			position: relative;
+			z-index: 1;
+
+			&::before {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 14px;
+				position: absolute;
+				bottom: -40%;
+				left: 0;
+				z-index: -1;
+				background-color: $color-cream-brulee;
+				opacity: 0;
+				@include transition(opacity);
+			}
+
+			&:hover,
+			&:focus {
+				color: $color-default-black;
+
+				&::before {
+					opacity: 1;
+				}
+			}
+
+			&--active {
+				font-weight: 700;
+				color: $color-default-black;
+
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
 	&__item {
 		margin-right: 20px;
 		padding: 0;

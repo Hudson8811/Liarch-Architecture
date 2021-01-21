@@ -20,7 +20,7 @@ block content
 
 				// Works
 				section.works
-					header.works__header
+					//-header.works__header
 
 						// Filter
 						.works__filter.filter
@@ -44,25 +44,35 @@ block content
 								img(src="img/slider/slide-1.jpg", width="1145", height="650", alt="")
 								.slide__content.slide-content
 									.slide-content__detail 2020	-	Kiev, Ukraine
-									.slide-content__heading Cubic Blockes Hotel
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Cubic Blockes Hotel
 
 							.slider__item.slide.swiper-slide
 								img(src="img/slider/slide-2.jpg", width="1145", height="650", alt="")
 								.slide__content.slide-content
 									.slide-content__detail 2020	-	Belgium
-									.slide-content__heading Dogel Nord Station
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Dogel Nord Station
 
 							.slider__item.slide.swiper-slide
 								img(src="img/slider/slide-3.jpg", width="1145", height="650", alt="")
 								.slide__content.slide-content
 									.slide-content__detail 2019	-	Vancouver, Canada
-									.slide-content__heading Cabin Wood In Forest
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Cabin Wood In Forest
 
 							.slider__item.slide.swiper-slide
 								img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
 								.slide__content.slide-content
 									.slide-content__detail 2019	-	Iasi, Romania
-									.slide-content__heading Daniel Villa, Romania
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Daniel Villa, Romania
+
+						.slider__nav
+							button.slider__nav-btn.slider__nav-btn--prev(type="button")
+								+icon('chevron-left')(width="36", height="36")
+							button.slider__nav-btn.slider__nav-btn--next(type="button")
+								+icon('chevron-right')(width="36", height="36")
 						.swiper-pagination
 
 block footer

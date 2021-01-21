@@ -36,10 +36,13 @@
 
 		&--current {
 			color: $color-default-black;
+			font-weight: 600;
+
+			pointer-events: none;
 		}
 
-		&:not(&--current):hover,
-		&:not(&--current):focus {
+		&:hover,
+		&:focus {
 			outline: none;
 			color: $color-orange;
 		}

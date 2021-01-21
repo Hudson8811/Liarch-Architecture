@@ -1,0 +1,38 @@
+.bg-wrapper {
+	background-color: #181818;
+
+	@include media(xl) {
+		background-color: transparent;
+		background-image: linear-gradient(
+			to right,
+			transparent 3.375vw,
+			#181818 3.375vw
+		);
+	}
+
+	@include media(xxl) {
+		background-image: linear-gradient(
+			to right,
+			transparent 9.375vw,
+			#181818 9.375vw
+		);
+	}
+
+	&--reverse {
+		@include media(xl) {
+			background-image: linear-gradient(
+				to left,
+				transparent 3.375vw,
+				#181818 3.375vw
+			);
+		}
+
+		@include media(xxl) {
+			background-image: linear-gradient(
+				to left,
+				transparent 9.375vw,
+				#181818 9.375vw
+			);
+		}
+	}
+}

@@ -10,6 +10,15 @@
 	&__heading {
 		font-weight: 300;
 		color: $color-default-white;
+
+		a {
+			color: $color-default-white;
+
+			&:hover,
+			&:focus {
+				color: $color-default-white;
+			}
+		}
 	}
 
 	&--thumb {

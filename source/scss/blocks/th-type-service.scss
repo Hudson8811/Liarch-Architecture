@@ -1,0 +1,212 @@
+.th-type-service {
+	$self: &;
+
+	&__inner {
+		padding: 40px;
+
+		@include media(xl) {
+			padding: 160px 15px 200px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 32px;
+
+		@include media(xl) {
+			margin-bottom: 80px;
+		}
+	}
+
+	&__heading {
+		display: inline-block;
+		font-weight: 400;
+
+		@include media(xl) {
+			font-size: 60px;
+		}
+
+		& + * {
+			margin-top: 16px;
+		}
+	}
+
+	&__text {
+		max-width: 660px;
+
+		@include text(16px, 1.7, $color-grey2);
+
+		@include media(xl) {
+			font-size: 20px;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		width: calc(100% + 80px);
+		margin-left: -40px;
+		padding: 0;
+
+		@include media(md) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__item {
+		border-top: solid 1px $color-default-black;
+
+		&--quote {
+			padding: 40px !important;
+
+			@include media(md) {
+				padding: 60px !important;
+				border: none !important;
+			}
+
+			@include media(xl) {
+				padding: 87px 54px 56px 100px !important;
+			}
+		}
+
+		@include media(md) {
+			border: solid 1px $color-default-black;
+
+			&:nth-child(even) {
+				border-left: none;
+			}
+
+			&:nth-child(n + 3) {
+				border-top: none;
+			}
+		}
+
+		a {
+			position: relative;
+			display: block;
+			padding: 40px;
+
+			@include media(xl) {
+				padding: 64px 72px 56px;
+			}
+
+			&:hover,
+			&:focus {
+				#{$self}__item {
+					&-heading {
+						text-decoration: underline;
+					}
+
+					&-link {
+						font-weight: 600;
+
+						&::before {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			&:active {
+				opacity: 0.7;
+			}
+		}
+
+		&-icon {
+			margin-bottom: 48px;
+
+			@include media(xl) {
+				margin-bottom: 96px;
+			}
+
+			svg {
+				display: block;
+				width: 42px;
+				height: auto;
+
+				@include media(xl) {
+					width: 54px;
+				}
+			}
+		}
+
+		&-heading {
+			margin-bottom: 30px;
+
+			@include text(30px, 1.11);
+
+			@include media(xl) {
+				max-width: 276px;
+				font-size: 36px;
+			}
+		}
+
+		&-text {
+			@include text(14px, 1.66, $color-grey2);
+
+			@include media(xl) {
+				font-size: 18px;
+			}
+		}
+
+		&-link {
+			position: absolute;
+			top: 40px;
+			right: 40px;
+			z-index: 1;
+
+			@include text(14px, 1);
+			text-transform: uppercase;
+
+			@include media(xl) {
+				top: 64px;
+				right: 72px;
+			}
+			&::before {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 14px;
+				position: absolute;
+				bottom: -40%;
+				left: 0;
+				z-index: -1;
+				background-color: $color-cream-brulee;
+				opacity: 0;
+				@include transition(opacity);
+			}
+		}
+	}
+
+	&__quote {
+		margin-bottom: 16px;
+
+		@include text(24px, 1.27);
+		font-family: $font-family--third;
+		font-style: normal;
+		font-weight: 400;
+
+		@include media(xl) {
+			margin-bottom: 52px;
+			font-size: 36px;
+		}
+	}
+
+	&__sign {
+		margin-bottom: 12px;
+
+		@include media(xl) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__cite {
+		@include text(16px, 1);
+		font-weight: 600;
+		font-style: normal;
+
+		span {
+			color: $color-grey;
+			font-weight: 400;
+		}
+	}
+}

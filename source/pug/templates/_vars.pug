@@ -39,7 +39,7 @@
 			listing: 'works-listing.html',
 			carousel1: 'works-carousel-1.html',
 			carousel3: 'works-carousel-3.html',
-			singleStandart: 'single-project-standard.html',
+			singleStandart: 'single-project-standart.html',
 			singleSidebar: 'single-project-sidebar.html',
 			singleMinimalism: 'single-project-minimalism.html',
 			gridDark: 'works-grid-dark.html',
@@ -49,7 +49,7 @@
 			listingDark: 'works-listing-dark.html',
 			carousel1Dark: 'works-carousel-1-dark.html',
 			carousel3Dark: 'works-carousel-3-dark.html',
-			singleStandartDark: 'single-project-standard-dark.html',
+			singleStandartDark: 'single-project-standart-dark.html',
 			singleSidebarDark: 'single-project-sidebar-dark.html',
 			singleMinimalismDark: 'single-project-minimalism-dark.html'
 		},
@@ -88,15 +88,23 @@
 	};
 
 	let ASIDE_MAIN_MENU = [
-		{text: 'Services', url: 'homepage-menu.html', currentIndex: 1},
-		{text: 'Works', url: 'works.html', currentIndex: 2},
-		{text: 'Studio', url: '#', currentIndex: 33},
-		{text: 'News', url: 'news-list.html', currentIndex: 4},
-		{text: 'Contact', url: 'contacts.html', currentIndex: 5}
+		{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5},
+		{text: 'Works', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},
+		{text: 'Studio', url: '#', currentPage: null, currentSection: null},
+		{text: 'News', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+		{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5}
+	];
+
+	let ASIDE_MAIN_MENU_DARK = [
+		{text: 'Services', url: URLS.pages.servicesDark, currentPage: 5.09, currentSection: 5},
+		{text: 'Works', url: URLS.works.gridDark, currentPage: 3.11, currentSection: 3},
+		{text: 'Studio', url: '#', currentPage: null, currentSection: null},
+		{text: 'News', url: URLS.news.gridDark, currentPage: 4.07, currentSection: 4},
+		{text: 'Contact', url: URLS.pages.contactDark, currentPage: 5.13, currentSection: 5}
 	];
 
 	let MAIN_MENU = [
-		{text: 'Home', url: URLS.home.dafault, currentSection: 1, currentPage: 1.01, submenu: {
+		{text: 'Home', url: URLS.home.default, currentSection: 1, currentPage: 1.01, submenu: {
 			white: [
 				{text: 'Home Default', url: URLS.home.default, currentPage: 1.01, currentSection: 1},
 				{text: 'Home Modern', url: URLS.home.modern, currentPage: 1.02, currentSection: 1},
@@ -171,6 +179,105 @@
 			]
 		}},
 		{text: 'Pages', url: URLS.pages.services, currentSection: 5, currentPage: 5.01, submenu: {
+			white: [
+				{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5},
+				{text: 'Service Detail', url: URLS.pages.serviceDetail, currentPage: 5.02, currentSection: 5},
+				{text: 'Pricing', url: URLS.pages.pricing, currentPage: 5.03, currentSection: 5},
+				{text: 'Team', url: URLS.pages.team, currentPage: 5.04, currentSection: 5},
+				{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5},
+				{text: 'Contact 2', url: URLS.pages.contact2, currentPage: 5.06, currentSection: 5},
+				{text: '404 Error', url: URLS.pages.error404, currentPage: 5.07, currentSection: 5},
+				{text: 'Coming Soon', url: URLS.pages.comingSoon, currentPage: 5.08, currentSection: 5}
+			],
+			dark: [
+				{text: 'Services Dark', url: URLS.pages.servicesDark, currentPage: 5.09, currentSection: 5},
+				{text: 'Service Detail Dark', url: URLS.pages.serviceDetailDark, currentPage: 5.1, currentSection: 5},
+				{text: 'Pricing Dark', url: URLS.pages.pricingDark, currentPage: 5.11, currentSection: 5},
+				{text: 'Team Dark', url: URLS.pages.teamDark, currentPage: 5.12, currentSection: 5},
+				{text: 'Contact Dark', url: URLS.pages.contactDark, currentPage: 5.13, currentSection: 5},
+				{text: 'Contact 2 Dark', url: URLS.pages.contact2dark, currentPage: 5.14, currentSection: 5},
+				{text: '404 Error Dark', url: URLS.pages.error404Dark, currentPage: 5.15, currentSection: 5},
+				{text: 'Coming Soon Dark', url: URLS.pages.comingSoonDark, currentPage: 5.16, currentSection: 5}
+			]
+		}}
+	];
+
+	let MAIN_MENU_DARK = [
+		{text: 'Home', url: URLS.home.defaultDark, currentSection: 1, currentPage: 1.07, submenu: {
+			white: [
+				{text: 'Home Default', url: URLS.home.default, currentPage: 1.01, currentSection: 1},
+				{text: 'Home Modern', url: URLS.home.modern, currentPage: 1.02, currentSection: 1},
+				{text: 'Home Parallax', url: URLS.home.parallax, currentPage: 1.03, currentSection: 1},
+				{text: 'Home Technical Drawing', url: URLS.home.technicalDrawing, currentPage: 1.04, currentSection: 1},
+				{text: 'Home Left Menu', url: URLS.home.leftMenu, currentPage: 1.05, currentSection: 1},
+				{text: 'Home Visual', url: URLS.home.visual, currentPage: 1.06, currentSection: 1}
+			],
+			dark: [
+				{text: 'Home Default Dark', url: URLS.home.defaultDark, currentPage: 1.07, currentSection: 1},
+				{text: 'Home Modern Dark', url: URLS.home.modernDark, currentPage: 1.08, currentSection: 1},
+				{text: 'Home Parallax Dark', url: URLS.home.parallaxDark, currentPage: 1.09, currentSection: 1},
+				{text: 'Home Technical Drawing Dark', url: URLS.home.technicalDrawingDark, currentPage: 1.1, currentSection: 1},
+				{text: 'Home Left Menu Dark', url: URLS.home.leftMenuDark, currentPage: 1.11, currentSection: 1},
+				{text: 'Home Visual Dark', url: URLS.home.visualDark, currentPage: 1.12, currentSection: 1}
+			]
+		}},
+		{text: 'About', url: URLS.about.defaultDark, currentSection: 2, currentPage: 2.04, submenu: {
+			white: [
+				{text: 'About Default', url: URLS.about.default, currentPage: 2.01, currentSection: 2},
+				{text: 'About Universal', url: URLS.about.universal, currentPage: 2.02, currentSection: 2},
+				{text: 'About Visual', url: URLS.about.visual, currentPage: 2.03, currentSection: 2}
+			],
+			dark: [
+				{text: 'About Default Dark', url: URLS.about.defaultDark, currentPage: 2.04, currentSection: 2},
+				{text: 'About Universal Dark', url: URLS.about.universalDark, currentPage: 2.05, currentSection: 2},
+				{text: 'About Visual Dark', url: URLS.about.visualDark, currentPage: 2.06, currentSection: 2}
+			]
+		}},
+		{text: 'Works', url: URLS.works.gridDark, currentSection: 3, currentPage: 3.11, submenu: {
+			white: [
+				{text: 'Works Grid', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},
+				{text: 'Works Grid 2', url: URLS.works.grid2, currentPage: 3.02, currentSection: 3},
+				{text: 'Works Grid 3', url: URLS.works.grid3, currentPage: 3.03, currentSection: 3},
+				{text: 'Works Masonry', url: URLS.works.masonry, currentPage: 3.04, currentSection: 3},
+				{text: 'Works Listing', url: URLS.works.listing, currentPage: 3.05, currentSection: 3},
+				{text: 'Works Carousel 1', url: URLS.works.carousel1, currentPage: 3.06, currentSection: 3},
+				{text: 'Works Carousel 3', url: URLS.works.carousel3, currentPage: 3.07, currentSection: 3},
+				{text: 'Single Project Standart', url: URLS.works.singleStandart, currentPage: 3.08, currentSection: 3},
+				{text: 'Single Project Sidebar', url: URLS.works.singleSidebar, currentPage: 3.09, currentSection: 3},
+				{text: 'Single Project Minimalism', url: URLS.works.singleMinimalism, currentPage: 3.1, currentSection: 3}
+			],
+			dark: [
+				{text: 'Works Grid Dark', url: URLS.works.gridDark, currentPage: 3.11, currentSection: 3},
+				{text: 'Works Grid 2 Dark', url: URLS.works.grid2Dark, currentPage: 3.12, currentSection: 3},
+				{text: 'Works Grid 3 Dark', url: URLS.works.grid3Dark, currentPage: 3.13, currentSection: 3},
+				{text: 'Works Masonry Dark', url: URLS.works.masonryDark, currentPage: 3.14, currentSection: 3},
+				{text: 'Works Listing Dark', url: URLS.works.listingDark, currentPage: 3.15, currentSection: 3},
+				{text: 'Works Carousel 1 Dark', url: URLS.works.carousel1Dark, currentPage: 3.16, currentSection: 3},
+				{text: 'Works Carousel 3 Dark', url: URLS.works.carousel3Dark, currentPage: 3.17, currentSection: 3},
+				{text: 'Single Project Standart Dark', url: URLS.works.singleStandartDark, currentPage: 3.18, currentSection: 3},
+				{text: 'Single Project Sidebar Dark', url: URLS.works.singleSidebarDark, currentPage: 3.19, currentSection: 3},
+				{text: 'Single Project Minimalism Dark', url: URLS.works.singleMinimalismDark, currentPage: 3.2, currentSection: 3}
+			]
+		}},
+		{text: 'News', url: URLS.news.gridDark, currentSection: 4, currentPage: 4.07, submenu: {
+			white: [
+				{text: 'News Grid', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+				{text: 'News Grid 2', url: URLS.news.grid2, currentPage: 4.02, currentSection: 4},
+				{text: 'News Masonry', url: URLS.news.masonry, currentPage: 4.03, currentSection: 4},
+				{text: 'News Sidebar', url: URLS.news.sidebar, currentPage: 4.04, currentSection: 4},
+				{text: 'Single Post', url: URLS.news.post, currentPage: 4.05, currentSection: 4},
+				{text: 'Single Post Sidebar', url: URLS.news.postSidebar, currentPage: 4.06, currentSection: 4}
+			],
+			dark: [
+				{text: 'News Grid Dark', url: URLS.news.gridDark, currentPage: 4.07, currentSection: 4},
+				{text: 'News Grid 2 Dark', url: URLS.news.grid2Dark, currentPage: 4.08, currentSection: 4},
+				{text: 'News Masonry Dark', url: URLS.news.masonryDark, currentPage: 4.09, currentSection: 4},
+				{text: 'News Sidebar Dark', url: URLS.news.sidebarDark, currentPage: 4.1, currentSection: 4},
+				{text: 'Single Post Dark', url: URLS.news.postDark, currentPage: 4.11, currentSection: 4},
+				{text: 'Single Post Sidebar Dark', url: URLS.news.postSidebarDark, currentPage: 4.12, currentSection: 4}
+			]
+		}},
+		{text: 'Pages', url: URLS.pages.servicesDark, currentSection: 5, currentPage: 5.09, submenu: {
 			white: [
 				{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5},
 				{text: 'Service Detail', url: URLS.pages.serviceDetail, currentPage: 5.02, currentSection: 5},
@@ -259,3 +366,12 @@
 		{name: '5', w: '75', h: '75', mod: 'five', aos: 'fade-left'},
 		{name: '6', w: '60', h: '60', mod: 'six', aos: 'fade-right'}
 	];
+
+	let AWARDS_TABLE = [
+		{hosted: 'ArchiLover', award: 'Best Domestic Design', project: 'Grido Museum, Denmark', year: 2020},
+		{hosted: 'AIAglobal', award: 'Top 5 Best Project', project: 'Dodge Nord Station', year: 2020},
+		{hosted: 'Waf festival us', award: 'Spatial Design', project: 'Stone House', year: 2019},
+		{hosted: 'Design awards', award: 'Completed Building', project: 'Cube Villa, Poland', year: 2019},
+		{hosted: 'Kons prize', award: 'Best Project Of The Year', project: 'Single House', year: 2019},
+		{hosted: 'ArchiLover', award: 'Green Architecture Winner', project: 'Cabin Wood In Forest', year: 2018}
+	]

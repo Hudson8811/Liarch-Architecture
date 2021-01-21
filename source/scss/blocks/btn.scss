@@ -24,10 +24,12 @@
 	&:focus {
 		outline: none;
 		background-color: $color-orange-hover;
+		box-shadow: none;
 	}
 
 	&:active {
 		opacity: 0.7;
+		box-shadow: none;
 	}
 
 	&--outline {
@@ -42,6 +44,19 @@
 			outline: none;
 			background-color: $color-orange;
 			color: $color-default-white;
+		}
+	}
+
+	&--technical {
+		color: $color-default-black;
+		font-weight: 600;
+		border: solid 2px $color-default-black;
+		border-radius: 0;
+		background-color: transparent;
+
+		&:hover,
+		&:focus {
+			background-color: $color-cream-brulee;
 		}
 	}
 

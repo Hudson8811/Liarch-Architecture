@@ -5,7 +5,10 @@ section.webpage__article-list.article-list(data-aos="fade")
 	.container
 		header.article-list__header
 			h2.article-list__heading.heading Inspirations & xperiences
-			a.article-list__more.more(href="#") more articles
+			if isDark
+				a.article-list__more.more(href= URLS.news.gridDark) more articles
+			else
+				a.article-list__more.more(href= URLS.news.grid) more articles
 		+article-list([{
 			img: "img/article-preview-1.jpg",
 			date: "December 15, 2020",

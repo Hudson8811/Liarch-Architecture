@@ -1,0 +1,62 @@
+header.header.header--technical.__js_fixed-header
+	.header__inner
+		.header__part.header__part--start
+			// Logo
+			+logo(isHome, 'header__logo')
+
+
+		.header__part.header__part--center
+			// Header menu
+			nav.header__nav.navigation.navigation--technical
+				ul.navigation__list
+					//- Для темной темы подставляем другой массив, со ссылками на темные страницы
+					- let MENU = isDark ? MAIN_MENU_DARK : MAIN_MENU;
+					each item, index in MENU
+						if item.currentSection === currentSection && item.currentPage === currentPage
+							li.navigation__item.navigation__item--current
+								a.navigation__link= item.text
+								if item.submenu
+									if index === 0
+										+navigation-dropdown-home(item.submenu)
+									else
+										+navigation-dropdown(item.submenu)
+						else if item.currentSection === currentSection && item.currentPage !== currentPage
+							li.navigation__item.navigation__item--current
+								a.navigation__link(href= item.url)= item.text
+								if item.submenu
+									if index === 0
+										+navigation-dropdown-home(item.submenu)
+									else
+										+navigation-dropdown(item.submenu)
+						else
+							li.navigation__item
+								a.navigation__link.animsition-link(href= item.url)= item.text
+								if item.submenu
+									if index === 0
+										+navigation-dropdown-home(item.submenu)
+									else
+										+navigation-dropdown(item.submenu)
+
+
+		.header__part.header__part--end
+			// Language switcher
+			ul.header__lang-switcher.lang-switcher
+				li.lang-switcher__item
+					a.lang-switcher__link.lang-switcher__link--current en
+				li.lang-switcher__item
+					a.lang-switcher__link(href="#") fr
+
+			// Header search
+			.header__search.header-search.__js_header-search
+				.header-search__wrapper
+					form(action="#", method="post")
+						label(aria-label="Type and hit enter to search")
+							input(type="search", name="header-search", placeholder="Type and hit enter to search...")
+				button.header-search__toggle(type="button")
+					+icon('search')(class="header-search__toggle-icon header-search__toggle-icon--loupe", width="22", height="22")
+					+icon('close')(class="header-search__toggle-icon header-search__toggle-icon--close", width="22", height="22")
+					span.visually-hidden Show search field
+
+			// Burger
+			button.header__menu-toggle.menu-toggle(type="button")
+				span.visually-hidden Menu

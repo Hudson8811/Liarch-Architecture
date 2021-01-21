@@ -179,5 +179,13 @@
 				letter-spacing: -0.025em;
 			}
 		}
+
+		&__content {
+			padding-top: 60px;
+
+			@include media(md) {
+				padding-top: 0;
+			}
+		}
 	}
 }

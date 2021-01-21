@@ -1,0 +1,231 @@
+extends templates/main-technical
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Home Technical Drawing';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 1.04; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let bodyModClass = ' webpage--technical-drawing';
+
+block header
+	include modules/header-technical
+	include modules/menu
+block content
+	section.technical-drawing__section.th-hero-slider
+		.th-hero-slider__inner
+			.swiper-container.__js_th-hero-slider
+				.swiper-wrapper
+					.th-hero-slider__slide.swiper-slide
+						.th-hero-slider__content
+							.th-hero-slider__heading Dogel Nord <br>Station
+							.th-hero-slider__text Architecture is not based on concrete & steel, and the elements of the soil. It's based on wonder.
+							a.th-hero-slider__btn.btn.btn--technical(href= URLS.works.singleStandart) see project
+						.th-hero-slider__image
+							img(src="img/technical-drawing/hero-slider/01.jpg", alt="")
+							.th-hero-slider__circle
+								img(src="img/technical-drawing/hero-slider/circle.png", alt="")
+					.th-hero-slider__slide.swiper-slide
+						.th-hero-slider__content
+							.th-hero-slider__heading Cabin wood <br>in forest
+							.th-hero-slider__text Architecture is not based on concrete & steel, and the elements of the soil. It's based on wonder.
+							a.th-hero-slider__btn.btn.btn--technical(href= URLS.works.singleStandart) see project
+						.th-hero-slider__image
+							img(src="img/technical-drawing/hero-slider/01.jpg", alt="")
+							.th-hero-slider__circle
+								img(src="img/technical-drawing/hero-slider/circle.png", alt="")
+					.th-hero-slider__slide.swiper-slide
+						.th-hero-slider__content
+							.th-hero-slider__heading CGI Stone <br>House
+							.th-hero-slider__text Architecture is not based on concrete & steel, and the elements of the soil. It's based on wonder.
+							a.th-hero-slider__btn.btn.btn--technical(href= URLS.works.singleStandart) see project
+						.th-hero-slider__image
+							img(src="img/technical-drawing/hero-slider/01.jpg", alt="")
+							.th-hero-slider__circle
+								img(src="img/technical-drawing/hero-slider/circle.png", alt="")
+				.th-hero-slider__counter
+					span.__js_th-hero-slider-current
+					span /
+					span.__js_th-hero-slider-total
+				.th-hero-slider__nav
+					button.th-hero-slider__nav-btn.th-hero-slider__nav-btn--prev(type="button", aria-label="prev")
+						+icon('chevron-left')(width="36", height="36")
+					button.th-hero-slider__nav-btn.th-hero-slider__nav-btn--next(type="button", aria-label="next")
+						+icon('chevron-right')(width="36", height="36")
+			.th-hero-slider__pagination.swiper-container.__js_th-hero-slider-thumbs
+				.swiper-wrapper
+					.th-hero-slider__thumb.swiper-slide dogel nord <br>station
+					.th-hero-slider__thumb.swiper-slide cabin wood <br>in forest
+					.th-hero-slider__thumb.swiper-slide CGI Stone <br>House
+	section.technical-drawing__section.th-our-story
+		.th-our-story__inner
+			.th-our-story__exp
+				.th-our-story__exp-title years of experience
+				.th-our-story__exp-value 24
+			.th-our-story__content
+				.th-our-story__text We are a team of design-led architects & designers that believe in the value of well-considered design and how it can positively impact lives, communities and the broader environment
+				.th-our-story__buttons
+					a.th-our-story__btn.btn.btn--technical(href= URLS.about.default) more about us
+					.th-our-story__video-btn.video-btn.video-btn--technical
+						a.video-btn__btn.__js_open-modal(href="#ourStory")
+							span.visually-hidden Play
+							+icon('play')(width="20", height="20")
+						span.video-btn__text view our story
+	section.technical-drawing__section.th-type-service
+		.th-type-service__inner.container
+			header.th-type-service__header
+				h2.th-type-service__heading.heading Our Services
+				.th-type-service__text We provide best solutions for your dream, still adapt your budget & still match with requires about quality of project
+
+			ul.th-type-service__list.row.no-gutters
+				li.th-type-service__item.col-12.col-md-6(data-aos="fade")
+					a(href= URLS.pages.serviceDetail)
+						.th-type-service__item-icon.th-type-service__item-icon--interior
+							+icon('ruler-pencil')(width="49", height="49")
+						h3.th-type-service__item-heading Architecture & Interior
+						.th-type-service__item-text Architecture Design, Interior Design, Landscape Design, Commercial, Residential, 3D Visualization
+						.th-type-service__item-link 256 projects
+
+				li.th-type-service__item.col-12.col-md-6(data-aos="fade")
+					a(href= URLS.pages.serviceDetail)
+						.th-type-service__item-icon.th-type-service__item-icon--design
+							+icon('vector')(width="49", height="49")
+						h3.th-type-service__item-heading Design & Photography
+						.th-type-service__item-text Web Design, Mobile App Design, 3D Design, CGI, Character, Motion, Photography
+						.th-type-service__item-link 64 projects
+
+				li.th-type-service__item.col-12.col-md-6(data-aos="fade")
+					a(href= URLS.pages.serviceDetail)
+						.th-type-service__item-icon.th-type-service__item-icon--furniture
+							+icon('package')(width="49", height="49")
+						h3.th-type-service__item-heading Furniture Products Production
+						.th-type-service__item-text Sofa, Chair, Wood Furnitures, Shelf, Bed, Decoration, Structure, Celling, Flooring, Walls
+						.th-type-service__item-link 8,256 items
+
+				li.th-type-service__item.th-type-service__item--quote.col-12.col-md-6
+					blockquote.th-type-service__quote “Our advantage can help you&nbsp;with picking out the best solutions for your projects”
+					.th-type-service__sign
+						img(src="img/sign-Carlos-Jr.png", width="114", height="52", alt="signature Carlos Jr.")
+					cite.th-type-service__cite Carlos Jr. - <span>Founder at Liarch Firm</span>
+
+	section.technical-drawing__section.th-latest-projects
+		header.th-latest-projects__header
+			.th-latest-projects__inner.container
+				.th-latest-projects__header-content
+					h2.th-latest-projects__heading.heading Latest Projects
+
+					// Filter
+					.filter.filter--technical
+						each item in ['all', 'architecture', 'interior', 'cgi', 'products']
+							- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+							- let activeClass = item === 'all' ? ' filter__item--active' : '';
+							button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
+
+				.th-latest-projects__header-nav
+					button.th-latest-projects__btn.th-latest-projects__btn--prev.__js_th-latest-projects__btn--prev(type="button", aria-label="prev")
+						+icon('chevron-left')(width="24", height='24')
+					button.th-latest-projects__btn.th-latest-projects__btn--next.__js_th-latest-projects__btn--next(type="button", aria-label="next")
+						+icon('chevron-right')(width="24", height='24')
+
+		.th-latest-projects__carousel.swiper-container.__js_th-latest-projects-carousel
+			.swiper-wrapper
+				+work-card-4('01.jpg', 'Architecture, Interior', 'ODE Kids Garden, Salzburg')(class="swiper-slide __js_architecture __js_interior")
+				+work-card-4('02.jpg', 'Architecture, Interior', 'Grido Museum, Denmark')(class="swiper-slide __js_architecture __js_interior")
+				+work-card-4('03.jpg', 'CGI, Products', 'E5 Adjoining Houses, Italy')(class="swiper-slide __js_cgi __js_products")
+				+work-card-4('04.jpg', 'Architecture, Interior, CGI', 'AirBnb Homestay Burtan')(class="swiper-slide __js_architecture __js_interior __js_cgi")
+				+work-card-4('05.jpg', 'CGI, Products', 'Dogel Nord Station')(class="swiper-slide __js_cgi __js_products")
+				+work-card-4('06.jpg', 'Architecture, Interior, CGI', 'AirBnb Homestay Burtan')(class="swiper-slide __js_architecture __js_interior __js_cgi")
+
+
+	section.technical-drawing__section.approach.approach--technical
+		.approach__inner.container
+				header.approach__header
+					h2.approach__heading.heading(data-aos="fade") Our Approach
+					.approach__text(data-aos="fade") Progress work flexiable and alway gurantee time-line is our advantage
+				.row
+					.col-12.col-lg-4(data-aos="fade")
+						.approach__card
+							.approach__card-icon
+								+icon('ticket-alt')(width="48", height="48")
+							h3.approach__card-heading Surveys and Quotes
+							.approach__card-text Our team will survey your project, collect infor & build quotes
+					.col-12.col-lg-4(data-aos="fade", data-aos-delay="200")
+						.approach__card
+							.approach__card-icon
+								+icon('bricks')(width="48", height="48")
+							h3.approach__card-heading Design and Performance
+							.approach__card-text We design best solutions and then performance it based on design
+					.col-12.col-lg-4(data-aos="fade", data-aos-delay="400")
+						.approach__card
+							.approach__card-icon
+								+icon('customer')(width="48", height="48")
+							h3.approach__card-heading Handover and Support
+							.approach__card-text After complete project, we will handover full & support 2 years
+
+				.approach__statistics
+					.statistics.row(data-aos="fade")
+						.statistics__item.col-12.col-sm
+							.statistics__item-value <span class="__js_number" data-end-value="25">0</span>
+							.statistics__item-text years of the <br>experience
+						.statistics__item.col-12.col-sm
+							.statistics__item-value
+								span.__js_number(data-end-value="250") 0
+							.statistics__item-text satisfitation <br>clients
+						.statistics__item.col-12.col-lg
+							.statistics__item-value
+								span.__js_number(data-end-value="1875") 0
+							.statistics__item-text projects completed <br>on 60 countries
+	.technical-drawing__section.technical-drawing__section--flex
+		section.technical-drawing__section-column.awards-table
+			.awards-table__inner
+				h2.awards-table__heading.heading(data-aos="fade") Awards
+
+				table
+					thead
+						tr(data-aos="fade")
+							th Hosted
+							th Award
+							th Project
+							th Year
+					tbody
+						each item in AWARDS_TABLE
+							tr(data-aos="fade")
+								td= item.hosted
+								td= item.award
+								td
+									a(href= URLS.works.singleStandart)= item.project
+								td= item.year
+		section.technical-drawing__section-column.th-testimonials(data-aos="fade")
+			.th-testimonials__inner
+				h2.th-testimonials__heading.heading Testimonials
+
+				.th-testimonials__slider.swiper-container.__js_slider-single
+					.swiper-wrapper
+						.twitter-block.twitter-block--technical.swiper-slide
+							.twitter-block__wrapper
+								.twitter-block__header
+									.twitter-block__author
+										.twitter-block__author-image
+											img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+										.twitter-block__author-meta
+											.twitter-block__author-name Thiago Alcantara
+											.twitter-block__author-info <a href="#">@thiago.lfc</a>	- <time datetime="2020-12-15">15 Dec, 2020</time>
+									a.twitter-block__social(href="#")
+										+icon('twitter')(width="34", height="34")
+								.twitter-block__text <a href="#">@liarch</a> - a studio with passionate, profressional & full creativity. Much more things that i’m expect. Really awesome & satisfied!
+
+						.twitter-block.twitter-block--technical.swiper-slide
+							.twitter-block__wrapper
+								.twitter-block__header
+									.twitter-block__author
+										.twitter-block__author-image
+											img(src="img/single-project/avatar.jpg", width="60", height="60", alt="")
+										.twitter-block__author-meta
+											.twitter-block__author-name Thiago Alcantara
+											.twitter-block__author-info <a href="#">@thiago.lfc</a>	- <time datetime="2020-12-15">15 Dec, 2020</time>
+									a.twitter-block__social(href="#")
+										+icon('twitter')(width="34", height="34")
+								.twitter-block__text <a href="#">@liarch</a> - a studio with passionate, profressional & full creativity. Much more things that i’m expect. Really awesome & satisfied!
+					.swiper-pagination
+
+block footer
+	include modules/footer-technical

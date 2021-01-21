@@ -1,5 +1,8 @@
 'use strict';
 
+
+//const { default: Swiper } = require("swiper");
+
 /*------------------------------------------------
 
 	1. Global
@@ -56,9 +59,9 @@ AOS.init({
 			loadingParentElement: 'body', //animsition wrapper element
 			loadingClass: 'preloader',//'animsition-loading',
 			loadingInner: `<div class="preloader__spinner">
-        <span class="preloader__double-bounce"></span>
-        <span class="preloader__double-bounce preloader__double-bounce--delay"></span>
-      </div>`, // e.g '<img src="loading.svg" />
+				<span class="preloader__double-bounce"></span>
+				<span class="preloader__double-bounce preloader__double-bounce--delay"></span>
+			</div>`, // e.g '<img src="loading.svg" />
 			timeout: false,
 			timeoutCountdown: 5000,
 			onLoadEvent: true,
@@ -75,33 +78,33 @@ AOS.init({
 
 /* 3. Mobile menu */
 (function() {
-  var menuOpenBtn = $('.menu-toggle');
-  var menuCloseBtn = $('.menu__close');
+	var menuOpenBtn = $('.menu-toggle');
+	var menuCloseBtn = $('.menu__close');
 	var menu = $('.menu');
 
 	var dropdownLinks = menu.find('.__js_menu-dropdown-link');
 
-  var ModifierClass = {
-    MENU: 'menu--opened',
-    TOGGLE: 'menu-toggle--opened'
-  };
+	var ModifierClass = {
+		MENU: 'menu--opened',
+		TOGGLE: 'menu-toggle--opened'
+	};
 
-  menu.on('click', function(evt) {
-    evt.stopPropagation();
-  });
+	menu.on('click', function(evt) {
+		evt.stopPropagation();
+	});
 
-  menuOpenBtn.on('click', function() {
+	menuOpenBtn.on('click', function() {
 		var overlay = setOverlay(closeMenu);//
 		body.append(overlay);
 
-    menuCloseBtn.on('click', closeMenu);
-    menuOpenBtn.addClass(ModifierClass.TOGGLE);
+		menuCloseBtn.on('click', closeMenu);
+		menuOpenBtn.addClass(ModifierClass.TOGGLE);
 
-    setTimeout(function() {
+		setTimeout(function() {
 			overlay.fadeIn(DURATION);
 
-      menu.addClass(ModifierClass.MENU);
-    }, DURATION + 50);
+			menu.addClass(ModifierClass.MENU);
+		}, DURATION + 50);
 	});
 
 	dropdownLinks.on('click', function(evt) {
@@ -110,15 +113,15 @@ AOS.init({
 		$(this).next().slideToggle(DURATION);
 	});
 
-  function closeMenu() {
-    menuCloseBtn.off('click', closeMenu);
+	function closeMenu() {
+		menuCloseBtn.off('click', closeMenu);
 		menu.removeClass(ModifierClass.MENU);
 		var overlay = $('.overlay').fadeOut(DURATION);
 
-    setTimeout(function() {
+		setTimeout(function() {
 			menuOpenBtn.removeClass(ModifierClass.TOGGLE);
 			overlay.remove();
-    }, DURATION + 50);
+		}, DURATION + 50);
 	}
 
 	$(window).on('resize', function() {
@@ -135,6 +138,8 @@ AOS.init({
 	var toggleBtn = $('.header-toggle');
 	var header = $('.header--aside');
 
+	var dropdownLinks = $('.__js_nav-dropdown-link');
+
 	toggleBtn.on('click', function() {
 
 		if($(this).hasClass('on')) {
@@ -150,6 +155,12 @@ AOS.init({
 				header.addClass('header--opened');
 			}, 500);
 		}
+	});
+
+	dropdownLinks.on('click', function(evt) {
+		evt.preventDefault();
+
+		$(this).next().slideToggle(DURATION);
 	});
 
 	function close() {
@@ -235,7 +246,12 @@ AOS.init({
 		loop: true,
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true
 		},
+		navigation: {
+			nextEl: '.slider__nav-btn--next',
+			prevEl: '.slider__nav-btn--prev',
+		}
 	});
 
 	var thumbsForLatestProjects = new Swiper('.__js_slider-thumbs', {
@@ -246,32 +262,79 @@ AOS.init({
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 		breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-    },
-    // when window width is >= 480px
-    576: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 640px
-    768: {
-      slidesPerView: 3,
-    }
-  }
+		// when window width is >= 320px
+		320: {
+			slidesPerView: 1,
+		},
+		// when window width is >= 480px
+		576: {
+			slidesPerView: 2,
+		},
+		// when window width is >= 640px
+		768: {
+			slidesPerView: 3,
+		}
+	}
 	});
 
 	var latestProjectsSlider = new Swiper('.__js_slider-simple', {
 		slidesPerView: 1,
 		loop: false,
 		thumbs: {
-      swiper: thumbsForLatestProjects,
+			swiper: thumbsForLatestProjects,
 		},
 		navigation: {
 			nextEl: '.slider__nav-btn--next',
 			prevEl: '.slider__nav-btn--prev',
 		}
 	});
+
+	var thHeroSliderThumbs = new Swiper('.__js_th-hero-slider-thumbs', {
+		slidesPerView: 'auto',
+		loop: false,
+		freeMode: true,
+		loopedSlides: 3, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+
+	var thHeroSliderCurrent = document.querySelector('.__js_th-hero-slider-current');
+	var thHeroSliderTotal = document.querySelector('.__js_th-hero-slider-total');
+	var thHeroSliderSlidesCount = document.querySelectorAll('.__js_th-hero-slider .th-hero-slider__slide').length;
+
+	var thHeroSlider = new Swiper('.__js_th-hero-slider', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: false,
+		speed: 800,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		thumbs: {
+			swiper: thHeroSliderThumbs
+		},
+		navigation: {
+			nextEl: '.th-hero-slider__nav-btn--next',
+			prevEl: '.th-hero-slider__nav-btn--prev',
+		},
+		on: {
+			init: function () {
+				if (thHeroSliderCurrent && thHeroSliderTotal) {
+					thHeroSliderCurrent.textContent = this.realIndex + 1;
+					thHeroSliderTotal.textContent = thHeroSliderSlidesCount;
+				}
+				console.log(this.slides);
+			},
+			slideChange: function () {
+				if (thHeroSliderCurrent) {
+					thHeroSliderCurrent.textContent = this.realIndex + 1;
+				}
+			}
+
+		},
+	});
+
 })();
 
 /* 7. Testimonials slider */
@@ -319,7 +382,6 @@ AOS.init({
 		},
 	});
 
-
 	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
 		slidesPerView: 1,
 		loop: false,
@@ -336,8 +398,32 @@ AOS.init({
 
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true
 		},
 	});
+
+	var thCarouselPrev = document.querySelector('.__js_th-latest-projects__btn--prev');
+	var thCarouselNext = document.querySelector('.__js_th-latest-projects__btn--next');
+
+	var thСarousel = new Swiper('.__js_th-latest-projects-carousel', {
+		slidesPerView: 1,
+		loop: false,
+		spaceBetween: -4,
+		breakpoints: {
+			768: {
+				slidesPerView: 2
+			}
+		},
+	});
+
+	if (thCarouselPrev && thCarouselNext) {
+		thCarouselPrev.addEventListener('click', function() {
+			thСarousel.slidePrev(DURATION);
+		});
+		thCarouselNext.addEventListener('click', function() {
+			thСarousel.slideNext(DURATION);
+		});
+	}
 })();
 
 /* 9. Hero slider */
@@ -529,8 +615,8 @@ AOS.init({
 
 /* 16. Animation of statistics */
 (function() {
-  var statistics = $('.statistics');
-  var numbers = $('.__js_number');
+	var statistics = $('.statistics');
+	var numbers = $('.__js_number');
 	var animationIsDone = false;
 	var scroll = $(window).scrollTop() + $(window).height();
 
@@ -568,40 +654,47 @@ AOS.init({
 
 /* 17. Modal */
 (function(){
-  var openModalBtns = $('.__js_open-modal');
-  var modal;
-  var modalCloseBtn;
+	var openModalBtns = $('.__js_open-modal');
+	var modal;
+	var modalCloseBtn;
 
-  openModalBtns.each(function() {
+	openModalBtns.each(function() {
 
-    $(this).on('click', function(evt) {
-      evt.preventDefault();
-      var target = $(this).attr('href') ? $(this).attr('href') : $(this).attr('data-href');
-      modal = $(target);
+		$(this).on('click', function(evt) {
+			evt.preventDefault();
+			var target = $(this).attr('href') ? $(this).attr('href') : $(this).attr('data-href');
+			modal = $(target);
 
-      var overlay = setOverlay(closeModal);
-      body.append(overlay);
-      overlay.fadeIn(DURATION);
+			var overlay = setOverlay(closeModal);
+			body.append(overlay);
+			overlay.fadeIn(DURATION);
 
-      modalCloseBtn = modal.find('.modal__close');
-      modalCloseBtn.on('click', closeModal);
+			modalCloseBtn = modal.find('.modal__close');
+			modalCloseBtn.on('click', closeModal);
 
-      modal.delay(DURATION).fadeIn(DURATION);
-    });
+			modal.delay(DURATION).fadeIn(DURATION);
+/*
+			var video = modal.find('video');
+			console.log(video)
+			if (video.length) {
 
-  });
 
-  function closeModal() {
-    var overlay = $('.overlay');
-    modalCloseBtn.off('click', closeModal);
-    modal.fadeOut(DURATION);
-    overlay.delay(DURATION).fadeOut(DURATION);
+			}*/
+		});
 
-    setTimeout(function() {
-      overlay.remove()
-    }, DURATION * 2 + 50);
+	});
 
-  }
+	function closeModal() {
+		var overlay = $('.overlay');
+		modalCloseBtn.off('click', closeModal);
+		modal.fadeOut(DURATION);
+		overlay.delay(DURATION).fadeOut(DURATION);
+
+		setTimeout(function() {
+			overlay.remove()
+		}, DURATION * 2 + 50);
+
+	}
 })();
 
 /* 18. Packery init */
@@ -694,31 +787,31 @@ AOS.init({
 /* Анимация подвала */
 /*(function() {
 
-  $(window).on('load', function() {
-    var footer = $('.footer');
-    var footerHeight = footer.innerHeight();
-    var footerOffset = footer.offset().top;
+	$(window).on('load', function() {
+		var footer = $('.footer');
+		var footerHeight = footer.innerHeight();
+		var footerOffset = footer.offset().top;
 
-    footer.css('transform', 'translateY(-' + footerHeight +'px)');
+		footer.css('transform', 'translateY(-' + footerHeight +'px)');
 
-    $(window).on('scroll', function() {
-      var scroll = $(window).scrollTop() + $(window).height();
-      var difference = scroll - footerOffset;
+		$(window).on('scroll', function() {
+			var scroll = $(window).scrollTop() + $(window).height();
+			var difference = scroll - footerOffset;
 
-      //console.log(scroll);
-      if(scroll > footerOffset) {
+			//console.log(scroll);
+			if(scroll > footerOffset) {
 
-        var shift = difference - footerHeight;
-        console.log(shift);
-        footer.css('transform', 'translateY(' + shift +'px)');
-      }
-    });
+				var shift = difference - footerHeight;
+				console.log(shift);
+				footer.css('transform', 'translateY(' + shift +'px)');
+			}
+		});
 
-    $(window).on('resize', function() {
-      footerHeight = footer.innerHeight();
-      footer.css('transform', 'translateY(-' + footerHeight +'px)');
-    });
-  });
+		$(window).on('resize', function() {
+			footerHeight = footer.innerHeight();
+			footer.css('transform', 'translateY(-' + footerHeight +'px)');
+		});
+	});
 
 })();*/
 

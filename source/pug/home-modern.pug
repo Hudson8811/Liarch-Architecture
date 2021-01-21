@@ -5,7 +5,7 @@ block variables
 	- let isDark = false;
 	- let currentPage = 1.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
-
+	- let bodyModClass = ' webpage--modern';
 block header
 	include modules/header-modern
 	include modules/menu
@@ -28,7 +28,7 @@ block content
 					.simplicity__subheading “Recognizing the need is the primary condition	for design” -	Charles Eames
 					.simplicity__text Founded by Jugenr Kloop in 1991, we’re an employee-owned firm pursuing a democratic design process that values everyone’s input. Today we have more than 150 people in London, Hong Kong & Sydney providing architecture, interior & urban design services from concept to completion. With a passion for quality products, Liarch’s mission is to uncover special artisans, unique materials & products.
 
-					a.simplicity__btn.btn.btn--outline(href="#") learn more
+					a.simplicity__btn.btn.btn--outline(href= URLS.about.default) learn more
 
 
 				.simplicity__line
@@ -58,7 +58,7 @@ block content
 			.latest-projects__slider.slider.slider--carousel-double.swiper-container.__js_slider-carousel-double(data-aos="fade")
 				.swiper-wrapper
 					.slider__item.work-card.work-card--compact.swiper-slide
-						a.work-card__image(href="#")
+						a.work-card__image(href= URLS.works.singleStandart)
 							img(src="img/works-carousel/01.jpg", width="685", height="685", alt="")
 						.work-card__content
 							.work-card__year 2020
@@ -67,7 +67,7 @@ block content
 								a Daniel villa, Romania
 
 					.slider__item.work-card.work-card--compact.swiper-slide
-						a.work-card__image(href="#")
+						a.work-card__image(href= URLS.works.singleStandart)
 							img(src="img/works-carousel/02.jpg", width="685", height="685", alt="")
 						.work-card__content
 							.work-card__year 2019
@@ -76,7 +76,7 @@ block content
 								a Cube villa, Poland
 
 					.slider__item.work-card.work-card--compact.swiper-slide
-						a.work-card__image(href="#")
+						a.work-card__image(href= URLS.works.singleStandart)
 							img(src="img/works-carousel/03.jpg", width="685", height="685", alt="")
 						.work-card__content
 							.work-card__year 2018
@@ -85,7 +85,7 @@ block content
 								a Miter wooden library
 
 					.slider__item.work-card.work-card--compact.swiper-slide
-						a.work-card__image(href="#")
+						a.work-card__image(href= URLS.works.singleStandart)
 							img(src="img/works-carousel/04.jpg", width="685", height="685", alt="")
 						.work-card__content
 							.work-card__year 2018
@@ -170,37 +170,37 @@ block content
 									a(href="#") Knowlegde
 								time.latest-article__date(datetime="2020-08-25") Aug 25, 2020
 							h3.latest-article__heading
-								a(href="#") Tip use CGI with daylight vray 2.0 on 3DsMax
+								a(href= URLS.news.post) Tip use CGI with daylight vray 2.0 on 3DsMax
 				.col-12.col-md-6.col-lg-5.col-xl-4.offset-xl-1
 					ul.latest-articles__list
 						li.latest-articles__item.last-article(data-aos="fade")
 							.latest-article__detail
 								.latest-article__category
-									a(href="#") News
+									a(href= URLS.news.grid) News
 								time.latest-article__date(datetime="2020-08-25") Aug 25, 2020
 							h3.latest-article__heading
-								a(href="#") 10 things that most people don’t know about space
+								a(href= URLS.news.post) 10 things that most people don’t know about space
 						li.latest-articles__item.last-article(data-aos="fade")
 							.latest-article__detail
 								.latest-article__category
-									a(href="#") inspiration
+									a(href= URLS.news.grid) inspiration
 								time.latest-article__date(datetime="2020-07-16") July 16, 2020
 							h3.latest-article__heading
-								a(href="#") How to improve your home
+								a(href= URLS.news.post) How to improve your home
 						li.latest-articles__item.last-article(data-aos="fade")
 							.latest-article__detail
 								.latest-article__category
-									a(href="#") knowlegde
+									a(href= URLS.news.grid) knowlegde
 								time.latest-article__date(datetime="2020-07-08") July 8, 2020
 							h3.latest-article__heading
-								a(href="#") Enhance CGI for materials
+								a(href= URLS.news.post) Enhance CGI for materials
 						li.latest-articles__item.last-article(data-aos="fade")
 							.latest-article__detail
 								.latest-article__category
-									a(href="#") others
+									a(href= URLS.news.grid) others
 								time.latest-article__date(datetime="2020-07-02") July 2, 2020
 							h3.latest-article__heading
-								a(href="#") AIA Global 2020 Opening
+								a(href= URLS.news.post) AIA Global 2020 Opening
 			.latest-articles__line
 
 	// Instagram

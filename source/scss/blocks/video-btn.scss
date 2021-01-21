@@ -59,6 +59,29 @@
 		}
 	}
 
+	&--technical {
+		#{$self}__btn {
+			width: 52px;
+			height: 52px;
+			border: solid 2px $color-default-black;
+			background-color: transparent;
+
+			svg {
+				fill: $color-default-black;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: $color-cream-brulee;
+			}
+
+			@include media(xl) {
+				width: 62px;
+				height: 62px;
+			}
+		}
+	}
+
 	&__btn {
 		display: flex;
 		width: 50px;
@@ -89,6 +112,7 @@
 		svg {
 			width: 16px;
 			height: 16px;
+			margin-left: 8.62%;
 			align-self: center;
 			fill: $color-default-white;
 

@@ -1,0 +1,80 @@
+.th-latest-projects {
+	&__inner {
+		@include media(md) {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
+	}
+
+	&__header {
+		padding: 40px 0;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		background-size: cover;
+		background-image: url("../img/th-latest-bg.jpg");
+
+		@include media(xl) {
+			padding: 140px 0;
+		}
+
+		&-content {
+		}
+
+		&-nav {
+			display: flex;
+			margin-top: 24px;
+
+			@include media(md) {
+				margin-top: 0;
+				margin-bottom: 8px;
+				margin-left: 20px;
+			}
+		}
+	}
+
+	&__heading {
+		margin-bottom: 24px;
+		font-weight: 400;
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		width: 60px;
+		height: 60px;
+
+		border: solid 1px $color-default-black;
+		background-color: transparent;
+		cursor: pointer;
+
+		@include transition(background-color);
+
+		&:hover,
+		&:focus {
+			outline: none;
+			background-color: $color-cream-brulee;
+		}
+
+		&:active {
+			opacity: 0.7;
+		}
+
+		&--prev {
+		}
+		&--next {
+		}
+
+		& + & {
+			margin-left: 9px;
+		}
+	}
+
+	&__carousel {
+		width: calc(100% + 8px);
+		margin-left: -4px;
+		margin-bottom: -4px;
+	}
+}

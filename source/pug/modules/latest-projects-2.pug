@@ -3,7 +3,10 @@ section.webpage__latest-projects.latest-projects
 	.container
 		header.latest-projects__header(data-aos="fade")
 			h2.latest-projects__heading.heading Our latest projects
-			a.latest-projects__more.more(href="#") see all projects
+			if isDark
+				a.latest-projects__more.more(href= URLS.works.gridDark) see all projects
+			else
+				a.latest-projects__more.more(href= URLS.works.grid) see all projects
 	.latest-projects__inner.container
 		.latest-projects__slider.slider.slider--with-thumbs.swiper-container.__js_slider-simple(data-aos="fade")
 			.swiper-wrapper
@@ -28,12 +31,24 @@ section.webpage__latest-projects.latest-projects
 				.swiper-slide
 					.slide-content.slide-content--thumb
 						.slide-content__detail 2020  -  Belgium
-						.slide-content__heading Dogel Nord Station
+						.slide-content__heading
+							if isDark
+								a(href= URLS.works.singleStandartDark) Dogel Nord Station
+							else
+								a(href= URLS.works.singleStandart) Dogel Nord Station
 				.swiper-slide
 					.slide-content.slide-content--thumb
 						.slide-content__detail 2020  -  Kiev, Ukraine
-						.slide-content__heading Cubic Blockes Hotel
+						.slide-content__heading
+							if isDark
+								a(href= URLS.works.singleStandartDark) Cubic Blockes Hotel
+							else
+								a(href= URLS.works.singleStandart) Cubic Blockes Hotel
 				.swiper-slide
 					.slide-content.slide-content--thumb
 						.slide-content__detail 2019  -  Iasi, Romania
-						.slide-content__heading Daniel Villa, Romania
+						.slide-content__heading
+							if isDark
+								a(href= URLS.works.singleStandartDark) Daniel Villa, Romania
+							else
+								a(href= URLS.works.singleStandart) Daniel Villa, Romania

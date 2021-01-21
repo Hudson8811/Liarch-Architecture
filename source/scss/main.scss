@@ -102,7 +102,9 @@
       4.62 Background wrapper
       4.63 Works section
       4.64 Studio section
-      4.65 Studio hero
+			4.65 Studio hero
+			4.66 Technical drawing hero slider
+			4.67 Awards table
 
 -------------------------------------------------------------------------------*/
 
@@ -247,6 +249,7 @@
 
 /* 4.11 Testimonials */
 @import "blocks/testimonials";
+@import "blocks/th-testimonials";
 
 /* 4.12 Simplicity */
 @import "blocks/simplicity";
@@ -316,6 +319,7 @@
 
 /* 4.34 Latest projects */
 @import "blocks/latest-projects";
+@import "blocks/th-latest-projects";
 
 /* 4.35 Review */
 @import "blocks/review";
@@ -328,9 +332,11 @@
 
 /* 4.38 Our story */
 @import "blocks/our-story";
+@import "blocks/th-our-story";
 
 /* 4.39 Type service */
 @import "blocks/type-service";
+@import "blocks/th-type-service";
 
 /* 4.40 Awards */
 @import "blocks/an-awards";
@@ -410,3 +416,12 @@
 
 /* 4.65 Studio hero */
 @import "blocks/studio-hero";
+
+/* 4.66 Technical drawing hero slider */
+@import "blocks/th-hero-slider";
+
+/* 4.67 Awards table*/
+@import "blocks/awards-table";
+
+/* 4.xx Technical drawing block */
+@import "blocks/technical-drawing";
