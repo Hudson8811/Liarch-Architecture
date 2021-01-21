@@ -117,12 +117,14 @@
 
 	&--grid {
 		border: 4px solid #000000;
+		box-sizing: border-box;
 
 		#{$self} {
 			&__image {
 				height: 450px;
 				padding: 0;
 				margin-bottom: 0;
+				overflow: hidden;
 
 				@include media(xl) {
 					height: 780px;

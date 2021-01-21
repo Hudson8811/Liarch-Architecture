@@ -9,6 +9,7 @@ $color-default-black: #000000;
 //$color-dark: #141419;
 $color-smoky: #f9fbfd;
 $color-smoky2: #fefefe;
+$color-smoky3: #fbfaf6;
 
 $color-grey: #999999;
 $color-grey2: #666666;
@@ -44,16 +45,20 @@ $color-geyser: #d8d5bf;
 $color-bird-flower: #e6da89;
 $color-bird-flower-hover: darken(#e6da89, 10%);
 
+$color-cream-brulee: #ffdf91;
+
 // Typography
 //--------------   $font-family, $file-name, $weight, $style: normal
 
 //
 $fonts: "Jost" "Jost-Light" 300 normal, "Jost" "Jost-Regular" 400 normal,
 	"Jost" "Jost-Italic" 400 italic, "Jost" "Jost-SemiBold" 600 normal,
-	"Jost" "Jost-Bold" 700 normal, "Cinzel" "Cinzel-Regular" 400 normal;
+	"Jost" "Jost-Bold" 700 normal, "Cinzel" "Cinzel-Regular" 400 normal,
+	"EB Garamond" "Ebgaramondregular" 400 normal;
 
 $font-family--main: "Jost", "Arial", sans-serif;
 $font-family--secondary: "Cinzel", "Georgia", serif;
+$font-family--third: "EB Garamond", "Georgia", serif;
 
 $font-size-base: 18px;
 $line-height-base: 1.5; //24px

@@ -258,6 +258,41 @@
 		}
 	}
 
+	&--technical {
+		border-top: none;
+		border-bottom: solid 1px $color-default-black;
+
+		#{$self}__inner {
+			max-width: 1920px;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		#{$self}__logo {
+			margin-right: 0;
+		}
+
+		.lang-switcher {
+			&__link {
+				&:hover,
+				&:focus {
+					color: $color-cream-brulee;
+				}
+			}
+		}
+
+		.header-search {
+			&__toggle {
+				&:hover,
+				&:focus {
+					svg {
+						fill: $color-cream-brulee;
+					}
+				}
+			}
+		}
+	}
+
 	@include media(md) {
 		//padding: 32px 0;
 		border-top-width: 7px;
@@ -293,6 +328,10 @@
 	&__lang-switcher {
 		margin-right: 20px;
 		margin-left: auto;
+
+		@include media(md) {
+			margin-right: 5.41vw;
+		}
 	}
 
 	&__logo {
@@ -330,6 +369,8 @@
 	}
 
 	&__search {
+		margin: 0;
+
 		@include media(lg) {
 			//margin-right: 1.66vw;
 		}
@@ -366,6 +407,38 @@
 
 		&:active {
 			opacity: 0.7;
+		}
+	}
+
+	&__part {
+		display: flex;
+		//flex-wrap: wrap;
+		align-items: center;
+		align-self: stretch;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		&--start {
+			@include media(xl) {
+				//width: 290px;
+				padding-left: 15px;
+				padding-right: 80px;
+				border-right: solid 1px $color-default-black;
+			}
+		}
+		&--center {
+			flex-grow: 1;
+
+			@include media(xl) {
+				padding-left: 80px;
+			}
+		}
+		&--end {
+			@include media(xl) {
+				padding-left: 56px;
+				padding-right: 15px;
+				border-left: solid 1px $color-default-black;
+			}
 		}
 	}
 }
@@ -462,5 +535,10 @@
 				}
 			}
 		}
+	}
+}
+
+.webpage--technical-drawing {
+	.header {
 	}
 }

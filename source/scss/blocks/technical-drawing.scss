@@ -1,0 +1,41 @@
+.technical-drawing {
+	$self: &;
+
+	width: calc(100% - 16px);
+	margin: 8px auto;
+	border: solid 4px $color-default-black;
+	overflow: hidden;
+
+	@include media(xl) {
+		width: calc(100% - 60px);
+		max-width: 1860px;
+		margin: 30px auto;
+		border-width: 4px;
+	}
+
+	&__section {
+		&--flex {
+			@include media(lg) {
+				display: flex;
+			}
+
+			#{$self}__section {
+				&-column {
+					& + * {
+						border-top: solid 4px $color-default-black;
+
+						@include media(lg) {
+							width: 40%;
+							border-top: none;
+							border-left: solid 1px $color-default-black;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__section + &__section {
+		border-top: solid 4px $color-default-black;
+	}
+}

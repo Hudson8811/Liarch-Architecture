@@ -1,0 +1,51 @@
+.header-search {
+	&__wrapper {
+		background-color: #232323;
+	}
+
+	&__toggle {
+		&-icon {
+			fill: $color-default-white;
+		}
+		&:hover,
+		&:focus {
+			outline: none;
+
+			svg {
+				fill: $color-orange;
+			}
+		}
+	}
+	form {
+		input {
+			color: $color-default-white;
+			background-color: #181818; //lighten($color-default-black, 5%);
+		}
+	}
+}
+.webpage--beige {
+	.header-search {
+		&__wrapper {
+			background-color: #232323;
+		}
+		&__toggle {
+			&-icon {
+				fill: $color-default-white;
+			}
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+		}
+		form {
+			input {
+				color: $color-default-white;
+				background-color: #181818; //lighten(#4d524b, 5%);
+			}
+		}
+	}
+}

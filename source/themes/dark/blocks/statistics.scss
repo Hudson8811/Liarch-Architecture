@@ -21,3 +21,13 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.statistics {
+		&__item {
+			&-value {
+				color: $color-default-white;
+			}
+		}
+	}
+}

@@ -26,6 +26,26 @@
 		}
 	}
 
+	&--technical {
+		#{$self}__link {
+			border-color: $color-default-black;
+
+			svg {
+				fill: $color-default-black;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-default-black;
+				background-color: $color-cream-brulee;
+
+				svg {
+					fill: $color-default-black;
+				}
+			}
+		}
+	}
+
 	&__item + &__item {
 		margin-left: 16px;
 

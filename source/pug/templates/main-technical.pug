@@ -1,0 +1,57 @@
+include _vars.pug
+block variables
+
+include ../mixins/mixins.pug
+
+doctype html
+html.no-js(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
+		//-+fonts(FONTS)
+
+		// CSS
+		link(rel='apple-touch-icon' sizes='60x60' href='favicons/apple-touch-icon.png')
+		link(rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png')
+		link(rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png')
+		link(rel='manifest' href='favicons/site.webmanifest')
+		link(rel='mask-icon' href='favicons/safari-pinned-tab.svg' color='#5bbad5')
+		meta(name='msapplication-TileColor' content='#da532c')
+		meta(name='theme-color' content='#ffffff')
+		link(rel="stylesheet", href="css/bootstrap.min.css")
+		link(rel="stylesheet", href="css/main.css")
+
+		if isDark
+			link(rel="stylesheet", href="css/theme-dark.css")
+		title= pageTitle
+
+	- let modClass = bodyModClass ? bodyModClass : '';
+
+	body(class="webpage" + modClass)
+		div(style="display: none")
+			include ../../../build/img/sprite.svg
+		.technical-drawing.animsition
+			block header
+				include ../modules/header
+				include ../modules/menu
+			main
+				block content
+			block footer
+			include ../modules/modal
+			//-include ../modules/preloader
+
+		// Optional JavaScript
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		//-script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+		script(src="js/jquery.pagepiling.js")
+		//-script(src="js/fullpage.extensions.min.js")
+		script(src="js/aos.js")
+		script(src="js/jquery.easy_number_animate.js")
+		script(src="js/isotope.pkgd.min.js")
+		script(src="js/packery-mode.pkgd.min.js")
+		script(src="js/swiper-bundle.min.js")
+		script(src="js/animsition.min.js")
+		//-script(src="js/smooth-scrollbar.js")
+
+		// JavaScript
+		script(src="js/main.js")

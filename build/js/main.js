@@ -1,5 +1,8 @@
 'use strict';
 
+
+//const { default: Swiper } = require("swiper");
+
 /*------------------------------------------------
 
 	1. Global
@@ -285,6 +288,53 @@ AOS.init({
 			prevEl: '.slider__nav-btn--prev',
 		}
 	});
+
+	var thHeroSliderThumbs = new Swiper('.__js_th-hero-slider-thumbs', {
+		slidesPerView: 'auto',
+		loop: false,
+		freeMode: true,
+		loopedSlides: 3, //looped slides should be the same
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
+
+	var thHeroSliderCurrent = document.querySelector('.__js_th-hero-slider-current');
+	var thHeroSliderTotal = document.querySelector('.__js_th-hero-slider-total');
+	var thHeroSliderSlidesCount = document.querySelectorAll('.__js_th-hero-slider .th-hero-slider__slide').length;
+
+	var thHeroSlider = new Swiper('.__js_th-hero-slider', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		loop: false,
+		speed: 800,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		thumbs: {
+			swiper: thHeroSliderThumbs
+		},
+		navigation: {
+			nextEl: '.th-hero-slider__nav-btn--next',
+			prevEl: '.th-hero-slider__nav-btn--prev',
+		},
+		on: {
+			init: function () {
+				if (thHeroSliderCurrent && thHeroSliderTotal) {
+					thHeroSliderCurrent.textContent = this.realIndex + 1;
+					thHeroSliderTotal.textContent = thHeroSliderSlidesCount;
+				}
+				console.log(this.slides);
+			},
+			slideChange: function () {
+				if (thHeroSliderCurrent) {
+					thHeroSliderCurrent.textContent = this.realIndex + 1;
+				}
+			}
+
+		},
+	});
+
 })();
 
 /* 7. Testimonials slider */
@@ -332,7 +382,6 @@ AOS.init({
 		},
 	});
 
-
 	var modernCarousel = new Swiper('.__js_slider-carousel-double', {
 		slidesPerView: 1,
 		loop: false,
@@ -349,8 +398,32 @@ AOS.init({
 
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true
 		},
 	});
+
+	var thCarouselPrev = document.querySelector('.__js_th-latest-projects__btn--prev');
+	var thCarouselNext = document.querySelector('.__js_th-latest-projects__btn--next');
+
+	var thСarousel = new Swiper('.__js_th-latest-projects-carousel', {
+		slidesPerView: 1,
+		loop: false,
+		spaceBetween: -4,
+		breakpoints: {
+			768: {
+				slidesPerView: 2
+			}
+		},
+	});
+
+	if (thCarouselPrev && thCarouselNext) {
+		thCarouselPrev.addEventListener('click', function() {
+			thСarousel.slidePrev(DURATION);
+		});
+		thCarouselNext.addEventListener('click', function() {
+			thСarousel.slideNext(DURATION);
+		});
+	}
 })();
 
 /* 9. Hero slider */

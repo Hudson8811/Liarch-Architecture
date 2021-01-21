@@ -1,0 +1,63 @@
+.th-testimonials {
+	&__inner {
+		padding: 40px;
+
+		@include media(xl) {
+			padding: 120px 80px;
+		}
+
+		@include media(xxl) {
+			padding: 120px 110px;
+		}
+	}
+	&__heading {
+		margin-bottom: 32px;
+		font-weight: 400;
+
+		@include media(xl) {
+			margin-bottom: 72px;
+		}
+	}
+
+	&__slider {
+		//width: calc(100% + 80px);
+		//margin-left: -40px;
+
+		.swiper-pagination {
+			position: static;
+			display: flex;
+			align-items: center;
+
+			margin-top: 60px;
+
+			.swiper-pagination-bullet {
+				position: relative;
+				width: 25px;
+				height: 25px;
+				border: solid 1px transparent;
+				background-color: transparent;
+				opacity: 1;
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translateY(-50%) translateX(-50%);
+					width: 9px;
+					height: 9px;
+					border-radius: 50%;
+					background-color: $color-grey3;
+				}
+
+				&-active {
+					border-color: $color-cream-brulee;
+
+					&::before {
+						background-color: $color-cream-brulee;
+					}
+				}
+			}
+		}
+	}
+}
