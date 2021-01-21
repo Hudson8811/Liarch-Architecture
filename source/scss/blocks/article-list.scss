@@ -74,12 +74,13 @@
 		padding: 0;
 
     @include media(md) {
-      margin-bottom: 0;
+      margin-bottom: 20px;
 			padding: 0 10px;
     }
 
 		@include media(xl) {
 			padding: 0 25px;
+			margin-bottom: 50px;
 		}
 
     &:last-child {

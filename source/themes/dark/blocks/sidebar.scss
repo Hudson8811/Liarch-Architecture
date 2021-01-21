@@ -29,12 +29,10 @@
 		color: $color-default-white;
 	}
 
-	&__services-item {
-		@include media(lg) {
-			&:hover {
-				a::before {
-					color: $color-default-white;
-				}
+	&__services-item a {
+		&:hover {
+			&::before {
+				color: $color-default-white;
 			}
 		}
 	}
@@ -50,16 +48,6 @@
 			.popular-post__num {
 				color: $color-default-white;
 			}
-		}
-	}
-
-	&.active {
-		.title {
-			color: $color-orange;
-		}
-
-		.popular-post__num {
-			color: $color-default-white;
 		}
 	}
 

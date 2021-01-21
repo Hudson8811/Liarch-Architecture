@@ -205,16 +205,19 @@ block content
 						.feedback-form__title Contact us
 
 						// Feedback form
-						form.contacts-parallax__feedback.feedback-form(action="#", method="post")
+						form.contacts-parallax__feedback.feedback-form.js-form-validate(action="php/mail.php", method="post")
 							label.contacts-parallax__field.field.field--bordered(aria-label="Your name")
-								input(type="text", name="name", placeholder="Your name")
+								input(type="text", name="name", placeholder="Your name *" required)
+							.field-error(style='display: none')
 							label.contacts-parallax__field.field.field--bordered(aria-label="Email Address")
-								input(type="email", name="email", placeholder="Email Address")
+								input(type="email", name="email", placeholder="Email Address *" required)
+							.field-error(style='display: none')
 							label.contacts-parallax__field.field.field--bordered(aria-label="Subject")
 								input(type="text", name="subject", placeholder="Subject (optional)")
 							label.contacts-parallax__field.field.field--bordered(aria-label="Your Message")
-								textarea(name="message", placeholder="Your Message")
-							button.contacts-parallax__btn.btn(type="sybmit") Send Message
+								textarea(name="message", placeholder="Your Message *" required)
+							.field-error(style='display: none')
+							button.contacts-parallax__btn.btn(type="submit") Send Message
 
 
 

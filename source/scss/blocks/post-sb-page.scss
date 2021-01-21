@@ -505,6 +505,13 @@
 		font-size: 24px;
 		line-height: 32px;
 		color: $color-default-black;
+		@include transition(color);
+
+		@include media(lg) {
+			&:hover {
+				color: $color-orange;
+			}
+		}
 	}
 }
 
@@ -652,10 +659,39 @@
 		}
 	}
 
+	input,
+	textarea {
+		width: 100%;
+		height: 46px;
+		padding: 16px 20px;
+		border: 1px solid #d4d4d4;
+		background-color: $color-default-white;
+		box-sizing: border-box;
+		@include transition(border-color);
+
+		&::placeholder {
+			font-size: 16px;
+			opacity: 0.5;
+			color: $color-default-black;
+		}
+
+		&:focus {
+			border-color: $color-default-black;
+
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+	}
+
+	textarea {
+		height: 150px;
+		resize: none;
+	}
+
 	&__inputs-group {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		margin: 0 0 30px;
 
 		@include media(lg) {
@@ -664,13 +700,17 @@
 			margin: 0 -15px 30px;
 		}
 
-		input {
+		.comment-form__field-wrapper {
 			width: 100%;
 			margin: 0 0 15px;
 
 			@include media(lg) {
 				width: calc(33.3333% - 30px);
 				margin: 0 15px;
+			}
+
+			label {
+				margin-bottom: 0;
 			}
 		}
 	}

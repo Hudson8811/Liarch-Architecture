@@ -6,9 +6,10 @@ mixin input(type, inputName, placeholder, value)
 	if type === 'search'
 		input(type='search', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
 	if type === 'subs'
-		form.label-subs(action='', method='POST')
-			label
+		form.label-subs.js-form-validate(action='php/mail.php', method='POST')
+			label.field
 				input(type='email', name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
-			input(type='submit', value='Subscribe')
+			.field-error(style='display: none')
+			button(type='submit') Subscribe
 
 

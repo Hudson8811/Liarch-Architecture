@@ -8,16 +8,15 @@ mixin article-list(list, type)
 			- return out;
 	-});
 
-	ul.article-list__list.row
-		each item, index in list
-			if item.length > out.length
-				break
-			li.article-list__item.col-12(class=`${out[index]}`, data-aos="fade", data-aos-delay=index*300)
-				.article-preview(tebindex="0")
-					.article-preview__image
-						img(src=item.img, width="356", height="356", alt="")
-					.article-preview__content
-						time.article-preview__date(datetime="2020-12-15")= item.date
-						h3.article-preview__heading= item.title
-						.article-preview__text= item.text
-						a.article-preview__btn(href="#") continue
+	each item, index in list
+		if item.length > out.length
+			break
+		.article-list__item.col-12(class= '__js_news-list-item ' + `${out[index]} ` + item.class)
+			.article-preview(tebindex="0")
+				.article-preview__image
+					img(src=item.img, width="356", height="356", alt="")
+				.article-preview__content
+					time.article-preview__date(datetime="2020-12-15")= item.date
+					h3.article-preview__heading= item.title
+					.article-preview__text= item.text
+					a.article-preview__btn(href="#") continue

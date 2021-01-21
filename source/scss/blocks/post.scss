@@ -12,6 +12,10 @@
 		}
 	}
 
+	&__heading {
+		margin-bottom: 38px;
+	}
+
 	&__filter {
 		@include media(xxl) {
 			margin: 0 -200px;

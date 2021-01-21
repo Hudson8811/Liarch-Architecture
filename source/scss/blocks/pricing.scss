@@ -188,12 +188,6 @@
 			.pricing-item__wrapper {
 				border-color: $color-default-black;
 			}
-
-			.pricing-item__btn {
-				border-color: $color-orange--dark;
-				background-color: $color-orange--dark;
-				color: $color-default-white;
-			}
 		}
 	}
 
@@ -315,6 +309,14 @@
 		border-radius: 0;
 		cursor: pointer;
 		@include transition(all);
+
+		@include media(lg) {
+			&:hover {
+				border-color: $color-orange--dark;
+				background-color: $color-orange--dark;
+				color: $color-default-white;
+			}
+		}
 	}
 }
 

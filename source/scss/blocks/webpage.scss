@@ -123,14 +123,14 @@
 	}
 
 	&__article-list {
-		margin-bottom: 100px;
+		padding-bottom: 100px;
 
 		@include media(md) {
-			margin-bottom: 150px;
+			padding-bottom: 150px;
 		}
 
 		@include media(xl) {
-			margin-bottom: 212px;
+			padding-bottom: 212px;
 		}
 	}
 

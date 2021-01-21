@@ -17,10 +17,6 @@
 					color: $color-orange;
 				}
 			}
-
-			#{$self}__name {
-				border-bottom-color: $color-default-black;
-			}
 		}
 	}
 
@@ -58,8 +54,13 @@
 		letter-spacing: 0.45px;
 		margin-bottom: 3px;
 		position: relative;
-		border-bottom: 1px solid transparent;
-		@include transition(border-bottom-color);
+		@include transition(color);
+
+		@include media(lg) {
+			&:hover {
+				color: $color-orange;
+			}
+		}
 	}
 
 	&__position {

@@ -25,35 +25,37 @@ section.sidebar(data-aos="fade")
 	.sidebar__block
 		p popular posts
 		.sidebar__popular-posts-wrapper
-			a.popular-post(href='#', target='_blank')
+			a.popular-post(href='single-post.html', target='_blank')
 				figure
 					.popular-post__num 1
 					.popular-post__content
 						p.tag inspiration
 						p.title Double rectangle houses from...
-			a.popular-post.active(href='#', target='_blank')
+			a.popular-post(href='single-post.html', target='_blank')
 				figure
 					.popular-post__num 2
 					.popular-post__content
 						p.tag news
 						p.title Scadinavian interior
-			a.popular-post(href='#', target='_blank')
+			a.popular-post(href='single-post.html', target='_blank')
 				figure
 					.popular-post__num 3
 					.popular-post__content
 						p.tag product
 						p.title Perfect solutions for street’s h...
-			a.popular-post(href='#', target='_blank')
+			a.popular-post(href='single-post.html', target='_blank')
 				figure
 					.popular-post__num 4
 					.popular-post__content
 						p.tag others
 						p.title Top 10 Minimalist architecture...
-	form.newsletter(action='', method='POST')
+	form.newsletter.js-form-validate(action='php/mail.php', method='POST')
 		.newsletter__title Newsletter
 		.newsletter__text Signup to be the first to hear about exclusive deals
-		+input('email', 'email', 'Email Address')
-		button.newsletter__btn Subscribe
+		label.field.field--bordered(aria-label="Email Address")
+			input(type="email", name="email", placeholder="Email Address", required)
+		.field-error(style='display: none')
+		button.newsletter__btn(type='submit') Subscribe
 	.sidebar__block
 		p Categories
 		.sidebar__categories
