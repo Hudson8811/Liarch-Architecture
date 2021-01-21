@@ -1,0 +1,16 @@
+.hero-banner {
+	&__down {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 275 103'%3e%3cpath fill-rule='evenodd' fill='%23181818' d='M.427 71.361s-8.822-8.972 51.994-8.972C93.315 62.389 83.361-.745 140.05 1c37.827 1.165 48.543 61.389 82.956 61.389 34.414 0 51.994 3.778 51.994 3.778V103H.427V71.361z'/%3e%3c/svg%3e");
+
+		&:hover,
+		&:focus {
+			svg {
+				fill: $color-lemon;
+			}
+		}
+
+		svg {
+			fill: $color-default-white;
+		}
+	}
+}

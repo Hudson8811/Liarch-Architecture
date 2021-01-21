@@ -166,3 +166,16 @@
 		}
 	}
 }
+
+.webpage--modern {
+	.header-search {
+		&__toggle {
+			&:hover,
+			&:focus {
+				svg {
+					fill: $color-lemon !important;
+				}
+			}
+		}
+	}
+}

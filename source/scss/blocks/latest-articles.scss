@@ -60,3 +60,17 @@
 		}
 	}
 }
+
+.webpage--modern {
+	.latest-articles {
+		&__preheading {
+			text-align: center;
+			color: $color-lemon;
+		}
+
+		&__heading {
+			font-weight: 700;
+			text-align: center;
+		}
+	}
+}
