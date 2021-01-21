@@ -29,3 +29,11 @@
 		}
 	}
 }
+
+.webpage--technical-drawing {
+	.heading {
+		@include media(xl) {
+			font-size: 60px;
+		}
+	}
+}

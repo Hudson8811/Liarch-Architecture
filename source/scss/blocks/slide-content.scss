@@ -5,7 +5,23 @@
 	padding: 10px 0;
 	background-color: $color-default-white;
 
-	@include transition(opacity);
+	@include transition(all);
+
+	@include media(sm) {
+		&:hover {
+			background-color: $color-orange;
+
+			#{$self}__heading {
+				a {
+					color: $color-default-white;
+				}
+			}
+
+			#{$self}__detail {
+				color: $color-default-white;
+			}
+		}
+	}
 
 	@include media(sm) {
 		padding: 20px;
@@ -49,6 +65,10 @@
 			@include media(md) {
 				color: $color-default-white;
 				font-weight: 300;
+
+				a {
+					color: $color-default-white;
+				}
 			}
 		}
 
@@ -65,6 +85,16 @@
 
 			#{$self}__heading {
 				color: $color-default-black;
+				@include media(md) {
+					a {
+						color: $color-default-black;
+
+						&:hover,
+						&:focus {
+							color: $color-orange;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -93,7 +123,17 @@
 
 	&__heading {
 		@include text(20px, 1);
-		@include transition(color);
+
+		a {
+			color: $color-default-black;
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-orange;
+			}
+		}
 
 		@include media(lg) {
 			font-size: 30px;

@@ -42,3 +42,26 @@
 		}
 	}
 }
+
+.webpage--beige {
+	.approach {
+		background-color: #232323;
+
+		&__card {
+			border: solid 1px #181818;
+			background-color: #181818;
+
+			&-icon {
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+
+			&-heading {
+				max-width: none;
+				font-family: $font-family--secondary;
+				color: $color-default-white;
+			}
+		}
+	}
+}

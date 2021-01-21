@@ -5,14 +5,18 @@
 		padding-top: 5px;
 
 		#{$self}__item {
-			padding: 32px 72px 32px 32px;
 			text-align: left;
-			border: solid 1px $color-grey5;
 
-			@include transition(border-color);
+			a {
+				padding: 32px 72px 32px 32px;
+				border: solid 1px $color-grey5;
 
-			&:hover {
-				border-color: $color-orange;
+				@include transition(border-color);
+
+				&:hover,
+				&:focus {
+					border-color: $color-orange;
+				}
 			}
 
 			@include media(md) {
@@ -24,7 +28,9 @@
 			}
 
 			@include media(xl) {
-				padding: 47px 120px 43px 60px;
+				a {
+					padding: 47px 120px 43px 60px;
+				}
 			}
 
 			&-icon {
@@ -99,6 +105,15 @@
 	&__item {
 		text-align: center;
 
+		a {
+			display: block;
+
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+		}
+
 		@include media(md) {
 			text-align: left;
 		}
@@ -152,6 +167,12 @@
 		&-heading {
 			margin: 0 0 16px;
 
+			&:hover {
+				color: $color-orange;
+			}
+
+			@include transition(color);
+
 			@include text(24px, 1.11);
 			font-weight: 300;
 
@@ -165,7 +186,7 @@
 				font-size: 36px;
 			}
 
-			a {
+			/*a {
 				color: $color-default-black;
 
 				@include transition(color);
@@ -179,7 +200,7 @@
 				&:active {
 					opacity: 0.7;
 				}
-			}
+			}*/
 		}
 
 		&-text {
@@ -353,33 +374,43 @@
 .webpage--beige {
 	.type-service {
 		&__item {
+			a {
+				border-color: $color-litedark;
+				transition: background-color $default-transition-settings,
+					border-color $default-transition-settings !important;
+
+				&:hover,
+				&:focus {
+					border-color: $color-dark;
+					background-color: $color-dark;
+
+					.type-service__item-heading,
+					.type-service__item-text,
+					.type-service__item-link {
+						color: $color-default-white;
+					}
+
+					.type-service__item-icon svg {
+						fill: $color-bird-flower;
+					}
+				}
+			}
+
 			&-heading {
 				max-width: 300px;
 				font-family: $font-family--secondary;
+
+				&:hover {
+					color: $color-bird-flower !important;
+				}
+			}
+
+			&-link {
+				color: $color-default-black;
 			}
 
 			&-icon svg {
 				fill: $color-dark;
-			}
-
-			border-color: $color-litedark;
-
-			transition: background-color $default-transition-settings,
-				border-color $default-transition-settings !important;
-
-			&:hover {
-				border-color: $color-dark;
-				background-color: $color-dark;
-
-				.type-service__item-heading a,
-				.type-service__item-text,
-				.type-service__item-link {
-					color: $color-default-white !important;
-				}
-
-				.type-service__item-icon svg {
-					fill: $color-bird-flower;
-				}
 			}
 
 			.type-service__item-link:hover,

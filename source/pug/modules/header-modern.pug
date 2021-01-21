@@ -1,31 +1,51 @@
-header.header.header--absolute.header--white(data-aos="fade", data-aos-delay="350")
-  .header__inner
-    // Logo
-    +logo(isHome, 'header__logo')
+header.header.header--absolute.header--white.__js_fixed-header
+	.header__inner
+		// Logo
+		+logo(isHome, 'header__logo')
 
-    // Header menu
-    nav.header__nav.navigation
-      ul.navigation__list
-        each item in MAIN_MENU
-          if item.currentIndex === currentIndex
-            li.navigation__item.navigation__item--current
-              a.navigation__link= item.text
-          else
-            li.navigation__item
-              a.navigation__link.animsition-link(href= item.url)= item.text
+		// Header menu
+		nav.header__nav.navigation
+			ul.navigation__list
+				//- Для темной темы подставляем другой массив, со ссылками на темные страницы
+				- let MENU = isDark ? MAIN_MENU_DARK : MAIN_MENU;
+				each item, index in MENU
+					if item.currentSection === currentSection && item.currentPage === currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
+					else if item.currentSection === currentSection && item.currentPage !== currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link(href= item.url)= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
+					else
+						li.navigation__item
+							a.navigation__link.animsition-link(href= item.url)= item.text
+							if item.submenu
+								if index === 0
+									+navigation-dropdown-home(item.submenu)
+								else
+									+navigation-dropdown(item.submenu)
 
-    // Language switcher
-    ul.header__lang-switcher.lang-switcher.lang-switcher--white
-      li.lang-switcher__item
-        a.lang-switcher__link.lang-switcher__link--current en
-      li.lang-switcher__item
-        a.lang-switcher__link(href="#") fr
+		// Language switcher
+		ul.header__lang-switcher.lang-switcher.lang-switcher--white
+			li.lang-switcher__item
+				a.lang-switcher__link.lang-switcher__link--current en
+			li.lang-switcher__item
+				a.lang-switcher__link(href="#") fr
 
-    // Search toggle
-    button.header__search-toggle.search-toggle(type="button")
-      +icon('search')(width="22", height="22")
-      span.visually-hidden Show search field
+		// Search toggle
+		button.header__search-toggle.search-toggle(type="button")
+			+icon('search')(width="22", height="22")
+			span.visually-hidden Show search field
 
-    // Burger
-    button.header__menu-toggle.menu-toggle(type="button")
-      span.visually-hidden Menu
+		// Burger
+		button.header__menu-toggle.menu-toggle(type="button")
+			span.visually-hidden Menu

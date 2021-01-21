@@ -79,6 +79,13 @@
 		}
 	}
 
+	&--technical {
+		#{$self}__wrapper {
+			padding: 0;
+			border: none;
+		}
+	}
+
 	&__heading {
 		margin-bottom: 40px;
 		font-weight: 400;
@@ -248,9 +255,6 @@
 
 .webpage--beige {
 	.twitter-block {
-		&__heading {
-			font-family: $font-family--secondary;
-		}
 		&__wrapper {
 			border-color: $color-litedark;
 		}

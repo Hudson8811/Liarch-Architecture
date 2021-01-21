@@ -28,3 +28,45 @@
 		fill: $color-default-white;
 	}
 }
+
+.webpage--beige {
+	.menu {
+		background-color: #181818;
+
+		&__item {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__item--current {
+			> a {
+				color: $color-bird-flower;
+			}
+		}
+
+		&__link,
+		&__sublink {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-bird-flower !important;
+			}
+		}
+
+		&__copy {
+			color: $color-grey;
+		}
+
+		&__close {
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-bird-flower;
+				}
+			}
+		}
+	}
+}

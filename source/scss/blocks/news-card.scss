@@ -65,9 +65,17 @@
 			line-height: 36px;
 			color: $color-default-black;
 
+			@include transition(color);
+
 			@include media(lg) {
-				&:hover {
-					text-decoration: underline;
+				&:hover,
+				&:focus {
+					//text-decoration: underline;
+					color: $color-orange;
+				}
+
+				&:active {
+					opacity: 0.7;
 				}
 			}
 		}
@@ -75,18 +83,32 @@
 		.author {
 			font-size: 14px;
 			margin: 18px 0 0;
+			letter-spacing: 0.7px;
 
-			a {
-				font-size: 14px;
+			> a {
 				text-transform: uppercase;
 				color: $color-orange;
-				letter-spacing: 0.7px;
+
+				&:hover,
+				&:focus {
+					outline: none;
+					color: $color-orange;
+					text-decoration: underline;
+				}
 			}
 
-			span {
+			span,
+			span > a {
 				color: $color-grey;
 				text-transform: none;
 				letter-spacing: normal;
+
+				@include transition(color);
+
+				&:hover:not(.delimiter),
+				&:focus:not(.delimiter) {
+					color: $color-orange;
+				}
 
 				&.delimiter {
 					padding: 0 10px;
