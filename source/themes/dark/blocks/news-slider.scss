@@ -1,0 +1,19 @@
+.news-slider {
+	.slider__nav {
+		&-btn {
+			border: solid 1px #181818;
+			background-color: #181818;
+
+			@include media(lg) {
+				&:hover,
+				&:focus {
+					background-color: transparent;
+
+					svg {
+						fill: $color-orange;
+					}
+				}
+			}
+		}
+	}
+}

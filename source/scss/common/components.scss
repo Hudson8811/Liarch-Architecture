@@ -1,7 +1,7 @@
 .label-subs {
 	position: relative;
 
-	> input[type="submit"] {
+	> button[type="submit"] {
 		width: auto;
 		padding: 0;
 		position: absolute;
@@ -13,14 +13,16 @@
 		letter-spacing: 1.2px;
 		text-transform: uppercase;
 		cursor: pointer;
+		border: none;
+		background-color: $color-default-white;
 		@include transition(color);
 
 		@include media(sm) {
 			left: unset;
 			bottom: unset;
 			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
+			top: 17px;
+			transform: none;
 		}
 
 		@include media(lg) {
@@ -59,9 +61,11 @@
 
 		input {
 			width: 100%;
+			padding: 0;
 
 			&::placeholder {
 				opacity: 0.5;
+				color: $color-default-black;
 			}
 
 			&:focus::placeholder {

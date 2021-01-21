@@ -2,4 +2,12 @@
 	&__contact {
 		background-color: #232323;
 	}
+
+	&__modal {
+		background-color: #232323;
+	}
+
+	&__modal-close svg {
+		fill: $color-default-white;
+	}
 }

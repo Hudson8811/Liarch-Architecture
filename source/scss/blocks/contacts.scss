@@ -84,6 +84,7 @@
 
 		@include media(md) {
 			position: absolute;
+			z-index: 2;
 			padding: 52px 60px;
 		}
 

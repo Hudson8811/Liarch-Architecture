@@ -41,22 +41,26 @@ block content
 				.contacts__modal
 					button.contacts__modal-close(type="button")
 						+icon('close')(width="40", height="40")
-					form.contacts__modal-form(action="#", method="post")
+					form.contacts__modal-form.js-form-validate(action="php/mail.php", method="post")
 						label.contacts__modal-field.field.field--md-small
 							input(type="text", name="name", placeholder="Name")
 							span.field__hint Name
+						.field-error(style='display: none')
 
 						label.contacts__modal-field.field.field--md-small
 							input(type="email", name="email", placeholder="Email Address")
 							span.field__hint Email Address
+						.field-error(style='display: none')
 
 						label.contacts__modal-field.field.field--md-small
 							input(type="text", name="subject", placeholder="Subject (optional)")
 							.field__hint Subject (optional)
+						.field-error(style='display: none')
 
 						label.contacts__modal-field.field.field--md-small
 							textarea(name="message", placeholder="Message")
 							.field__hint Message
+						.field-error(style='display: none')
 
 						button.contacts__modal-btn.btn(type="submit") Send message
 

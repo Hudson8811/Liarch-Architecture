@@ -1,6 +1,11 @@
 .news-slider {
 	position: relative;
 	margin: 0;
+	padding-top: 60px;
+
+	@include media(lg) {
+		padding-top: 0;
+	}
 
 	@include media(xxl) {
 		margin: 0 -175px;
@@ -9,11 +14,130 @@
 	.swiper-pagination {
 		position: absolute;
 		bottom: 20px;
+		z-index: 1;
 
 		@include media(xxl) {
 			justify-content: flex-end;
 			bottom: 64px;
 			padding-right: 163px;
+		}
+
+		.swiper-pagination-bullet {
+			background-color: $color-default-white;
+			opacity: 1;
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $color-orange;
+		}
+	}
+
+	.slider__nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: flex;
+
+		@include media(lg) {
+			top: 50%;
+			left: 0;
+			right: 0;
+			transform: translateY(-50%);
+			background-color: red;
+			z-index: 1;
+		}
+
+		&-btn {
+			width: 18px;
+			height: 32px;
+			padding: 0;
+			border: none;
+			overflow: hidden;
+			background-color: transparent;
+
+			appearance: none;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-orange;
+				}
+			}
+
+			&--next {
+				margin-left: 12px;
+
+				@include media(lg) {
+					right: 3.125vw;
+					margin: 0;
+				}
+			}
+
+			&--prev {
+				@include media(lg) {
+					left: 3.125vw;
+				}
+			}
+
+			&.swiper-button-disabled {
+				pointer-events: none;
+				opacity: 0.5;
+
+				@include media(md) {
+					border: solid 1px $color-default-white;
+					background-color: transparent !important;
+
+					svg {
+						fill: $color-default-white !important;
+					}
+				}
+			}
+
+			svg {
+				position: relative;
+				left: 50%;
+				display: block;
+				width: auto;
+				height: 100%;
+				transform: translateX(-50%);
+
+				@include transition(fill);
+
+				@include media(lg) {
+					position: static;
+					width: 34px;
+					height: auto;
+					transform: translateX(0);
+					fill: $color-default-white;
+				}
+			}
+
+			@include media(lg) {
+				position: absolute;
+				top: 0;
+				transform: translateY(-50%);
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 60px;
+				height: 60px;
+				border: solid 1px $color-default-white;
+
+				@include transition(background-color);
+
+				&:hover,
+				&:focus {
+					background-color: $color-default-white;
+
+					svg {
+						fill: $color-default-black;
+					}
+				}
+			}
 		}
 	}
 
@@ -78,9 +202,17 @@
 		font-size: 13px;
 		margin-bottom: 11px;
 
-		span {
+		a {
 			font-size: 14px;
 			text-transform: uppercase;
+			color: $color-default-white;
+			@include transition(color);
+
+			@include media(lg) {
+				&:hover {
+					color: $color-orange;
+				}
+			}
 		}
 	}
 
@@ -89,10 +221,16 @@
 		line-height: 38px;
 		letter-spacing: -1.2px;
 		margin-bottom: 36px;
+		color: $color-default-white;
+		@include transition(color);
 
 		@include media(lg) {
 			font-size: 48px;
 			line-height: 48px;
+
+			&:hover {
+				color: $color-orange;
+			}
 		}
 	}
 

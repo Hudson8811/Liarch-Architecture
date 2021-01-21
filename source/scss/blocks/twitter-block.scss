@@ -35,7 +35,11 @@
 	}
 
 	&--sidebar {
-		max-width: 300px;
+		max-width: 100%;
+
+		@include media(lg) {
+			max-width: 300px;
+		}
 
 		#{$self}__wrapper {
 			padding: 30px !important;

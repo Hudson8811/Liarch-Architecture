@@ -6,22 +6,23 @@ section.webpage__article-list.article-list(data-aos="fade")
 		header.article-list__header
 			h2.article-list__heading.heading Inspirations & xperiences
 			a.article-list__more.more(href="#") more articles
-		+article-list([{
-			img: "img/article-preview-1.jpg",
-			date: "December 15, 2020",
-			title: "Nordic style, interior style for simple life",
-			text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-		},
-			{
-				img: "img/article-preview-2.jpg",
+		.grid-wrapper
+			+article-list([{
+				img: "img/article-preview-1.jpg",
 				date: "December 15, 2020",
 				title: "Nordic style, interior style for simple life",
 				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 			},
-			{
-				img: "img/article-preview-3.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			}
-		], 'small')
+				{
+					img: "img/article-preview-2.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+				{
+					img: "img/article-preview-3.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				}
+			], 'small')

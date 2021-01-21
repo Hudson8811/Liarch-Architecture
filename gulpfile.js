@@ -28,6 +28,7 @@ const sassLibs = {
 		'source/scss/vendor/aos.css',
 		'source/scss/vendor/swiper-bundle.css',
 		'source/scss/vendor/jquery.pagepiling.css',
+		'source/scss/vendor/jquery.fancybox.css',
 		'source/scss/utils/normalize.css'],
 	build: 'build/css/'
 };
@@ -250,4 +251,9 @@ gulp.task('copy:img', function() {
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', gulp.series('clean', 'copy', 'copyVendorCss', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', parallel('sass', /*'sassLibs',*/ 'sassDark', 'sassModern'), 'pug', 'server'));
+gulp.task('php', function() {
+	return gulp.src('source/php/**/*.*')
+		.pipe(gulp.dest('build/php/'));
+});
+
+gulp.task('default', gulp.series('clean', 'copy', 'copyVendorCss', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', parallel('sass', /*'sassLibs',*/ 'sassDark', 'sassModern', 'php'), 'pug', 'server'));

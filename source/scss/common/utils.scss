@@ -40,3 +40,24 @@
 		background-color: rgba(255, 255, 255, 0.6) !important;
 	}
 }
+
+.field-error {
+	font-size: 16px;
+	line-height: 20px;
+	color: $color-orange--dark;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+.grid-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include media(md) {
+		margin: 0 -10px;
+	}
+
+	@include media(xl) {
+		margin: 0 -25px;
+	}
+}

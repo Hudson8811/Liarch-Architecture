@@ -202,16 +202,6 @@
 		}
 	}
 
-	&.active {
-		.title {
-			color: $color-orange;
-		}
-
-		.popular-post__num {
-			color: $color-default-black;
-		}
-	}
-
 	+ .popular-post {
 		border-top: 1px solid #dadada;
 		padding-top: 19px;
@@ -276,6 +266,8 @@
 	input {
 		width: 100%;
 		height: 50px;
+		padding: 18px;
+		background-color: $color-default-white;
 	}
 
 	&__btn {

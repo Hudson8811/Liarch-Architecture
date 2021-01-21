@@ -212,6 +212,17 @@
 		.delimiter {
 			font-size: 14px;
 			text-transform: uppercase;
+			color: $color-default-white;
+		}
+
+		.tag {
+			@include transition(color);
+
+			@include media(lg) {
+				&:hover {
+					color: $color-orange;
+				}
+			}
 		}
 
 		.delimiter {
@@ -223,10 +234,16 @@
 		font-size: 30px;
 		line-height: 36px;
 		letter-spacing: -0.9px;
+		color: $color-default-white;
+		@include transition(color);
 
 		@include media(lg) {
 			font-size: 36px;
 			line-height: 48px;
+
+			&:hover {
+				color: $color-orange;
+			}
 		}
 	}
 
@@ -325,10 +342,11 @@
 		line-height: 36px;
 		margin-bottom: 22px;
 		color: $color-default-black;
+		@include transition(color);
 
 		@include media(lg) {
 			&:hover {
-				text-decoration: underline;
+				color: $color-orange;
 			}
 		}
 	}

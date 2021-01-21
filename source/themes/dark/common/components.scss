@@ -20,3 +20,18 @@ input[type="search"] {
 	no-repeat right center;
 	background-size: 20px;
 }
+
+.label-subs {
+	> button[type="submit"] {
+		background-color: transparent;
+		color: $color-default-white;
+	}
+
+	label {
+		input {
+			&::placeholder {
+				color: $color-default-white;
+			}
+		}
+	}
+}

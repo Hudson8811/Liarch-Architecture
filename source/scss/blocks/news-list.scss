@@ -60,7 +60,7 @@
 		margin: 40px auto;
 
 		@include media(md) {
-			margin: 121px auto 60px;
+			margin: 71px auto 60px;
 		}
 	}
 
@@ -88,9 +88,14 @@
 			margin-top: 20px;
 
 			@include media(lg) {
+				width: 100%;
 				margin-top: 0;
 				margin-bottom: 15px;
 			}
+		}
+
+		&--center {
+			justify-content: center;
 		}
 	}
 
@@ -155,7 +160,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 0;
-		margin: 0 -30px;
+
+		@include media(md) {
+			margin: 0 -31px;
+		}
+	}
+
+	.news-card {
+		padding: 0;
+
+		@include media(md) {
+			padding: 0 31px;
+		}
 	}
 
 	&__more-2 {

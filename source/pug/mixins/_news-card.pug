@@ -1,5 +1,5 @@
 mixin news-card(image, num, month, year, title, tag, author)
-	li.news-card.col-12.col-md-6&attributes(attributes)
+	li.news-card.__js_news-list-item.col-12.col-md-6&attributes(attributes)
 		.news-card__pic
 			img(src='img/news/' + image, alt="")
 		.news-card__content
@@ -8,7 +8,8 @@ mixin news-card(image, num, month, year, title, tag, author)
 				p.month= month
 				p.year= year
 			.news-card__title
-				a(href='#')= title
-				p.author= tag
+				a(href='single-post.html', target='_blank')= title
+				p.author
+					a(href='#', target='_blank')= tag
 					span.delimiter /
 					span= author

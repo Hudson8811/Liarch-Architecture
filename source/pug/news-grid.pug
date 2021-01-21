@@ -14,93 +14,103 @@ block header
 block content
 	article.news-list
 		.container.news-list__container
-			header.news-list__header(data-aos="fade")
+			header.news-list__header
 				h2.news-list__heading.heading Inspirations & Experiences
 
 			// Filter
-			.filter.controls.news-list__filter(data-aos="fade")
-				button.filter__item(type="button", data-filter="all") all
-				button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
-				button.filter__item(type="button", data-filter=".__js_experiences") experiences
-				button.filter__item(type="button", data-filter=".__js_reviews") reviews
-				button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
-				button.filter__item(type="button", data-filter=".__js_others") others
+			.filter.controls.news-list__filter
+				each item in ['all', 'inspirations', 'experiences', 'reviews', 'tips & tricks', 'others']
+					- if (item === 'tips & tricks') item = 'tips';
+					- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+					- let activeClass = item === 'all' ? ' filter__item--active' : '';
+					button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
 
 			// Articles
-			+article-list([{
-				img: "img/article-preview-1.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			},
-				{
-					img: "img/article-preview-2.jpg",
+			.grid-wrapper.__js_news-list-filter
+				+article-list([{
+					class: "__js_inspirations __js_tips",
+					img: "img/article-preview-1.jpg",
 					date: "December 15, 2020",
 					title: "Nordic style, interior style for simple life",
 					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 				},
-				{
-					img: "img/article-preview-3.jpg",
-					date: "December 15, 2020",
-					title: "Nordic style, interior style for simple life",
-					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-				}
-			], 'small')
-			+article-list([{
-				img: "img/article-preview-1.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			},
-				{
-					img: "img/article-preview-2.jpg",
-					date: "December 15, 2020",
-					title: "Nordic style, interior style for simple life",
-					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-				}
-			], 'bigStart')
-			+article-list([{
-				img: "img/article-preview-1.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			},
-				{
-					img: "img/article-preview-2.jpg",
-					date: "December 15, 2020",
-					title: "Nordic style, interior style for simple life",
-					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-				}
-			], 'bigEnd')
-			+article-list([{
-				img: "img/article-preview-1.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			}
-			], 'big')
-			+article-list([{
-				img: "img/article-preview-1.jpg",
-				date: "December 15, 2020",
-				title: "Nordic style, interior style for simple life",
-				text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
-			},
-				{
-					img: "img/article-preview-2.jpg",
+					{
+						class: "__js_tips",
+						img: "img/article-preview-2.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					},
+					{
+						class: "__js_inspirations __js_experiences",
+						img: "img/article-preview-3.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					}
+				], 'small')
+				+article-list([{
+					class: "__js_others",
+					img: "img/news/item-5.jpg",
 					date: "December 15, 2020",
 					title: "Nordic style, interior style for simple life",
 					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 				},
-				{
-					img: "img/article-preview-3.jpg",
+					{
+						class: "__js_reviews",
+						img: "img/masonry/item-6.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					}
+				], 'bigStart')
+				+article-list([{
+					class: "__js_inspirations __js_tips",
+					img: "img/masonry/item-5.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+					{
+						img: "img/news/item-4.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					}
+				], 'bigEnd')
+				+article-list([{
+					class: "__js_others",
+					img: "img/news/item-6.jpg",
 					date: "December 15, 2020",
 					title: "Nordic style, interior style for simple life",
 					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
 				}
-			], 'small')
+				], 'big')
+				+article-list([{
+					class: "__js_experiences",
+					img: "img/masonry/item-7.jpg",
+					date: "December 15, 2020",
+					title: "Nordic style, interior style for simple life",
+					text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+				},
+					{
+						class: "__js_experiences __js_tips",
+						img: "img/masonry/item-15.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					},
+					{
+						class: "__js_others",
+						img: "img/masonry/item-13.jpg",
+						date: "December 15, 2020",
+						title: "Nordic style, interior style for simple life",
+						text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim tortor vitae mattis tempor..."
+					}
+				], 'small')
 
 			// Button more
-			a.more-btn.news-list__more(href="#", data-aos="fade")
+			a.more-btn.news-list__more(href="#")
 				span.more-btn__text more
 
 block footer

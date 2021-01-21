@@ -4,7 +4,7 @@ include modules/article-list-row.pug
 block variables
 	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Single Post Sidebar';
 	- let isHome = false; //- Если true то логотип не будет ссылкой
-	- let isDark = true;
+	- let isDark = false;
 	- let currentPage = 4.06; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 4; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 
@@ -16,21 +16,10 @@ block content
 		.container.post-sb-page__container
 			.news-list
 				header.news-list__header(data-aos="fade")
-					h2.news-list__heading.heading Inspirations & Experiences
-				.news-list__filter-with-search(data-aos="fade")
-
-					// Filter
-					.filter.controls.news-list__filter
-						button.filter__item(type="button", data-filter="all") all
-						button.filter__item(type="button", data-filter=".__js_inspirations") inspirations
-						button.filter__item(type="button", data-filter=".__js_experiences") experiences
-						button.filter__item(type="button", data-filter=".__js_reviews") reviews
-						button.filter__item(type="button", data-filter=".__js_tips") tips & tricks
-						button.filter__item(type="button", data-filter=".__js_others") others
-					+input('search', 'search', 'Search in blog')
+					h2.news-list__heading.post-page__heading.heading Inspirations & Experiences
 
 			.post-sb-page__main-pic(data-aos="fade")
-				img(src="img/slider/slide-1.jpg", alt="")
+				img(src="img/post/title.jpg", alt="")
 			.post-sb-page__wrapper
 
 				// Post
@@ -50,7 +39,7 @@ block content
 						p Coventry is a city with a thousand years of history that has plenty to offer the visiting <br>
 							|	tourist. Located in the heart of Warwickshire.
 					.post-sb__content-pic
-						img(src="img/slider/slide-1.jpg", alt="")
+						img(src="img/post/item-3.jpg", alt="")
 						.post-sb__pic-caption Images by <a href="#" target="_blank">@tim_arterbury</a>
 					.post-sb__text
 						p The short answer is yes. According to Kross, when you think of yourself as another person, it allows you
@@ -142,14 +131,14 @@ block content
 						.post-sb__related-wrapper
 							.post-related.col-sm-6
 								.post-related__pic
-									img(src="img/slider/slide-1.jpg", alt="")
+									img(src="img/news/item-2.jpg", alt="")
 								.post-related__date December 8, 2020
-								a.post-related__title(href='#') Discover top 15 buildings modern in Italia
+								a.post-related__title(href='single-post.html', target='_blank') Discover top 15 buildings modern in Italia
 							.post-related.col-sm-6
 								.post-related__pic
-									img(src="img/slider/slide-1.jpg", alt="")
+									img(src="img/news/item-3.jpg", alt="")
 								.post-related__date December 6, 2020
-								a.post-related__title(href='#') The dome in architectural
+								a.post-related__title(href='single-post.html', target='_blank') The dome in architectural
 
 					// Comments
 					section.comment(data-aos="fade")
@@ -166,7 +155,7 @@ block content
 									button.comment-item__reply Reply
 							.comment-item.comment-item--replyed
 								.comment-item__photo
-									img(src="img/post/comment-1.jpg", alt="")
+									img(src="img/post/comment-3.jpg", alt="")
 								.comment-item__content
 									.comment-item__top
 										.comment-item__name Leona Porter
@@ -184,13 +173,25 @@ block content
 									button.comment-item__reply Reply
 
 					// Send comment
-					form.comment-form(action='', method='POST', data-aos="fade")
+					form.comment-form.js-form-validate(action='php/mail.php', method='POST', data-aos="fade")
 						.comment-form__title Leave A Commnet
 						.comment-form__inputs-group
-							+input('text', 'author', 'Name')
-							+input('email', 'email', 'Email Address')
-							+input('text', 'subject', 'Subject (optional)')
-						+input('textarea', 'message', 'Message')
+							.comment-form__field-wrapper
+								label.field.comment-form__field
+									input(type="text", name="name", placeholder="Name")
+								.field-error(style='display: none')
+							.comment-form__field-wrapper
+								label.field.comment-form__field
+									input(type="email", name="email", placeholder="Email Address")
+								.field-error(style='display: none')
+							.comment-form__field-wrapper
+								label.field.comment-form__field
+									input(type="text", name="subject", placeholder="Subject (optional)")
+								.field-error(style='display: none')
+
+						label.field.comment-form__field
+							textarea(name="message", placeholder="Message")
+						.field-error(style='display: none')
 						button.btn.comment-form__btn(type='submit') send message
 				include modules/sidebar
 

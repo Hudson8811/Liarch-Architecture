@@ -22,6 +22,8 @@
 	17. Modal
 	18. Packery init
 	19. The same height for blocks in the grid
+	20. Pagepiling
+	21. Form validation
 
 -------------------------------------------------*/
 
@@ -357,6 +359,11 @@ AOS.init({
 	var sliderNews = new Swiper('.__js_slider-news', {
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true
+		},
+		navigation: {
+			prevEl: '.slider__nav-btn--prev',
+			nextEl: '.slider__nav-btn--next'
 		},
 		loop: true,
 		speed: 300
@@ -620,6 +627,14 @@ AOS.init({
 			},
 		});
 
+		var grid2 = $('.__js_news-list-filter').isotope({
+			itemSelector: '.__js_news-list-item',
+			layoutMode: 'packery',
+			packery: {
+				gutter: 0
+			},
+		});
+
 		setTimeout(function () {
 			$('.masonry').isotope({
 				itemSelector: '.masonry-item',
@@ -644,8 +659,16 @@ AOS.init({
 
 		filterItem.on('click', function() {
 			var filterValue = $(this).attr('data-filter');
+
 			$(this).addClass(filterActiveClass).siblings().removeClass(filterActiveClass);
 			grid.isotope({ filter: filterValue });
+			grid2.isotope({ filter: filterValue });
+
+			if ($('.__js_news-list-filter') && $('.__js_news-list-filter').length > 0) {
+				var destination = $('.__js_news-list-filter').offset().top - 200;
+
+				$('html').animate({ scrollTop: destination }, 1100); //1100 - скорость
+			}
 		});
 	});
 
@@ -753,7 +776,7 @@ AOS.init({
 	}
 })();
 
-// homepage fullpages
+/* 20. Pagepiling */
 (function(){
 	initFullPage();
 
@@ -788,4 +811,87 @@ AOS.init({
 		$('.footer-3').removeClass('footer-3--dark');
 		$('#pp-nav').removeClass('dark');
 	}
+})();
+
+/* 21. Form validation */
+(function(){
+	function validateEmail(email) {
+		var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+		return re.test(String(email).toLowerCase());
+	}
+
+	function mail(event, php) {
+		event.preventDefault ? event.preventDefault() : event.returnValue = false;
+		var req = new XMLHttpRequest();
+		req.open('POST', php, true);
+
+		req.onerror = function () {
+			console.log("Ошибка отправки запроса");
+		};
+
+		req.send(new FormData(event.target));
+	}
+
+	$('.js-form-validate button').on('click', function (e) {
+		var that = $(this),
+				fields = $(this).parent().find('input').add($(this).parent().find('textarea')),
+				form = $(this).parent('form'),
+				errors = form.find('.field-error'),
+				isValid = true;
+
+		fields.each(function () {
+			var err = $(this).parent().next();
+
+			if ($(this).prop('required') === true) {
+				if ($(this).val().length === 0) {
+					err.show().text('Please enter a value.');
+				} else {
+					err.hide().text('');
+				}
+			}
+
+			if ($(this).attr('type') === "email") {
+				if (validateEmail($(this).val()) === false) {
+					err.show().text('Please enter a valid email address.');
+				}
+			}
+		});
+
+		errors.each(function () {
+			if ($(this).is(':visible')) {
+				isValid = false;
+				return false;
+			}
+		});
+
+		if (isValid) {
+			form.submit(function () {
+				mail(event, 'php/mail.php');
+				that.fadeOut(300);
+
+				$.fancybox.open({
+					src: '#thanks',
+					type: 'inline',
+					touch: false,
+					scrolling: 'no'
+				});
+			});
+		} else {
+			e.preventDefault();
+		}
+	});
+
+	$('.js-form-validate .field').on('focusout keyup', function () {
+		var input = $(this).find('input'),
+				err = input.parent().next(),
+				val = input.val();
+
+		if (input.attr('type') === "email") {
+			if (validateEmail(val) || val.length === 0) {
+				err.hide().text('');
+			} else {
+				err.show().text('Please enter a valid email address.');
+			}
+		}
+	});
 })();
