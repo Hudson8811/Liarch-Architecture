@@ -20,8 +20,13 @@
 		color: $color-grey;
 	}
 
-	&__column-link {
-		color: $color-grey;
+	&__column {
+		&-email {
+			color: $color-default-white;
+		}
+		&-link {
+			color: $color-grey;
+		}
 	}
 
 	&__copyright {
@@ -38,6 +43,10 @@
 		span {
 			color: $color-default-white;
 		}
+	}
+
+	&__appeal {
+		color: $color-default-white;
 	}
 
 	&--lite {

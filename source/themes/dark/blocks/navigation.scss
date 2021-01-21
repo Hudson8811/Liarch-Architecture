@@ -11,7 +11,6 @@
 
 	&--column {
 		#{$self} {
-
 			&__item {
 				&--current {
 					#{$self}__link {
@@ -30,6 +29,17 @@
 			}
 
 			&__link {
+				color: $color-default-white;
+			}
+		}
+	}
+
+	&__dropdown {
+		border-color: $color-default-white;
+		background-color: #181818;
+
+		&-item {
+			a {
 				color: $color-default-white;
 			}
 		}
