@@ -716,12 +716,12 @@
           <div class="container">
             <header class="our-journal__header">
               <h2 class="our-journal__heading heading">Our Journal</h2>
-              <a class="our-journal__more more" href="#">see all articles</a>
+              <a class="our-journal__more more" href="news-grid-dark.html">see all articles</a>
             </header>
             <ul class="our-journal__list row">
               <li class="news-card __js_news-list-item col-12 col-md-6">
                 <div class="news-card__pic">
-                  <img src="img/news/item-1.jpg" alt="" />
+                  <img src="img/news/01.jpg" alt="" />
                 </div>
                 <div class="news-card__content">
                   <div class="news-card__date">
@@ -743,7 +743,7 @@
               </li>
               <li class="news-card __js_news-list-item col-12 col-md-6">
                 <div class="news-card__pic">
-                  <img src="img/news/item-1.jpg" alt="" />
+                  <img src="img/news/02.jpg" alt="" />
                 </div>
                 <div class="news-card__content">
                   <div class="news-card__date">
@@ -798,18 +798,21 @@
               </div>
               <div class="col-12 col-lg-6">
                 <!-- Feedback form-->
-                <form class="about__feedback feedback-form" action="#" method="post">
+                <form class="about__feedback feedback-form js-form-validate" action="php/mail.php" method="post">
                   <label class="feedback-form__field field field--bordered" aria-label="Your name">
-                    <input type="text" name="name" placeholder="Your name">
+                    <input type="text" name="name" placeholder="Your name *">
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Email Address">
-                    <input type="email" name="email" placeholder="Email Address">
+                    <input type="email" name="email" placeholder="Email Address *">
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Subject">
                     <input type="text" name="subject" placeholder="Subject (optional)">
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Your Message">
-                    <textarea name="message" placeholder="Your Message"></textarea>
+                    <textarea name="message" placeholder="Your Message *"></textarea>
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <button class="feedback-form__btn btn" type="sybmit">Send Message</button>
                 </form>
@@ -856,6 +859,7 @@
   </video>
   <!-- Optional JavaScript-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.easy_number_animate.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>

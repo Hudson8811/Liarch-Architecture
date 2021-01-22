@@ -1,3 +1,25 @@
 .header-3 {
 	background-color: transparent;
+
+	.header__menu-toggle-wrapper {
+		span {
+			color: $color-default-white;
+		}
+	}
+
+	.header__menu-toggle--always {
+		&::before,
+		&::after {
+			border-top-color: $color-default-white;
+		}
+	}
+
+	.logo {
+		svg {
+			fill: $color-default-white;
+		}
+		&__text {
+			color: $color-default-white;
+		}
+	}
 }

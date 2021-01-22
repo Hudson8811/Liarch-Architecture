@@ -24,7 +24,7 @@ block content
 					.an-awards__buttons
 						a.an-awards__btn.btn(href= URLS.about.default) Learn More
 						.video-btn.video-btn--outline
-							a.video-btn__btn.__js_open-modal(href="#ourStory")
+							a.video-btn__btn.fancybox(href="#ourStory")
 								span.visually-hidden Play
 								+icon('play')(width="20", height="20")
 							span.video-btn__text view our story
@@ -36,7 +36,7 @@ block content
 					.col-12.col-md-6.type-service.type-service--lite
 						ul.type-service__list
 							li.type-service__item(data-aos="fade")
-								a(href= URLS.pages.serviceDetail)
+								a(href= URLS.pages.serviceDetailDark)
 									.type-service__item-icon.type-service__item-icon--interior
 										+icon('ruler-pencil')(width="49", height="49")
 									h3.type-service__item-heading Arch & interior
@@ -44,7 +44,7 @@ block content
 									.type-service__item-link 250 projects
 
 							li.type-service__item(data-aos="fade", data-aos-delay="300")
-								a(href= URLS.pages.serviceDetail)
+								a(href= URLS.pages.serviceDetailDark)
 									.type-service__item-icon.type-service__item-icon--design
 										+icon('vector')(width="49", height="49")
 									h3.type-service__item-heading Design
@@ -52,7 +52,7 @@ block content
 									.type-service__item-link 80 projects
 
 							li.type-service__item(data-aos="fade", data-aos-delay="600")
-								a(href= URLS.pages.serviceDetail)
+								a(href= URLS.pages.serviceDetailDark)
 									.type-service__item-icon.type-service__item-icon--furniture
 										+icon('package')(width="49", height="49")
 									h3.type-service__item-heading Products
@@ -94,7 +94,7 @@ block content
 							img(src="img/works-section/01.jpg", width="600", height="600", alt="")
 						.works-section__card-tags Residential, Design
 						h3.works-section__card-heading
-							a(href="#") Cube villa, Poland
+							a(href= URLS.works.singleStandartDark) Cube villa, Poland
 						.works-section__card-text Discover how we helped CleanCloud to increase their presence on a global market by their scaling up its visual identity and building a flexible style guide for their future product elaboration.
 					a.works-section__btn.btn(href= URLS.works.grid) more projects
 
@@ -104,7 +104,7 @@ block content
 							img(src="img/works-section/02.jpg", width="400", height="400", alt="")
 						.works-section__card-tags Architecture, CGI
 						h3.works-section__card-heading
-							a(href="#") Stone house
+							a(href= URLS.works.singleStandartDark) Stone house
 						.works-section__card-text Stone House is a digital platform that provides university students with personalized learning pathways
 
 					.works-section__card
@@ -112,7 +112,7 @@ block content
 							img(src="img/works-section/03.jpg", width="400", height="400", alt="")
 						.works-section__card-tags Architecture, CGI
 						h3.works-section__card-heading
-							a(href="#") Single house
+							a(href= URLS.works.singleStandartDark) Single house
 						.works-section__card-text Discover how we helped them scale up from local to global.
 	section.studio-section
 		.studio-section__inner.container
@@ -122,7 +122,7 @@ block content
 			.studio-section__wrapper
 				.studio-section__image.studio-section__image--big
 					img(src="img/studio/01.jpg", width="1045", height="640", alt="")
-					button.studio-section__play-video.__js_open-modal(data-href="#ourStory", type="button") Play video
+					a.studio-section__play-video.fancybox(href="#ourStory") Play video
 				.studio-section__image
 					img(src="img/studio/02.jpg", width="470", height="640", alt="")
 	section.rewards(data-aos="fade")
@@ -138,13 +138,13 @@ block content
 								.reward__project-name
 									a(href="#") AAG Winner 2020
 								.reward__project-text Canbin Wood In Forest
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") Top 25 Best Architectural In Poland
 								.reward__project-text Daniel Villa, Romania
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2019") 2019
 					.reward__logo
@@ -155,19 +155,19 @@ block content
 								.reward__project-name
 									a(href="#") The Architect of Season Winner
 								.reward__project-text Architect Thiago Alcantara
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") The Green of Arch by AAL US 2019, Slovakia
 								.reward__project-text Endora Commercial Center, Germany
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") Art of The Year 2019
 								.reward__project-text Reuse Cabins
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2018") 2018
 					.reward__logo
@@ -178,7 +178,7 @@ block content
 								.reward__project-name
 									a(href="#") The Trending of Interior 2018 by OKA
 								.reward__project-text B65 Apartment, Sepro Building, Italy
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandartDark) see project
 	.bg-wrapper
 		section.about__our-experts.our-experts.our-experts--mt-negative(data-aos="fade")
 			.our-experts__inner.container

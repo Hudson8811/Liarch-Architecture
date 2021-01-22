@@ -797,18 +797,21 @@
               </div>
               <div class="col-12 col-lg-6">
                 <!-- Feedback form-->
-                <form class="about__feedback feedback-form" action="#" method="post">
+                <form class="about__feedback feedback-form js-form-validate" action="php/mail.php" method="post">
                   <label class="feedback-form__field field field--bordered" aria-label="Your name">
-                    <input type="text" name="name" placeholder="Your name">
+                    <input type="text" name="name" placeholder="Your name *">
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Email Address">
-                    <input type="email" name="email" placeholder="Email Address">
+                    <input type="email" name="email" placeholder="Email Address *">
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Subject">
                     <input type="text" name="subject" placeholder="Subject (optional)">
                   </label>
                   <label class="feedback-form__field field field--bordered" aria-label="Your Message">
-                    <textarea name="message" placeholder="Your Message"></textarea>
+                    <textarea name="message" placeholder="Your Message *"></textarea>
+                    <div class="field-error" style="display: none"></div>
                   </label>
                   <button class="feedback-form__btn btn" type="sybmit">Send Message</button>
                 </form>
@@ -855,6 +858,7 @@
   </video>
   <!-- Optional JavaScript-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.easy_number_animate.js"></script>
   <script src="js/isotope.pkgd.min.js"></script>

@@ -19,7 +19,7 @@
 					}
 				}
 
-				&:hover a {
+				&:hover > a {
 					color: $color-orange;
 				}
 
@@ -42,6 +42,14 @@
 			a {
 				color: $color-default-white;
 			}
+		}
+	}
+}
+
+.webpage--beige {
+	.navigation {
+		&__dropdown {
+			background-color: #181818;
 		}
 	}
 }
