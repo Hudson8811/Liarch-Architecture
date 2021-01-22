@@ -1283,7 +1283,7 @@ textarea:invalid {
 }
 
 .webpage--beige .header-search__toggle:hover svg, .webpage--beige .header-search__toggle:focus svg {
-  fill: #e6da89;
+  fill: #e6da89 !important;
 }
 
 .webpage--beige .header-search form input {

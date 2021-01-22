@@ -873,6 +873,10 @@ input[type="search"] {
   color: #999999;
 }
 
+.footer__column-item--current .footer__column-link {
+  color: #ff4800;
+}
+
 .footer__copyright {
   color: #999999;
 }

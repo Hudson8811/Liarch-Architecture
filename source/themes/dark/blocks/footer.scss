@@ -24,8 +24,17 @@
 		&-email {
 			color: $color-default-white;
 		}
+
 		&-link {
 			color: $color-grey;
+		}
+
+		&-item {
+			&--current {
+				#{$self}__column-link {
+					color: $color-orange;
+				}
+			}
 		}
 	}
 
