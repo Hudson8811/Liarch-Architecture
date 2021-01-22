@@ -661,47 +661,9 @@ AOS.init({
 
 /* 17. Modal */
 (function(){
-	var openModalBtns = $('.__js_open-modal');
-	var modal;
-	var modalCloseBtn;
-
-	openModalBtns.each(function() {
-
-		$(this).on('click', function(evt) {
-			evt.preventDefault();
-			var target = $(this).attr('href') ? $(this).attr('href') : $(this).attr('data-href');
-			modal = $(target);
-
-			var overlay = setOverlay(closeModal);
-			body.append(overlay);
-			overlay.fadeIn(DURATION);
-
-			modalCloseBtn = modal.find('.modal__close');
-			modalCloseBtn.on('click', closeModal);
-
-			modal.delay(DURATION).fadeIn(DURATION);
-/*
-			var video = modal.find('video');
-			console.log(video)
-			if (video.length) {
-
-
-			}*/
-		});
-
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
 	});
-
-	function closeModal() {
-		var overlay = $('.overlay');
-		modalCloseBtn.off('click', closeModal);
-		modal.fadeOut(DURATION);
-		overlay.delay(DURATION).fadeOut(DURATION);
-
-		setTimeout(function() {
-			overlay.remove()
-		}, DURATION * 2 + 50);
-
-	}
 })();
 
 /* 18. Packery init */
