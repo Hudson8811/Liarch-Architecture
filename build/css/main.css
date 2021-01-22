@@ -3309,6 +3309,9 @@ textarea:invalid {
     display: none;
     margin-left: 1.66vw;
   }
+  .header__menu-toggle--always {
+    display: block;
+  }
 }
 
 .header__address {
@@ -6746,6 +6749,10 @@ textarea:invalid {
   opacity: 0.7;
 }
 
+.webpage--modern .reward__project-link:hover, .webpage--modern .reward__project-link:focus {
+  color: #cee100;
+}
+
 .webpage--beige .reward__project-name a {
   font-family: "Cinzel", "Georgia", serif;
   color: #ffffff;
@@ -7587,6 +7594,7 @@ textarea:invalid {
 
 .contact-block__offices-item:hover, .contact-block__offices-item:focus {
   outline: none;
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -10031,6 +10039,7 @@ textarea:invalid {
 .our-story--parallax .our-story__btn {
   background-color: #ffffff;
   border-color: #ffffff;
+  color: #ff4800;
   border-radius: 0;
   transition: all 0.3s ease;
   margin-bottom: 15px;
@@ -10044,9 +10053,10 @@ textarea:invalid {
   }
 }
 
-.our-story--parallax .our-story__btn:hover {
+.our-story--parallax .our-story__btn:hover, .our-story--parallax .our-story__btn:focus {
   background-color: #ff4800;
   border-color: #ff4800;
+  color: #ffffff;
 }
 
 @media (min-width: 576px) {
@@ -11642,7 +11652,7 @@ textarea:invalid {
 }
 
 .works--parallax .works-arrow--next::before {
-  content: '';
+  content: "";
   display: none;
   width: 100%;
   height: 1px;
@@ -11669,6 +11679,10 @@ textarea:invalid {
   box-sizing: border-box;
 }
 
+.works--parallax .slide__content:hover {
+  background-color: #ff4800;
+}
+
 @media (min-width: 576px) {
   .works--parallax .slide__content {
     top: unset;
@@ -11686,24 +11700,24 @@ textarea:invalid {
   }
 }
 
-.works--parallax .slide__content-heading {
+.works--parallax .slide-content__heading {
   font-weight: 600;
   font-size: 20px;
 }
 
 @media (min-width: 768px) {
-  .works--parallax .slide__content-heading {
+  .works--parallax .slide-content__heading {
     font-size: 30px;
   }
 }
 
 @media (min-width: 1560px) {
-  .works--parallax .slide__content-heading {
+  .works--parallax .slide-content__heading {
     font-size: 40px;
   }
 }
 
-.works--parallax .slide__content-detail {
+.works--parallax .slide-content__detail {
   font-size: 16px;
   color: #666666;
   letter-spacing: 0.4px;

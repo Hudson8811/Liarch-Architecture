@@ -388,6 +388,10 @@
 		@include media(lg) {
 			display: none;
 			margin-left: 1.66vw;
+
+			&--always {
+				display: block;
+			}
 		}
 	}
 
