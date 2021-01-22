@@ -10,7 +10,7 @@ footer.footer.footer--modern
 					// Footer menu
 					ul.footer__column-menu
 						each item in MODERN_FOOTER_MENU_SERVICES
-							if item.currentIndex === currentIndex
+							if item.currentPage === currentPage
 								li.footer__column-item.footer__column-item--current
 									a.footer__column-link= item.text
 							else
@@ -25,7 +25,7 @@ footer.footer.footer--modern
 					// Footer menu
 					ul.footer__column-menu
 						each item in MODERN_FOOTER_MENU_LINKS
-							if item.currentIndex === currentIndex
+							if item.currentPage === currentPage
 								li.footer__column-item.footer__column-item--current
 									a.footer__column-link= item.text
 							else

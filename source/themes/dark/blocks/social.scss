@@ -1,4 +1,14 @@
 .social {
+	$self: &;
+
+	&--black {
+		#{$self}__link {
+			svg {
+				fill: $color-default-white;
+			}
+		}
+	}
+
 	&__link {
 		border-color: $color-grey2;
 

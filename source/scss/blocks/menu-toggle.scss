@@ -66,3 +66,15 @@
 		}
 	}
 }
+
+.webpage--modern {
+	.menu-toggle {
+		&:hover,
+		&:focus {
+			&::before,
+			&::after {
+				border-top-color: $color-lemon !important;
+			}
+		}
+	}
+}
