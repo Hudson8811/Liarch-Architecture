@@ -15833,8 +15833,12 @@ textarea:invalid {
 
 .homepage-parallax .contacts-parallax__field {
   margin-bottom: 15px;
-  background-color: #ffffff;
   border: none;
+}
+
+.homepage-parallax .contacts-parallax__field input,
+.homepage-parallax .contacts-parallax__field textarea {
+  background-color: #ffffff;
 }
 
 @media (max-height: 800px) {

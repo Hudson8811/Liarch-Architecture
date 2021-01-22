@@ -28,11 +28,12 @@
 
 		&__field {
 			margin-bottom: 15px;
-			background-color: $color-default-white;
 			border: none;
 
 			input,
 			textarea {
+				background-color: $color-default-white;
+
 				@media (max-height: 800px) {
 					padding: 10px 18px;
 				}

@@ -887,12 +887,23 @@ AOS.init({
 		req.send(new FormData(event.target));
 	}
 
+	function checkValid(errs) {
+		var isValid = true;
+
+		errs.each(function () {
+			if ($(this).is(':visible')) {
+				isValid = false;
+			}
+		});
+
+		return isValid;
+	}
+
 	$('.js-form-validate button').on('click', function (e) {
 		var that = $(this),
 				fields = $(this).parent().find('input').add($(this).parent().find('textarea')),
 				form = $(this).parent('form'),
-				errors = form.find('.field-error'),
-				isValid = true;
+				isValid = checkValid(form.find('.field-error'));
 
 		fields.each(function () {
 			var err = $(this).parent().next();
@@ -912,17 +923,9 @@ AOS.init({
 			}
 		});
 
-		errors.each(function () {
-			if ($(this).is(':visible')) {
-				isValid = false;
-				return false;
-			}
-		});
-
 		if (isValid) {
 			form.submit(function () {
 				mail(event, 'php/mail.php');
-				that.fadeOut(300);
 
 				$.fancybox.open({
 					src: '#thanks',
@@ -931,12 +934,16 @@ AOS.init({
 					scrolling: 'no'
 				});
 			});
+
+			setTimeout(function () {
+				form.off('submit');
+			}, 100);
 		} else {
 			e.preventDefault();
 		}
 	});
 
-	$('.js-form-validate .field').on('focusout keyup', function () {
+	$('.js-form-validate .field').on('focusout keyup change', function () {
 		var input = $(this).find('input'),
 				err = input.parent().next(),
 				val = input.val();

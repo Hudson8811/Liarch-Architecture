@@ -29,6 +29,7 @@ const sassLibs = {
 		'source/scss/vendor/swiper-bundle.css',
 		'source/scss/vendor/jquery.pagepiling.css',
 		'source/scss/vendor/jquery.fancybox.css',
+		'source/scss/vendor/revolution.css',
 		'source/scss/utils/normalize.css'],
 	build: 'build/css/'
 };
