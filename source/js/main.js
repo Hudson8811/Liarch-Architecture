@@ -27,6 +27,7 @@
 	19. The same height for blocks in the grid
 	20. Pagepiling
 	21. Form validation
+	22. Fixed footer
 
 -------------------------------------------------*/
 
@@ -769,37 +770,6 @@ AOS.init({
 
 })();
 
-/* Анимация подвала */
-/*(function() {
-
-	$(window).on('load', function() {
-		var footer = $('.footer');
-		var footerHeight = footer.innerHeight();
-		var footerOffset = footer.offset().top;
-
-		footer.css('transform', 'translateY(-' + footerHeight +'px)');
-
-		$(window).on('scroll', function() {
-			var scroll = $(window).scrollTop() + $(window).height();
-			var difference = scroll - footerOffset;
-
-			//console.log(scroll);
-			if(scroll > footerOffset) {
-
-				var shift = difference - footerHeight;
-				console.log(shift);
-				footer.css('transform', 'translateY(' + shift +'px)');
-			}
-		});
-
-		$(window).on('resize', function() {
-			footerHeight = footer.innerHeight();
-			footer.css('transform', 'translateY(-' + footerHeight +'px)');
-		});
-	});
-
-})();*/
-
 /* 19. The same height for blocks in the grid */
 (function(){
 	$(window).on('load', function () {
@@ -955,5 +925,38 @@ AOS.init({
 				err.show().text('Please enter a valid email address.');
 			}
 		}
+	});
+})();
+
+
+/* 22. Fixed footer */
+(function() {
+
+	$(window).on('load', function() {
+		var footer = $('.footer');
+		var footerParent = footer.parent();
+		var footerHeight = footer.innerHeight();
+
+		if (footerHeight <= $(window).height()) {
+			var leftValue = footerParent.css('padding-left');
+			footer.css({ 'position': 'fixed', 'left': leftValue, 'right': '0', 'bottom': '0'});
+			body.css('padding-bottom', footerHeight);
+		} else {
+			body.css('padding-bottom', '0');
+			footer.removeAttr('style')
+		}
+
+		$(window).on('resize', function() {
+			footerHeight = footer.innerHeight();
+
+			if (footerHeight <= $(window).height()) {
+				leftValue = footerParent.css('padding-left');
+				footer.css({ 'position': 'fixed', 'left': leftValue, 'right': '0', 'bottom': '0'});
+				body.css('padding-bottom', footerHeight);
+			} else {
+				body.css('padding-bottom', '0');
+				footer.removeAttr('style');
+			}
+		});
 	});
 })();

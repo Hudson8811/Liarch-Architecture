@@ -80,6 +80,11 @@
 	}
 
 	&__item {
+		//position: absolute;
+		//top: 50%;
+		//left: 0;
+		//transform: translateY(-50%);
+
 		br {
 			display: none;
 		}
@@ -224,6 +229,17 @@
 			fill: $color-orange;
 		}
 	}
+}
+
+.tp-parallax-wrap {
+	//height: 100%;
+	//top: 0 !important;
+	//bottom: 0;
+}
+.tp-loop-wrap,
+.tp-mask-wrap,
+.tp-caption.tp-resizeme {
+	//height: 100%;
 }
 
 .webpage--modern {
