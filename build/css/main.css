@@ -112,6 +112,146 @@
 @import url(animsition.min.css);
 @import url(jquery.pagepiling.css);
 @import url(jquery.fancybox.css);
+/*-------------------------------------------------------------------------------
+  1. Global
+-------------------------------------------------------------------------------*/
+/* 1.1 General */
+html,
+body {
+  overflow: visible;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html ::-webkit-scrollbar-button {
+  display: none;
+}
+
+html ::-webkit-scrollbar-track-piece {
+  background-color: #eaeaea;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background-color: #ff4800;
+  border-radius: none;
+}
+
+html ::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+
+html ::-webkit-resizer {
+  background-color: #666;
+}
+
+html.beige ::-webkit-scrollbar-thumb {
+  background-color: #ffdf91;
+  border-radius: none;
+}
+
+html.modern ::-webkit-scrollbar-thumb {
+  background-color: #cee100;
+  border-radius: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #000000;
+  font-weight: 400;
+  -webkit-locale: auto;
+  white-space: normal;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+input:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+@keyframes text-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/*
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: $color-grey6;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $color-orange;
+	border-radius: none;
+}
+
+::-webkit-scrollbar-corner {
+	background-color: #999;
+}
+
+::-webkit-resizer {
+	background-color: #666;
+}
+*/
 .label-subs {
   position: relative;
 }
@@ -344,146 +484,6 @@ textarea.custom-input {
   transition: width 0.3s ease;
 }
 
-/*-------------------------------------------------------------------------------
-  1. Global
--------------------------------------------------------------------------------*/
-/* 1.1 General */
-html,
-body {
-  overflow: visible;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-html ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-html ::-webkit-scrollbar-button {
-  display: none;
-}
-
-html ::-webkit-scrollbar-track-piece {
-  background-color: #eaeaea;
-}
-
-html ::-webkit-scrollbar-thumb {
-  background-color: #ff4800;
-  border-radius: none;
-}
-
-html ::-webkit-scrollbar-corner {
-  background-color: #999;
-}
-
-html ::-webkit-resizer {
-  background-color: #666;
-}
-
-html.beige ::-webkit-scrollbar-thumb {
-  background-color: #ffdf91;
-  border-radius: none;
-}
-
-html.modern ::-webkit-scrollbar-thumb {
-  background-color: #cee100;
-  border-radius: none;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-family: "Jost", "Arial", sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-  color: #000000;
-  font-weight: 400;
-  -webkit-locale: auto;
-  white-space: normal;
-}
-
-main {
-  position: relative;
-  z-index: 1;
-  flex-grow: 1;
-  background-color: #ffffff;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  text-decoration: none;
-}
-
-input,
-select,
-textarea {
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
-  outline: 0;
-  -webkit-appearance: none;
-}
-
-input:invalid,
-textarea:invalid {
-  box-shadow: none;
-}
-
-@keyframes text-rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-/*
-::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-}
-
-::-webkit-scrollbar-button {
-	display: none;
-}
-
-::-webkit-scrollbar-track {
-}
-
-::-webkit-scrollbar-track-piece {
-	background-color: $color-grey6;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: $color-orange;
-	border-radius: none;
-}
-
-::-webkit-scrollbar-corner {
-	background-color: #999;
-}
-
-::-webkit-resizer {
-	background-color: #666;
-}
-*/
 /* 1.2  Typography */
 @font-face {
   font-family: "Jost";
