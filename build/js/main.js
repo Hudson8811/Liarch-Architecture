@@ -881,6 +881,7 @@ AOS.init({
 			if ($(this).prop('required') === true) {
 				if ($(this).val().length === 0) {
 					err.show().text('Please enter a value.');
+					isValid = false;
 				} else {
 					err.hide().text('');
 				}
@@ -889,6 +890,7 @@ AOS.init({
 			if ($(this).attr('type') === "email") {
 				if (validateEmail($(this).val()) === false) {
 					err.show().text('Please enter a valid email address.');
+					isValid = false;
 				}
 			}
 		});
