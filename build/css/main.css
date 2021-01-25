@@ -348,12 +348,49 @@ textarea.custom-input {
   1. Global
 -------------------------------------------------------------------------------*/
 /* 1.1 General */
-html, body {
+html,
+body {
   overflow: visible;
 }
 
 html {
   box-sizing: border-box;
+}
+
+html ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html ::-webkit-scrollbar-button {
+  display: none;
+}
+
+html ::-webkit-scrollbar-track-piece {
+  background-color: #eaeaea;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background-color: #ff4800;
+  border-radius: none;
+}
+
+html ::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+
+html ::-webkit-resizer {
+  background-color: #666;
+}
+
+html.beige ::-webkit-scrollbar-thumb {
+  background-color: #ffdf91;
+  border-radius: none;
+}
+
+html.modern ::-webkit-scrollbar-thumb {
+  background-color: #cee100;
+  border-radius: none;
 }
 
 *,
@@ -417,32 +454,36 @@ textarea:invalid {
   }
 }
 
+/*
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+	width: 10px;
+	height: 10px;
 }
 
 ::-webkit-scrollbar-button {
-  display: none;
+	display: none;
+}
+
+::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: #eaeaea;
+	background-color: $color-grey6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ff4800;
-  border-radius: none;
+	background-color: $color-orange;
+	border-radius: none;
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: #999;
+	background-color: #999;
 }
 
 ::-webkit-resizer {
-  background-color: #666;
+	background-color: #666;
 }
-
+*/
 /* 1.2  Typography */
 @font-face {
   font-family: "Jost";
@@ -2689,35 +2730,6 @@ textarea:invalid {
 /* 1.23 Webpage */
 .webpage--beige {
   background-color: #4d524b;
-  /*
-		::-webkit-scrollbar {
-			width: 10px;
-			height: 10px;
-		}
-
-		::-webkit-scrollbar-button {
-			display: none;
-		}
-
-		::-webkit-scrollbar-track {
-		}
-
-		::-webkit-scrollbar-track-piece {
-			background-color: $color-geyser;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background-color: $color-default-black;
-			border-radius: none;
-		}
-
-		::-webkit-scrollbar-corner {
-			background-color: #999;
-		}
-
-		::-webkit-resizer {
-			background-color: #666;
-		}*/
 }
 
 .webpage--beige main {

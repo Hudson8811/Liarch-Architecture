@@ -10,6 +10,42 @@
   color: #ffffff;
 }
 
+html ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html ::-webkit-scrollbar-button {
+  display: none;
+}
+
+html ::-webkit-scrollbar-track-piece {
+  background-color: #eaeaea;
+}
+
+html ::-webkit-scrollbar-thumb {
+  background-color: #232323;
+  border-radius: none;
+}
+
+html ::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+
+html ::-webkit-resizer {
+  background-color: #666;
+}
+
+html.beige ::-webkit-scrollbar-thumb {
+  background-color: #232323;
+  border-radius: none;
+}
+
+html.modern ::-webkit-scrollbar-thumb {
+  background-color: #232323;
+  border-radius: none;
+}
+
 body {
   background-color: #181818;
 }
