@@ -123,7 +123,7 @@
 		@include media(md) {
 			padding-top: 0;
 		}
-		/*
+
 		#{$self}__nav {
 			position: absolute;
 			top: 0;
@@ -152,26 +152,24 @@
 				&:hover,
 				&:focus {
 					outline: none;
-					background-color: $color-orange !important;
-					border-color: $color-orange !important;
+					background-color: transparent !important;
+					border-color: transparent !important;
 
 					svg {
-						fill: $color-default-white !important;
+						fill: $color-orange !important;
 					}
 				}
 
-				&--next {
-					margin-left: 12px;
+				@include media(md) {
+					border: solid 1px $color-default-white !important;
+					&:hover,
+					&:focus {
+						background-color: $color-orange !important;
+						border: solid 1px $color-orange;
 
-					@include media(md) {
-						right: 3.125vw;
-						margin: 0;
-					}
-				}
-
-				&--prev {
-					@include media(md) {
-						left: 3.125vw;
+						svg {
+							fill: $color-default-white !important;
+						}
 					}
 				}
 
@@ -234,7 +232,6 @@
 				}
 			}
 		}
-		*/
 	}
 
 	&__nav {

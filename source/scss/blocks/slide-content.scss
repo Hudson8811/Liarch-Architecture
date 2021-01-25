@@ -8,6 +8,8 @@
 	@include transition(all);
 
 	@include media(sm) {
+		padding: 20px;
+
 		&:hover {
 			background-color: $color-orange;
 
@@ -21,10 +23,6 @@
 				color: $color-default-white;
 			}
 		}
-	}
-
-	@include media(sm) {
-		padding: 20px;
 	}
 
 	@include media(lg) {
@@ -85,8 +83,15 @@
 
 			#{$self}__heading {
 				color: $color-default-black;
-				@include media(md) {
-					a {
+
+				a {
+					color: $color-default-black;
+
+					&:hover,
+					&:focus {
+						color: $color-orange;
+					}
+					@include media(md) {
 						color: $color-default-black;
 
 						&:hover,
