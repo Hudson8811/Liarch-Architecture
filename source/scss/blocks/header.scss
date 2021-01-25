@@ -4,6 +4,7 @@
 	position: relative;
 	z-index: 2;
 	border-top: solid 5px $color-orange--dark;
+	background-color: $color-default-white;
 
 	&--aside {
 		position: fixed;

@@ -1556,10 +1556,11 @@ textarea.custom-input {
 .navigation__dropdown {
   position: absolute;
   z-index: 1;
-  display: none;
   min-width: 400px;
   background-color: #ffffff;
-  border: solid 1px #dddddd;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .navigation__dropdown--columns {
@@ -1580,7 +1581,8 @@ textarea.custom-input {
 }
 
 .navigation__dropdown:hover {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (min-width: 992px) {
@@ -1743,7 +1745,8 @@ textarea.custom-input {
 }
 
 .navigation__link:hover + .navigation__dropdown, .navigation__link:focus + .navigation__dropdown {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .navigation__link:active {
@@ -2960,6 +2963,7 @@ textarea.custom-input {
   position: relative;
   z-index: 2;
   border-top: solid 5px #f5480c;
+  background-color: #ffffff;
 }
 
 .header--aside {

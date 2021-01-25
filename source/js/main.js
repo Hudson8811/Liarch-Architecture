@@ -164,6 +164,7 @@ AOS.init({
 		evt.preventDefault();
 
 		$(this).next().slideToggle(DURATION);
+
 	});
 
 	function close() {

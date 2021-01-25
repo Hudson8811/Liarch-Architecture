@@ -166,11 +166,15 @@
 	&__dropdown {
 		position: absolute;
 		z-index: 1;
-		display: none;
+		//display: none;
 		//width: 670px;
 		min-width: 400px;
 		background-color: $color-default-white;
-		border: solid 1px $color-grey4;
+		//border: solid 1px $color-grey4;
+		opacity: 0;
+		pointer-events: none;
+
+		@include transition(opacity);
 
 		&--columns {
 			width: 670px;
@@ -186,7 +190,8 @@
 		}
 
 		&:hover {
-			display: block;
+			opacity: 1;
+			pointer-events: auto;
 		}
 
 		@include media(lg) {
@@ -337,7 +342,8 @@
 			}
 
 			& + #{$self}__dropdown {
-				display: block;
+				opacity: 1;
+				pointer-events: auto;
 			}
 		}
 
