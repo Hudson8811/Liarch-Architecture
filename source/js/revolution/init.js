@@ -58,9 +58,9 @@ tpj(document).ready(function() {
 				levels:[5,10,15,20,25,30,35,40,45,50,47,48,49,50,51,55],
 				disable_onmobile: 'on'
 			},
-			responsiveLevels:[2048,1600,1260, 992],
-			gridwidth:[1370,1100,900, 700],
-			gridheight:[800],
+			/*responsiveLevels:[1600,1200,990, 768],
+			gridwidth:[1520,1110,930, 690],
+			gridheight:[800],*/
 			lazyType:"none",
 			shadow:0,
 			spinner:"off",

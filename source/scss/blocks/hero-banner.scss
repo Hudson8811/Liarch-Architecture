@@ -80,6 +80,22 @@
 	}
 
 	&__item {
+		min-width: 300px;
+		max-width: 100%;
+		@include media(sm) {
+			width: 510px;
+		}
+		@include media(md) {
+			width: 690px;
+		}
+		@include media(xl) {
+			width: 1110px;
+		}
+		@include media(xxl) {
+			width: 1520px;
+		}
+
+
 		br {
 			display: none;
 		}
