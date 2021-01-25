@@ -936,7 +936,7 @@ AOS.init({
 (function() {
 
 	$(window).on('load', function() {
-		var footer = $('.footer');
+		var footer = $('.footer:not(.footer--technical)');
 		var footerParent = footer.parent();
 		var footerHeight = footer.innerHeight();
 

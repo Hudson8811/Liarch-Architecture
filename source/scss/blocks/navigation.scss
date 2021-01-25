@@ -12,6 +12,12 @@
 			padding-right: 10px;
 		}
 
+		#{$self}__dropdown {
+			display: none;
+			opacity: 1;
+			pointer-events: auto;
+		}
+
 		#{$self}__item {
 			margin-right: 0 !important;
 			margin-bottom: 12px;
@@ -37,6 +43,8 @@
 
 				& + #{$self}__dropdown {
 					display: none;
+					opacity: 1;
+					pointer-events: auto;
 				}
 			}
 		}

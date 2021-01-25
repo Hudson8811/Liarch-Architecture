@@ -1417,6 +1417,12 @@ textarea.custom-input {
   padding-right: 10px;
 }
 
+.navigation--column .navigation__dropdown {
+  display: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .navigation--column .navigation__item {
   margin-right: 0 !important;
   margin-bottom: 12px;
@@ -1445,6 +1451,8 @@ textarea.custom-input {
 
 .navigation--column .navigation__link:hover + .navigation__dropdown, .navigation--column .navigation__link:focus + .navigation__dropdown {
   display: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .navigation--column .navigation__dropdown {
