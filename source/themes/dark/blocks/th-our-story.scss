@@ -1,0 +1,26 @@
+.th-our-story {
+	&__exp {
+		border-bottom-color: $color-default-black;
+		background-image: url("../img/exp-bg-dark.jpg");
+
+		@include media(sm) {
+			border-right-color: $color-default-white;
+		}
+
+		&-title {
+			color: $color-default-white;
+
+			&::before {
+				border-top: solid 4px $color-default-white;
+			}
+		}
+
+		&-value {
+			color: $color-default-white;
+		}
+	}
+
+	&__text {
+		color: $color-default-white;
+	}
+}

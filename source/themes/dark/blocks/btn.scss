@@ -1,3 +1,16 @@
+.btn {
+	&--technical {
+		color: $color-default-white;
+		border-color: $color-default-white;
+
+		&:hover,
+		&:focus {
+			color: $color-default-black;
+			background-color: $color-cream-brulee;
+		}
+	}
+}
+
 .webpage--modern {
 	.btn--outline {
 		color: $color-default-white;

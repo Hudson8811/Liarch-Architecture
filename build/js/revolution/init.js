@@ -67,7 +67,7 @@ tpj(document).ready(function() {
 			stopLoop:"on",
 			stopAfterLoops:0,
 			shuffle:"off",
-			autoHeight:"off",
+			autoHeight:"on",
 			fullScreenAlignForce:"off",
 			fullScreenOffsetContainer: ".navbar",
 			fullScreenOffset: "",

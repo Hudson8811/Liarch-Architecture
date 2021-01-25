@@ -1,0 +1,34 @@
+.awards-table {
+	&__heading {
+		color: $color-default-white;
+	}
+
+	tbody tr {
+		@include transition(background-color);
+
+		&:hover {
+			background-color: #181818;
+		}
+	}
+
+	tr {
+		border-top-color: #181818;
+	}
+
+	th {
+		@include text(10px, 1, $color-grey);
+	}
+
+	td {
+		color: $color-default-white;
+
+		a {
+			color: $color-default-white;
+
+			&:hover,
+			&:focus {
+				color: $color-default-white;
+			}
+		}
+	}
+}

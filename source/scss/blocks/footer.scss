@@ -154,6 +154,7 @@
 				&:hover,
 				&:focus {
 					color: $color-default-black;
+
 					&::before {
 						opacity: 1;
 					}

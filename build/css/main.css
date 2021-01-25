@@ -652,6 +652,7 @@ textarea:invalid {
 }
 
 .btn--technical:hover, .btn--technical:focus {
+  border-color: #ffdf91;
   background-color: #ffdf91;
 }
 
@@ -16942,6 +16943,7 @@ textarea:invalid {
   max-width: 120px;
   padding: 15px;
   box-sizing: border-box;
+  cursor: pointer;
   font-size: 12px;
   line-height: 1.7;
   color: #999999;

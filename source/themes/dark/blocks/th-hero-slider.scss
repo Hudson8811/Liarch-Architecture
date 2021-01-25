@@ -1,0 +1,48 @@
+.th-hero-slider {
+	&__counter {
+		color: $color-default-white;
+
+		span {
+			@include media(sm) {
+				color: $color-grey;
+			}
+		}
+
+		span:first-child {
+			@include media(sm) {
+				color: $color-default-white;
+			}
+		}
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__text {
+		color: $color-default-white;
+
+		@include media(sm) {
+			color: $color-grey2;
+		}
+	}
+
+	&__nav {
+		&-btn {
+			svg {
+				fill: $color-default-white;
+			}
+
+			&:hover,
+			&:focus {
+				color: $color-cream-brulee;
+			}
+		}
+	}
+
+	&__thumb {
+		&.swiper-slide-thumb-active {
+			color: $color-default-white;
+		}
+	}
+}

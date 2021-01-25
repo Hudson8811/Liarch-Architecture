@@ -1,4 +1,26 @@
 .video-btn {
+	$self: &;
+
+	&--technical {
+		#{$self}__btn {
+			border-color: $color-default-white;
+
+			svg {
+				fill: $color-default-white;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-cream-brulee;
+				background-color: $color-cream-brulee;
+
+				svg {
+					fill: $color-default-black;
+				}
+			}
+		}
+	}
+
 	&__text {
 		color: $color-default-white;
 	}

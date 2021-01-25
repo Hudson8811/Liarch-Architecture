@@ -1,0 +1,48 @@
+extends templates/main-technical
+block variables
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Works Grid 3 Dark';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let isDark = true;
+	- let currentPage = 3.13; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 3; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let bodyModClass = ' webpage--technical-drawing';
+
+block header
+	include modules/header-technical
+	include modules/menu
+block content
+	article.works-page.works-page--grid
+		header.works-page__header
+			.works-page__inner.container
+				h1.works-page__heading.heading Architecture is a visual art, <br>and the building speak for themeselves
+				.works-page__text Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Self iPhone Kickstarter, drinking vinegar jean vinegar stumptown yr pop-up artisan.
+		.works-page__content
+			.works-page__inner.works-page__inner--wide.container
+
+				// Works
+				section.works
+					header.works__header
+
+						// Filter
+						.works__filter.filter.filter--technical
+							each item in ['all', 'architecture', 'interior', 'cgi', 'products']
+								- let filterVal = item === 'all' ? '*' : '.__js_' + item;
+								- let activeClass = item === 'all' ? ' filter__item--active' : '';
+								button(class="filter__item" + activeClass, type="button", data-filter= filterVal)= item
+
+					// Works list
+					ul.works__list.row.__js_works-filter
+						+work-card-4('01.jpg', 'Architecture, Interior', 'ODE Kids Garden, Salzburg')(class="works__item __js_architecture __js_interior")
+
+						+work-card-4('02.jpg', 'Architecture, Interior', 'Grido Museum, Denmark')(class="works__item __js_architecture __js_interior")
+
+						+work-card-4('03.jpg', 'CGI, Products', 'E5 Adjoining Houses, Italy')(class="works__item __js_cgi __js_products")
+
+						+work-card-4('04.jpg', 'Architecture, Interior, CGI', 'AirBnb Homestay Burtan')(class="works__item __js_architecture __js_interior __js_cgi")
+
+						+work-card-4('05.jpg', 'CGI, Products', 'Dogel Nord Station')(class="works__item __js_cgi __js_products")
+
+						+work-card-4('06.jpg', 'Architecture, Interior, CGI', 'AirBnb Homestay Burtan')(class="works__item __js_architecture __js_interior __js_cgi")
+
+block footer
+	include modules/footer-technical

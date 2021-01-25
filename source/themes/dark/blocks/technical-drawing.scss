@@ -1,0 +1,25 @@
+.technical-drawing {
+	$self: &;
+
+	border-color: $color-default-white;
+
+	&__section {
+		&--flex {
+			#{$self}__section {
+				&-column {
+					& + * {
+						border-top-color: $color-default-white;
+
+						@include media(lg) {
+							border-left-color: $color-default-white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__section + &__section {
+		border-top-color: $color-default-white;
+	}
+}

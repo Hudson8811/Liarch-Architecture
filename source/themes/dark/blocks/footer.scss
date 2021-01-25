@@ -77,4 +77,65 @@
 			}
 		}
 	}
+
+	&--technical {
+		border-top-color: $color-default-white;
+		background-image: none;
+		background-color: transparent;
+
+		#{$self}__top {
+			border-bottom-color: $color-default-white;
+			background-color: #181818;
+			background-image: none;
+
+			p {
+				color: $color-default-white;
+			}
+		}
+
+		#{$self}__email {
+			color: $color-default-white;
+		}
+
+		#{$self}__column {
+			&-item--current {
+				#{$self}__column-link {
+					color: $color-grey3;
+
+					&::before {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 14px;
+						position: absolute;
+						top: 55%;
+						left: 0;
+						z-index: -1;
+						background-color: $color-cream-brulee;
+						opacity: 1;
+						@include transition(opacity);
+					}
+
+					&:hover,
+					&:focus {
+						color: $color-grey3;
+					}
+				}
+			}
+
+			&-link {
+				&:hover,
+				&:focus {
+					color: $color-grey3;
+				}
+			}
+		}
+
+		#{$self}__phone {
+			&:hover,
+			&:focus {
+				color: $color-grey3;
+			}
+		}
+	}
 }

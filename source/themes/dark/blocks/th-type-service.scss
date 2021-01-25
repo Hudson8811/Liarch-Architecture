@@ -1,0 +1,77 @@
+.th-type-service {
+	$self: &;
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__text {
+		max-width: 660px;
+
+		@include text(16px, 1.7, $color-grey2);
+
+		@include media(xl) {
+			font-size: 20px;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		width: calc(100% + 80px);
+		margin-left: -40px;
+		padding: 0;
+
+		@include media(md) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+
+	&__item {
+		border-top-color: $color-default-white;
+
+		@include media(md) {
+			border-color: $color-default-white;
+		}
+
+		a {
+			&:hover,
+			&:focus {
+				#{$self}__item-link {
+					color: $color-grey3;
+				}
+			}
+		}
+
+		&-icon {
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		&-heading {
+			color: $color-default-white;
+		}
+
+		&-link {
+			color: $color-default-white;
+		}
+	}
+
+	&__quote {
+		color: $color-default-white;
+	}
+
+	&__sign {
+		img {
+		}
+	}
+
+	&__cite {
+		color: $color-default-white;
+
+		span {
+			color: $color-grey;
+		}
+	}
+}
