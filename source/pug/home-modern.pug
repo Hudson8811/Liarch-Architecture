@@ -6,6 +6,7 @@ block variables
 	- let currentPage = 1.02; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 1; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 	- let bodyModClass = ' webpage--modern';
+	- let htmlClass = 'modern';
 
 block header
 	include modules/header-modern
@@ -110,15 +111,15 @@ block content
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") AAG Winner 2020
+									a(href="#") AAG Winner 2020
 								.reward__project-text Canbin Wood In Forest
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") Top 25 Best Architectural In Poland
+									a(href="#") Top 25 Best Architectural In Poland
 								.reward__project-text Daniel Villa, Romania
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2019") 2019
 					.reward__logo
@@ -127,21 +128,21 @@ block content
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") The Architect of Season Winner
+									a(href="#") The Architect of Season Winner
 								.reward__project-text Architect Thiago Alcantara
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") The Green of Arch by AAL US 2019, Slovakia
+									a(href="#") The Green of Arch by AAL US 2019, Slovakia
 								.reward__project-text Endora Commercial Center, Germany
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") Art of The Year 2019
+									a(href="#") Art of The Year 2019
 								.reward__project-text Reuse Cabins
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2018") 2018
 					.reward__logo
@@ -150,9 +151,9 @@ block content
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
-									a(href="") The Trending of Interior 2018 by OKA
+									a(href="#") The Trending of Interior 2018 by OKA
 								.reward__project-text B65 Apartment, Sepro Building, Italy
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 
 	// Latest articles
 	section.webpage__latest-articles.latest-articles
@@ -169,7 +170,7 @@ block content
 						.latest-article__content
 							.latest-article__detail
 								.latest-article__category
-									a(href="#") Knowlegde
+									a(href= URLS.news.grid) Knowlegde
 								time.latest-article__date(datetime="2020-08-25") Aug 25, 2020
 							h3.latest-article__heading
 								a(href= URLS.news.post) Tip use CGI with daylight vray 2.0 on 3DsMax

@@ -6,6 +6,7 @@ block variables
 	- let currentPage = 2.03; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
 	- let currentSection = 2; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
 	- let bodyModClass = ' webpage--beige';
+	- let htmlClass = 'beige';
 
 block header
 	include modules/header-4
@@ -22,7 +23,7 @@ block content
 					.studio-hero__text We passioned with the space & create the values vsustainable over time
 					.studio-hero__buttons
 						.video-btn.video-btn--outline
-							a.video-btn__btn.__js_open-modal(href="#ourStory")
+							a.video-btn__btn.fancybox(href="#ourStory")
 								span.visually-hidden Play
 								+icon('play')(width="20", height="20")
 							span.video-btn__text view our story
@@ -205,13 +206,13 @@ block content
 								.reward__project-name
 									a(href="#") AAG Winner 2020
 								.reward__project-text Canbin Wood In Forest
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") Top 25 Best Architectural In Poland
 								.reward__project-text Daniel Villa, Romania
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2019") 2019
 					.reward__logo
@@ -222,19 +223,19 @@ block content
 								.reward__project-name
 									a(href="#") The Architect of Season Winner
 								.reward__project-text Architect Thiago Alcantara
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") The Green of Arch by AAL US 2019, Slovakia
 								.reward__project-text Endora Commercial Center, Germany
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 						.reward__project
 							.reward__project-wrap
 								.reward__project-name
 									a(href="#") Art of The Year 2019
 								.reward__project-text Reuse Cabins
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 				li.rewards__item.reward(data-aos="fade")
 					time.reward__date(datetime="2018") 2018
 					.reward__logo
@@ -245,7 +246,7 @@ block content
 								.reward__project-name
 									a(href="#") The Trending of Interior 2018 by OKA
 								.reward__project-text B65 Apartment, Sepro Building, Italy
-							a.reward__project-link(href="#") see project
+							a.reward__project-link(href= URLS.works.singleStandart) see project
 
 block footer
 	include modules/footer

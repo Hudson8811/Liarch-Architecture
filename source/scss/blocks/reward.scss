@@ -138,6 +138,19 @@
 	}
 }
 
+.webpage--modern {
+	.reward {
+		&__project {
+			&-link {
+				&:hover,
+				&:focus {
+					color: $color-lemon;
+				}
+			}
+		}
+	}
+}
+
 .webpage--beige {
 	.reward {
 		&__project {

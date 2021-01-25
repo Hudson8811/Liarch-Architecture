@@ -3,6 +3,36 @@
 
 	background-color: #232323;
 
+	&--technical {
+		background-color: transparent;
+
+		#{$self}__card {
+			background-color: #181818;
+			border-color: #181818;
+
+			&-icon {
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+
+		#{$self}__header {
+			@include media(lg) {
+				margin-bottom: 60px;
+			}
+			@include media(xl) {
+				margin-bottom: 90px;
+			}
+		}
+
+		#{$self}__heading {
+			& + * {
+				margin-top: 20px;
+			}
+		}
+	}
+
 	&__card {
 		background-color: #181818;
 

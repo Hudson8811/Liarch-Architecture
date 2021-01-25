@@ -195,16 +195,19 @@ block content
 					.col-12.col-lg-6
 
 						// Feedback form
-						form.about__feedback.feedback-form(action="#", method="post")
+						form.about__feedback.feedback-form.js-form-validate(action="php/mail.php", method="post")
 							label.feedback-form__field.field.field--bordered(aria-label="Your name")
-								input(type="text", name="name", placeholder="Your name")
+								input(type="text", name="name", placeholder="Your name *")
+							.field-error(style='display: none')
 							label.feedback-form__field.field.field--bordered(aria-label="Email Address")
-								input(type="email", name="email", placeholder="Email Address")
+								input(type="email", name="email", placeholder="Email Address *")
+							.field-error(style='display: none')
 							label.feedback-form__field.field.field--bordered(aria-label="Subject")
 								input(type="text", name="subject", placeholder="Subject (optional)")
 							label.feedback-form__field.field.field--bordered(aria-label="Your Message")
-								textarea(name="message", placeholder="Your Message")
-							button.feedback-form__btn.btn(type="sybmit") Send Message
+								textarea(name="message", placeholder="Your Message *")
+							.field-error(style='display: none')
+							button.feedback-form__btn.btn(type="submit") Send Message
 
 block footer
 	include modules/footer-2

@@ -1,4 +1,26 @@
 .work-card {
+	$self: &;
+
+	&--grid {
+		border-color: $color-default-white;
+
+		#{$self}__content {
+			border-top-color: $color-default-white;
+		}
+
+		#{$self}__button {
+			border-left-color: $color-default-white;
+
+			svg {
+				fill: $color-default-white;
+			}
+		}
+
+		#{$self}__heading a {
+			color: $color-default-white;
+		}
+	}
+
 	&__heading a {
 		color: $color-default-white;
 	}

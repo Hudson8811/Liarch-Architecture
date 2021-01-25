@@ -1,0 +1,44 @@
+.th-latest-projects {
+	&__header {
+		background-image: url("../img/th-latest-bg-dark.jpg");
+	}
+
+	&__heading {
+		color: $color-default-white;
+	}
+
+	&__btn {
+		border-color: $color-default-white;
+
+		svg {
+			fill: $color-default-white;
+
+			@include transition(fill);
+		}
+
+		&:hover,
+		&:focus {
+			border-color: $color-default-white;
+			background-color: $color-cream-brulee;
+
+			svg {
+				fill: $color-default-black;
+			}
+		}
+
+		&--prev {
+		}
+		&--next {
+		}
+
+		& + & {
+			margin-left: 9px;
+		}
+	}
+
+	&__carousel {
+		width: calc(100% + 8px);
+		margin-left: -4px;
+		margin-bottom: -4px;
+	}
+}

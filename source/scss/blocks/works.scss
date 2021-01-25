@@ -259,7 +259,7 @@
 				}
 
 				&::before {
-					content: '';
+					content: "";
 					display: none;
 					width: 100%;
 					height: 1px;
@@ -286,6 +286,14 @@
 				background-color: $color-default-white;
 				box-sizing: border-box;
 
+				&:hover {
+					background-color: $color-orange;
+
+					.slide-content__heading a,
+					.slide-content__detail {
+					}
+				}
+
 				@include media(sm) {
 					top: unset;
 					right: unset;
@@ -300,7 +308,7 @@
 				}
 			}
 
-			&__content-heading {
+			&-content__heading {
 				font-weight: 600;
 				font-size: 20px;
 
@@ -313,7 +321,7 @@
 				}
 			}
 
-			&__content-detail {
+			&-content__detail {
 				font-size: 16px;
 				color: $color-grey2;
 				letter-spacing: 0.4px;

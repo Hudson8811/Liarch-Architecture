@@ -31,6 +31,10 @@
 
 			&:hover,
 			&:focus {
+				&::after {
+					display: none;
+				}
+
 				& + #{$self}__dropdown {
 					display: none;
 				}

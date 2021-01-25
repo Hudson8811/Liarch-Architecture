@@ -110,5 +110,12 @@
 				}
 			}
 		}
+
+		&__name {
+			&:hover,
+			&:focus {
+				color: $color-bird-flower;
+			}
+		}
 	}
 }

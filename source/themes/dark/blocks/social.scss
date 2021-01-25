@@ -9,6 +9,25 @@
 		}
 	}
 
+	&--technical {
+		#{$self}__link {
+			border-color: $color-default-white;
+
+			svg {
+				fill: $color-default-white;
+			}
+
+			&:hover,
+			&:focus {
+				border-color: $color-default-white;
+
+				svg {
+					fill: $color-default-white;
+				}
+			}
+		}
+	}
+
 	&__link {
 		border-color: $color-grey2;
 

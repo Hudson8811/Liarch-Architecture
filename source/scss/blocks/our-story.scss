@@ -1,203 +1,203 @@
 .our-story {
 	$self: &;
 
-  overflow: hidden;
+	overflow: hidden;
 
-  &__inner {
-    padding-bottom: 60px;
-    border-bottom: solid 1px $color-grey5;
+	&__inner {
+		padding-bottom: 60px;
+		border-bottom: solid 1px $color-grey5;
 
-    @include media(xl) {
-      //max-width: $width--full;
-      padding-bottom: 104px;
-    }
-  }
+		@include media(xl) {
+			//max-width: $width--full;
+			padding-bottom: 104px;
+		}
+	}
 
-  &__intro {
-    margin-bottom: 20px;
+	&__intro {
+		margin-bottom: 20px;
 
-    @include media(md) {
-      margin-bottom: 0;
-    }
+		@include media(md) {
+			margin-bottom: 0;
+		}
 
-    @include media(xl) {
-      padding-right: 100px;
-    }
+		@include media(xl) {
+			padding-right: 100px;
+		}
 
-    &-wrapper {
-      position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
+		&-wrapper {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			transform: translateX(-50%);
 
-      @include media(lg) {
-        left: 14.1%;
-        bottom: 16.9%;
-        transform: translateX(0);
-      }
-    }
+			@include media(lg) {
+				left: 14.1%;
+				bottom: 16.9%;
+				transform: translateX(0);
+			}
+		}
 
-    &-text {
-      width: 200px;
+		&-text {
+			width: 200px;
 
-      @include text(16px, 1.6, $color-default-white);
+			@include text(16px, 1.6, $color-default-white);
 
-      @include media(lg) {
-        width: 290px;
-        font-size: 24px;
-      }
+			@include media(lg) {
+				width: 290px;
+				font-size: 24px;
+			}
 
-      @include media(xxl) {
-        width: 360px;
-        font-size: 30px;
-      }
-    }
-  }
+			@include media(xxl) {
+				width: 360px;
+				font-size: 30px;
+			}
+		}
+	}
 
-  &__image {
-    position: relative;
+	&__image {
+		position: relative;
 
-    @include media(xxl) {
-      width: 850px;
-      margin-left: -240px;
-    }
+		@include media(xxl) {
+			width: 850px;
+			margin-left: -240px;
+		}
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 
-  &__exp {
-    display: flex;
-    margin-bottom: 12px;
+	&__exp {
+		display: flex;
+		margin-bottom: 12px;
 
-    @include text(16px, 1.33, $color-default-white);
-    font-weight: 600;
+		@include text(16px, 1.33, $color-default-white);
+		font-weight: 600;
 
-    @include media(xxl) {
-      margin-bottom: 25px;
-    }
+		@include media(xxl) {
+			margin-bottom: 25px;
+		}
 
-    &-value {
-      margin-right: 10px;
-      font-size: 72px;
-      line-height: 1;
-      font-weight: 300;
-      letter-spacing: -0.025em;
-      align-self: center;
+		&-value {
+			margin-right: 10px;
+			font-size: 72px;
+			line-height: 1;
+			font-weight: 300;
+			letter-spacing: -0.025em;
+			align-self: center;
 
-      @include media(lg) {
-        margin-right: 24px;
-        font-size: 112px;
-      }
+			@include media(lg) {
+				margin-right: 24px;
+				font-size: 112px;
+			}
 
-      @include media(xxl) {
-        margin-right: 36px;
-        font-size: 150px;
-      }
-    }
+			@include media(xxl) {
+				margin-right: 36px;
+				font-size: 150px;
+			}
+		}
 
-    &-text {
-      max-width: 110px;
-      text-transform: uppercase;
-      align-self: center;
+		&-text {
+			max-width: 110px;
+			text-transform: uppercase;
+			align-self: center;
 
-      @include media(lg) {
-        max-width: 178px;
-        font-size: 24px;
-      }
+			@include media(lg) {
+				max-width: 178px;
+				font-size: 24px;
+			}
 
-      @include media(xxl) {
-        max-width: 200px;
-        font-size: 30px;
-      }
-    }
-  }
+			@include media(xxl) {
+				max-width: 200px;
+				font-size: 30px;
+			}
+		}
+	}
 
-  &__content {
-    padding-bottom: 5px;
-    @include media(xxl) {
-      //padding-top: 60px;
-      //align-self: flex-start;
-      transform: translateX(75px);
-    }
-  }
+	&__content {
+		padding-bottom: 5px;
+		@include media(xxl) {
+			//padding-top: 60px;
+			//align-self: flex-start;
+			transform: translateX(75px);
+		}
+	}
 
-  &__heading {
-    margin-bottom: 20px;
+	&__heading {
+		margin-bottom: 20px;
 
-    @include media(xl) {
-      margin-bottom: 30px;
-    }
+		@include media(xl) {
+			margin-bottom: 30px;
+		}
 
-    @include media(xxl) {
-      margin-bottom: 37px;
-    }
-  }
+		@include media(xxl) {
+			margin-bottom: 37px;
+		}
+	}
 
-  &__text {
-    margin-bottom: 20px;
+	&__text {
+		margin-bottom: 20px;
 
-    @include text(14px, 1.45, $color-grey2);
+		@include text(14px, 1.45, $color-grey2);
 
-    @include media(xl) {
-      max-width: 405px;
-      margin-bottom: 24px;
-      font-size: 18px;
-    }
+		@include media(xl) {
+			max-width: 405px;
+			margin-bottom: 24px;
+			font-size: 18px;
+		}
 
-    @include media(xxl) {
-      margin-bottom: 42px;
-      line-height: 1.65;
-    }
+		@include media(xxl) {
+			margin-bottom: 42px;
+			line-height: 1.65;
+		}
 
-    &--style-bolditalic {
-      font-size: 16px;
-      color: $color-default-black;
-      font-style: italic;
+		&--style-bolditalic {
+			font-size: 16px;
+			color: $color-default-black;
+			font-style: italic;
 
-      @include media(xl) {
-        font-size: 22px;
-      }
+			@include media(xl) {
+				font-size: 22px;
+			}
 
-      @include media(xxl) {
-        line-height: 1.45;
-      }
-    }
-  }
+			@include media(xxl) {
+				line-height: 1.45;
+			}
+		}
+	}
 
-  &__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 30px;
 
-    @include media(xxl) {
-      margin-top: 60px;
-      transform: translateY(10px);
-    }
-  }
+		@include media(xxl) {
+			margin-top: 60px;
+			transform: translateY(10px);
+		}
+	}
 
-  &__btn {
-    margin-right: 10px;
-    align-self: flex-start;
+	&__btn {
+		margin-right: 10px;
+		align-self: flex-start;
 
-    @include media(xl) {
-      margin-right: 27px;
-    }
-  }
+		@include media(xl) {
+			margin-right: 27px;
+		}
+	}
 
-  &__statistics {
-    margin-top: 40px;
+	&__statistics {
+		margin-top: 40px;
 
-    @include media(xl) {
-      margin-top: 100px;
-    }
+		@include media(xl) {
+			margin-top: 100px;
+		}
 
-    @include media(xxl) {
-      margin-top: 130px;
-    }
-  }
+		@include media(xxl) {
+			margin-top: 130px;
+		}
+	}
 
 	&--parallax {
 		background-image: url("../img/bg-our-story.jpg");
@@ -351,7 +351,9 @@
 			&__btn {
 				background-color: $color-default-white;
 				border-color: $color-default-white;
+				color: $color-orange;
 				border-radius: 0;
+
 				@include transition(all);
 				margin-bottom: 15px;
 				margin-right: 0;
@@ -361,9 +363,11 @@
 					margin-right: 10px;
 				}
 
-				&:hover {
+				&:hover,
+				&:focus {
 					background-color: $color-orange;
 					border-color: $color-orange;
+					color: $color-default-white;
 				}
 			}
 		}

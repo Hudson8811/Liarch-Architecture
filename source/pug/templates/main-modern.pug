@@ -4,7 +4,8 @@ block variables
 include ../mixins/mixins.pug
 
 doctype html
-html.no-js(lang="ru")
+- let htmlModClass = ' ' + htmlClass ? htmlClass : '';
+html.no-js(lang="ru", class= htmlModClass)
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1")
@@ -38,12 +39,13 @@ html.no-js(lang="ru")
 			main
 				block content
 			block footer
+			include ../modules/video
 			include ../modules/modal
 		//include ../modules/preloader
 
 		// Optional JavaScript
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-		//-script(src="js/slick.min.js")
+		script(src="js/jquery.fancybox.min.js")
 		script(src="js/aos.js")
 		//-script(src="js/mixitup.min.js")
 		script(src="js/jquery.easy_number_animate.js")

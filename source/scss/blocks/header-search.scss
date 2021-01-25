@@ -149,12 +149,13 @@
 			&-icon {
 				fill: $color-default-white;
 			}
+
 			&:hover,
 			&:focus {
 				outline: none;
 
 				svg {
-					fill: $color-bird-flower;
+					fill: $color-bird-flower !important;
 				}
 			}
 		}

@@ -6,19 +6,26 @@ section.menu
 			span.visually-hidden Close menu
 		.menu__wrapper.__js_smooth-srollbar
 			ul.menu__list
-				each item in MAIN_MENU
+				- let MENU2 = isDark ? MAIN_MENU_DARK : MAIN_MENU;
+				each item, index in MENU2
 					if item.currentSection === currentSection
 						li.menu__item.menu__item--current
 							if item.submenu
 								a.menu__link.__js_menu-dropdown-link= item.text
-								+menu-dropdown(item.submenu)
+								if index === 0
+									+menu-dropdown-home(item.submenu)
+								else
+									+menu-dropdown(item.submenu)
 							else
 								a.menu__link= item.text
 					else
 						li.menu__item
 							if item.submenu
 								a.menu__link.__js_menu-dropdown-link(href= item.url)= item.text
-								+menu-dropdown(item.submenu)
+								if index === 0
+									+menu-dropdown-home(item.submenu)
+								else
+									+menu-dropdown(item.submenu)
 							else
 								a.menu__link.animsition-link(href= item.url)= item.text
 		+social('menu__social')

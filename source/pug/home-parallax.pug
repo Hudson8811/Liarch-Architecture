@@ -25,21 +25,21 @@ block content
 									h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company
 									.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
 									.an-awards__buttons
-										a.btn(href="#") our projects
+										a.btn(href= URLS.works.grid) our projects
 							.row.align-items-center.swiper-slide
 								.an-awards__content.col-12.col-md.col-lg-6
 									.an-awards__welcome welcome to <br> liarch architecture studio
 									h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company 2
 									.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
 									.an-awards__buttons
-										a.btn(href="#") our projects
+										a.btn(href= URLS.works.grid) our projects
 							.row.align-items-center.swiper-slide
 								.an-awards__content.col-12.col-md.col-lg-6
 									.an-awards__welcome welcome to <br> liarch architecture studio
 									h1.an-awards__heading.heading.heading--h1 An-Awards <br> winning architects company 3
 									.an-awards__text Like any great agency, we are only as good as the <br> result we deliver of our recent work
 									.an-awards__buttons
-										a.btn(href="#") our projects
+										a.btn(href= URLS.works.grid) our projects
 						.slide-counter
 					button(class="arrow-square arrow-square--prev")
 						svg
@@ -66,9 +66,9 @@ block content
 								|  businesses like yours generate more profits by
 								|  building awareness, driving web traffic, connecting with customers, and growing overall sales. <br> Give us a call.
 							.our-story__buttons
-								a.our-story__btn.btn.btn--outline(href="#") Learn More
+								a.our-story__btn.btn.btn--outline(href= URLS.about.default) Learn More
 								.our-story__video-btn.video-btn
-									a.video-btn__btn.__js_open-modal(href="#ourStory")
+									a.video-btn__btn.fancybox(href="#ourStory")
 										span.visually-hidden Play
 										+icon('play')(width="20", height="20")
 									span.video-btn__text view our story
@@ -81,28 +81,28 @@ block content
 
 					ul.type-service__list.row
 						li.type-service__item.col-12.col-md
-							.type-service__item-icon.type-service__item-icon--interior
-								+icon('ruler-pencil')(width="49", height="49")
-							h3.type-service__item-heading
-								a(href="#") Architecture & Interior
-							.type-service__item-text Architecture Design, Interior Design, Landscape Design, Commercial, Residential, 3D Visualization
-							a.type-service__item-link(href="#") 256 projects
+							a(href= URLS.pages.serviceDetail)
+								.type-service__item-icon.type-service__item-icon--interior
+									+icon('ruler-pencil')(width="49", height="49")
+								h3.type-service__item-heading Architecture & Interior
+								.type-service__item-text Architecture Design, Interior Design, Landscape Design, Commercial, Residential, 3D Visualization
+								.type-service__item-link 256 projects
 
 						li.type-service__item.col-12.col-md
-							.type-service__item-icon.type-service__item-icon--design
-								+icon('vector')(width="49", height="49")
-							h3.type-service__item-heading
-								a(href="#") Design & Photography
-							.type-service__item-text Web Design, Mobile App Design, 3D Design, CGI, Character, Motion, Photography
-							a.type-service__item-link(href="#") 64 projects
+							a(href= URLS.pages.serviceDetail)
+								.type-service__item-icon.type-service__item-icon--design
+									+icon('vector')(width="49", height="49")
+								h3.type-service__item-heading Design & Photography
+								.type-service__item-text Web Design, Mobile App Design, 3D Design, CGI, Character, Motion, Photography
+								.type-service__item-link 64 projects
 
 						li.type-service__item.col-12.col-md
-							.type-service__item-icon.type-service__item-icon--furniture
-								+icon('package')(width="49", height="49")
-							h3.type-service__item-heading
-								a(href="#") Furniture Products Production
-							.type-service__item-text Sofa, Chair, Wood Furnitures, Shelf, Bed, Decoration, Structure, Celling, Flooring, Walls
-							a.type-service__item-link(href="#") 8,256 items
+							a(href= URLS.pages.serviceDetail)
+								.type-service__item-icon.type-service__item-icon--furniture
+									+icon('package')(width="49", height="49")
+								h3.type-service__item-heading Furniture Products Production
+								.type-service__item-text Sofa, Chair, Wood Furnitures, Shelf, Bed, Decoration, Structure, Celling, Flooring, Walls
+								.type-service__item-link 8,256 items
 
 		// Works
 		section.section.pp-scrollable.works.works--parallax.dark
@@ -119,28 +119,32 @@ block content
 						.swiper-wrapper
 							.slider__item.swiper-slide
 								img(src="img/slider/slide-1.jpg", alt="")
-								.slide__content
-									.slide__content-detail 2020  -  Kiev, Ukraine
-									.slide__content-heading Cubic Blockes Hotel
+								.slide__content.slide-content
+									.slide-content__detail 2020  -  Kiev, Ukraine
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Cubic Blockes Hotel
 
 							.slider__item.swiper-slide
 								img(src="img/slider/slide-2.jpg", alt="")
-								.slide__content
-									.slide__content-detail 2020  -  Belgium
-									.slide__content-heading Dogel Nord Station
+								.slide__content.slide-content
+									.slide-content__detail 2020  -  Belgium
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Dogel Nord Station
 
 							.slider__item.swiper-slide
 								img(src="img/slider/slide-3.jpg", alt="")
-								.slide__content
-									.slide__content-detail 2019  -  Vancouver, Canada
-									.slide__content-heading Cabin Wood In Forest
+								.slide__content.slide-content
+									.slide-content__detail 2019  -  Vancouver, Canada
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Cabin Wood In Forest
 
 							.slider__item.swiper-slide
 								img(src="img/slider/slide-4.jpg", width="1145", height="650", alt="")
-								.slide__content
-									.slide__content-detail 2019  -  Iasi, Romania
-									.slide__content-heading Daniel Villa, Romania
-					a.works__all(href='#') all projects
+								.slide__content.slide-content
+									.slide-content__detail 2019  -  Iasi, Romania
+									.slide-content__heading
+										a(href= URLS.works.singleStandart) Daniel Villa, Romania
+					a.works__all(href= URLS.works.grid) all projects
 
 		// Approach
 		section.section.pp-scrollable.approach.approach--parallax.dark
@@ -191,7 +195,7 @@ block content
 					.row
 						.col-12.col-lg-6
 							.contact-block
-								h1.contact-block__title Brooklyn, <span>New York</span>
+								h2.contact-block__title Brooklyn, <span>New York</span>
 								address.contact-block__address 962 Fifth Avenue Str, 3rd Floor-Trump Building NY 10006, United State.
 								.contact-block__email
 									span.contact-block__hint Email:
