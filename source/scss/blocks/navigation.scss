@@ -369,10 +369,12 @@
 			}
 		}
 		&__dropdown {
-			background-color: darken($color-geyser, 5%);
+			background-color: #3b3f39;
 
 			&-item {
 				a {
+					color: $color-default-white;
+
 					&:hover,
 					&:focus {
 						color: $color-bird-flower;

@@ -452,6 +452,7 @@
 
 .webpage--beige {
 	.header {
+		background-color: $color-dark;
 		&--white {
 			.logo {
 				svg {
@@ -528,7 +529,7 @@
 		}
 
 		&--fixed {
-			background-color: #4d524b;
+			background-color: $color-dark;
 			//box-shadow: 0 1px 0 0 $color-grey4;
 
 			.logo {

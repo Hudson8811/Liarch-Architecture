@@ -1766,7 +1766,11 @@ textarea.custom-input {
 }
 
 .webpage--beige .navigation__dropdown {
-  background-color: #cecbaf;
+  background-color: #3b3f39;
+}
+
+.webpage--beige .navigation__dropdown-item a {
+  color: #ffffff;
 }
 
 .webpage--beige .navigation__dropdown-item a:hover, .webpage--beige .navigation__dropdown-item a:focus {
@@ -3398,6 +3402,10 @@ textarea.custom-input {
     padding-right: 15px;
     border-left: solid 1px #000000;
   }
+}
+
+.webpage--beige .header {
+  background-color: #4d524b;
 }
 
 .webpage--beige .header--white .logo svg {
