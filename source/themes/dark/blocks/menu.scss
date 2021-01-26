@@ -21,8 +21,13 @@
 	}
 
 	&__sublink {
+		&:hover,
+		&:focus {
+			color: $color-default-white !important;
+		}
+
 		&--current {
-			color: $color-default-white;
+			color: $color-default-white !important;
 		}
 	}
 

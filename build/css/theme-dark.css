@@ -878,6 +878,10 @@ input[type="search"] {
   }
 }
 
+.webpage--beige .header {
+  background-color: #232323;
+}
+
 .webpage--beige .header--fixed {
   background-color: #232323;
 }
@@ -1045,7 +1049,7 @@ input[type="search"] {
 }
 
 .footer--technical .footer__column-item--current .footer__column-link {
-  color: #cccccc;
+  color: #ffffff;
 }
 
 .footer--technical .footer__column-item--current .footer__column-link::before {
@@ -1057,21 +1061,30 @@ input[type="search"] {
   top: 55%;
   left: 0;
   z-index: -1;
-  background-color: #ffdf91;
+  background-color: #c1a257;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .footer--technical .footer__column-item--current .footer__column-link:hover, .footer--technical .footer__column-item--current .footer__column-link:focus {
-  color: #cccccc;
+  color: #ffffff;
 }
 
 .footer--technical .footer__column-link:hover, .footer--technical .footer__column-link:focus {
-  color: #cccccc;
+  color: #ffffff;
+}
+
+.footer--technical .footer__column-link:hover::before, .footer--technical .footer__column-link:focus::before {
+  background-color: #c1a257;
 }
 
 .footer--technical .footer__phone:hover, .footer--technical .footer__phone:focus {
   color: #cccccc;
+}
+
+.webpage--beige .footer__column-item--current .footer__column-link {
+  font-weight: 600;
+  color: #e6da89;
 }
 
 .logo__image svg {
@@ -1224,8 +1237,12 @@ input[type="search"] {
   color: #ff4800;
 }
 
+.menu__sublink:hover, .menu__sublink:focus {
+  color: #ffffff !important;
+}
+
 .menu__sublink--current {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .menu__copy {
@@ -1328,7 +1345,12 @@ input[type="search"] {
 }
 
 .sort__select {
+  color: #ffffff;
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3e%3cpath fill='%23ffffff' d='M32 48.1c-1.3 0-2.4-.5-3.5-1.3L.8 20.7C-.3 19.6-.3 18 .8 17c1.1-1.1 2.7-1.1 3.7 0L32 42.8l27.5-26.1c1.1-1.1 2.7-1.1 3.7 0 1.1 1.1 1.1 2.7 0 3.7L35.5 46.5c-1.1 1.4-2.2 1.6-3.5 1.6z'/%3e%3c/svg%3e");
+}
+
+.sort__select option {
+  color: black;
 }
 
 .project-meta__item-title {
@@ -2211,9 +2233,9 @@ input[type="search"] {
 }
 
 .webpage--modern {
-  background-color: #181818;
+  background-color: #232323;
 }
 
 .webpage--modern main {
-  background-color: transparent;
+  background-color: #181818;
 }

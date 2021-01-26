@@ -101,7 +101,7 @@
 		#{$self}__column {
 			&-item--current {
 				#{$self}__column-link {
-					color: $color-grey3;
+					color: $color-default-white;
 
 					&::before {
 						content: "";
@@ -112,14 +112,14 @@
 						top: 55%;
 						left: 0;
 						z-index: -1;
-						background-color: $color-cream-brulee;
+						background-color: #c1a257;
 						opacity: 1;
 						@include transition(opacity);
 					}
 
 					&:hover,
 					&:focus {
-						color: $color-grey3;
+						color: $color-default-white;
 					}
 				}
 			}
@@ -127,7 +127,11 @@
 			&-link {
 				&:hover,
 				&:focus {
-					color: $color-grey3;
+					color: $color-default-white;
+
+					&::before {
+						background-color: #c1a257;
+					}
 				}
 			}
 		}
@@ -136,6 +140,17 @@
 			&:hover,
 			&:focus {
 				color: $color-grey3;
+			}
+		}
+	}
+}
+
+.webpage--beige {
+	.footer {
+		&__column-item--current {
+			.footer__column-link {
+				font-weight: 600;
+				color: $color-bird-flower;
 			}
 		}
 	}

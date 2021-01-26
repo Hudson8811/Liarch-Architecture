@@ -2837,6 +2837,25 @@ textarea.custom-input {
   }
 }
 
+.webpage__review + .webpage__partners {
+  margin-bottom: 0;
+  padding-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .webpage__review + .webpage__partners {
+    margin-bottom: 0;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .webpage__review + .webpage__partners {
+    margin-bottom: 0;
+    padding-bottom: 143px;
+  }
+}
+
 .webpage__rewards {
   margin-bottom: 60px;
 }
@@ -8941,18 +8960,19 @@ textarea.custom-input {
 
 .menu__sublink--current {
   color: #000000;
+  pointer-events: none;
 }
 
 .menu__sublink--current:hover, .menu__sublink--current:focus {
   color: #000000 !important;
 }
 
-.menu__sublink:hover:not(.menu__sublink--current), .menu__sublink:focus:not(.menu__sublink--current) {
+.menu__sublink:hover, .menu__sublink:focus {
   outline: none;
   color: #000000 !important;
 }
 
-.menu__sublink:active:not(.menu__sublink--current) {
+.menu__sublink:active {
   opacity: 0.7;
 }
 

@@ -68,6 +68,7 @@
 
 		&--current {
 			color: $color-default-black;
+			pointer-events: none;
 
 			&:hover,
 			&:focus {
@@ -75,13 +76,13 @@
 			}
 		}
 
-		&:hover:not(&--current),
-		&:focus:not(&--current) {
+		&:hover,
+		&:focus {
 			outline: none;
 			color: $color-default-black !important;
 		}
 
-		&:active:not(&--current) {
+		&:active {
 			opacity: 0.7;
 		}
 	}
