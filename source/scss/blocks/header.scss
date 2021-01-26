@@ -259,6 +259,12 @@
 				margin-right: calc(8.69vw + 20px);
 			}
 		}
+
+		.navigation__dropdown {
+			@include media(lg) {
+				bottom: -29px;
+			}
+		}
 	}
 
 	&--technical {

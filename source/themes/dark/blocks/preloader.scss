@@ -10,7 +10,7 @@
 		animation: bounce 2s infinite ease-in-out;
 		opacity: 0.6;
 		border-radius: 50%;
-		background-color: #181818;
+		background-color: $color-orange;
 
 		&--delay {
 			animation-delay: -1s;
@@ -20,10 +20,10 @@
 
 .webpage--beige {
 	.preloader {
-		background-color: $color-bird-flower;
+		background-color: $color-dark;
 
 		&__double-bounce {
-			background-color: $color-dark;
+			background-color: $color-bird-flower;
 		}
 	}
 }

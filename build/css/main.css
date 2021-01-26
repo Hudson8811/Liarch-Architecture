@@ -3209,6 +3209,12 @@ textarea.custom-input {
   }
 }
 
+@media (min-width: 992px) {
+  .header--fixed .navigation__dropdown {
+    bottom: -29px;
+  }
+}
+
 .header--technical {
   border-top: none;
   border-bottom: solid 1px #000000;

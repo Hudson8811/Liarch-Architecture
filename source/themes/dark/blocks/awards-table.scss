@@ -7,16 +7,16 @@
 		@include transition(background-color);
 
 		&:hover {
-			background-color: #181818;
+			background-color: #323232;
 		}
 	}
 
 	tr {
-		border-top-color: #181818;
+		border-top-color: #4e4e4e;
 	}
 
 	th {
-		@include text(10px, 1, $color-grey);
+		@include text(10px, 1, $color-grey2);
 	}
 
 	td {

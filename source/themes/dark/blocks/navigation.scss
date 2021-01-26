@@ -5,7 +5,11 @@
 		#{$self}__item {
 			&--current {
 				#{$self}__link {
-					color: $color-grey3;
+					color: $color-default-white;
+
+					&::before {
+						background-color: #c1a257;
+					}
 				}
 			}
 		}
@@ -13,7 +17,11 @@
 		#{$self}__link {
 			&:hover,
 			&:focus {
-				color: $color-grey3;
+				color: $color-default-white;
+
+				&::before {
+					background-color: #c1a257;
+				}
 			}
 		}
 
@@ -22,12 +30,20 @@
 				a {
 					&:hover,
 					&:focus {
-						color: $color-grey3;
+						color: $color-default-white;
+
+						&::before {
+							background-color: #c1a257;
+						}
 					}
 				}
 				&--current {
 					a {
-						color: $color-grey3 !important;
+						color: $color-default-white !important;
+
+						&::before {
+							background-color: #c1a257;
+						}
 					}
 				}
 			}
