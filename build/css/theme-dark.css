@@ -1224,6 +1224,10 @@ input[type="search"] {
   color: #ff4800;
 }
 
+.menu__sublink--current {
+  color: #ffffff;
+}
+
 .menu__copy {
   color: #ffffff;
 }

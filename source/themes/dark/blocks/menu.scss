@@ -20,6 +20,12 @@
 		}
 	}
 
+	&__sublink {
+		&--current {
+			color: $color-default-white;
+		}
+	}
+
 	&__copy {
 		color: $color-default-white;
 	}
