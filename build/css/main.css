@@ -1679,7 +1679,7 @@ textarea.custom-input {
 
 @media (min-width: 1200px) {
   .navigation__item {
-    margin-right: 3.28vw;
+    margin-right: 60px;
   }
 }
 
@@ -1705,7 +1705,7 @@ textarea.custom-input {
 
 @media (min-width: 1200px) {
   .navigation__item::after {
-    right: calc(-1.64vw + 3px);
+    right: -27px;
   }
 }
 

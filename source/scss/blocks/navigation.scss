@@ -282,7 +282,7 @@
 		}
 
 		@include media(xl) {
-			margin-right: 3.28vw;
+			margin-right: 60px; //3.28vw;
 		}
 
 		&::after {
@@ -303,7 +303,7 @@
 			}
 
 			@include media(xl) {
-				right: calc(-1.64vw + 3px);
+				right: -27px; //calc(-1.64vw + 3px);
 			}
 		}
 
