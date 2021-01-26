@@ -12,20 +12,14 @@ section.menu
 						li.menu__item.menu__item--current
 							if item.submenu
 								a.menu__link.__js_menu-dropdown-link= item.text
-								if index === 0
-									+menu-dropdown-home(item.submenu)
-								else
-									+menu-dropdown(item.submenu)
+								+menu-dropdown-home(item.submenu)
 							else
 								a.menu__link= item.text
 					else
 						li.menu__item
 							if item.submenu
 								a.menu__link.__js_menu-dropdown-link(href= item.url)= item.text
-								if index === 0
-									+menu-dropdown-home(item.submenu)
-								else
-									+menu-dropdown(item.submenu)
+								+menu-dropdown-home(item.submenu)
 							else
 								a.menu__link.animsition-link(href= item.url)= item.text
 		+social('menu__social')
