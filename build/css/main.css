@@ -9900,7 +9900,8 @@ textarea.custom-input {
 
 @media (min-width: 1560px) {
   .our-story__content {
-    transform: translateX(75px);
+    position: relative;
+    left: 75px;
   }
 }
 
