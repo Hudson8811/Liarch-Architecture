@@ -43,9 +43,19 @@
 		color: $color-default-white;
 
 		@include media(lg) {
-			&:hover {
+			&:hover,
+			&:focus {
 				border-color: #ff6d33;
 				background-color: #ff6d33;
+			}
+		}
+	}
+}
+.webpage--beige {
+	.pricing-item {
+		&:hover {
+			.pricing-item__wrapper {
+				border-color: $color-bird-flower;
 			}
 		}
 	}

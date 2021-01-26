@@ -1626,10 +1626,14 @@ input[type="search"] {
 }
 
 @media (min-width: 992px) {
-  .pricing-item__btn:hover {
+  .pricing-item__btn:hover, .pricing-item__btn:focus {
     border-color: #ff6d33;
     background-color: #ff6d33;
   }
+}
+
+.webpage--beige .pricing-item:hover .pricing-item__wrapper {
+  border-color: #e6da89;
 }
 
 .page-404__title {

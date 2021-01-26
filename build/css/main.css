@@ -15107,9 +15107,8 @@ textarea.custom-input {
   text-transform: lowercase;
 }
 
-.webpage--beige .pricing-item:hover .pricing-item__btn, .webpage--beige .pricing-item:focus .pricing-item__btn {
-  background-color: #e6da89;
-  border-color: #e6da89;
+.webpage--beige .pricing-item:hover .pricing-item__wrapper {
+  border-color: #000000;
 }
 
 .webpage--beige .pricing-item__wrapper {
@@ -15138,6 +15137,11 @@ textarea.custom-input {
 .webpage--beige .pricing-item__btn {
   color: #ffffff;
   background-color: #4d524b;
+}
+
+.webpage--beige .pricing-item__btn:hover, .webpage--beige .pricing-item__btn:focus {
+  background-color: #e6da89;
+  border-color: #e6da89;
 }
 
 /* 4.54 Services */
