@@ -16831,21 +16831,18 @@ textarea.custom-input {
 }
 
 .th-hero-slider__content {
-  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 100px 20px;
-  background-color: rgba(255, 255, 255, 0.3);
+  padding: 100px 20px 32px;
 }
 
 @media (min-width: 576px) {
   .th-hero-slider__content {
-    position: static;
+    padding-bottom: 100px;
     flex-grow: 1;
-    background-color: transparent;
   }
 }
 
