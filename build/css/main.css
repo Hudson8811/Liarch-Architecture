@@ -15808,7 +15808,7 @@ textarea.custom-input {
 }
 
 .launch-page::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -15855,14 +15855,8 @@ textarea.custom-input {
 
 .launch-page__title {
   font-size: 42px;
-  margin-top: 30px;
+  margin-top: 56px;
   margin-bottom: 19px;
-}
-
-@media (min-width: 768px) {
-  .launch-page__title {
-    margin-top: 56px;
-  }
 }
 
 @media (min-width: 992px) {
