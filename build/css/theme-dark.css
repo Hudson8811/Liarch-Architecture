@@ -1566,11 +1566,15 @@ input[type="search"] {
 }
 
 .sidebar__services-item a {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .sidebar__services-item a::before {
   color: #ffffff;
+}
+
+.sidebar__services-item a:hover, .sidebar__services-item a:focus {
+  color: #ff4800 !important;
 }
 
 .sidebar__categories-name {

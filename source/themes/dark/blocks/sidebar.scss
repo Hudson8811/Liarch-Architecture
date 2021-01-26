@@ -13,10 +13,15 @@
 		border-color: $color-default-white;
 
 		a {
-			color: $color-default-white;
+			color: $color-default-white !important;
 
 			&::before {
 				color: $color-default-white;
+			}
+
+			&:hover,
+			&:focus {
+				color: $color-orange !important;
 			}
 		}
 	}
