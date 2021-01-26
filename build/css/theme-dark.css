@@ -854,6 +854,22 @@ input[type="search"] {
   background-color: #ffffff;
 }
 
+.header--technical {
+  border-bottom-color: #ffffff;
+}
+
+@media (min-width: 992px) {
+  .header__part--start {
+    border-right-color: #ffffff;
+  }
+}
+
+@media (min-width: 992px) {
+  .header__part--end {
+    border-left-color: #ffffff;
+  }
+}
+
 .webpage--beige .header--fixed {
   background-color: #232323;
 }

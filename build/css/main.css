@@ -3374,10 +3374,10 @@ textarea.custom-input {
   padding-bottom: 15px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .header__part--start {
     padding-left: 15px;
-    padding-right: 80px;
+    padding-right: 4.16vw;
     border-right: solid 1px #000000;
   }
 }
@@ -3386,15 +3386,15 @@ textarea.custom-input {
   flex-grow: 1;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .header__part--center {
-    padding-left: 80px;
+    padding-left: 4.16vw;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .header__part--end {
-    padding-left: 56px;
+    padding-left: 2.91vw;
     padding-right: 15px;
     border-left: solid 1px #000000;
   }

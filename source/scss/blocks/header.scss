@@ -426,23 +426,23 @@
 		padding-bottom: 15px;
 
 		&--start {
-			@include media(xl) {
+			@include media(lg) {
 				//width: 290px;
 				padding-left: 15px;
-				padding-right: 80px;
+				padding-right: 4.16vw; //80px;
 				border-right: solid 1px $color-default-black;
 			}
 		}
 		&--center {
 			flex-grow: 1;
 
-			@include media(xl) {
-				padding-left: 80px;
+			@include media(lg) {
+				padding-left: 4.16vw; //80px;
 			}
 		}
 		&--end {
-			@include media(xl) {
-				padding-left: 56px;
+			@include media(lg) {
+				padding-left: 2.91vw; //56px;
 				padding-right: 15px;
 				border-left: solid 1px $color-default-black;
 			}

@@ -35,6 +35,24 @@
 			}
 		}
 	}
+
+	&--technical {
+		border-bottom-color: $color-default-white;
+	}
+
+	&__part {
+		&--start {
+			@include media(lg) {
+				border-right-color: $color-default-white;
+			}
+		}
+
+		&--end {
+			@include media(lg) {
+				border-left-color: $color-default-white;
+			}
+		}
+	}
 }
 
 .webpage--beige {
