@@ -1,4 +1,11 @@
 .project-meta {
+	$self: &;
+
+	&--table {
+		#{$self}__item {
+			border-bottom-color: $color-default-white;
+		}
+	}
 	&__item {
 		&-title {
 			color: $color-default-white;

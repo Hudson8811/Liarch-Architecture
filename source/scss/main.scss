@@ -111,7 +111,6 @@
 @import "utils/variables";
 @import "utils/functions";
 @import "utils/mixins";
-@import "common/components";
 //ignorescss @import "aos.css";
 //ignorescss @import "swiper-bundle.css";
 //ignorescss @import "animsition.min.css";
@@ -124,6 +123,7 @@
 
 /* 1.1 General */
 @import "common/global";
+@import "common/components";
 
 /* 1.2  Typography */
 @import "common/fonts";

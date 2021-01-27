@@ -1,23 +1,24 @@
 .hero-banner {
 	position: relative;
-	padding-top: 90px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-image: url("../img/hero.jpg");
+	//padding-top: 90px;
+	//background-repeat: no-repeat;
+	//background-size: cover;
+	//background-image: url("../img/hero.jpg");
+	background-color: $color-dark;
 	height: 100vh;
 	min-height: 480px;
 
 	@include media(sm) {
-		padding-bottom: 50px;
+		//padding-bottom: 50px;
 	}
 
 	@include media(md) {
-		padding-top: 120px;
+		//padding-top: 120px;
 		min-height: 540px;
 	}
 
 	@include media(xl) {
-		padding-top: 170px;
+		//padding-top: 170px;
 		min-height: 600px;
 	}
 
@@ -238,6 +239,14 @@
 		&:focus {
 			outline: none;
 			fill: $color-orange;
+		}
+	}
+
+	& + .simplicity {
+		padding-top: 60px;
+
+		@include media(xl) {
+			padding-top: 150px;
 		}
 	}
 }

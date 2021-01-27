@@ -40,13 +40,13 @@ tpj(document).ready(function() {
 					left: {
 						h_align:"left",
 						v_align:"center",
-						h_offset:20,
+						h_offset:40,
 						v_offset:0
 					},
 					right: {
 						h_align:"right",
 						v_align:"center",
-						h_offset:20,
+						h_offset:40,
 						v_offset:0
 					}
 				}

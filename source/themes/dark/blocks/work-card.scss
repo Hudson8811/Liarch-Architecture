@@ -14,6 +14,14 @@
 			svg {
 				fill: $color-default-white;
 			}
+
+			&:hover,
+			&:focus {
+				background-color: #c1a257;
+				svg {
+					fill: $color-default-black;
+				}
+			}
 		}
 
 		#{$self}__heading a {

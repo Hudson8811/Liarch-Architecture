@@ -20,6 +20,17 @@
 		}
 	}
 
+	&__sublink {
+		&:hover,
+		&:focus {
+			color: $color-default-white !important;
+		}
+
+		&--current {
+			color: $color-default-white !important;
+		}
+	}
+
 	&__copy {
 		color: $color-default-white;
 	}

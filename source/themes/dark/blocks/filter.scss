@@ -5,11 +5,19 @@
 		#{$self}__item {
 			&:hover,
 			&:focus {
-				color: $color-grey3;
+				color: $color-default-white;
+
+				&::before {
+					background-color: #c1a257;
+				}
 			}
 
 			&--active {
-				color: $color-grey3;
+				color: $color-default-white;
+
+				&::before {
+					background-color: #c1a257;
+				}
 			}
 		}
 	}

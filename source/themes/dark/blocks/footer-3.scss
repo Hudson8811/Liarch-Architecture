@@ -1,0 +1,15 @@
+.footer-3 {
+	$self: &;
+
+	&--dark {
+		#{$self}__socials {
+			li a svg {
+				fill: $color-default-white;
+			}
+		}
+
+		#{$self}__copyrights {
+			color: $color-default-white;
+		}
+	}
+}

@@ -13,26 +13,17 @@ header.header.__js_fixed-header
 						li.navigation__item.navigation__item--current
 							a.navigation__link= item.text
 							if item.submenu
-								if index === 0
-									+navigation-dropdown-home(item.submenu)
-								else
-									+navigation-dropdown(item.submenu)
+								+navigation-dropdown-home(item.submenu)
 					else if item.currentSection === currentSection && item.currentPage !== currentPage
 						li.navigation__item.navigation__item--current
 							a.navigation__link(href= item.url)= item.text
 							if item.submenu
-								if index === 0
-									+navigation-dropdown-home(item.submenu)
-								else
-									+navigation-dropdown(item.submenu)
+								+navigation-dropdown-home(item.submenu)
 					else
 						li.navigation__item
 							a.navigation__link.animsition-link(href= item.url)= item.text
 							if item.submenu
-								if index === 0
-									+navigation-dropdown-home(item.submenu)
-								else
-									+navigation-dropdown(item.submenu)
+								+navigation-dropdown-home(item.submenu)
 		// Chat
 		a.header__chat.lets-chat(href="#")
 			span.lets-chat__text Let’s chat!

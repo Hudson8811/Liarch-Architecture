@@ -1,8 +1,7 @@
 mixin menu-dropdown-home(object)
-	- let array = isDark ? object.dark : object.white;
 	.menu__dropdown
 		ul.menu__sublist
-			each subitem in array
+			each subitem in object.white
 				li.menu__subitem
 					if subitem.currentPage === currentPage
 						a.menu__sublink.menu__sublink--current= subitem.text

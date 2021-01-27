@@ -12,6 +12,12 @@
 			padding-right: 10px;
 		}
 
+		#{$self}__dropdown {
+			display: none;
+			opacity: 1;
+			pointer-events: auto;
+		}
+
 		#{$self}__item {
 			margin-right: 0 !important;
 			margin-bottom: 12px;
@@ -37,6 +43,8 @@
 
 				& + #{$self}__dropdown {
 					display: none;
+					opacity: 1;
+					pointer-events: auto;
 				}
 			}
 		}
@@ -166,11 +174,15 @@
 	&__dropdown {
 		position: absolute;
 		z-index: 1;
-		display: none;
+		//display: none;
 		//width: 670px;
 		min-width: 400px;
 		background-color: $color-default-white;
-		border: solid 1px $color-grey4;
+		//border: solid 1px $color-grey4;
+		opacity: 0;
+		pointer-events: none;
+
+		@include transition(opacity);
 
 		&--columns {
 			width: 670px;
@@ -186,7 +198,8 @@
 		}
 
 		&:hover {
-			display: block;
+			opacity: 1;
+			pointer-events: auto;
 		}
 
 		@include media(lg) {
@@ -269,7 +282,7 @@
 		}
 
 		@include media(xl) {
-			margin-right: 3.28vw;
+			margin-right: 60px; //3.28vw;
 		}
 
 		&::after {
@@ -290,7 +303,7 @@
 			}
 
 			@include media(xl) {
-				right: calc(-1.64vw + 3px);
+				right: -27px; //calc(-1.64vw + 3px);
 			}
 		}
 
@@ -337,7 +350,8 @@
 			}
 
 			& + #{$self}__dropdown {
-				display: block;
+				opacity: 1;
+				pointer-events: auto;
 			}
 		}
 
@@ -355,10 +369,12 @@
 			}
 		}
 		&__dropdown {
-			background-color: darken($color-geyser, 5%);
+			background-color: #3b3f39;
 
 			&-item {
 				a {
+					color: $color-default-white;
+
 					&:hover,
 					&:focus {
 						color: $color-bird-flower;

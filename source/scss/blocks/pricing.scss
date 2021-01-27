@@ -335,11 +335,9 @@
 	}
 
 	.pricing-item {
-		&:hover,
-		&:focus {
-			.pricing-item__btn {
-				background-color: $color-bird-flower;
-				border-color: $color-bird-flower;
+		&:hover {
+			.pricing-item__wrapper {
+				border-color: $color-default-black;
 			}
 		}
 
@@ -370,6 +368,12 @@
 		&__btn {
 			color: $color-default-white;
 			background-color: $color-dark;
+
+			&:hover,
+			&:focus {
+				background-color: $color-bird-flower;
+				border-color: $color-bird-flower;
+			}
 		}
 	}
 }

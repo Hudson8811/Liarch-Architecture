@@ -8,7 +8,10 @@ section.webpage__rewards.rewards(data-aos="fade")
 			li.rewards__item.reward(data-aos="fade")
 				time.reward__date(datetime="2020") 2020
 				.reward__logo
-					img(src="img/rewards-logo/01.png", alt="")
+					if isDark
+						img(src="img/rewards-logo/01-lite.png", alt="")
+					else
+						img(src="img/rewards-logo/01.png", alt="")
 				.reward__content
 					.reward__project
 						.reward__project-wrap
@@ -25,7 +28,10 @@ section.webpage__rewards.rewards(data-aos="fade")
 			li.rewards__item.reward(data-aos="fade")
 				time.reward__date(datetime="2019") 2019
 				.reward__logo
-					img(src="img/rewards-logo/02.png", alt="")
+					if isDark
+						img(src="img/rewards-logo/02-lite.png", alt="")
+					else
+						img(src="img/rewards-logo/02.png", alt="")
 				.reward__content
 					.reward__project
 						.reward__project-wrap
@@ -48,7 +54,10 @@ section.webpage__rewards.rewards(data-aos="fade")
 			li.rewards__item.reward(data-aos="fade")
 				time.reward__date(datetime="2018") 2018
 				.reward__logo
-					img(src="img/rewards-logo/03.png", alt="")
+					if isDark
+						img(src="img/rewards-logo/03-lite.png", alt="")
+					else
+						img(src="img/rewards-logo/03.png", alt="")
 				.reward__content
 					.reward__project
 						.reward__project-wrap

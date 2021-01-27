@@ -6,6 +6,8 @@
 	}
 
 	&--arrows {
+		border-bottom-color: $color-default-white;
+
 		.paginate__item a svg {
 			fill: $color-default-white;
 		}

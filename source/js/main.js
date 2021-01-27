@@ -55,7 +55,7 @@ AOS.init({
 			inClass: 'fade-in',
 			outClass: 'fade-out',
 			inDuration: 1500,
-			outDuration: 800,
+			outDuration: 1000,
 			linkElement: '.animsition-link',
 			// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
 			loading: true,
@@ -92,10 +92,6 @@ AOS.init({
 		TOGGLE: 'menu-toggle--opened'
 	};
 
-	menu.on('click', function(evt) {
-		evt.stopPropagation();
-	});
-
 	menuOpenBtn.on('click', function() {
 		var overlay = setOverlay(closeMenu);//
 		body.append(overlay);
@@ -112,7 +108,7 @@ AOS.init({
 
 	dropdownLinks.on('click', function(evt) {
 		evt.preventDefault();
-
+		$(this).next().find('a').on('click', closeMenu);
 		$(this).next().slideToggle(DURATION);
 	});
 
@@ -164,6 +160,7 @@ AOS.init({
 		evt.preventDefault();
 
 		$(this).next().slideToggle(DURATION);
+
 	});
 
 	function close() {
@@ -935,7 +932,7 @@ AOS.init({
 (function() {
 
 	$(window).on('load', function() {
-		var footer = $('.footer');
+		var footer = $('.footer:not(.footer--technical)');
 		var footerParent = footer.parent();
 		var footerHeight = footer.innerHeight();
 

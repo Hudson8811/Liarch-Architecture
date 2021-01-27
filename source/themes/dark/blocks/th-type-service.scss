@@ -38,7 +38,10 @@
 			&:hover,
 			&:focus {
 				#{$self}__item-link {
-					color: $color-grey3;
+					color: $color-default-white;
+					&::before {
+						background-color: #c1a257;
+					}
 				}
 			}
 		}

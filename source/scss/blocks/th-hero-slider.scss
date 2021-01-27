@@ -82,19 +82,20 @@
 	}
 
 	&__content {
-		position: absolute;
+		//position: absolute;
 		z-index: 1;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding: 100px 20px;
-		background-color: rgba($color-default-white, 0.3);
+		padding: 100px 20px 32px;
+		//background-color: rgba($color-default-white, 0.3);
 
 		@include media(sm) {
-			position: static;
+			padding-bottom: 100px;
+			//position: static;
 			flex-grow: 1;
-			background-color: transparent;
+			//background-color: transparent;
 		}
 
 		@include media(md) {

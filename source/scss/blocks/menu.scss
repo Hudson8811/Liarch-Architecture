@@ -7,11 +7,23 @@
 	right: 0;
 	z-index: 1000;
 	width: 100%;
-	max-width: 550px;
+	//max-width: 750px;
 	background-color: $color-default-white;
+	background-repeat: no-repeat;
+	background-position: right 0 bottom 0;
+	background-size: auto 100%;
+	background-image: url("../img/menu-bg.png");
 	transform: translateX(100%);
 
 	@include transition(transform);
+
+	@include media(sm) {
+		width: 56%;
+	}
+
+	@include media(lg) {
+		max-width: 750px;
+	}
 
 	&--opened {
 		transform: translateX(0);
@@ -26,16 +38,42 @@
 		@include media(md) {
 			padding: 44px 60px;
 		}
+
 		@include media(lg) {
-			padding: 44px 80px;
+			padding: 80px 100px; //44px 80px;
 		}
 	}
 
 	&__wrapper {
-		max-height: 280px;
-		margin-top: 60px;
+		//max-height: //280px;
+		height: 46vh; //330px;
+		margin-top: 50px;
 		margin-bottom: 40px;
 		overflow: auto;
+
+		@include media(lg) {
+			height: 30.56vh; //330px;
+			margin-top: 10.7vh;
+		}
+	}
+
+	&__bottom {
+		margin-top: auto;
+	}
+
+	&__copy {
+		margin-bottom: 16px;
+
+		@include text(14px, 1.71, $color-grey);
+		letter-spacing: 0.015em;
+
+		@include media(lg) {
+			margin-bottom: 4.44vh; //48px;
+		}
+
+		span {
+			color: $color-default-black;
+		}
 	}
 
 	&__dropdown {
@@ -56,7 +94,11 @@
 		line-height: 1 !important;
 
 		&:first-child {
-			margin-top: 32px;
+			margin-top: 20px; //32px;
+
+			@include media(lg) {
+				margin-top: 32px;
+			}
 		}
 	}
 
@@ -68,6 +110,7 @@
 
 		&--current {
 			color: $color-default-black;
+			pointer-events: none;
 
 			&:hover,
 			&:focus {
@@ -75,19 +118,23 @@
 			}
 		}
 
-		&:hover:not(&--current),
-		&:focus:not(&--current) {
+		&:hover,
+		&:focus {
 			outline: none;
 			color: $color-default-black !important;
 		}
 
-		&:active:not(&--current) {
+		&:active {
 			opacity: 0.7;
 		}
 	}
 
 	&__item {
-		margin-bottom: 32px;
+		margin-bottom: 20px; //32px;
+
+		@include media(lg) {
+			margin-bottom: 32px;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -101,10 +148,14 @@
 	}
 
 	&__link {
-		@include text(36px, 1, $color-grey);
+		@include text(24px, 1, $color-grey); //36
 		font-weight: 600;
 
 		@include transition(color);
+
+		@include media(lg) {
+			font-size: 36px;
+		}
 
 		&:hover,
 		&:focus {
@@ -119,8 +170,8 @@
 
 	&__close {
 		position: absolute;
-		top: 20px;
-		right: 30px;
+		top: 10px;
+		right: 10px;
 		display: flex;
 		justify-content: center;
 		width: 48px;
@@ -130,6 +181,16 @@
 		background-color: transparent;
 		appearance: none;
 		cursor: pointer;
+
+		@include media(md) {
+			top: 32px;
+			right: 48px;
+		}
+
+		@include media(md) {
+			top: 68px;
+			right: 88px;
+		}
 
 		svg {
 			fill: $color-default-black;
@@ -153,8 +214,6 @@
 	}
 
 	&__social {
-		margin-top: auto;
-		margin-bottom: 40px;
 	}
 }
 
