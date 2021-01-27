@@ -1353,6 +1353,10 @@ input[type="search"] {
   color: black;
 }
 
+.project-meta--table .project-meta__item {
+  border-bottom-color: #ffffff;
+}
+
 .project-meta__item-title {
   color: #ffffff;
 }
@@ -1384,6 +1388,10 @@ input[type="search"] {
 
 .paginate--simple .paginate__item a {
   color: #ffffff;
+}
+
+.paginate--arrows {
+  border-bottom-color: #ffffff;
 }
 
 .paginate--arrows .paginate__item a svg {

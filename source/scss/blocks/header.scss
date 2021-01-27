@@ -562,7 +562,13 @@
 		border-top: none;
 	}
 
+	.header--white {
+		background-color: transparent;
+	}
+
 	.header--white.header--fixed {
+		background-color: $color-default-white;
+
 		.logo {
 			&__text {
 				color: $color-default-black;

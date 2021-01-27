@@ -3493,6 +3493,14 @@ textarea.custom-input {
   border-top: none;
 }
 
+.webpage--modern .header--white {
+  background-color: transparent;
+}
+
+.webpage--modern .header--white.header--fixed {
+  background-color: #ffffff;
+}
+
 .webpage--modern .header--white.header--fixed .logo__text {
   color: #000000;
 }
@@ -8116,30 +8124,19 @@ textarea.custom-input {
 /* 4.29 Hero banner */
 .hero-banner {
   position: relative;
-  padding-top: 90px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../img/hero.jpg");
+  background-color: #4d524b;
   height: 100vh;
   min-height: 480px;
 }
 
-@media (min-width: 576px) {
-  .hero-banner {
-    padding-bottom: 50px;
-  }
-}
-
 @media (min-width: 768px) {
   .hero-banner {
-    padding-top: 120px;
     min-height: 540px;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-banner {
-    padding-top: 170px;
     min-height: 600px;
   }
 }
@@ -8400,6 +8397,16 @@ textarea.custom-input {
 .hero-banner__down:hover, .hero-banner__down:focus {
   outline: none;
   fill: #ff4800;
+}
+
+.hero-banner + .simplicity {
+  padding-top: 60px;
+}
+
+@media (min-width: 1200px) {
+  .hero-banner + .simplicity {
+    padding-top: 150px;
+  }
 }
 
 .tparrows {
