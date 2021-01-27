@@ -1412,7 +1412,7 @@ textarea.custom-input {
 
 .navigation--column .navigation__list {
   display: block;
-  max-height: 220px;
+  max-height: 250px;
   overflow: auto;
   padding-right: 10px;
 }
