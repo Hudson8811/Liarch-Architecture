@@ -84,6 +84,23 @@ input[type="search"] {
   color: #ffffff;
 }
 
+#pp-nav.dark ul li a span {
+  background-color: #ffffff;
+}
+
+#pp-nav ul li:hover a span {
+  margin: 0;
+  background-color: #ff4800;
+}
+
+#pp-nav ul li a span {
+  background-color: #ffffff;
+}
+
+#pp-nav ul li a.active span {
+  background-color: #f5480c;
+}
+
 .heading {
   color: #ffffff;
 }
@@ -148,7 +165,7 @@ input[type="search"] {
 }
 
 .type-service__item-text {
-  color: #666666;
+  color: #999999;
 }
 
 .type-service__item-icon--interior {
@@ -216,7 +233,7 @@ input[type="search"] {
 }
 
 .type-service--parallax .type-service__item-text {
-  color: #666666;
+  color: #999999;
 }
 
 .type-service--parallax .type-service__item-link {
@@ -488,6 +505,7 @@ input[type="search"] {
 
 .homepage-parallax .contacts-parallax__field input,
 .homepage-parallax .contacts-parallax__field textarea {
+  display: block;
   background-color: #252b30;
   border-color: #252b30;
   color: #ffffff;
@@ -1085,6 +1103,14 @@ input[type="search"] {
 .webpage--beige .footer__column-item--current .footer__column-link {
   font-weight: 600;
   color: #e6da89;
+}
+
+.footer-3--dark .footer-3__socials li a svg {
+  fill: #ffffff;
+}
+
+.footer-3--dark .footer-3__copyrights {
+  color: #ffffff;
 }
 
 .logo__image svg {
