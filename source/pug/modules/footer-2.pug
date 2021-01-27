@@ -6,14 +6,27 @@ footer.footer.footer--lite
 				.footer__copyright © 2020 Liarch Development by Paul Studio. <span class="grey">All Rights Reserved</span>
 			.col-12.col-md-8.col-lg-6
 				// Footer menu
-				ul.footer__menu
-					li.footer__menu-item
-						a.footer__menu-link.animsition-link(href="services.html") Services
-					li.footer__menu-item
-						a.footer__menu-link.animsition-link(href="works.html") works
-					li.footer__menu-item
-						a.footer__menu-link.animsition-link(href="about.html") about
-					li.footer__menu-item
-						a.footer__menu-link.animsition-link(href="news-list.html") news
-					li.footer__menu-item
-						a.footer__menu-link.animsition-link(href="contacts.html") contact
+				if isDark
+					ul.footer__menu
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.pages.servicesDark) Services
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.works.gridDark) works
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.pages.defaultDark) about
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.news.gridDark) news
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.pages.contactDark) contact
+				else
+					ul.footer__menu
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.pages.services) Services
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.works.grid) works
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.about.default) about
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.news.grid) news
+						li.footer__menu-item
+							a.footer__menu-link.animsition-link(href= URLS.pages.contact) contact
