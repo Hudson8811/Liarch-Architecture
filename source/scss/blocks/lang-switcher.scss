@@ -12,6 +12,28 @@
 		}
 	}
 
+	&--upper {
+		#{$self}__link {
+			text-transform: uppercase;
+		}
+	}
+
+	&--menu {
+		#{$self}__item {
+			margin-right: 24px;
+		}
+
+		#{$self}__link {
+			font-size: 14px;
+			letter-spacing: 0.05em;
+			color: $color-default-black;
+
+			&--current {
+				color: $color-orange;
+			}
+		}
+	}
+
 	&__item {
 		margin-right: 14px;
 
