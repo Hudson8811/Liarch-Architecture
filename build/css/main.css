@@ -3006,6 +3006,42 @@ textarea.custom-input {
   color: #cee100 !important;
 }
 
+.webpage--modern .lang-switcher--menu .lang-switcher__link:hover, .webpage--modern .lang-switcher--menu .lang-switcher__link:focus {
+  color: #cee100;
+}
+
+.webpage--modern .lang-switcher--menu .lang-switcher__link--current {
+  color: #cee100;
+}
+
+.webpage--beige .lang-switcher__link:hover, .webpage--beige .lang-switcher__link:focus {
+  color: #e6da89 !important;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link {
+  color: #ffffff;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link:hover, .webpage--beige .lang-switcher--menu .lang-switcher__link:focus {
+  color: #e6da89;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link--current {
+  color: #e6da89;
+}
+
+.webpage--technical-drawing .lang-switcher__link:hover, .webpage--technical-drawing .lang-switcher__link:focus {
+  color: #ffdf91 !important;
+}
+
+.webpage--technical-drawing .lang-switcher--menu .lang-switcher__link:hover, .webpage--technical-drawing .lang-switcher--menu .lang-switcher__link:focus {
+  color: #ffdf91;
+}
+
+.webpage--technical-drawing .lang-switcher--menu .lang-switcher__link--current {
+  color: #ffdf91;
+}
+
 /*-------------------------------------------------------------------------------
   2. Header
 -------------------------------------------------------------------------------*/
@@ -8908,10 +8944,12 @@ textarea.custom-input {
 .menu {
   position: fixed;
   top: 0;
-  bottom: 0;
   right: 0;
   z-index: 1000;
   width: 100%;
+  height: 100%;
+  min-height: 480px;
+  overflow: auto;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-position: right 0 bottom 0;
@@ -8940,7 +8978,7 @@ textarea.custom-input {
 .menu__inner {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  height: 100%;
   padding: 20px 30px;
 }
 
@@ -8957,15 +8995,14 @@ textarea.custom-input {
 }
 
 .menu__wrapper {
-  height: 46vh;
   margin-top: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  padding: 6px 0;
   overflow: auto;
 }
 
 @media (min-width: 992px) {
   .menu__wrapper {
-    height: 36.56vh;
     margin-top: 10.7vh;
   }
 }
@@ -9156,8 +9193,20 @@ textarea.custom-input {
   color: #e6da89 !important;
 }
 
+.webpage--beige .menu__sublink--current {
+  color: #e6da89 !important;
+}
+
 .webpage--beige .menu__copy {
   color: #999999;
+}
+
+.webpage--beige .menu__copy span {
+  color: #ffffff;
+}
+
+.webpage--beige .menu__close svg {
+  fill: #ffffff;
 }
 
 .webpage--beige .menu__close:hover, .webpage--beige .menu__close:focus {

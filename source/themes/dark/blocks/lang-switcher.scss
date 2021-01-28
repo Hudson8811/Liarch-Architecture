@@ -1,7 +1,99 @@
 .lang-switcher {
+	&--menu {
+		.lang-switcher__link {
+			color: $color-default-white;
+
+			&:hover,
+			&:focus {
+				color: $color-orange;
+			}
+		}
+
+		.lang-switcher__link--current {
+			color: $color-orange;
+		}
+	}
 	&__link {
 		&--current {
 			color: $color-default-white;
+		}
+	}
+}
+
+.webpage--modern {
+	.lang-switcher {
+		&__link {
+			&:hover,
+			&:focus {
+				color: $color-lemon !important;
+			}
+		}
+
+		&--menu {
+			.lang-switcher__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-lemon;
+				}
+			}
+
+			.lang-switcher__link--current {
+				color: $color-lemon;
+			}
+		}
+	}
+}
+
+.webpage--beige {
+	.lang-switcher {
+		&__link {
+			&:hover,
+			&:focus {
+				color: $color-bird-flower !important;
+			}
+		}
+
+		&--menu {
+			.lang-switcher__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-bird-flower;
+				}
+			}
+
+			.lang-switcher__link--current {
+				color: $color-bird-flower;
+			}
+		}
+	}
+}
+
+.webpage--technical-drawing {
+	.lang-switcher {
+		&__link {
+			&:hover,
+			&:focus {
+				color: $color-cream-brulee !important;
+			}
+		}
+
+		&--menu {
+			.lang-switcher__link {
+				color: $color-default-white;
+
+				&:hover,
+				&:focus {
+					color: $color-cream-brulee;
+				}
+			}
+
+			.lang-switcher__link--current {
+				color: $color-cream-brulee;
+			}
 		}
 	}
 }

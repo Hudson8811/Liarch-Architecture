@@ -1125,8 +1125,68 @@ input[type="search"] {
   color: #ffffff;
 }
 
+.lang-switcher--menu .lang-switcher__link {
+  color: #ffffff;
+}
+
+.lang-switcher--menu .lang-switcher__link:hover, .lang-switcher--menu .lang-switcher__link:focus {
+  color: #ff4800;
+}
+
+.lang-switcher--menu .lang-switcher__link--current {
+  color: #ff4800;
+}
+
 .lang-switcher__link--current {
   color: #ffffff;
+}
+
+.webpage--modern .lang-switcher__link:hover, .webpage--modern .lang-switcher__link:focus {
+  color: #cee100 !important;
+}
+
+.webpage--modern .lang-switcher--menu .lang-switcher__link {
+  color: #ffffff;
+}
+
+.webpage--modern .lang-switcher--menu .lang-switcher__link:hover, .webpage--modern .lang-switcher--menu .lang-switcher__link:focus {
+  color: #cee100;
+}
+
+.webpage--modern .lang-switcher--menu .lang-switcher__link--current {
+  color: #cee100;
+}
+
+.webpage--beige .lang-switcher__link:hover, .webpage--beige .lang-switcher__link:focus {
+  color: #e6da89 !important;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link {
+  color: #ffffff;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link:hover, .webpage--beige .lang-switcher--menu .lang-switcher__link:focus {
+  color: #e6da89;
+}
+
+.webpage--beige .lang-switcher--menu .lang-switcher__link--current {
+  color: #e6da89;
+}
+
+.webpage--technical-drawing .lang-switcher__link:hover, .webpage--technical-drawing .lang-switcher__link:focus {
+  color: #ffdf91 !important;
+}
+
+.webpage--technical-drawing .lang-switcher--menu .lang-switcher__link {
+  color: #ffffff;
+}
+
+.webpage--technical-drawing .lang-switcher--menu .lang-switcher__link:hover, .webpage--technical-drawing .lang-switcher--menu .lang-switcher__link:focus {
+  color: #ffdf91;
+}
+
+.webpage--technical-drawing .lang-switcher--menu .lang-switcher__link--current {
+  color: #ffdf91;
 }
 
 .navigation--technical .navigation__item--current .navigation__link {
@@ -1275,6 +1335,10 @@ input[type="search"] {
   color: #ffffff;
 }
 
+.menu__copy span {
+  color: #ffffff;
+}
+
 .menu__close svg {
   fill: #ffffff;
 }
@@ -1306,6 +1370,48 @@ input[type="search"] {
 
 .webpage--beige .menu__close:hover svg, .webpage--beige .menu__close:focus svg {
   fill: #e6da89;
+}
+
+.webpage--modern .menu__item--current > a {
+  color: #cee100;
+}
+
+.webpage--modern .menu__link:hover, .webpage--modern .menu__link:focus, .webpage--modern .menu__sublink:hover, .webpage--modern .menu__sublink:focus {
+  outline: none;
+  color: #cee100 !important;
+}
+
+.webpage--modern .menu__sublink--current {
+  color: #cee100 !important;
+}
+
+.webpage--modern .menu__close:hover, .webpage--modern .menu__close:focus {
+  outline: none;
+}
+
+.webpage--modern .menu__close:hover svg, .webpage--modern .menu__close:focus svg {
+  fill: #cee100;
+}
+
+.webpage--technical-drawing .menu__item--current > a {
+  color: #ffdf91;
+}
+
+.webpage--technical-drawing .menu__link:hover, .webpage--technical-drawing .menu__link:focus, .webpage--technical-drawing .menu__sublink:hover, .webpage--technical-drawing .menu__sublink:focus {
+  outline: none;
+  color: #ffdf91 !important;
+}
+
+.webpage--technical-drawing .menu__sublink--current {
+  color: #ffdf91 !important;
+}
+
+.webpage--technical-drawing .menu__close:hover, .webpage--technical-drawing .menu__close:focus {
+  outline: none;
+}
+
+.webpage--technical-drawing .menu__close:hover svg, .webpage--technical-drawing .menu__close:focus svg {
+  fill: #ffdf91;
 }
 
 .an-awards__heading {

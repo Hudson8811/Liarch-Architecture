@@ -3,10 +3,13 @@
 
 	position: fixed;
 	top: 0;
-	bottom: 0;
+	//bottom: 0;
 	right: 0;
 	z-index: 1000;
 	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	overflow: auto;
 	//max-width: 750px;
 	background-color: $color-default-white;
 	background-repeat: no-repeat;
@@ -32,7 +35,7 @@
 	&__inner {
 		display: flex;
 		flex-direction: column;
-		min-height: 100%;
+		height: 100%;
 		padding: 20px 30px;
 
 		@include media(md) {
@@ -46,13 +49,14 @@
 
 	&__wrapper {
 		//max-height: //280px;
-		height: 46vh; //330px;
+		//height: 54vh; //330px;
 		margin-top: 50px;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
+		padding: 6px 0;
 		overflow: auto;
 
 		@include media(lg) {
-			height: 36.56vh; //330px;
+			//height: 54.56vh; //330px;
 			margin-top: 10.7vh;
 		}
 	}
@@ -242,11 +246,22 @@
 			}
 		}
 
+		&__sublink--current {
+			color: $color-bird-flower !important;
+		}
+
 		&__copy {
 			color: $color-grey;
+
+			span {
+				color: $color-default-white;
+			}
 		}
 
 		&__close {
+			svg {
+				fill: $color-default-white;
+			}
 			&:hover,
 			&:focus {
 				outline: none;

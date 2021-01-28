@@ -33,6 +33,10 @@
 
 	&__copy {
 		color: $color-default-white;
+
+		span {
+			color: $color-default-white;
+		}
 	}
 
 	&__close svg {
@@ -76,6 +80,78 @@
 
 				svg {
 					fill: $color-bird-flower;
+				}
+			}
+		}
+	}
+}
+
+.webpage--modern {
+	.menu {
+		//background-color: #181818;
+
+		&__item--current {
+			> a {
+				color: $color-lemon;
+			}
+		}
+
+		&__link,
+		&__sublink {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-lemon !important;
+			}
+		}
+
+		&__sublink--current {
+			color: $color-lemon !important;
+		}
+
+		&__close {
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-lemon;
+				}
+			}
+		}
+	}
+}
+
+.webpage--technical-drawing {
+	.menu {
+		//background-color: #181818;
+
+		&__item--current {
+			> a {
+				color: $color-cream-brulee;
+			}
+		}
+
+		&__link,
+		&__sublink {
+			&:hover,
+			&:focus {
+				outline: none;
+				color: $color-cream-brulee !important;
+			}
+		}
+
+		&__sublink--current {
+			color: $color-cream-brulee !important;
+		}
+
+		&__close {
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					fill: $color-cream-brulee;
 				}
 			}
 		}
