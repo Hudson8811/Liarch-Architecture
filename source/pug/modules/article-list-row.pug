@@ -12,7 +12,7 @@ mixin article-list(list, type)
 		if item.length > out.length
 			break
 		.article-list__item.col-12(class= '__js_news-list-item ' + `${out[index]} ` + item.class)
-			.article-preview(tebindex="0")
+			.article-preview(tabindex="0")
 				.article-preview__image
 					img(src=item.img, width="356", height="356", alt="")
 				.article-preview__content
