@@ -1,6 +1,7 @@
-mixin work-card-4(image, tags, heading)
+mixin work-card-4(image, tags, heading, cardTag)
 	- let href = isDark ? URLS.works.singleStandartDark : URLS.works.singleStandart;
-	li.work-card.work-card--grid&attributes(attributes)
+	- let tag = cardTag ? cardTag : 'div';
+	#{tag}.work-card.work-card--grid&attributes(attributes)
 		a.work-card__image(href= href)
 			img(src="img/works-3/" + image, width="827", height= "685", alt="")
 		.work-card__content
