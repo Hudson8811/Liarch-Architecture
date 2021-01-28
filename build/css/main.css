@@ -1408,12 +1408,12 @@ textarea.custom-input {
 .navigation--column {
   display: block;
   width: 100%;
+  padding: 6px 0;
+  overflow: auto;
 }
 
 .navigation--column .navigation__list {
   display: block;
-  max-height: 250px;
-  overflow: auto;
   padding-right: 10px;
 }
 
@@ -3062,19 +3062,12 @@ textarea.custom-input {
   max-width: 375px;
   height: 100vh;
   min-height: 500px;
-  padding: 6.48vh 20px 8vh !important;
+  padding: 0 !important;
   border-top: none;
   border-right: solid 1px #e2e2e2;
   background-color: #ffffff;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-}
-
-@media (min-width: 576px) {
-  .header--aside {
-    padding-left: 3.64vw !important;
-    padding-right: 3.64vw !important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -3092,9 +3085,16 @@ textarea.custom-input {
 }
 
 .header--aside .header__inner {
-  padding: 0;
+  padding: 6.48vh 20px 8vh !important;
   flex-direction: column;
   height: 100%;
+}
+
+@media (min-width: 576px) {
+  .header--aside .header__inner {
+    padding-left: 3.64vw !important;
+    padding-right: 3.64vw !important;
+  }
 }
 
 .header--aside .header__inner > * {
@@ -3143,6 +3143,7 @@ textarea.custom-input {
 }
 
 .header--aside .header__nav {
+  display: block;
   margin-bottom: auto;
 }
 

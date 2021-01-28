@@ -4,11 +4,12 @@
 	&--column {
 		display: block;
 		width: 100%;
+		padding: 6px 0;
+		overflow: auto;
 
 		#{$self}__list {
 			display: block;
-			max-height: 250px;
-			overflow: auto;
+			//max-height: 250px;
 			padding-right: 10px;
 		}
 
