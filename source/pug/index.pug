@@ -1,23 +1,68 @@
-extends templates/titular
+extends templates/main
 block variables
-	- let pageTitle = 'Разводящая страница проекта Liarch - Architecture & Interior HTML Template';
-	- let isHome = false; //- Если true то логотип не будет ссылкой
+	- let pageTitle = 'Liarch - Architecture & Interior HTML Template | Intro';
+	- let isHome = true; //- Если true то логотип не будет ссылкой
+	- let isDark = false;
+	- let currentPage = 0; // Для каждой страницы уникален. Номер смотреть в файле pug/templates/_vars.pug в массивах с пунктами меню
+	- let currentSection = 0; // // Для каждой раздела уникален. Home -1, about - 2, works - 3, news - 4, pages - 5
+	- let isIntro = true;
 
+block header
+	include modules/header-intro
+	include modules/menu-intro
 block content
-	.container
-		.row
-			.col-12.col-md-4
-				h3 Светлая тема
-				ul.mt-10
-					each item in MAIN_MENU
-						each subitem in item.submenu.white
-							li
-								a(href= subitem.url)= subitem.text + ' - ' + subitem.url
+	article.intro
+		header.intro__header
+			.intro__header-inner.container
+				h1.intro__heading Liarch elementor WP Theme
+				.intro__text <span>Best Showcase</span> Portfolio for <br>Architecture & Interior
 
-			.col-12.col-md-4
-				h3 Темная тема
-				ul.mt-10
-					each item in MAIN_MENU
-						each subitem in item.submenu.dark
-							li
-								a(href= subitem.url)= subitem.text + ' - ' + subitem.url
+				ul.intro__facts
+					li
+						span 12
+						| impressive demos
+					li
+						span 130<sup>+</sup>
+						| pre-defined elements
+					li
+						span 39
+						| psd files include
+
+		section.intro__section
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") 12 Impressive Demos
+				ul.intro__list.row
+					each item in IMPRESSIVE_DEMOS
+						+intro-card(item)(class="col-12 col-md-6 col-lg-4", data-aos="fade")
+
+		section.intro__section.intro__section--bg
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") Beautiful Portfolio Layouts
+					.intro__section-text(data-aos="fade") Easy to customize & showcase the projects in the way that you like with 7 layout styles for Portfolio pages and 3 project showcase pages
+				ul.intro__list.row.justify-content-center
+					each item in BEAUTIFUL_PORTFOLIO_LAYOUTS
+						+intro-card(item)(class="col-12 col-md-6 col-lg-3", data-aos="fade")
+
+		section.intro__section
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") Architecture Journal
+					.intro__section-text(data-aos="fade") The place to you share inspiration & expriences around architecture, interior, etc with community
+				ul.intro__list.row.justify-content-center
+					each item in ARCHITECTURE_JOURNAL
+						+intro-card(item)(class="col-12 col-md-6 col-lg-3", data-aos="fade")
+
+		section.intro__section.intro__section--bg
+			.intro__section-inner.container
+				header.intro__section-header
+					h2.intro__section-heading(data-aos="fade") Pre-defined stunning other pages
+					.intro__section-text(data-aos="fade") Easy to customize & showcase the projects in the way that you like with 7 layout styles for Portfolio pages and 3 project showcase pages
+				ul.intro__list.row
+					each item in OTHER_PAGES
+						+intro-card(item)(class="col-12 col-md-6 col-lg-3", data-aos="fade")
+
+
+block footer
+	include modules/footer-intro

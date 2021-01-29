@@ -1,0 +1,23 @@
+extends templates/titular
+block variables
+	- let pageTitle = 'Разводящая страница проекта Liarch - Architecture & Interior HTML Template';
+	- let isHome = false; //- Если true то логотип не будет ссылкой
+
+block content
+	.container
+		.row
+			.col-12.col-md-4
+				h3 Светлая тема
+				ul.mt-10
+					each item in MAIN_MENU
+						each subitem in item.submenu.white
+							li
+								a(href= subitem.url)= subitem.text + ' - ' + subitem.url
+
+			.col-12.col-md-4
+				h3 Темная тема
+				ul.mt-10
+					each item in MAIN_MENU
+						each subitem in item.submenu.dark
+							li
+								a(href= subitem.url)= subitem.text + ' - ' + subitem.url

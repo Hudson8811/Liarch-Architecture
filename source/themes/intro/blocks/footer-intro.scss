@@ -1,0 +1,81 @@
+.footer-intro {
+	padding: 80px 0 0;
+	background-color: #f7f7f7;
+
+	@include media(xl) {
+		padding-top: 160px;
+	}
+
+	&__inner {
+		@include media(xxl) {
+			max-width: $width--full;
+		}
+	}
+
+	&__title {
+		margin-bottom: 32px;
+
+		@include text(42px, 1.11);
+
+		span {
+			display: block;
+			color: $color-orange;
+			font-weight: 600;
+		}
+
+		@include media(xl) {
+			max-width: 570px;
+			margin-bottom: 60px;
+			font-size: 72px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 42px;
+
+		@include text(20px, 1.8, $color-grey2);
+		font-weight: 600;
+
+		@include media(xl) {
+			max-width: 530px;
+			margin-bottom: 80px;
+		}
+
+		.black {
+			color: $color-default-black;
+		}
+
+		.orange {
+			color: $color-orange;
+		}
+	}
+
+	&__copy {
+		margin-top: 80px;
+
+		@include text(16px, 1.5);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+
+		@include media(xl) {
+			margin-top: 150px;
+		}
+	}
+
+	&__image {
+		max-width: 320px;
+		margin-top: 48px;
+
+		@include media(md) {
+			max-width: none;
+			margin-top: 0;
+			margin-right: 3.54vw;
+			text-align: right;
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}

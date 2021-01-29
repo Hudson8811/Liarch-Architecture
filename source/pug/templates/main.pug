@@ -24,6 +24,9 @@ html.no-js(lang="en", class= htmlModClass)
 
 		if isDark
 			link(rel="stylesheet", href="css/theme-dark.css")
+		if isIntro
+			link(rel="stylesheet", href="css/intro-page.css")
+
 		title= pageTitle
 
 	- let modClass = bodyModClass ? bodyModClass : '';
@@ -43,9 +46,8 @@ html.no-js(lang="en", class= htmlModClass)
 			//-include ../modules/preloader
 
 		// Optional JavaScript
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script(src="js/jquery.min.js")
 		script(src="js/jquery.fancybox.min.js")
-		//-script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
 		script(src="js/jquery.pagepiling.js")
 		script(src="js/aos.js")
 		script(src="js/jquery.easy_number_animate.js")
@@ -53,7 +55,6 @@ html.no-js(lang="en", class= htmlModClass)
 		script(src="js/packery-mode.pkgd.min.js")
 		script(src="js/swiper-bundle.min.js")
 		script(src="js/animsition.min.js")
-		//-script(src="js/smooth-scrollbar.js")
 
 		// JavaScript
 		script(src="js/main.js")
