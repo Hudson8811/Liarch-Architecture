@@ -222,6 +222,10 @@
 		z-index: 2;
 	}
 
+	&--intro {
+		background-color: transparent;
+	}
+
 	&--fixed {
 		position: fixed;
 		top: 0;
@@ -310,6 +314,29 @@
 	@include media(lg) {
 		//padding: 48px 0 44px;
 		border-top-width: 10px;
+	}
+
+	&__purchase {
+		margin-left: auto;
+		border-radius: 0;
+		align-self: center;
+
+		&-text {
+			display: none;
+
+			@include media(sm) {
+				display: inline;
+			}
+		}
+
+		svg {
+			display: block;
+			fill: $color-default-white;
+
+			@include media(sm) {
+				display: none;
+			}
+		}
 	}
 
 	&__inner {

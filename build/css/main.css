@@ -3250,6 +3250,10 @@ textarea.custom-input {
   z-index: 2;
 }
 
+.header--intro {
+  background-color: transparent;
+}
+
 .header--fixed {
   position: fixed;
   top: 0;
@@ -3323,6 +3327,33 @@ textarea.custom-input {
 @media (min-width: 992px) {
   .header {
     border-top-width: 10px;
+  }
+}
+
+.header__purchase {
+  margin-left: auto;
+  border-radius: 0;
+  align-self: center;
+}
+
+.header__purchase-text {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .header__purchase-text {
+    display: inline;
+  }
+}
+
+.header__purchase svg {
+  display: block;
+  fill: #ffffff;
+}
+
+@media (min-width: 576px) {
+  .header__purchase svg {
+    display: none;
   }
 }
 

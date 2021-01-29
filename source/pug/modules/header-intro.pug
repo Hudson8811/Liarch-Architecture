@@ -1,0 +1,28 @@
+header.header.header--intro.header--absolute.__js_fixed-header
+	.header__inner
+		+logo(isHome, 'header__logo')
+
+		nav.header__nav.navigation
+			ul.navigation__list
+				each item, index in INTRO_MENU
+					if item.currentSection === currentSection && item.currentPage === currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link= item.text
+							if item.submenu
+								+navigation-dropdown-home(item.submenu)
+					else if item.currentSection === currentSection && item.currentPage !== currentPage
+						li.navigation__item.navigation__item--current
+							a.navigation__link(href= item.url)= item.text
+							if item.submenu
+								+navigation-dropdown-home(item.submenu)
+					else
+						li.navigation__item
+							a.navigation__link.animsition-link(href= item.url)= item.text
+							if item.submenu
+								+navigation-dropdown-home(item.submenu)
+
+		a.header__purchase.btn(href='#')
+			span.header__purchase-text purchase now
+			+icon('wallet')(width="16", height="16")
+		button.header__menu-toggle.menu-toggle(type="button")
+			span.visually-hidden Menu

@@ -24,6 +24,9 @@ html.no-js(lang="en", class= htmlModClass)
 
 		if isDark
 			link(rel="stylesheet", href="css/theme-dark.css")
+		if isIntro
+			link(rel="stylesheet", href="css/intro-page.css")
+
 		title= pageTitle
 
 	- let modClass = bodyModClass ? bodyModClass : '';

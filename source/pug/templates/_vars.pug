@@ -9,6 +9,9 @@
 	];
 
 	let URLS = {
+		intro: {
+			default: 'index.html'
+		},
 		home: {
 			default: 'home-default.html',
 			modern: 'home-modern.html',
@@ -202,6 +205,76 @@
 		}}
 	];
 
+	let INTRO_MENU = [
+		{text: 'Demos', url: URLS.intro.default, currentSection: 0, currentPage: 0},
+		{text: 'Works', url: URLS.works.gridDark, currentSection: 3, currentPage: 3.11, submenu: {
+			white: [
+				{text: 'Works Grid', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},
+				{text: 'Works Grid 2', url: URLS.works.grid2, currentPage: 3.02, currentSection: 3},
+				{text: 'Works Grid 3', url: URLS.works.grid3, currentPage: 3.03, currentSection: 3},
+				{text: 'Works Masonry', url: URLS.works.masonry, currentPage: 3.04, currentSection: 3},
+				{text: 'Works Listing', url: URLS.works.listing, currentPage: 3.05, currentSection: 3},
+				{text: 'Works Carousel 1', url: URLS.works.carousel1, currentPage: 3.06, currentSection: 3},
+				{text: 'Works Carousel 2', url: URLS.works.carousel2, currentPage: 3.07, currentSection: 3},
+				{text: 'Single Project Standart', url: URLS.works.singleStandart, currentPage: 3.08, currentSection: 3},
+				{text: 'Single Project Sidebar', url: URLS.works.singleSidebar, currentPage: 3.09, currentSection: 3},
+				{text: 'Single Project Minimalism', url: URLS.works.singleMinimalism, currentPage: 3.1, currentSection: 3}
+			],
+			dark: [
+				{text: 'Works Grid Dark', url: URLS.works.gridDark, currentPage: 3.11, currentSection: 3},
+				{text: 'Works Grid 2 Dark', url: URLS.works.grid2Dark, currentPage: 3.12, currentSection: 3},
+				{text: 'Works Grid 3 Dark', url: URLS.works.grid3Dark, currentPage: 3.13, currentSection: 3},
+				{text: 'Works Masonry Dark', url: URLS.works.masonryDark, currentPage: 3.14, currentSection: 3},
+				{text: 'Works Listing Dark', url: URLS.works.listingDark, currentPage: 3.15, currentSection: 3},
+				{text: 'Works Carousel 1 Dark', url: URLS.works.carousel1Dark, currentPage: 3.16, currentSection: 3},
+				{text: 'Works Carousel 2 Dark', url: URLS.works.carousel2Dark, currentPage: 3.17, currentSection: 3},
+				{text: 'Single Project Standart Dark', url: URLS.works.singleStandartDark, currentPage: 3.18, currentSection: 3},
+				{text: 'Single Project Sidebar Dark', url: URLS.works.singleSidebarDark, currentPage: 3.19, currentSection: 3},
+				{text: 'Single Project Minimalism Dark', url: URLS.works.singleMinimalismDark, currentPage: 3.2, currentSection: 3}
+			]
+		}},
+		{text: 'News', url: URLS.news.gridDark, currentSection: 4, currentPage: 4.07, submenu: {
+			white: [
+				{text: 'News Grid', url: URLS.news.grid, currentPage: 4.01, currentSection: 4},
+				{text: 'News Grid 2', url: URLS.news.grid2, currentPage: 4.02, currentSection: 4},
+				{text: 'News Masonry', url: URLS.news.masonry, currentPage: 4.03, currentSection: 4},
+				{text: 'News Sidebar', url: URLS.news.sidebar, currentPage: 4.04, currentSection: 4},
+				{text: 'Single Post', url: URLS.news.post, currentPage: 4.05, currentSection: 4},
+				{text: 'Single Post Sidebar', url: URLS.news.postSidebar, currentPage: 4.06, currentSection: 4}
+			],
+			dark: [
+				{text: 'News Grid Dark', url: URLS.news.gridDark, currentPage: 4.07, currentSection: 4},
+				{text: 'News Grid 2 Dark', url: URLS.news.grid2Dark, currentPage: 4.08, currentSection: 4},
+				{text: 'News Masonry Dark', url: URLS.news.masonryDark, currentPage: 4.09, currentSection: 4},
+				{text: 'News Sidebar Dark', url: URLS.news.sidebarDark, currentPage: 4.1, currentSection: 4},
+				{text: 'Single Post Dark', url: URLS.news.postDark, currentPage: 4.11, currentSection: 4},
+				{text: 'Single Post Sidebar Dark', url: URLS.news.postSidebarDark, currentPage: 4.12, currentSection: 4}
+			]
+		}},
+		{text: 'Pages', url: URLS.pages.servicesDark, currentSection: 5, currentPage: 5.09, submenu: {
+			white: [
+				{text: 'Services', url: URLS.pages.services, currentPage: 5.01, currentSection: 5},
+				{text: 'Service Detail', url: URLS.pages.serviceDetail, currentPage: 5.02, currentSection: 5},
+				{text: 'Pricing', url: URLS.pages.pricing, currentPage: 5.03, currentSection: 5},
+				{text: 'Team', url: URLS.pages.team, currentPage: 5.04, currentSection: 5},
+				{text: 'Contact', url: URLS.pages.contact, currentPage: 5.05, currentSection: 5},
+				{text: 'Contact 2', url: URLS.pages.contact2, currentPage: 5.06, currentSection: 5},
+				{text: '404 Error', url: URLS.pages.error404, currentPage: 5.07, currentSection: 5},
+				{text: 'Coming Soon', url: URLS.pages.comingSoon, currentPage: 5.08, currentSection: 5}
+			],
+			dark: [
+				{text: 'Services Dark', url: URLS.pages.servicesDark, currentPage: 5.09, currentSection: 5},
+				{text: 'Service Detail Dark', url: URLS.pages.serviceDetailDark, currentPage: 5.10, currentSection: 5},
+				{text: 'Pricing Dark', url: URLS.pages.pricingDark, currentPage: 5.11, currentSection: 5},
+				{text: 'Team Dark', url: URLS.pages.teamDark, currentPage: 5.12, currentSection: 5},
+				{text: 'Contact Dark', url: URLS.pages.contactDark, currentPage: 5.13, currentSection: 5},
+				{text: 'Contact 2 Dark', url: URLS.pages.contact2Dark, currentPage: 5.14, currentSection: 5},
+				{text: '404 Error Dark', url: URLS.pages.error404Dark, currentPage: 5.15, currentSection: 5},
+				{text: 'Coming Soon Dark', url: URLS.pages.comingSoonDark, currentPage: 5.16, currentSection: 5}
+			]
+		}}
+	];
+
 	let MAIN_MENU_DARK = [
 		{text: 'Home', url: URLS.home.defaultDark, currentSection: 1, currentPage: 1.07, submenu: {
 			white: [
@@ -374,4 +447,55 @@
 		{hosted: 'Design awards', award: 'Completed Building', project: 'Cube Villa, Poland', year: 2019},
 		{hosted: 'Kons prize', award: 'Best Project Of The Year', project: 'Single House', year: 2019},
 		{hosted: 'ArchiLover', award: 'Green Architecture Winner', project: 'Cabin Wood In Forest', year: 2018}
-	]
+	];
+
+	let IMPRESSIVE_DEMOS = [
+		{href: URLS.home.default, img: 'img/intro/1/01.jpg', title: 'default', cardTag: 'li'},
+		{href: URLS.home.defaultDark, img: 'img/intro/1/02.jpg', title: 'default - dark', cardTag: 'li'},
+		{href: URLS.home.visual, img: 'img/intro/1/03.jpg', title: 'visual geometric', cardTag: 'li'},
+		{href: URLS.home.visualDark, img: 'img/intro/1/04.jpg', title: 'visual geometric - dark', cardTag: 'li'},
+		{href: URLS.home.technicalDrawing, img: 'img/intro/1/05.jpg', title: 'technical drawing', cardTag: 'li'},
+		{href: URLS.home.technicalDrawingDark, img: 'img/intro/1/06.jpg', title: 'technical drawing - dark', cardTag: 'li'},
+		{href: URLS.home.modern, img: 'img/intro/1/07.jpg', title: 'modern', cardTag: 'li'},
+		{href: URLS.home.modernDark, img: 'img/intro/1/08.jpg', title: 'modern - dark', cardTag: 'li'},
+		{href: URLS.home.parallax, img: 'img/intro/1/09.jpg', title: 'full screen parallax', cardTag: 'li'},
+		{href: URLS.home.parallaxDark, img: 'img/intro/1/10.jpg', title: 'full screen parallax - dark', cardTag: 'li'},
+		{href: URLS.home.leftMenu, img: 'img/intro/1/11.jpg', title: 'left menu', cardTag: 'li'},
+		{href: URLS.home.leftMenuDark, img: 'img/intro/1/12.jpg', title: 'left menu - dark', cardTag: 'li'}
+	];
+
+	let BEAUTIFUL_PORTFOLIO_LAYOUTS = [
+		{href: URLS.works.grid, img: 'img/intro/2/01.jpg', title: 'grid with gutter', cardTag: 'li'},
+		{href: URLS.works.grid2, img: 'img/intro/2/02.jpg', title: 'grid no gutter', cardTag: 'li'},
+		{href: URLS.works.grid3, img: 'img/intro/2/03.jpg', title: 'grid 2 column', cardTag: 'li'},
+		{href: URLS.works.masonry, img: 'img/intro/2/04.jpg', title: 'masonry', cardTag: 'li'},
+		{href: URLS.works.listing, img: 'img/intro/2/05.jpg', title: 'Listing', cardTag: 'li'},
+		{href: URLS.works.carousel1, img: 'img/intro/2/06.jpg', title: 'carousel 1', cardTag: 'li'},
+		{href: URLS.works.carousel2, img: 'img/intro/2/07.jpg', title: 'carousel 2', cardTag: 'li'},
+		{href: URLS.works.singleStandart, img: 'img/intro/2/08.jpg', title: 'project showcase standard', cardTag: 'li'},
+		{href: URLS.works.singleSidebar, img: 'img/intro/2/09.jpg', title: 'project showcase with sidebar', cardTag: 'li'},
+		{href: URLS.works.singleMinimalism, img: 'img/intro/2/10.jpg', title: 'project showcase minimalist', cardTag: 'li'}
+	];
+
+	let ARCHITECTURE_JOURNAL = [
+		{href: URLS.news.grid, img: 'img/intro/3/01.jpg', title: 'grid 1', cardTag: 'li'},
+		{href: URLS.news.grid2, img: 'img/intro/3/02.jpg', title: 'grid 2', cardTag: 'li'},
+		{href: URLS.news.masonry, img: 'img/intro/3/03.jpg', title: 'masonry', cardTag: 'li'},
+		{href: URLS.news.sidebar, img: 'img/intro/3/04.jpg', title: 'with sidebar', cardTag: 'li'},
+		{href: URLS.news.post, img: 'img/intro/3/05.jpg', title: 'single post no sidebar', cardTag: 'li'},
+		{href: URLS.news.postSidebar, img: 'img/intro/3/06.jpg', title: 'single post with sidebar', cardTag: 'li'}
+	];
+
+	let OTHER_PAGES = [
+		{href: URLS.about.universal, img: 'img/intro/4/01.jpg', title: 'about 1', cardTag: 'li'},
+		{href: URLS.about.visual, img: 'img/intro/4/02.jpg', title: 'about 2', cardTag: 'li'},
+		{href: URLS.about.default, img: 'img/intro/4/03.jpg', title: 'about 3', cardTag: 'li'},
+		{href: URLS.pages.contact, img: 'img/intro/4/04.jpg', title: 'contact 1', cardTag: 'li'},
+		{href: URLS.pages.contact2, img: 'img/intro/4/05.jpg', title: 'contact 2', cardTag: 'li'},
+		{href: URLS.pages.team, img: 'img/intro/4/06.jpg', title: 'team member', cardTag: 'li'},
+		{href: URLS.pages.pricing, img: 'img/intro/4/07.jpg', title: 'pricing', cardTag: 'li'},
+		{href: URLS.pages.services, img: 'img/intro/4/08.jpg', title: 'services', cardTag: 'li'},
+		{href: URLS.pages.serviceDetail, img: 'img/intro/4/09.jpg', title: 'service detail', cardTag: 'li'},
+		{href: URLS.pages.error404, img: 'img/intro/4/10.jpg', title: '404 error', cardTag: 'li'},
+		{href: URLS.pages.comingSoon, img: 'img/intro/4/11.jpg', title: 'coming soon', cardTag: 'li'}
+	];
