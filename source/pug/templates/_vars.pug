@@ -10,7 +10,7 @@
 
 	let URLS = {
 		intro: {
-			default: 'index.html'
+			default: '#homePagesSection'
 		},
 		home: {
 			default: 'home-default.html',
@@ -207,6 +207,24 @@
 
 	let INTRO_MENU = [
 		{text: 'Demos', url: URLS.intro.default, currentSection: 0, currentPage: 0},
+		{text: 'Home', url: URLS.home.default, currentSection: 1, currentPage: 1.01, submenu: {
+			white: [
+				{text: 'Home Default', url: URLS.home.default, currentPage: 1.01, currentSection: 1},
+				{text: 'Home Modern', url: URLS.home.modern, currentPage: 1.02, currentSection: 1},
+				{text: 'Home Parallax', url: URLS.home.parallax, currentPage: 1.03, currentSection: 1},
+				{text: 'Home Technical Drawing', url: URLS.home.technicalDrawing, currentPage: 1.04, currentSection: 1},
+				{text: 'Home Left Menu', url: URLS.home.leftMenu, currentPage: 1.05, currentSection: 1},
+				{text: 'Home Visual', url: URLS.home.visual, currentPage: 1.06, currentSection: 1}
+			],
+			dark: [
+				{text: 'Home Default Dark', url: URLS.home.defaultDark, currentPage: 1.07, currentSection: 1},
+				{text: 'Home Modern Dark', url: URLS.home.modernDark, currentPage: 1.08, currentSection: 1},
+				{text: 'Home Parallax Dark', url: URLS.home.parallaxDark, currentPage: 1.09, currentSection: 1},
+				{text: 'Home Technical Drawing Dark', url: URLS.home.technicalDrawingDark, currentPage: 1.1, currentSection: 1},
+				{text: 'Home Left Menu Dark', url: URLS.home.leftMenuDark, currentPage: 1.11, currentSection: 1},
+				{text: 'Home Visual Dark', url: URLS.home.visualDark, currentPage: 1.12, currentSection: 1}
+			]
+		}},
 		{text: 'Works', url: URLS.works.gridDark, currentSection: 3, currentPage: 3.11, submenu: {
 			white: [
 				{text: 'Works Grid', url: URLS.works.grid, currentPage: 3.01, currentSection: 3},

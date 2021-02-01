@@ -194,25 +194,30 @@ AOS.init({
 	var headerHeight = header.outerHeight();
 	var scroll = $(window).scrollTop();
 	var isScroll = false;
+	var isAbsoluteHeader = header.hasClass('header--absolute');
 
 	$(window).on('scroll', function() {
 		scroll = $(window).scrollTop();
 
 		if (scroll >= headerHeight) {
 			isScroll = true;
-			header.addClass(classes);
 
 			headerHeight = isScroll ? header.outerHeight() : null;
+			header.addClass(classes);
 
 			if (!header.hasClass('is-fixed')) {
-				header.css('top', -headerHeight + 'px').addClass('is-fixed');
-				body.css('padding-top', headerHeight + 'px');
-			}
+				header.css({'top': -headerHeight + 'px', 'transform': 'translateY(' + headerHeight + 'px)'}).addClass('is-fixed');
 
+				if (!isAbsoluteHeader) {
+					body.css('padding-top', headerHeight + 'px');
+				}
+			}
 		} else {
 			isScroll = false;
 			header.removeClass(classes + ' is-fixed').removeAttr('style');
-			body.css('padding-top', 0);
+			if (!isAbsoluteHeader) {
+				body.css('padding-top', 0);
+			}
 		}
 	});
 
