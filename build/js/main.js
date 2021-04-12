@@ -215,15 +215,6 @@ AOS.init({
 			}
 		}
 	});
-
-	$(window).on('resize', function() {
-		headerHeight = header.outerHeight();
-
-		if (scroll >= headerHeight) {
-			header.css('top', -headerHeight + 'px');
-			body.css('padding-top', headerHeight + 'px');
-		}
-	});
 })();
 
 /* 5. Header search */

@@ -14,9 +14,7 @@
 .intro__header-inner {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   min-height: 480px;
-  max-height: 540px;
   padding-top: 100px;
   padding-bottom: 40px;
 }
@@ -24,7 +22,6 @@
 @media (min-width: 576px) {
   .intro__header-inner {
     min-height: 575px;
-    max-height: 700px;
     padding-bottom: 80px;
   }
 }
@@ -38,7 +35,6 @@
 @media (min-width: 1200px) {
   .intro__header-inner {
     padding-top: 286px;
-    max-height: 960px;
     padding-bottom: 130px;
   }
 }
