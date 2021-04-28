@@ -207,11 +207,17 @@ AOS.init({
 					body.css('padding-top', headerHeight + 'px');
 				}
 			}
+			if ($('.single-project__stiky').length > 0){
+				$('.single-project__stiky').css('top',headerHeight + 'px')
+			}
 		} else {
 			isScroll = false;
 			header.removeClass(classes + ' is-fixed').removeAttr('style');
 			if (!isAbsoluteHeader) {
 				body.css('padding-top', 0);
+			}
+			if ($('.single-project__stiky').length > 0){
+				$('.single-project__stiky').css('top',0)
 			}
 		}
 	});

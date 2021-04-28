@@ -12490,6 +12490,18 @@ textarea.custom-input {
   }
 }
 
+.single-project__stiky {
+  position: static;
+}
+
+@media (min-width: 768px) {
+  .single-project__stiky {
+    position: sticky;
+    top: 0;
+    transition: 0.5s ease;
+  }
+}
+
 .single-project__social {
   margin-bottom: 40px;
 }
