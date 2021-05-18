@@ -3730,29 +3730,52 @@ textarea.custom-input {
 -------------------------------------------------------------------------------*/
 /* 3.1 Footer type 1 */
 .footer {
-  padding: 32px 0;
+  padding: 32px 0 0;
   background-color: #f9fbfd;
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-image: url("../img/footer-bg.jpg");
   background-size: cover;
+  overflow-y: scroll;
 }
 
 @media (min-width: 768px) {
   .footer {
-    padding: 60px 0 40px;
+    padding: 60px 0 0;
   }
 }
 
 @media (min-width: 992px) {
   .footer {
-    padding: 80px 0 40px;
+    padding: 80px 0 0;
   }
 }
 
 @media (min-width: 1200px) {
   .footer {
-    padding: 153px 0 80px;
+    padding: 153px 0 0;
+  }
+}
+
+.footer .row {
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .footer .row {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer .row {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer .row {
+    margin-bottom: 80px;
   }
 }
 

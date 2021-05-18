@@ -9,6 +9,7 @@
 	2. Animsition init
 	3. Mobile menu
 		3.1 Mobile left aside
+		3.2. Fixed footer
 	4. Fixed header
 	5. Header search
 	6. Project Slider
@@ -178,6 +179,34 @@ AOS.init({
 	$(window).on('resize', function() {
 		if ($(window).width() >= 1200) {
 			close();
+		}
+	});
+})();
+
+/* 3.2. Fixed footer */
+(function() {
+	var footer = $('.footer');
+	var footerHeight = footer.outerHeight();
+	var screenHeight = $(window).height() - $('.__js_fixed-header').outerHeight();
+
+	if (screenHeight < footerHeight) {
+		footer.outerHeight(screenHeight);
+	}
+
+	$(window).on('scroll', function() {
+		var scroll = $(window).scrollTop();
+		var footerScroll = footer.scrollTop();
+
+		if (!footer.hasClass('footer--fixed') && scroll > footer.offset().top) {
+			footerScroll += 1;
+		}
+	});
+
+	footer.on('scroll', function() {
+		var footerScroll = $(this).scrollTop();
+
+		if (footer.hasClass('footer--fixed') && footerScroll == 0) {
+			footer.removeAttr('style');
 		}
 	});
 })();
