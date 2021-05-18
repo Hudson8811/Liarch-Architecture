@@ -236,11 +236,17 @@ AOS.init({
 					body.css('padding-top', headerHeight + 'px');
 				}
 			}
+			if ($('.single-project__stiky').length > 0){
+				$('.single-project__stiky').css('top',headerHeight + 'px')
+			}
 		} else {
 			isScroll = false;
 			header.removeClass(classes + ' is-fixed').removeAttr('style');
 			if (!isAbsoluteHeader) {
 				body.css('padding-top', 0);
+			}
+			if ($('.single-project__stiky').length > 0){
+				$('.single-project__stiky').css('top',0)
 			}
 		}
 	});
@@ -955,8 +961,9 @@ AOS.init({
 		var footer = $('.footer:not(.footer--technical)');
 		var footerParent = footer.parent();
 		var footerHeight = footer.innerHeight();
+		var headerHeight = $('.header').innerHeight();
 
-		if (footerHeight <= $(window).height()) {
+		if ((footerHeight + headerHeight) <= $(window).height()) {
 			var leftValue = footerParent.css('padding-left');
 			footer.css({ 'position': 'fixed', 'left': leftValue, 'right': '0', 'bottom': '0'});
 			body.css('padding-bottom', footerHeight);
@@ -967,8 +974,9 @@ AOS.init({
 
 		$(window).on('resize', function() {
 			footerHeight = footer.innerHeight();
+			headerHeight = $('.header').innerHeight();
 
-			if (footerHeight <= $(window).height()) {
+			if ((footerHeight + headerHeight) <= $(window).height()) {
 				leftValue = footerParent.css('padding-left');
 				footer.css({ 'position': 'fixed', 'left': leftValue, 'right': '0', 'bottom': '0'});
 				body.css('padding-bottom', footerHeight);
