@@ -35,12 +35,12 @@
 
 	&__hint {
 		position: absolute;
-		top: -1.7em;
-		display: block;
-		transition: 0.3s;
-		font-size: 12px;
-		text-transform: uppercase;
+		font-size: 20px;
+		text-transform: none;
+		top: -5px;
+		left: 0;
 		color: $color-grey;
+		transition: 0.3s;
 
 		.red {
 			display: inline;
@@ -60,30 +60,24 @@
 		&::placeholder {
 			color: transparent;
 		}
+	}
 
-		&:placeholder-shown ~ #{$self}__hint {
-			font-size: 20px;
-			text-transform: none;
-			top: -5px;
+	.outer {
+		~ #{$self}__hint {
+			position: absolute;
+			top: -1.7em;
+			display: block;
+			font-size: 12px;
+			text-transform: uppercase;
 		}
 
-		&:focus {
-			~ #{$self}__hint {
-				position: absolute;
-				top: -1.7em;
-				display: block;
-				font-size: 12px;
-				text-transform: uppercase;
+		~ .underline {
+			&::before {
+				width: 50%;
 			}
 
-			~ .underline {
-				&::before {
-					width: 50%;
-				}
-
-				&::after {
-					width: 50%;
-				}
+			&::after {
+				width: 50%;
 			}
 		}
 	}
@@ -100,18 +94,20 @@
 	&--md-small {
 		@media screen and (min-width: 768px) and (max-width: 1199.98px) {
 			#{$self}__hint {
-				top: -1.2em;
-				font-size: 10px;
+				top: -5px;
+				font-size: 14px;
+			}
+
+			.outer {
+				~ #{$self}__hint {
+					font-size: 14px;
+				}
 			}
 			input,
 			textarea {
 				padding-bottom: 6px;
 				font-size: 14px;
 				//background-color: pink;
-
-				&:placeholder-shown ~ #{$self}__hint {
-					font-size: 14px;
-				}
 
 				&:focus {
 					border-bottom-color: $color-default-black;

@@ -899,7 +899,7 @@ AOS.init({
 				isValid = checkValid(form.find('.field-error'));
 
 		fields.each(function () {
-			var err = $(this).parent().next();
+			var err = form.find('.field-error');
 
 			if ($(this).prop('required') === true) {
 				if ($(this).val().length === 0) {
@@ -940,7 +940,7 @@ AOS.init({
 
 	$('.js-form-validate .field').on('focusout keyup change', function () {
 		var input = $(this).find('input'),
-				err = input.parent().next(),
+				err = $(this).next(),
 				val = input.val();
 
 		if (input.attr('type') === "email") {
@@ -987,3 +987,19 @@ AOS.init({
 		});
 	});
 })();
+
+$('.field input').add($('.field textarea')).on('focus', function () {
+	if ($(this).parent().hasClass('field--md-small')) {
+		$(this).addClass('outer');
+	} else {
+		$(this).parent().addClass('outer');
+	}
+});
+
+$('.field input').add($('.field textarea')).on('focusout', function () {
+	if ($(this).parent().hasClass('field--md-small')) {
+		$(this).removeClass('outer');
+	} else {
+		$(this).parent().removeClass('outer');
+	}
+});

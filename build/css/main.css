@@ -764,12 +764,12 @@ textarea.custom-input {
 
 .field__hint {
   position: absolute;
-  top: -1.7em;
-  display: block;
-  transition: 0.3s;
-  font-size: 12px;
-  text-transform: uppercase;
+  font-size: 20px;
+  text-transform: none;
+  top: -5px;
+  left: 0;
   color: #999999;
+  transition: 0.3s;
 }
 
 .field__hint .red {
@@ -792,15 +792,7 @@ textarea.custom-input {
   color: transparent;
 }
 
-.field input:placeholder-shown ~ .field__hint,
-.field textarea:placeholder-shown ~ .field__hint {
-  font-size: 20px;
-  text-transform: none;
-  top: -5px;
-}
-
-.field input:focus ~ .field__hint,
-.field textarea:focus ~ .field__hint {
+.field .outer ~ .field__hint {
   position: absolute;
   top: -1.7em;
   display: block;
@@ -808,13 +800,11 @@ textarea.custom-input {
   text-transform: uppercase;
 }
 
-.field input:focus ~ .underline::before,
-.field textarea:focus ~ .underline::before {
+.field .outer ~ .underline::before {
   width: 50%;
 }
 
-.field input:focus ~ .underline::after,
-.field textarea:focus ~ .underline::after {
+.field .outer ~ .underline::after {
   width: 50%;
 }
 
@@ -831,16 +821,15 @@ textarea.custom-input {
 
 @media screen and (min-width: 768px) and (max-width: 1199.98px) {
   .field--md-small .field__hint {
-    top: -1.2em;
-    font-size: 10px;
+    top: -5px;
+    font-size: 14px;
+  }
+  .field--md-small .outer ~ .field__hint {
+    font-size: 14px;
   }
   .field--md-small input,
   .field--md-small textarea {
     padding-bottom: 6px;
-    font-size: 14px;
-  }
-  .field--md-small input:placeholder-shown ~ .field__hint,
-  .field--md-small textarea:placeholder-shown ~ .field__hint {
     font-size: 14px;
   }
   .field--md-small input:focus,

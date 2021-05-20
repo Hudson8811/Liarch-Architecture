@@ -5,24 +5,28 @@ form.form.js-form-validate(action='php/mail.php', method='POST', data-aos="fade"
 	.form__group
 		.form__item
 			label.form__field.field
-				input(type='text', name='full-name', placeholder='Full Name')
+				span
+					input(type='text', name='full-name', placeholder='Full Name')
 				span.field__hint Full Name
 				span.underline
 			.field-error(style='display: none')
 		.form__item
 			label.form__field.field
-				input(type='email', name='email', placeholder='Email Address *', required)
+				span
+					input(type='email', name='email', placeholder='Email Address *', required)
 				span.field__hint Email Address <span class="red">*</span>
 				span.underline
 			.field-error(style='display: none')
 		.form__item
 			label.form__field.field
-				input(type='text', name='subject', placeholder='Subject')
+				span
+					input(type='text', name='subject', placeholder='Subject')
 				span.field__hint Subject
 				span.underline
 			.field-error(style='display: none')
 	label.form__field.form__field--width-full.field
-		textarea(name='message', placeholder='Your message here')
+		span
+			textarea(name='message', placeholder='Your message here')
 		span.field__hint Your message here
 		span.underline
 	.field-error(style='display: none')
